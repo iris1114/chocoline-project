@@ -1,0 +1,23 @@
+
+
+//RWD 
+@mixin rwd($breakpoint) {
+    @if $breakpoint==mobile {
+        @media all and (max-width: $mobile) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==tablet {
+        @media all and (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==desktop {
+        @media all and (min-width: $desktop) {
+            @content;
+        }
+    }
+}
+

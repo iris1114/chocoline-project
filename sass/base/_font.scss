@@ -1,0 +1,79 @@
+@import "mixins/mixin";
+@import "var";
+
+
+
+
+@mixin font-xxl {
+        font-family: $font-family;
+        line-height: normal;
+        @include rwd(mobile){
+            font-size:$mfont-xxl;  
+        }
+        @include rwd(tablet){
+            font-size:$tfont-xxl;
+        }
+        @include rwd(desktop){
+            font-size:$dfont-xxl;
+        }
+}
+
+
+@mixin font-xl{
+    font-family: $font-family;
+    line-height: normal;
+    @include rwd(mobile){
+        font-size:$mfont-xl;  
+    }
+    @include rwd(tablet){
+        font-size:$tfont-xl;
+    }
+    @include rwd(desktop){
+        font-size:$dfont-xl;
+    }
+}
+
+@mixin font-l{
+    font-family: $font-family;
+    line-height: normal;
+    @include rwd(mobile){
+        font-size:$mfont-l;  
+    }
+    @include rwd(tablet){
+        font-size:$tfont-l;
+    }
+    @include rwd(desktop){
+        font-size:$dfont-l;
+    }
+}
+
+
+@mixin font-m {
+    font-family: $font-family;
+    line-height: normal;
+    @include rwd(mobile){
+        font-size:$mfont-m;  
+    }
+    @include rwd(tablet){
+        font-size:$tfont-m;
+    }
+    @include rwd(desktop){
+        font-size:$dfont-m;
+    }
+}
+
+
+@mixin font-s {
+    font-family: $font-family;
+    line-height: normal;
+    @include rwd(mobile){
+        font-size:$mfont-s;  
+    }
+    @include rwd(tablet){
+        font-size:$tfont-s;
+    }
+    @include rwd(desktop){
+        font-size:$dfont-s;
+    }
+    
+}
