@@ -340,7 +340,7 @@ table {
     transition: all 0.05s cubic-bezier(0.17, 0.67, 0, 1.89); }
   @media all and (max-width: 768px) {
     .btn_orange_l {
-      width: 150px; }
+      width: 120px; }
       .btn_orange_l .btn_orange {
         box-shadow: 0 5px #ccc;
         font-size: 16px; }
@@ -438,7 +438,7 @@ table {
     transition: all 0.05s cubic-bezier(0.17, 0.67, 0, 1.89); }
   @media all and (max-width: 768px) {
     .btn_cyan_l {
-      width: 150px; }
+      width: 120px; }
       .btn_cyan_l .btn_orange {
         box-shadow: 0 5px #ccc;
         font-size: 16px; }
