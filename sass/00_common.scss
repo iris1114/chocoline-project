@@ -2,18 +2,27 @@
 @import"mixins/mixin";
 @import"layout/header";
 @import"layout/footer";
+@import "modules/all";
+
+// 套用方法//
 
 
-// RWD
+//--------- GRID -------------//
+// 可直接套用在html 加入class name
+@include  grid(12);
+
+// @include section_margin();
+
+
+
+//--------- RWD -------------//
+// 可在sass撰寫3種rwd模組
 @include rwd(desktop){
     // 
 }
-
-
 @include rwd(tablet){
     // 
 }
-
 
 @include rwd(mobile){
     // 
@@ -21,40 +30,34 @@
 
 
 
-.font-wrap{
+.font_wrap{
     .font1{
         p{
-            @include font-xxl();
+            @include font_xxl();
+        }
+    }
+    .font2{
+        p{
+            @include font_xl();
+        }
+    }
+    .font3{
+        p{
+            @include font_l();
+        }
+    }
+    .font4{
+        p{
+            @include font_m();
+        }
+    }
+    .font5{
+        p{
+            @include font_s();
         }
     }
 
-    .font2{
-        p{
-            @include font-xl();
-        }       
-    }
-
-    .font3{
-        p{
-            @include font-l();
-        }       
-    }
-
-    .font4{
-        p{
-            @include font-m();
-        }       
-    }
-
-    .font5{
-        p{
-            @include font-s();
-        }       
-    }
-
-
-   
-       
 }
+
 
 

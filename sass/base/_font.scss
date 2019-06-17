@@ -4,46 +4,46 @@
 
 
 
-@mixin font-xxl {
-        font-family: $font-family;
+@mixin font_xxl {
+        font-family: $font_family;
         line-height: normal;
         @include rwd(mobile){
-            font-size:$mfont-xxl;  
+            font-size:$mfont_xxl;  
         }
         @include rwd(tablet){
-            font-size:$tfont-xxl;
+            font-size:$tfont_xxl;
         }
         @include rwd(desktop){
-            font-size:$dfont-xxl;
+            font-size:$dfont_xxl;
         }
 }
 
 
-@mixin font-xl{
-    font-family: $font-family;
+@mixin font_xl{
+    font-family: $font_family;
     line-height: normal;
     @include rwd(mobile){
-        font-size:$mfont-xl;  
+        font-size:$mfont_xl;  
     }
     @include rwd(tablet){
         font-size:$tfont-xl;
     }
     @include rwd(desktop){
-        font-size:$dfont-xl;
+        font-size:$dfont_xl;
     }
 }
 
 @mixin font-l{
-    font-family: $font-family;
+    font-family: $font_family;
     line-height: normal;
     @include rwd(mobile){
-        font-size:$mfont-l;  
+        font-size:$mfont_l;  
     }
     @include rwd(tablet){
-        font-size:$tfont-l;
+        font-size:$tfont_l;
     }
     @include rwd(desktop){
-        font-size:$dfont-l;
+        font-size:$dfont_l;
     }
 }
 
@@ -52,28 +52,28 @@
     font-family: $font-family;
     line-height: normal;
     @include rwd(mobile){
-        font-size:$mfont-m;  
+        font-size:$mfont_m;  
     }
     @include rwd(tablet){
-        font-size:$tfont-m;
+        font-size:$tfont_m;
     }
     @include rwd(desktop){
-        font-size:$dfont-m;
+        font-size:$dfont_m;
     }
 }
 
 
 @mixin font-s {
-    font-family: $font-family;
+    font-family: $font_family;
     line-height: normal;
     @include rwd(mobile){
-        font-size:$mfont-s;  
+        font-size:$mfont_s;  
     }
     @include rwd(tablet){
-        font-size:$tfont-s;
+        font-size:$tfont_s;
     }
     @include rwd(desktop){
-        font-size:$dfont-s;
+        font-size:$dfont_s;
     }
     
 }

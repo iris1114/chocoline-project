@@ -1,0 +1,154 @@
+@import "../mixins/mixin";
+// *{
+//     // outline: 1px solid #f00;
+// }
+@include rwd(mobile){
+    .m_header{ 
+        position: relative;
+        .navbar{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            background:url("../../image/headerfooter/m_navbar_bg.png") no-repeat 0 0 / cover;
+        }
+        .burger{
+            width: 33%;
+            div{
+                width: 50px;
+                height: 50px;
+                position: relative;
+                cursor: pointer;
+                &::before{
+                    content:"";
+                    width: 36px;
+                    height: 2px;
+                    @include pos(11px,0,auto,0);
+                    background-color: $color_milk;
+                }
+                span{
+                    width: 36px;
+                    height: 2px;
+                    @include pos(24px,0,auto,0);
+                    background-color: $color_milk;
+                }
+                &::after{
+                    content: "";
+                    width: 36px;
+                    height: 2px;
+                    @include pos(36px,0,auto,0);
+                    background-color: $color_milk;
+                }
+            }
+        }
+        .logo{
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 100%;
+            }
+        }
+        .status{
+            width: 33%;
+            display: flex;
+            justify-content: flex-end;
+            figure{
+                width: 50px;
+                height: 50px;
+                margin: 0 5%;
+                text-align: center;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .menubox{
+            width: 100%;
+            position: absolute;
+            top: -100%;
+        }
+    }
+    .d_header{
+        display: none;
+    }
+}
+@include rwd(tablet){
+    .m_header{ 
+        position: relative;
+        .navbar{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            background:url("../../image/headerfooter/m_navbar_bg.png") no-repeat 0 0 / cover;
+        }
+        .burger{
+            width: 33%;
+            div{
+                width: 50px;
+                height: 50px;
+                position: relative;
+                cursor: pointer;
+                &::before{
+                    content:"";
+                    width: 36px;
+                    height: 2px;
+                    @include pos(11px,0,auto,0);
+                    background-color: $color_milk;
+                }
+                span{
+                    width: 36px;
+                    height: 2px;
+                    @include pos(24px,0,auto,0);
+                    background-color: $color_milk;
+                }
+                &::after{
+                    content: "";
+                    width: 36px;
+                    height: 2px;
+                    @include pos(36px,0,auto,0);
+                    background-color: $color_milk;
+                }
+            }
+        }
+        .logo{
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 100%;
+            }
+        }
+        .status{
+            width: 33%;
+            display: flex;
+            justify-content: flex-end;
+            figure{
+                width: 50px;
+                height: 50px;
+                margin: 0 5%;
+                text-align: center;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .menubox{
+            width: 100%;
+            position: absolute;
+            top: -100%;
+        }
+    }
+    .d_header{
+        display: none;
+    }
+}
+@include rwd(desktop){
+    .m_header{
+        display: none;
+    }
+    .d_header{
+        display: block;
+    }
+}

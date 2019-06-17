@@ -3,35 +3,54 @@
 // -----------------RWD------------------//
 
 $mobile :768px;
-$tablet:996px;
-$desktop:997px;
+$tablet:768px;
+$desktop:992px;
 
 
 // -----------------FONT------------------//
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 
-$font-family: 'Noto Sans TC', sans-serif;
+$font_family: 'Noto Sans TC', sans-serif;
 
 // desktop font
-$dfont-xxl:48px;
-$dfont-xl:36px;
-$dfont-l:28px;
-$dfont-m:20px;
-$dfont-s:16px;
+$dfont_xxl:48px;
+$dfont_xl:36px;
+$dfont_l:28px;
+$dfont_m:20px;
+$dfont_s:16px;
 
 // tablet font
-$tfont-xxl:40px;
-$tfont-xl:32px;
-$tfont-l:24px;
-$tfont-m:18px;
-$tfont-s:16px;
+$tfont_xxl:40px;
+$tfont_xl:32px;
+$tfont_l:24px;
+$tfont_m:18px;
+$tfont_s:16px;
 
 // mobile font
-$mfont-xxl:32px;
-$mfont-xl:26px;
-$mfont-l:24px;
-$mfont-m:18px;
-$mfont-s:16px;
+$mfont_xxl:32px;
+$mfont_xl:26px;
+$mfont_l:24px;
+$mfont_m:18px;
+$mfont_s:16px;
+
+
+
+// -----------------COLOR------------------//
+$color_milk: #F6EED4;
+
+
+
+
+
+// -----------------BUTTON------------------//
+
+$dbtn_width:150px;
+$tbtn_width:150px;
+$mbtn_width:120px;
+
+$dbtn_width_l:220px;
+$tbtn_width_l:200px;
+$mbtn_width_l:150px;
 
 
 

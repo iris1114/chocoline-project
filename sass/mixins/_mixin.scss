@@ -21,3 +21,12 @@
     }
 }
 
+// -------------postion-------------//
+@mixin pos($t,$r,$b,$l){
+    position: absolute;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+    margin: auto;
+}
