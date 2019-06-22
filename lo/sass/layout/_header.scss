@@ -19,27 +19,29 @@ header{
     .burger{
         width: 33%;
         figure{
-            width: 33%;
-            max-width: 44px;
+            width: 44px;
+            padding: 5px;
         }
     }
     .logo{
         width: 33%;
         display: flex;
         justify-content: center;
+        a{
+            display: block;
+        }
     }
     .status{
         width: 33%;
         display: flex;
         justify-content: flex-end;
         figure{
-            width: 33%;
-            max-width: 50px;
-            margin: 0 5%;
+            width: 44px;
+            margin: 0 0 0 5%;
             text-align: center;
-            cursor: pointer;
             a{
                 display: block;
+                padding: 8px;
             }
         }
     }
@@ -66,6 +68,7 @@ header{
             height: 50px;
             top: 10px;
             left: 10px;
+            padding: 8px;
         }
     }
     .menuboxopen{
@@ -92,6 +95,7 @@ header{
             width: 90%;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         .menubox{
             width: 90%;
@@ -99,10 +103,15 @@ header{
             justify-content: center;
             li{
                 @include font_m();
-                margin: 0 20px;
+                margin: 0 15px;
                 a{
                     color: $color_milk;
-                    display: block;
+                    display: block; 
+                }
+            }
+            @media all and (min-width: 1027px){
+                li{
+                    margin: 0 20px;
                 }
             }
             @media all and (min-width: 1200px){
@@ -112,13 +121,15 @@ header{
             }
         }
         .status{
-            width: 10%;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
+            margin-left: auto;
             figure{
-                cursor: pointer;
+                width: 44px;
+                margin: 0 10px;
                 a{
                     display: block;
+                    padding: 5px;
                 }
             }
         }
