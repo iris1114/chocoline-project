@@ -1,0 +1,70 @@
+// 此為套用辦法 不是共用版
+//共用版為common.sass  and common.html （含header／footer）
+
+@import "base/reset";
+@import "base/all";
+@import"mixins/mixin";
+@import "modules/all";
+
+
+
+
+//--------- GRID -------------//
+// 可直接套用在html 加入class name
+@include  grid(12);
+
+// @include section_margin();
+
+
+
+//--------- RWD -------------//
+// 可在sass撰寫3種rwd模組
+@include rwd(desktop){
+  
+}
+@include rwd(tablet){
+    
+}
+
+@include rwd(mobile){
+   
+}
+
+// --------- FONT -------------//
+
+
+.font_wrap{
+    .font1{
+        p{
+            @include font_xxl();
+        }
+    }
+    .font2{
+        p{
+            @include font_xl();
+        }
+    }
+    .font3{
+        p{
+            @include font_l();
+        }
+    }
+    .font4{
+        p{
+            @include font_m();
+        }
+    }
+    .font5{
+        p{
+            @include font_s();
+        }
+    }
+
+}
+
+
+
+
+
+//--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
+

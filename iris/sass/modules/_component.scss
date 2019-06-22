@@ -350,9 +350,13 @@
     background-color:  #187f8f;
     color: #fff;
     appearance: none;
-    // background: url(../../image/common/select2.png)  no-repeat  center ;   
+    background: url(../../image/common/select.png)  no-repeat  center ;   
     border: 0px;
+
+ 
  }
+
+
 
 // -----------------title_decoration------------------//
 
@@ -363,7 +367,6 @@
    img{
        display: block;
        margin: auto;
-    //    position: absolute;
    }
 
     p{
@@ -400,6 +403,40 @@
         }
     }
 }
+
+
+// -----------------prev next btn------------------//
+
+#prev_btn{
+padding: 10px;
+background-color: #1c99ae;
+color: #FFFFFF;
+border-radius: 5px;
+cursor: pointer;
+
+@include font_m;
+
+    &:hover{
+        background-color: #187f8f;
+    }
+
+    
+
+        }
+#next_btn{
+    padding: 10px;
+    background-color: #1c99ae;
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+    @include font_m;
+    
+        &:hover{
+            background-color: #187f8f;
+        }
+    }
 
 
 

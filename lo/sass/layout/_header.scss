@@ -4,6 +4,7 @@ header{
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 10;
 }
 .m_header{ 
     position: relative;
@@ -12,7 +13,8 @@ header{
         padding: 20px;
         display: flex;
         justify-content: space-between;
-        background:url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0 / cover;
+        background: url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0 / 100% 100%;
+        height: 120px;
     }
     .burger{
         width: 33%;
@@ -124,8 +126,8 @@ header{
             content: "";
             background:url("../image/headerfooter/navbar_bg.png") no-repeat 0 0 / cover;
             width: 100%;
-            height: 0;
-            padding-bottom: 11.97916666666667%;
+            height: 150px;
+            // padding-bottom: 11.97916666666667%;
             @include pos(0,0,auto,0);
             z-index: -1;
         }   
