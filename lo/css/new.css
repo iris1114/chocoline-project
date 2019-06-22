@@ -147,7 +147,7 @@ header {
   -webkit-transition: .5s;
   transition: .5s;
   display: none;
-  background: url("../image/headerfooter/m_menu_bg.png") no-repeat 0 0/contain;
+  background: url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0/contain;
 }
 
 .m_header .menubox li {
