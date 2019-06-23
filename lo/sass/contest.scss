@@ -3,7 +3,9 @@
 @import"mixins/mixin";
 @import "layout/all";
 @import "modules/all";
-
+*{
+    font-family:'Noto Sans TC', sans-serif;
+}
 
 .contest_body{
     background-color: #FFF5E3;
