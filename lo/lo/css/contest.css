@@ -230,10 +230,6 @@ header {
           justify-content: center;
 }
 
-.m_header .logo h1 {
-  display: none;
-}
-
 .m_header .logo a {
   display: block;
 }
@@ -336,9 +332,6 @@ header {
   .d_header .logo {
     width: 10%;
     min-width: 147px;
-  }
-  .d_header .logo h1 {
-    display: none;
   }
   .d_header .logo a {
     display: block;
@@ -973,23 +966,12 @@ section {
 
 .contest_body {
   background-color: #FFF5E3;
-  overflow-x: hidden;
 }
 
 @media all and (min-width: 992px) {
   .stage_container {
-    padding-top: 150px;
-    height: 700px;
-    background: url("../image/contest/fitst_bg.png") no-repeat 0 0/100% 100%;
-  }
-  .active {
-    position: relative;
-  }
-  .circle_bg {
-    width: 140%;
-    position: absolute;
-    top: -300px;
-    left: -20%;
+    margin-top: 120px;
+    background: url("../image/contest/fitst_bg.png") no-repeat 0 0/contain;
   }
 }
 /*# sourceMappingURL=contest.css.map */

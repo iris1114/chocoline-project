@@ -1,20 +1,35 @@
-@import "base/reset";
-@import "base/all";
-@import"mixins/mixin";
-@import "layout/all";
-@import "modules/all";
+@import "common";
+
 *{
     font-family:'Noto Sans TC', sans-serif;
 }
 
+
 .contest_body{
     background-color: #FFF5E3;
+    overflow-x: hidden;
 }
-section{
-    margin-top: 150px;
-    height: 500px;
-    div{
-        width: 200px;
-        height: 200px;
+@include rwd(mobile){
+   
+}
+@include rwd(tablet){
+    
+}
+@include rwd(desktop){
+    
+   .stage_container{
+    padding-top: 150px;
+    height: 700px;
+    background: url("../image/contest/fitst_bg.png") no-repeat 0 0 / 100% 100%;
+   }
+   .active{
+        position: relative;
     }
+   .circle_bg{
+        width: 140%;
+        position: absolute; 
+        top: -300px;
+        left: -20%;
+   }
+
 }

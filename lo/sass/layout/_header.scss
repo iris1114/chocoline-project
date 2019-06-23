@@ -31,6 +31,9 @@ header{
         width: 33%;
         display: flex;
         justify-content: center;
+        h1{
+            display: none;
+        }
         a{
             display: block;
         }
@@ -95,6 +98,9 @@ header{
         .logo{
             width: 10%;
             min-width: 147px;
+            h1{
+                display: none;
+            }
             a{
                 display: block;
             }
