@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -61,7 +62,6 @@ table {
   border-spacing: 0; }
 
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 img {
@@ -75,36 +75,29 @@ footer {
   width: 100%;
   height: 160px;
   padding-bottom: 10px;
-  background: url("../image/headerfooter/m_footer_bg.png") no-repeat 0 100%/100% 100%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: wrap row;
   flex-flow: wrap row;
-  -ms-flex-line-pack: end;
   align-content: flex-end; }
   footer .connect {
     width: 100%;
     margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    position: relative;
+    z-index: 1; }
     footer .connect figure {
       width: 100%;
       max-width: 40px;
       margin: 0 10px; }
+      footer .connect figure a {
+        display: block; }
   footer p {
     width: 100%;
     font-size: 12px;
     padding: 5px;
     text-align: center;
-    color: #F6EED4; }
+    color: #F0ECDD; }
   footer .bg {
     max-width: 265px;
     width: 35.33333%;
@@ -112,11 +105,12 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    z-index: -1; }
   footer .footer_water {
     position: absolute;
     width: 100%;
-    top: 65%; }
+    top: 67%; }
   footer .footer_square1 {
     position: absolute;
     width: 28%;
@@ -137,6 +131,15 @@ footer {
     width: 15%;
     left: 8%;
     top: 14%; }
+  footer::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url("../image/headerfooter/m_footer_bg.png") no-repeat 0 100%/100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2; }
 
 header {
   position: fixed;
@@ -149,14 +152,8 @@ header {
   .m_header .navbar {
     width: 100%;
     padding: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
     background: url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0/100% 100%;
     height: 120px; }
@@ -167,21 +164,15 @@ header {
       padding: 5px; }
   .m_header .logo {
     width: 33%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center; }
+    .m_header .logo h1 {
+      display: none; }
     .m_header .logo a {
       display: block; }
   .m_header .status {
     width: 33%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end; }
     .m_header .status figure {
       width: 44px;
@@ -196,8 +187,6 @@ header {
     padding-top: 50px;
     position: absolute;
     top: -100vh;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
     transition: .5s;
     display: none;
     background: url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0/contain; }
@@ -216,7 +205,7 @@ header {
         .m_header .menubox li {
           font-size: 28px; } }
       .m_header .menubox li a {
-        color: #F6EED4; }
+        color: #F0ECDD; }
     .m_header .menubox #menuclose {
       position: absolute;
       width: 50px;
@@ -226,8 +215,6 @@ header {
       padding: 8px; }
   .m_header .menuboxopen {
     top: 0vh;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
     transition: .5s; }
 
 .d_header {
@@ -237,43 +224,31 @@ header {
   .m_header {
     display: none; }
   .d_header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding: 15px 20px;
     width: 100%;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start; }
     .d_header .logo {
       width: 10%;
       min-width: 147px; }
+      .d_header .logo h1 {
+        display: none; }
       .d_header .logo a {
         display: block; }
     .d_header .navbar {
       width: 90%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center; }
     .d_header .menubox {
       width: 90%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center; }
       .d_header .menubox li {
         font-size: 18px;
         margin: 0 15px; }
         .d_header .menubox li a {
-          color: #F6EED4;
+          color: #F0ECDD;
           display: block; } }
     @media all and (min-width: 992px) and (min-width: 1045px) {
       .d_header .menubox li {
@@ -284,11 +259,7 @@ header {
 
 @media all and (min-width: 992px) {
     .d_header .status {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
       justify-content: flex-end;
       margin-left: auto; }
       .d_header .status figure {
@@ -311,46 +282,33 @@ header {
       z-index: -1; } }
 
 .btn {
-  color: #FFFFFF;
+  color: #F0ECDD;
   text-align: center;
   padding: 10px;
   display: inline-block;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
   transition: all 0.5s;
   margin: 5px;
   border-radius: 15px;
-  -webkit-box-shadow: 0 5px #ccc;
   box-shadow: 0 5px #ccc; }
   .btn span {
     display: inline-block;
     position: relative;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s; }
     .btn span::after {
       content: '\00bb';
       position: absolute;
       display: inline-block;
-      color: #fff;
-      -webkit-transition: 0.5s;
-      -o-transition: 0.5s;
+      color: #F0ECDD;
       transition: 0.5s;
       opacity: 0; }
   .btn:hover span::after {
     opacity: 1; }
   .btn:active {
-    -webkit-box-shadow: 0 2px #666;
     box-shadow: 0 2px #666;
-    -webkit-transform: translateY(4px);
-    -ms-transform: translateY(4px);
     transform: translateY(4px);
-    -webkit-transition: all 0.05s cubic-bezier(0.17, 0.67, 0, 1.89);
-    -o-transition: all 0.05s cubic-bezier(0.17, 0.67, 0, 1.89);
     transition: all 0.05s cubic-bezier(0.17, 0.67, 0, 1.89); }
   @media all and (max-width: 767px) {
     .btn {
-      -webkit-box-shadow: 0 2px #ccc;
       box-shadow: 0 2px #ccc;
       border-radius: 10px; }
       .btn span::after {
@@ -498,13 +456,11 @@ header {
     .orange_xl {
       width: 240px;
       padding: 15px;
-      -webkit-box-shadow: 0 8px #ccc;
       box-shadow: 0 8px #ccc; } }
   @media all and (min-width: 992px) {
     .orange_xl {
       width: 270px;
       padding: 15px;
-      -webkit-box-shadow: 0 8px #ccc;
       box-shadow: 0 8px #ccc; } }
 
 .cyan_xl {
@@ -523,13 +479,11 @@ header {
     .cyan_xl {
       width: 240px;
       padding: 15px;
-      -webkit-box-shadow: 0 8px #ccc;
       box-shadow: 0 8px #ccc; } }
   @media all and (min-width: 992px) {
     .cyan_xl {
       width: 270px;
       padding: 15px;
-      -webkit-box-shadow: 0 8px #ccc;
       box-shadow: 0 8px #ccc; } }
 
 .pagination {
@@ -543,7 +497,7 @@ header {
     border: 1px solid #1c99ae; }
     .pagination a:hover {
       background-color: #187f8f;
-      color: white;
+      color: #F0ECDD;
       border: 1px solid #187f8f; }
     .pagination a:first-child {
       border-top-left-radius: 5px;
@@ -554,20 +508,22 @@ header {
       border-bottom-right-radius: 5px; }
   .pagination .active {
     background-color: #187f8f;
-    color: white;
+    color: #F0ECDD;
     border: 1px solid #187f8f; }
 
 .select_dropdown {
+  margin-left: 40px;
   width: 200px;
   font-size: 16px;
   height: 36px;
-  background-color: #187f8f;
-  color: #fff;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  color: #F0ECDD;
   appearance: none;
-  background: url(../../image/common/select.png) no-repeat center;
-  border: 0px; }
+  background: #187f8f url(../image/common/select.png) no-repeat center;
+  border: 0px;
+  text-indent: 20px; }
+  @media all and (max-width: 767px) {
+    .select_dropdown {
+      width: 100%；; } }
 
 .title_decoration {
   font-family: "Noto Sans TC", sans-serif;
@@ -575,40 +531,38 @@ header {
   position: relative; }
   @media all and (max-width: 767px) {
     .title_decoration {
-      font-size: 26px; } }
+      font-size: 24px; } }
   @media all and (min-width: 768px) {
     .title_decoration {
-      font-size: 32px; } }
+      font-size: 24px; } }
   @media all and (min-width: 992px) {
     .title_decoration {
-      font-size: 36px; } }
-  .title_decoration img {
-    display: block;
-    margin: auto; }
+      font-size: 28px; } }
   .title_decoration p {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 15%;
     left: 0;
     right: 0;
+    bottom: 0;
     text-align: center; }
   @media all and (max-width: 767px) {
-    .title_decoration img {
-      width: 100%; } }
+    .title_decoration {
+      width: 100%；; } }
   @media all and (min-width: 768px) {
-    .title_decoration img {
-      width: 70%; } }
+    .title_decoration {
+      width: 50%; }
+      .title_decoration p {
+        top: 20%; } }
   @media all and (min-width: 992px) {
-    .title_decoration img {
-      width: 48%; }
-    .title_decoration p {
-      font-size: 40px;
-      top: 12%; } }
+    .title_decoration {
+      width: 30%; }
+      .title_decoration p {
+        top: 20%; } }
 
 #prev_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #FFFFFF;
+  color: #F0ECDD;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -628,7 +582,7 @@ header {
 #next_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #FFFFFF;
+  color: #F0ECDD;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -647,7 +601,8 @@ header {
 
 .wrap {
   width: 100%;
-  max-width: 1200px; }
+  max-width: 1200px;
+  margin: auto; }
 
 section {
-  margin-top: 50px; }
+  padding-top: 50px; }
