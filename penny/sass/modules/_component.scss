@@ -1,5 +1,5 @@
-@import "base/all";
-@import "mixins/mixin";
+@import "../base/all";
+@import "../mixins/mixin";
 
 
 
@@ -7,7 +7,7 @@
 
 
 .btn {
-  color: #FFFFFF;
+  color: $color_milk;
   text-align: center;
   padding: 10px;
   display: inline-block;
@@ -24,7 +24,7 @@
             content: '\00bb';
             position: absolute;
             display: inline-block;
-            color: #fff;
+            color: $color_milk;
             transition: 0.5s;
             opacity: 0;
         }
@@ -312,7 +312,7 @@
     
         &:hover{
             background-color: #187f8f;
-            color: white;
+            color: $color_milk;
             border: 1px solid #187f8f;
         }
 
@@ -330,7 +330,7 @@
 
     .active {
         background-color: #187f8f;
-        color: white;
+        color: $color_milk;
         border: 1px solid #187f8f;
     }
  
@@ -347,10 +347,9 @@
     width: 200px;
     font-size: 16px;
     height: 36px;
-    background-color:  #187f8f;
-    color: #fff;
+    color: $color_milk;
     appearance: none;
-    background: url(../../image/common/select.png)  no-repeat  center ;   
+    background: #187f8f url(../image/common/select.png)  no-repeat  center ;   
     border: 0px;
 
  
@@ -410,7 +409,7 @@
 #prev_btn{
 padding: 10px;
 background-color: #1c99ae;
-color: #FFFFFF;
+color: $color_milk;
 border-radius: 5px;
 cursor: pointer;
 
@@ -426,7 +425,7 @@ cursor: pointer;
 #next_btn{
     padding: 10px;
     background-color: #1c99ae;
-    color: #FFFFFF;
+    color: $color_milk;
     border-radius: 5px;
     cursor: pointer;
 
