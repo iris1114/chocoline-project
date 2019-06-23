@@ -230,10 +230,6 @@ header {
           justify-content: center;
 }
 
-.m_header .logo h1 {
-  display: none;
-}
-
 .m_header .logo a {
   display: block;
 }
@@ -336,9 +332,6 @@ header {
   .d_header .logo {
     width: 10%;
     min-width: 147px;
-  }
-  .d_header .logo h1 {
-    display: none;
   }
   .d_header .logo a {
     display: block;
@@ -960,10 +953,9 @@ header {
 .wrap {
   width: 100%;
   max-width: 1200px;
-  margin: auto;
 }
 
 section {
-  padding-top: 50px;
+  margin-top: 50px;
 }
 /*# sourceMappingURL=common.css.map */
