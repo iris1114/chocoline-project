@@ -80,7 +80,7 @@ a {
 }
 
 .btn {
-  color: #FFFFFF;
+  color: #F0ECDD;
   text-align: center;
   padding: 10px;
   display: inline-block;
@@ -103,7 +103,7 @@ a {
   content: '\00bb';
   position: absolute;
   display: inline-block;
-  color: #fff;
+  color: #F0ECDD;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
@@ -460,7 +460,7 @@ a {
 
 .pagination a:hover {
   background-color: #187f8f;
-  color: white;
+  color: #F0ECDD;
   border: 1px solid #187f8f;
 }
 
@@ -477,7 +477,7 @@ a {
 
 .pagination .active {
   background-color: #187f8f;
-  color: white;
+  color: #F0ECDD;
   border: 1px solid #187f8f;
 }
 
@@ -485,12 +485,11 @@ a {
   width: 200px;
   font-size: 16px;
   height: 36px;
-  background-color: #187f8f;
-  color: #fff;
+  color: #F0ECDD;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url(../image/common/select.png) no-repeat center;
+  background: #187f8f url(../image/common/select.png) no-repeat center;
   border: 0px;
 }
 
@@ -557,7 +556,7 @@ a {
 #prev_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #FFFFFF;
+  color: #F0ECDD;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -589,7 +588,7 @@ a {
 #next_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #FFFFFF;
+  color: #F0ECDD;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
