@@ -85,7 +85,6 @@ footer {
   width: 100%;
   height: 160px;
   padding-bottom: 10px;
-  background: url("../image/headerfooter/m_footer_bg.png") no-repeat 0 100%/100% 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -137,6 +136,7 @@ footer .bg {
   left: 0;
   bottom: 0;
   overflow: hidden;
+  z-index: -1;
 }
 
 footer .footer_water {
@@ -171,6 +171,17 @@ footer .footer_square4 {
   width: 15%;
   left: 8%;
   top: 14%;
+}
+
+footer::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("../image/headerfooter/m_footer_bg.png") no-repeat 0 100%/100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
 }
 
 header {
@@ -812,7 +823,7 @@ header {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url(../../image/common/select.png) no-repeat center;
+  background: url(../image/common/select.png) no-repeat center;
   border: 0px;
 }
 
@@ -947,6 +958,10 @@ header {
 
 section {
   margin-top: 50px;
+}
+
+.contest_body {
+  background-color: #FFF5E3;
 }
 
 section {

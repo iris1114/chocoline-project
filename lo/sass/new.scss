@@ -1,6 +1,5 @@
+@import "base/reset";
 @import "base/all";
 @import"mixins/mixin";
-@import"layout/header";
-@import"layout/footer";
-
-
+@import "layout/all";
+@import "modules/all";

@@ -33,7 +33,7 @@
     }
 }
 
-@mixin font-l{
+@mixin font_l{
     font-family: $font_family;
     line-height: normal;
     @include rwd(mobile){
@@ -48,7 +48,7 @@
 }
 
 
-@mixin font-m {
+@mixin font_m {
     font-family: $font-family;
     line-height: normal;
     @include rwd(mobile){
@@ -63,7 +63,7 @@
 }
 
 
-@mixin font-s {
+@mixin font_s {
     font-family: $font_family;
     line-height: normal;
     @include rwd(mobile){
