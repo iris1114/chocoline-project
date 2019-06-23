@@ -1,11 +1,16 @@
-@import "common";
-@import "layout/header";
-@import "layout/footer";
+@import "base/reset";
+@import "base/all";
+@import"mixins/mixin";
+@import "layout/all";
+@import "modules/all";
 
 
-
+.contest_body{
+    // background-color: ;
+}
 section{
     margin-top: 150px;
+    height: 500px;
     div{
         width: 200px;
         height: 200px;

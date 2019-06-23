@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
@@ -14,140 +10,6 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-a {
-  text-decoration: none;
-}
-
 .btn {
   color: #FFFFFF;
   text-align: center;
@@ -559,6 +421,7 @@ a {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  background: url(../../image/common/select.png) no-repeat center;
   border: 0px;
 }
 
@@ -622,73 +485,68 @@ a {
   }
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: 'Noto Sans TC', sans-serif;
+#prev_btn {
+  padding: 10px;
+  background-color: #1c99ae;
+  color: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+@media all and (max-width: 767px) {
+  #prev_btn {
+    font-size: 18px;
+  }
 }
 
-body {
-  line-height: 1;
+@media all and (min-width: 768px) {
+  #prev_btn {
+    font-size: 18px;
+  }
 }
 
-ol, ul {
-  list-style: none;
+@media all and (min-width: 992px) {
+  #prev_btn {
+    font-size: 20px;
+  }
 }
 
-blockquote, q {
-  quotes: none;
+#prev_btn:hover {
+  background-color: #187f8f;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
+#next_btn {
+  padding: 10px;
+  background-color: #1c99ae;
+  color: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+@media all and (max-width: 767px) {
+  #next_btn {
+    font-size: 18px;
+  }
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+@media all and (min-width: 768px) {
+  #next_btn {
+    font-size: 18px;
+  }
 }
 
-img {
-  width: 100%;
-  vertical-align: middle;
+@media all and (min-width: 992px) {
+  #next_btn {
+    font-size: 20px;
+  }
 }
 
-a {
-  text-decoration: none;
+#next_btn:hover {
+  background-color: #187f8f;
 }
 
 .wrap {
