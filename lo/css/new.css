@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -831,6 +832,13 @@ header {
           appearance: none;
   background: #187f8f url(../image/common/select.png) no-repeat center;
   border: 0px;
+  text-indent: 20px;
+}
+
+@media all and (max-width: 767px) {
+  .select_dropdown {
+    width: 100%；;
+  }
 }
 
 .title_decoration {
@@ -841,55 +849,52 @@ header {
 
 @media all and (max-width: 767px) {
   .title_decoration {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 
 @media all and (min-width: 768px) {
   .title_decoration {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
 @media all and (min-width: 992px) {
   .title_decoration {
-    font-size: 36px;
+    font-size: 28px;
   }
-}
-
-.title_decoration img {
-  display: block;
-  margin: auto;
 }
 
 .title_decoration p {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 5%;
   left: 0;
   right: 0;
+  bottom: 0;
   text-align: center;
 }
 
 @media all and (max-width: 767px) {
-  .title_decoration img {
+  .title_decoration {
     width: 100%;
   }
 }
 
 @media all and (min-width: 768px) {
-  .title_decoration img {
-    width: 70%;
+  .title_decoration {
+    width: 589px;
+  }
+  .title_decoration p {
+    top: 15%;
   }
 }
 
 @media all and (min-width: 992px) {
-  .title_decoration img {
-    width: 48%;
+  .title_decoration {
+    width: 589px;
   }
   .title_decoration p {
-    font-size: 40px;
-    top: 12%;
+    top: 20%;
   }
 }
 
