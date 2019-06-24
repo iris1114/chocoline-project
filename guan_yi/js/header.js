@@ -8,7 +8,8 @@ window.addEventListener("load",function(){
         setTimeout(function(){
             menubox.classList.add("menuboxopen");
         },100)
-        
+        document.body.style.overflowX = "hidden";
+        document.body.style.overflowY = "hidden";
     });
 
     menuclose.addEventListener("click",function(){
@@ -17,5 +18,7 @@ window.addEventListener("load",function(){
         setTimeout(function(){
             menubox.style.display="none";
         },500)
+        document.body.style.overflowX = "auto";
+        document.body.style.overflowY = "auto";
     })
 })
