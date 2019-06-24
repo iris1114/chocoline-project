@@ -305,9 +305,11 @@ a {
   height: 36px;
   color: #F0ECDD;
   appearance: none;
-  background: #187f8f url(../image/common/select.png) no-repeat center;
+  background: #F0ECDD url(../image/common/select.png) no-repeat center;
   border-radius: 5px;
   padding-left: 50px; }
+  .select_dropdown option {
+    color: #187f8f; }
   @media all and (max-width: 767px) {
     .select_dropdown {
       width: 100%；; } }

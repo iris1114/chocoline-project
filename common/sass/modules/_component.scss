@@ -348,9 +348,13 @@
     height: 36px;
     color: $color_milk;
     appearance: none;
-    background: #187f8f url(../image/common/select.png)  no-repeat  center ;   
+    background: #F0ECDD url(../image/common/select.png)  no-repeat  center ;   
     border-radius: 5px;
     padding-left: 50px;
+
+    option{
+        color: #187f8f;
+    }
 
     @include rwd(mobile){
         width: 100%；
