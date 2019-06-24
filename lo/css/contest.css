@@ -865,7 +865,7 @@ header {
   }
 }
 
-.title_decoration p {
+.title_decoration h2 {
   position: absolute;
   top: 5%;
   left: 0;
@@ -884,7 +884,7 @@ header {
   .title_decoration {
     width: 589px;
   }
-  .title_decoration p {
+  .title_decoration h2 {
     top: 15%;
   }
 }
@@ -893,7 +893,7 @@ header {
   .title_decoration {
     width: 589px;
   }
-  .title_decoration p {
+  .title_decoration h2 {
     top: 20%;
   }
 }
@@ -1016,6 +1016,18 @@ section {
   .stage_container .winner {
     position: absolute;
   }
+  .stage_container .winner a {
+    display: block;
+    width: 55%;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    bottom: 0;
+    left: 18%;
+    margin: auto;
+    z-index: 1;
+  }
   .stage_container #first_place {
     width: 40%;
     left: 27%;
@@ -1028,6 +1040,8 @@ section {
     height: 47%;
     top: -6%;
     right: -4%;
+    top: 0%;
+    right: -16%;
     background: url("../image/contest/no1.png") 0 0 no-repeat/contain;
   }
   .stage_container #second_place {
@@ -1082,6 +1096,7 @@ section {
     z-index: 1;
     -webkit-animation: upanddown 1s infinite linear alternate;
             animation: upanddown 1s infinite linear alternate;
+    cursor: pointer;
   }
   .stage_container .vote figcaption {
     width: 80%;
@@ -1151,16 +1166,16 @@ section {
               transform: translateX(0%) translateY(0%);
     }
     25% {
-      -webkit-transform: translateX(-5%) translateY(-5%);
-              transform: translateX(-5%) translateY(-5%);
+      -webkit-transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+              transform: translateX(-5%) translateY(-2%) rotate(-5deg);
     }
     50% {
       -webkit-transform: translateX(0%) translateY(0%);
               transform: translateX(0%) translateY(0%);
     }
     75% {
-      -webkit-transform: translateX(5%) translateY(-5%);
-              transform: translateX(5%) translateY(-5%);
+      -webkit-transform: translateX(5%) translateY(-2%) rotate(5deg);
+              transform: translateX(5%) translateY(-2%) rotate(5deg);
     }
     100% {
       -webkit-transform: translateX(0%) translateY(0%);
@@ -1173,16 +1188,16 @@ section {
               transform: translateX(0%) translateY(0%);
     }
     25% {
-      -webkit-transform: translateX(-5%) translateY(-5%);
-              transform: translateX(-5%) translateY(-5%);
+      -webkit-transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+              transform: translateX(-5%) translateY(-2%) rotate(-5deg);
     }
     50% {
       -webkit-transform: translateX(0%) translateY(0%);
               transform: translateX(0%) translateY(0%);
     }
     75% {
-      -webkit-transform: translateX(5%) translateY(-5%);
-              transform: translateX(5%) translateY(-5%);
+      -webkit-transform: translateX(5%) translateY(-2%) rotate(5deg);
+              transform: translateX(5%) translateY(-2%) rotate(5deg);
     }
     100% {
       -webkit-transform: translateX(0%) translateY(0%);
@@ -1217,6 +1232,137 @@ section {
     right: 0;
     z-index: -1;
     background: url("../image/contest/board.png") 0 0 no-repeat/contain;
+  }
+  .stage_container .lastest_mseeage {
+    width: 80.645%;
+    margin: auto;
+    padding-top: 13%;
+  }
+  .stage_container .lastest_mseeage h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+    color: #592F13;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .stage_container .lastest_mseeage h3 {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .stage_container .lastest_mseeage h3 {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .stage_container .lastest_mseeage h3 {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .stage_container .message_block {
+    border-top: 1px solid #7ECECD;
+  }
+  .stage_container .message {
+    border-bottom: 1px solid #7ECECD;
+    padding: 2%;
+  }
+  .stage_container .message::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .stage_container .cus_photo {
+    max-width: 72px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 14.8453%;
+    height: 0;
+    padding-bottom: 14.8453%;
+    border-radius: 9px;
+    border: 2px solid #592F13;
+    float: left;
+    position: relative;
+  }
+  .stage_container .cus_photo img {
+    border-radius: 9px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  .stage_container .message_contain {
+    float: left;
+    width: 60%;
+    margin-left: 2%;
+    color: #592F13;
+  }
+  .stage_container .message_contain .memName {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .stage_container .message_contain .memName {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .stage_container .message_contain .memName {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .stage_container .message_contain .memName {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .stage_container .message_contain .mseeage_text {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .stage_container .message_contain .mseeage_text {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .stage_container .message_contain .mseeage_text {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .stage_container .message_contain .mseeage_text {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .stage_container .status {
+    float: right;
+    width: 20%;
+  }
+  .stage_container .message_date {
+    color: #9B9B9B;
   }
   .active_container {
     position: relative;

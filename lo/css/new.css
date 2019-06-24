@@ -865,7 +865,7 @@ header {
   }
 }
 
-.title_decoration p {
+.title_decoration h2 {
   position: absolute;
   top: 5%;
   left: 0;
@@ -884,7 +884,7 @@ header {
   .title_decoration {
     width: 589px;
   }
-  .title_decoration p {
+  .title_decoration h2 {
     top: 15%;
   }
 }
@@ -893,7 +893,7 @@ header {
   .title_decoration {
     width: 589px;
   }
-  .title_decoration p {
+  .title_decoration h2 {
     top: 20%;
   }
 }

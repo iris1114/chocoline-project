@@ -365,7 +365,7 @@
 .title_decoration{
     @include font_l();
     position: relative;
-     p{
+     h2{
         position: absolute;
         top: 5%;
         left: 0;
@@ -381,13 +381,13 @@
     }
      @include rwd(tablet){
         width: 589px;
-        p{
+        h2{
             top:15%;
          }
     }
      @include rwd(desktop){
          width: 589px;
-         p{
+         h2{
             top:20%;
          }
      }
