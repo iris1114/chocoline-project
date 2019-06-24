@@ -51,34 +51,76 @@
   }
 }
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
-
+// *{
+//   outline: 1px solid red;
+// }
 .wrap_custom {
   width: 100%;
-  height: 1900px;
+  height:100%;
   padding-top: 150px;
+  padding-bottom: 500px;
   background: url("../image/bg.png") no-repeat;
   
   .title_decoration h2 {
-    text-align: center;
-    padding-bottom: 50px;
-  }
-}
-@media all and (max-width: 767px) {
-  .title_decoration {
     width: 100%;
+    text-align: center;
+    padding-bottom: 50px; 
   }
 }
 
-@media all and (min-width: 768px) {
-  .title_decoration {
-    width: 589px;
-  }
+.custom_type{
+  width: 100%;
+  height: 100%;
+  padding-top: 150px;
+  padding-bottom: 500px;
+  display: flex;
+  justify-content: space-around;
   
+.type_position{
+  width: 33.333333%;
+  padding: 0px 15px;
+  position: relative;
+
+.middle_position{
+  width: 95%;
+  position: absolute;
+  // bottom: -100;
+  top: 320px;
+  left: 5px;
+}
+.second_left_position{
+  width: 85%;
+  position: absolute;
+  top: 280px;
+  left: 10px;
+  z-index: 1 ;
+
+}
+  .third_left_position{
+    width: 75%;
+    position: absolute;
+   top: 45px ;
+    left:200px;
+   
+    
+  }
+  .second_right_position{
+    width: 85%;
+    position: absolute;
+    top:280px;
+    right:10px;
+    z-index: 1;
+  }
+  .third_right_position{
+    width: 75%;
+    position: absolute;
+    top:45px;
+    right: 160px;
+  }
+}
+// 接著寫左右按鈕
+
 }
 
-@media all and (min-width: 992px) {
-  .title_decoration {
-    width: 589px;
-  }
- 
-}
+
+
