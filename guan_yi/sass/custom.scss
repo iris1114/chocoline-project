@@ -57,8 +57,10 @@
   height: 1900px;
   padding-top: 150px;
   background: url("../image/bg.png") no-repeat;
+  
   .title_decoration h2 {
     text-align: center;
+    padding-bottom: 50px;
   }
 }
 @media all and (max-width: 767px) {
@@ -71,16 +73,12 @@
   .title_decoration {
     width: 589px;
   }
-  .title_decoration h2 {
-    top: 15%;
-  }
+  
 }
 
 @media all and (min-width: 992px) {
   .title_decoration {
     width: 589px;
   }
-  .title_decoration h2 {
-    top: 20%;
-  }
+ 
 }
