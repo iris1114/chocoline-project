@@ -52,6 +52,35 @@
 }
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
 
-// .wrap_custom {
-//   width: ;
-// }
+.wrap_custom {
+  width: 100%;
+  height: 1900px;
+  padding-top: 150px;
+  background: url("../image/bg.png") no-repeat;
+  .title_decoration h2 {
+    text-align: center;
+  }
+}
+@media all and (max-width: 767px) {
+  .title_decoration {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .title_decoration {
+    width: 589px;
+  }
+  .title_decoration h2 {
+    top: 15%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .title_decoration {
+    width: 589px;
+  }
+  .title_decoration h2 {
+    top: 20%;
+  }
+}
