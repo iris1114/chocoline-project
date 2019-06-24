@@ -349,8 +349,8 @@
     color: $color_milk;
     appearance: none;
     background: #187f8f url(../image/common/select.png)  no-repeat  center ;   
-    border: 0px;
-    text-indent:20px;
+    border-radius: 5px;
+    padding-left: 50px;
 
     @include rwd(mobile){
         width: 100%；
@@ -359,13 +359,14 @@
 
 
 
-// -----------------title_decoration------------------//
+// -----------------title_decoration ------------------//
 
 
 .title_decoration{
     @include font_l();
     position: relative;
-     p{
+    margin: auto;
+     h2{
         position: absolute;
         top: 5%;
         left: 0;
@@ -381,13 +382,13 @@
     }
      @include rwd(tablet){
         width: 589px;
-        p{
+        h2{
             top:15%;
          }
     }
      @include rwd(desktop){
          width: 589px;
-         p{
+         h2{
             top:20%;
          }
      }

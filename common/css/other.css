@@ -300,15 +300,14 @@ a {
     border: 1px solid #187f8f; }
 
 .select_dropdown {
-  margin-left: 40px;
   width: 200px;
   font-size: 16px;
   height: 36px;
   color: #F0ECDD;
   appearance: none;
   background: #187f8f url(../image/common/select.png) no-repeat center;
-  border: 0px;
-  text-indent: 20px; }
+  border-radius: 5px;
+  padding-left: 50px; }
   @media all and (max-width: 767px) {
     .select_dropdown {
       width: 100%；; } }
@@ -316,7 +315,8 @@ a {
 .title_decoration {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
-  position: relative; }
+  position: relative;
+  margin: auto; }
   @media all and (max-width: 767px) {
     .title_decoration {
       font-size: 24px; } }
@@ -326,25 +326,25 @@ a {
   @media all and (min-width: 992px) {
     .title_decoration {
       font-size: 28px; } }
-  .title_decoration p {
+  .title_decoration h2 {
     position: absolute;
-    top: 15%;
+    top: 5%;
     left: 0;
     right: 0;
     bottom: 0;
     text-align: center; }
   @media all and (max-width: 767px) {
     .title_decoration {
-      width: 100%；; } }
+      width: 100%; } }
   @media all and (min-width: 768px) {
     .title_decoration {
-      width: 50%; }
-      .title_decoration p {
-        top: 20%; } }
+      width: 589px; }
+      .title_decoration h2 {
+        top: 15%; } }
   @media all and (min-width: 992px) {
     .title_decoration {
-      width: 30%; }
-      .title_decoration p {
+      width: 589px; }
+      .title_decoration h2 {
         top: 20%; } }
 
 #prev_btn {
