@@ -51,76 +51,78 @@
   }
 }
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
-// *{
+// * {
 //   outline: 1px solid red;
 // }
 .wrap_custom {
   width: 100%;
-  height:100%;
+  height: 100%;
   padding-top: 150px;
   padding-bottom: 500px;
   background: url("../image/bg.png") no-repeat;
-  
+
   .title_decoration h2 {
     width: 100%;
     text-align: center;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
   }
 }
 
-.custom_type{
+.custom_type {
   width: 100%;
   height: 100%;
   padding-top: 150px;
   padding-bottom: 500px;
-  display: flex;
-  justify-content: space-around;
-  
-.type_position{
-  width: 33.333333%;
-  padding: 0px 15px;
+  // display: flex;
+  // justify-content: space-around;
   position: relative;
 
-.middle_position{
-  width: 95%;
-  position: absolute;
-  // bottom: -100;
-  top: 320px;
-  left: 5px;
-}
-.second_left_position{
-  width: 85%;
-  position: absolute;
-  top: 280px;
-  left: 10px;
-  z-index: 1 ;
+  // .type_position {
+  //   width: 33.333333%;
+  //   padding: 0px 15px;
+  //   position: relative;
 
-}
-  .third_left_position{
-    width: 75%;
+  .middle_position {
+    width: 20%;
+
     position: absolute;
-   top: 45px ;
-    left:200px;
-   
-    
+    // bottom: -100;
+    top: 55%;
+    left: 0;
+    right: 0%;
+    margin: auto;
+    z-index: 1;
+    // right: 2px;
   }
-  .second_right_position{
-    width: 85%;
+  .second_left_position {
+    width: 15%;
     position: absolute;
-    top:280px;
-    right:10px;
+    top: 45%;
+    left: 22%;
     z-index: 1;
   }
-  .third_right_position{
-    width: 75%;
+  .third_left_position {
+    width: 13.5%;
     position: absolute;
-    top:45px;
-    right: 160px;
+    top: 20%;
+    left: 32%;
+  }
+  .second_right_position {
+    width: 15%;
+    position: absolute;
+    top: 45%;
+    right: 21.5%;
+    z-index: 1;
+  }
+  .third_right_position {
+    width: 13.5%;
+    position: absolute;
+    top: 20%;
+    right: 30%;
   }
 }
 // 接著寫左右按鈕
 
+.choco_img {
+  width: 100%;
 }
-
-
-
