@@ -1336,53 +1336,50 @@ section {
   height: 100%;
   padding-top: 150px;
   padding-bottom: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.custom_type .type_position {
-  width: 33.333333%;
-  padding: 0px 15px;
   position: relative;
 }
 
-.custom_type .type_position .middle_position {
-  width: 95%;
+.custom_type .middle_position {
+  width: 20%;
   position: absolute;
-  top: 320px;
-  left: 5px;
-}
-
-.custom_type .type_position .second_left_position {
-  width: 85%;
-  position: absolute;
-  top: 280px;
-  left: 10px;
+  top: 55%;
+  left: 0;
+  right: 0%;
+  margin: auto;
   z-index: 1;
 }
 
-.custom_type .type_position .third_left_position {
-  width: 75%;
+.custom_type .second_left_position {
+  width: 15%;
   position: absolute;
-  top: 45px;
-  left: 200px;
-}
-
-.custom_type .type_position .second_right_position {
-  width: 85%;
-  position: absolute;
-  top: 280px;
-  right: 10px;
+  top: 45%;
+  left: 22%;
   z-index: 1;
 }
 
-.custom_type .type_position .third_right_position {
-  width: 75%;
+.custom_type .third_left_position {
+  width: 13.5%;
   position: absolute;
-  top: 45px;
-  right: 160px;
+  top: 20%;
+  left: 32%;
+}
+
+.custom_type .second_right_position {
+  width: 15%;
+  position: absolute;
+  top: 45%;
+  right: 21.5%;
+  z-index: 1;
+}
+
+.custom_type .third_right_position {
+  width: 13.5%;
+  position: absolute;
+  top: 20%;
+  right: 30%;
+}
+
+.choco_img {
+  width: 100%;
 }
 /*# sourceMappingURL=custom.css.map */
