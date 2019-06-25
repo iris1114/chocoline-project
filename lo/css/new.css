@@ -17,6 +17,7 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -71,6 +72,7 @@ table {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  color: #592F13;
 }
 
 img {
@@ -367,7 +369,7 @@ header {
   }
   .d_header .menubox li {
     font-size: 18px;
-    margin: 0 15px;
+    margin: 0 12px;
   }
   .d_header .menubox li a {
     color: #F0ECDD;
@@ -434,6 +436,7 @@ header {
 }
 
 .btn span {
+  color: #F0ECDD;
   display: inline-block;
   position: relative;
   -webkit-transition: 0.5s;
@@ -830,9 +833,13 @@ header {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #187f8f url(../image/common/select.png) no-repeat center;
-  border: 0px;
-  text-indent: 20px;
+  background: #F0ECDD url(../image/common/select.png) no-repeat center;
+  border-radius: 5px;
+  padding-left: 50px;
+}
+
+.select_dropdown option {
+  color: #187f8f;
 }
 
 @media all and (max-width: 767px) {
@@ -845,6 +852,7 @@ header {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
   position: relative;
+  margin: auto;
 }
 
 @media all and (max-width: 767px) {
