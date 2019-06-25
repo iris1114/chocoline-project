@@ -367,7 +367,7 @@ header {
   }
   .d_header .menubox li {
     font-size: 18px;
-    margin: 0 15px;
+    margin: 0 12px;
   }
   .d_header .menubox li a {
     color: #F0ECDD;
@@ -989,7 +989,7 @@ section {
   .stage_container .title_decoration {
     margin: auto;
   }
-  .stage_container .title_decoration p {
+  .stage_container .title_decoration h2 {
     position: absolute;
     top: 10%;
     right: 0;
@@ -1363,16 +1363,97 @@ section {
   }
   .stage_container .message_date {
     color: #9B9B9B;
+    text-align: center;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .stage_container .message_date {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .stage_container .message_date {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .stage_container .message_date {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .stage_container .orange_l {
+    position: absolute;
+    top: 73%;
+    right: 0;
+    bottom: auto;
+    left: 20%;
+    margin: auto;
+  }
+  .stage_container .cyan_l {
+    position: absolute;
+    top: 83%;
+    right: 0;
+    bottom: auto;
+    left: 20%;
+    margin: auto;
   }
   .active_container {
     position: relative;
   }
+  .active_container::after {
+    content: "";
+    display: block;
+    height: 0;
+    padding-bottom: 38.75%;
+  }
   .active_container .circle_bg {
     width: 140%;
     position: absolute;
-    top: -300px;
+    top: -47.66359%;
     left: -20%;
   }
+  .active_container .wrap {
+    height: 100%;
+    background: url("../image/contest/active_bg.png") 50% 100% no-repeat/contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  .active_container .wrap h2 {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .active_container .wrap h2 {
+    font-size: 32px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .active_container .wrap h2 {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .active_container .wrap h2 {
+    font-size: 48px;
+  }
+}
+
+@media all and (min-width: 992px) {
   .del {
     height: 1200px;
   }
