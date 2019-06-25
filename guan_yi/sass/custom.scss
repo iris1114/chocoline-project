@@ -54,11 +54,15 @@
 // * {
 //   outline: 1px solid red;
 // }
+body {
+  overflow-x: hidden;
+}
 .wrap_custom {
   width: 100%;
   height: 100%;
   padding-top: 150px;
   padding-bottom: 500px;
+  // position: relative;
   background: url("../image/bg.png") no-repeat;
 
   .title_decoration h2 {
@@ -97,7 +101,7 @@
   .second_left_position {
     width: 15%;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 22%;
     z-index: 1;
   }
@@ -110,7 +114,7 @@
   .second_right_position {
     width: 15%;
     position: absolute;
-    top: 45%;
+    top: 50%;
     right: 21.5%;
     z-index: 1;
   }
@@ -120,9 +124,27 @@
     top: 20%;
     right: 30%;
   }
+  .right_btn {
+    width: 2%;
+    position: absolute;
+    bottom: 5%;
+    right: 37%;
+  }
+  .left_btn {
+    width: 2%;
+    position: absolute;
+    bottom: 5%;
+    left: 37%;
+  }
 }
 // 接著寫左右按鈕
 
-.choco_img {
-  width: 100%;
+.choco_background {
+  position: relative;
+  .choco_img {
+    width: 140%;
+    position: absolute;
+    top: -47.66359%;
+    left: -20%;
+  }
 }

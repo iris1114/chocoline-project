@@ -1317,6 +1317,10 @@ section {
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .wrap_custom {
   width: 100%;
   height: 100%;
@@ -1352,7 +1356,7 @@ section {
 .custom_type .second_left_position {
   width: 15%;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 22%;
   z-index: 1;
 }
@@ -1367,7 +1371,7 @@ section {
 .custom_type .second_right_position {
   width: 15%;
   position: absolute;
-  top: 45%;
+  top: 50%;
   right: 21.5%;
   z-index: 1;
 }
@@ -1379,7 +1383,28 @@ section {
   right: 30%;
 }
 
-.choco_img {
-  width: 100%;
+.custom_type .right_btn {
+  width: 2%;
+  position: absolute;
+  bottom: 5%;
+  right: 37%;
+}
+
+.custom_type .left_btn {
+  width: 2%;
+  position: absolute;
+  bottom: 5%;
+  left: 37%;
+}
+
+.choco_background {
+  position: relative;
+}
+
+.choco_background .choco_img {
+  width: 140%;
+  position: absolute;
+  top: -47.66359%;
+  left: -20%;
 }
 /*# sourceMappingURL=custom.css.map */
