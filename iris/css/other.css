@@ -1,7 +1,9 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
@@ -59,7 +61,8 @@ table {
   border-spacing: 0; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #592F13; }
 
 img {
   width: 100%;
@@ -69,7 +72,7 @@ a {
   text-decoration: none; }
 
 .btn {
-  color: #FFFFFF;
+  color: #F0ECDD;
   text-align: center;
   padding: 10px;
   display: inline-block;
@@ -85,7 +88,7 @@ a {
       content: '\00bb';
       position: absolute;
       display: inline-block;
-      color: #fff;
+      color: #F0ECDD;
       transition: 0.5s;
       opacity: 0; }
   .btn:hover span::after {
@@ -284,7 +287,7 @@ a {
     border: 1px solid #1c99ae; }
     .pagination a:hover {
       background-color: #187f8f;
-      color: white;
+      color: #F0ECDD;
       border: 1px solid #187f8f; }
     .pagination a:first-child {
       border-top-left-radius: 5px;
@@ -295,18 +298,21 @@ a {
       border-bottom-right-radius: 5px; }
   .pagination .active {
     background-color: #187f8f;
-    color: white;
+    color: #F0ECDD;
     border: 1px solid #187f8f; }
 
 .select_dropdown {
   width: 200px;
   font-size: 16px;
   height: 36px;
-  background-color: #187f8f;
-  color: #fff;
+  color: #F0ECDD;
   appearance: none;
-  background: url(../../image/common/select.png) no-repeat center;
-  border: 0px; }
+  background: #187f8f url(../image/common/select.png) no-repeat center;
+  border: 0px;
+  text-indent: 20px; }
+  @media all and (max-width: 767px) {
+    .select_dropdown {
+      width: 100%；; } }
 
 .title_decoration {
   font-family: "Noto Sans TC", sans-serif;
@@ -314,40 +320,38 @@ a {
   position: relative; }
   @media all and (max-width: 767px) {
     .title_decoration {
-      font-size: 26px; } }
+      font-size: 24px; } }
   @media all and (min-width: 768px) {
     .title_decoration {
-      font-size: 32px; } }
+      font-size: 24px; } }
   @media all and (min-width: 992px) {
     .title_decoration {
-      font-size: 36px; } }
-  .title_decoration img {
-    display: block;
-    margin: auto; }
+      font-size: 28px; } }
   .title_decoration p {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 5%;
     left: 0;
     right: 0;
+    bottom: 0;
     text-align: center; }
   @media all and (max-width: 767px) {
-    .title_decoration img {
+    .title_decoration {
       width: 100%; } }
   @media all and (min-width: 768px) {
-    .title_decoration img {
-      width: 70%; } }
+    .title_decoration {
+      width: 589px; }
+      .title_decoration p {
+        top: 15%; } }
   @media all and (min-width: 992px) {
-    .title_decoration img {
-      width: 48%; }
-    .title_decoration p {
-      font-size: 40px;
-      top: 12%; } }
+    .title_decoration {
+      width: 589px; }
+      .title_decoration p {
+        top: 20%; } }
 
 #prev_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #FFFFFF;
+  color: #F0ECDD;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -367,7 +371,7 @@ a {
 #next_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #FFFFFF;
+  color: #F0ECDD;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -386,10 +390,11 @@ a {
 
 .wrap {
   width: 100%;
-  max-width: 1200px; }
+  max-width: 1200px;
+  margin: auto; }
 
 section {
-  margin-top: 50px; }
+  padding-top: 50px; }
 
 @media all and (max-width: 767px) {
   .col_1 {
