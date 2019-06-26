@@ -1345,7 +1345,7 @@ body {
 .custom_type .middle_position {
   width: 20%;
   position: absolute;
-  top: 55%;
+  top: 54.5%;
   left: 0;
   right: 0%;
   margin: auto;
@@ -1415,14 +1415,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 99;
+  padding-bottom: 50px;
 }
 
-* {
-  outline: 1px solid red;
-}
-
-.select_base {
+.choose_base .select_base {
   width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1433,40 +1429,152 @@ body {
           flex-flow: column wrap;
 }
 
-.select_base .second_step {
+.choose_base .select_base .second_step {
   width: 60%;
   margin: 0 auto;
-  background: url("../image/7.png") no-repeat;
+  background-image: url("../image/7.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 53%;
 }
 
-.select_base .second_step h3 {
+.choose_base .select_base .second_step h3 {
   font-size: 28px;
   text-align: center;
-  padding: 40% 20% 10%;
 }
 
-.select_base .second_step p {
+.choose_base .select_base .second_step p {
   font-size: 16px;
-  padding: 0 30% 30%;
   text-align: center;
 }
 
-.select_base .choco {
+.choose_base .select_base .base_choco {
+  width: 100%;
+}
+
+.choose_base .select_base .base_choco .choco {
   width: 100%;
   text-align: center;
   padding-top: 30px;
   position: relative;
 }
 
-.select_base .choco img {
+.choose_base .select_base .base_choco .choco img {
   width: 47%;
 }
 
-.select_base .choco figcaption {
+.choose_base .select_base .base_choco .choco figcaption {
   font-size: 16px;
   position: absolute;
-  bottom: 35%;
+  bottom: 37%;
   right: 0;
   left: 0;
+}
+
+.choose_base .select_type {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.choose_base .select_type .choco_overview {
+  width: 100%;
+  text-align: center;
+}
+
+.choose_base .select_type .choco_overview img {
+  width: 80%;
+}
+
+.choose_base .select_type .choco_type {
+  width: 100%;
+  text-align: center;
+}
+
+.choose_base .select_type .choco_type ul {
+  padding-top: 1%;
+}
+
+.choose_base .select_type .choco_type li {
+  display: inline-block;
+  padding: 2% 4%;
+}
+
+.choose_base .select_type .choco_type li img {
+  width: 100%;
+}
+
+.choose_base .select_type .choco_type li p {
+  padding-top: 20%;
+}
+
+.choose_base .select_type .info_bar {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.choose_base .select_type .info_bar img {
+  width: 60%;
+}
+
+.choose_base .select_type .info_bar p {
+  font-size: 16px;
+  position: absolute;
+  left: 5%;
+  right: 0;
+  top: 20%;
+}
+
+.choose_base .select_info {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.choose_base .select_info .cho_info {
+  width: 100%;
+  text-align: center;
+  background-image: url("../image/talk.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.choose_base .select_info .cho_info h4 {
+  font-size: 18px;
+  padding: 15% 0;
+}
+
+.choose_base .select_info .cho_info p {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 10%;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.choose_base .select_info .cho_info p:nth-child(3) {
+  border-bottom: 1px solid #9a999a;
+  padding-bottom: 20%;
+}
+
+.choose_base .select_info .cho_info p:nth-child(4) {
+  padding: 10% 0 20%;
+}
+
+.choose_base .select_info .total_price {
+  width: 100%;
 }
 /*# sourceMappingURL=custom.css.map */
