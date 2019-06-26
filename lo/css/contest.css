@@ -982,7 +982,6 @@ section {
 
 * {
   font-family: 'Noto Sans TC', sans-serif;
-  outline: 1px solid #f00;
 }
 
 .contest_body {
@@ -1479,6 +1478,40 @@ section {
   .active_container .title h2 {
     background: url("../image/contest/avtive_title.png") 50% 50% no-repeat/contain;
     padding-bottom: 1.5%;
+  }
+  .active_container .contain table {
+    width: 100%;
+  }
+  .active_container .contain th, .active_container .contain td {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .active_container .contain th, .active_container .contain td {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .active_container .contain th, .active_container .contain td {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .active_container .contain th, .active_container .contain td {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .active_container .contain td {
+    padding: 1% 5%;
+  }
+  .active_container .contain td span {
+    color: #ED1C24;
   }
   .del {
     height: 1200px;

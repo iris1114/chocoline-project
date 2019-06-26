@@ -2,7 +2,7 @@
 
 *{
     font-family:'Noto Sans TC', sans-serif;
-    outline: 1px solid #f00;
+    // outline: 1px solid #f00;
 }
 
 
@@ -262,16 +262,25 @@
         .title{
             text-align: center;
             position: relative;
-            // .active_title{
-            //     width: 80%;
-            //     margin: auto;
-            // }
             h2{
                 background: url("../image/contest/avtive_title.png") 50% 50% no-repeat / contain;
                 padding-bottom:1.5%;
             }
         }
-        .contain{}
+        .contain{
+            table{
+                width: 100%;
+            }
+            th,td{
+                @include font_m();
+            }
+            td{
+                padding: 1% 5%;
+                span{
+                    color: $color_red;
+                }
+            }
+        }
     }
     .del{
         height: 1200px;
