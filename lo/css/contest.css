@@ -982,6 +982,7 @@ section {
 
 * {
   font-family: 'Noto Sans TC', sans-serif;
+  outline: 1px solid #f00;
 }
 
 .contest_body {
@@ -1411,28 +1412,22 @@ section {
   }
   .active_container {
     position: relative;
-  }
-  .active_container::after {
-    content: "";
-    display: block;
-    height: 0;
-    padding-bottom: 38.75%;
+    width: 100%;
   }
   .active_container .circle_bg {
-    width: 140%;
+    width: 100%;
+    height: 150%;
+    background: url("../image/contest/circle_bg.png") no-repeat 50% 100%;
     position: absolute;
-    top: -47.66359%;
-    left: -20%;
-  }
-  .active_container .wrap {
-    height: 100%;
-    background: url("../image/contest/active_bg.png") 50% 100% no-repeat/contain;
-    position: absolute;
-    top: 0;
+    top: -33%;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
+  }
+  .active_container .wrap {
+    position: relative;
+    z-index: 1;
   }
   .active_container .wrap h2 {
     font-family: "Noto Sans TC", sans-serif;
@@ -1459,6 +1454,32 @@ section {
 }
 
 @media all and (min-width: 992px) {
+  .active_container .wrap::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: 62%;
+    background: url("../image/contest/active_bg.png") 50% 100% no-repeat/contain;
+  }
+  .active_container .rule_introduce {
+    width: 50%;
+    height: 63.1496%;
+    position: absolute;
+    top: 32%;
+    right: 0;
+    bottom: 0;
+    left: -3%;
+    margin: auto;
+  }
+  .active_container .title {
+    text-align: center;
+    position: relative;
+  }
+  .active_container .title h2 {
+    background: url("../image/contest/avtive_title.png") 50% 50% no-repeat/contain;
+    padding-bottom: 1.5%;
+  }
   .del {
     height: 1200px;
   }
