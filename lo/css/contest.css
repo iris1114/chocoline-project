@@ -224,7 +224,7 @@ header {
 }
 
 .m_header .logo {
-  width: 33%;
+  width: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,7 +276,7 @@ header {
 
 .m_header .menubox li {
   text-align: center;
-  padding: 7% 0;
+  padding: 30px 0;
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
@@ -337,8 +337,7 @@ header {
             align-items: flex-start;
   }
   .d_header .logo {
-    width: 10%;
-    min-width: 147px;
+    width: 185px;
   }
   .d_header .logo h1 {
     display: none;
@@ -377,13 +376,13 @@ header {
   }
 }
 
-@media all and (min-width: 992px) and (min-width: 1045px) {
+@media all and (min-width: 992px) and (min-width: 1070px) {
   .d_header .menubox li {
     margin: 0 20px;
   }
 }
 
-@media all and (min-width: 992px) and (min-width: 1200px) {
+@media all and (min-width: 992px) and (min-width: 1230px) {
   .d_header .menubox li {
     margin: 0 35px;
   }
@@ -986,13 +985,17 @@ section {
 
 .contest_body {
   background-color: #FFF5E3;
-  overflow-x: hidden;
 }
 
 @media all and (min-width: 992px) {
   .stage_container {
+    position: relative;
     padding-top: 150px;
     background: url("../image/contest/fitst_bg.png") no-repeat 0 0/100% 100%;
+  }
+  .stage_container .wrap {
+    position: relative;
+    z-index: 1;
   }
   .stage_container .title_decoration {
     margin: auto;
@@ -1010,16 +1013,10 @@ section {
     z-index: 1;
   }
   .stage_container .stage {
-    width: 60.706%;
-    height: 0;
-    padding-bottom: 58.333333%;
+    width: 728px;
+    height: 700px;
     position: relative;
     background: url("../image/contest/stage.png") no-repeat 0 100%/contain;
-  }
-  .stage_container .select_dropdown {
-    border-radius: 9px;
-    text-indent: 0px;
-    padding: 0 0 0 50px;
   }
   .stage_container .winner {
     position: absolute;
@@ -1232,7 +1229,7 @@ section {
     }
   }
   .stage_container .board {
-    width: 51.666666%;
+    width: 620px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -1290,13 +1287,13 @@ section {
     width: 14.8453%;
     height: 0;
     padding-bottom: 14.8453%;
-    border-radius: 9px;
+    border-radius: 15px;
     border: 2px solid #592F13;
     float: left;
     position: relative;
   }
   .stage_container .cus_photo img {
-    border-radius: 9px;
+    border-radius: 15px;
     position: absolute;
     top: 0;
     right: 0;
@@ -1409,6 +1406,146 @@ section {
     left: 20%;
     margin: auto;
   }
+  .stage_container .firstlc {
+    width: 217px;
+    position: absolute;
+    top: 19%;
+    right: auto;
+    bottom: auto;
+    left: 5%;
+    margin: auto;
+    -webkit-animation: cloudmove 20s infinite alternate linear;
+            animation: cloudmove 20s infinite alternate linear;
+  }
+  .stage_container .secondlc {
+    width: 151px;
+    position: absolute;
+    top: 22%;
+    right: auto;
+    bottom: auto;
+    left: 56%;
+    margin: auto;
+    -webkit-animation: cloudmove 20s infinite alternate linear;
+            animation: cloudmove 20s infinite alternate linear;
+  }
+  .stage_container .thirdlc {
+    width: 217px;
+    position: absolute;
+    top: 39%;
+    right: auto;
+    bottom: auto;
+    left: 74%;
+    margin: auto;
+    -webkit-animation: cloudmove 20s infinite alternate linear;
+            animation: cloudmove 20s infinite alternate linear;
+  }
+  .stage_container .fourthlc {
+    width: 158px;
+    position: absolute;
+    top: 17%;
+    right: auto;
+    bottom: auto;
+    left: 82%;
+    margin: auto;
+    -webkit-animation: cloudmove 20s infinite alternate linear;
+            animation: cloudmove 20s infinite alternate linear;
+  }
+  .stage_container .shinel {
+    width: 92px;
+    position: absolute;
+    top: 13%;
+    right: auto;
+    bottom: auto;
+    left: 30%;
+    margin: auto;
+    -webkit-animation: opacity 3s infinite alternate;
+            animation: opacity 3s infinite alternate;
+  }
+  .stage_container .shiner {
+    width: 46px;
+    position: absolute;
+    top: 33%;
+    right: auto;
+    bottom: auto;
+    left: 88%;
+    margin: auto;
+    -webkit-animation: opacity 3s infinite alternate;
+            animation: opacity 3s infinite alternate;
+  }
+  .stage_container .circle1, .stage_container .circle2, .stage_container .circle3 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffffff;
+    position: absolute;
+    top: 17%;
+    right: auto;
+    bottom: auto;
+    left: 5%;
+    margin: auto;
+  }
+  .stage_container .circle2 {
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    top: 23%;
+    right: auto;
+    bottom: auto;
+    left: 72%;
+    margin: auto;
+  }
+  .stage_container .circle3 {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 14%;
+    right: auto;
+    bottom: auto;
+    left: 80%;
+    margin: auto;
+  }
+  @-webkit-keyframes cloudmove {
+    0% {
+      -webkit-transform: translateX(-30%);
+              transform: translateX(-30%);
+    }
+    100% {
+      -webkit-transform: translateX(30%);
+              transform: translateX(30%);
+    }
+  }
+  @keyframes cloudmove {
+    0% {
+      -webkit-transform: translateX(-30%);
+              transform: translateX(-30%);
+    }
+    100% {
+      -webkit-transform: translateX(30%);
+              transform: translateX(30%);
+    }
+  }
+  @-webkit-keyframes opacity {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  @keyframes opacity {
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
   .active_container {
     position: relative;
     width: 100%;
@@ -1426,7 +1563,8 @@ section {
   }
   .active_container .wrap {
     position: relative;
-    z-index: 1;
+    height: 744px;
+    background: url("../image/contest/active_bg.png") 50% 100% no-repeat;
   }
   .active_container .wrap h2 {
     font-family: "Noto Sans TC", sans-serif;
@@ -1453,31 +1591,244 @@ section {
 }
 
 @media all and (min-width: 992px) {
-  .active_container .wrap::before {
+  .active_container .wrap::after {
     content: "";
-    width: 100%;
-    height: 0;
     display: block;
-    padding-bottom: 62%;
-    background: url("../image/contest/active_bg.png") 50% 100% no-repeat/contain;
-  }
-  .active_container .rule_introduce {
-    width: 50%;
-    height: 63.1496%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 32%;
+    top: 0;
     right: 0;
     bottom: 0;
-    left: -3%;
+    left: 0;
     margin: auto;
+    background: url("../image/contest/house.png") 50% 100% no-repeat;
+  }
+  .active_container .CHOCO {
+    width: 292px;
+  }
+  .active_container .bear {
+    position: absolute;
+    top: 40%;
+    right: 28%;
+    bottom: 0%;
+    left: 0%;
+    margin: auto;
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  .active_container .bear .bearhand {
+    position: absolute;
+    top: -57%;
+    right: 0%;
+    bottom: 0%;
+    left: -42%;
+    margin: auto;
+    width: 140px;
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+    -webkit-transform: rotate(-26deg);
+            transform: rotate(-26deg);
+    -webkit-animation: bearhand 1s infinite alternate;
+            animation: bearhand 1s infinite alternate;
+  }
+  .active_container .bear .eyeleft {
+    position: absolute;
+    top: -43%;
+    right: 0%;
+    bottom: 0%;
+    left: -12%;
+    margin: auto;
+    width: 25px;
+  }
+  .active_container .bear .blinkleft {
+    position: absolute;
+    top: -55%;
+    right: 0%;
+    bottom: 0%;
+    left: -7%;
+    margin: auto;
+    width: 50px;
+    -webkit-animation: bearblink 5s infinite;
+            animation: bearblink 5s infinite;
+  }
+  .active_container .bear .bearne {
+    position: relative;
+  }
+  .active_container .bearshow {
+    -webkit-transition: .5s;
+    transition: .5s;
+    position: absolute;
+    top: 40%;
+    right: 64%;
+    bottom: 0%;
+    left: 0%;
+    margin: auto;
+  }
+  @-webkit-keyframes bearhand {
+    0% {
+      -webkit-transform: rotate(-20deg);
+              transform: rotate(-20deg);
+    }
+    100% {
+      -webkit-transform: rotate(-30deg);
+              transform: rotate(-30deg);
+    }
+  }
+  @keyframes bearhand {
+    0% {
+      -webkit-transform: rotate(-20deg);
+              transform: rotate(-20deg);
+    }
+    100% {
+      -webkit-transform: rotate(-30deg);
+              transform: rotate(-30deg);
+    }
+  }
+  @-webkit-keyframes bearblink {
+    0% {
+      top: -55%;
+    }
+    45% {
+      top: -55%;
+    }
+    50% {
+      top: -45%;
+    }
+    55% {
+      top: -55%;
+    }
+    100% {
+      top: -55%;
+    }
+  }
+  @keyframes bearblink {
+    0% {
+      top: -55%;
+    }
+    45% {
+      top: -55%;
+    }
+    50% {
+      top: -45%;
+    }
+    55% {
+      top: -55%;
+    }
+    100% {
+      top: -55%;
+    }
+  }
+  .active_container .cake {
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    bottom: 0%;
+    left: 36%;
+    margin: auto;
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  .active_container .cake .eye {
+    position: absolute;
+    top: -36%;
+    right: 0%;
+    bottom: 0%;
+    left: 16%;
+    margin: auto;
+    width: 53px;
+  }
+  .active_container .cake .blink {
+    position: absolute;
+    top: -40%;
+    right: 0%;
+    bottom: 0%;
+    left: 17%;
+    margin: auto;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+  }
+  .active_container .cake .blink img {
+    position: absolute;
+    top: -145%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    margin: auto;
+    width: 150%;
+    -webkit-animation: cakeblink 6s infinite;
+            animation: cakeblink 6s infinite;
+  }
+  .active_container .cake .cakene {
+    position: relative;
+  }
+  .active_container .cakeshow {
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    bottom: 0%;
+    left: 58%;
+    margin: auto;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  @-webkit-keyframes cakeblink {
+    0% {
+      top: -145%;
+    }
+    45% {
+      top: -145%;
+    }
+    50% {
+      top: 7%;
+    }
+    55% {
+      top: -145%;
+    }
+    100% {
+      top: -145%;
+    }
+  }
+  @keyframes cakeblink {
+    0% {
+      top: -145%;
+    }
+    45% {
+      top: -145%;
+    }
+    50% {
+      top: 7%;
+    }
+    55% {
+      top: -145%;
+    }
+    100% {
+      top: -145%;
+    }
+  }
+  .active_container .rule_introduce {
+    width: 650px;
+    height: 470px;
+    position: absolute;
+    top: 23%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
   }
   .active_container .title {
     text-align: center;
-    position: relative;
   }
   .active_container .title h2 {
     background: url("../image/contest/avtive_title.png") 50% 50% no-repeat/contain;
     padding-bottom: 1.5%;
+  }
+  .active_container .contain {
+    padding: 8% 0 0 15%;
   }
   .active_container .contain table {
     width: 100%;
@@ -1508,13 +1859,264 @@ section {
 
 @media all and (min-width: 992px) {
   .active_container .contain td {
-    padding: 1% 5%;
+    padding: 1.5% 5%;
   }
   .active_container .contain td span {
     color: #ED1C24;
   }
-  .del {
-    height: 1200px;
+  .active_container .contain .prize th {
+    position: relative;
+  }
+  .active_container .contain .prize th::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+    width: 130%;
+    height: 2px;
+    background: #592F13;
+  }
+  .active_container .contain .prize td {
+    position: relative;
+  }
+  .active_container .contain .prize td::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 2px;
+    background: #592F13;
+  }
+  .active_container .contain a {
+    margin: 5% 0 0 22%;
+  }
+  .player_container {
+    padding-top: 150px;
+  }
+  .player_container .contain::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .player_container .contain .player {
+    width: 250px;
+    margin: 25px;
+    position: relative;
+    float: left;
+    -webkit-animation: playermove 10s infinite alternate linear;
+            animation: playermove 10s infinite alternate linear;
+  }
+  .player_container .contain .player:nth-child(5) {
+    margin: 25px 0 25px 150px;
+  }
+  .player_container .contain .player:nth-child(6) {
+    margin: 25px 75px;
+  }
+  .player_container .contain .player:nth-child(7) {
+    margin: 25px 150px 25px 0;
+  }
+  .player_container .contain .player:nth-child(odd) {
+    animation: playermove 10s infinite alternate-reverse linear;
+  }
+  @-webkit-keyframes playermove {
+    0% {
+      -webkit-transform: translateY(-25px);
+              transform: translateY(-25px);
+    }
+    100% {
+      -webkit-transform: translateY(25px);
+              transform: translateY(25px);
+    }
+  }
+  @keyframes playermove {
+    0% {
+      -webkit-transform: translateY(-25px);
+              transform: translateY(-25px);
+    }
+    100% {
+      -webkit-transform: translateY(25px);
+              transform: translateY(25px);
+    }
+  }
+  .player_container .contain .board {
+    width: 100%;
+    height: 150px;
+    top: 30px;
+    background: url("../image/contest/p_board.png") no-repeat 50% 0;
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .player_container .contain .like_icon {
+    width: 60px;
+    position: absolute;
+    top: -10%;
+    right: 4%;
+    bottom: auto;
+    left: auto;
+    margin: auto;
+    cursor: pointer;
+  }
+  .player_container .contain .like_icon figcaption {
+    position: absolute;
+    top: 5%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    margin: auto;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .player_container .contain .like_icon figcaption {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .player_container .contain .like_icon figcaption {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .player_container .contain .like_icon figcaption {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .player_container .contain .choconame {
+    width: 100%;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .player_container .contain .choconame {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .player_container .contain .choconame {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .player_container .contain .choconame {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .player_container .contain .votenum {
+    width: 100%;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .player_container .contain .votenum {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .player_container .contain .votenum {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .player_container .contain .votenum {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .player_container .contain .CHOCO img {
+    position: relative;
+    left: -22px;
+  }
+  .player_container .contain .CHOCO figcaption {
+    position: relative;
+    top: -20px;
+    text-align: center;
+  }
+  .player_container .contain .CHOCO figcaption p {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .player_container .contain .CHOCO figcaption p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .player_container .contain .CHOCO figcaption p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .player_container .contain .CHOCO figcaption p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .player_container .contain .ring {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 240px;
+    z-index: -1;
+  }
+  .player_container .page {
+    width: 100%;
+    text-align: center;
+  }
+  .player_container .pagination {
+    padding-top: 100px;
+  }
+  .player_container .pagination::after {
+    content: "";
+    display: block;
+    clear: both;
   }
 }
 /*# sourceMappingURL=contest.css.map */
