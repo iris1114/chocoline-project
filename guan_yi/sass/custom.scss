@@ -112,6 +112,7 @@ body {
     position: absolute;
     top: 20%;
     left: 32%;
+    z-index: 1;
   }
   .second_right_position {
     width: 15%;
@@ -125,6 +126,7 @@ body {
     position: absolute;
     top: 20%;
     right: 30%;
+    z-index: 1;
   }
   .right_btn {
     width: 2%;
@@ -141,7 +143,6 @@ body {
 }
 // ------第一屏End-------
 
-
 // ----巧克力背景 Start-------
 .choco_background {
   // position: relative;
@@ -153,62 +154,58 @@ body {
   }
 }
 
-
 // ----巧克力背景 End-------
 
-.choose_base{
+.choose_base {
   width: 100%;
   padding-top: 150px;
-  background-color:beige;
+  background-color: #fff4e2;
   display: flex;
   justify-content: center;
-
+  z-index: 99;
 }
 // ------------
 
-
-// * {
-//     outline: 1px solid red;
-//   }
-.select_base{
+* {
+  outline: 1px solid red;
+}
+.select_base {
   width: 30%;
   display: flex;
   flex-flow: column wrap;
-  z-index: 99;
- 
-  .second_step{
-    width:60%;
+  .second_step {
+    width: 60%;
     // height: 300px;
     margin: 0 auto;
-    background: url("../image/7.png") no-repeat ;
-    h3{
+    background: url("../image/7.png") no-repeat;
+    h3 {
       font-size: 28px;
       text-align: center;
-      padding: 40% 20% 10% ;
+      padding: 40% 20% 10%;
       // padding-top: 50%;
     }
-    p{
+    p {
       font-size: 16px;
       padding: 0 30% 30%;
-      text-align: center;  
+      text-align: center;
     }
   }
-  .choco{
+  .choco {
     width: 100%;
     text-align: center;
     padding-top: 30px;
     position: relative;
-    img{
+    img {
       width: 47%;
-      }
+    }
     figcaption {
       font-size: 16px;
       position: absolute;
       bottom: 35%;
       right: 0;
       left: 0;
-    }  
+    }
   }
 }
-
-
+.select_type {
+}
