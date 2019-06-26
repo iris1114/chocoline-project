@@ -54,11 +54,17 @@
 // * {
 //   outline: 1px solid red;
 // }
+body {
+  overflow-x: hidden;
+}
+
+// ------第一屏Start--------
 .wrap_custom {
   width: 100%;
   height: 100%;
   padding-top: 150px;
-  padding-bottom: 500px;
+  // padding-bottom: 50px;
+  // position: relative;
   background: url("../image/bg.png") no-repeat;
 
   .title_decoration h2 {
@@ -97,7 +103,7 @@
   .second_left_position {
     width: 15%;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 22%;
     z-index: 1;
   }
@@ -110,7 +116,7 @@
   .second_right_position {
     width: 15%;
     position: absolute;
-    top: 45%;
+    top: 50%;
     right: 21.5%;
     z-index: 1;
   }
@@ -120,9 +126,89 @@
     top: 20%;
     right: 30%;
   }
+  .right_btn {
+    width: 2%;
+    position: absolute;
+    bottom: 5%;
+    right: 37%;
+  }
+  .left_btn {
+    width: 2%;
+    position: absolute;
+    bottom: 5%;
+    left: 37%;
+  }
 }
-// 接著寫左右按鈕
+// ------第一屏End-------
 
-.choco_img {
-  width: 100%;
+
+// ----巧克力背景 Start-------
+.choco_background {
+  // position: relative;
+  .choco_img {
+    width: 140%;
+    position: absolute;
+    top: 55%;
+    left: -20%;
+  }
 }
+
+
+// ----巧克力背景 End-------
+
+.choose_base{
+  width: 100%;
+  padding-top: 150px;
+  background-color:beige;
+  display: flex;
+  justify-content: center;
+
+}
+// ------------
+
+
+// * {
+//     outline: 1px solid red;
+//   }
+.select_base{
+  width: 30%;
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 99;
+ 
+  .second_step{
+    width:60%;
+    // height: 300px;
+    margin: 0 auto;
+    background: url("../image/7.png") no-repeat ;
+    h3{
+      font-size: 28px;
+      text-align: center;
+      padding: 40% 20% 10% ;
+      // padding-top: 50%;
+    }
+    p{
+      font-size: 16px;
+      padding: 0 30% 30%;
+      text-align: center;  
+    }
+  }
+  .choco{
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+    position: relative;
+    img{
+      width: 47%;
+      }
+    figcaption {
+      font-size: 16px;
+      position: absolute;
+      bottom: 35%;
+      right: 0;
+      left: 0;
+    }  
+  }
+}
+
+
