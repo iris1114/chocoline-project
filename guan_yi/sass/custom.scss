@@ -56,6 +56,7 @@
 // }
 body {
   overflow-x: hidden;
+ 
 }
 
 // ------第一屏Start--------
@@ -63,6 +64,7 @@ body {
   width: 100%;
   height: 100%;
   padding-top: 150px;
+  position: relative;
   // padding-bottom: 50px;
   // position: relative;
   background: url("../image/bg.png") no-repeat;
@@ -72,8 +74,38 @@ body {
     text-align: center;
     padding-bottom: 50px;
   }
-}
 
+.playground{
+width: 100%;
+ 
+ img{
+  width: 40%;
+   position: absolute;
+   top:31%;
+   left: 11%;
+   z-index: 1;
+ }
+ 
+}
+.frist_step{
+  width: 23%;
+  // height: 300px;
+  margin: 0 auto;
+  background-image: url("../image/7.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 19%;
+  position: absolute;
+  top: 33%;
+  right: 13%;
+  transform: rotate(12deg);
+  text-align: center;
+  h3{
+    font-size: 28px;
+    padding-bottom: 5%;
+  }
+  
+}
 .custom_type {
   width: 100%;
   height: 100%;
@@ -111,7 +143,7 @@ body {
   .third_left_position {
     width: 13.5%;
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 32%;
     z-index: 1;
   }
@@ -125,7 +157,7 @@ body {
   .third_right_position {
     width: 13.5%;
     position: absolute;
-    top: 20%;
+    top: 30%;
     right: 30%;
     z-index: 1;
   }
@@ -134,17 +166,21 @@ body {
     position: absolute;
     bottom: 5%;
     right: 37%;
+    z-index: 1;
   }
   .left_btn {
     width: 2%;
     position: absolute;
     bottom: 5%;
     left: 37%;
+    z-index: 1;
   }
 }
-// ------第一屏End-------
+}
+// ------ 第一屏 End -------
 
-// ----巧克力背景 Start-------
+// ---- 巧克力背景 Start -------
+
 .choco_background {
   // position: relative;
   .choco_img {
@@ -155,9 +191,9 @@ body {
   }
 }
 
-// ----巧克力背景 End-------
+// ---- 巧克力背景 End -------
 
-// -----第二屏-----
+// ----- 第二屏 Start -----
 
 // * {
 //   outline: 1px solid red;
@@ -174,7 +210,7 @@ body {
   padding-top: 150px;
   background-color: #fff4e2;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   padding-bottom: 50px;
   // -----選擇巧克力基底-----
@@ -193,7 +229,7 @@ body {
       background-size: cover;
       background-repeat: no-repeat;
       padding-top: 53%;
-      position: relative;
+      
       z-index: 1;
 
       h3 {
@@ -273,12 +309,16 @@ body {
       margin: 0 auto;
       // position: relative;
       text-align: center;
-      border: 1px solid #f9aab0; // padding-bottom: 20px;
+      background-color: white;
+      border: 2px solid #f9aab0;
+      box-shadow: 2px 2px 3px 4px #f9aab0;
+      // padding-bottom: 20px;
       // img {
       //   width: 60%;
       // }
       p {
         font-size: 16px;
+        padding-top:6%;
         // position: absolute;
         // left: 5%;
         // right: 0;
@@ -298,7 +338,7 @@ body {
       width: 100%;
       // height: 636px;
       text-align: center;
-      padding-top: 8%;
+      padding-top: 13%;
       background-image: url("../image/talk.png");
       background-size: cover;
       background-repeat: no-repeat;
@@ -325,6 +365,38 @@ body {
     }
     .total_price {
       width: 100%;
+     padding-top: 10%;
+    text-align: center;
+    position: relative;
+     img{
+       width: 70%;
+     }
+     h4{
+       font-size: 28px;
+       position: absolute;
+       top:25%;
+       left: 0;
+       right: 0;
+     }
+     p{
+       font-size: 28px;
+       position: absolute;
+       top: 65%;
+       left: 0;
+       right: 0;
+     }
     }
   }
 }
+
+// ----- 第二屏 End -----
+
+
+// ----- 第三屏 Start -----
+
+// * {
+//   outline: 1px solid red;
+// }
+
+
+
