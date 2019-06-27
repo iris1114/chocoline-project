@@ -1344,6 +1344,7 @@ body {
 
 .custom_type .middle_position {
   width: 20%;
+  padding-top: 30px;
   position: absolute;
   top: 54.5%;
   left: 0;
@@ -1357,7 +1358,7 @@ body {
   position: absolute;
   top: 50%;
   left: 22%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .custom_type .third_left_position {
@@ -1373,7 +1374,7 @@ body {
   position: absolute;
   top: 50%;
   right: 21.5%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .custom_type .third_right_position {
@@ -1405,6 +1406,10 @@ body {
   left: -20%;
 }
 
+.base {
+  margin: 0 auto;
+}
+
 .choose_base {
   width: 100%;
   padding-top: 150px;
@@ -1415,11 +1420,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: auto;
   padding-bottom: 50px;
 }
 
 .choose_base .select_base {
-  max-width: 1200px;
   width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1437,6 +1442,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 53%;
+  position: relative;
+  z-index: 1;
 }
 
 .choose_base .select_base .second_step h3 {
@@ -1486,6 +1493,8 @@ body {
 .choose_base .select_type .choco_overview {
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .choose_base .select_type .choco_overview img {
@@ -1515,22 +1524,16 @@ body {
 }
 
 .choose_base .select_type .info_bar {
-  width: 90%;
+  width: 75%;
+  height: 10%;
+  border-radius: 10px;
   margin: 0 auto;
-  position: relative;
   text-align: center;
-}
-
-.choose_base .select_type .info_bar img {
-  width: 60%;
+  border: 1px solid #f9aab0;
 }
 
 .choose_base .select_type .info_bar p {
   font-size: 16px;
-  position: absolute;
-  left: 5%;
-  right: 0;
-  top: 20%;
 }
 
 .choose_base .select_info {
@@ -1547,9 +1550,12 @@ body {
 .choose_base .select_info .cho_info {
   width: 100%;
   text-align: center;
+  padding-top: 8%;
   background-image: url("../image/talk.png");
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
 }
 
 .choose_base .select_info .cho_info h4 {
@@ -1572,7 +1578,7 @@ body {
 }
 
 .choose_base .select_info .cho_info p:nth-child(4) {
-  padding: 10% 0 20%;
+  padding: 10% 0 5%;
 }
 
 .choose_base .select_info .total_price {
