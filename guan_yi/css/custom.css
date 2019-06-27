@@ -1419,6 +1419,7 @@ body {
 }
 
 .choose_base .select_base {
+  max-width: 1200px;
   width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;

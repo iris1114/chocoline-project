@@ -163,6 +163,7 @@ body {
 // }
 .choose_base {
   width: 100%;
+
   padding-top: 150px;
   background-color: #fff4e2;
   display: flex;
@@ -171,6 +172,7 @@ body {
   // -----選擇巧克力基底-----
 
   .select_base {
+    max-width: 1200px;
     width: 30%;
     display: flex;
     flex-flow: column wrap;
