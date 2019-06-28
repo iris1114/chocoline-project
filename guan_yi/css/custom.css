@@ -1317,10 +1317,6 @@ section {
   }
 }
 
-* {
-  outline: 1px solid red;
-}
-
 body {
   overflow-x: hidden;
 }
@@ -1328,13 +1324,15 @@ body {
 .custom {
   width: 100%;
   background: url("../image/bg.png") no-repeat;
-  margin: auto;
+  margin: 0 auto;
   padding-top: 150px;
   position: relative;
 }
 
 .custom .wrap_custom {
   max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .custom .wrap_custom .title_decoration h2 {
@@ -1348,31 +1346,48 @@ body {
 }
 
 .custom .wrap_custom .playground img {
-  width: 40%;
+  width: 50%;
   position: absolute;
-  top: 31%;
-  left: 11%;
+  top: 25%;
+  left: 3%;
   z-index: 1;
 }
 
 .custom .wrap_custom .frist_step {
-  width: 23%;
+  width: 25%;
   margin: 0 auto;
   background-image: url("../image/7.png");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 19%;
   position: absolute;
-  top: 33%;
+  top: 25%;
   right: 13%;
   -webkit-transform: rotate(12deg);
           transform: rotate(12deg);
   text-align: center;
 }
 
+.custom .wrap_custom .frist_stepInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  text-align: center;
+  padding: 37% 15%;
+}
+
 .custom .wrap_custom .frist_step h3 {
   font-size: 28px;
-  padding-bottom: 5%;
+  text-align: center;
+  padding-bottom: 7%;
+}
+
+.custom .wrap_custom .frist_step p {
+  font-size: 16px;
+  text-align: center;
 }
 
 .custom .wrap_custom .custom_type {
@@ -1384,30 +1399,26 @@ body {
 }
 
 .custom .wrap_custom .custom_type .shapePos0 {
-  width: 100%;
+  width: 20%;
   position: absolute;
-  top: 20%;
-  left: 32%;
-  -webkit-transition: 1s;
-  transition: 1s;
+  top: 45%;
+  left: 28%;
+  -webkit-transition: 2s;
+  transition: 2s;
   -webkit-transform: scale(0.675);
           transform: scale(0.675);
-}
-
-.custom .wrap_custom .custom_type .shapePos0 img {
-  width: 13.5%;
-  width: 20%;
+  z-index: 1;
 }
 
 .custom .wrap_custom .custom_type .shapePos1 {
   width: 20%;
   position: absolute;
-  top: 50%;
-  left: 22%;
+  top: 65%;
+  left: 18%;
   /*left:386px;*/
   z-index: 2;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
 }
@@ -1415,23 +1426,23 @@ body {
 .custom .wrap_custom .custom_type .shapePos2 {
   width: 20%;
   position: absolute;
-  top: 55%;
+  top: 73%;
   left: 40%;
   /*left:175px;*/
   z-index: 3;
-  -webkit-transition: left 1s;
-  transition: left 1s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 
 .custom .wrap_custom .custom_type .shapePos3 {
   width: 20%;
   position: absolute;
-  top: 50%;
-  left: 63%;
+  top: 65%;
+  left: 62%;
   /*left:900px;*/
   z-index: 2;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
 }
@@ -1439,33 +1450,36 @@ body {
 .custom .wrap_custom .custom_type .shapePos4 {
   width: 20%;
   position: absolute;
-  top: 20%;
-  left: 58%;
+  top: 45%;
+  left: 57%;
   /*left:785px;*/
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
   -webkit-transform: scale(0.675);
           transform: scale(0.675);
+  z-index: 1;
 }
 
 .custom .wrap_custom .custom_type .right_btn {
-  width: 2%;
+  width: 3%;
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   left: 60.5%;
+  z-index: 4;
 }
 
 .custom .wrap_custom .custom_type .left_btn {
-  width: 2%;
+  width: 3%;
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   left: 37%;
+  z-index: 4;
 }
 
 .choco_background .choco_img {
   width: 140%;
   position: absolute;
-  top: 55%;
+  top: 57%;
   left: -20%;
 }
 
