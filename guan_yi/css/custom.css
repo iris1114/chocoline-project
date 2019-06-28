@@ -1325,6 +1325,7 @@ body {
   width: 100%;
   height: 100%;
   padding-top: 150px;
+  position: relative;
   background: url("../image/bg.png") no-repeat;
 }
 
@@ -1334,7 +1335,39 @@ body {
   padding-bottom: 50px;
 }
 
-.custom_type {
+.wrap_custom .playground {
+  width: 100%;
+}
+
+.wrap_custom .playground img {
+  width: 40%;
+  position: absolute;
+  top: 31%;
+  left: 11%;
+  z-index: 1;
+}
+
+.wrap_custom .frist_step {
+  width: 23%;
+  margin: 0 auto;
+  background-image: url("../image/7.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 19%;
+  position: absolute;
+  top: 33%;
+  right: 13%;
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+  text-align: center;
+}
+
+.wrap_custom .frist_step h3 {
+  font-size: 28px;
+  padding-bottom: 5%;
+}
+
+.wrap_custom .custom_type {
   width: 100%;
   height: 100%;
   padding-top: 150px;
@@ -1342,8 +1375,9 @@ body {
   position: relative;
 }
 
-.custom_type .middle_position {
+.wrap_custom .custom_type .middle_position {
   width: 20%;
+  padding-top: 30px;
   position: absolute;
   top: 54.5%;
   left: 0;
@@ -1352,50 +1386,52 @@ body {
   z-index: 1;
 }
 
-.custom_type .second_left_position {
+.wrap_custom .custom_type .second_left_position {
   width: 15%;
   position: absolute;
   top: 50%;
   left: 22%;
-  z-index: 1;
+  z-index: 2;
 }
 
-.custom_type .third_left_position {
+.wrap_custom .custom_type .third_left_position {
   width: 13.5%;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 32%;
   z-index: 1;
 }
 
-.custom_type .second_right_position {
+.wrap_custom .custom_type .second_right_position {
   width: 15%;
   position: absolute;
   top: 50%;
   right: 21.5%;
-  z-index: 1;
+  z-index: 2;
 }
 
-.custom_type .third_right_position {
+.wrap_custom .custom_type .third_right_position {
   width: 13.5%;
   position: absolute;
-  top: 20%;
+  top: 30%;
   right: 30%;
   z-index: 1;
 }
 
-.custom_type .right_btn {
+.wrap_custom .custom_type .right_btn {
   width: 2%;
   position: absolute;
   bottom: 5%;
   right: 37%;
+  z-index: 1;
 }
 
-.custom_type .left_btn {
+.wrap_custom .custom_type .left_btn {
   width: 2%;
   position: absolute;
   bottom: 5%;
   left: 37%;
+  z-index: 1;
 }
 
 .choco_background .choco_img {
@@ -1405,6 +1441,10 @@ body {
   left: -20%;
 }
 
+.base {
+  margin: 0 auto;
+}
+
 .choose_base {
   width: 100%;
   padding-top: 150px;
@@ -1412,9 +1452,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
   padding-bottom: 50px;
 }
 
@@ -1432,10 +1473,25 @@ body {
 .choose_base .select_base .second_step {
   width: 60%;
   margin: 0 auto;
+  background-color: #ffa;
   background-image: url("../image/7.png");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 53%;
+  padding: 0% 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.choose_base .select_base .second_stepInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  text-align: center;
+  padding: 49% 0%;
 }
 
 .choose_base .select_base .second_step h3 {
@@ -1485,6 +1541,8 @@ body {
 .choose_base .select_type .choco_overview {
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .choose_base .select_type .choco_overview img {
@@ -1514,22 +1572,20 @@ body {
 }
 
 .choose_base .select_type .info_bar {
-  width: 90%;
+  width: 75%;
+  height: 10%;
+  border-radius: 10px;
   margin: 0 auto;
-  position: relative;
   text-align: center;
-}
-
-.choose_base .select_type .info_bar img {
-  width: 60%;
+  background-color: white;
+  border: 2px solid #f9aab0;
+  -webkit-box-shadow: 2px 2px 3px 4px #f9aab0;
+          box-shadow: 2px 2px 3px 4px #f9aab0;
 }
 
 .choose_base .select_type .info_bar p {
   font-size: 16px;
-  position: absolute;
-  left: 5%;
-  right: 0;
-  top: 20%;
+  padding-top: 6%;
 }
 
 .choose_base .select_info {
@@ -1546,9 +1602,12 @@ body {
 .choose_base .select_info .cho_info {
   width: 100%;
   text-align: center;
+  padding-top: 13%;
   background-image: url("../image/talk.png");
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
 }
 
 .choose_base .select_info .cho_info h4 {
@@ -1571,10 +1630,33 @@ body {
 }
 
 .choose_base .select_info .cho_info p:nth-child(4) {
-  padding: 10% 0 20%;
+  padding: 10% 0 5%;
 }
 
 .choose_base .select_info .total_price {
   width: 100%;
+  padding-top: 10%;
+  text-align: center;
+  position: relative;
+}
+
+.choose_base .select_info .total_price img {
+  width: 70%;
+}
+
+.choose_base .select_info .total_price h4 {
+  font-size: 28px;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+}
+
+.choose_base .select_info .total_price p {
+  font-size: 28px;
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
 }
 /*# sourceMappingURL=custom.css.map */

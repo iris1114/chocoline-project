@@ -293,6 +293,7 @@ header {
   border-radius: 15px;
   box-shadow: 0 5px #ccc; }
   .btn span {
+    color: #F0ECDD;
     display: inline-block;
     position: relative;
     transition: 0.5s; }
@@ -519,9 +520,11 @@ header {
   height: 36px;
   color: #F0ECDD;
   appearance: none;
-  background: #187f8f url(../image/common/select.png) no-repeat center;
-  border: 0px;
-  text-indent: 20px; }
+  background: #F0ECDD url(../image/common/select.png) no-repeat center;
+  border-radius: 5px;
+  padding-left: 50px; }
+  .select_dropdown option {
+    color: #187f8f; }
   @media all and (max-width: 767px) {
     .select_dropdown {
       width: 100%；; } }
@@ -529,7 +532,8 @@ header {
 .title_decoration {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
-  position: relative; }
+  position: relative;
+  margin: auto; }
   @media all and (max-width: 767px) {
     .title_decoration {
       font-size: 24px; } }
@@ -539,7 +543,7 @@ header {
   @media all and (min-width: 992px) {
     .title_decoration {
       font-size: 28px; } }
-  .title_decoration p {
+  .title_decoration h2 {
     position: absolute;
     top: 5%;
     left: 0;
@@ -552,12 +556,12 @@ header {
   @media all and (min-width: 768px) {
     .title_decoration {
       width: 589px; }
-      .title_decoration p {
+      .title_decoration h2 {
         top: 15%; } }
   @media all and (min-width: 992px) {
     .title_decoration {
       width: 589px; }
-      .title_decoration p {
+      .title_decoration h2 {
         top: 20%; } }
 
 #prev_btn {

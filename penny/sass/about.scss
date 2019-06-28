@@ -4,8 +4,106 @@
 @import "layout/all";
 @import "modules/all";
 
-
-
-h1{
-    font-size: 50px;
+*{
+    margin: 0;
+    padding: 0;
+    outline: 1px solid #f00;
 }
+body{
+    overflow-x: hidden;
+}
+
+.container
+{
+    .aboutus{
+        // width: 1920px;
+        height: 1080px;
+        background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
+        margin: 0 auto;
+        text-align: center;
+
+        .aboutus_biglogo{
+            width: 600px;
+            margin: 0 auto;
+            padding-top: 90px;
+            
+            .biglogo1{
+                width: 590px;
+                animation: move 3s 0s 1 both;
+                transform: translateX(-590px);
+            }
+            .biglogo2{
+                width: 310px;
+                margin-top: -60px;
+                // animation: rrr 3s -1.5s infinite alternate-reverse;
+                transform: translateX(1920px);
+            }
+            // @keyframes move {
+            //     0% {
+            //       right: -300px;
+            //     }
+            //     100% {
+            //       right: 0px;
+            //     }
+            // }
+            // @keyframes rrr {
+            //     0% {
+            //       transform: rotate(-7deg);
+            //     }
+            //     100% {
+            //       transform: rotate(7deg);
+            //     }
+            // }
+        }
+        .aboutus_text{
+            padding-top: 60px;
+            p{
+                @include font_m(); 
+                line-height: 36px;
+                font-weight: 600;
+            }
+        }
+    }
+    .touringcar{
+        // width: 100%;
+        height: 1080px;
+        background: url("../image/aboutus/aboutus_bg_02.png") no-repeat 0 0;
+        
+        .aboutus_container{
+            width: 1200px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+            .aboutus_map{
+                width: 600px;
+
+            }
+            .aboutus_carsort{
+
+            }
+        }
+        .aboutus_car{
+            width: 1920px;
+            height: 600px;
+            margin-top: -300px;
+            position: relative;
+            z-index: 1;
+            .car{
+                position: absolute;
+                right: -178px;
+                bottom: 65px;
+                img{
+                    width: 178px;
+                
+                }
+            }
+        }
+    }
+    .shopinfo{
+        height: 1080px;
+        background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 50% 0;
+        margin: 0 auto;
+    }
+}
+
+
