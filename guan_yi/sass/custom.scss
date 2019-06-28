@@ -59,118 +59,123 @@ body {
 }
 
 // ------第一屏Start--------
-.wrap_custom {
+.custom {
   width: 100%;
-  height: 100%;
+  background: url("../image/bg.png") no-repeat;
+  margin: auto;
   padding-top: 150px;
   position: relative;
-  // padding-bottom: 50px;
-  // position: relative;
-  background: url("../image/bg.png") no-repeat;
+  .wrap_custom {
+    max-width: 1200px;
 
-  .title_decoration h2 {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 50px;
-  }
+    // padding-bottom: 50px;
+    // position: relative;
 
-  .playground {
-    width: 100%;
+    .title_decoration h2 {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 50px;
+    }
 
-    img {
-      width: 40%;
-      position: absolute;
-      top: 31%;
-      left: 11%;
-      z-index: 1;
-    }
-  }
-  .frist_step {
-    width: 23%;
-    // height: 300px;
-    margin: 0 auto;
-    background-image: url("../image/7.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 19%;
-    position: absolute;
-    top: 33%;
-    right: 13%;
-    transform: rotate(12deg);
-    text-align: center;
-    h3 {
-      font-size: 28px;
-      padding-bottom: 5%;
-    }
-  }
-  .custom_type {
-    width: 100%;
-    height: 100%;
-    padding-top: 150px;
-    padding-bottom: 500px;
-    // display: flex;
-    // justify-content: space-around;
-    position: relative;
+    .playground {
+      width: 100%;
 
-    // .type_position {
-    //   width: 33.333333%;
-    //   padding: 0px 15px;
-    //   position: relative;
+      img {
+        width: 40%;
+        position: absolute;
+        top: 31%;
+        left: 11%;
+        z-index: 1;
+      }
+    }
+    .frist_step {
+      width: 23%;
+      // height: 300px;
+      margin: 0 auto;
+      background-image: url("../image/7.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-top: 19%;
+      position: absolute;
+      top: 33%;
+      right: 13%;
+      transform: rotate(12deg);
+      text-align: center;
+      h3 {
+        font-size: 28px;
+        padding-bottom: 5%;
+      }
+    }
+    .custom_type {
+      width: 100%;
+      height: 100%;
+      padding-top: 150px;
+      padding-bottom: 500px;
+      // display: flex;
+      // justify-content: space-around;
+      position: relative;
 
-    .middle_position {
-      width: 20%;
-      padding-top: 30px;
+      // .type_position {
+      //   width: 33.333333%;
+      //   padding: 0px 15px;
+      //   position: relative;
 
-      position: absolute;
-      // bottom: -100;
-      top: 54.5%;
-      left: 0;
-      right: 0%;
-      margin: auto;
-      z-index: 1;
-      // right: 2px;
-    }
-    .second_left_position {
-      width: 15%;
-      position: absolute;
-      top: 50%;
-      left: 22%;
-      z-index: 2;
-    }
-    .third_left_position {
-      width: 13.5%;
-      position: absolute;
-      top: 30%;
-      left: 32%;
-      z-index: 1;
-    }
-    .second_right_position {
-      width: 15%;
-      position: absolute;
-      top: 50%;
-      right: 21.5%;
-      z-index: 2;
-    }
-    .third_right_position {
-      width: 13.5%;
-      position: absolute;
-      top: 30%;
-      right: 30%;
-      z-index: 1;
-    }
-    .right_btn {
-      width: 2%;
-      position: absolute;
-      bottom: 5%;
-      right: 37%;
-      z-index: 1;
-    }
-    .left_btn {
-      width: 2%;
-      position: absolute;
-      bottom: 5%;
-      left: 37%;
-      z-index: 1;
+      .middle_position {
+        width: 327px;
+
+        padding-top: 30px;
+
+        position: absolute;
+        // bottom: -100;
+        top: 54.5%;
+        left: 0;
+        right: 0%;
+        margin: auto;
+        z-index: 1;
+        // right: 2px;
+      }
+      .second_left_position {
+        width: 15%;
+        position: absolute;
+        top: 50%;
+        left: 22%;
+        z-index: 2;
+      }
+      .third_left_position {
+        width: 13.5%;
+        position: absolute;
+        top: 30%;
+        left: 32%;
+        z-index: 1;
+      }
+      .second_right_position {
+        width: 15%;
+        position: absolute;
+        top: 50%;
+        right: 21.5%;
+        z-index: 2;
+      }
+      .third_right_position {
+        width: 13.5%;
+        position: absolute;
+        top: 30%;
+        right: 30%;
+        z-index: 1;
+      }
+      .right_btn {
+        width: 2%;
+        position: absolute;
+        bottom: 5%;
+        right: 37%;
+        z-index: 1;
+      }
+      .left_btn {
+        width: 2%;
+        position: absolute;
+        bottom: 5%;
+        left: 37%;
+        z-index: 1;
+      }
     }
   }
 }
@@ -196,16 +201,18 @@ body {
 //   outline: 1px solid red;
 // }
 .base {
-  // width: 100%;
+  width: 100%;
   // padding-top: 150px;
+
+  background-color: #fff4e2;
   // max-width: 1200px;
   margin: 0 auto;
 }
 .choose_base {
-  width: 100%;
-  // max-width: 1200px;
+  // width: 100%;
+  max-width: 1200px;
   padding-top: 150px;
-  background-color: #fff4e2;
+
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -219,10 +226,10 @@ body {
     flex-flow: column wrap;
 
     .second_step {
-      width: 60%;
+      width: 80%;
       // height: 300px;
       margin: 0 auto;
-      background-color: #ffa;
+      // background-color: #ffa;
       // display: flex;
       // flex-flow: column nowrap;
       // align-items: center;
@@ -230,7 +237,7 @@ body {
       background-image: url("../image/7.png");
       background-size: cover;
       background-repeat: no-repeat;
-      padding: 0% 5%;
+      padding: 0% 8%;
       position: relative;
       z-index: 1;
       &Info {
@@ -296,14 +303,21 @@ body {
     .choco_type {
       width: 100%;
       text-align: center;
+
       ul {
-        padding-top: 1%;
+        padding: 2% 0;
       }
       li {
         display: inline-block;
-        padding: 2% 4%;
+        padding: 2% 2%;
+        // border: 10px solid #ef9021;
+        background-color: #ef9021;
+        border-radius: 100px;
+        box-sizing: border-box;
         img {
-          width: 100%;
+          width: 75%;
+          background-color: #fff5e3;
+          border-radius: 100px;
         }
         p {
           padding-top: 20%;
@@ -346,7 +360,7 @@ body {
     flex-flow: column wrap;
 
     .cho_info {
-      width: 100%;
+      width: 70%;
       // height: 636px;
       text-align: center;
       padding-top: 13%;
