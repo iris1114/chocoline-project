@@ -735,6 +735,36 @@ body {
     .index_custom_container .wrap .title_decoration h2 {
       position: absolute;
       top: 8%; }
+    .index_custom_container .wrap .custom_island {
+      width: 30%;
+      position: absolute;
+      left: -10%;
+      top: 10%; }
+      .index_custom_container .wrap .custom_island .island {
+        width: 600px; }
+      .index_custom_container .wrap .custom_island .roles {
+        width: 430px;
+        position: absolute;
+        top: 25%;
+        left: 20%; }
+      .index_custom_container .wrap .custom_island .custom_text {
+        width: 200px;
+        text-align: center;
+        position: absolute;
+        top: 18%;
+        left: 50%; }
+      .index_custom_container .wrap .custom_island p:first-child {
+        font-family: "Noto Sans TC", sans-serif;
+        line-height: normal; }
+        @media all and (max-width: 767px) {
+          .index_custom_container .wrap .custom_island p:first-child {
+            font-size: 24px; } }
+        @media all and (min-width: 768px) {
+          .index_custom_container .wrap .custom_island p:first-child {
+            font-size: 24px; } }
+        @media all and (min-width: 992px) {
+          .index_custom_container .wrap .custom_island p:first-child {
+            font-size: 28px; } }
     .index_custom_container .wrap .custom_type {
       width: 100%;
       height: 100%;
@@ -1300,7 +1330,7 @@ body {
   .map_container .wrap .connect {
     width: 100%;
     padding-top: 400px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -1315,7 +1345,7 @@ body {
   .map_container .wrap p {
     width: 100%;
     font-size: 12px;
-    padding: 5px;
+    padding-bottom: 50px;
     text-align: center;
     color: #F0ECDD;
     z-index: 4; }
