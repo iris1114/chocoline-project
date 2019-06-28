@@ -17,7 +17,23 @@ body{
     background-color: #FFF5E3;
 }
 
+@include rwd(mobile){
+     
+}
 
+@include rwd(tablet){
+    .river_last{
+        width: 165%;
+        position:absolute;
+        top:380%;
+        left:-25% ;
+        z-index: -3;
+    }
+
+    .map{
+        z-index:1;
+    }
+}
 
 .index_container{
     background: url(../image/index/hero/hero-bg.jpg) no-repeat 0 0/100%;    
@@ -59,6 +75,7 @@ body{
     .wrap{
         position: relative;
         z-index: 2;
+
 
         .choco_slide{
             width:1200px;
@@ -144,10 +161,10 @@ body{
         }
 
         .river_last{
-            width: 180%;
+            width: 165%;
             position:absolute;
-            top:400%;
-            left:-40% ;
+            top:380%;
+            left:-25% ;
             z-index: -3;
         }
 
@@ -617,14 +634,25 @@ body{
 
 
  .map_container{
-    position: relative;
 
     .wrap{
+        position: relative;
+        z-index:3;
+
+
 
         .map{
-            width: 550px;
+            width: 500px;
             margin: auto;
             position: relative;
+
+            p{
+                @include font_l();
+                position: absolute;
+                top: 15%;
+                left: -25%;
+                color:$color_brown;
+            }
 
             .taipei{
                 position: absolute;
@@ -678,33 +706,70 @@ body{
                 left: 39%;
             }
             
+            
+        
+        }
+
+        .map_bg{
+            position: absolute;
+            width: 180%;
+            top:20%;
+            left: -40%;
+            // z-index: 2;
+        }
+
+        .connect{
+            width: 100%;
+            padding-top: 400px;
+            padding-bottom: 50px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 4;
+            figure{
+                width: 100%;
+                max-width: 40px;
+                margin: 0 10px;
+                a{
+                    display: block;
+                }
             }
         }
-        
+        p{
+            width: 100%;
+            font-size: 12px;
+            //字體大小
+            padding: 5px;
+            text-align: center;
+            color: $color_milk;
+            z-index: 4;
 
-    .map_bg{
-        position: relative;
-        width: 118%;
-        top: 100%;
-        left: -12%;
+        }
     }
-
-
-
  }
 
 
 
+//  .aboutus_car{
+//     position: relative;
+//     top: -100%;
+//     z-index: 1;
+    .car{
+        position: absolute;
+        right: -178px;
+        bottom: 40px;
+
+        img{
+            width: 178px;
+        
+        }
+    }
+//  }
 
 
 
 
-
-
-
-.nouse{
-    height: 4000px;
-}
 
 
 

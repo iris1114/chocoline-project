@@ -618,6 +618,16 @@ section {
 body {
   background-color: #FFF5E3; }
 
+@media all and (min-width: 768px) {
+  .river_last {
+    width: 165%;
+    position: absolute;
+    top: 380%;
+    left: -25%;
+    z-index: -3; }
+  .map {
+    z-index: 1; } }
+
 .index_container {
   background: url(../image/index/hero/hero-bg.jpg) no-repeat 0 0/100%;
   width: 100%;
@@ -707,10 +717,10 @@ body {
     left: -60%;
     z-index: -2; }
   .hero_main .wrap .river_last {
-    width: 180%;
+    width: 165%;
     position: absolute;
-    top: 400%;
-    left: -40%;
+    top: 380%;
+    left: -25%;
     z-index: -3; }
 
 .index_custom_container {
@@ -1218,12 +1228,29 @@ body {
 .game_container {
   height: 1080px; }
 
-.map_container {
-  position: relative; }
+.map_container .wrap {
+  position: relative;
+  z-index: 3; }
   .map_container .wrap .map {
-    width: 550px;
+    width: 500px;
     margin: auto;
     position: relative; }
+    .map_container .wrap .map p {
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: normal;
+      position: absolute;
+      top: 15%;
+      left: -25%;
+      color: #592F13; }
+      @media all and (max-width: 767px) {
+        .map_container .wrap .map p {
+          font-size: 24px; } }
+      @media all and (min-width: 768px) {
+        .map_container .wrap .map p {
+          font-size: 24px; } }
+      @media all and (min-width: 992px) {
+        .map_container .wrap .map p {
+          font-size: 28px; } }
     .map_container .wrap .map .taipei {
       position: absolute;
       top: 13%;
@@ -1264,11 +1291,37 @@ body {
       position: absolute;
       top: 70%;
       left: 39%; }
-  .map_container .map_bg {
+  .map_container .wrap .map_bg {
+    position: absolute;
+    width: 180%;
+    top: 20%;
+    left: -40%; }
+  .map_container .wrap .connect {
+    width: 100%;
+    padding-top: 400px;
+    padding-bottom: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
     position: relative;
-    width: 118%;
-    top: 100%;
-    left: -12%; }
+    z-index: 4; }
+    .map_container .wrap .connect figure {
+      width: 100%;
+      max-width: 40px;
+      margin: 0 10px; }
+      .map_container .wrap .connect figure a {
+        display: block; }
+  .map_container .wrap p {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+    color: #F0ECDD;
+    z-index: 4; }
 
-.nouse {
-  height: 4000px; }
+.car {
+  position: absolute;
+  right: -178px;
+  bottom: 40px; }
+  .car img {
+    width: 178px; }
