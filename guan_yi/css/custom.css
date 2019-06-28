@@ -1477,12 +1477,8 @@ body {
   background-image: url("../image/7.png");
   background-size: cover;
   background-repeat: no-repeat;
-<<<<<<< HEAD
   padding: 0% 5%;
   position: relative;
-=======
-  padding-top: 53%;
->>>>>>> 889517d768c6c0c042200e2f4f68f731d60d549f
   z-index: 1;
 }
 
