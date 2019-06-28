@@ -1317,6 +1317,10 @@ section {
   }
 }
 
+* {
+  outline: 1px solid red;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -1379,55 +1383,76 @@ body {
   position: relative;
 }
 
-.custom .wrap_custom .custom_type .middle_position {
-  width: 327px;
-  padding-top: 30px;
+.custom .wrap_custom .custom_type .shapePos0 {
+  width: 100%;
   position: absolute;
-  top: 54.5%;
-  left: 0;
-  right: 0%;
-  margin: auto;
-  z-index: 1;
+  top: 20%;
+  left: 32%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(0.675);
+          transform: scale(0.675);
 }
 
-.custom .wrap_custom .custom_type .second_left_position {
-  width: 15%;
+.custom .wrap_custom .custom_type .shapePos0 img {
+  width: 13.5%;
+  width: 20%;
+}
+
+.custom .wrap_custom .custom_type .shapePos1 {
+  width: 20%;
   position: absolute;
   top: 50%;
   left: 22%;
+  /*left:386px;*/
   z-index: 2;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
 }
 
-.custom .wrap_custom .custom_type .third_left_position {
-  width: 13.5%;
+.custom .wrap_custom .custom_type .shapePos2 {
+  width: 20%;
   position: absolute;
-  top: 30%;
-  left: 32%;
-  z-index: 1;
+  top: 55%;
+  left: 40%;
+  /*left:175px;*/
+  z-index: 3;
+  -webkit-transition: left 1s;
+  transition: left 1s;
 }
 
-.custom .wrap_custom .custom_type .second_right_position {
-  width: 15%;
+.custom .wrap_custom .custom_type .shapePos3 {
+  width: 20%;
   position: absolute;
   top: 50%;
-  right: 21.5%;
+  left: 63%;
+  /*left:900px;*/
   z-index: 2;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
 }
 
-.custom .wrap_custom .custom_type .third_right_position {
-  width: 13.5%;
+.custom .wrap_custom .custom_type .shapePos4 {
+  width: 20%;
   position: absolute;
-  top: 30%;
-  right: 30%;
-  z-index: 1;
+  top: 20%;
+  left: 58%;
+  /*left:785px;*/
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(0.675);
+          transform: scale(0.675);
 }
 
 .custom .wrap_custom .custom_type .right_btn {
   width: 2%;
   position: absolute;
   bottom: 5%;
-  right: 37%;
-  z-index: 1;
+  left: 60.5%;
 }
 
 .custom .wrap_custom .custom_type .left_btn {
@@ -1435,7 +1460,6 @@ body {
   position: absolute;
   bottom: 5%;
   left: 37%;
-  z-index: 1;
 }
 
 .choco_background .choco_img {
