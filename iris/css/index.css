@@ -1240,8 +1240,9 @@ body {
       line-height: normal;
       position: absolute;
       top: 15%;
-      left: -25%;
-      color: #592F13; }
+      left: 13%;
+      color: #592F13;
+      width: auto; }
       @media all and (max-width: 767px) {
         .map_container .wrap .map p {
           font-size: 24px; } }
@@ -1318,10 +1319,3 @@ body {
     text-align: center;
     color: #F0ECDD;
     z-index: 4; }
-
-.car {
-  position: absolute;
-  right: -178px;
-  bottom: 40px; }
-  .car img {
-    width: 178px; }

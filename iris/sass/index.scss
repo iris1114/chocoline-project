@@ -35,6 +35,19 @@ body{
     }
 }
 
+
+
+
+
+
+
+
+
+// -------------------------desktop-----------------------
+
+
+
+
 .index_container{
     background: url(../image/index/hero/hero-bg.jpg) no-repeat 0 0/100%;    
     width: 100%;
@@ -638,9 +651,7 @@ body{
     .wrap{
         position: relative;
         z-index:3;
-
-
-
+       
         .map{
             width: 500px;
             margin: auto;
@@ -650,8 +661,9 @@ body{
                 @include font_l();
                 position: absolute;
                 top: 15%;
-                left: -25%;
+                left: 13%;
                 color:$color_brown;
+                width: auto;
             }
 
             .taipei{
@@ -751,21 +763,16 @@ body{
 
 
 
-//  .aboutus_car{
-//     position: relative;
-//     top: -100%;
-//     z-index: 1;
-    .car{
-        position: absolute;
-        right: -178px;
-        bottom: 40px;
+    // .car{
+    //     position: absolute;
+    //     right: -178px;
+    //     bottom: 40px;
 
-        img{
-            width: 178px;
+    //     img{
+    //         width: 178px;
         
-        }
-    }
-//  }
+    //     }
+    // }
 
 
 
