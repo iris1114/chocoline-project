@@ -1,5 +1,16 @@
 @import "common";
 
+@mixin noselect {
+    user-select: none;
+    -moz-user-select: none;  /* for Firefox */ 
+    -webkit-user-select: none;   /* for Chrome */
+}
+@media all and (max-width:1200px){
+    .wrap{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 *{
     font-family:'Noto Sans TC', sans-serif;
     // outline: 1px solid #f00;
@@ -29,7 +40,7 @@
         .title_decoration{
             margin: auto;
             h2{
-                @include pos(10%,0,0,0);
+                @include pos(17%,0,0,0);
             }
         }
         .contain{
@@ -421,11 +432,55 @@
             }
         }
         
-        .rule_introduce{
+        .rule_introduce,.my_CHOCO{
             width: 650px;
             height: 470px;
             @include pos(23%,0,0,0);
             z-index: 1;
+        }
+        .rule_introduce{
+            .contain{
+                padding: 8% 0 0 15%;
+                table{
+                    width: 100%;
+                }
+                th,td{
+                    @include font_m();
+                }
+                td{
+                    padding: 1.5% 5%;
+                    span{
+                        color: $color_red;
+                    }
+                }
+                .prize{
+                    th{
+                        position: relative;
+                        &::before{
+                            content: "";
+                            display: block;
+                            @include pos(0,0,0,auto);
+                            width: 130%;
+                            height: 2px;
+                            background: $color_brown;
+                        }
+                    }
+                    td{
+                        position: relative;
+                        &::before{
+                            content: "";
+                            display: block;
+                            @include pos(0,auto,0,0);
+                            width: 90%;
+                            height: 2px;
+                            background: $color_brown;
+                        }
+                    }
+                }
+                a{
+                    margin: 5% 0 0 22%;
+                }
+            }
         }
         .title{
             text-align: center;
@@ -434,46 +489,56 @@
                 padding-bottom:1.5%;
             }
         }
-        .contain{
-            padding: 8% 0 0 15%;
-            table{
-                width: 100%;
-            }
-            th,td{
-                @include font_m();
-            }
-            td{
-                padding: 1.5% 5%;
-                span{
-                    color: $color_red;
+        
+        .my_CHOCO{
+            display: none;
+            .contain{
+                padding: 8% 0 0 2%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                &::-webkit-scrollbar {
+                    display: none;
                 }
             }
-            .prize{
-                th{
+            .CHOCO_list{
+                position: relative;
+                width: 99999px;
+                left: 0;
+                transition: .5s;
+                &::after{
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+            .CHOCO{
+                width: 250px;
+                float: left;
+                img{
                     position: relative;
-                    &::before{
-                        content: "";
-                        display: block;
-                        @include pos(0,0,0,auto);
-                        width: 130%;
-                        height: 2px;
-                        background: $color_brown;
-                    }
+                    left: -22px;
                 }
-                td{
+                figcaption{
                     position: relative;
-                    &::before{
-                        content: "";
-                        display: block;
-                        @include pos(0,auto,0,0);
-                        width: 90%;
-                        height: 2px;
-                        background: $color_brown;
-                    }
+                    top: -20px;
+                    text-align: center;
+                    @include font_s();
                 }
             }
-            a{
-                margin: 5% 0 0 22%;
+            .status{
+                text-align: center;
+                padding-top: 2%;
+                a{
+                    margin: 0 3%;
+                }
+            }
+            #prev_btn{
+                @include pos(50%,auto,auto,-3%);
+                @include noselect();
+            }
+            #next_btn{
+                @include pos(50%,auto,auto,99%);
+                @include noselect();
             }
         }
     }
@@ -555,6 +620,10 @@
                     text-align: center;
                     p{
                         @include font_s();
+                        color: $color_milk;
+                    }
+                    span{
+                        color: $color_milk;
                     }
                 }
             }

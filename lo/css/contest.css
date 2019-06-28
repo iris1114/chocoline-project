@@ -979,6 +979,13 @@ section {
   padding-top: 50px;
 }
 
+@media all and (max-width: 1200px) {
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 * {
   font-family: 'Noto Sans TC', sans-serif;
 }
@@ -1002,7 +1009,7 @@ section {
   }
   .stage_container .title_decoration h2 {
     position: absolute;
-    top: 10%;
+    top: 17%;
     right: 0;
     bottom: 0;
     left: 0;
@@ -1809,7 +1816,7 @@ section {
       top: -145%;
     }
   }
-  .active_container .rule_introduce {
+  .active_container .rule_introduce, .active_container .my_CHOCO {
     width: 650px;
     height: 470px;
     position: absolute;
@@ -1820,54 +1827,47 @@ section {
     margin: auto;
     z-index: 1;
   }
-  .active_container .title {
-    text-align: center;
-  }
-  .active_container .title h2 {
-    background: url("../image/contest/avtive_title.png") 50% 50% no-repeat/contain;
-    padding-bottom: 1.5%;
-  }
-  .active_container .contain {
+  .active_container .rule_introduce .contain {
     padding: 8% 0 0 15%;
   }
-  .active_container .contain table {
+  .active_container .rule_introduce .contain table {
     width: 100%;
   }
-  .active_container .contain th, .active_container .contain td {
+  .active_container .rule_introduce .contain th, .active_container .rule_introduce .contain td {
     font-family: "Noto Sans TC", sans-serif;
     line-height: normal;
   }
 }
 
 @media all and (min-width: 992px) and (max-width: 767px) {
-  .active_container .contain th, .active_container .contain td {
+  .active_container .rule_introduce .contain th, .active_container .rule_introduce .contain td {
     font-size: 18px;
   }
 }
 
 @media all and (min-width: 992px) and (min-width: 768px) {
-  .active_container .contain th, .active_container .contain td {
+  .active_container .rule_introduce .contain th, .active_container .rule_introduce .contain td {
     font-size: 18px;
   }
 }
 
 @media all and (min-width: 992px) and (min-width: 992px) {
-  .active_container .contain th, .active_container .contain td {
+  .active_container .rule_introduce .contain th, .active_container .rule_introduce .contain td {
     font-size: 20px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .active_container .contain td {
+  .active_container .rule_introduce .contain td {
     padding: 1.5% 5%;
   }
-  .active_container .contain td span {
+  .active_container .rule_introduce .contain td span {
     color: #ED1C24;
   }
-  .active_container .contain .prize th {
+  .active_container .rule_introduce .contain .prize th {
     position: relative;
   }
-  .active_container .contain .prize th::before {
+  .active_container .rule_introduce .contain .prize th::before {
     content: "";
     display: block;
     position: absolute;
@@ -1880,10 +1880,10 @@ section {
     height: 2px;
     background: #592F13;
   }
-  .active_container .contain .prize td {
+  .active_container .rule_introduce .contain .prize td {
     position: relative;
   }
-  .active_container .contain .prize td::before {
+  .active_container .rule_introduce .contain .prize td::before {
     content: "";
     display: block;
     position: absolute;
@@ -1896,8 +1896,109 @@ section {
     height: 2px;
     background: #592F13;
   }
-  .active_container .contain a {
+  .active_container .rule_introduce .contain a {
     margin: 5% 0 0 22%;
+  }
+  .active_container .title {
+    text-align: center;
+  }
+  .active_container .title h2 {
+    background: url("../image/contest/avtive_title.png") 50% 50% no-repeat/contain;
+    padding-bottom: 1.5%;
+  }
+  .active_container .my_CHOCO {
+    display: none;
+  }
+  .active_container .my_CHOCO .contain {
+    padding: 8% 0 0 2%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .active_container .my_CHOCO .contain::-webkit-scrollbar {
+    display: none;
+  }
+  .active_container .my_CHOCO .CHOCO_list {
+    position: relative;
+    width: 99999px;
+    left: 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  .active_container .my_CHOCO .CHOCO_list::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .active_container .my_CHOCO .CHOCO {
+    width: 250px;
+    float: left;
+  }
+  .active_container .my_CHOCO .CHOCO img {
+    position: relative;
+    left: -22px;
+  }
+  .active_container .my_CHOCO .CHOCO figcaption {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 767px) {
+  .active_container .my_CHOCO .CHOCO figcaption {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 768px) {
+  .active_container .my_CHOCO .CHOCO figcaption {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .active_container .my_CHOCO .CHOCO figcaption {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .active_container .my_CHOCO .status {
+    text-align: center;
+    padding-top: 2%;
+  }
+  .active_container .my_CHOCO .status a {
+    margin: 0 3%;
+  }
+  .active_container .my_CHOCO #prev_btn {
+    position: absolute;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: -3%;
+    margin: auto;
+    -ms-user-select: none;
+        user-select: none;
+    -moz-user-select: none;
+    /* for Firefox */
+    -webkit-user-select: none;
+    /* for Chrome */
+  }
+  .active_container .my_CHOCO #next_btn {
+    position: absolute;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 99%;
+    margin: auto;
+    -ms-user-select: none;
+        user-select: none;
+    -moz-user-select: none;
+    /* for Firefox */
+    -webkit-user-select: none;
+    /* for Chrome */
   }
   .player_container {
     padding-top: 150px;
@@ -2074,6 +2175,7 @@ section {
   .player_container .contain .CHOCO figcaption p {
     font-family: "Noto Sans TC", sans-serif;
     line-height: normal;
+    color: #F0ECDD;
   }
 }
 
@@ -2096,6 +2198,9 @@ section {
 }
 
 @media all and (min-width: 992px) {
+  .player_container .contain .CHOCO figcaption span {
+    color: #F0ECDD;
+  }
   .player_container .contain .ring {
     position: absolute;
     top: auto;
