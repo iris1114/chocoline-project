@@ -64,7 +64,7 @@ header{
         background:url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0 / contain;
         li{
             text-align: center;
-            padding: 30px 0;
+            padding: 7% 0;
             @include font_l();
             a{
                 color: $color_milk;
