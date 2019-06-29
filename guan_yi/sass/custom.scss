@@ -3,53 +3,11 @@
 @import "mixins/mixin";
 @import "layout/all";
 @import "modules/all";
+@import "common";
+@import "other";
 
-// 此為套用辦法 不是共用版
-//共用版為common.sass  and common.html （含header／footer）
-//--------- GRID -------------//
-// 可直接套用在html 加入class name
-@include grid(12);
 
-// @include section_margin();
-//--------- RWD -------------//
-// 可在sass撰寫3種rwd模組
-@include rwd(desktop) {
-}
-@include rwd(tablet) {
-}
 
-@include rwd(mobile) {
-}
-
-// --------- FONT -------------//
-
-.font_wrap {
-  .font1 {
-    p {
-      @include font_xxl();
-    }
-  }
-  .font2 {
-    p {
-      @include font_xl();
-    }
-  }
-  .font3 {
-    p {
-      @include font_l();
-    }
-  }
-  .font4 {
-    p {
-      @include font_m();
-    }
-  }
-  .font5 {
-    p {
-      @include font_s();
-    }
-  }
-}
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
 // * {
 //   outline: 1px solid red;
@@ -58,7 +16,175 @@ body {
   overflow-x: hidden;
 }
 
-// ------第一屏Start--------
+// ------ 第一屏 mobile Start --------
+
+@include rwd(mobile){
+  .custom {
+    width: 100%;
+    background: url("../image/bg.png") no-repeat;
+    margin: 0 auto;
+    padding-top: 150px;
+    position: relative;
+    .wrap_custom {
+      max-width: 1200px;
+  
+      margin: 0 auto;
+      // padding-bottom: 50px;
+      position: relative;
+  
+      .title_decoration h2 {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 50px;
+      }
+  
+      .playground {
+        display: none;
+        width: 100%;
+  
+        img {
+          width:50%;
+          position: absolute;
+          top: 25%;
+          left: 3%;
+          z-index: 1;
+        }
+      }
+      .frist_step {
+        width: 60%;
+        // height: 300px;
+        margin: 0 auto;
+        background-image: url("../image/7.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        // padding-top: 19%;
+        position: absolute;
+        top: 25%;
+        right: 0%;
+        left: 0;
+        // transform: rotate(12deg);
+        text-align: center;
+        &Info {
+          // width: 100%;
+          display: flex;
+          flex-flow: column wrap;
+          text-align: center;
+          // padding-bottom: 100%;
+          padding: 36% 25%;
+          // height: 300px;
+        }
+        h3 {
+          font-size: 28px;
+          text-align: center;
+          // padding: 40% 20% 10%;
+          padding-bottom: 7%;
+        }
+        p {
+          font-size: 16px;
+          // padding: 0 30% 30%;
+          text-align: center;
+        }
+  
+      }
+      .custom_type {
+        width: 100%;
+        height: 100%;
+        padding-top: 300px;
+        padding-bottom: 500px;
+        // display: flex;
+        // justify-content: space-around;
+        position: relative;
+  
+        // .type_position {
+        //   width: 33.333333%;
+        //   padding: 0px 15px;
+        //   position: relative;
+  
+        .shapePos0 {
+          // width: 20%;
+          // position: relative;
+          position: absolute;
+          // top:45%;
+          left: 0%;
+          transition: 2s;
+            // transform: scale(0.675);
+            z-index:1;
+            display: none;
+       
+          
+        }
+        .shapePos1 {
+          // width: 20%;
+          position: absolute;
+          // top: 65%;
+          left: 0%;
+          /*left:386px;*/
+          z-index: 2;
+          transition: 1.5s;
+          // transform: scale(0.75);
+          display: none;
+        
+        }
+        .shapePos2 {
+          width: 50%;
+          position: absolute;
+          top: 50%;
+          left: 25% ;
+          
+          // top: 73%;
+          // left: 40%;
+          /*left:175px;*/
+          z-index: 3;
+          transition: 1.5s;
+        }
+        .shapePos3 {
+          display: none;
+          width: 20%;
+          position: absolute;
+          // top: 65%;
+         right: 0%;
+          // left:100%;
+          /*left:900px;*/
+          z-index: 2;
+          transition: 1.5s;
+          // transform: scale(0.75);
+        }
+        .shapePos4 {
+          display: none;
+          width: 20%;
+          position: absolute;
+          // top:45%;
+          right: 0;
+          // left: 100%;
+          /*left:785px;*/
+          transition: 1.5s;
+          // transform: scale(0.675);
+          z-index: 1;
+        }
+        .right_btn {
+          width: 10%;
+          position: absolute;
+          bottom: 30%;
+          left: 80%;
+          z-index: 4;
+        }
+        .left_btn {
+          width: 10%;
+          position: absolute;
+          bottom: 30%;
+          left:12%;
+          z-index: 4;
+        }
+      }
+    }
+  }
+}
+
+// ------ 第一屏 mobile End --------
+
+// ------ 第一屏 desktop Start --------
+
+@include rwd(desktop){
 .custom {
   width: 100%;
   background: url("../image/bg.png") no-repeat;
@@ -208,9 +334,9 @@ body {
     }
   }
 }
-// ------ 第一屏 End -------
+// ------ 第一屏 desktop  End -------
 
-// ---- 巧克力背景 Start -------
+// ---- 巧克力背景 desktop Start -------
 
 .choco_background {
   // position: rslative;
@@ -222,9 +348,9 @@ body {
   }
 }
 
-// ---- 巧克力背景 End -------
+// ---- 巧克力背景 desktop End -------
 
-// ----- 第二屏 Start -----
+// ----- 第二屏 desktop Start -----
 
 // * {
 //   outline: 1px solid red;
@@ -337,20 +463,30 @@ body {
         padding: 2% 0;
       }
       li {
+        // width: 75%;
         display: inline-block;
         padding: 2% 2%;
         // border: 10px solid #ef9021;
         background-color: #ef9021;
-        border-radius: 100px;
+        border-radius:200px;
         box-sizing: border-box;
-        img {
-          width: 75%;
+        figure{
+        
           background-color: #fff5e3;
-          border-radius: 100px;
+          border-radius: 50px;
+          opacity: 0.75;
+        box-sizing: border-box;
         }
-        p {
-          padding-top: 20%;
+          img {  
+            width: 75%;
+            
+          
+          p {
+            // padding-top: 20%;
+            font-size: 16px;;
+          }
         }
+       
       }
     }
     .info_bar {
@@ -443,10 +579,60 @@ body {
   }
 }
 
-// ----- 第二屏 End -----
+// ----- 第二屏 desktop End -----
 
-// ----- 第三屏 Start -----
+// ----- 第三屏 desktop Start -----
 
-// * {
-//   outline: 1px solid red;
-// }
+* {
+  outline: 1px solid red;
+}
+
+
+.outlook{
+  width: 100%;
+  // padding-top: 150px;
+
+  background-color: #fff4e2;
+  // max-width: 1200px;
+  margin: 0 auto;
+   
+  .outlok_wrap{
+    max-width: 1200px;
+    padding-top: 150px;
+  
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding-bottom: 50px;
+
+    
+  //  left side start 
+
+    .select_outlook{
+      width: 40%;
+      display: flex;
+      flex-flow: column wrap;
+      
+      .outlook_name{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .outlook_name_photo{
+        width: 100%; 
+         // width: 50%;
+         img{
+           width:100%;
+         }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+}
