@@ -9,16 +9,7 @@ TweenMax.to('.biglogo2',1.5,{
 });
 
 
-// TweenMax.fromTo('.car_taipai', 3 ,{
-//             x: "0",
-//         },{
-//             x: "-708%",
-            
-//         },{
-//             x: "-280%",
-//             y: "-100%"
-            
-//         });
+
 
 var tl = new TimelineMax({
     //屬性
@@ -186,11 +177,12 @@ var tl = new TimelineMax({
  }).to('.car_kaohsiung', 2, {
     x: "-1000%",
     y: "-60%",
+    scale:"0.8",
     ease: Power0.easeNone,
 }).to('.car_kaohsiung', 1.5, {
     x: "-1040%",
     y: "-110%",
-    scale:"0.8",
+    scale:"0.6s",
     ease: Power0.easeNone,
 }).to('.car_kaohsiung', 2.5, {
     x: "-945%",
