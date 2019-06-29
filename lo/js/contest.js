@@ -74,6 +74,7 @@ window.addEventListener("load",function(){
        
     })
 
+    //1200以上刪除第12個角色
 
     window.addEventListener("scroll",function(){
         let scrolltop = document.documentElement.scrollTop ||window.pageYOffset || document.body.scrollTop;
