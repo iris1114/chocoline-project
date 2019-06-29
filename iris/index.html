@@ -162,22 +162,34 @@
             <div class="roles"><img src="image/index/custom/5roles.png" alt=""></div>
             <div class="custom_text">
                 <p>第一步：  </p>
-                <p>選擇喜愛的巧克力外型</p>
+                <h3>選擇喜愛的巧克力外型</h3>
             </div>
            
         </div>
             
-        <div class="custom_type  ">
-            <img src="image/index/custom/roll.png" alt="roll" class="second_left_position" />
-            <img src="image/index/custom/long.png" alt="long" class="third_left_position" />
+        <div class="custom_type">
 
-            <img src="image/index/custom/bear.png" alt="bear" class="middle_position" />
-            <img src="image/index/custom/right.png" alt="right" class="right_btn" />
-            <img src="image/index/custom/left.png" alt="left" class="left_btn" />
-
-            <img src="image/index/custom/cake.png" alt="cake" class="second_right_position" />
-            <img src="image/index/custom/oero.png" alt="oero" class="third_right_position" />
-        </div>
+                <div class="shape shapePos0">
+                  <img src="image/index/custom/long.png" alt="long" />
+                </div>
+                <div class="shape shapePos1">
+                  <img src="image/index/custom/roll.png" alt="roll" />
+        
+                </div>
+                <div class="shape shapePos2">
+                  <img src="image/index/custom/bear.png" alt="bear" />
+                </div>
+                <div class="shape shapePos3">
+                  <img src="image/index/custom/cake.png" alt="cake" />
+                </div>
+                <div class="shape shapePos4">
+        
+                  <img src="image/index/custom/oero.png" alt="oero" />
+                </div>
+        
+                <img src="image/index/custom/right.png" alt="right" class="right_btn" id="toRight" />
+                <img src="image/index/custom/left.png" alt="left" class="left_btn" id="toLeft" />
+              </div>
         <a href="cart.html" class="btn orange_l"><span> 繼續客制</span></a>
 
         
@@ -196,7 +208,27 @@
             </div> 
             
             <div class="wrap">                
-                <div class="qa_box  col-lg-6">
+                
+                <!-- description -->
+        
+                <div class="qa_choco col-12 col-lg-6">
+                    <div class="choco_land">
+                        <div class="desc">
+                        <h4>還不知道要送什麼嗎？</h4>
+                        <p>回答三個問題,讓我們為您推薦～</p>
+                    </div>
+                       
+                        <div class="qa_choco">                        
+                            <img src="image/index/question/choco.png" alt="choco">
+                            <div class="love_line">                        
+                                <img src="image/index/question/love-line.png" alt="love-line">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="qa_box  col-12  col-lg-6">
                     <img src="image/index/question/question.png" alt="question">
                     <!-- question -->
                     <div class="question">
@@ -224,38 +256,19 @@
                         
                     </div>
                     <a href="cart.html" class="btn orange_l"><span>下一步</span></a>       
- 
-                </div>
-
-                <!-- description -->
-        
-                <div class="qa_choco  col-lg-6">
-                    <div class="choco_land">
-                        <div class="desc">
-                        <p>還不知道要送什麼嗎？</p>
-                        <p>回答三個問題,讓我們為您推薦～</p>
-                    </div>
-                       
-                        <div class="qa_choco">                        
-                            <img src="image/index/question/choco.png" alt="choco">
-                            <div class="love_line">                        
-                                <img src="image/index/question/love-line.png" alt="love-line">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>        
         </div>        
      </section>
 
 
 
-<!-------------- stage_container ---------->
+<!-------------- rank_stage_container ---------->
 <section class="stage_container">   
         <div class="wrap">
             <div class="title">
                 <div class="title_decoration">
-                    <img src="image/contest/contest_title.png" alt="contest_title">
-                    <h2>CHOCO星人選美排名 </h2>
+                    <img src="image/index/contest/title.png" alt="title" />
+                    <h2>CHOCO星人選美排名</h2>
                 </div>
             </div>
             <div class="contain">
@@ -377,8 +390,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="javascrupt:;" class="btn orange_l"><span>客製CHOCO星人</span></a>
-                    <a href="javascrupt:;" class="btn cyan_l"><span>購買第一名商品</span></a>
+                    <a href="contest.html" class="btn orange_l"><span>去投票</span></a>
                 </div>
             </div>
         </div>
@@ -388,8 +400,42 @@
 <!----------game_container-------------->
 
 <section class="game_container">
+    <div class="wrap">
+        <div class="title_decoration">
+            <img src="image/common/title.png" alt="title" />
+            <h2>CHOCO玩遊戲拿點數</h2>
+        </div>
+        <div class="game_wrap">
+            <div class="game_bg"> <img src="image/index/game/game_bg3.png" alt="game_bg"> </div>
+            <div class="game_board">
+                <img src="image/index/game/game_board.png" alt="game_board">
+                <div class="game_text">
+                    <p>遊戲方式：</p>
+                    <p>遊戲方式:按下方向鍵 <span class="keyboard"> <img src="image/index/game/keyboard.png" alt=""> </span> 控制CHOCO星人~</p>
+                    <p>在時間內接到巧克力來獲取點數</p>
+                    <a href="game.html" class="btn orange_xl"><span>START</span></a>
+                </div>
+            </div>
+            <div class="game_things">
+                <img src="image/index/game/allthing2.png" alt="game_things">
+            </div>
+            <div class="chocoman">
+                <img src="image/index/game/chocoman.png" alt="chocoman">
+            </div>
 
+
+
+            
+        </div>
+    </div>
 </section>
+
+
+
+
+
+
+
 
 
 <!----------map_container-------------->
@@ -399,7 +445,7 @@
             <img src="image/common/title.png" alt="title" />
             <h2>CHOCO 巡迴胖卡車</h2>
         </div>
-             
+        <!-- map -->
         <div class="map">
             <img src="image/index/map/map.png" alt="map">
              <p>TAIWAN</p> 
@@ -416,52 +462,49 @@
            <span class="point gaoxiong_point"><a href="#"><img src="image/index/map/point.png" alt=""></a> </span>
         </div>
 
-
-        <div class="connect">
-                <figure>
-                    <a href="javascript:;">
-                        <img src="image/headerfooter/icon_fb.png" alt="Facebook">
-                    </a>
-                </figure>
-                <figure>
-                    <a href="javascript:;">
-                        <img src="image/headerfooter/icon_pinterest.png" alt="Pinterest">
-                    </a>
-                </figure>
-                <figure>
-                    <a href="javascript:;">
-                        <img src="image/headerfooter/icon_ig.png" alt="Instagram">
-                    </a>
-                </figure>
-
-            </div>
-            <p>Copyright © 2019  CHOCOLINE All rights reserved</p>
-
-
-
+        <!-- map_bg -->
         <div class="map_bg">
-            <img src="image/index/map/map_bg3.png" alt="map_bg">
-            <div class="aboutus_car">
-                    <div class="car car_taipai">
-                        <img src="image/aboutus/aboutus_taipeicar.png" alt="car_taipai">
-                    </div>
-                    <div class="car car_taoyuan">
-                        <img src="image/aboutus/aboutus_taoyuancar.png" alt="car_taoyuan">
-                    </div>
-                    <div class="car car_taichung">
-                        <img src="image/aboutus/aboutus_taichungcar.png" alt="taichung">
-                    </div>
-                    <div class="car car_hualien">
-                        <img src="image/aboutus/aboutus_hualiencar.png" alt="car_hualien">
-                    </div>
-                    <div class="car car_kaohsiung">
-                        <img src="image/aboutus/aboutus_kaohsiungcar.png" alt="car_kaohsiung">
-                    </div>
-                </div>
+            <img src="image/index/map/map_bg4.png" alt="map_bg">
+        </div>   
+        <div class="aboutus_car">
+            <div class="car car_taipai">
+                <img src="image/aboutus/aboutus_taipeicar.png" alt="car_taipai">
             </div>
+            <div class="car car_taoyuan">
+                <img src="image/aboutus/aboutus_taoyuancar.png" alt="car_taoyuan">
+            </div>
+            <div class="car car_taichung">
+                <img src="image/aboutus/aboutus_taichungcar.png" alt="taichung">
+            </div>
+            <div class="car car_hualien">
+                <img src="image/aboutus/aboutus_hualiencar.png" alt="car_hualien">
+            </div>
+            <div class="car car_kaohsiung">
+                <img src="image/aboutus/aboutus_kaohsiungcar.png" alt="car_kaohsiung">
+            </div>
+        </div> 
+         <div class="index_footer">   
+        <div class="connect">
+            <figure>
+                <a href="javascript:;">
+                    <img src="image/headerfooter/icon_fb.png" alt="Facebook">
+                </a>
+            </figure>
+            <figure>
+                <a href="javascript:;">
+                    <img src="image/headerfooter/icon_pinterest.png" alt="Pinterest">
+                </a>
+            </figure>
+            <figure>
+                <a href="javascript:;">
+                    <img src="image/headerfooter/icon_ig.png" alt="Instagram">
+                </a>
+            </figure>
         </div>
+        <p>Copyright © 2019  CHOCOLINE All rights reserved</p>
+    </div>    
+    
     </div>
-  
 </section>
 
 
@@ -494,6 +537,32 @@
 
 <script src="js/index.js"></script>
 <script src="js/header.js"></script>
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+      let shapes = document.getElementsByClassName("shape");
+      let shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
+      document.getElementById("toRight").onclick = function () {
+        for (let i = 0; i < shapePosArr.length; i++) {
+          shapes[i].classList.remove(shapePosArr[i])
+        }
+        shapePosArr.push(shapePosArr.shift());
+        for (let i = 0; i < shapePosArr.length; i++) {
+          shapes[i].classList.add(shapePosArr[i])
+        }
+      };
+
+      document.getElementById("toLeft").onclick = function () {
+        for (let i = 0; i < shapePosArr.length; i++) {
+          shapes[i].classList.remove(shapePosArr[i])
+        }
+        shapePosArr.unshift(shapePosArr.pop());
+        for (let i = 0; i < shapePosArr.length; i++) {
+          shapes[i].classList.add(shapePosArr[i])
+        }
+      };
+    })
+  </script>  
+
 </body>
 </html>
 
