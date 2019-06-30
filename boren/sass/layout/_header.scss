@@ -1,9 +1,13 @@
 @import "../mixins/mixin";
 
+// *{
+//     outline: 1px solid #f00;
+// }
 header{
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 10;
 }
 .m_header{ 
     position: relative;
@@ -12,32 +16,40 @@ header{
         padding: 20px;
         display: flex;
         justify-content: space-between;
-        background:url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0 / cover;
+        align-items: flex-start;
+        background: url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0 / 100% 100%;
+        height: 120px;
     }
     .burger{
         width: 33%;
         figure{
-            width: 33%;
-            max-width: 44px;
+            width: 44px;
+            padding: 5px;
         }
     }
     .logo{
-        width: 33%;
+        // width: 33%;
+        width: 170px;
         display: flex;
         justify-content: center;
+        h1{
+            display: none;
+        }
+        a{
+            display: block;
+        }
     }
     .status{
         width: 33%;
         display: flex;
         justify-content: flex-end;
         figure{
-            width: 33%;
-            max-width: 50px;
-            margin: 0 5%;
+            width: 44px;
+            margin: 0 0 0 5%;
             text-align: center;
-            cursor: pointer;
             a{
                 display: block;
+                padding: 8px;
             }
         }
     }
@@ -49,7 +61,7 @@ header{
         top: -100vh;
         transition: .5s;
         display: none;
-        background:url("../image/headerfooter/m_menu_bg.png") no-repeat 0 0 / contain;
+        background:url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0 / contain;
         li{
             text-align: center;
             padding: 30px 0;
@@ -62,8 +74,9 @@ header{
             position: absolute;
             width: 50px;
             height: 50px;
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
+            padding: 8px;
         }
     }
     .menuboxopen{
@@ -84,39 +97,53 @@ header{
         width: 100%;
         align-items: flex-start;
         .logo{
-            width: 10%;
+            width: 185px;
+            h1{
+                display: none;
+            }
+            a{
+                display: block;
+            }
         }
         .navbar{
             width: 90%;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         .menubox{
             width: 90%;
             display: flex;
             justify-content: center;
             li{
-                @include font_m();
-                margin: 0 20px;
+                font-size: 18px;
+                margin: 0 12px;
                 a{
                     color: $color_milk;
-                    display: block;
+                    display: block; 
                 }
             }
-            @media all and (min-width: 1200px){
+            @media all and (min-width: 1070px){
+                li{
+                    margin: 0 20px;
+                }
+            }
+            @media all and (min-width: 1230px){
                 li{
                     margin: 0 35px;
                 }
             }
         }
         .status{
-            width: 10%;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
+            margin-left: auto;
             figure{
-                cursor: pointer;
+                width: 44px;
+                margin: 0 10px;
                 a{
                     display: block;
+                    padding: 5px;
                 }
             }
         }
@@ -124,8 +151,7 @@ header{
             content: "";
             background:url("../image/headerfooter/navbar_bg.png") no-repeat 0 0 / cover;
             width: 100%;
-            height: 0;
-            padding-bottom: 11.97916666666667%;
+            height: 150px;
             @include pos(0,0,auto,0);
             z-index: -1;
         }   

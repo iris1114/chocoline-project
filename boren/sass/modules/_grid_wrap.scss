@@ -1,5 +1,5 @@
-@import "base/all";
-@import "mixins/mixin";
+@import "../base/all";
+@import "../mixins/mixin";
 
 
 
@@ -46,14 +46,15 @@
     }
 }
 
-
 .wrap{
     width:100%;
     max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
 
 
 section{
-    margin-top:50px;
+    padding-top:50px;
 }

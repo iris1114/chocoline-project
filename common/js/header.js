@@ -1,5 +1,5 @@
 window.addEventListener("load",function(){
-    let burger = document.querySelector(".burger");
+    let burger = document.querySelector(".burger figure");
     let menubox = document.querySelector(".menubox");
     let menuclose = document.querySelector("#menuclose");
 
