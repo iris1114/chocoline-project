@@ -39,6 +39,7 @@ window.addEventListener("load",function(){
     let mychoco = document.querySelector(".my_CHOCO");
     let chocolist = mychoco.querySelector(".CHOCO_list");
     let choco = chocolist.querySelectorAll(".CHOCO");
+    let chocowidth = parseInt(getStyle(choco[0],"width"));
 
     function getStyle(obj,attr){
         return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,null)[attr];
@@ -50,12 +51,20 @@ window.addEventListener("load",function(){
         myCHOCO.style.display="block";
         chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
     })
+
+    window.addEventListener("resize",function(){
+        chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
+
+        chocowidth = parseInt(getStyle(choco[0],"width"));
+
+
+    })
    
     //角色列表左右按鈕
     let prev = document.querySelector("#prev_btn");
     let next = document.querySelector("#next_btn");
     let listleft = 0;
-    let chocowidth = parseInt(getStyle(choco[0],"width"));
+    
 
     prev.addEventListener("click",function(){
         console.log(listleft);

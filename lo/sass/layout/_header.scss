@@ -23,6 +23,7 @@ header{
     .burger{
         width: 33%;
         figure{
+            cursor: pointer;
             width: 44px;
             padding: 5px;
         }
@@ -77,6 +78,7 @@ header{
             top: 20px;
             left: 20px;
             padding: 8px;
+            cursor: pointer;
         }
     }
     .menuboxopen{
