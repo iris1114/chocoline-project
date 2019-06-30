@@ -20,7 +20,7 @@
   bottom: -225px;
   width: 300px;
   height: 340px;
-  background-image: url("../image/robot/robot2.png");
+  background-image: url("../../image/robot/robot2.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -81,7 +81,7 @@
   .eye2 {
     width: 15%;
     height: 15%;
-    background: url(/image/robot/robot_eye.png) no-repeat center;
+    background: url(../../image/robot/robot_eye.png) no-repeat center;
     background-size: contain;
     animation: eye_rotate 3s infinite alternate;
   }
