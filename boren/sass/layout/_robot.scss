@@ -1,0 +1,273 @@
+@import "../mixins/mixin";
+#robot_close_control {
+  display: none;
+  &:checked + .robot {
+    bottom: -23px;
+
+    .robot_close {
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.robot {
+  position: fixed;
+  right: 100px;
+  bottom: -225px;
+  width: 300px;
+  height: 340px;
+  background-image: url("../image/robot/robot2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  transition: bottom 2s;
+  .robot_prompt {
+    @include pos(-12%, 0, auto, 0);
+    margin: auto;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    @include font_s;
+    line-height: 30px;
+    border-radius: 10px;
+    border: 2px solid $color_brown;
+    background-color: white;
+    animation: prompt_move 1s infinite alternate;
+    &:before {
+      content: "";
+      @include pos(auto, 0, -14px, 0);
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 14px 8px 0 8px;
+      border-color: $color_brown transparent transparent transparent;
+    }
+
+    @keyframes prompt_move {
+      0% {
+        top: -12%;
+      }
+      100% {
+        top: -10%;
+      }
+    }
+
+    &:after {
+      content: "";
+      @include pos(auto, 0, -10px, 0);
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 5px 0 5px;
+      border-color: white transparent transparent transparent;
+    }
+  }
+  .eyelid1,
+  .eyelid2 {
+    width: 15%;
+    height: 0;
+    background-color: #41261b;
+    border-radius: 20%;
+    animation: eyelid_move 5s infinite alternate;
+  }
+  .eye1,
+  .eye2 {
+    width: 15%;
+    height: 15%;
+    background: url(/image/robot/robot_eye.png) no-repeat center;
+    background-size: contain;
+    animation: eye_rotate 3s infinite alternate;
+  }
+  .eyelid1 {
+    @include pos(17%, auto, auto, 15%);
+  }
+  .eyelid2 {
+    @include pos(17%, 15%, auto, auto);
+  }
+  .eye1 {
+    @include pos(18.5%, auto, auto, 15%);
+  }
+  .eye2 {
+    @include pos(18.5%, 15%, auto, auto);
+  }
+
+  @keyframes eyelid_move {
+    0%,
+    95% {
+      height: 0;
+    }
+
+    100% {
+      height: 17%;
+    }
+  }
+  @keyframes eye_rotate {
+    0% {
+    }
+
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .robot_close {
+    @include pos(8%, 16.5%, auto, auto);
+    width: 10%;
+    height: 8%;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      width: 15px;
+      height: 2px;
+      background-color: $color_milk;
+      @include pos(45%, auto, auto, 3px);
+      transform: rotate(-45deg);
+      transition: transform 1s;
+    }
+    &:after {
+      content: "";
+      width: 15px;
+      height: 2px;
+      background-color: $color_milk;
+      @include pos(45%, 3px, auto, auto);
+      transform: rotate(45deg);
+      transition: transform 1s;
+    }
+  }
+  .robot_content {
+    @include pos(35%, auto, auto, 10%);
+    width: 80%;
+    height: 70%;
+    img {
+      @include pos(0, 0, auto, 0);
+      margin: auto;
+      width: 194px;
+      z-index: 11;
+    }
+    .message_area {
+      padding: 30px 20px 10px 20px;
+      width: 100%;
+      height: 47%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      // position: relative;
+      // -webkit-overflow-scrolling: touch;
+
+      .message {
+        position: relative;
+        width: 100%;
+        max-width: 80%;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: $color_milk;
+        border-radius: 10px;
+
+        &:nth-child(odd) {
+          float: left;
+          &:before {
+            content: "";
+            @include pos(50%, auto, auto, -15px);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 15px 5px 0;
+            border-color: transparent $color_milk transparent transparent;
+          }
+        }
+        &:nth-child(even) {
+          float: right;
+          &:before {
+            content: "";
+            @include pos(50%, -15px, auto, auto);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 15px;
+            border-color: transparent transparent transparent $color_milk;
+          }
+        }
+      }
+    }
+
+    .keyword_area {
+      padding: 5px;
+      width: 90%;
+      height: 15%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+
+      .prev_button,
+      .next_button {
+        border: none;
+        background-color: transparent;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        color: $color_milk;
+        i {
+          color: $color_milk;
+        }
+      }
+      .keyword_wrap {
+        display: flex;
+        width: 80%;
+        overflow: hidden;
+
+        .keyword {
+          color: $color_milk;
+          @include font_s;
+          padding: 5px;
+          // display: inline-block;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+      }
+    }
+    .query_area {
+      background-color: #ff8d8d;
+      width: 90%;
+      height: 15%;
+      padding: 5px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+      input[type="text"] {
+        // appearance: none;
+        border: none;
+        background-color: transparent;
+        color: $color_milk;
+        &::placeholder {
+          color: $color_milk;
+          font-weight: bold;
+        }
+      }
+
+      input[type="submit"] {
+        // appearance: none;
+        position: relative;
+        border: none;
+        background-color: transparent;
+        color: $color_milk;
+        cursor: pointer;
+        font-weight: bold;
+        border-left: 1px solid $color_milk;
+      }
+    }
+  }
+}
+
+@media(max-width:767px){
+.robot{
+display:none;
+}
+}
