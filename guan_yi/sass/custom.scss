@@ -501,7 +501,7 @@ body {
       text-align: center;
       background-color: white;
       border: 2px solid #f9aab0;
-      box-shadow: 2px 2px 3px 4px #f9aab0;
+      box-shadow: 5px 5px #f9aab0;
       // padding-bottom: 20px;
       // img {
       //   width: 60%;
@@ -540,6 +540,7 @@ body {
       }
       p {
         width: 60%;
+      font-size: 16px;
         margin: 0 auto;
         padding-bottom: 10%;
         text-align: center;
@@ -583,9 +584,9 @@ body {
 
 // ----- 第三屏 desktop Start -----
 
-* {
-  outline: 1px solid red;
-}
+// * {
+//   outline: 1px solid red;
+// }
 
 
 .outlook{
@@ -610,20 +611,231 @@ body {
 
     .select_outlook{
       width: 40%;
-      display: flex;
-      flex-flow: column wrap;
+      // display: flex;
+      // flex-flow: column wrap;
+      // justify-content: space-between;
+      
       
       .outlook_name{
         width: 100%;
         display: flex;
         justify-content: center;
-
-        .outlook_name_photo{
-        width: 100%; 
+        padding-bottom: 10%;
+      .outlook_name_photo{
+        width: 40%; 
          // width: 50%;
+        text-align: right;
          img{
-           width:100%;
+           width:80%; 
+          
          }
+        }
+        .for_name{
+          width: 60%;
+          text-align: center;
+        padding-top: 12%;
+        box-sizing: border-box;
+
+          h3{
+            font-size: 28px;
+            padding-bottom: 10%;
+            
+          }
+          input{
+            width: 100%;
+            padding: 5% 10% ;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 3px solid #1c99ae;
+            box-shadow: 5px 5px #1c99ae;
+          }
+        }
+      }
+      .select_item{
+        width: 90%;
+        background-color: #57dff7;
+        // opacity: 0.75;
+        margin: auto;
+        // padding-top: 0;
+        box-shadow: 10px 10px #1c99ae;
+        border-radius: 10px;
+        overflow: hidden;
+        
+        .tab_item{
+        width: 100%;
+        // padding-bottom: 5%;
+        button{
+          width: 33.333333%;
+          background-color: inherit;
+          float: left;
+          border-left: 1px solid #9a999a;
+          outline: none;
+          cursor: pointer;
+          transition: .3s;
+          padding: 3% 0;
+          
+        }
+        &:hover{
+          background-color: #1c99ae;
+        }
+      .clearfix{
+        clear: both;
+      }
+        
+        }
+        .eye{
+          width: 100%;
+          padding: 5%;
+          
+          display: flex;
+          // display: none;
+          flex-flow: column wrap;
+          justify-content: space-between;
+
+          .eye_types{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding-bottom:5%;
+            .eye_items{
+              width: 20%;
+              background-color: #017b91;
+              box-shadow: -5px -5px blue;
+              box-sizing: border-box;
+              padding: 5% 5%;
+              text-align: center;
+              border-radius: 5px;
+             img{
+               width: 100%;
+             }
+            }
+          }
+
+        }
+        .mouse{
+          display: none;
+          width: 100%;
+          padding: 5%;
+          // display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+
+          .mouse_types{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding-bottom:5%;
+            .mouse_items{
+              width: 20%;
+              background-color: #017b91;
+              box-shadow: -5px -5px blue;
+              box-sizing: border-box;
+              padding: 5% 5%;
+              text-align: center;
+              border-radius: 5px;
+             img{
+               width: 100%;
+             }
+            }
+          }
+
+        }
+        .others{
+          display: none;
+          width: 100%;
+          padding: 5%;
+          // display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+
+          .others_types{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding-bottom:5%;
+            .others_items{
+              width: 20%;
+              background-color: #017b91;
+              box-shadow: -5px -5px blue;
+              box-sizing: border-box;
+              padding: 5% 5%;
+              text-align: center;
+              border-radius: 5px;
+             img{
+               width: 100%;
+             }
+            }
+          }
+
+        }
+      }
+    }
+
+    // ----- middle side start -----
+    
+    .outlook_fix{
+      width: 30%;
+      // display: flex;
+      // flex-flow: column wrap;
+      // justify-content: space-around;
+      .fix_photo{
+        width: 100%;
+        padding-bottom: 5%;
+       
+      }
+      .fix_bar{
+        width: 90%;
+        border: 2px solid #1c99ae;
+        border-radius: 10px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+        .bar_photo{
+          width: 20%;
+          padding: 3%;
+          img{
+            width: 70%;
+          }
+        }
+      }
+      .total_price {
+        width: 100%;
+        padding-top: 10%;
+        text-align: center;
+        position: relative;
+        img {
+          width: 90%;
+        }
+        h4 {
+          font-size: 28px;
+          position: absolute;
+          top: 25%;
+          left: 0;
+          right: 0;
+        }
+        p {
+          font-size: 28px;
+          position: absolute;
+          top: 65%;
+          left: 0;
+          right: 0; 
+        }
+      }
+    }
+    .step_info{
+      width: 30%;
+      position: relative;
+      text-align: center;
+      .thrid_stepInfo{
+        
+        position: absolute;
+        top: 7%;
+        left:11%;
+        right: 0;
+        h4 {
+          font-size: 18px;
+          padding: 2% 0;
         }
       }
     }
@@ -631,8 +843,71 @@ body {
 
 }
 
+// ----- 第三屏 desktop End -----
 
 
+// ----- 第四屏 desktop Start -----
+
+.card{
+  width: 100%;
+  // padding-top: 150px;
+
+  background-color: #fff4e2;
+  // max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+   
+  .fourth_step{
+    width: 100%;
+    text-align: center;
+    img{
+      width: 50%;
+    }
+    .fourth_step_info{
+      position: absolute;
+        top: 3%;
+        left:3%;
+        right: 0;
+        h4 {
+          font-size: 18px;
+          padding: 2% 0;
+        }
+    }
+  }
+  .card_wrap{
+    max-width: 1200px;
+    padding-top: 150px;
+  
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    margin: auto;
+    padding-bottom: 50px;
+
+    .card_custom{
+      width: 100%;
+      display: flex;
+   
+    justify-content: space-between;
+    margin: auto;
+      .card_back{
+        width: 33.333333%;
+
+
+      }
+      .card_write{
+        width: 33.333333%;
+        img{
+          width: 84%;
+        }
+      }
+      .card_items{
+        width: 33.333333%;
+      }
+    }
+  }
+}
+// ----- 第四屏 desktop End -----
 
 
 }
