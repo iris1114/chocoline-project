@@ -3165,7 +3165,7 @@ body {
 @media all and (max-width: 767px) {
   .custom {
     width: 100%;
-    background: url("../image/bg.png") no-repeat;
+    background: url("../image/custom/bg.png") no-repeat;
     margin: 0 auto;
     padding-top: 150px;
     position: relative;
@@ -3194,7 +3194,7 @@ body {
   .custom .wrap_custom .frist_step {
     width: 60%;
     margin: 0 auto;
-    background-image: url("../image/7.png");
+    background-image: url("../image/custom/7.png");
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -3296,7 +3296,7 @@ body {
 @media all and (min-width: 992px) {
   .custom {
     width: 100%;
-    background: url("../image/bg.png") no-repeat;
+    background: url("../image/custom/bg.png") no-repeat;
     margin: 0 auto;
     padding-top: 150px;
     position: relative;
@@ -3324,7 +3324,7 @@ body {
   .custom .wrap_custom .frist_step {
     width: 25%;
     margin: 0 auto;
-    background-image: url("../image/7.png");
+    background-image: url("../image/custom/7.png");
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -3468,7 +3468,7 @@ body {
   .choose_base .select_base .second_step {
     width: 80%;
     margin: 0 auto;
-    background-image: url("../image/7.png");
+    background-image: url("../image/custom/7.png");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0% 8%;
@@ -3540,25 +3540,58 @@ body {
     padding: 2% 0;
   }
   .choose_base .select_type .choco_type li {
+    width: 80px;
+    height: 80px;
     display: inline-block;
-    padding: 2% 2%;
     background-color: #ef9021;
-    border-radius: 200px;
+    border-radius: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    position: relative;
   }
   .choose_base .select_type .choco_type li figure {
-    background-color: #fff5e3;
-    border-radius: 50px;
-    opacity: 0.75;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .choose_base .select_type .choco_type li img {
     width: 75%;
   }
   .choose_base .select_type .choco_type li img p {
     font-size: 16px;
+  }
+  .choose_base .select_type .choco_type li::before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0.75;
+    background-color: #fff5e3;
+    border-radius: 50%;
   }
   .choose_base .select_type .info_bar {
     width: 75%;
@@ -3586,20 +3619,32 @@ body {
             flex-flow: column wrap;
   }
   .choose_base .select_info .cho_info {
-    width: 70%;
+    width: 100%;
     text-align: center;
-    padding-top: 13%;
-    background-image: url("../image/talk.png");
+    background-image: url("../image/custom/talk.png");
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
     z-index: 1;
   }
-  .choose_base .select_info .cho_info h4 {
+  .choose_base .select_info .cho_info .cho_info_text {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    text-align: center;
+    padding: 17% 25%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .choose_base .select_info .cho_info .cho_info_text h4 {
     font-size: 18px;
     padding: 15% 0;
   }
-  .choose_base .select_info .cho_info p {
+  .choose_base .select_info .cho_info .cho_info_text p {
     width: 60%;
     font-size: 16px;
     margin: 0 auto;
@@ -3608,26 +3653,26 @@ body {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .choose_base .select_info .cho_info p:nth-child(3) {
+  .choose_base .select_info .cho_info .cho_info_text p:nth-child(3) {
     border-bottom: 1px solid #9a999a;
     padding-bottom: 20%;
   }
-  .choose_base .select_info .cho_info p:nth-child(4) {
+  .choose_base .select_info .cho_info .cho_info_text p:nth-child(4) {
     padding: 10% 0 5%;
   }
   .choose_base .select_info .total_price {
     width: 100%;
-    padding-top: 10%;
+    padding-top: 15%;
     text-align: center;
     position: relative;
   }
   .choose_base .select_info .total_price img {
-    width: 70%;
+    width: 90%;
   }
   .choose_base .select_info .total_price h4 {
     font-size: 28px;
     position: absolute;
-    top: 25%;
+    top: 29%;
     left: 0;
     right: 0;
   }
@@ -3697,11 +3742,11 @@ body {
   }
   .outlook .outlok_wrap .select_outlook .select_item {
     width: 90%;
-    background-color: #57dff7;
+    background-color: #7fc3c6;
     margin: auto;
-    -webkit-box-shadow: 10px 10px #1c99ae;
-            box-shadow: 10px 10px #1c99ae;
-    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px #4ea5a5;
+            box-shadow: 10px 10px #4ea5a5;
+    border-radius: 20px;
     overflow: hidden;
   }
   .outlook .outlok_wrap .select_outlook .select_item .tab_item {
@@ -3712,10 +3757,9 @@ body {
     background-color: inherit;
     float: left;
     border-left: 1px solid #9a999a;
-    outline: none;
     cursor: pointer;
-    -webkit-transition: .3s;
-    transition: .3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     padding: 3% 0;
   }
   .outlook .outlok_wrap .select_outlook .select_item .tab_item:hover {
@@ -3749,14 +3793,14 @@ body {
   }
   .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types .eye_items {
     width: 20%;
-    background-color: #017b91;
-    -webkit-box-shadow: -5px -5px blue;
-            box-shadow: -5px -5px blue;
+    background-color: #719eaa;
+    -webkit-box-shadow: -10px -7px #317c84;
+            box-shadow: -10px -7px #317c84;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 5% 5%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types .eye_items img {
     width: 100%;
@@ -3784,9 +3828,9 @@ body {
   }
   .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types .mouse_items {
     width: 20%;
-    background-color: #017b91;
-    -webkit-box-shadow: -5px -5px blue;
-            box-shadow: -5px -5px blue;
+    background-color: #719eaa;
+    -webkit-box-shadow: -10px -7px #317c84;
+            box-shadow: -10px -7px #317c84;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 5% 5%;
@@ -3819,9 +3863,9 @@ body {
   }
   .outlook .outlok_wrap .select_outlook .select_item .others .others_types .others_items {
     width: 20%;
-    background-color: #017b91;
-    -webkit-box-shadow: -5px -5px blue;
-            box-shadow: -5px -5px blue;
+    background-color: #719eaa;
+    -webkit-box-shadow: -10px -7px #317c84;
+            box-shadow: -10px -7px #317c84;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 5% 5%;
@@ -3860,7 +3904,7 @@ body {
   }
   .outlook .outlok_wrap .outlook_fix .total_price {
     width: 100%;
-    padding-top: 10%;
+    padding-top: 18%;
     text-align: center;
     position: relative;
   }
@@ -3870,7 +3914,7 @@ body {
   .outlook .outlok_wrap .outlook_fix .total_price h4 {
     font-size: 28px;
     position: absolute;
-    top: 25%;
+    top: 29%;
     left: 0;
     right: 0;
   }
@@ -3905,18 +3949,20 @@ body {
   .card .fourth_step {
     width: 100%;
     text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
   }
   .card .fourth_step img {
-    width: 50%;
+    width: 30%;
   }
   .card .fourth_step .fourth_step_info {
     position: absolute;
-    top: 3%;
-    left: 3%;
+    top: 1.5%;
+    left: 1.5%;
     right: 0;
   }
-  .card .fourth_step .fourth_step_info h4 {
-    font-size: 18px;
+  .card .fourth_step .fourth_step_info h3 {
+    font-size: 28px;
     padding: 2% 0;
   }
   .card .card_wrap {
