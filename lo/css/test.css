@@ -224,7 +224,7 @@ header {
 }
 
 .m_header .logo {
-  width: 33%;
+  width: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -337,8 +337,7 @@ header {
             align-items: flex-start;
   }
   .d_header .logo {
-    width: 10%;
-    min-width: 147px;
+    width: 185px;
   }
   .d_header .logo h1 {
     display: none;
@@ -377,13 +376,13 @@ header {
   }
 }
 
-@media all and (min-width: 992px) and (min-width: 1045px) {
+@media all and (min-width: 992px) and (min-width: 1070px) {
   .d_header .menubox li {
     margin: 0 20px;
   }
 }
 
-@media all and (min-width: 992px) and (min-width: 1200px) {
+@media all and (min-width: 992px) and (min-width: 1230px) {
   .d_header .menubox li {
     margin: 0 35px;
   }
@@ -974,6 +973,7 @@ header {
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  padding: 20px;
 }
 
 section {
