@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>about us</title>
     <link rel="stylesheet" href="css/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
   </head>
   <body>
@@ -113,7 +119,11 @@
           <div class="aboutus_map">
             <!-- <img src="image/aboutus/aboutus_twmap2.png" alt="aboutus_map"> -->
             <div class="map">
-              <img src="image/aboutus/map/map01.png" alt="map" />
+              <img
+                id="taipei_map"
+                src="image/aboutus/map/map01.png"
+                alt="map"
+              />
 
               <span class="taipei"><a href="#">台北</a> </span>
               <span class="hualian"><a href="#">花蓮</a> </span>
@@ -138,26 +148,80 @@
               </span>
             </div>
           </div>
-          <div class="aboutus_carsort"></div>
+          <div class="aboutus_carsort">
+            <a href="###">
+              <div class="taipei_carsort">
+                <img
+                  src="image/aboutus/aboutus_taipeicar.png"
+                  alt="taipei_carsort"
+                />
+                <span>台北</span><span>IRIS號</span>
+              </div>
+            </a>
+            <a href="###"></a>
+              <div class="taoyuan_carsort">
+                <img
+                  src="image/aboutus/aboutus_taoyuancar.png"
+                  alt="taoyuan_carsort"
+                />
+                <span>桃園</span><span>PENNY號</span>
+              </div>
+            </a>
+            <div class="taichungcar_carsort">
+              <img
+                src="image/aboutus/aboutus_taichungcar.png"
+                alt="taichungcar_carsort"
+              />
+              <span>台中</span><span>小羅號</span>
+            </div>
+            <div class="hualien_carsort">
+              <img
+                src="image/aboutus/aboutus_hualiencar.png"
+                alt="hualien_carsort"
+              />
+              <span>花蓮</span><span>伯仁號</span>
+            </div>
+            <div class="kaohsiung_carsort">
+              <img
+                src="image/aboutus/aboutus_kaohsiungcar.png"
+                alt="kaohsiung_carsort"
+              />
+              <span>高雄</span><span>冠逸號</span>
+            </div>
+          </div>
         </div>
         <div class="aboutus_car">
+          <img
+            class="aboutus_road1"
+            src="image/aboutus/aboutus_road2.png"
+            alt="aboutus_road1"
+          />
           <div class="car car_taipai">
-            <img src="image/aboutus/aboutus_taipeicar.png" alt="car_taipai" />
+            <a href="###"
+              ><img src="image/aboutus/aboutus_taipeicar.png" alt="car_taipai"
+            /></a>
           </div>
           <div class="car car_taoyuan">
-            <img src="image/aboutus/aboutus_taoyuancar.png" alt="car_taoyuan" />
+            <a href="###"
+              ><img src="image/aboutus/aboutus_taoyuancar.png" alt="car_taoyuan"
+            /></a>
           </div>
           <div class="car car_taichung">
-            <img src="image/aboutus/aboutus_taichungcar.png" alt="taichung" />
+            <a href="###"
+              ><img src="image/aboutus/aboutus_taichungcar.png" alt="taichung"
+            /></a>
           </div>
           <div class="car car_hualien">
-            <img src="image/aboutus/aboutus_hualiencar.png" alt="car_hualien" />
+            <a href="###"
+              ><img src="image/aboutus/aboutus_hualiencar.png" alt="car_hualien"
+            /></a>
           </div>
           <div class="car car_kaohsiung">
-            <img
-              src="image/aboutus/aboutus_kaohsiungcar.png"
-              alt="car_kaohsiung"
-            />
+            <a href="###"
+              ><img
+                src="image/aboutus/aboutus_kaohsiungcar.png"
+                alt="car_kaohsiung"
+            /></a>
           </div>
         </div>
       </div>
@@ -239,7 +303,48 @@
         </figure>
       </div>
     </footer>
+
     <!-- footer end -->
+    <!-- robot start -->
+    <input id="robot_close_control" type="checkbox" />
+
+    <div id="robot" class="robot">
+      <span class="robot_prompt">快來詢問我!!</span>
+      <div class="eye1"></div>
+      <div class="eyelid1"></div>
+      <div class="eye2"></div>
+      <div class="eyelid2"></div>
+
+      <label for="robot_close_control">
+        <div id="robot_close" class="robot_close"></div>
+      </label>
+      <div class="robot_content">
+        <!-- <img src="image/robot/robot_tooth.png" alt="機器人的牙齒"> -->
+        <div class="message_area">
+          <p class="message">歡迎光臨CHOCOLINE....!!</p>
+          <p class="message">如何客製商品呢?</p>
+          <p class="message">如何客製商品呢?</p>
+          <p class="message">如何客製商品呢?</p>
+        </div>
+        <div class="keyword_area">
+          <button class="prev_button"><i class="fas fa-angle-left"></i></button>
+          <div class="keyword_wrap">
+            <span class="keyword">客製商品</span>
+            <span class="keyword">玩遊戲拿點數</span>
+            <span class="keyword">購物車</span>
+          </div>
+          <button class="next_button">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+        <div class="query_area">
+          <input type="text" placeholder="請問..." />
+          <input type="submit" value="送出" />
+        </div>
+      </div>
+    </div>
+
+    <!-- robot end -->
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
   </body>

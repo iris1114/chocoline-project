@@ -1,8 +1,4 @@
-@import "base/reset";
-@import "base/all";
-@import "mixins/mixin";
-@import "layout/all";
-@import "modules/all";
+@import "../../common/sass/common.scss";
 
 * {
   margin: 0;
@@ -11,11 +7,11 @@
 }
 body {
   overflow-x: hidden;
+  background-color: #e8c7a3;
 }
 
 .container {
   .aboutus {
-    // width: 1920px;
     height: 960px;
     background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
     margin: 0 auto;
@@ -49,70 +45,189 @@ body {
   .touringcar {
     // width: 100%;
     height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02.png") no-repeat 0 0;
+    // background: url("../image/aboutus/aboutus_bg_02-1.png") no-repeat 0 0;
+    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
 
     .aboutus_container {
       width: 1200px;
       margin: auto;
+      padding-top: 30px;
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      // align-items: center;
+
       .aboutus_map {
         width: 600px;
         position: relative;
         left: 0;
         .taipei {
           position: absolute;
-          top: 13%;
+          top: 16%;
           left: 48%;
         }
         .hualian {
           position: absolute;
           top: 42%;
-          left: 71%;
+          left: 68%;
         }
         .taoyuan {
           position: absolute;
-          top: 20%;
-          left: 40%;
+          top: 23%;
+          left: 41%;
         }
         .taizhong {
           position: absolute;
-          top: 33%;
-          left: 31%;
+          top: 34%;
+          left: 32%;
         }
         .gaoxiong {
           position: absolute;
-          top: 70%;
-          left: 27%;
+          top: 68%;
+          left: 29%;
         }
 
         .taipei_point {
           position: absolute;
           top: 12%;
-          left: 61%;
+          left: 60%;
         }
         .hualian_point {
           position: absolute;
-          top: 41%;
-          left: 61%;
+          top: 40%;
+          left: 60%;
         }
         .taoyuan_point {
           position: absolute;
           top: 20%;
-          left: 53%;
+          left: 52%;
         }
         .taizhong_point {
           position: absolute;
           top: 32%;
-          left: 43%;
+          left: 44%;
         }
         .gaoxiong_point {
           position: absolute;
-          top: 70%;
-          left: 39%;
+          top: 66%;
+          left: 40%;
         }
       }
       .aboutus_carsort {
+        width: 480px;
+        padding-top: 60px;
+        .taipei_carsort {
+          width: 480px;
+          height: 90px;
+          background: #f0ecdd;
+          border: 2px solid #1a99ad;
+          border-radius: 25px 25px 0 0; //圆角的大小
+          img {
+            width: 70px;
+            margin-left: 80px;
+            padding-top: 8px;
+          }
+          span {
+            font-size: 20px;
+            margin-left: 60px;
+          }
+        }
+        .taipei_carsort:hover {
+          background: #1a99ad;
+          span {
+            color: #f0ecdd;
+          }
+        }
+        .taipei_carsort:focus {
+          height: 150px;
+        }
+        .taoyuan_carsort {
+          width: 480px;
+          height: 90px;
+          background: #f0ecdd;
+          border: 2px solid #1a99ad;
+          img {
+            width: 70px;
+            margin-left: 80px;
+            padding-top: 8px;
+          }
+          span {
+            font-size: 20px;
+            margin-left: 60px;
+          }
+        }
+        .taoyuan_carsort:hover {
+          background: #1a99ad;
+          span {
+            color: #f0ecdd;
+          }
+        }
+        .taichungcar_carsort {
+          width: 480px;
+          height: 90px;
+          background: #f0ecdd;
+          border: 2px solid #1a99ad;
+          img {
+            width: 70px;
+            margin-left: 80px;
+            padding-top: 8px;
+          }
+          span {
+            font-size: 20px;
+            margin-left: 60px;
+          }
+        }
+        .taichungcar_carsort:hover {
+          background: #1a99ad;
+          span {
+            color: #f0ecdd;
+          }
+        }
+        .hualien_carsort {
+          width: 480px;
+          height: 90px;
+          background: #f0ecdd;
+          border: 2px solid #1a99ad;
+          img {
+            width: 70px;
+            margin-left: 80px;
+            padding-top: 8px;
+          }
+          span {
+            font-size: 20px;
+            margin-left: 60px;
+          }
+        }
+        .hualien_carsort:hover {
+          background: #1a99ad;
+          span {
+            color: #f0ecdd;
+          }
+        }
+        .kaohsiung_carsort {
+          width: 480px;
+          height: 90px;
+          background: #f0ecdd;
+          border: 2px solid #1a99ad;
+          border-radius: 0 0 25px 25px; //圆角的大小
+          img {
+            width: 70px;
+            margin-left: 80px;
+            padding-top: 8px;
+          }
+          span {
+            font-size: 20px;
+            margin-left: 60px;
+          }
+        }
+        .kaohsiung_carsort:hover {
+          background: #1a99ad;
+          span {
+            color: #f0ecdd;
+          }
+        }
       }
     }
     .aboutus_car {
@@ -120,11 +235,15 @@ body {
       height: 600px;
       margin-top: -285px;
       position: relative;
-      z-index: 1;
+      z-index: 0;
+      .aboutus_road1 {
+        margin-left: -10px;
+        padding-top: 130px;
+      }
       .car {
         position: absolute;
         right: -178px;
-        bottom: 65px;
+        bottom: 85px;
         img {
           width: 178px;
         }
@@ -132,7 +251,7 @@ body {
     }
   }
   .shopinfo {
-    height: 960px;
+    height: 1050px;
     background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 50% 0;
     // text-align: center;
     .aboutus_shopmovie {
