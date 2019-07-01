@@ -848,6 +848,7 @@ header {
 }
 
 .robot .robot_content .query_area input[type="text"] {
+  width: 100%;
   border: none;
   background-color: transparent;
   color: #F6EED4;

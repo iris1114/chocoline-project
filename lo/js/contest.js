@@ -67,7 +67,6 @@ window.addEventListener("load",function(){
     
 
     prev.addEventListener("click",function(){
-        console.log(listleft);
         if(listleft < 0){
             listleft += chocowidth;
             chocolist.style.left = `${listleft}px`;
@@ -75,7 +74,6 @@ window.addEventListener("load",function(){
         
     })
     next.addEventListener("click",function(){
-        console.log(listleft);
         if(listleft >= (parseInt(getStyle(chocolist,"width")))*-1 + chocowidth*3){
             listleft -= chocowidth;
             chocolist.style.left = `${listleft}px`;
@@ -83,7 +81,19 @@ window.addEventListener("load",function(){
        
     })
 
-    //1200以上刪除第12個角色
+    //角色點擊標記
+    for(let i=0;i<choco.length;i++){
+        
+        choco[i].addEventListener("click",function(){
+            for(j=0;j<choco.length;j++){
+                choco[j].classList.remove("CHOCO_select");
+            }
+            this.classList.add("CHOCO_select");
+                
+        })
+    }
+    
+
 
     window.addEventListener("scroll",function(){
         let scrolltop = document.documentElement.scrollTop ||window.pageYOffset || document.body.scrollTop;
