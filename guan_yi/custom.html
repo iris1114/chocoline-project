@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <title>Document</title>
 </head>
 
@@ -58,7 +58,7 @@
       </div>
       <div class="navbar">
         <ul class="menubox">
-          <li><a href="custom.html">客製CHOCO</a></li>
+          <li class="nowpage"><a href="custom.html">客製CHOCO</a></li>
           <li><a href="contest.html">CHOCO選美</a></li>
           <li><a href="game.html">CHOCO遊戲</a></li>
           <li><a href="store.html">CHOCO商城</a></li>
@@ -225,17 +225,19 @@
 
       <div class="select_info">
         <div class="cho_info">
-          <div class="cho_info_text"> <h4>Black CHOCO</h4>
+          <div class="cho_info_text">
+            <h4>Black CHOCO</h4>
             <p>
               黑巧克力：可可多酚的高抗氧化作用
             </p>
             <p>能夠抑制老化，促進肌膚的代謝！！</p>
-  
+
             <p>
               適合朋友和獨享
-            </p></div>
+            </p>
+          </div>
           <!-- <img src="image/custom/talk.png" alt="" /> -->
-         
+
         </div>
 
         <div class="total_price">
@@ -527,43 +529,43 @@
           </div>
           <div class="clearfix"></div>
           <div class="card_color">
-            
-          
-          <div class="card_background">
-            <div class="background_color">
-              <img src="image/custom/eye1.png" alt="eye1" />
+
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/eye1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="" />
+              </div>
             </div>
-            <div class="background_color">
-              <img src="image/custom/eye.png" alt="eye2" />
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/eye1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="" />
+              </div>
             </div>
-            <div class="background_color">
-              <img src="image/custom/eye.png" alt="" />
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/eye1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="eye2" />
+              </div>
+              <div class="card_color">
+                <img src="image/custom/eye.png" alt="" />
+              </div>
             </div>
           </div>
-          <div class="card_background">
-            <div class="background_color">
-              <img src="image/custom/eye1.png" alt="eye1" />
-            </div>
-            <div class="background_color">
-              <img src="image/custom/eye.png" alt="eye2" />
-            </div>
-            <div class="background_color">
-              <img src="image/custom/eye.png" alt="" />
-            </div>
-          </div>
-          <div class="card_background">
-            <div class="background_color">
-              <img src="image/custom/eye1.png" alt="eye1" />
-            </div>
-            <div class="background_color">
-              <img src="image/custom/eye.png" alt="eye2" />
-            </div>
-            <div class="card_color">
-              <img src="image/custom/eye.png" alt="" />
-            </div>
-          </div>
-        </div>
-          
+
         </div>
       </div>
 
@@ -634,6 +636,47 @@
       </figure>
     </div>
   </footer>
+
+  <!-- robot start -->
+  <input id="robot_close_control" type="checkbox" />
+
+  <div id="robot" class="robot">
+    <span class="robot_prompt">快來詢問我!!</span>
+    <div class="eye1"></div>
+    <div class="eyelid1"></div>
+    <div class="eye2"></div>
+    <div class="eyelid2"></div>
+
+    <label for="robot_close_control">
+      <div id="robot_close" class="robot_close"></div>
+    </label>
+    <div class="robot_content">
+      <!-- <img src="image/robot/robot_tooth.png" alt="機器人的牙齒"> -->
+      <div class="message_area">
+        <p class="message">歡迎光臨CHOCOLINE....!!</p>
+        <p class="message">如何客製商品呢?</p>
+        <p class="message">如何客製商品呢?</p>
+        <p class="message">如何客製商品呢?</p>
+      </div>
+      <div class="keyword_area">
+        <button class="prev_button"><i class="fas fa-angle-left"></i></button>
+        <div class="keyword_wrap">
+          <span class="keyword">客製商品</span>
+          <span class="keyword">玩遊戲拿點數</span>
+          <span class="keyword">購物車</span>
+        </div>
+        <button class="next_button">
+          <i class="fas fa-angle-right"></i>
+        </button>
+      </div>
+      <div class="query_area">
+        <input type="text" placeholder="請問..." />
+        <input type="submit" value="送出" />
+      </div>
+    </div>
+  </div>
+
+  <!-- robot end -->
   <!-- footer end -->
   <script src="js/header.js"></script>
   <script type="text/javascript">
