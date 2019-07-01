@@ -99,6 +99,8 @@
         </div>
         
     </div>
+  <div id="point1"></div>  
+  <div id="keypoint"></div>  
 
  <!-----------hero_main------------->
 
@@ -159,7 +161,8 @@
         </div>
         <div class="custom_island ">
             <div class="island"> <img src="image/index/custom/island.png" alt="island"></div>
-            <div class="roles"><img src="image/index/custom/5roles.png" alt=""></div>
+            <div class="roles"><img src="image/index/custom/5roles.png" alt="roles"></div>
+            <div class="roles_shadow"><img src="image/index/custom/5roles_shadow.png" alt="shadow"></div>
             <div class="custom_text">
                 <p>第一步：  </p>
                 <h3>選擇喜愛的巧克力外型</h3>
@@ -190,7 +193,7 @@
                 <img src="image/index/custom/right.png" alt="right" class="right_btn" id="toRight" />
                 <img src="image/index/custom/left.png" alt="left" class="left_btn" id="toLeft" />
               </div>
-        <a href="cart.html" class="btn orange_l"><span> 繼續客制</span></a>
+        <a href="custom.html" class="btn orange_l"><span> 繼續客制</span></a>
 
         
       
@@ -200,7 +203,7 @@
 
 
  <!-----------index_qa_container------------->
-
+<div id="trigger1"></div>
      <section class="index_qa_container">
             <div class="title_decoration col-lg-12">
                 <img src="image/common/title.png" alt="title" />
@@ -221,7 +224,7 @@
                         <div class="qa_choco">                        
                             <img src="image/index/question/choco.png" alt="choco">
                             <div class="love_line">                        
-                                <img src="image/index/question/love-line.png" alt="love-line">
+                                <svg id="loveline" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590.86 203.6" data-llp-composed="true" class="lazy-line-painter"><defs><style>.cls-1{fill:none;stroke:#d72d40;stroke-miterlimit:10;stroke-width:7px;}</style></defs><title>loveline</title><path class="cls-1" d="M713.47,405.22C659.87,300,478.67,302.23,462,304c-9.22.93-22.81,1.44-31.05-3.12-7.82-4.35-10.14-13.1-.86-21.83,10.88-10.18,33.19-21.83,37.51-41.1,8-34.76-34.24-43.34-46.94-11.27l-1.11,2.81-.5-3c-6-36-54.72-16.8-26.34,32.08,7.17,12.42,16.2,22.56,18.24,29.69,1.16,3.55-2.68,13.49-13.12,12.21-231.41-28.31-264,86.4-270.92,88.75" transform="translate(-125.73 -203.21)" data-llp-id="loveline-0" data-llp-duration="2330" data-llp-delay="0" fill-opacity="1" style =" " data-llp-stroke-join="" data-llp-stroke-cap=""/></svg>
                             </div>
                         </div>
                     </div>
@@ -235,27 +238,25 @@
                             <div class="title">
                             <h3>Q1/3  想傳情的對象為:</h3>
                             </div>
-                            <span>
-                                    <input type="radio" name=" " id="family" />
-                                    <label for="family">1. 家庭 </label>
-                            </span> 
-                            <span>
-                                    <input type="radio" name=" " id="couple" />
-                                    <label for="couple">2. 情人 </label>
-                            </span> 
-                            </span> 
-                            <span>
-                                    <input type="radio" name=" " id="friend" />
-                                    <label for="friend">3. 朋友 </label>
-                            </span> 
-                            </span> 
-                            <span>
-                                    <input type="radio" name=" " id="exclusive" />
-                                    <label for="exclusive">4. 獨享 </label>
-                            </span> 
-                        
+
+                                    <label class="option" for=" family">
+                                        <input type="radio" checked="checked" name=" " id="family" />1. 家庭 
+                                       
+                                    </label>
+
+                                    <label class="option" for="couple">
+                                         <input type="radio" name=" " id="couple" />2. 情人 
+                                    </label>
+                                      
+                                    <label class="option" for="friend">
+                                            <input type="radio" name=" " id="friend" />3. 朋友 
+                                    </label>
+         
+                                    <label class="option" for="exclusive">
+                                            <input type="radio" name=" " id="exclusive" />4. 獨享 
+                                    </label> 
                     </div>
-                    <a href="cart.html" class="btn orange_l"><span>下一步</span></a>       
+                    <a href="#" class="btn orange_l"><span>下一步</span></a>       
                 </div>        
         </div>        
      </section>
@@ -267,8 +268,8 @@
         <div class="wrap">
             <div class="title">
                 <div class="title_decoration">
-                    <img src="image/index/contest/title.png" alt="title" />
-                    <h2>CHOCO星人選美排名</h2>
+                    <img src="image/index/contest/title.png" alt="contest_title">
+                    <h2>CHOCO星人選美排名 </h2>
                 </div>
             </div>
             <div class="contain">
@@ -382,19 +383,21 @@
                                     <p class="mseeage_text">大家快來投我可愛的鵝子女鵝!!</p>
                                 </div>
                                 <div class="status">
-                                    <a href="javascrupt:;" class="btn cyan_s">
-                                        <span>查看</span>
-                                    </a>
-                                    <p class="message_date">2019/07/24</p>
-                                </div>
+                                        <a href="javascrupt:;" class="btn cyan_s">
+                                            <span>查看</span>
+                                        </a>
+                                        <p class="message_date">2019/07/24</p>
+                                    </div>
                             </div>
                         </div>
                     </div>
-                    <a href="contest.html" class="btn orange_l"><span>去投票</span></a>
+                    <div class="connect">
+                        <a href="contest.html" class="btn orange_l"><span>去投票</span></a>
+                    </div>
                 </div>
             </div>
         </div>
-       
+      
     </section>
 
 <!----------game_container-------------->
@@ -422,10 +425,6 @@
             <div class="chocoman">
                 <img src="image/index/game/chocoman.png" alt="chocoman">
             </div>
-
-
-
-            
         </div>
     </div>
 </section>
@@ -463,6 +462,7 @@
         </div>
 
         <!-- map_bg -->
+        <div class="car_area">
         <div class="map_bg">
             <img src="image/index/map/map_bg4.png" alt="map_bg">
         </div>   
@@ -483,7 +483,12 @@
                 <img src="image/aboutus/aboutus_kaohsiungcar.png" alt="car_kaohsiung">
             </div>
         </div> 
-         <div class="index_footer">   
+    </div>  
+    
+    </div>
+</section>
+
+<div class="index_footer" >
         <div class="connect">
             <figure>
                 <a href="javascript:;">
@@ -502,22 +507,8 @@
             </figure>
         </div>
         <p>Copyright © 2019  CHOCOLINE All rights reserved</p>
-    </div>    
-    
+
     </div>
-</section>
-
-
-
-
-
-       
-
-
-
-
-
-
 
     </main>
 
@@ -525,6 +516,46 @@
 
 
 
+<!-- robot start -->    
+<input id="robot_close_control" type="checkbox" />
+    
+<div id="robot" class="robot">
+  <span class="robot_prompt">快來詢問我!!</span>
+  <div class="eye1"></div>
+  <div class="eyelid1"></div>
+  <div class="eye2"></div>
+  <div class="eyelid2"></div>
+ 
+  <label for="robot_close_control">
+    <div id="robot_close" class="robot_close"></div>
+  </label>
+  <div class="robot_content">
+    <!-- <img src="image/robot/robot_tooth.png" alt="機器人的牙齒"> -->
+    <div class="message_area">
+      <p class="message">歡迎光臨CHOCOLINE....!!</p>
+      <p class="message">如何客製商品呢?</p>
+      <p class="message">如何客製商品呢?</p>
+      <p class="message">如何客製商品呢?</p>
+    </div>
+    <div class="keyword_area">
+      <button class="prev_button"><i class="fas fa-angle-left"></i></button>
+      <div class="keyword_wrap">
+        <span class="keyword">客製商品</span>
+        <span class="keyword">玩遊戲拿點數</span>
+        <span class="keyword">購物車</span>
+      </div>
+      <button class="next_button">
+        <i class="fas fa-angle-right"></i>
+      </button>
+    </div>
+    <div class="query_area">
+      <input type="text" placeholder="請問..." />
+      <input type="submit" value="送出" />
+    </div>
+  </div>
+</div>
+
+<!-- robot end -->
 
 
 
@@ -533,35 +564,26 @@
 
 
 
-
-
+<!-- <script src="js/test.js"></script> -->
+<script src="node_modules/lazy-line-painter/lib/lazy-line-painter-1.9.6.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/header.js"></script>
 <script type="text/javascript">
-    window.addEventListener("load", function () {
-      let shapes = document.getElementsByClassName("shape");
-      let shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
-      document.getElementById("toRight").onclick = function () {
-        for (let i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.remove(shapePosArr[i])
-        }
-        shapePosArr.push(shapePosArr.shift());
-        for (let i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.add(shapePosArr[i])
-        }
-      };
 
-      document.getElementById("toLeft").onclick = function () {
-        for (let i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.remove(shapePosArr[i])
+    (function(){ 
+
+      document.onreadystatechange = () => {
+
+        if (document.readyState === 'complete') {
+          let el = document.querySelector('#loveline');
+          let myAnimation = new LazyLinePainter(el, {"ease":"easeLinear","strokeWidth":4.5,"strokeOpacity":1,"strokeColor":"#C0382B","reverse":true}); 
+          myAnimation.paint(); 
         }
-        shapePosArr.unshift(shapePosArr.pop());
-        for (let i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.add(shapePosArr[i])
-        }
-      };
-    })
-  </script>  
+      }
+
+    })();
+
+  </script>
 
 </body>
 </html>

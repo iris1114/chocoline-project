@@ -15,6 +15,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-sass": "^4.0.2",
     "jquery": "^3.4.1",
+    "lazy-line-painter": "^1.9.6",
     "node-sass": "^4.12.0",
     "scrollmagic": "^2.0.7"
   },

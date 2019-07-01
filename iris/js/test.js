@@ -1,4 +1,4 @@
-// TweenMax.to('#cloud',5,{
+ // TweenMax.to('#cloud',5,{
 //     x:50,
 //     repeat:-1,  //(-1)一直重複
 
