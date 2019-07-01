@@ -55,6 +55,7 @@
 
 // -----------------ORANGE_S------------------//
 .orange_s{
+    box-shadow: 0 5px $color_deeporange;
     span::after{
         display: none;
     }
@@ -86,6 +87,7 @@
 
 // -----------------CYAN_S------------------//
 .cyan_s{
+    box-shadow: 0 5px $color_deepblue;
     span::after{
         display: none;
     }
@@ -116,6 +118,7 @@
 
 // -----------------ORANGE_M------------------//
 .orange_m{
+    box-shadow: 0 5px $color_deeporange;
     span::after{
         display: none;
     }
@@ -146,6 +149,7 @@
 
 
 .cyan_m{
+    box-shadow: 0 5px $color_deepblue;
     span::after{
         display: none;
     }
@@ -177,6 +181,7 @@
 // -----------------ORANGE_L------------------//
 
 .orange_l{
+    box-shadow: 0 5px $color_deeporange;
     font-size:$dfont_s;
     background-color:#f09122 ;     
     &:hover{
@@ -206,6 +211,7 @@
 
 
 .cyan_l{
+    box-shadow: 0 5px $color_deepblue;
     font-size:$dfont_s;
     background-color:#1c99ae ;     
     &:hover{
@@ -238,7 +244,8 @@
 
 .orange_xl{
     font-size:$dfont_l;
-    background-color:#f09122 ;     
+    background-color:#f09122 ;
+         
     &:hover{
         background-color: #ce592c;
             span::after{
@@ -257,17 +264,18 @@
     @include rwd(tablet){
         width: $tbtn_width_xl;
         padding: 15px;
-        box-shadow: 0 8px #ccc;
+        box-shadow: 0 8px $color_deeporange;
     }
     @include rwd(desktop){
         width: $dbtn_width_xl;
         padding: 15px;
-        box-shadow: 0 8px #ccc;
+        box-shadow: 0 8px $color_deeporange;
     }
 }
 
 
 .cyan_xl{
+    box-shadow: 0 5px $color_deepblue;
     font-size: $dfont_l;
     background-color:#1c99ae ;     
     &:hover{
@@ -288,12 +296,12 @@
     @include rwd(tablet){
         width: $tbtn_width_xl;
         padding: 15px;
-        box-shadow: 0 8px #ccc;
+        box-shadow: 0 8px $color_deepblue;
     }
     @include rwd(desktop){
         width: $dbtn_width_xl;
         padding: 15px;
-        box-shadow: 0 8px #ccc;
+        box-shadow: 0 8px  $color_deepblue;
 
     }
 }
@@ -383,18 +391,21 @@
  
       @include rwd(mobile){
          width: 100%;
+         h2{
+             top:20%;
+         }
 
     }
      @include rwd(tablet){
         width: 589px;
         h2{
-            top:15%;
+            top:24%;
          }
     }
      @include rwd(desktop){
          width: 589px;
          h2{
-            top:20%;
+            top:22%;
          }
      }
  }

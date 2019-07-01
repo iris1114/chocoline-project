@@ -37,7 +37,7 @@
     font-family: $font_family;
     line-height: normal;
     @include rwd(mobile){
-        font-size:$mfont_l;  
+        font-size:$mfont_m;  
     }
     @include rwd(tablet){
         font-size:$tfont_l;
