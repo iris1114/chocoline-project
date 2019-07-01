@@ -6,8 +6,6 @@
 @import "common";
 @import "other";
 
-
-
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
 // * {
 //   outline: 1px solid red;
@@ -18,32 +16,32 @@ body {
 
 // ------ 第一屏 mobile Start --------
 
-@include rwd(mobile){
+@include rwd(mobile) {
   .custom {
     width: 100%;
-    background: url("../image/bg.png") no-repeat;
+    background: url("../image/custom/bg.png") no-repeat;
     margin: 0 auto;
     padding-top: 150px;
     position: relative;
     .wrap_custom {
       max-width: 1200px;
-  
+
       margin: 0 auto;
       // padding-bottom: 50px;
       position: relative;
-  
+
       .title_decoration h2 {
         width: 100%;
         text-align: center;
         padding-bottom: 50px;
       }
-  
+
       .playground {
         display: none;
         width: 100%;
-  
+
         img {
-          width:50%;
+          width: 50%;
           position: absolute;
           top: 25%;
           left: 3%;
@@ -54,7 +52,7 @@ body {
         width: 60%;
         // height: 300px;
         margin: 0 auto;
-        background-image: url("../image/7.png");
+        background-image: url("../image/custom/7.png");
         background-size: cover;
         background-repeat: no-repeat;
         // padding-top: 19%;
@@ -84,7 +82,6 @@ body {
           // padding: 0 30% 30%;
           text-align: center;
         }
-  
       }
       .custom_type {
         width: 100%;
@@ -94,12 +91,12 @@ body {
         // display: flex;
         // justify-content: space-around;
         position: relative;
-  
+
         // .type_position {
         //   width: 33.333333%;
         //   padding: 0px 15px;
         //   position: relative;
-  
+
         .shapePos0 {
           // width: 20%;
           // position: relative;
@@ -107,11 +104,9 @@ body {
           // top:45%;
           left: 0%;
           transition: 2s;
-            // transform: scale(0.675);
-            z-index:1;
-            display: none;
-       
-          
+          // transform: scale(0.675);
+          z-index: 1;
+          display: none;
         }
         .shapePos1 {
           // width: 20%;
@@ -123,14 +118,13 @@ body {
           transition: 1.5s;
           // transform: scale(0.75);
           display: none;
-        
         }
         .shapePos2 {
           width: 50%;
           position: absolute;
           top: 50%;
-          left: 25% ;
-          
+          left: 25%;
+
           // top: 73%;
           // left: 40%;
           /*left:175px;*/
@@ -142,7 +136,7 @@ body {
           width: 20%;
           position: absolute;
           // top: 65%;
-         right: 0%;
+          right: 0%;
           // left:100%;
           /*left:900px;*/
           z-index: 2;
@@ -172,7 +166,7 @@ body {
           width: 10%;
           position: absolute;
           bottom: 30%;
-          left:12%;
+          left: 12%;
           z-index: 4;
         }
       }
@@ -184,625 +178,419 @@ body {
 
 // ------ 第一屏 desktop Start --------
 
-@include rwd(desktop){
-.custom {
-  width: 100%;
-  background: url("../image/bg.png") no-repeat;
-  margin: 0 auto;
-  padding-top: 150px;
-  position: relative;
-  .wrap_custom {
-    max-width: 1200px;
+@include rwd(desktop) {
+  // * {
+  //   outline: 1px solid red;
+  // }
 
+  .custom {
+    width: 100%;
+    background: url("../image/custom/bg.png") no-repeat;
     margin: 0 auto;
-    // padding-bottom: 50px;
+    padding-top: 150px;
     position: relative;
+    .wrap_custom {
+      max-width: 1200px;
 
-    .title_decoration h2 {
-      width: 100%;
-      text-align: center;
-      padding-bottom: 50px;
-    }
-
-    .playground {
-      width: 100%;
-
-      img {
-        width:50%;
-        position: absolute;
-        top: 25%;
-        left: 3%;
-        z-index: 1;
-      }
-    }
-    .frist_step {
-      width: 25%;
-      // height: 300px;
       margin: 0 auto;
-      background-image: url("../image/7.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      // padding-top: 19%;
-      position: absolute;
-      top: 25%;
-      right: 13%;
-      transform: rotate(12deg);
-      text-align: center;
-      &Info {
-        // width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        text-align: center;
-        // padding-bottom: 100%;
-        padding: 37% 15%;
-        // height: 300px;
-      }
-      h3 {
-        font-size: 28px;
-        text-align: center;
-        // padding: 40% 20% 10%;
-        padding-bottom: 7%;
-      }
-      p {
-        font-size: 16px;
-        // padding: 0 30% 30%;
-        text-align: center;
-      }
-
-    }
-    .custom_type {
-      width: 100%;
-      height: 100%;
-      padding-top: 150px;
-      padding-bottom: 500px;
-      // display: flex;
-      // justify-content: space-around;
+      // padding-bottom: 50px;
       position: relative;
 
-      // .type_position {
-      //   width: 33.333333%;
-      //   padding: 0px 15px;
-      //   position: relative;
-
-      .shapePos0 {
-        width: 20%;
-        // position: relative;
-        position: absolute;
-        top:45%;
-        left: 28%;
-        transition: 2s;
-          transform: scale(0.675);
-          z-index:1;
-     
-        
-      }
-      .shapePos1 {
-        width: 20%;
-        position: absolute;
-        top: 65%;
-        left: 18%;
-        /*left:386px;*/
-        z-index: 2;
-        transition: 1.5s;
-        transform: scale(0.75);
-      
-      }
-      .shapePos2 {
-        width: 20%;
-        position: absolute;
-        top: 73%;
-        left: 40%;
-        /*left:175px;*/
-        z-index: 3;
-        transition: 1.5s;
-      }
-      .shapePos3 {
-        width: 20%;
-        position: absolute;
-        top: 65%;
-       
-        left:62%;
-        /*left:900px;*/
-        z-index: 2;
-        transition: 1.5s;
-        transform: scale(0.75);
-      }
-      .shapePos4 {
-        width: 20%;
-        position: absolute;
-        top:45%;
-        left: 57%;
-        /*left:785px;*/
-        transition: 1.5s;
-        transform: scale(0.675);
-        z-index: 1;
-      }
-      .right_btn {
-        width: 3%;
-        position: absolute;
-        bottom: 1%;
-        left: 60.5%;
-        z-index: 4;
-      }
-      .left_btn {
-        width: 3%;
-        position: absolute;
-        bottom: 1%;
-        left: 37%;
-        z-index: 4;
-      }
-    }
-  }
-}
-// ------ 第一屏 desktop  End -------
-
-// ---- 巧克力背景 desktop Start -------
-
-.choco_background {
-  // position: rslative;
-  .choco_img {
-    width: 140%;
-    position: absolute;
-    top:57%;
-    left: -20%;
-  }
-}
-
-// ---- 巧克力背景 desktop End -------
-
-// ----- 第二屏 desktop Start -----
-
-// * {
-//   outline: 1px solid red;
-// }
-.base {
-  width: 100%;
-  // padding-top: 150px;
-
-  background-color: #fff4e2;
-  // max-width: 1200px;
-  margin: 0 auto;
-}
-.choose_base {
-  // width: 100%;
-  max-width: 1200px;
-  padding-top: 150px;
-
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  padding-bottom: 50px;
-  // -----選擇巧克力基底-----
-
-  .select_base {
-    // max-width: 1200px;
-    width: 30%;
-    display: flex;
-    flex-flow: column wrap;
-
-    .second_step {
-      width: 80%;
-      // height: 300px;
-      margin: 0 auto;
-      // background-color: #ffa;
-      // display: flex;
-      // flex-flow: column nowrap;
-      // align-items: center;
-      // justify-content: flex-end;
-      background-image: url("../image/7.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      padding: 0% 8%;
-      position: relative;
-      z-index: 1;
-      &Info {
-        // width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        text-align: center;
-        // padding-bottom: 100%;
-        padding: 49% 0%;
-        // height: 300px;
-      }
-
-      h3 {
-        font-size: 28px;
-        text-align: center;
-        // padding: 40% 20% 10%;
-        // padding-top: 50%;
-      }
-      p {
-        font-size: 16px;
-        // padding: 0 30% 30%;
-        text-align: center;
-      }
-    }
-
-    .base_choco {
-      width: 100%;
-      .choco {
+      .title_decoration h2 {
         width: 100%;
         text-align: center;
-        padding-top: 30px;
-        position: relative;
+        padding-bottom: 50px;
+      }
+
+      .playground {
+        width: 100%;
 
         img {
-          width: 47%;
-        }
-        figcaption {
-          font-size: 16px;
+          width: 50%;
           position: absolute;
-          bottom: 37%;
-          right: 0;
-          left: 0;
+          top: 25%;
+          left: 3%;
+          z-index: 1;
         }
       }
-    }
-  }
-
-  // -----選擇巧克力配料口味-----
-
-  .select_type {
-    width: 40%;
-    display: flex;
-    flex-flow: row wrap;
-    .choco_overview {
-      width: 100%;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      img {
-        width: 80%;
-      }
-    }
-    .choco_type {
-      width: 100%;
-      text-align: center;
-
-      ul {
-        padding: 2% 0;
-      }
-      li {
-        // width: 75%;
-        display: inline-block;
-        padding: 2% 2%;
-        // border: 10px solid #ef9021;
-        background-color: #ef9021;
-        border-radius:200px;
-        box-sizing: border-box;
-        figure{
-        
-          background-color: #fff5e3;
-          border-radius: 50px;
-          opacity: 0.75;
-        box-sizing: border-box;
-        }
-          img {  
-            width: 75%;
-            
-          
-          p {
-            // padding-top: 20%;
-            font-size: 16px;;
-          }
-        }
-       
-      }
-    }
-    .info_bar {
-      width: 75%;
-      height: 10%;
-      border-radius: 10px;
-      // background-image: url("../image/type-bar.png");
-      // background-size: cover;
-      // background-repeat: no-repeat;
-      margin: 0 auto;
-      // position: relative;
-      text-align: center;
-      background-color: white;
-      border: 2px solid #f9aab0;
-      box-shadow: 5px 5px #f9aab0;
-      // padding-bottom: 20px;
-      // img {
-      //   width: 60%;
-      // }
-      p {
-        font-size: 16px;
-        padding-top: 6%;
-        // position: absolute;
-        // left: 5%;
-        // right: 0;
-        // top: 20%;
-      }
-    }
-  }
-
-  // -------基底介紹-----
-
-  .select_info {
-    width: 30%;
-    display: flex;
-    flex-flow: column wrap;
-
-    .cho_info {
-      width: 70%;
-      // height: 636px;
-      text-align: center;
-      padding-top: 13%;
-      background-image: url("../image/talk.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
-      h4 {
-        font-size: 18px;
-        padding: 15% 0;
-      }
-      p {
-        width: 60%;
-      font-size: 16px;
+      .frist_step {
+        width: 25%;
+        // height: 300px;
         margin: 0 auto;
-        padding-bottom: 10%;
-        text-align: center;
-        box-sizing: border-box;
-        &:nth-child(3) {
-          border-bottom: 1px solid #9a999a;
-          padding-bottom: 20%;
-        }
-        &:nth-child(4) {
-          padding: 10% 0 5%;
-        }
-      }
-    }
-    .total_price {
-      width: 100%;
-      padding-top: 10%;
-      text-align: center;
-      position: relative;
-      img {
-        width: 70%;
-      }
-      h4 {
-        font-size: 28px;
+        background-image: url("../image/custom/7.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        // padding-top: 19%;
         position: absolute;
         top: 25%;
-        left: 0;
-        right: 0;
+        right: 13%;
+        transform: rotate(12deg);
+        text-align: center;
+        &Info {
+          // width: 100%;
+          display: flex;
+          flex-flow: column wrap;
+          text-align: center;
+          // padding-bottom: 100%;
+          padding: 37% 15%;
+          // height: 300px;
+        }
+        h3 {
+          font-size: 28px;
+          text-align: center;
+          // padding: 40% 20% 10%;
+          padding-bottom: 7%;
+        }
+        p {
+          font-size: 16px;
+          // padding: 0 30% 30%;
+          text-align: center;
+        }
       }
-      p {
-        font-size: 28px;
-        position: absolute;
-        top: 65%;
-        left: 0;
-        right: 0; 
+      .custom_type {
+        width: 100%;
+        height: 100%;
+        padding-top: 150px;
+        padding-bottom: 500px;
+        // display: flex;
+        // justify-content: space-around;
+        position: relative;
+
+        // .type_position {
+        //   width: 33.333333%;
+        //   padding: 0px 15px;
+        //   position: relative;
+
+        .shapePos0 {
+          width: 20%;
+          // position: relative;
+          position: absolute;
+          top: 45%;
+          left: 28%;
+          transition: 2s;
+          transform: scale(0.675);
+          z-index: 1;
+        }
+        .shapePos1 {
+          width: 20%;
+          position: absolute;
+          top: 65%;
+          left: 18%;
+          /*left:386px;*/
+          z-index: 2;
+          transition: 1.5s;
+          transform: scale(0.75);
+        }
+        .shapePos2 {
+          width: 20%;
+          position: absolute;
+          top: 73%;
+          left: 40%;
+          /*left:175px;*/
+          z-index: 3;
+          transition: 1.5s;
+        }
+        .shapePos3 {
+          width: 20%;
+          position: absolute;
+          top: 65%;
+
+          left: 62%;
+          /*left:900px;*/
+          z-index: 2;
+          transition: 1.5s;
+          transform: scale(0.75);
+        }
+        .shapePos4 {
+          width: 20%;
+          position: absolute;
+          top: 45%;
+          left: 57%;
+          /*left:785px;*/
+          transition: 1.5s;
+          transform: scale(0.675);
+          z-index: 1;
+        }
+        .right_btn {
+          width: 3%;
+          position: absolute;
+          bottom: 1%;
+          left: 60.5%;
+          z-index: 4;
+        }
+        .left_btn {
+          width: 3%;
+          position: absolute;
+          bottom: 1%;
+          left: 37%;
+          z-index: 4;
+        }
       }
     }
   }
-}
+  // ------ 第一屏 desktop  End -------
 
-// ----- 第二屏 desktop End -----
+  // ---- 巧克力背景 desktop Start -------
 
-// ----- 第三屏 desktop Start -----
+  .choco_background {
+    // position: rslative;
+    .choco_img {
+      width: 140%;
+      position: absolute;
+      top: 57%;
+      left: -20%;
+    }
+  }
 
-// * {
-//   outline: 1px solid red;
-// }
+  // ---- 巧克力背景 desktop End -------
 
+  // ----- 第二屏 desktop Start -----
 
-.outlook{
-  width: 100%;
-  // padding-top: 150px;
+  // * {
+  //   outline: 1px solid red;
+  // }
+  .base {
+    width: 100%;
+    // padding-top: 150px;
 
-  background-color: #fff4e2;
-  // max-width: 1200px;
-  margin: 0 auto;
-   
-  .outlok_wrap{
+    background-color: #fff4e2;
+    // max-width: 1200px;
+    margin: 0 auto;
+  }
+  .choose_base {
+    // width: 100%;
     max-width: 1200px;
     padding-top: 150px;
-  
+
     display: flex;
     justify-content: space-between;
     margin: auto;
     padding-bottom: 50px;
+    // -----選擇巧克力基底-----
 
-    
-  //  left side start 
+    .select_base {
+      // max-width: 1200px;
+      width: 30%;
+      display: flex;
+      flex-flow: column wrap;
 
-    .select_outlook{
-      width: 40%;
-      // display: flex;
-      // flex-flow: column wrap;
-      // justify-content: space-between;
-      
-      
-      .outlook_name{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 10%;
-      .outlook_name_photo{
-        width: 40%; 
-         // width: 50%;
-        text-align: right;
-         img{
-           width:80%; 
-          
-         }
-        }
-        .for_name{
-          width: 60%;
-          text-align: center;
-        padding-top: 12%;
-        box-sizing: border-box;
-
-          h3{
-            font-size: 28px;
-            padding-bottom: 10%;
-            
-          }
-          input{
-            width: 100%;
-            padding: 5% 10% ;
-            font-size: 18px;
-            border-radius: 10px;
-            border: 3px solid #1c99ae;
-            box-shadow: 5px 5px #1c99ae;
-          }
-        }
-      }
-      .select_item{
-        width: 90%;
-        background-color: #57dff7;
-        // opacity: 0.75;
-        margin: auto;
-        // padding-top: 0;
-        box-shadow: 10px 10px #1c99ae;
-        border-radius: 10px;
-        overflow: hidden;
-        
-        .tab_item{
-        width: 100%;
-        // padding-bottom: 5%;
-        button{
-          width: 33.333333%;
-          background-color: inherit;
-          float: left;
-          border-left: 1px solid #9a999a;
-          outline: none;
-          cursor: pointer;
-          transition: .3s;
-          padding: 3% 0;
-          
-        }
-        &:hover{
-          background-color: #1c99ae;
-        }
-      .clearfix{
-        clear: both;
-      }
-        
-        }
-        .eye{
-          width: 100%;
-          padding: 5%;
-          
+      .second_step {
+        width: 80%;
+        // height: 300px;
+        margin: 0 auto;
+        // background-color: #ffa;
+        // display: flex;
+        // flex-flow: column nowrap;
+        // align-items: center;
+        // justify-content: flex-end;
+        background-image: url("../image/custom/7.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0% 8%;
+        position: relative;
+        z-index: 1;
+        &Info {
+          // width: 100%;
           display: flex;
-          // display: none;
           flex-flow: column wrap;
-          justify-content: space-between;
-
-          .eye_types{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding-bottom:5%;
-            .eye_items{
-              width: 20%;
-              background-color: #017b91;
-              box-shadow: -5px -5px blue;
-              box-sizing: border-box;
-              padding: 5% 5%;
-              text-align: center;
-              border-radius: 5px;
-             img{
-               width: 100%;
-             }
-            }
-          }
-
+          text-align: center;
+          // padding-bottom: 100%;
+          padding: 49% 0%;
+          // height: 300px;
         }
-        .mouse{
-          display: none;
-          width: 100%;
-          padding: 5%;
-          // display: flex;
-          flex-flow: column wrap;
-          justify-content: space-between;
 
-          .mouse_types{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding-bottom:5%;
-            .mouse_items{
-              width: 20%;
-              background-color: #017b91;
-              box-shadow: -5px -5px blue;
-              box-sizing: border-box;
-              padding: 5% 5%;
-              text-align: center;
-              border-radius: 5px;
-             img{
-               width: 100%;
-             }
-            }
-          }
-
+        h3 {
+          font-size: 28px;
+          text-align: center;
+          // padding: 40% 20% 10%;
+          // padding-top: 50%;
         }
-        .others{
-          display: none;
+        p {
+          font-size: 16px;
+          // padding: 0 30% 30%;
+          text-align: center;
+        }
+      }
+
+      .base_choco {
+        width: 100%;
+        .choco {
           width: 100%;
-          padding: 5%;
-          // display: flex;
-          flex-flow: column wrap;
-          justify-content: space-between;
+          text-align: center;
+          padding-top: 30px;
+          position: relative;
 
-          .others_types{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding-bottom:5%;
-            .others_items{
-              width: 20%;
-              background-color: #017b91;
-              box-shadow: -5px -5px blue;
-              box-sizing: border-box;
-              padding: 5% 5%;
-              text-align: center;
-              border-radius: 5px;
-             img{
-               width: 100%;
-             }
-            }
+          img {
+            width: 47%;
           }
-
+          figcaption {
+            font-size: 16px;
+            position: absolute;
+            bottom: 37%;
+            right: 0;
+            left: 0;
+          }
         }
       }
     }
 
-    // ----- middle side start -----
-    
-    .outlook_fix{
-      width: 30%;
-      // display: flex;
-      // flex-flow: column wrap;
-      // justify-content: space-around;
-      .fix_photo{
-        width: 100%;
-        padding-bottom: 5%;
-       
-      }
-      .fix_bar{
-        width: 90%;
-        border: 2px solid #1c99ae;
-        border-radius: 10px;
-      margin: auto;
+    // -----選擇巧克力配料口味-----
+
+    .select_type {
+      width: 40%;
       display: flex;
-      justify-content: center;
-      background-color: white;
-        .bar_photo{
-          width: 20%;
-          padding: 3%;
-          img{
-            width: 70%;
+      flex-flow: row wrap;
+      .choco_overview {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        img {
+          width: 80%;
+        }
+      }
+      .choco_type {
+        width: 100%;
+        text-align: center;
+
+        ul {
+          padding: 2% 0;
+        }
+        li {
+          width: 80px;
+          height: 80px;
+          display: inline-block;
+          // padding: 2% 2%;
+          // border: 10px solid #ef9021;
+          background-color: #ef9021;
+          border-radius: 50%;
+          box-sizing: border-box;
+          position: relative;
+          figure {
+            // background-color: #fff5e3;
+            // border-radius: 50px;
+            // opacity: 0.75;
+            // box-sizing: border-box;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+            display: flex;
+            align-content: center;
+            flex-flow: row wrap;
+            justify-content: center;
+          }
+          img {
+            width: 75%;
+
+            p {
+              // padding-top: 20%;
+              font-size: 16px;
+            }
+          }
+          &::before {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity: 0.75;
+            background-color: #fff5e3;
+            border-radius: 50%;
+          }
+        }
+      }
+      .info_bar {
+        width: 75%;
+        height: 10%;
+        border-radius: 10px;
+        // background-image: url("../image/type-bar.png");
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        margin: 0 auto;
+        // position: relative;
+        text-align: center;
+        background-color: white;
+        border: 2px solid #f9aab0;
+        box-shadow: 5px 5px #f9aab0;
+        // padding-bottom: 20px;
+        // img {
+        //   width: 60%;
+        // }
+        p {
+          font-size: 16px;
+          padding-top: 6%;
+          // position: absolute;
+          // left: 5%;
+          // right: 0;
+          // top: 20%;
+        }
+      }
+    }
+
+    // -------基底介紹-----
+
+    .select_info {
+      width: 30%;
+      display: flex;
+      flex-flow: column wrap;
+
+      .cho_info {
+        width: 100%;
+        // height: 636px;
+        text-align: center;
+        // padding-top: 13%;
+        background-image: url("../image/custom/talk.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        // position: relative;
+        z-index: 1;
+
+        .cho_info_text {
+          width: 100%;
+          display: flex;
+          flex-flow: column wrap;
+          text-align: center;
+          // padding-bottom: 100%;
+          padding: 17% 25%;
+          // height: 300px;
+          box-sizing: border-box;
+          h4 {
+            font-size: 18px;
+            padding: 15% 0;
+          }
+          p {
+            width: 60%;
+            font-size: 16px;
+            margin: 0 auto;
+            padding-bottom: 10%;
+            text-align: center;
+            box-sizing: border-box;
+            &:nth-child(3) {
+              border-bottom: 1px solid #9a999a;
+              padding-bottom: 20%;
+            }
+            &:nth-child(4) {
+              padding: 10% 0 5%;
+            }
           }
         }
       }
       .total_price {
         width: 100%;
-        padding-top: 10%;
+        padding-top: 15%;
         text-align: center;
+        // margin: auto;
         position: relative;
         img {
           width: 90%;
@@ -810,7 +598,7 @@ body {
         h4 {
           font-size: 28px;
           position: absolute;
-          top: 25%;
+          top: 29%;
           left: 0;
           right: 0;
         }
@@ -819,95 +607,326 @@ body {
           position: absolute;
           top: 65%;
           left: 0;
-          right: 0; 
-        }
-      }
-    }
-    .step_info{
-      width: 30%;
-      position: relative;
-      text-align: center;
-      .thrid_stepInfo{
-        
-        position: absolute;
-        top: 7%;
-        left:11%;
-        right: 0;
-        h4 {
-          font-size: 18px;
-          padding: 2% 0;
+          right: 0;
         }
       }
     }
   }
 
-}
+  // ----- 第二屏 desktop End -----
 
-// ----- 第三屏 desktop End -----
+  // ----- 第三屏 desktop Start -----
 
-
-// ----- 第四屏 desktop Start -----
-
-.card{
-  width: 100%;
-  // padding-top: 150px;
-
-  background-color: #fff4e2;
-  // max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-   
-  .fourth_step{
+  // * {
+  //   outline: 1px solid red;
+  // }
+  .outlook {
     width: 100%;
-    text-align: center;
-    img{
-      width: 50%;
+    // padding-top: 150px;
+
+    background-color: #fff4e2;
+    // max-width: 1200px;
+    margin: 0 auto;
+
+    .outlok_wrap {
+      max-width: 1200px;
+      padding-top: 150px;
+
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      padding-bottom: 50px;
+
+      //  left side start
+
+      .select_outlook {
+        width: 40%;
+        // display: flex;
+        // flex-flow: column wrap;
+        // justify-content: space-between;
+
+        .outlook_name {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 10%;
+          .outlook_name_photo {
+            width: 40%;
+            // width: 50%;
+            text-align: right;
+            img {
+              width: 80%;
+            }
+          }
+          .for_name {
+            width: 60%;
+            text-align: center;
+            padding-top: 12%;
+            box-sizing: border-box;
+
+            h3 {
+              font-size: 28px;
+              padding-bottom: 10%;
+            }
+            input {
+              width: 100%;
+              padding: 5% 10%;
+              font-size: 18px;
+              border-radius: 10px;
+              border: 3px solid #1c99ae;
+              box-shadow: 5px 5px #1c99ae;
+            }
+          }
+        }
+        .select_item {
+          width: 90%;
+          background-color: #7fc3c6;
+          // opacity: 0.75;
+          margin: auto;
+          // padding-top: 0;
+          box-shadow: 10px 10px #4ea5a5;
+          border-radius: 20px;
+          overflow: hidden;
+
+          .tab_item {
+            width: 100%;
+            // padding-bottom: 5%;
+            button {
+              width: 33.333333%;
+              background-color: inherit;
+              float: left;
+              border-left: 1px solid #9a999a;
+              // outline: none;
+              cursor: pointer;
+              transition: 0.3s;
+              padding: 3% 0;
+            }
+            &:hover {
+              background-color: #1c99ae;
+            }
+            .clearfix {
+              clear: both;
+            }
+          }
+          .eye {
+            width: 100%;
+            padding: 5%;
+
+            display: flex;
+            // display: none;
+            flex-flow: column wrap;
+            justify-content: space-between;
+
+            .eye_types {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding-bottom: 5%;
+              .eye_items {
+                width: 20%;
+                background-color: #719eaa;
+                box-shadow: -10px -7px #317c84;
+                box-sizing: border-box;
+                padding: 5% 5%;
+                text-align: center;
+                border-radius: 10px;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .mouse {
+            display: none;
+            width: 100%;
+            padding: 5%;
+            // display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+
+            .mouse_types {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding-bottom: 5%;
+              .mouse_items {
+                width: 20%;
+                background-color: #719eaa;
+                box-shadow: -10px -7px #317c84;
+                box-sizing: border-box;
+                padding: 5% 5%;
+                text-align: center;
+                border-radius: 5px;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .others {
+            display: none;
+            width: 100%;
+            padding: 5%;
+            // display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+
+            .others_types {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding-bottom: 5%;
+              .others_items {
+                width: 20%;
+                background-color: #719eaa;
+                box-shadow: -10px -7px #317c84;
+                box-sizing: border-box;
+                padding: 5% 5%;
+                text-align: center;
+                border-radius: 5px;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // ----- middle side start -----
+
+      .outlook_fix {
+        width: 30%;
+        // display: flex;
+        // flex-flow: column wrap;
+        // justify-content: space-around;
+        .fix_photo {
+          width: 100%;
+          padding-bottom: 5%;
+        }
+        .fix_bar {
+          width: 90%;
+          border: 2px solid #1c99ae;
+          border-radius: 10px;
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          background-color: white;
+          .bar_photo {
+            width: 20%;
+            padding: 3%;
+            img {
+              width: 70%;
+            }
+          }
+        }
+        .total_price {
+          width: 100%;
+          padding-top: 18%;
+          text-align: center;
+          position: relative;
+          img {
+            width: 90%;
+          }
+          h4 {
+            font-size: 28px;
+            position: absolute;
+            top: 29%;
+            left: 0;
+            right: 0;
+          }
+          p {
+            font-size: 28px;
+            position: absolute;
+            top: 65%;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+      .step_info {
+        width: 30%;
+        position: relative;
+        text-align: center;
+        .thrid_stepInfo {
+          position: absolute;
+          top: 7%;
+          left: 11%;
+          right: 0;
+          h4 {
+            font-size: 18px;
+            padding: 2% 0;
+          }
+        }
+      }
     }
-    .fourth_step_info{
-      position: absolute;
-        top: 3%;
-        left:3%;
+  }
+
+  // ----- 第三屏 desktop End -----
+
+  // ----- 第四屏 desktop Start -----
+
+  .card {
+    width: 100%;
+    // padding-top: 150px;
+
+    background-color: #fff4e2;
+    // max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+    .fourth_step {
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 1200px;
+      img {
+        width: 30%;
+      }
+      .fourth_step_info {
+        position: absolute;
+        top: 1.5%;
+        left: 1.5%;
         right: 0;
-        h4 {
-          font-size: 18px;
+        h3 {
+          // width: 90%;
+          font-size: 28px;
           padding: 2% 0;
         }
-    }
-  }
-  .card_wrap{
-    max-width: 1200px;
-    padding-top: 150px;
-  
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    margin: auto;
-    padding-bottom: 50px;
-
-    .card_custom{
-      width: 100%;
-      display: flex;
-   
-    justify-content: space-between;
-    margin: auto;
-      .card_back{
-        width: 33.333333%;
-
-
       }
-      .card_write{
-        width: 33.333333%;
-        img{
-          width: 84%;
+    }
+    .card_wrap {
+      max-width: 1200px;
+      padding-top: 150px;
+
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      margin: auto;
+      padding-bottom: 50px;
+
+      .card_custom {
+        width: 100%;
+        display: flex;
+
+        justify-content: space-between;
+        margin: auto;
+        .card_back {
+          width: 33.333333%;
+        }
+        .card_write {
+          width: 33.333333%;
+
+          img {
+            width: 84%;
+            // margin: auto;
+          }
+        }
+        .card_items {
+          width: 33.333333%;
         }
       }
-      .card_items{
-        width: 33.333333%;
-      }
     }
   }
-}
-// ----- 第四屏 desktop End -----
-
-
+  // ----- 第四屏 desktop End -----
 }
