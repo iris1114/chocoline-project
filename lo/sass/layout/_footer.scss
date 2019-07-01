@@ -40,7 +40,8 @@ footer{
         left: 0;
         bottom: 0;
         overflow: hidden;
-        z-index: -1;
+        // z-index: -1;
+        pointer-events:none;
     }
     .footer_water{
         position: absolute;

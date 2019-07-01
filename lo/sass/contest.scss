@@ -108,8 +108,7 @@ html{
         .vote{
             @include pos(auto,0,-27%,15%);
         }
-    }
-    
+    } 
     .CHOCO{
         animation: dance 4s infinite;
     }
@@ -165,7 +164,6 @@ html{
             transform: translateY(5%);
         }
     }
-
     .board{
         width: 100%;
         height: 100%;
@@ -233,16 +231,21 @@ html{
     }
     .connect{
         width: 100%;
-        // height: 100%;
         text-align: center;
         @include pos(110%,0,auto,0);
+        // display: flex;
+        // justify-content: center;
     }
     .orange_l{
         width: 170px;
+        // flex-grow: 0;
+        // flex-shrink: 0;
+        // order: 1;
     }
     .cyan_l{
-        margin-top: 5%;
         width: 170px;
+        // flex-grow: 0;
+        // flex-shrink: 0;
     }
     .firstlc{
         width: 217px;
@@ -955,94 +958,43 @@ html{
 @include rwd(desktop){
     
     .stage_container{
-        position: relative;
         padding-top: 150px;
-        background: url("../image/contest/fitst_bg.png") no-repeat 0 0 / 100% 100%;
-        .wrap{
-            position: relative;
-            z-index: 1;
-        }
         .title_decoration{
-            margin: auto;
             h2{
                 @include pos(10%,0,0,0);
                 @include font_l();
             }
         }
-        .contain{
-            position: relative;
-            z-index: 1;
-        }
         .stage{
             width: 728px;
             height: 700px;
             padding: 0;
-            position: relative;
-            background: url("../image/contest/stage.png") no-repeat 0 100% / contain;
             margin: unset;
         }
         .select_dropdown{
             margin: unset;
         }
-        .winner{
-            position: absolute;
-            a{
-                display: block;
-                width: 55%;
-                height: 60%;
-                @include pos(10%,0,0,18%);
-                z-index: 1;
-            }
-        }
         #first_place{
-            width: 40%;
-            left: 27%;
             top: 10%;
-            .CHOCO{
-                &::after{
-                    content: "";
-                    position: absolute;
-                    width: 55%;
-                    height: 47%;
-                    top: -6%;
-                    right: -4%;
-                    top: 0%;
-                    right: -16%;
-                    background: url("../image/contest/no1.png") 0 0  no-repeat / contain;
-                }
-            }
-            
         }
         #second_place{
-            width: 38%;
-            left: 7%;
             top: 23%;
         }
         #third_place{
-            width: 36%;
-            left: 50%;
             top: 32%;
         }
         #fourth_place{
-            width: 34%;
-            left: -8%;
             top: 43%;
             .vote{
                 @include pos(auto,0,-10%,30%);
             }
         }
         #fifth_place{
-            width: 32%;
-            left: 70%;
             top: 48%;
             .vote{
                 @include pos(auto,0,-10%,15%);
             }
-        }
-        
-        .CHOCO{
-            animation: dance 4s infinite;
-        }
+        }     
         .vote{
             width: 100%;
             max-width: 85px;
@@ -1063,109 +1015,32 @@ html{
                 }
             }
         }
-        @keyframes dance {
-            0%{
-                transform: translateX(0%)
-                            translateY(0%);
-            }
-            25%{
-                transform: translateX(-5%)
-                            translateY(-2%)
-                            rotate(-5deg);
-            }
-            50%{
-                transform: translateX(0%)
-                            translateY(0%);
-            }
-            75%{
-                transform: translateX(5%)
-                            translateY(-2%)
-                            rotate(5deg);
-            }
-            100%{
-                transform: translateX(0%)
-                            translateY(0%);
-            }
-        }
-        @keyframes upanddown {
-            0%{
-                transform: translateY(0%);
-            }
-            100%{
-                transform: translateY(5%);
-            }
-        }
-
         .board{
             width: 620px;
             height: 100%;
             position: absolute;
             top: 0;
             right: 0;
-            z-index: -1;
             background: url("../image/contest/board.png") 0 0  no-repeat / contain;
         }
         .lastest_mseeage{
-            width: 80.645%;
-            margin: auto;
             padding-top: 13%;
-            h3{
-                @include font_m();
-                text-align: center;
-            }
-        }
-        .message_block{
-            border-top: 1px solid #7ECECD;
-        }
-        .message{
-            border-bottom: 1px solid #7ECECD;
-            padding: 2%;
-            &::after{
-                content: "";
-                display: block;
-                clear: both;
-            }
         }
         .cus_photo{
             max-width: 72px;
-            box-sizing: content-box;
             width: 14.8453%;
             height: 0;
             padding-bottom: 14.8453%;
             border-radius: 15px;
-            border: 2px solid $color_brown;
-            float: left;
-            position: relative;
             img{
                 border-radius: 15px;
-                @include pos(0,0,0,0);
             }
-        }
-        .message_contain{
-            float: left;
-            width: 60%;
-            margin-left: 2%;
-            .memName{
-                @include font_m();
-            }
-            .mseeage_text{
-                @include font_s();
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
-        }
-        .status{
-            float: right;
-            width: 20%;
         }
         .message_date{
-            color: $color_gray;
-            text-align: center;
             @include font_s();
         }
         .connect{
-            width: 100%;
+            display: block;
             height: 100%;
             top: 0;
             z-index: -1;
@@ -1176,84 +1051,9 @@ html{
         .cyan_l{
             @include pos(83%,0,auto,20%);
         }
-        .firstlc{
-            width: 217px;
-            @include pos(19%,auto,auto,5%);
-            animation: cloudmove 20s infinite alternate linear;
-        }
-        .secondlc{
-            width: 151px;
-            @include pos(22%,auto,auto,56%);
-            animation: cloudmove 20s infinite alternate linear;
-        }
-        .thirdlc{
-            width: 217px;
-            @include pos(39%,auto,auto,74%);
-            animation: cloudmove 20s infinite alternate linear;
-        }
-        .fourthlc{
-            width: 158px;
-            @include pos(17%,auto,auto,82%);
-            animation: cloudmove 20s infinite alternate linear;
-        }
-        .shinel{
-            width: 92px;
-            @include pos(13%,auto,auto,30%);
-            animation: opacity 3s infinite alternate;
-        }
-        .shiner{
-            width: 46px;
-            @include pos(33%,auto,auto,88%);
-            animation: opacity 3s infinite alternate;
-        }
-        .circle1,.circle2,.circle3{
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #ffffff;
-            @include pos(17%,auto,auto,5%);
-        }
-        .circle2{
-            width: 47px;
-            height: 47px;
-            @include pos(23%,auto,auto,72%);
-        }
-        .circle3{
-            width: 35px;
-            height: 35px;
-            @include pos(14%,auto,auto,80%);
-        }
-        @keyframes cloudmove {
-            0%{
-                transform: translateX(-30%)
-            }
-            100%{
-                transform: translateX(30%)
-            }
-        }
-        @keyframes opacity {
-            0%{
-                opacity: 1;
-            }
-            20%{
-                opacity: 1;
-            }
-            100%{
-                opacity: 0.7;
-            }
-        }
     }
     .active_container{
-        position: relative;
-        width: 100%;
-        .circle_bg{
-            width: 100%;
-            height: 150%;
-            background: url("../image/contest/circle_bg.png") no-repeat 50% 100%;
-            @include pos(-33%,0,0,0);
-        }
         .wrap{
-            position: relative;
             height: 744px;
             background: url("../image/contest/active_bg.png") 50% 100% no-repeat;
             h2{

@@ -990,7 +990,7 @@ body {
 }
 
 .container .aboutus {
-  height: 1080px;
+  height: 960px;
   background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
   margin: 0 auto;
   text-align: center;
@@ -999,26 +999,24 @@ body {
 .container .aboutus .aboutus_biglogo {
   width: 600px;
   margin: 0 auto;
-  padding-top: 90px;
+  padding-top: 120px;
 }
 
 .container .aboutus .aboutus_biglogo .biglogo1 {
-  width: 590px;
-  -webkit-animation: move 3s 0s 1 both;
-          animation: move 3s 0s 1 both;
+  width: 650px;
   -webkit-transform: translateX(-590px);
           transform: translateX(-590px);
 }
 
 .container .aboutus .aboutus_biglogo .biglogo2 {
-  width: 310px;
+  width: 350px;
   margin-top: -60px;
   -webkit-transform: translateX(1920px);
           transform: translateX(1920px);
 }
 
 .container .aboutus .aboutus_text {
-  padding-top: 60px;
+  padding-top: 5%;
 }
 
 .container .aboutus .aboutus_text p {
@@ -1047,7 +1045,7 @@ body {
 }
 
 .container .touringcar {
-  height: 1080px;
+  height: 960px;
   background: url("../image/aboutus/aboutus_bg_02.png") no-repeat 0 0;
 }
 
@@ -1060,12 +1058,74 @@ body {
 
 .container .touringcar .aboutus_container .aboutus_map {
   width: 600px;
+  position: relative;
+  left: 0;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .taipei {
+  position: absolute;
+  top: 13%;
+  left: 48%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .hualian {
+  position: absolute;
+  top: 42%;
+  left: 71%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .taoyuan {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .taizhong {
+  position: absolute;
+  top: 33%;
+  left: 31%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .gaoxiong {
+  position: absolute;
+  top: 70%;
+  left: 27%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .taipei_point {
+  position: absolute;
+  top: 12%;
+  left: 61%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .hualian_point {
+  position: absolute;
+  top: 41%;
+  left: 61%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
+  position: absolute;
+  top: 20%;
+  left: 53%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .taizhong_point {
+  position: absolute;
+  top: 32%;
+  left: 43%;
+}
+
+.container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
+  position: absolute;
+  top: 70%;
+  left: 39%;
 }
 
 .container .touringcar .aboutus_car {
   width: 1920px;
   height: 600px;
-  margin-top: -300px;
+  margin-top: -285px;
   position: relative;
   z-index: 1;
 }
@@ -1081,8 +1141,66 @@ body {
 }
 
 .container .shopinfo {
-  height: 1080px;
+  height: 960px;
   background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 50% 0;
+}
+
+.container .shopinfo .aboutus_shopmovie {
+  width: 1200px;
   margin: 0 auto;
+  padding-top: 110px;
+  position: relative;
+}
+
+.container .shopinfo .aboutus_shopmovie .title_bg {
+  width: 300px;
+  margin-left: 30px;
+}
+
+.container .shopinfo .aboutus_shopmovie .title_bg h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-top: -50px;
+}
+
+.container .shopinfo .aboutus_shopmovie .shopmovie_container {
+  width: 1065px;
+  margin: 0 auto;
+}
+
+.container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
+  width: 490px;
+}
+
+.container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
+  width: 570px;
+}
+
+.container .shopinfo .shopinfo_cnotainer {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container .shopinfo .shopinfo_cnotainer .text {
+  width: 500px;
+  margin-left: 150px;
+  margin-top: 100px;
+}
+
+.container .shopinfo .shopinfo_cnotainer .text h2 {
+  font-size: 28px;
+}
+
+.container .shopinfo .shopinfo_cnotainer .text p {
+  padding-top: 20px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
+  width: 300px;
+  float: right;
+  margin-top: -230px;
+  margin-right: 110px;
 }
 /*# sourceMappingURL=about.css.map */

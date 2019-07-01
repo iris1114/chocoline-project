@@ -14,7 +14,7 @@ window.addEventListener("load",function(){
             if(plike.style.display == "none"){
                 wlike.style.display = "none";
                 plike.style.display = "";
-                fig.style.color = "#F0ECDD";
+                fig.style.color = "#F6EED4";
             }else{
                 plike.style.display = "none";
                 wlike.style.display = "";
