@@ -224,7 +224,8 @@ header {
       text-align: center;
       padding: 7% 0;
       font-family: "Noto Sans TC", sans-serif;
-      line-height: normal; }
+      line-height: normal;
+      position: relative; }
       @media all and (max-width: 767px) {
         .m_header .menubox li {
           font-size: 18px; } }
@@ -252,6 +253,22 @@ header {
 
 .d_header {
   display: none; }
+
+.nowpage {
+  position: relative;
+  top: 9px; }
+  .nowpage::before {
+    content: "";
+    background: url("../image/headerfooter/li_bg.png") no-repeat 50% 0/contain;
+    width: 100%;
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto; }
 
 @media all and (min-width: 992px) {
   .m_header {
@@ -292,7 +309,8 @@ header {
       justify-content: center; }
       .d_header .menubox li {
         font-size: 18px;
-        margin: 0 12px; }
+        margin: 0 12px;
+        position: relative; }
         .d_header .menubox li a {
           color: #F6EED4;
           display: block; } }
@@ -375,8 +393,8 @@ header {
     border-radius: 10px;
     border: 2px solid #592F13;
     background-color: white;
-    -webkit-animation: prompt_move 1s infinite alternate;
-    animation: prompt_move 1s infinite alternate; }
+    -webkit-animation: prompt_move 1.5s infinite alternate;
+    animation: prompt_move 1.5s infinite alternate; }
     @media all and (max-width: 767px) {
       .robot .robot_prompt {
         font-size: 16px; } }
@@ -403,13 +421,13 @@ header {
 
 @-webkit-keyframes prompt_move {
   0% {
-    top: -12%; }
+    top: -11%; }
   100% {
     top: -10%; } }
 
 @keyframes prompt_move {
   0% {
-    top: -12%; }
+    top: -11%; }
   100% {
     top: -10%; } }
     .robot .robot_prompt:after {
@@ -544,6 +562,46 @@ header {
       -o-transition: transform 1s;
       transition: transform 1s;
       transition: transform 1s, -webkit-transform 1s; }
+  .robot .robot_click1 {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 70px;
+    cursor: pointer; }
+  .robot .robot_click2 {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 12%;
+    margin: auto;
+    width: 20%;
+    height: 20%;
+    cursor: pointer; }
+  .robot .robot_click3 {
+    position: absolute;
+    top: 0;
+    right: 11%;
+    bottom: auto;
+    left: auto;
+    margin: auto;
+    width: 20%;
+    height: 20%;
+    cursor: pointer; }
+  .robot .robot_click1 {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 70px;
+    cursor: pointer; }
   .robot .robot_content {
     position: absolute;
     top: 35%;
@@ -2013,7 +2071,7 @@ body {
       margin: 0 auto; }
       .container .shopinfo .shopinfo_cnotainer .text {
         width: 500px;
-        margin-left: 150px;
+        margin-left: 13%;
         margin-top: 110px; }
         .container .shopinfo .shopinfo_cnotainer .text h2 {
           font-size: 28px; }
