@@ -295,7 +295,7 @@ header {
 
 .robot {
   position: fixed;
-  right: 100px;
+  right: 20px;
   bottom: -225px;
   width: 300px;
   height: 340px;
@@ -567,6 +567,7 @@ header {
       justify-content: center;
       border-radius: 5px; }
       .robot .robot_content .query_area input[type="text"] {
+        width: 100%;
         border: none;
         background-color: transparent;
         color: #F6EED4; }
@@ -1128,16 +1129,17 @@ body {
   height: 960px;
   background: url("../image/aboutus/aboutus_bg_02-1.png") center; }
   .container .touringcar .aboutus_container {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
     padding-top: 30px;
     position: relative;
     z-index: 2;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center; }
+    flex-flow: row nowrap; }
     .container .touringcar .aboutus_container .aboutus_map {
       width: 600px;
+      margin: 0 auto;
       position: relative;
       left: 0; }
       .container .touringcar .aboutus_container .aboutus_map .taipei {
@@ -1181,11 +1183,13 @@ body {
         top: 66%;
         left: 40%; }
     .container .touringcar .aboutus_container .aboutus_carsort {
-      width: 480px;
+      width: 50%;
       padding-top: 60px; }
       .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-        width: 480px;
-        height: 90px;
+        width: 100%;
+        max-width: 480px;
+        height: 100%;
+        max-height: 90px;
         background: #f0ecdd;
         border: 2px solid #1a99ad;
         border-radius: 25px 25px 0 0; }
@@ -1323,3 +1327,7 @@ body {
       float: right;
       margin-top: -230px;
       margin-right: 110px; }
+
+@media all and (min-width: 768px) {
+  .container .touringcar .aboutus_container {
+    display: block; } }
