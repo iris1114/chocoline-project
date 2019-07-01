@@ -129,7 +129,7 @@ footer p {
   font-size: 12px;
   padding: 5px;
   text-align: center;
-  color: #F0ECDD;
+  color: #F6EED4;
 }
 
 footer .bg {
@@ -140,6 +140,7 @@ footer .bg {
   left: 0;
   bottom: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 footer .footer_water {
@@ -301,7 +302,7 @@ header {
 }
 
 .m_header .menubox li a {
-  color: #F0ECDD;
+  color: #F6EED4;
 }
 
 .m_header .menubox #menuclose {
@@ -373,7 +374,7 @@ header {
     margin: 0 12px;
   }
   .d_header .menubox li a {
-    color: #F0ECDD;
+    color: #F6EED4;
     display: block;
   }
 }
@@ -655,7 +656,7 @@ header {
   content: "";
   width: 15px;
   height: 2px;
-  background-color: #F0ECDD;
+  background-color: #F6EED4;
   position: absolute;
   top: 45%;
   right: auto;
@@ -674,7 +675,7 @@ header {
   content: "";
   width: 15px;
   height: 2px;
-  background-color: #F0ECDD;
+  background-color: #F6EED4;
   position: absolute;
   top: 45%;
   right: 3px;
@@ -726,7 +727,7 @@ header {
   max-width: 80%;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: #F0ECDD;
+  background-color: #F6EED4;
   border-radius: 10px;
 }
 
@@ -746,7 +747,7 @@ header {
   height: 0;
   border-style: solid;
   border-width: 5px 15px 5px 0;
-  border-color: transparent #F0ECDD transparent transparent;
+  border-color: transparent #F6EED4 transparent transparent;
 }
 
 .robot .robot_content .message_area .message:nth-child(even) {
@@ -765,7 +766,7 @@ header {
   height: 0;
   border-style: solid;
   border-width: 5px 0 5px 15px;
-  border-color: transparent transparent transparent #F0ECDD;
+  border-color: transparent transparent transparent #F6EED4;
 }
 
 .robot .robot_content .keyword_area {
@@ -788,12 +789,12 @@ header {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  color: #F0ECDD;
+  color: #F6EED4;
 }
 
 .robot .robot_content .keyword_area .prev_button i,
 .robot .robot_content .keyword_area .next_button i {
-  color: #F0ECDD;
+  color: #F6EED4;
 }
 
 .robot .robot_content .keyword_area .keyword_wrap {
@@ -805,7 +806,7 @@ header {
 }
 
 .robot .robot_content .keyword_area .keyword_wrap .keyword {
-  color: #F0ECDD;
+  color: #F6EED4;
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
   padding: 5px;
@@ -849,26 +850,26 @@ header {
 .robot .robot_content .query_area input[type="text"] {
   border: none;
   background-color: transparent;
-  color: #F0ECDD;
+  color: #F6EED4;
 }
 
 .robot .robot_content .query_area input[type="text"]::-webkit-input-placeholder {
-  color: #F0ECDD;
+  color: #F6EED4;
   font-weight: bold;
 }
 
 .robot .robot_content .query_area input[type="text"]:-ms-input-placeholder {
-  color: #F0ECDD;
+  color: #F6EED4;
   font-weight: bold;
 }
 
 .robot .robot_content .query_area input[type="text"]::-ms-input-placeholder {
-  color: #F0ECDD;
+  color: #F6EED4;
   font-weight: bold;
 }
 
 .robot .robot_content .query_area input[type="text"]::placeholder {
-  color: #F0ECDD;
+  color: #F6EED4;
   font-weight: bold;
 }
 
@@ -876,10 +877,10 @@ header {
   position: relative;
   border: none;
   background-color: transparent;
-  color: #F0ECDD;
+  color: #F6EED4;
   cursor: pointer;
   font-weight: bold;
-  border-left: 1px solid #F0ECDD;
+  border-left: 1px solid #F6EED4;
 }
 
 @media (max-width: 767px) {
@@ -908,7 +909,7 @@ header {
 }
 
 .btn {
-  color: #F0ECDD;
+  color: #F6EED4;
   text-align: center;
   padding: 10px;
   display: inline-block;
@@ -921,7 +922,7 @@ header {
 }
 
 .btn span {
-  color: #F0ECDD;
+  color: #F6EED4;
   display: inline-block;
   position: relative;
   -webkit-transition: 0.5s;
@@ -932,7 +933,7 @@ header {
   content: '\00bb';
   position: absolute;
   display: inline-block;
-  color: #F0ECDD;
+  color: #F6EED4;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
@@ -1289,7 +1290,7 @@ header {
 
 .pagination a:hover {
   background-color: #187f8f;
-  color: #F0ECDD;
+  color: #F6EED4;
   border: 1px solid #187f8f;
 }
 
@@ -1306,7 +1307,7 @@ header {
 
 .pagination .active {
   background-color: #187f8f;
-  color: #F0ECDD;
+  color: #F6EED4;
   border: 1px solid #187f8f;
 }
 
@@ -1314,7 +1315,7 @@ header {
   width: 200px;
   font-size: 16px;
   height: 36px;
-  color: #F0ECDD;
+  color: #F6EED4;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1394,7 +1395,7 @@ header {
 #prev_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #F0ECDD;
+  color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -1426,7 +1427,7 @@ header {
 #next_btn {
   padding: 10px;
   background-color: #1c99ae;
-  color: #F0ECDD;
+  color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Noto Sans TC", sans-serif;
@@ -3117,10 +3118,10 @@ html {
     top: -10px;
   }
   .player_container .contain .CHOCO figcaption p {
-    color: #F0ECDD;
+    color: #F6EED4;
   }
   .player_container .contain .CHOCO figcaption span {
-    color: #F0ECDD;
+    color: #F6EED4;
   }
   .player_container .contain .ring {
     display: block;
@@ -3970,7 +3971,7 @@ html {
   .player_container .contain .CHOCO figcaption p {
     font-family: "Noto Sans TC", sans-serif;
     line-height: normal;
-    color: #F0ECDD;
+    color: #F6EED4;
   }
 }
 
@@ -3994,7 +3995,7 @@ html {
 
 @media all and (min-width: 992px) {
   .player_container .contain .CHOCO figcaption span {
-    color: #F0ECDD;
+    color: #F6EED4;
   }
   .player_container .contain .ring {
     display: block;
