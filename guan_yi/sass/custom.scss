@@ -1,10 +1,6 @@
-@import "base/reset";
-@import "base/all";
-@import "mixins/mixin";
-@import "layout/all";
-@import "modules/all";
-@import "common";
-@import "other";
+@import "../../common/sass/common.scss";
+@import "../../common/sass/layout/robot.scss";
+
 
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
 // * {
@@ -177,11 +173,17 @@ body {
 // ------ 第一屏 mobile End --------
 
 // ------ 第一屏 desktop Start --------
-
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 @include rwd(desktop) {
   // * {
   //   outline: 1px solid red;
   // }
+  .clearfix {
+    clear: both;
+  }
 
   .custom {
     width: 100%;
@@ -402,6 +404,7 @@ body {
         h3 {
           font-size: 28px;
           text-align: center;
+          padding-bottom: 10%;
           // padding: 40% 20% 10%;
           // padding-top: 50%;
         }
@@ -419,6 +422,7 @@ body {
           text-align: center;
           padding-top: 30px;
           position: relative;
+          
 
           img {
             width: 47%;
@@ -429,6 +433,14 @@ body {
             bottom: 37%;
             right: 0;
             left: 0;
+           
+            p{
+              color:  white;
+              
+            }
+           
+            
+            
           }
         }
       }
@@ -562,18 +574,20 @@ body {
           flex-flow: column wrap;
           text-align: center;
           // padding-bottom: 100%;
-          padding: 17% 25%;
+          padding: 25% 23%;
           // height: 300px;
           box-sizing: border-box;
-          h4 {
-            font-size: 18px;
-            padding: 15% 0;
+          h3 {
+            width: 100%;;
+            font-size: 28px;
+            padding: 2% 20%;
           }
+         
           p {
             width: 60%;
             font-size: 16px;
             margin: 0 auto;
-            padding-bottom: 10%;
+            padding-bottom: 5%;
             text-align: center;
             box-sizing: border-box;
             &:nth-child(3) {
@@ -581,7 +595,7 @@ body {
               padding-bottom: 20%;
             }
             &:nth-child(4) {
-              padding: 10% 0 5%;
+              padding: 10% 0 10%;
             }
           }
         }
@@ -695,23 +709,26 @@ body {
               width: 33.333333%;
               background-color: inherit;
               float: left;
-              border-left: 1px solid #9a999a;
+              background-color: #9a999a;
+              border: 1px solid #9a999a;
+              border-bottom: none;
               // outline: none;
               cursor: pointer;
               transition: 0.3s;
               padding: 3% 0;
+              &:hover {
+                background-color: #1c99ae;
+              }
+              &.active {
+                background-color: #1c99ae;
+              }
             }
-            &:hover {
-              background-color: #1c99ae;
-            }
-            .clearfix {
-              clear: both;
-            }
+           
           }
           .eye {
             width: 100%;
             padding: 5%;
-
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
             display: flex;
             // display: none;
             flex-flow: column wrap;
@@ -725,7 +742,7 @@ body {
               .eye_items {
                 width: 20%;
                 background-color: #719eaa;
-                box-shadow: -10px -7px #317c84;
+                box-shadow: inset 10px 10px #317c84;
                 box-sizing: border-box;
                 padding: 5% 5%;
                 text-align: center;
@@ -743,7 +760,7 @@ body {
             // display: flex;
             flex-flow: column wrap;
             justify-content: space-between;
-
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
             .mouse_types {
               width: 100%;
               display: flex;
@@ -752,7 +769,7 @@ body {
               .mouse_items {
                 width: 20%;
                 background-color: #719eaa;
-                box-shadow: -10px -7px #317c84;
+                box-shadow: inset 10px 10px #317c84;
                 box-sizing: border-box;
                 padding: 5% 5%;
                 text-align: center;
@@ -770,7 +787,7 @@ body {
             // display: flex;
             flex-flow: column wrap;
             justify-content: space-between;
-
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
             .others_types {
               width: 100%;
               display: flex;
@@ -779,7 +796,7 @@ body {
               .others_items {
                 width: 20%;
                 background-color: #719eaa;
-                box-shadow: -10px -7px #317c84;
+                box-shadow: inset 10px 10px #317c84;
                 box-sizing: border-box;
                 padding: 5% 5%;
                 text-align: center;
@@ -853,9 +870,16 @@ body {
           top: 7%;
           left: 11%;
           right: 0;
-          h4 {
-            font-size: 18px;
+          h3 {
+            // width: 90%;
+            font-size: 28px;
             padding: 2% 0;
+          }
+        }
+        .right_side_background {
+          width: 100%;
+          img {
+            width: 85%;
           }
         }
       }
@@ -865,6 +889,10 @@ body {
   // ----- 第三屏 desktop End -----
 
   // ----- 第四屏 desktop Start -----
+
+  // * {
+  //   outline: 1px solid red;
+  // }
 
   .card {
     width: 100%;
@@ -885,8 +913,8 @@ body {
       }
       .fourth_step_info {
         position: absolute;
-        top: 1.5%;
-        left: 1.5%;
+        top: 5%;
+        left: 2%;
         right: 0;
         h3 {
           // width: 90%;
@@ -918,15 +946,216 @@ body {
           width: 33.333333%;
 
           img {
-            width: 84%;
+            width: 85%;
             // margin: auto;
           }
         }
         .card_items {
           width: 33.333333%;
+          background-color: #7fc3c6;
+          // opacity: 0.75;
+          margin: auto;
+          // padding-top: 0;
+          box-shadow: 10px 10px #4ea5a5;
+          border-radius: 20px;
+          overflow: hidden;
+
+          .tab_item {
+            width: 100%;
+            // padding-bottom: 5%;
+            button {
+              width: 33.333333%;
+              background-color: inherit;
+              float: left;
+              border-left: 1px solid #9a999a;
+              border-bottom: none;
+              // outline: none;
+              cursor: pointer;
+              transition: 0.3s;
+              padding: 3% 0;
+              &:hover {
+                background-color: blue;
+              }
+            }
+           
+          }
+          .card_color {
+            width: 100%;
+            padding: 5% ;
+
+            // display: flex;
+            display: none;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            .card_background {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding-bottom: 5%;
+              .background_color {
+                width: 20%;
+                background-color: #719eaa;
+                box-shadow: -10px -10px #317c84;
+                box-sizing: border-box;
+                // padding: 5% 5%;
+
+                border-radius: 5px;
+                img {
+                  width: 100%;
+                  // padding: 50% 25%;
+                }
+              }
+            }
+          }
+          .text_color {
+            width: 100%;
+            padding: 5%;
+
+            // display: flex;
+            display: none;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            .card_background {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding-bottom: 5%;
+              .background_color {
+                width: 20%;
+                background-color: #719eaa;
+                box-shadow: -10px -10px #317c84;
+                box-sizing: border-box;
+                // padding: 5% 5%;
+                text-align: center;
+                border-radius: 5px;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .pic_color {
+            width: 100%;
+            padding: 5%;
+
+            // display: flex;
+            display: none;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            .card_background {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              padding-bottom: 5%;
+              .background_color {
+                width: 20%;
+                background-color: #719eaa;
+                box-shadow: -10px -10px #317c84;
+                box-sizing: border-box;
+                // padding: 5% 5%;
+
+                border-radius: 5px;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .upload {
+            width: 80%;
+            text-align: right;
+            margin-left: auto;
+            input {
+              // display: inline;
+              // width: 50%;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .card_info {
+        width: 100%;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        margin: auto;
+
+        .paint_text {
+          width: 50%;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-evenly;
+          margin: 0 auto;
+
+          .paint {
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            .paint_pen {
+              width: 20%;
+              text-align: center;
+              margin: 0 auto;
+              background-color: white;
+              border-radius: 15px;
+              p {
+                padding-top: 15%;
+              }
+            }
+            .paint_photo {
+              width: 60%;
+              // text-align: center;
+              // padding-left: 5%;
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .paint_color {
+            width: 100%;
+            text-align: center;
+
+            img {
+              width: 80%;
+              border-radius: 5px;
+            }
+          }
+        }
+
+        .total_price {
+          width: 30%;
+          // padding-top: 18%;
+          text-align: center;
+          position: relative;
+          img {
+            width: 80%;
+          }
+          h4 {
+            font-size: 28px;
+            position: absolute;
+            top: 13%;
+            left: 0;
+            right: 0;
+          }
+          p {
+            font-size: 28px;
+            position: absolute;
+            top: 60%;
+            left: 0;
+            right: 0;
+          }
+        }
+        .final_btn {
+          width: 20%;
+          text-align: center;
+          padding-top: 2.5%;
         }
       }
     }
   }
   // ----- 第四屏 desktop End -----
 }
+// * {
+//   outline: 1px solid red;
+// }
