@@ -47,7 +47,7 @@ body {
   .touringcar {
     height: 960px;
     padding: 0 20px;
-    margin-top: -90%;
+    // margin-top: -90%;
     // background: url("../image/aboutus/aboutus_bg_02-1.png") no-repeat 0 0;
     background: url("../image/aboutus/aboutus_bg_02-1.png") center;
     // .title_decoration {
@@ -56,13 +56,9 @@ body {
     .aboutus_container {
       width: 100%;
       margin: auto;
-      padding-top: 30px;
+      // padding-top: 30px;
       position: relative;
       z-index: 2;
-      // display: flex;
-      // flex-flow: row nowrap;
-      // justify-content: center;
-      // align-items: center;
 
       .aboutus_map {
         width: 100%;
@@ -584,12 +580,13 @@ body {
     }
     .shopinfo {
       height: 1050px;
-      background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 37% 0;
+      background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 30% 0;
       // text-align: center;
       .aboutus_shopmovie {
         width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
-        padding-top: 100px;
+        padding-top: 18%;
         position: relative;
         .title_bg {
           width: 300px;
@@ -604,12 +601,12 @@ body {
           width: 100%;
           margin: 0 auto;
           .aboutus_shopmovie_img {
-            width: 42%;
+            width: 44%;
             padding-top: 1%;
             opacity: 1;
           }
           .movie_img1 {
-            width: 50%;
+            width: 55%;
             padding-top: 0%;
           }
         }
@@ -618,9 +615,9 @@ body {
         width: 1200px;
         margin: 0 auto;
         .text {
-          width: 500px;
-          margin-left: 140px;
-          margin-top: 170px;
+          width: 60%;
+          margin-left: 17%;
+          margin-top: 13%;
           h2 {
             font-size: 28px;
           }
@@ -889,10 +886,11 @@ body {
     }
     .shopinfo {
       height: 1050px;
-      background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 50% 0;
+      background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 40% 0;
       // text-align: center;
       .aboutus_shopmovie {
-        width: 1200px;
+        width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
         padding-top: 100px;
         position: relative;
@@ -906,15 +904,18 @@ body {
           }
         }
         .shopmovie_container {
-          width: 1065px;
+          width: 100%;
+          max-width: 1065px;
           margin: 0 auto;
           .aboutus_shopmovie_img {
-            width: 490px;
+            width: 44%;
+            max-width: 490px;
             padding-top: 0%;
             opacity: 1;
           }
           .movie_img1 {
-            width: 570px;
+            width: 55%;
+            max-width: 570px;
             padding-top: 0%;
           }
         }
@@ -924,8 +925,8 @@ body {
         margin: 0 auto;
         .text {
           width: 500px;
-          margin-left: 13%;
-          margin-top: 110px;
+          margin-left: 18%;
+          margin-top: 10%;
           h2 {
             font-size: 28px;
           }
