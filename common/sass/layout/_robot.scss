@@ -37,7 +37,7 @@
     border-radius: 10px;
     border: 2px solid $color_brown;
     background-color: white;
-    animation: prompt_move 1s infinite alternate;
+    animation: prompt_move 1.5s infinite alternate;
     &:before {
       content: "";
       @include pos(auto, 0, -14px, 0);
@@ -51,7 +51,7 @@
 
     @keyframes prompt_move {
       0% {
-        top: -12%;
+        top: -11%;
       }
       100% {
         top: -10%;
@@ -142,6 +142,31 @@
       transition: transform 1s;
     }
   }
+  .robot_click1{
+    @include pos(45px,0,auto,0);
+    width: 90%;
+    height: 70px;
+    cursor: pointer;
+  }
+  .robot_click2{
+    @include pos(0,auto,auto,12%);
+    width: 20%;
+    height: 20%;
+    cursor: pointer;
+  }
+  .robot_click3{
+    @include pos(0,11%,auto,auto);
+    width: 20%;
+    height: 20%;
+    cursor: pointer;
+  }
+  .robot_click1{
+    @include pos(45px,0,auto,0);
+    width: 90%;
+    height: 70px;
+    cursor: pointer;
+  }
+
   .robot_content {
     @include pos(35%, auto, auto, 10%);
     width: 80%;
