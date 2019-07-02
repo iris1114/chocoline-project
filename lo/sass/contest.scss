@@ -1,4 +1,4 @@
-@import "common";
+@import "../../common/sass/common.scss";
 
 @mixin noselect {
     user-select: none;
@@ -233,19 +233,12 @@ html{
         width: 100%;
         text-align: center;
         @include pos(110%,0,auto,0);
-        // display: flex;
-        // justify-content: center;
     }
     .orange_l{
         width: 170px;
-        // flex-grow: 0;
-        // flex-shrink: 0;
-        // order: 1;
     }
     .cyan_l{
         width: 170px;
-        // flex-grow: 0;
-        // flex-shrink: 0;
     }
     .firstlc{
         width: 217px;
@@ -535,6 +528,7 @@ html{
         .CHOCO{
             width: 110px;
             float: left;
+            border: 5px dashed transparent;
             img{
                 position: relative;
                 left: -9px;
@@ -544,6 +538,14 @@ html{
                 top: -20px;
                 text-align: center;
                 @include font_s();
+            }
+        }
+        .CHOCO_select{
+            border-radius: 15px;
+            background: $color_milk;
+            border: 5px dashed #EF9021;
+            img{
+                transform: scale(1.1);
             }
         }
         .status{
@@ -723,7 +725,19 @@ html{
             width: 40px;
             height: 40px;
         }
- 
+        .connect{
+            display: flex;
+            justify-content: center;
+        }
+        .orange_l{
+            flex-grow: 0;
+            flex-shrink: 0;
+            order: 1;
+        }
+        .cyan_l{
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
     }
     .active_container{
         .wrap{
@@ -839,7 +853,7 @@ html{
         }
     }
 }
-@include rwd(tablet){
+@include rwd(tablet){ //min768
     .stage_container{
         .title_decoration{
             h2{
@@ -955,7 +969,7 @@ html{
         }
     }
 } 
-@include rwd(desktop){
+@include rwd(desktop){ //min992
     
     .stage_container{
         padding-top: 150px;
@@ -1441,7 +1455,18 @@ html{
             }
         }
     }
-    
+    @media all and (max-width:1140px){
+        .active_container{
+            .bearshow{
+                transition: .5s;
+                @include pos(40%,72%,0%,0%);
+            }
+            .cakeshow{
+                @include pos(40%,0%,0%,64%);
+                transition: .5s;
+            }
+        }
+    }
     @media all and (max-width:1040px){
         .stage_container{
             .stage{
@@ -1464,6 +1489,16 @@ html{
             }
             #fifth_place{
                 top: 56%;
+            }
+        }
+        .active_container{
+            .bearshow{
+                transition: .5s;
+                @include pos(40%,72%,0%,0%);
+            }
+            .cakeshow{
+                @include pos(40%,0%,0%,71%);
+                transition: .5s;
             }
         }
     }

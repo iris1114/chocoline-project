@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link rel="icon" type="image/png" href="image/common/logo_icon.png">
     <link rel="stylesheet" href="css/contest.css">
-    <title>CHOCO_Contest</title>
+    <title>CHOCO 選美</title>
 </head>
 <body class="contest_body">
 <!-- header start -->
@@ -61,9 +63,9 @@
             <div class="navbar">
                 <ul class="menubox">
                     <li><a href="custom.html">客製 CHOCO</a></li>
-                    <li><a href="contest.html">CHOCO 選美</a></li>
+                    <li class="nowpage"><a href="contest.html">CHOCO 選美</a></li>
                     <li><a href="game.html">CHOCO 遊戲</a></li>
-                    <li><a href="store.html">CHOCO 商城</a></li>
+                    <li><a href="../boren/store.html">CHOCO 商城</a></li>
                     <li><a href="about.html">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
@@ -842,45 +844,50 @@
         </div>
     </footer>
 <!-- footer end -->
-<!-- robot start -->    
-<input id="robot_close_control" type="checkbox" />
-    
-<div id="robot" class="robot">
-  <span class="robot_prompt">快來詢問我!!</span>
-  <div class="eye1"></div>
-  <div class="eyelid1"></div>
-  <div class="eye2"></div>
-  <div class="eyelid2"></div>
- 
-  <label for="robot_close_control">
-    <div id="robot_close" class="robot_close"></div>
-  </label>
-  <div class="robot_content">
-    <div class="message_area">
-      <p class="message">歡迎光臨CHOCOLINE....!!</p>
-      <p class="message">如何客製商品呢?</p>
-      <p class="message">如何客製商品呢?</p>
-      <p class="message">如何客製商品呢?</p>
-    </div>
-    <div class="keyword_area">
-      <button class="prev_button"><i class="fas fa-angle-left"></i></button>
-      <div class="keyword_wrap">
-        <span class="keyword">客製商品</span>
-        <span class="keyword">玩遊戲拿點數</span>
-        <span class="keyword">購物車</span>
-      </div>
-      <button class="next_button">
-        <i class="fas fa-angle-right"></i>
-      </button>
-    </div>
-    <div class="query_area">
-      <input type="text" placeholder="請問..." />
-      <input type="submit" value="送出" />
-    </div>
-  </div>
-</div>
+    <!-- robot start -->
+    <input id="robot_close_control" type="checkbox" />
 
-<!-- robot end -->
+    <div id="robot" class="robot">
+      <span class="robot_prompt">快來詢問我!!</span>
+      <div class="eye1"></div>
+      <div class="eyelid1"></div>
+      <div class="eye2"></div>
+      <div class="eyelid2"></div>
+
+      <label for="robot_close_control">
+        <div id="robot_close" class="robot_close"></div>
+        <div class="robot_click1"></div>
+        <div class="robot_click2"></div>
+        <div class="robot_click3"></div>
+      </label>
+      <div class="robot_content">
+        <!-- <img src="image/robot/robot_tooth.png" alt="機器人的牙齒"> -->
+        <div class="message_area">
+          <p class="message">歡迎光臨CHOCOLINE....!!</p>
+          <p class="message">如何客製商品呢?</p>
+          <p class="message">如何客製商品呢?</p>
+          <p class="message">如何客製商品呢?</p>
+        </div>
+        <div class="keyword_area">
+          <button class="prev_button"><i class="fas fa-angle-left"></i></button>
+          <div class="keyword_wrap">
+            <span class="keyword">客製商品</span>
+            <span class="keyword">玩遊戲拿點數</span>
+            <span class="keyword">購物車</span>
+          </div>
+          <button class="next_button">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+        <div class="query_area">
+          <input type="text" placeholder="請問..." />
+          <input type="submit" value="送出" />
+        </div>
+      </div>
+    </div>
+
+    <!-- robot end -->
+
 <script src="js/header.js"></script>
 <script src="js/contest.js"></script>
 </body>
