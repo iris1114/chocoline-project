@@ -494,8 +494,8 @@ header {
   border-radius: 10px;
   border: 2px solid #592F13;
   background-color: white;
-  -webkit-animation: prompt_move 1s infinite alternate;
-          animation: prompt_move 1s infinite alternate;
+  -webkit-animation: prompt_move 1.5s infinite alternate;
+          animation: prompt_move 1.5s infinite alternate;
 }
 
 @media all and (max-width: 767px) {
@@ -534,7 +534,7 @@ header {
 
 @-webkit-keyframes prompt_move {
   0% {
-    top: -12%;
+    top: -11%;
   }
   100% {
     top: -10%;
@@ -543,7 +543,7 @@ header {
 
 @keyframes prompt_move {
   0% {
-    top: -12%;
+    top: -11%;
   }
   100% {
     top: -10%;
@@ -708,6 +708,54 @@ header {
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
+}
+
+.robot .robot_click1 {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  width: 90%;
+  height: 70px;
+  cursor: pointer;
+}
+
+.robot .robot_click2 {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 12%;
+  margin: auto;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+}
+
+.robot .robot_click3 {
+  position: absolute;
+  top: 0;
+  right: 11%;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+}
+
+.robot .robot_click1 {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  width: 90%;
+  height: 70px;
+  cursor: pointer;
 }
 
 .robot .robot_content {
