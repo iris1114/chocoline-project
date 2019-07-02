@@ -1137,58 +1137,58 @@
         return document.getElementsByClassName(classname);
       }
 
-      function minus1() {
-        var val = parseInt(this.nextSibling.value);
-        if ((val >= 1) & (val <= 10)) {
-          val -= 1;
-          this.nextSibling.value = val;
-        } else {
-        }
-      }
-      function plus1() {}
+      // function minus1() {
+      //   var val = parseInt(this.nextSibling.value);
+      //   if ((val >= 1) & (val <= 10)) {
+      //     val -= 1;
+      //     this.nextSibling.value = val;
+      //   } else {
+      //   }
+      // }
+      // function plus1() {}
 
-      function init() {
-        var qty = document.getElementsByClassName("qty");
-        var minus = document.getElementsByClassName("minus");
-        var plus = document.getElementsByClassName("plus");
+      // function init() {
+      //   var qty = document.getElementsByClassName("qty");
+      //   var minus = document.getElementsByClassName("minus");
+      //   var plus = document.getElementsByClassName("plus");
 
-        var length = qty.length;
-        for (var i = 0; i < length; i++) {
-          qty[i].onkeyup = highLight;
-          minus[i].onclick = normal;
-          plus[i].onclick = normal;
-        }
-      }
+      //   var length = qty.length;
+      //   for (var i = 0; i < length; i++) {
+      //     qty[i].onkeyup = highLight;
+      //     minus[i].onclick = normal;
+      //     plus[i].onclick = normal;
+      //   }
+      // }
 
       // window.addEventListener("load", init);
 
-      // window.addEventListener("load", function() {
-      //   console.log($class("qty").length);
+      window.addEventListener("load", function() {
+        console.log($class("qty").length);
 
-      //   for (var i = 0; i < $class("qty").length; i++) {
-      //     var val = parseInt($class("qty")[i].value);
+        for (var i = 0; i < $class("qty").length; i++) {
+          var val = parseInt($class("qty")[i].value);
 
-      //     if ((val >= 1) & (val <= 10)) {
-      //       $class("minus")[i].onclick = function() {
-      //         if ((val > 1) & (val <= 10)) {
-      //           val -= 1;
-      //           $class("qty")[i].value = val;
-      //         }
-      //       };
+          if ((val >= 1) & (val <= 10)) {
+            $class("minus")[i].onclick = function() {
+              if ((val > 1) & (val <= 10)) {
+                val -= 1;
+                $class("qty")[i].value = val;
+              }
+            };
 
-      //       $class("plus")[i].onclick = function() {
-      //         if ((val >= 1) & (val < 10)) {
-      //           val += 1;
-      //           console.log(val);
+            $class("plus")[i].onclick = function() {
+              if ((val >= 1) & (val < 10)) {
+                val += 1;
+                console.log(val);
 
-      //           $class("qty")[i].value = val;
-      //         }
-      //       };
-      //     } else {
-      //       $class("qty")[i].value = 1;
-      //     }
-      //   }
-      // });
+                $class("qty")[i].value = val;
+              }
+            };
+          } else {
+            $class("qty")[i].value = 1;
+          }
+        }
+      });
 
       // window.addEventListener("load", function() {
       //   var val = parseInt($id("qty").value);
