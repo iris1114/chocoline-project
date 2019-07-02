@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  // outline: 1px solid #f00;
+  outline: 1px solid #f00;
 }
 body {
   overflow-x: hidden;
@@ -45,6 +45,7 @@ body {
     }
   }
   .touringcar {
+    overflow: hidden;
     height: 960px;
     padding: 0 20px;
     // margin-top: -90%;
