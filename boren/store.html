@@ -413,10 +413,11 @@
                     </div>
                   </div>
                   <div class="product_button">
-                    <a id="collect_btn" href="javascript:;" class="btn cyan_m"
+                    <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span>
                         <i  class="heart_unclick far fa-heart"></i>
                         <i  class="heart_clicked fas fa-heart"></i>
+                        
                         收藏
                         </span>
                       </a>
@@ -466,9 +467,11 @@
                     </div>
                   </div>
                   <div class="product_button">
-                    <a href="javascript:;" class="btn cyan_m"
-                      ><span><i  class="heart_unclick far fa-heart"></i>
-                        <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
+                    <a href="javascript:;" class="collect_btn btn cyan_m"
+                      ><span>
+                        <i  class="heart_unclick far fa-heart"></i>
+                        <i  class="heart_clicked fas fa-heart"></i>
+                        收藏</span></a
                     >
                     <a href="javascript:;" class="btn orange_m"
                       ><span>加入購物車</span></a
@@ -513,7 +516,7 @@
                     </div>
                   </div>
                   <div class="product_button">
-                    <a href="javascript:;" class="btn cyan_m"
+                    <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
                         <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
                     >
@@ -560,7 +563,7 @@
                     </div>
                   </div>
                   <div class="product_button">
-                    <a href="javascript:;" class="btn cyan_m"
+                    <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
                         <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
                     >
@@ -604,7 +607,7 @@
                     </div>
                   </div>
                   <div class="product_button">
-                    <a href="javascript:;" class="btn cyan_m"
+                    <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
                         <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
                     >
@@ -648,7 +651,7 @@
                     </div>
                   </div>
                   <div class="product_button">
-                    <a href="javascript:;" class="btn cyan_m"
+                    <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
                         <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
                     >
@@ -1044,67 +1047,79 @@
     <!-- selector start -->
     <script>
 
-      window.addEventListener("load",function(){
-      var select_button = document.getElementById("select_button");
-      var selector_area = document.getElementById("selector_area");
-      var product_list = document.getElementById("product_list");
+      // window.addEventListener("load",function(){
+      // var select_button = document.getElementById("select_button");
+      // var selector_area = document.getElementById("selector_area");
+      // var product_list = document.getElementById("product_list");
 
 
-      select_button.onclick = function(){
+      // select_button.onclick = function(){
 
-        if(selector_area.style.display = "none"){
-          selector_area.style.display = "block";
-          product_list.style.paddingTop ="700px";
+      //   if(selector_area.style.display = "none"){
+      //     selector_area.style.display = "block";
+      //     product_list.style.paddingTop ="700px";
           
 
 
 
 
 
-      }else{
+      // }else{
 
 
 
 
-      }
+      // }
 
 
 
-      }
+      // }
 
 
 
 
-      });
+      // });
     </script>
 
     <!-- selector end -->
 
     <!-- collect start -->
     <Script>
-      window.addEventListener("load",function(){ 
+     window.addEventListener("load",function(){ 
         
     var collect_btn=document.getElementsByClassName("collect_btn"); 
     var heart_unclick=document.getElementsByClassName("heart_unclick");
     var heart_clicked=document.getElementsByClassName("heart_clicked");
     console.log(collect_btn);
- for(var i=0; i<=heart_unclick.length; i++){     
+    console.log(heart_unclick);
+    console.log(heart_clicked);
+      for(var i=0; i<heart_unclick.length; i++){     
       
       collect_btn[i].onclick=function(){ 
-        
-        if(heart_clicked[i].style.display="none"){
-          heart_clicked[i].style.display="inline";
-          heart_unclick[i].style.display="none";
-        }else if(heart_clicked[i].style.display="inline"){ 
-          heart_clicked[i].style.display="none";
-          heart_unclick[i].style.display="inline"; 
+        console.log(i);
+        if(heart_clicked[i].style.display = "none"){
+          heart_clicked[i].style.display = "inline";
+          heart_unclick[i].style.display = "none";
+        }else{ 
+          heart_clicked[i].style.display = "none";
+          heart_unclick[i].style.display = "inline"; 
         } 
       } 
-  }
+
+      }
     
     });
+
+
+
+  
+
+
+
     </Script>
     <!-- collect end -->
+
+
     <script>
       function $id(id) {
         return document.getElementById(id);
@@ -1136,7 +1151,7 @@
         }
       }
 
-      window.addEventListener("load", init);
+      // window.addEventListener("load", init);
 
       // window.addEventListener("load", function() {
       //   console.log($class("qty").length);
