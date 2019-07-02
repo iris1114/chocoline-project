@@ -471,6 +471,7 @@
                       ><span>
                         <i  class="heart_unclick far fa-heart"></i>
                         <i  class="heart_clicked fas fa-heart"></i>
+                        
                         收藏</span></a
                     >
                     <a href="javascript:;" class="btn orange_m"
@@ -518,7 +519,8 @@
                   <div class="product_button">
                     <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
-                        <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
+                        <i  class="heart_clicked fas fa-heart"></i>
+                        收藏</span></a
                     >
                     <a href="javascript:;" class="btn orange_m"
                       ><span>加入購物車</span></a
@@ -565,7 +567,8 @@
                   <div class="product_button">
                     <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
-                        <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
+                        <i  class="heart_clicked fas fa-heart"></i>
+                        收藏</span></a
                     >
                     <a href="javascript:;" class="btn orange_m"
                       ><span>加入購物車</span></a
@@ -609,7 +612,8 @@
                   <div class="product_button">
                     <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
-                        <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
+                        <i  class="heart_clicked fas fa-heart"></i>
+                        收藏</span></a
                     >
                     <a href="javascript:;" class="btn orange_m"
                       ><span>加入購物車</span></a
@@ -653,7 +657,8 @@
                   <div class="product_button">
                     <a href="javascript:;" class="collect_btn btn cyan_m"
                       ><span><i  class="heart_unclick far fa-heart"></i>
-                        <i  class="heart_clicked fas fa-heart"></i>收藏</span></a
+                        <i  class="heart_clicked fas fa-heart"></i>
+                        收藏</span></a
                     >
                     <a href="javascript:;" class="btn orange_m"
                       ><span>加入購物車</span></a
@@ -1084,27 +1089,31 @@
     <!-- selector end -->
 
     <!-- collect start -->
-    <Script>
-     window.addEventListener("load",function(){ 
+    <script>
+    window.addEventListener("load",function(){ 
         
-    var collect_btn=document.getElementsByClassName("collect_btn"); 
-    var heart_unclick=document.getElementsByClassName("heart_unclick");
-    var heart_clicked=document.getElementsByClassName("heart_clicked");
-    console.log(collect_btn);
-    console.log(heart_unclick);
-    console.log(heart_clicked);
-      for(var i=0; i<heart_unclick.length; i++){     
-      
-      collect_btn[i].onclick=function(){ 
-        console.log(i);
-        if(heart_clicked[i].style.display = "none"){
-          heart_clicked[i].style.display = "inline";
-          heart_unclick[i].style.display = "none";
-        }else{ 
-          heart_clicked[i].style.display = "none";
-          heart_unclick[i].style.display = "inline"; 
-        } 
-      } 
+       var collect_btn=document.getElementsByClassName("collect_btn"); 
+    // var heart_unclick=collectbtn.getElementsByClassName("heart_unclick")[0];
+    // var heart_clicked=collectbtn.getElementsByClassName("heart_clicked")[0];
+    // console.log(collect_btn);
+    // console.log(heart_unclick);
+    // console.log(heart_clicked);
+  
+      for(i=0; i<collect_btn.length; i++){     
+        collect_btn[i].addEventListener("click",function(){
+
+        var heart_clicked=this.getElementsByClassName("heart_clicked")[0];
+        var heart_unclick=this.getElementsByClassName("heart_unclick")[0];
+          
+        if(heart_clicked.style.display!="inline"){
+          heart_clicked.style.display="inline";
+          heart_unclick.style.display="none";
+        }else{
+          heart_clicked.style.display = "none";
+          heart_unclick.style.display="inline";
+        }
+
+        })
 
       }
     
@@ -1116,7 +1125,7 @@
 
 
 
-    </Script>
+    </script>
     <!-- collect end -->
 
 
