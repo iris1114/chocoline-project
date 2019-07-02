@@ -6046,63 +6046,63 @@ body {
     height: 150px;
   }
   .hot_product_container .cable_car .x1 {
-    right: -700px;
+    right: -300px;
     top: 250px;
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     background: url(../image/store/cloud2.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 29s linear infinite;
-            animation: moveclouds 29s linear infinite;
+    -webkit-animation: moveclouds 40s linear infinite;
+            animation: moveclouds 40s linear infinite;
   }
   .hot_product_container .cable_car .x2 {
-    right: -470px;
+    right: -300px;
     top: 400px;
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
     background: url(../image/store/cloud2.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 30s linear infinite;
-            animation: moveclouds 30s linear infinite;
+    -webkit-animation: moveclouds 40s 5s linear infinite;
+            animation: moveclouds 40s 5s linear infinite;
   }
   .hot_product_container .cable_car .x3 {
-    right: -1500px;
+    right: -300px;
     top: 300px;
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
     background: url(../image/store/cloud2.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 34s linear infinite;
-            animation: moveclouds 34s linear infinite;
+    -webkit-animation: moveclouds 40s 25s linear infinite;
+            animation: moveclouds 40s 25s linear infinite;
   }
   .hot_product_container .cable_car .x4 {
-    right: -50px;
+    right: -300px;
     top: 130px;
     background: url(../image/store/cloud1.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 29s linear infinite;
-            animation: moveclouds 29s linear infinite;
+    -webkit-animation: moveclouds 40s 10s linear infinite;
+            animation: moveclouds 40s 10s linear infinite;
   }
   .hot_product_container .cable_car .x5 {
-    right: -1000px;
+    right: -300px;
     top: 300px;
     background: url(../image/store/cloud2.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 33s linear infinite;
-            animation: moveclouds 33s linear infinite;
+    -webkit-animation: moveclouds 40s 30s linear infinite;
+            animation: moveclouds 40s 30s linear infinite;
   }
   .hot_product_container .cable_car .x6 {
-    right: -1800px;
+    right: -300px;
     top: 350px;
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
     background: url(../image/store/cloud1.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 35s linear infinite;
-            animation: moveclouds 35s linear infinite;
+    -webkit-animation: moveclouds 40s 20s linear infinite;
+            animation: moveclouds 40s 20s linear infinite;
   }
   .hot_product_container .cable_car .x7 {
-    right: -800px;
+    right: -300px;
     top: 0;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     background: url(../image/store/cloud2.png) no-repeat top/contain;
-    -webkit-animation: moveclouds 30s linear infinite;
-            animation: moveclouds 30s linear infinite;
+    -webkit-animation: moveclouds 40s 35s linear infinite;
+            animation: moveclouds 40s 35s linear infinite;
   }
   @-webkit-keyframes moveclouds {
     0% {
