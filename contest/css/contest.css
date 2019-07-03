@@ -2741,6 +2741,7 @@ html {
   width: 110px;
   float: left;
   border: 5px dashed transparent;
+  cursor: pointer;
 }
 
 .active_container .my_CHOCO .CHOCO img {
