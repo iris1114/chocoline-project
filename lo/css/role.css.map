@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../sass/role.scss"
-    ],
-    "names": [],
-    "file": "role.css"
-}
