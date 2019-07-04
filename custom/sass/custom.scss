@@ -193,6 +193,23 @@ body {
 
   // ---- 巧克力背景 desktop End -------
 
+
+
+// ------ 第一屏 tablet Start --------
+
+
+  @include rwd(tablet){
+
+    
+    
+  }
+
+
+
+// ------ 第一屏 tablet End --------
+
+
+
 // ------ 第一屏 desktop Start --------
 @keyframes fadeEffect {
   from {
