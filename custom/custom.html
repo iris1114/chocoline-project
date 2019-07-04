@@ -106,7 +106,7 @@
       <div class="custom_type">
 
         <div class="shape shapePos0">
-          <img src="image/custom/long.png" alt="long" />
+          <img src="image/custom/long.png" alt="long"  />
         </div>
         <div class="shape shapePos1">
           <img src="image/custom/roll.png" alt="roll" />
@@ -147,21 +147,21 @@
         </div>
         <div class="base_choco">
           <figure class="choco">
-            <img src="image/custom/cho_type.png" alt="white choco" />
+            <img src="image/custom/small/M1_SP_001.png" class="cho" alt="white choco" />
             <figcaption>
               <p class="White_CHO">White CHOCO</p>
             </figcaption>
           </figure>
 
           <figure class="choco">
-            <img src="image/custom/cho_type2.png" alt="milk choco" />
+            <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk choco" />
             <figcaption>
               <p>Milk CHOCO</p>
             </figcaption>
           </figure>
 
           <figure class="choco">
-            <img src="image/custom/cho_type32.png" alt="black choco" />
+            <img src="image/custom/cho_type32.png" class="cho" alt="black choco" />
             <figcaption>
               <p>Black CHOCO</p>
             </figcaption>
@@ -171,8 +171,10 @@
 
       <div class="select_type">
         <div class="choco_overview">
-          <img src="image/custom/bear1.png" alt="type" />
+          <img src="image/custom/big/M1_001.png" id="big_cho" alt="type"/>
         </div>
+
+      
 
         <div class="choco_type">
           <ul>
@@ -225,14 +227,43 @@
         </div>
       </div>
 
+      <script>
+        
+      </script>
       <div class="select_info">
         <div class="cho_info">
-          <div class="cho_info_text">
-            <h4>Black CHOCO</h4>
+          <div class="cho_info_photo">
+            <img src="image/custom/talk.png" alt="">
+          </div>
+          <div class="black_text">
+            <h3>Black CHOCO</h3>
             <p>
               黑巧克力：可可多酚的高抗氧化作用
             </p>
             <p>能夠抑制老化，促進肌膚的代謝！！</p>
+
+            <p>
+              適合朋友和獨享
+            </p>
+          </div>
+          <div class="milk_text ">
+            <h3>Milk CHOCO</h3>
+            <p>
+              牛奶巧克力：可運動後飲用低脂巧克力牛奶              
+            </p>
+            <p>提供平等的或可能優於肌肉恢復藥物！！</p>
+
+            <p>
+              適合朋友和獨享
+            </p>
+          </div>
+          <div class="white_text">
+            <h3>White CHOCO</h3>
+            <p>
+              白巧克力：甜度增加腦內啡，
+              
+            </p>
+            <p>提升使人產生幸福及愉悅感的！！</p>
 
             <p>
               適合朋友和獨享
@@ -709,7 +740,7 @@
         </div>
         <div class="final_btn">
           <a href="#" class="btn orange_l"><span>加入購物車</span></a>
-          <a href="#" class="btn cyan_l"><span>加入購物車</span></a>
+          <a href="#" class="btn cyan_l"><span>重新設定</span></a>
         </div>
       </div>
     </div>
@@ -845,6 +876,20 @@
       document.getElementById(types).style.display = "flex";
       evt.currentTarget.className += " active";
     } </script>
+
+<script>
+    window.addEventListener("load",function(){
+      let chos = document.getElementsByClassName("cho");
+      for(var i = 0 ; i<chos.length ; i++){
+        chos[i].addEventListener("click",function(e){
+          let cho = e.target ;
+          let large = document.getElementById("big_cho");
+          large.src = cho.src.replace("small" , "big").replace("SP_" , "");
+        } ,false);
+      }
+    },false) ;
+  </script>
+
 
 
 </body>
