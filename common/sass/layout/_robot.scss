@@ -142,26 +142,26 @@
       transition: transform 1s;
     }
   }
-  .robot_click1{
-    @include pos(45px,0,auto,0);
+  .robot_click1 {
+    @include pos(45px, 0, auto, 0);
     width: 90%;
     height: 70px;
     cursor: pointer;
   }
-  .robot_click2{
-    @include pos(0,auto,auto,12%);
+  .robot_click2 {
+    @include pos(0, auto, auto, 12%);
     width: 20%;
     height: 20%;
     cursor: pointer;
   }
-  .robot_click3{
-    @include pos(0,11%,auto,auto);
+  .robot_click3 {
+    @include pos(0, 11%, auto, auto);
     width: 20%;
     height: 20%;
     cursor: pointer;
   }
-  .robot_click1{
-    @include pos(45px,0,auto,0);
+  .robot_click1 {
+    @include pos(45px, 0, auto, 0);
     width: 90%;
     height: 70px;
     cursor: pointer;
@@ -178,7 +178,7 @@
       z-index: 11;
     }
     .message_area {
-      padding: 30px 20px 10px 20px;
+      padding: 20px 20px 0 20px;
       width: 100%;
       height: 47%;
       overflow-y: scroll;
@@ -190,34 +190,60 @@
         position: relative;
         width: 100%;
         max-width: 80%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         padding: 10px;
         background-color: $color_milk;
         border-radius: 10px;
+        word-break: break-all;
 
-        &:nth-child(odd) {
-          float: left;
-          &:before {
-            content: "";
-            @include pos(50%, auto, auto, -15px);
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 15px 5px 0;
-            border-color: transparent $color_milk transparent transparent;
-          }
+        // &:nth-child(odd) {
+        //   float: left;
+        //   &:before {
+        //     content: "";
+        //     @include pos(50%, auto, auto, -15px);
+        //     width: 0;
+        //     height: 0;
+        //     border-style: solid;
+        //     border-width: 5px 15px 5px 0;
+        //     border-color: transparent $color_milk transparent transparent;
+        //   }
+        // }
+        // &:nth-child(even) {
+        //   float: right;
+        //   &:before {
+        //     content: "";
+        //     @include pos(50%, -15px, auto, auto);
+        //     width: 0;
+        //     height: 0;
+        //     border-style: solid;
+        //     border-width: 5px 0 5px 15px;
+        //     border-color: transparent transparent transparent $color_milk;
+        //   }
+        // }
+      }
+
+      .message_ask {
+        float: right;
+        &:before {
+          content: "";
+          @include pos(50%, -15px, auto, auto);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 0 5px 15px;
+          border-color: transparent transparent transparent $color_milk;
         }
-        &:nth-child(even) {
-          float: right;
-          &:before {
-            content: "";
-            @include pos(50%, -15px, auto, auto);
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 0 5px 15px;
-            border-color: transparent transparent transparent $color_milk;
-          }
+      }
+      .message_answer {
+        float: left;
+        &:before {
+          content: "";
+          @include pos(50%, auto, auto, -15px);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 15px 5px 0;
+          border-color: transparent $color_milk transparent transparent;
         }
       }
     }
@@ -242,18 +268,19 @@
           color: $color_milk;
         }
       }
-      .keyword_wrap {
-        display: flex;
-        width: 80%;
+      .keyword_space{
         overflow: hidden;
-
-        .keyword {
-          color: $color_milk;
-          @include font_s;
-          padding: 5px;
-          // display: inline-block;
-          cursor: pointer;
-          white-space: nowrap;
+        .keyword_wrap {
+    display: flex;
+          .keyword {
+            color: $color_milk;
+            @include font_s;
+            padding: 5px;
+            display: inline-block;
+            cursor: pointer;
+            white-space: nowrap;
+            
+          }
         }
       }
     }
@@ -268,7 +295,7 @@
       border-radius: 5px;
       input[type="text"] {
         // appearance: none;
-        width:100%;
+        width: 100%;
         border: none;
         background-color: transparent;
         color: $color_milk;
@@ -292,8 +319,8 @@
   }
 }
 
-@media(max-width:767px){
-.robot{
-display:none;
-}
+@media (max-width: 767px) {
+  .robot {
+    display: none;
+  }
 }
