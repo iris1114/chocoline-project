@@ -106,7 +106,7 @@
       <div class="custom_type">
 
         <div class="shape shapePos0">
-          <img src="image/custom/long.png" alt="long"  />
+          <img src="image/custom/long.png" alt="long" />
         </div>
         <div class="shape shapePos1">
           <img src="image/custom/roll.png" alt="roll" />
@@ -146,22 +146,22 @@
           </div>
         </div>
         <div class="base_choco">
-          <figure class="choco">
-            <img src="image/custom/small/M1_SP_001.png" class="cho" alt="white choco" />
+          <figure class="choco choco1">
+            <img src="image/custom/small/M1_SP_001.png" class="cho" alt="white" />
             <figcaption>
               <p class="White_CHO">White CHOCO</p>
             </figcaption>
           </figure>
 
-          <figure class="choco">
-            <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk choco" />
+          <figure class="choco choco2">
+            <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk" />
             <figcaption>
               <p>Milk CHOCO</p>
             </figcaption>
           </figure>
 
-          <figure class="choco">
-            <img src="image/custom/cho_type32.png" class="cho" alt="black choco" />
+          <figure class="choco choco3">
+            <img src="image/custom/cho_type32.png" class="cho" alt="black" />
             <figcaption>
               <p>Black CHOCO</p>
             </figcaption>
@@ -171,10 +171,10 @@
 
       <div class="select_type">
         <div class="choco_overview">
-          <img src="image/custom/big/M1_001.png" id="big_cho" alt="type"/>
+          <img src="image/custom/big/M1_001.png" id="big_cho" alt="type" />
         </div>
 
-      
+
 
         <div class="choco_type">
           <ul>
@@ -228,8 +228,43 @@
       </div>
 
       <script>
-        
+
+        window.addEventListener("load", function () {
+
+          let chos = document.getElementsByClassName("cho");
+          let chotextArr = ["white_text", "milk_text ", "black_text"];
+
+          chos[i].addEventListener("click", function (e) {
+            for (let i = 0; i < chos.length; i++) {
+              let cho = e.target;
+              let a = cho.lastIndexOf('te');
+              console.log(a)
+              let b = cho.lastIndexOf('lk');
+              let c = cho.lastIndexOf('ck');
+              if (a != -1) {
+
+                document.getElementsByClassName("milk_text").style.display = "none";
+                document.getElementsByClassName("white_text").style.display = "block";
+                document.getElementsByClassName("black_text").style.display = "none";
+
+              } else if (b != -1) {
+                document.getElementsByClassName("black_text").style.display = "none";
+                document.getElementsByClassName("white_text").style.display = "none";
+                document.getElementsByClassName("milk_text").style.display = "block";
+              }
+              else if (c != 1) {
+                document.getElementsByClassName("black_text").style.display = "block";
+                document.getElementsByClassName("white_text").style.display = "none";
+                document.getElementsByClassName("milk_text").style.display = "none";
+              }
+            }
+          }, false)
+
+
+        }, false)
       </script>
+
+
       <div class="select_info">
         <div class="cho_info">
           <div class="cho_info_photo">
@@ -246,10 +281,10 @@
               適合朋友和獨享
             </p>
           </div>
-          <div class="milk_text ">
+          <div class="milk_text">
             <h3>Milk CHOCO</h3>
             <p>
-              牛奶巧克力：可運動後飲用低脂巧克力牛奶              
+              牛奶巧克力：可運動後飲用低脂巧克力牛奶
             </p>
             <p>提供平等的或可能優於肌肉恢復藥物！！</p>
 
@@ -261,7 +296,7 @@
             <h3>White CHOCO</h3>
             <p>
               白巧克力：甜度增加腦內啡，
-              
+
             </p>
             <p>提升使人產生幸福及愉悅感的！！</p>
 
@@ -877,17 +912,18 @@
       evt.currentTarget.className += " active";
     } </script>
 
-<script>
-    window.addEventListener("load",function(){
+  <script>
+    window.addEventListener("load", function () {
       let chos = document.getElementsByClassName("cho");
-      for(var i = 0 ; i<chos.length ; i++){
-        chos[i].addEventListener("click",function(e){
-          let cho = e.target ;
+      for (var i = 0; i < chos.length; i++) {
+        chos[i].addEventListener("click", function (e) {
+          let cho = e.target;
+          console.log(cho);
           let large = document.getElementById("big_cho");
-          large.src = cho.src.replace("small" , "big").replace("SP_" , "");
-        } ,false);
+          large.src = cho.src.replace("small", "big").replace("SP_", "");
+        }, false);
       }
-    },false) ;
+    }, false);
   </script>
 
 

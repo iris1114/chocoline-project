@@ -2290,21 +2290,23 @@ body {
     margin: 0 auto;
     position: relative;
   }
-  .custom .wrap_custom .title_decoration h2 {
+  .custom .wrap_custom .title_decoration {
+    position: relative;
+  }
+  .custom .wrap_custom h2 {
     width: 100%;
-    text-align: center;
-    padding-bottom: 50px;
+    position: absolute;
+    top: 1.5%;
+    font-size: 26px;
   }
   .custom .wrap_custom .playground {
-    display: none;
     width: 100%;
   }
   .custom .wrap_custom .playground img {
-    width: 50%;
+    width: 80%;
     position: absolute;
-    top: 25%;
-    left: 3%;
-    z-index: 1;
+    top: 35%;
+    left: 10%;
   }
   .custom .wrap_custom .frist_step {
     width: 60%;
@@ -2313,9 +2315,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 25%;
+    top: 10%;
     right: 0%;
     left: 0;
+    z-index: 1;
     text-align: center;
   }
   .custom .wrap_custom .frist_stepInfo {
@@ -2332,7 +2335,7 @@ body {
   .custom .wrap_custom .frist_step h3 {
     font-size: 28px;
     text-align: center;
-    padding-bottom: 7%;
+    padding-bottom: 10%;
   }
   .custom .wrap_custom .frist_step p {
     font-size: 16px;
@@ -2408,6 +2411,13 @@ body {
   }
 }
 
+.choco_background .choco_img {
+  width: 140%;
+  position: absolute;
+  top: 85%;
+  left: -20%;
+}
+
 @-webkit-keyframes fadeEffect {
   from {
     opacity: 0;
@@ -2442,10 +2452,13 @@ body {
     margin: 0 auto;
     position: relative;
   }
-  .custom .wrap_custom .title_decoration h2 {
+  .custom .wrap_custom .title_decoration {
+    position: relative;
+  }
+  .custom .wrap_custom h2 {
     width: 100%;
-    text-align: center;
-    padding-bottom: 50px;
+    position: absolute;
+    top: 1.5%;
   }
   .custom .wrap_custom .playground {
     width: 100%;
@@ -2560,6 +2573,7 @@ body {
     bottom: 1%;
     left: 60.5%;
     z-index: 4;
+    cursor: pointer;
   }
   .custom .wrap_custom .custom_type .left_btn {
     width: 3%;
@@ -2567,6 +2581,7 @@ body {
     bottom: 1%;
     left: 37%;
     z-index: 4;
+    cursor: pointer;
   }
   .choco_background .choco_img {
     width: 140%;
@@ -2639,6 +2654,7 @@ body {
     text-align: center;
     padding-top: 30px;
     position: relative;
+    cursor: pointer;
   }
   .choose_base .select_base .base_choco .choco img {
     width: 47%;
@@ -2683,11 +2699,29 @@ body {
     width: 80px;
     height: 80px;
     display: inline-block;
+    cursor: pointer;
+    position: relative;
+  }
+  .choose_base .select_type .choco_type li:hover {
     background-color: #ef9021;
     border-radius: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    position: relative;
+  }
+  .choose_base .select_type .choco_type li:hover::before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0.75;
+    background-color: #fff5e3;
+    border-radius: 50%;
   }
   .choose_base .select_type .choco_type li figure {
     width: 80%;
@@ -2717,21 +2751,6 @@ body {
   }
   .choose_base .select_type .choco_type li img p {
     font-size: 16px;
-  }
-  .choose_base .select_type .choco_type li::before {
-    content: "";
-    display: block;
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    opacity: 0.75;
-    background-color: #fff5e3;
-    border-radius: 50%;
   }
   .choose_base .select_type .info_bar {
     width: 75%;
@@ -2775,6 +2794,7 @@ body {
     position: absolute;
     top: 20%;
     left: 5%;
+    display: block;
   }
   .choose_base .select_info .cho_info .black_text h3 {
     width: 100%;
