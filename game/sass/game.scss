@@ -1,0 +1,279 @@
+@import "../../common/sass/common.scss";
+
+.game_body{
+    overflow: hidden;
+}
+.game_container{
+    position: relative;
+}
+#score{
+    position: absolute;
+    top: 200px;
+    left: 40px;
+    z-index: 1;
+    color: #fff;
+    font-size: 48px;
+    letter-spacing: 3px;
+    &::before{
+        content: "SCORE : ";
+        position: absolute;
+        z-index: -1;
+        color: $color_brown;
+        -webkit-text-stroke: 8px $color_brown;
+        font-weight: bold;
+    }
+}
+#scorenum{
+    color: $color_red;
+    font-size: 48px;
+    font-weight: bold;
+    transform: scale(1.3);
+    display: inline-block;
+    margin-left: 15px;
+}
+#time{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 200px;
+    z-index: 1;
+    p{
+        color: #fff;
+        font-size: 48px;
+        letter-spacing: 3px;
+        transform: scale(1.5);
+        letter-spacing: 17px;
+    }
+    #outerword{
+        color: $color_brown;
+        -webkit-text-stroke: 8px $color_brown;
+        font-weight: bold;
+    }
+    #innerword{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        span{
+            color: #fff;
+        }
+    }
+}
+#introduce{
+    @include pos(307px,0,auto,0);
+    z-index: 1;
+    width: 671px;
+    img{
+        &:nth-child(2){
+            @include pos(180px,auto,auto,298px);
+            width: 33px;
+            animation: keyshow .6s infinite;
+        }
+        &:nth-child(3){
+            @include pos(179px,auto,auto,365px);
+            width: 33px;
+            animation: keyshow .6s .3s infinite;
+        }
+    }
+}
+@keyframes keyshow{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#start{
+    @include pos(325px,0,auto,0);
+    z-index: 1;
+}
+.title_decoration{
+    @include pos(170px,0,auto,0);
+    z-index: 1;
+}
+#timeup{
+    width: 860px;
+    @include pos(170px,0,auto,0);
+    z-index: 1;
+    text-align: center;
+    display: none;
+    img{
+        opacity: 0;
+        &:nth-child(1){
+            width: 145px;
+            animation: movedown 1s forwards;
+        }
+        &:nth-child(2){
+            width: 55px;
+            animation: movedown 1s 0.2s forwards;
+        }
+        &:nth-child(3){
+            width: 151px;
+            animation: movedown 1s 0.3s forwards;
+        }
+        &:nth-child(4){
+            width: 124px;
+            animation: movedown 1s 0.4s forwards;
+        }
+        &:nth-child(5){
+            width: 160px;
+            animation: movedown 1s 0.5s forwards;
+        }
+        &:nth-child(6){
+            width: 137px;
+            animation: movedown 1s 0.6s forwards;
+        }
+    }
+}
+@keyframes movedown{
+    0% {
+        opacity: 0;
+		transform: translateY(0px);
+	}
+
+	12% {
+		transform: translateY(10.89px);
+	}
+
+	24% {
+		transform: translateY(43.56px);
+	}
+
+	36% {
+		transform: translateY(98.01px);
+	}
+
+	54% {
+		transform: translateY(75.02px);
+	}
+
+	74% {
+		transform: translateY(98.37px);
+	}
+
+	82% {
+		transform: translateY(93.75px);
+	}
+
+	92% {
+		transform: translateY(99.34px);
+	}
+
+	96% {
+		transform: translateY(98.46px);
+	}
+
+	100% {
+        opacity: 1;
+		transform: translateY(100px);
+	}
+}
+
+.choco_bonus{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.65);
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+.bonus_house{
+    width: 900px;
+    height: 625px;
+    @include pos(0,0,20%,0);
+    z-index: 1;
+}
+.CHOCO{
+    width: 292px;
+}
+.bear{
+    @include pos(0,auto,auto,0);
+    transform: rotate(-15deg);
+    transition: .5s;
+    display: none;
+    .bearhand{
+        @include pos(-57%,0%,0%,-42%);
+        width: 140px;
+        transform-origin: 100% 100%;
+        transform: rotate(-26deg); //-20 ~ -30
+        animation: bearhand 1s infinite alternate;
+    }
+    .eyeleft{
+        @include pos(-43%,0%,0%,-12%);
+        width: 25px;
+    }
+    .blinkleft{
+        @include pos(-55%,0%,0%,-7%); //-45
+        width: 50px;
+        animation: bearblink 5s infinite;
+    }
+    .bearne{
+        position: relative;
+    }
+}
+@keyframes bearhand {
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(-30deg);
+    }
+}
+@keyframes bearblink {
+    0%{
+        top: -55%
+    }
+    45%{
+        top: -55%
+    }
+    50%{
+        top: -45%
+    }
+    55%{
+        top: -55%
+    }
+    100%{
+        top: -55%
+    }
+}
+.cake{
+    @include pos(0,auto,auto,0);
+    transform: rotate(15deg);
+    display: none;
+    .eye{
+        @include pos(-36%,0%,0%,16%);
+        width: 53px;
+    }
+    .blink{
+        @include pos(-40%,0%,0%,17%);
+        width: 55px;
+        height: 55px;
+        overflow: hidden;
+        img{
+            @include pos(-145%,0%,0%,0%); //-145 ~ 7
+            width: 150%;
+            animation: cakeblink 6s infinite;
+        }
+    }
+    .cakene{
+        position: relative;
+    }
+}
+@keyframes cakeblink {
+    0%{
+        top: -145%
+    }
+    45%{
+        top: -145%
+    }
+    50%{
+        top: 7%
+    }
+    55%{
+        top: -145%
+    }
+    100%{
+        top: -145%
+    }
+}

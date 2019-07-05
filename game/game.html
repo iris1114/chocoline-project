@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link rel="icon" type="image/png" href="image/common/logo_icon.png">
+    <link rel="stylesheet" href="css/game.css">
+    <title>CHOCO 遊戲</title>
+    <style>
+        canvas{
+            width: 100%;
+            height: auto;;
+        }
+    </style>
+</head>
+<body class="game_body">
+<!-- header start -->
+    <header>
+        <div class="m_header">
+            <div class="navbar">
+                <div class="burger">
+                    <figure>
+                        <img src="image/headerfooter/burger.png" alt="burger">
+                    </figure>
+                </div>
+                <div class="logo">
+                    <h1>
+                        CHOCOLINE
+                    </h1>
+                    <a href="../index/index.html">
+                        <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                    </a>
+                </div> 
+                <div class="status">
+                    <figure>
+                        <a href="../member/member.html">
+                            <img src="image/headerfooter/icon_member.png" alt="member">
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="../cart/cart.html">
+                            <img src="image/headerfooter/icon_cart.png" alt="cart">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+            <ul class="menubox">
+                <li><a href="../custom/custom.html">客製 CHOCO</a></li>
+                <li><a href="../contest.html">CHOCO 選美</a></li>
+                <li><a href="../game/game.html">CHOCO 遊戲</a></li>
+                <li><a href="../store/store.html">CHOCO 商城</a></li>
+                <li><a href="../about/about.html">關於 CHOCO</a></li>
+                <figure id="menuclose">
+                    <img src="image/headerfooter/menuclose.png" alt="close">
+                </figure>
+            </ul>
+        </div>
+        <div class="d_header">
+            <div class="logo">
+                <h1>
+                    CHOCOLINE
+                </h1>
+                <a href="../index/index.html">
+                    <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                </a>
+            </div>
+            <div class="navbar">
+                <ul class="menubox">
+                    <li><a href="../custom/custom.html">客製 CHOCO</a></li>
+                    <li><a href="../contest.html">CHOCO 選美</a></li>
+                    <li class="nowpage"><a href="../game/game.html">CHOCO 遊戲</a></li>
+                    <li><a href="../store/store.html">CHOCO 商城</a></li>
+                    <li><a href="../about/about.html">關於 CHOCO</a></li>
+                </ul>
+                <div class="status">
+                    <figure>
+                        <a href="../member/member.html">
+                            <img src="image/headerfooter/icon_member.png" alt="member">
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="../cart/cart.html">
+                            <img src="image/headerfooter/icon_cart.png" alt="cart">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- header end -->
+<!-- game start -->
+<section class="game_container">
+    <p id="score">SCORE : <span id="scorenum">0</span></p>
+    <div id="time">
+        <p id="outerword"><span class="minute">0</span>:<span class="second">30</span></p>
+        <p id="innerword"><span class="minute">0</span>:<span class="second">30</span></p>
+    </div>
+    <div class="title_decoration">
+        <img src="image/common/title.png" alt="">
+        <h2>CHOCO星人選美排名 </h2>
+    </div>
+    <figure id="introduce">
+        <img src="image/game/rule.png" alt="rule">
+        <img src="image/game/keyl.png" alt="keyl">
+        <img src="image/game/keyr.png" alt="keyr">
+        <a href="javascript:;" class="btn orange_xl" id="start"><span>START</span></a>
+    </figure>
+    <figure id="timeup">
+        <img src="image/game/t.png" alt="t">
+        <img src="image/game/i.png" alt="i">
+        <img src="image/game/m.png" alt="m">
+        <img src="image/game/e.png" alt="e">
+        <img src="image/game/u.png" alt="u">
+        <img src="image/game/p.png" alt="p">
+    </figure>
+    <div class="choco_bonus">
+        <figure class="bonus_house">
+           <img src="image/game/bonus_house.png" alt="bonus_house">
+        </figure>
+        <figure class="CHOCO bear">
+            <img src="image/game/bearhand.png" alt="bearhand" class="bearhand">
+            <img src="image/game/beareye.png" alt="beareye" class="eyeleft">
+            <img src="image/game/bearblink.png" alt="bearblink" class="blinkleft">
+            <img src="image/game/bearne.png" alt="bear" class="bearne">
+        </figure>
+        <figure class="CHOCO cake">
+            <img src="image/game/cakeeye.png" alt="cakeeye"
+            class="eye">
+            <figure class="blink">
+                <img src="image/game/cakeblink.png" alt="cakeblink">
+            </figure>
+            <img src="image/game/cakene.png" alt="cake"
+            class="cakene">
+        </figure>
+    </div>
+    <canvas id="canvas" width="1920" height="939" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:939px; position: absolute; left: 0px; top: 0px; display: block;">
+    </div>
+</section>
+<!-- game end -->
+
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="Collision-Detection-for-EaselJS-master/src/ndgmr.Collision.js"></script>
+<script src="chocogame.js?1562237267956"></script>
+<script src="../common/js/header.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
+
+
+
