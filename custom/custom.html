@@ -169,7 +169,7 @@
         </div>
       </div>
 
-      <div class="select_type">
+      <div class="select_type ">
         <div class="choco_overview">
           <img src="image/custom/big/M1_001.png" id="big_cho" alt="type" />
         </div>
@@ -179,7 +179,7 @@
         <div class="choco_type">
           <ul>
             <li>
-              <figure>
+              <figure class="active">
                 <img src="image/custom/type1png.png" alt="nuts" />
                 <figcaption>
                   <p>堅果</p>
@@ -195,7 +195,7 @@
               </figure>
             </li>
             <li>
-              <figure>
+              <figure c>
                 <img src="image/custom/type3.png" alt="bo ho" />
                 <figcaption>
                   <p>薄荷</p>
@@ -229,39 +229,91 @@
 
       <script>
 
-        window.addEventListener("load", function () {
+        // window.addEventListener("load", function () {
 
-          let chos = document.getElementsByClassName("cho");
-          let chotextArr = ["white_text", "milk_text ", "black_text"];
+        //   let chos = document.getElementsByClassName("cho");
+        //   let chocoTextDivs = document.getElementsByClassName("choco_Text");
+        //   let chotextArr = ["white_text", "milk_text ", "black_text"];
 
-          chos[i].addEventListener("click", function (e) {
-            for (let i = 0; i < chos.length; i++) {
-              let cho = e.target;
-              let a = cho.lastIndexOf('te');
-              console.log(a)
-              let b = cho.lastIndexOf('lk');
-              let c = cho.lastIndexOf('ck');
-              if (a != -1) {
+        //   chos[i].addEventListener("click", function (e) {
+        //     let chocoTextDiv = chocoText[i]
+        //     for (let i = 0; i < chos.length; i++) {
+        //       let cho = e.target;
+        //       let a = cho.lastIndexOf('te');
+        //       console.log(a)
+        //       let b = cho.lastIndexOf('lk');
+        //       let c = cho.lastIndexOf('ck');
+        //       if (a != -1) {
 
-                document.getElementsByClassName("milk_text").style.display = "none";
-                document.getElementsByClassName("white_text").style.display = "block";
-                document.getElementsByClassName("black_text").style.display = "none";
+        //         document.getElementsByClassName("milk_text").style.display = "none";
+        //         document.getElementsByClassName("white_text").style.display = "block";
+        //         document.getElementsByClassName("black_text").style.display = "none";
 
-              } else if (b != -1) {
-                document.getElementsByClassName("black_text").style.display = "none";
-                document.getElementsByClassName("white_text").style.display = "none";
-                document.getElementsByClassName("milk_text").style.display = "block";
-              }
-              else if (c != 1) {
-                document.getElementsByClassName("black_text").style.display = "block";
-                document.getElementsByClassName("white_text").style.display = "none";
-                document.getElementsByClassName("milk_text").style.display = "none";
-              }
-            }
-          }, false)
+        //       } else if (b != -1) {
+        //         document.getElementsByClassName("black_text").style.display = "none";
+        //         document.getElementsByClassName("white_text").style.display = "none";
+        //         document.getElementsByClassName("milk_text").style.display = "block";
+        //       }
+        //       else if (c != 1) {
+        //         document.getElementsByClassName("black_text").style.display = "block";
+        //         document.getElementsByClassName("white_text").style.display = "none";
+        //         document.getElementsByClassName("milk_text").style.display = "none";
+        //       }
+        //     }
+        //   }, false);
 
 
-        }, false)
+        // }, false)
+        //......................
+window.addEventListener("load",function(){
+  let chos = document.getElementsByClassName("cho");
+  let chocoTextDivs = document.getElementsByClassName("choco_text");
+  console.log("chos : ", chos.length);
+  console.log("test : ", chocoTextDivs.length);
+  for(let i=0; i<chos.length; i++){
+    chos[i].addEventListener("click", function () {
+      // console.log(chocoTextDivs[i])
+      for(let j=0; j<chocoTextDivs.length;j++){
+        if(j==i){
+          chocoTextDivs[j].style.display="block";
+        }else{
+          chocoTextDivs[j].style.display="none";
+        }
+      }
+    })  
+  }//for
+});
+
+//............
+// chos[i].addEventListener("click", function (e) {
+//   let chocoTextDiv = chocoText[i]
+//   for (let i = 0; i < chos.length; i++) {
+//     let cho = e.target;
+//     let a = cho.lastIndexOf('te');
+//     console.log(a)
+//     let b = cho.lastIndexOf('lk');
+//     let c = cho.lastIndexOf('ck');
+//     if (a != -1) {
+
+//       document.getElementsByClassName("milk_text").style.display = "none";
+//       document.getElementsByClassName("white_text").style.display = "block";
+//       document.getElementsByClassName("black_text").style.display = "none";
+
+//     } else if (b != -1) {
+//       document.getElementsByClassName("black_text").style.display = "none";
+//       document.getElementsByClassName("white_text").style.display = "none";
+//       document.getElementsByClassName("milk_text").style.display = "block";
+//     }
+//     else if (c != 1) {
+//       document.getElementsByClassName("black_text").style.display = "block";
+//       document.getElementsByClassName("white_text").style.display = "none";
+//       document.getElementsByClassName("milk_text").style.display = "none";
+//     }
+//   }
+// }, false);
+
+
+// }, false)
       </script>
 
 
@@ -270,7 +322,7 @@
           <div class="cho_info_photo">
             <img src="image/custom/talk.png" alt="">
           </div>
-          <div class="black_text">
+          <div class="choco_text black_text">
             <h3>Black CHOCO</h3>
             <p>
               黑巧克力：可可多酚的高抗氧化作用
@@ -281,7 +333,7 @@
               適合朋友和獨享
             </p>
           </div>
-          <div class="milk_text">
+          <div class="choco_text milk_text">
             <h3>Milk CHOCO</h3>
             <p>
               牛奶巧克力：可運動後飲用低脂巧克力牛奶
@@ -292,7 +344,7 @@
               適合朋友和獨享
             </p>
           </div>
-          <div class="white_text">
+          <div class="choco_text white_text">
             <h3>White CHOCO</h3>
             <p>
               白巧克力：甜度增加腦內啡，

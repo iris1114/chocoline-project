@@ -25,17 +25,17 @@ body {
       // padding-bottom: 50px;
       position: relative;
 
-      .title_decoration{
+      .title_decoration {
         position: relative;
       }
-      
+
       h2 {
         width: 100%;
         position: absolute;
         top: 1.5%;
         // text-align: center;
         // padding-bottom: 50px;
-        font-size: 26px;;
+        font-size: 26px;
       }
 
       .playground {
@@ -47,7 +47,6 @@ body {
           position: absolute;
           top: 35%;
           left: 10%;
-         
         }
       }
       .frist_step {
@@ -179,36 +178,26 @@ body {
 
 // ------ 第一屏 mobile End --------
 
-  // ---- 巧克力背景 mobile Start -------
+// ---- 巧克力背景 mobile Start -------
 
-  .choco_background {
-    // position: rslative;
-    .choco_img {
-      width: 140%;
-      position: absolute;
-      top: 85%;
-      left: -20%;
-    }
+.choco_background {
+  // position: rslative;
+  .choco_img {
+    width: 140%;
+    position: absolute;
+    top: 85%;
+    left: -20%;
   }
+}
 
-  // ---- 巧克力背景 desktop End -------
-
-
+// ---- 巧克力背景 desktop End -------
 
 // ------ 第一屏 tablet Start --------
 
-
-  @include rwd(tablet){
-
-    
-    
-  }
-
-
+@include rwd(tablet) {
+}
 
 // ------ 第一屏 tablet End --------
-
-
 
 // ------ 第一屏 desktop Start --------
 @keyframes fadeEffect {
@@ -240,16 +229,14 @@ body {
       // padding-bottom: 50px;
       position: relative;
 
-      .title_decoration{
+      .title_decoration {
         position: relative;
-      } 
+      }
       h2 {
         width: 100%;
         // text-align: center;
         position: absolute;
         top: 1.5%;
-
-     
       }
 
       .playground {
@@ -483,7 +470,6 @@ body {
             bottom: 37%;
             right: 0;
             left: 0;
-           
 
             p {
               color: white;
@@ -523,8 +509,8 @@ body {
           // border: 10px solid #ef9021;
           cursor: pointer;
           position: relative;
-         
-          &:hover{
+
+          &:hover {
             background-color: #ef9021;
             border-radius: 50%;
             box-sizing: border-box;
@@ -543,31 +529,29 @@ body {
               opacity: 0.75;
               background-color: #fff5e3;
               border-radius: 50%;
-             
             }
           }
-          // &:active{
-          //   background-color: #ef9021;
-          //   border-radius: 50%;
-          //   box-sizing: border-box;
-          //   &::before {
-          //     content: "";
-          //     display: block;
-          //     width: 80%;
-          //     height: 80%;
-          //     position: absolute;
-          //     top: 0;
-          //     bottom: 0;
-          //     left: 0;
-          //     right: 0;
-          //     margin: auto;
-          //     opacity: 0.75;
-          //     background-color: #fff5e3;
-          //     border-radius: 50%;
-             
-          //   }
-          // }
-          
+          &.active {
+            background-color: #eeeeee;
+            border-radius: 50%;
+            box-sizing: border-box;
+            &::before {
+              content: "";
+              display: block;
+              width: 80%;
+              height: 80%;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+              opacity: 0.75;
+              background-color: #fff5e3;
+              border-radius: 50%;
+            }
+          }
+
           figure {
             // background-color: #fff5e3;
             // border-radius: 50px;
@@ -595,7 +579,6 @@ body {
               font-size: 16px;
             }
           }
-        
         }
       }
       .info_bar {
