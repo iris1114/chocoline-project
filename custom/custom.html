@@ -10,7 +10,7 @@
     crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
 
-  <title>Document</title>
+  <title>客製CHOCO</title>
 </head>
 
 <body>
@@ -86,6 +86,7 @@
   <!-- ----- 第一屏 Start ----- -->
 
   <section class="custom">
+
     <div class="wrap_custom">
       <div class="title_decoration">
         <img src="image/common/title.png" alt="title" />
@@ -94,6 +95,7 @@
       <div class="playground">
         <img src="image/custom/bg6.png" alt="" />
       </div>
+
       <div class="frist_step">
         <div class="frist_stepInfo">
           <h3>第一步:</h3>
@@ -123,10 +125,35 @@
         <img src="image/custom/right.png" alt="right" class="right_btn" id="toRight" />
         <img src="image/custom/left.png" alt="left" class="left_btn" id="toLeft" />
       </div>
+      <!-- <div class="next_button">
+        <a href="#second" class="btn cyan_s next_page"><span>選擇巧克力基底/配料口味</span></a>
+      </div> -->
 
       <!-- ----- 形狀輪播 End ----- -->
     </div>
+
+
+
   </section>
+
+  <script>
+    window.addEventListener("load", function () {
+
+      document.getElementsByClassName("btn").onclick = function () {
+
+
+        let chose = document.getElementsByClassName("shapePos2");
+        console.log("chose:", chose);
+        let midimg = document.getElementsByClassName("choco_overview");
+
+        midimg.innerHTML = chose;
+
+      };
+
+
+    })
+  </script>
+
 
   <div class="choco_background">
     <img src="image/custom/bg3.png" alt="" class="choco_img" />
@@ -136,7 +163,7 @@
 
   <!-- ----- 第二屏 Start ----- -->
 
-  <section class="base">
+  <section class="base" id="second">
     <div class="choose_base">
       <div class="select_base">
         <div class="second_step">
@@ -227,94 +254,6 @@
         </div>
       </div>
 
-      <script>
-
-        // window.addEventListener("load", function () {
-
-        //   let chos = document.getElementsByClassName("cho");
-        //   let chocoTextDivs = document.getElementsByClassName("choco_Text");
-        //   let chotextArr = ["white_text", "milk_text ", "black_text"];
-
-        //   chos[i].addEventListener("click", function (e) {
-        //     let chocoTextDiv = chocoText[i]
-        //     for (let i = 0; i < chos.length; i++) {
-        //       let cho = e.target;
-        //       let a = cho.lastIndexOf('te');
-        //       console.log(a)
-        //       let b = cho.lastIndexOf('lk');
-        //       let c = cho.lastIndexOf('ck');
-        //       if (a != -1) {
-
-        //         document.getElementsByClassName("milk_text").style.display = "none";
-        //         document.getElementsByClassName("white_text").style.display = "block";
-        //         document.getElementsByClassName("black_text").style.display = "none";
-
-        //       } else if (b != -1) {
-        //         document.getElementsByClassName("black_text").style.display = "none";
-        //         document.getElementsByClassName("white_text").style.display = "none";
-        //         document.getElementsByClassName("milk_text").style.display = "block";
-        //       }
-        //       else if (c != 1) {
-        //         document.getElementsByClassName("black_text").style.display = "block";
-        //         document.getElementsByClassName("white_text").style.display = "none";
-        //         document.getElementsByClassName("milk_text").style.display = "none";
-        //       }
-        //     }
-        //   }, false);
-
-
-        // }, false)
-        //......................
-        window.addEventListener("load", function () {
-          let chos = document.getElementsByClassName("cho");
-          let chocoTextDivs = document.getElementsByClassName("choco_text");
-          console.log("chos : ", chos.length);
-          console.log("test : ", chocoTextDivs.length);
-          for (let i = 0; i < chos.length; i++) {
-            chos[i].addEventListener("click", function () {
-              // console.log(chocoTextDivs[i])
-              for (let j = 0; j < chocoTextDivs.length; j++) {
-                if (j == i) {
-                  chocoTextDivs[j].style.display = "block";
-                } else {
-                  chocoTextDivs[j].style.display = "none";
-                }
-              }
-            })
-          }//for
-        });
-
-//............
-// chos[i].addEventListener("click", function (e) {
-//   let chocoTextDiv = chocoText[i]
-//   for (let i = 0; i < chos.length; i++) {
-//     let cho = e.target;
-//     let a = cho.lastIndexOf('te');
-//     console.log(a)
-//     let b = cho.lastIndexOf('lk');
-//     let c = cho.lastIndexOf('ck');
-//     if (a != -1) {
-
-//       document.getElementsByClassName("milk_text").style.display = "none";
-//       document.getElementsByClassName("white_text").style.display = "block";
-//       document.getElementsByClassName("black_text").style.display = "none";
-
-//     } else if (b != -1) {
-//       document.getElementsByClassName("black_text").style.display = "none";
-//       document.getElementsByClassName("white_text").style.display = "none";
-//       document.getElementsByClassName("milk_text").style.display = "block";
-//     }
-//     else if (c != 1) {
-//       document.getElementsByClassName("black_text").style.display = "block";
-//       document.getElementsByClassName("white_text").style.display = "none";
-//       document.getElementsByClassName("milk_text").style.display = "none";
-//     }
-//   }
-// }, false);
-
-
-// }, false)
-      </script>
 
 
       <div class="select_info">
@@ -378,9 +317,19 @@
   <!-- ----- 第三屏 Start ----- -->
 
   <section class="outlook">
+    <div class="thrid_step_moble">
+      <img src="image/custom/bg8.png" alt="background">
+      <div class="thrid_stepInfo">
+        <h3>第三步:</h3>
+        <p>幫專屬CHOCO星人取名字</p>
+        <p>選擇表情和飾品</p>
+      </div>
+    </div>
+
     <div class="outlok_wrap">
 
       <!-- ----- left side start ----- -->
+
 
       <div class="select_outlook">
 
@@ -396,7 +345,26 @@
 
         </div>
 
-
+        <div class="fix_photo_mobile">
+          <img src="image/custom/bear1.png" alt="bear">
+        </div>
+        <div class="fix_bar_mobile">
+          <div class="bar_photo">
+            <img src="image/custom/bar_item6.png" alt="large">
+          </div>
+          <div class="bar_photo">
+            <img src="image/custom/bar_item5.png" alt="small">
+          </div>
+          <div class="bar_photo">
+            <img src="image/custom/bar_item1.png" alt="right">
+          </div>
+          <div class="bar_photo">
+            <img src="image/custom/bar_item2.png" alt="left">
+          </div>
+          <div class="bar_photo">
+            <img src="image/custom/bar_item.png" alt="reset">
+          </div>
+        </div>
         <!-- ----- item select start----- -->
 
         <div class="select_item">
@@ -835,6 +803,236 @@
 
   <!-- ----- 第四屏 End ----- -->
 
+
+
+
+
+
+
+
+  <!-- ----- 第四屏 mobile Start ----- -->
+
+
+  <section class="card_mobile">
+
+    <div class="fourth_step">
+      <img src="image/custom/8.png" alt="">
+      <div class="fourth_step_info">
+        <h3>第四步:</h3>
+        <p>搭配卡片樣式/輸入內容</p>
+      </div>
+
+    </div>
+
+    <div class="card_wrap">
+
+      <!-- ----- 第2層 ----- -->
+
+      <div class="card_custom">
+
+        <div class="card_back">
+          <img src="image/custom/caed.png" alt="">
+        </div>
+
+        <div class="card_write">
+          <img src="image/custom/caed1.png" alt="">
+        </div>
+
+
+      </div>
+
+      <!-- -------- 裝飾圖樣 End-------- -->
+
+
+      <!-- ----- 第3層 ----- -->
+
+
+      <div class="card_info_mobile">
+
+        <div class="card_items">
+
+          <div class="tab_item">
+            <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
+            <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
+            <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- -------- 卡片樣式 start-------- -->
+
+          <div class="card_color type" id="card_colors">
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="" />
+              </div>
+            </div>
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="" />
+              </div>
+            </div>
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- -------- 卡片樣式 End-------- -->
+
+          <!-- -------- 文字樣式 start-------- -->
+
+          <div class="text_color type" id="text_colors">
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/eye1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="" />
+              </div>
+            </div>
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="" />
+              </div>
+            </div>
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/eye1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/eye.png" alt="" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- -------- 文字樣式 End-------- -->
+
+          <!-- -------- 裝飾圖樣 start-------- -->
+
+          <div class="pic_color type" id="card_backgrounds">
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="" />
+              </div>
+            </div>
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color.png" alt="" />
+              </div>
+            </div>
+
+            <div class="card_background">
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye1" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="eye2" />
+              </div>
+              <div class="background_color">
+                <img src="image/custom/color1.png" alt="" />
+              </div>
+            </div>
+
+          </div>
+          <div class="upload">
+            <input type="file" name="上傳檔案">
+          </div>
+        </div>
+        <div class="paint_text">
+
+          <div class="paint">
+
+            <span class="paint_pen">
+              <p>畫筆</p>
+            </span>
+
+            <div class="paint_photo">
+              <img src="image/custom/line.png" alt="">
+            </div>
+
+          </div>
+          <div class="paint_color">
+            <img src="image/custom/color-bar.png" alt="">
+          </div>
+        </div>
+
+        <div class="total_price">
+          <img src="image/custom/price.png" alt="price" />
+          <h4>TOTAL</h4>
+          <p class="price">
+            NT$350
+          </p>
+        </div>
+        <div class="final_btn">
+          <a href="#" class="btn orange_l"><span>加入購物車</span></a>
+          <a href="#" class="btn cyan_l"><span>重新設定</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ----- 第四屏 mobile End ----- -->
+
+
+
+
   <input id="robot_close_control" type="checkbox" />
 
   <div id="robot" class="robot">
@@ -916,32 +1114,58 @@
     </div>
   </footer>
   <!-- footer end -->
+
+
+
+
+
+
+
+
   <script src="js/header.js"></script>
+
+
   <script type="text/javascript">
     window.addEventListener("load", function () {
-      let shapes = document.getElementsByClassName("shape");
-      let shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
+      var shapes = document.getElementsByClassName("shape");
+      var shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
       document.getElementById("toRight").onclick = function () {
-        for (let i = 0; i < shapePosArr.length; i++) {
+        for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.remove(shapePosArr[i])
         }
         shapePosArr.push(shapePosArr.shift());
-        for (let i = 0; i < shapePosArr.length; i++) {
+        for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.add(shapePosArr[i])
         }
       };
 
       document.getElementById("toLeft").onclick = function () {
-        for (let i = 0; i < shapePosArr.length; i++) {
+        for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.remove(shapePosArr[i])
         }
         shapePosArr.unshift(shapePosArr.pop());
-        for (let i = 0; i < shapePosArr.length; i++) {
+        for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.add(shapePosArr[i])
         }
+        var chose = shapes[i].innerHTML;
+        console.log("chose:", chose);
+      };
+
+      // let a = shapes[2].innerHTML;
+      // console.log(a);
+      document.getElementsByClassName("btn").onclick = function () {
+
+        let midimg = document.getElementsByClassName("choco_overview");
+        console.log("123", midimg);
+        midimg.innerHTML = chose;
+
       };
     })
   </script>
+
+
+
+
   <script>
     function openCity(evt, types) {
       // Declare all variables
@@ -978,6 +1202,29 @@
     }, false);
   </script>
 
+  <script>
+
+
+    window.addEventListener("load", function () {
+      let chos = document.getElementsByClassName("cho");
+      let chocoTextDivs = document.getElementsByClassName("choco_text");
+      console.log("chos : ", chos.length);
+      console.log("test : ", chocoTextDivs.length);
+      for (let i = 0; i < chos.length; i++) {
+        chos[i].addEventListener("click", function () {
+          // console.log(chocoTextDivs[i])
+          for (let j = 0; j < chocoTextDivs.length; j++) {
+            if (j == i) {
+              chocoTextDivs[j].style.display = "block";
+            } else {
+              chocoTextDivs[j].style.display = "none";
+            }
+          }
+        })
+      }
+    });
+
+  </script>
 
 
 </body>
