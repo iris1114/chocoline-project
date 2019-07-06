@@ -116,24 +116,71 @@
         <img src="image/game/p.png" alt="p">
     </figure>
     <div class="choco_bonus">
-        <figure class="bonus_house">
+        <div class="bonus_house">
            <img src="image/game/bonus_house.png" alt="bonus_house">
-        </figure>
-        <figure class="CHOCO bear">
-            <img src="image/game/bearhand.png" alt="bearhand" class="bearhand">
-            <img src="image/game/beareye.png" alt="beareye" class="eyeleft">
-            <img src="image/game/bearblink.png" alt="bearblink" class="blinkleft">
-            <img src="image/game/bearne.png" alt="bear" class="bearne">
-        </figure>
-        <figure class="CHOCO cake">
-            <img src="image/game/cakeeye.png" alt="cakeeye"
-            class="eye">
-            <figure class="blink">
-                <img src="image/game/cakeblink.png" alt="cakeblink">
+           <figure class="CHOCO bear">
+               <img src="image/game/bearhand.png" alt="bearhand" class="bearhand">
+               <img src="image/game/beareye.png" alt="beareye" class="eyeleft">
+               <img src="image/game/bearblink.png" alt="bearblink" class="blinkleft">
+               <img src="image/game/bearne.png" alt="bear" class="bearne">
+           </figure>
+           <figure class="CHOCO cake">
+                <img src="image/game/cakehand.png" alt="cakehand" class="cakehand">
+               <img src="image/game/cakeeye.png" alt="cakeeye"
+               class="eye">
+               <figure class="blink">
+                   <img src="image/game/cakeblink.png" alt="cakeblink">
+               </figure>
+               <img src="image/game/cakene.png" alt="cake"
+               class="cakene">
+           </figure>
+           <div class="cardlist">
+               <div class="card whitecard" id="whitecard">
+                    <figure class="front">
+                       <img src="image/game/whitecard.png" alt="white">
+                    </figure>
+                    <figure class="back">
+                        <img src="image/game/whitecardback.png" alt="white">
+                        <figcaption class="outtext"></figcaption>
+                        <figcaption class="innertext"></figcaption>
+                    </figure>
+                </div>
+               <div class="card milkcard" id="milkcard">
+                    <figure class="front">
+                        <img src="image/game/milkcard.png" alt="milk">
+                    </figure>
+                    <figure class="back">
+                        <img src="image/game/milkcardback.png" alt="milk">
+                        <figcaption class="outtext"></figcaption>
+                        <figcaption class="innertext"></figcaption>
+                    </figure>
+               </div>
+               <div class="card blackcard" id="blackcard">
+                    <figure class="front">
+                        <img src="image/game/blackcard.png" alt="black">
+                    </figure>
+                    <figure class="back">
+                        <img src="image/game/blackcardback.png" alt="black">
+                        <figcaption class="outtext"></figcaption>
+                        <figcaption class="innertext"></figcaption>
+                    </figure>
+               </div>
+           </div>
+        </div>
+        <div class="final">
+            <figure>
+                <img src="image/game/finalboard.png" alt="board">
             </figure>
-            <img src="image/game/cakene.png" alt="cake"
-            class="cakene">
-        </figure>
+            <figure id="board_close">
+                <a href="game.html">
+                    <img src="image/game/board_close.png" alt="close">
+                </a>
+            </figure>
+            <p><span id="finalpoint"></span> 點</p>
+            <a href="game.html" class="btn cyan_l" id="again"><span>再玩一次</span></a>
+            <a href="../store/store.html" class="btn orange_l" id="gostore"><span>進入商城</span></a>
+          
+        </div>
     </div>
     <canvas id="canvas" width="1920" height="939" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
     <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:939px; position: absolute; left: 0px; top: 0px; display: block;">

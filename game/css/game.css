@@ -1786,6 +1786,10 @@ section {
   position: relative;
 }
 
+section {
+  padding: 0;
+}
+
 #score {
   position: absolute;
   top: 200px;
@@ -2070,7 +2074,7 @@ section {
   height: 100vh;
   background: rgba(0, 0, 0, 0.65);
   position: absolute;
-  z-index: 1;
+  z-index: 11;
   display: none;
 }
 
@@ -2088,25 +2092,25 @@ section {
 
 .CHOCO {
   width: 292px;
+  z-index: -1;
 }
 
 .bear {
   position: absolute;
-  top: 0;
+  top: auto;
   right: auto;
-  bottom: auto;
-  left: 0;
+  bottom: 0;
+  left: -165px;
   margin: auto;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
   -webkit-transition: .5s;
   transition: .5s;
-  display: none;
 }
 
 .bear .bearhand {
   position: absolute;
-  top: -57%;
+  top: -36%;
   right: 0%;
   bottom: 0%;
   left: -42%;
@@ -2122,20 +2126,20 @@ section {
 
 .bear .eyeleft {
   position: absolute;
-  top: -43%;
+  top: -12.6712%;
   right: 0%;
   bottom: 0%;
-  left: -12%;
+  left: -12.3287%;
   margin: auto;
   width: 25px;
 }
 
 .bear .blinkleft {
   position: absolute;
-  top: -55%;
+  top: -31.506%;
   right: 0%;
   bottom: 0%;
-  left: -7%;
+  left: -6.8493%;
   margin: auto;
   width: 50px;
   -webkit-animation: bearblink 5s infinite;
@@ -2170,68 +2174,83 @@ section {
 
 @-webkit-keyframes bearblink {
   0% {
-    top: -55%;
+    top: -31.506%;
   }
   45% {
-    top: -55%;
+    top: -31.506%;
   }
   50% {
-    top: -45%;
+    top: -15.068%;
   }
   55% {
-    top: -55%;
+    top: -31.506%;
   }
   100% {
-    top: -55%;
+    top: -31.506%;
   }
 }
 
 @keyframes bearblink {
   0% {
-    top: -55%;
+    top: -31.506%;
   }
   45% {
-    top: -55%;
+    top: -31.506%;
   }
   50% {
-    top: -45%;
+    top: -15.068%;
   }
   55% {
-    top: -55%;
+    top: -31.506%;
   }
   100% {
-    top: -55%;
+    top: -31.506%;
   }
 }
 
 .cake {
   position: absolute;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0;
+  top: auto;
+  right: -24.6575%;
+  bottom: -3%;
+  left: auto;
   margin: auto;
   -webkit-transform: rotate(15deg);
           transform: rotate(15deg);
-  display: none;
+}
+
+.cake .cakehand {
+  position: absolute;
+  top: -43%;
+  right: 0%;
+  bottom: 0%;
+  left: 33%;
+  margin: auto;
+  width: 140px;
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  -webkit-animation: cakehand 1s infinite alternate;
+          animation: cakehand 1s infinite alternate;
 }
 
 .cake .eye {
   position: absolute;
-  top: -36%;
+  top: -3.4246%;
   right: 0%;
   bottom: 0%;
-  left: 16%;
+  left: -38.5891%;
   margin: auto;
   width: 53px;
 }
 
 .cake .blink {
   position: absolute;
-  top: -40%;
+  top: -5%;
   right: 0%;
   bottom: 0%;
-  left: 17%;
+  left: -38%;
   margin: auto;
   width: 55px;
   height: 55px;
@@ -2240,7 +2259,7 @@ section {
 
 .cake .blink img {
   position: absolute;
-  top: -145%;
+  top: -160%;
   right: 0%;
   bottom: 0%;
   left: 0%;
@@ -2254,39 +2273,207 @@ section {
   position: relative;
 }
 
+@-webkit-keyframes cakehand {
+  0% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
+@keyframes cakehand {
+  0% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
 @-webkit-keyframes cakeblink {
   0% {
-    top: -145%;
+    top: -160%;
   }
   45% {
-    top: -145%;
+    top: -160%;
   }
   50% {
     top: 7%;
   }
   55% {
-    top: -145%;
+    top: -160%;
   }
   100% {
-    top: -145%;
+    top: -160%;
   }
 }
 
 @keyframes cakeblink {
   0% {
-    top: -145%;
+    top: -160%;
   }
   45% {
-    top: -145%;
+    top: -160%;
   }
   50% {
     top: 7%;
   }
   55% {
-    top: -145%;
+    top: -160%;
   }
   100% {
-    top: -145%;
+    top: -160%;
   }
+}
+
+.cardlist {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 10px;
+  margin: auto;
+  padding: 0 50px;
+}
+
+.cardlist::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.card {
+  width: 200px;
+  float: left;
+  margin: 0 33px;
+  cursor: pointer;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: relative;
+}
+
+.card figcaption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  line-height: 200px;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.card .outtext {
+  color: #592F13;
+  -webkit-text-stroke: 8px #592F13;
+}
+
+.card .innertext {
+  color: #F6EED4;
+}
+
+.front, .back {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.front {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+}
+
+.frontshow {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.backshow {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+
+.nopointer {
+  pointer-events: none;
+}
+
+.final {
+  width: 737px;
+  height: 575px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+  display: none;
+}
+
+.final p {
+  font-size: 60px;
+  position: absolute;
+  top: 48%;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  color: #ED1C24;
+}
+
+.final p span {
+  color: #ED1C24;
+}
+
+#board_close {
+  width: 29px;
+  position: absolute;
+  top: 21%;
+  right: 19%;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  cursor: pointer;
+  display: none;
+}
+
+#again {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 23%;
+  left: 21%;
+  margin: auto;
+}
+
+#gostore {
+  position: absolute;
+  top: auto;
+  right: 19%;
+  bottom: 23%;
+  left: auto;
+  margin: auto;
 }
 /*# sourceMappingURL=game.css.map */

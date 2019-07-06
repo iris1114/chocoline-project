@@ -6,6 +6,9 @@
 .game_container{
     position: relative;
 }
+section{
+    padding: 0;
+}
 #score{
     position: absolute;
     top: 200px;
@@ -175,7 +178,7 @@
     height: 100vh;
     background: rgba(0,0,0,.65);
     position: absolute;
-    z-index: 1;
+    z-index: 11;
     display: none;
 }
 .bonus_house{
@@ -186,25 +189,25 @@
 }
 .CHOCO{
     width: 292px;
+    z-index: -1;
 }
 .bear{
-    @include pos(0,auto,auto,0);
+    @include pos(auto,auto,0,-165px);
     transform: rotate(-15deg);
     transition: .5s;
-    display: none;
     .bearhand{
-        @include pos(-57%,0%,0%,-42%);
+        @include pos(-36%,0%,0%,-42%);
         width: 140px;
         transform-origin: 100% 100%;
         transform: rotate(-26deg); //-20 ~ -30
         animation: bearhand 1s infinite alternate;
     }
     .eyeleft{
-        @include pos(-43%,0%,0%,-12%);
+        @include pos(-12.6712%,0%,0%,-12.3287%);
         width: 25px;
     }
     .blinkleft{
-        @include pos(-55%,0%,0%,-7%); //-45
+        @include pos(-31.506%,0%,0%,-6.8493%); //-45
         width: 50px;
         animation: bearblink 5s infinite;
     }
@@ -222,36 +225,42 @@
 }
 @keyframes bearblink {
     0%{
-        top: -55%
+        top: -31.506%
     }
     45%{
-        top: -55%
+        top: -31.506%
     }
     50%{
-        top: -45%
+        top: -15.068%
     }
     55%{
-        top: -55%
+        top: -31.506%
     }
     100%{
-        top: -55%
+        top: -31.506%
     }
 }
 .cake{
-    @include pos(0,auto,auto,0);
+    @include pos(auto,-24.6575%,-3%,auto);
     transform: rotate(15deg);
-    display: none;
+    .cakehand{
+        @include pos(-43%,0%,0%,33%);
+        width: 140px;
+        transform-origin: 0% 100%;
+        transform: rotate(15deg); 
+        animation: cakehand 1s infinite alternate;
+    }
     .eye{
-        @include pos(-36%,0%,0%,16%);
+        @include pos(-3.4246%,0%,0%,-38.5891%);
         width: 53px;
     }
     .blink{
-        @include pos(-40%,0%,0%,17%);
+        @include pos(-5%,0%,0%,-38%);
         width: 55px;
         height: 55px;
         overflow: hidden;
         img{
-            @include pos(-145%,0%,0%,0%); //-145 ~ 7
+            @include pos(-160%,0%,0%,0%); 
             width: 150%;
             animation: cakeblink 6s infinite;
         }
@@ -260,20 +269,109 @@
         position: relative;
     }
 }
+@keyframes cakehand {
+    0%{
+        transform: rotate(8deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+}
 @keyframes cakeblink {
     0%{
-        top: -145%
+        top: -160%
     }
     45%{
-        top: -145%
+        top: -160%
     }
     50%{
         top: 7%
     }
     55%{
-        top: -145%
+        top: -160%
     }
     100%{
-        top: -145%
+        top: -160%
     }
+}
+.cardlist{
+    width: 100%;
+    height: 200px;
+    @include pos(50%,0,0,10px);
+    padding: 0 50px;
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+.card{
+    width: 200px;
+    float: left;
+    margin: 0 33px;
+    cursor: pointer;
+    perspective:400px;
+    position: relative;
+    figcaption{
+        @include pos(0,0,0,0);
+        text-align: center;
+        line-height: 200px;
+        font-size: 48px;
+        font-weight: bold;
+    }
+    .outtext{
+        color: $color_brown;
+        -webkit-text-stroke: 8px $color_brown; 
+    }
+    .innertext{
+        color: $color_milk;
+    }
+}
+.front,.back{
+    transition: .5s;
+    backface-visibility: hidden;
+}
+.front{
+    transform: rotateY(0deg);
+}
+.back{
+    transform: rotateY(180deg);
+    @include pos(0,auto,auto,0);
+}
+.frontshow{
+    transform: rotateY(180deg);
+}
+.backshow{
+    transform: rotateY(360deg);
+}
+.nopointer{
+    pointer-events: none;
+}
+.final{
+    width: 737px;
+    height: 575px;
+    @include pos(0,0,0,0);
+    z-index: 1;
+    display: none;
+    p{
+        font-size: 60px;
+        @include pos(48%,0,auto,0);
+        text-align: center;
+        color: $color_red;
+        span{
+            color: $color_red;
+        }
+    }
+}
+#board_close{
+    width: 29px;
+    @include pos(21%,19%,auto,auto);
+    cursor: pointer;
+    display: none;
+}
+#again{
+    @include pos(auto,auto,23%,21%);
+}
+#gostore{
+    @include pos(auto,19%,23%,auto);
 }

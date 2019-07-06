@@ -30,7 +30,7 @@ function handleComplete(evt,comp) {
     stage = new lib.Stage(canvas);	
     
     let bear = new lib.chocobear();
-    bear.x = 960;
+    bear.x = 1400;
     bear.y = 640;
     bear.regX = 96.5;
     exportRoot.addChild(bear);
@@ -44,8 +44,27 @@ function handleComplete(evt,comp) {
     let time = 30;
     let minute = document.querySelectorAll(".minute");
     let second = document.querySelectorAll(".second");
+    let arr = ["x 1","x 5","x 10"];
+    
+    let card = document.querySelectorAll(".card"),
+        whiteout = document.querySelector(".whitecard").querySelector(".outtext"),
+        whiteinner = document.querySelector(".whitecard").querySelector(".innertext"),
+        milkout = document.querySelector(".milkcard").querySelector(".outtext"),
+        milkinner = document.querySelector(".milkcard").querySelector(".innertext"),
+        blackout = document.querySelector(".blackcard").querySelector(".outtext"),
+        blackinner = document.querySelector(".blackcard").querySelector(".innertext"),
+        final = document.querySelector(".final"),
+        finalpoint = document.querySelector("#finalpoint"),
+        cardnum = 0,
+        chosen_card = "",
+        timeup = document.querySelector("#timeup"),
+        choco_bonus = document.querySelector(".choco_bonus"),
+        bonus_house = document.querySelector(".bonus_house");
 
-    document.querySelector("#start").addEventListener("click",function(){
+
+    document.querySelector("#start").addEventListener("click",tostart);
+
+    function tostart(){
         document.querySelector(".title_decoration").style.display="none";
         document.querySelector("#introduce").style.display="none";
         setTimeout(function(){
@@ -53,10 +72,12 @@ function handleComplete(evt,comp) {
             window.addEventListener("keydown",keydownmove);
             window.addEventListener("keyup",keyupmove);
         },1000)
-    })
-    window.addEventListener("keydown",function(e){
+    }
+
+    window.addEventListener("keydown",keystart)
+    
+    function keystart(e){
         if(e.keyCode==13 || e.keyCode==108){
-            
             document.querySelector(".title_decoration").style.display="none";
             document.querySelector("#introduce").style.display="none";
             setTimeout(function(){
@@ -65,7 +86,8 @@ function handleComplete(evt,comp) {
                 window.addEventListener("keyup",keyupmove);
             },1000)
         }
-    })
+    }
+
     function keydownmove (e){
         if(iskeydown){
             return;
@@ -105,7 +127,10 @@ function handleComplete(evt,comp) {
         return min + (Math.round(Math.random()*(max - min))); 
     }
 
-    let normalpoint = setInterval(function(){
+    clearInterval(normalpoint);
+    var normalpoint = setInterval(normalpointdown,getnum(800,1200))
+
+    function normalpointdown (){
         if(!isstart){
             return;
         }
@@ -142,10 +167,12 @@ function handleComplete(evt,comp) {
             exportRoot.removeChild(normalpoint);
             createjs.Tween.removeTweens(normalpoint);
         }
-    },getnum(800,1200))
-
+    }
     
-    let specialpoint = setInterval(function(){
+    clearInterval(specialpoint);
+    var specialpoint = setInterval(specialpointdown,getnum(6000,8000))
+
+    function specialpointdown (){
         if(!isstart){
             return;
         }
@@ -180,9 +207,12 @@ function handleComplete(evt,comp) {
             exportRoot.removeChild(specialpoint);
             createjs.Tween.removeTweens(specialpoint);
         }
-    },getnum(6000,8000))
+    }
 
-    let brokenheart = setInterval(function(){
+    clearInterval(brokenheart);
+    var brokenheart = setInterval(brokenheartdown,getnum(2000,5000))
+
+    function brokenheartdown(){
         if(!isstart){
             return;
         }
@@ -223,10 +253,10 @@ function handleComplete(evt,comp) {
             exportRoot.removeChild(brokenheart);
             createjs.Tween.removeTweens(brokenheart);
         }
-    },getnum(2000,5000))
+    }
 
-
-    let timer = setInterval(countdown,1000)
+    clearInterval(timer);
+    var timer = setInterval(countdown,1000)
     function countdown(){
         if(!isstart){
             return;
@@ -261,6 +291,9 @@ function handleComplete(evt,comp) {
         minute[0].innerText=minute[1].innerText=m;
         second[0].innerText=second[1].innerText=s;
         if(time == 0){
+            console.log("time up");
+            
+            isstart = false;
             clearInterval(timer);
             clearInterval(normalpoint);
             clearInterval(specialpoint);
@@ -270,13 +303,83 @@ function handleComplete(evt,comp) {
             createjs.Ticker.removeEventListener("tick",tickFn);
             bear.gotoAndPlay("end");
             setTimeout(function(){
-                document.querySelector("#timeup").style.display = "block";
+                timeup.style.display = "block";
+                setTimeout(function(){
+                   timeup.style.display = "none";
+                   choco_bonus.style.display = "block";
+                },3500)
             },500);
         }  
     }
     
+   
+        
 
-	//Registers the "tick" event listener.
+    while(cardnum<card.length){
+        card[cardnum].addEventListener("click",function(){
+
+            arr.sort(function(){return Math.random()>0.5?-1:1;});
+            whiteout.innerText = whiteinner.innerText = arr[0];
+            milkout.innerText = milkinner.innerText = arr[1];
+            blackout.innerText = blackinner.innerText = arr[2];
+
+            this.querySelector(".front").classList.add("frontshow");
+            this.querySelector(".back").classList.add("backshow");
+            chosen_card = this.id;
+            for(i=0;i<card.length;i++){
+                card[i].classList.add("nopointer");       
+            }
+
+            finalpoint.innerText = score * this.querySelector(".back").querySelector(".outtext").innerText.replace("x ","");
+           
+            setTimeout(function(){
+                bonus_house.style.display = "none";
+                final.style.display = "block";
+               
+            },1000)
+            
+        })
+        cardnum++
+    }
+   
+    // document.querySelector("#again").addEventListener("click",restart);
+
+    // function restart(){
+
+    //     final.style.display = "none";
+    //     bonus_house.style.display = "block";
+    //     choco_bonus.style.display = "none";
+    //     score = 0;
+    //     scorenum.innerText = score;
+    //     time = 30;
+    //     document.querySelector(`#${chosen_card}`).querySelector(".front").classList.remove("frontshow");
+    //     document.querySelector(`#${chosen_card}`).querySelector(".back").classList.remove("backshow");
+        
+    //     for(i=0;i<card.length;i++){
+    //         card[i].classList.remove("nopointer");       
+    //     }
+
+        
+    //     window.removeEventListener("keydown",keydownmove);
+    //     window.removeEventListener("keyup",keyupmove);
+    //     createjs.Ticker.removeEventListener("tick",tickFn);
+
+
+
+    //     createjs.Ticker.addEventListener("tick",tickFn);
+    //     tostart();
+    //     setInterval(countdown,200)
+    //     setInterval(normalpointdown,getnum(800,1200))
+    //     setInterval(specialpointdown,getnum(6000,8000))
+    //     setInterval(brokenheartdown,getnum(2000,5000))
+      
+    // }
+    // setInterval(function(){
+    //     console.log(bear.x);
+        
+    // },1000)
+
+    //Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
 		createjs.Ticker.setFPS(lib.properties.fps);
