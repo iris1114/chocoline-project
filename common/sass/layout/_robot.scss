@@ -188,7 +188,7 @@
 
       .message {
         position: relative;
-        width: 100%;
+        // width: 100%;
         max-width: 80%;
         margin-bottom: 10px;
         padding: 10px;
@@ -196,30 +196,6 @@
         border-radius: 10px;
         word-break: break-all;
 
-        // &:nth-child(odd) {
-        //   float: left;
-        //   &:before {
-        //     content: "";
-        //     @include pos(50%, auto, auto, -15px);
-        //     width: 0;
-        //     height: 0;
-        //     border-style: solid;
-        //     border-width: 5px 15px 5px 0;
-        //     border-color: transparent $color_milk transparent transparent;
-        //   }
-        // }
-        // &:nth-child(even) {
-        //   float: right;
-        //   &:before {
-        //     content: "";
-        //     @include pos(50%, -15px, auto, auto);
-        //     width: 0;
-        //     height: 0;
-        //     border-style: solid;
-        //     border-width: 5px 0 5px 15px;
-        //     border-color: transparent transparent transparent $color_milk;
-        //   }
-        // }
       }
 
       .message_ask {
