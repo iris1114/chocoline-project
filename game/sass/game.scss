@@ -384,6 +384,13 @@ section{
         color: $color_milk;
     }
 }
+.card:hover{
+    animation: cardmove 1s infinite linear alternate;
+}
+@keyframes cardmove {
+    0%{transform: rotate(-5deg)}
+    100%{transform: rotate(5deg)}
+}
 .front,.back{
     transition: .5s;
     backface-visibility: hidden;
