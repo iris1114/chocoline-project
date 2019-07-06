@@ -132,3 +132,6 @@ function getStyle(obj,attr){
     $id("robot_next_button").onclick = keyword_move_right;
 
   });
+function returnR() {
+        return false;
+      }
