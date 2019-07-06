@@ -72,6 +72,11 @@ header{
                 color: $color_milk;
             }
         }
+        @media all and (orientation: landscape){
+                li{
+                    padding: 2% 0;
+                }  
+        }
         #menuclose{
             position: absolute;
             width: 50px;
