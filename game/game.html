@@ -8,12 +8,6 @@
     <link rel="icon" type="image/png" href="image/common/logo_icon.png">
     <link rel="stylesheet" href="css/game.css">
     <title>CHOCO 遊戲</title>
-    <style>
-        canvas{
-            width: 100%;
-            height: auto;;
-        }
-    </style>
 </head>
 <body class="game_body">
 <!-- header start -->
@@ -91,8 +85,12 @@
     </header>
 <!-- header end -->
 <!-- game start -->
+<div class="blackscreen">請將螢幕固定為橫向</div>
 <section class="game_container">
-    <p id="score">SCORE : <span id="scorenum">0</span></p>
+    <div id="score">
+        <p>SCORE : <span >0000</span></p>
+        <p>SCORE : <span id="scorenum">0</span></p>
+    </div>
     <div id="time">
         <p id="outerword"><span class="minute">0</span>:<span class="second">30</span></p>
         <p id="innerword"><span class="minute">0</span>:<span class="second">30</span></p>
@@ -102,6 +100,7 @@
         <h2>CHOCO星人選美排名 </h2>
     </div>
     <figure id="introduce">
+        <img src="image/game/phonerule.png" alt="rule">
         <img src="image/game/rule.png" alt="rule">
         <img src="image/game/keyl.png" alt="keyl">
         <img src="image/game/keyr.png" alt="keyr">
@@ -176,7 +175,7 @@
                     <img src="image/game/board_close.png" alt="close">
                 </a>
             </figure>
-            <p><span id="finalpoint"></span> 點</p>
+            <p><span id="finalpoint">0</span> 點</p>
             <a href="game.html" class="btn cyan_l" id="again"><span>再玩一次</span></a>
             <a href="../store/store.html" class="btn orange_l" id="gostore"><span>進入商城</span></a>
           

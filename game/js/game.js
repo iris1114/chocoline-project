@@ -11,7 +11,7 @@ function init() {
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
 	var lib=comp.getLibrary();
-	loader.loadManifest(lib.properties.manifest);
+    loader.loadManifest(lib.properties.manifest);
 }
 function handleFileLoad(evt, comp) {
 	var images=comp.getImages();	
@@ -59,18 +59,25 @@ function handleComplete(evt,comp) {
         chosen_card = "",
         timeup = document.querySelector("#timeup"),
         choco_bonus = document.querySelector(".choco_bonus"),
-        bonus_house = document.querySelector(".bonus_house");
+        bonus_house = document.querySelector(".bonus_house"),
+        header = document.querySelector("header");
 
 
     document.querySelector("#start").addEventListener("click",tostart);
 
     function tostart(){
+        if(window.innerWidth<768){
+            header.style.display="none";
+        }
         document.querySelector(".title_decoration").style.display="none";
         document.querySelector("#introduce").style.display="none";
         setTimeout(function(){
             isstart = true;
             window.addEventListener("keydown",keydownmove);
             window.addEventListener("keyup",keyupmove);
+            if(window.innerWidth<768){
+                window.addEventListener("deviceorientation",phonerun);
+            }
         },1000)
     }
 
@@ -78,6 +85,10 @@ function handleComplete(evt,comp) {
     
     function keystart(e){
         if(e.keyCode==13 || e.keyCode==108){
+            if(window.innerWidth<768){
+                header.style.display="none";
+            }
+            
             document.querySelector(".title_decoration").style.display="none";
             document.querySelector("#introduce").style.display="none";
             setTimeout(function(){
@@ -116,12 +127,37 @@ function handleComplete(evt,comp) {
         bear.scaleX = position;
         bear.x -= speed * position;
         
+        if(window.innerWidth<768){
+ 
+            if(beta>0){
+                position = -1;
+                bear.x -= beta * position * 0.8;
+            }else{
+                position = 1 ;
+                bear.x += beta * position * 0.8;
+            }
+        }
+        
+
         if(bear.x <=96.5){
             bear.x = 96.5;
         }else if(bear.x>=1823.5){
             bear.x = 1823.5;
         };
     }
+
+    var beta;
+    function phonerun(e){
+        beta = e.beta;
+        if(iskeydown){
+            return;
+        }
+        iskeydown = true;
+        bear.gotoAndPlay("run");
+    }
+
+
+
 
     function getnum(min,max){
         return min + (Math.round(Math.random()*(max - min))); 
@@ -291,8 +327,6 @@ function handleComplete(evt,comp) {
         minute[0].innerText=minute[1].innerText=m;
         second[0].innerText=second[1].innerText=s;
         if(time == 0){
-            console.log("time up");
-            
             isstart = false;
             clearInterval(timer);
             clearInterval(normalpoint);
@@ -300,13 +334,17 @@ function handleComplete(evt,comp) {
             clearInterval(brokenheart);
             window.removeEventListener("keydown",keydownmove);
             window.removeEventListener("keyup",keyupmove);
+            window.removeEventListener("deviceorientation",phonerun);
             createjs.Ticker.removeEventListener("tick",tickFn);
             bear.gotoAndPlay("end");
             setTimeout(function(){
                 timeup.style.display = "block";
                 setTimeout(function(){
-                   timeup.style.display = "none";
-                   choco_bonus.style.display = "block";
+                    timeup.style.display = "none";
+                    choco_bonus.style.display = "block";
+                    if(window.innerWidth<768){
+                        header.style.display="block";
+                    }
                 },3500)
             },500);
         }  
