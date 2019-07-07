@@ -1,0 +1,7 @@
+@import "../../common/sass/common.scss";
+
+@mixin noselect {
+    user-select: none;
+    -moz-user-select: none;  /* for Firefox */ 
+    -webkit-user-select: none;   /* for Chrome */
+}
