@@ -138,10 +138,8 @@ roles_shadow.to('.roles_shadow', 2, {
 });
 
 
- 
-
- 
-        
+ // ----------------.game_things-------------//
+    
 TweenMax.to('.game_things',2,{
     y:30,
  
@@ -149,72 +147,114 @@ TweenMax.to('.game_things',2,{
     yoyo:true,    
 });    
   
+ // ----------------ballon-------------//
     
-
-
-
-
-
- // -----------------choco_milk-------------//
+ TweenMax.to('.ballon',6,{
+    y:30,
+    x:80,
+ 
+    repeat:-1,  
+    yoyo:true,
   
-    var tl3 =new TimelineMax({
+}); 
 
-    });
+
+ // --------------river_move custom-------------//
     
-    tl3.to('.choco_milk', 60, {
-        y: 50,
-        x:10, 
-    }).to('.choco_milk', 120, {
-        y: 150,
-        x:30, 
-        scale:1.1,
-    }).to('.choco_milk', 180, {
-        y: 300,
-        x:-180, 
-        scale:1.5,
-    }).to('.choco_milk', 300, {
-        y: 400,
-        x: -250,
-        scale:2,
-    }).to('.choco_milk', 300, {
-        y: 600,
-        x: -450,
-        scale:2,
-    })
-
-//  var controller = new ScrollMagic.Controller();
-//   var scene_01 = new ScrollMagic.Scene({
-//     triggerElement:'#keypoint',//觸發點
-//     duration:2400,//結束點
-//  //    reverse:true, 
-//     offset:500,
-//     triggerHook: 0,
- 
-//  })
-//  .setTween(tl)//tween 動畫
-//  .addIndicators() //觸發指標
-//  .addTo(controller)//回到場景
-// //  .setPin('.index_container')
- 
+TweenMax.to('.river_move',2,{
+    x:30,
+    repeat:-1,  
+    yoyo:true,
+    scale:0.99, 
+    opacity:0.5,   
+}); 
 
 
 
 
+var tl =new TimelineMax({
+    repeat:-1,
+});
+     
+ tl.to('.river_move_custom', 1, {
+     y: 10,
+     opacity:0.8,
+     
+ }).to('.river_move_custom', 1, {
+     y: 30,
+     opacity:0.6,
+ }).to('.river_move_custom', 1, {
+    y: 40,
+    opacity:0.4,
+})
 
 
+ // --------------river_move qa-------------//
+
+ TweenMax.to('.river_move_qa',5,{
+    x:60,
+    repeat:-1,  
+    yoyo:true,
+    scale:0.99, 
+    opacity:0.8,   
+}); 
+
+// --------------river_move_last-------------//
+
+var tl =new TimelineMax({
+    repeat:-1,
+});
+     
+ tl.to('.river_move_last', 1, {
+     x: -10,
+     opacity:0.9,
+     
+ }).to('.river_move_last', 1, {
+     x: 15,
+     opacity:0.7,
+ }).to('.river_move_last', 1, {
+    x: 20,
+    y:-5,
+    opacity:0.3,
+})
+
+// --------------river_move big-------------//
+
+
+var tl =new TimelineMax({
+    repeat:-1,
+    yoyo:true,
+    opacity:0.8
+});
+     
+ tl.to('.river_move_big', 2, {
+     y: 20,
+     opacity:0.7,
+     
+ }).to('.river_move_big', 2, {
+     y: 25,
+     opacity:0.5,
+ }).to('.river_move_big', 2, {
+    y: 40,
+    opacity:0.3,
+})
 
 
 
 var controller = new ScrollMagic.Controller();
+
+
+
+
+ // -----------------choco_black-------------//
+
   
-var tl =new TimelineMax({
-      // repeat: 1,
+var choco_black =new TimelineMax({
     yoyo: true,
-  //    onComplete: alerts
 
 });
      
- tl.to('.choco_black', 1, {
+ choco_black.to('.choco_black', 1, {
      y: 130,
      x:-100,
      scale:1.2,
@@ -223,6 +263,7 @@ var tl =new TimelineMax({
     y: 300,
     x: -200,
     scale:1,
+    rotation:-60,  
 }).to('.choco_black', 1, {
     y:400,
     x: 0,
@@ -240,39 +281,317 @@ var tl =new TimelineMax({
     y:600,
     x: 600,
     scale:1.3,
-    rotate:20,
 }).to('.choco_black', 1, {
     y:800,
     x: 700,
+    scale:0.9,  
+}).to('.choco_black', 1, {
+    y:800,
+    x: 700,
+    scale:0.8,
+    rotation:-20,  
+})
+// .to('.choco_black', 1, {
+//     y:800,
+//     x: 700,
+//     scale:1,
+//     rotation:-20,
+//    opacity:0.8, 
+// }).to('.choco_black', 1, {
+//     y:820,
+//     x: 750,
+//     scale:0.8,
+//     rotation:-20,
+//    opacity:0.5, 
+// }).to('.choco_black', 1, {
+//     y:850,
+//     x: 800,
+//     scale:0.8,
+//     rotation:-20,
+//    opacity:0, 
+// }).to('.choco_black', 1, {
+//     y:800,
+//     x: 700,
+//     scale:1,
+//     rotation:-20,
+//    opacity:0.8,
+// }).to('.choco_black', 1, {
+//     y:820,
+//     x: 750,
+//     scale:0.8,
+//     rotation:-20,
+//    opacity:1, 
+
+// })   
+// .to('.choco_black', 1, {
+//     y:1000,
+//     x: 800,
+//     scale:1,
+//     rotation:-20,
+//    opacity:0, 
+// })
+.to('.choco_black', 1, {
+    y:900,
+    x:850,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}) .to('.choco_black', 1, {
+    y:1050,
+    x:850,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}) 
+.to('.choco_black', 1, {
+    y:1150,
+    x:750,
+    scale:0.7,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1300,
+    x:600,
+    scale:0.6,
+    rotation:-60,
+   opacity:1, 
+}) .to('.choco_black', 1, {
+    y:1350,
+    x:700,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1350,
+    x:760,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}) .to('.choco_black', 1, {
+    y:1400,
+    x:820,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}) .to('.choco_black', 1, {
+    y:1500,
+    x:780,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {  //qa
+    y:1550,
+    x:750,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {  //qa
+    y:1600,
+    x:750,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {  //qa
+    y:1700,
+    x:760,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1800,
+    x:770,
+    scale:0.6,
+    rotation:-50,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1820,
+    x:660,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1820,
+    x:500,
+    scale:0.6,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1850,
+    x:400,
+    scale:0.6,
+    rotation:0,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1850,
+    x:200,
+    scale:0.6,
+    rotation:0,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:1800,
+    x:0,
+    scale:0.6,
+    rotation:0,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:2200,
+    x:-380,
+    scale:1.2,
+    rotation:0,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:2400,
+    x:-400,
+    scale:0.8,
+    rotation:0,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:2400,
+    x:400,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:2500,
+    x:600,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 1, {
+    y:2600,
+    x:700,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:2650,
+    x:850,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}) .to('.choco_black', 3, {
+    y:2700,
+    x:1000,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}) .to('.choco_black', 3, {
+    y:2800,
+    x:920,
+    scale:0.8,
+    rotation:0,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:2800,
+    x:820,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:3200,
+    x:820,
     scale:1,
-    rotate:20,
+    rotation:20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:3600,
+    x:700,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:4050,
+    x:700,
+    scale:1,
+    rotation:-20,
+   opacity:1, 
+}) .to('.choco_black', 3, {
+    y:4100,
+    x:800,
+    scale:1,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:4500,
+    x:900,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:4700,
+    x:900,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:4800,
+    x:900,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:4900,
+    x:900,
+    scale:1,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:5200,
+    x:900,
+    scale:1,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:5600,
+    x:900,
+    scale:1.3,
+    rotation:-20,
+   opacity:1, 
+}).to('.choco_black', 3, {
+    y:5600,
+    x:900,
+    scale:1.3,
+    rotation:-20,
+   opacity:1, 
 })
         
-    
   
   var scene_01 = new ScrollMagic.Scene({
-    triggerElement:'#keypoint',//觸發點
-    duration:850,//結束點
+    triggerElement:'#keypoint',
+    duration:5780,
  //    reverse:true, 
     // offset:600,
-    triggerHook: 0,
+    triggerHook: -5,
  
  })
- .setTween(tl)//tween 動畫
-//  .addIndicators() //觸發指標
- .addTo(controller)//回到場景
+ .setTween(choco_black)
+//  .addIndicators() 
+ .addTo(controller)
+//  .setPin('html')
 
 
-//  -----------------------------------------
+
+  
+
+
+
+
+
+
+
+
+
+
+ // -----------------choco_white-------------//
    
 
-var tl2 =new TimelineMax({
+var choco_white =new TimelineMax({
 
     // delay:3,
     yoyo:true,
 });
 
-tl2.to('.choco_white', 1, {
+choco_white.to('.choco_white', 1, {
     y: 110,
     x:-90,
    
@@ -297,9 +616,18 @@ tl2.to('.choco_white', 1, {
     x: -200,
     scale:1,
 
+}).to('.choco_white', 0.5, {
+    y: 450,
+    x: -200,
+    scale:1,
+
+}).to('.choco_white', 0.5, {
+    y: 450,
+    x: -200,
+    scale:1,
+
 })
       
-  
 
 var scene_02 = new ScrollMagic.Scene({
   triggerElement:'#keypoint2',//觸發點
@@ -309,115 +637,64 @@ var scene_02 = new ScrollMagic.Scene({
   triggerHook: 0,
 
 })
-.setTween(tl2)//tween 動畫
-// .addIndicators() //觸發指標
-.addTo(controller)//回到場景
+.setTween(choco_white)
+// .addIndicators() 
+.addTo(controller)
 
+
+
+ // -----------------choco_milk-------------//
+  
+ var choco_milk =new TimelineMax({
+
+});
+
+choco_milk.to('.choco_milk', 60, {
+    y: 50,
+    x:10, 
+}).to('.choco_milk', 120, {
+    y: 150,
+    x:30, 
+    scale:1.1,
+}).to('.choco_milk', 180, {
+    y: 300,
+    x:-180, 
+    scale:1.5,
+}).to('.choco_milk', 300, {
+    y: 400,
+    x: -250,
+    scale:2,
+}).to('.choco_milk', 300, {
+    y: 600,
+    x: -450,
+    scale:2,
+})
 
 var scene_03 = new ScrollMagic.Scene({
-    triggerElement:'#keypoint3',//觸發點
-    duration:800,//結束點
-  //    reverse:true, 
+    triggerElement:'#keypoint3',
+    duration:800,
     // offset:600,
     triggerHook: 0,
   
   })
-  .setTween(tl3)//tween 動畫
-//   .addIndicators() //觸發指標
-  .addTo(controller)//回到場景
+  .setTween(choco_milk)
+//   .addIndicators() 
+  .addTo(controller)
 
 
 
-
-
-//  // -----------------choco_white-------------//
-
-
-// var tl =new TimelineMax({
-
-//     delay:3,
-// });
-
-// tl.to('.choco_white', 1, {
-//     y: 110,
-//     x:-90,
-   
-// }).to('.choco_white', 1, {
-//      y: 200,
-//      x:-140,
-//      scale:1.2,
-    
-//  }).to('.choco_white', 1, {
-//     y: 450,
-//     x: -200,
-//     scale:1,
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-// -----------------choco-------------//
-
-
-// TweenMax.to('.choco_milk',2,{
-//     y:-10,
-//     repeat:-1,  
-//     yoyo:true,    
+// $(function () {
+// if($('window').width() < 1200) {
+//     TweenMax.killTweensOf(choco_black);
+//     TweenMax.killTweensOf(choco_white);
+//     TweenMax.killTweensOf(choco_milk);
+// } 
 // });
 
 
-
-// TweenMax.to('.choco_black',2,{
-//     y:-10,
-//     repeat:-1,  
-//     yoyo:true,    
-// });
-
-// TweenMax.to('.choco_white',2,{
-//     y:-10,
-//     repeat:-1,  
-//     yoyo:true,    
-// });
-
-
-
-
-
-
-// const choco ={
-//     curviness:1.25,
-//     autoRotate:true,
-//     value:[
-//         {x:100,y:200}
-//     ]
+// if($(window).width() >= 1024){
+//  tl3;
 // }
-
-// var tween  =new TimelineLite
-
-// tween.add(
-//     TweenLite.to
-// )
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

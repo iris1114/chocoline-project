@@ -1211,29 +1211,32 @@ body {
     position: absolute;
     top: 46%;
     left: 27%;
-    z-index: 2; }
+    z-index: 10;
+    animation: black_top 1s infinite alternate; }
     .hero_main .wrap .choco_black .body {
       position: relative;
       width: 65.38%; }
     .hero_main .wrap .choco_black .left_hand {
       width: 50.76%;
       position: absolute;
-      top: -86%;
+      top: -80%;
       right: 0%;
       bottom: 0%;
-      left: -93%;
+      left: -75%;
       margin: auto;
       z-index: -1;
-      animation: hand 1s infinite alternate; }
+      animation: hand 1s infinite alternate;
+      transform-origin: 2px 100% 10px; }
     .hero_main .wrap .choco_black .right_hand {
       width: 28.46%;
       position: absolute;
-      top: 32%;
+      top: 28%;
       right: 0%;
       bottom: 0%;
-      left: 32%;
+      left: 26%;
       margin: auto;
-      animation: righthand 1s infinite alternate; }
+      animation: righthand 1s infinite alternate;
+      transform-origin: 2px 100% 10px; }
     .hero_main .wrap .choco_black .right_leg {
       width: 17.30%;
       position: absolute;
@@ -1252,7 +1255,7 @@ body {
       left: -80%;
       margin: auto;
       animation: leftleg 1s infinite alternate; }
-    .hero_main .wrap .choco_black .left_eye {
+    .hero_main .wrap .choco_black .right_eye {
       background: url(../image/index/hero/choco_eye.png) no-repeat center;
       background-size: contain;
       width: 15%;
@@ -1263,8 +1266,9 @@ body {
       right: 0%;
       bottom: 0%;
       left: -5%;
-      margin: auto; }
-    .hero_main .wrap .choco_black .right_eye {
+      margin: auto;
+      animation: eye 1s infinite alternate; }
+    .hero_main .wrap .choco_black .left_eye {
       background: url(../image/index/hero/choco_eye.png) no-repeat center;
       background-size: contain;
       width: 15%;
@@ -1275,44 +1279,49 @@ body {
       right: 0%;
       bottom: 0%;
       left: -55%;
-      margin: auto; }
-    .hero_main .wrap .choco_black .left_eyelip {
-      z-index: 3;
-      position: absolute;
-      top: -15%;
-      right: auto;
-      bottom: auto;
-      left: -5%;
       margin: auto;
-      width: 10%;
-      height: 0%;
-      background-color: #41261b;
-      border-radius: 50%;
-      animation: eyelid 5s infinite alternate; }
+      animation: eye 1s infinite alternate; }
     .hero_main .wrap .choco_black .right_eyelip {
       z-index: 3;
       position: absolute;
-      top: -35%;
+      top: 44%;
       right: auto;
       bottom: auto;
-      left: -55%;
+      left: 43%;
       margin: auto;
-      width: 10%;
+      transform: rotate(25deg);
+      width: 12%;
       height: 0%;
       background-color: #41261b;
-      border-radius: 50%;
-      animation: eyelid 5s infinite alternate; }
+      border-radius: 20%;
+      animation: eyelid 3s  infinite alternate; }
+    .hero_main .wrap .choco_black .left_eyelip {
+      z-index: 3;
+      position: absolute;
+      top: 32%;
+      right: auto;
+      bottom: auto;
+      left: 18%;
+      margin: auto;
+      transform: rotate(20deg);
+      width: 12%;
+      height: 0%;
+      background-color: #41261b;
+      border-radius: 20%;
+      animation: eyelid 3s infinite alternate; }
   .hero_main .wrap .choco_white {
     width: 200px;
     position: absolute;
     top: 36%;
     left: 38%;
-    z-index: 1; }
+    z-index: 1;
+    animation: white_top 1s infinite alternate; }
   .hero_main .wrap .choco_milk {
     width: 100px;
     position: absolute;
     top: 18%;
-    left: 50%; }
+    left: 50%;
+    animation: milk_top 1s infinite alternate; }
   .hero_main .wrap .love_l {
     width: 52px;
     position: absolute;
@@ -1349,28 +1358,61 @@ body {
     position: absolute;
     top: 60%;
     left: -45%;
-    z-index: -1; }
+    z-index: -2; }
+  .hero_main .wrap .river_move {
+    width: 20%;
+    position: absolute;
+    top: 150%;
+    left: 85%;
+    z-index: 2;
+    overflow: hidden; }
+  .hero_main .wrap .river_move_custom {
+    width: 20%;
+    position: absolute;
+    top: 133%;
+    left: 65%; }
   .hero_main .wrap .river_qa {
     width: 180%;
     position: absolute;
-    top: 210%;
+    top: 200%;
     left: -60%;
     z-index: -2; }
+  .hero_main .wrap .river_move_qa {
+    width: 55%;
+    position: absolute;
+    top: 320%;
+    left: -30%; }
+  .hero_main .wrap .river_move_rank {
+    width: 55%;
+    position: absolute;
+    top: 400%;
+    left: -120%; }
+  .hero_main .wrap .river_move_big, .hero_main .wrap .river_move_big2 {
+    width: 30%;
+    position: absolute;
+    top: 430%;
+    right: -28%; }
   .hero_main .wrap .river_last {
     width: 165%;
     position: absolute;
     top: 370%;
     left: -25%;
-    z-index: -3; }
+    z-index: -3;
+    pointer-events: none; }
   .hero_main .wrap .shark {
     animation: top 5s infinite alternate; }
 
 @keyframes eyelid {
   0%,
-  80% {
-    height: 6%; }
+  95% {
+    height: 2%; }
   100% {
-    height: 12%; } }
+    height: 20%; } }
+
+@keyframes eye {
+  0% { }
+  100% {
+    transform: rotate(-45deg); } }
 
 @keyframes hand {
   0% {
@@ -1395,12 +1437,6 @@ body {
     transform: rotate(-20deg); }
   100% {
     transform: rotate(-8deg); } }
-
-@keyframes top {
-  0% {
-    top: 0%; }
-  100% {
-    top: 10%; } }
 
 .index_custom_container {
   margin-top: 200px; }
@@ -1908,7 +1944,7 @@ body {
             .game_container .wrap .game_wrap .game_text p:nth-child(3) {
               font-size: 20px; } }
       .game_container .wrap .game_wrap .game_things {
-        width: 1480px;
+        width: 1600px;
         position: absolute;
         top: -25%;
         left: -10%;
@@ -1921,6 +1957,29 @@ body {
 
 .map_container {
   margin-top: 120px; }
+  .map_container .ballon {
+    width: 200px;
+    position: absolute;
+    left: 80%;
+    top: -15%; }
+  .map_container .cloud {
+    width: 500px;
+    position: absolute;
+    left: 0%;
+    top: -5%;
+    animation: cloud 20s alternate-reverse infinite; }
+  .map_container .cloud2 {
+    width: 500px;
+    position: absolute;
+    right: 10%;
+    top: -5%;
+    z-index: -1;
+    animation: cloud 10s alternate-reverse infinite; }
+  .map_container .river_move_last {
+    width: 55%;
+    position: absolute;
+    top: 90%;
+    right: -20%; }
   .map_container .wrap {
     position: relative;
     z-index: 3; }
@@ -1936,7 +1995,8 @@ body {
         top: 15%;
         left: 13%;
         color: #592F13;
-        width: auto; }
+        width: auto;
+        cursor: pointer; }
         @media all and (max-width: 767px) {
           .map_container .wrap .map p {
             font-size: 18px; } }
@@ -1986,17 +2046,21 @@ body {
         position: absolute;
         top: 70%;
         left: 39%; }
+      .map_container .wrap .map .point {
+        cursor: pointer; }
     .map_container .wrap .map_bg {
       position: absolute;
       width: 180%;
       top: 27%;
-      left: -40%; }
+      left: -40%;
+      pointer-events: none; }
     .map_container .wrap .aboutus_car {
       width: 1920px;
       height: 600px;
       margin-top: -330px;
       position: relative;
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
       .map_container .wrap .aboutus_car .car {
         position: absolute;
         right: -175px;
@@ -2066,7 +2130,7 @@ body {
       position: absolute;
       top: 46%;
       left: 28%;
-      z-index: 1; }
+      z-index: 10; }
     .hero_main .wrap .choco_white {
       width: 130px;
       position: absolute;
@@ -2500,9 +2564,10 @@ body {
     .map_container .car_area {
       position: relative;
       top: 0%; }
+    .map_container .river_move_last {
+      display: none; }
   .index_footer {
     width: 100%;
-    height: 160px;
     padding-bottom: 10px;
     position: relative;
     display: flex;
@@ -2535,7 +2600,7 @@ body {
       height: 100%;
       background: url("../image/headerfooter/m_footer_bg.png") no-repeat 0 100%/100% 100%;
       position: absolute;
-      top: 0;
+      top: 0%;
       left: 0;
       z-index: -2; } }
 
@@ -2635,6 +2700,20 @@ body {
     .hero_main .wrap .river_qa {
       display: none; }
     .hero_main .wrap .river_last {
+      display: none; }
+    .hero_main .wrap .river_move {
+      width: 20%;
+      position: absolute;
+      top: 130%;
+      left: 75%;
+      z-index: 2;
+      overflow: hidden; }
+    .hero_main .wrap .river_move_custom {
+      width: 20%;
+      position: absolute;
+      top: 105%;
+      left: 66%; }
+    .hero_main .wrap .river_move_big, .hero_main .wrap .river_move_big2, .hero_main .wrap .river_move_qa {
       display: none; }
   .index_custom_container {
     margin-top: 200px; }
@@ -3351,6 +3430,8 @@ body {
           bottom: 50px; }
           .map_container .wrap .aboutus_car .car img {
             width: 40%; }
+    .map_container .ballon, .map_container .cloud, .map_container .cloud2, .map_container .river_move_last {
+      display: none; }
   .index_footer {
     width: 100%;
     height: 160px;
