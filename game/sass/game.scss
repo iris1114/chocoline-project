@@ -3,29 +3,34 @@
 .game_body{
     overflow: hidden;
     background: #DBAA51;
-    height: 100vh;
+    // height: 100vh;
 }
 .blackscreen{
     display: none;
 }
-@media all and (orientation: portrait){
-    .blackscreen{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 10vw;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,.95);
-        color: $color_milk;
-        position: fixed;
-        z-index: 20;
-        user-select: none;
-    } 
+@media all and (max-width:992px){
+
+    @media all and (orientation: portrait){
+        .blackscreen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10vw;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,.95);
+            color: $color_milk;
+            position: fixed;
+            z-index: 20;
+            user-select: none;
+        } 
+    }
 }
 .game_container{
     position: relative;
     height: 100%;
+    height: 0px;
+    padding-bottom: 48.95%;
 }
 section{
     padding: 0;
@@ -112,8 +117,7 @@ section{
         &:nth-child(4){
             display: none;
         }
-    }
-}
+    }}
 @keyframes keyshow{
     from{
         opacity: 0;
@@ -127,8 +131,10 @@ section{
     z-index: 1;
 }
 .title_decoration{
-    @include pos(170px,0,auto,0);
+    @include pos(18.104%,0,auto,0);
     z-index: 1;
+    max-width: 595px;
+    width: 30.9%;
 }
 #timeup{
     max-width: 860px;
@@ -227,9 +233,11 @@ section{
 .bonus_house{
     max-width: 900px;
     width: 46.875%;
-    max-height: 625px;
-    height: 60%;
-    @include pos(0,0,20%,0);
+    // max-height: 625px;
+    // height: 60%;
+    // @include pos(0,0,20%,0);
+    @include pos(50%,auto,auto,50%);
+    transform: translate(-50%,-50%);
     z-index: 1;
 }
 .CHOCO{
@@ -414,15 +422,18 @@ section{
 .final{
     max-width: 737px;
     width: 38.385%;
-    max-height: 575px;
-    height: 61.36%;
-    @include pos(0,0,0,0);
+    width: 65%;
+    // max-height: 575px;
+    // height: 61.36%;
+    @include pos(50%,auto,auto,50%);
+    transform: translate(-50%,-50%);
     z-index: 1;
     display: none;
     animation: bang .3s forwards;
     p{
         font-size: 40px;
-        @include pos(40%,0,auto,0);
+        @include pos(50%,auto,auto,50%);
+        transform: translate(-50%,-50%);
         text-align: center;
         color: $color_red;
         span{
@@ -432,13 +443,13 @@ section{
 }
 @keyframes bang {
     0%{
-        transform: scale(0.1);
+        transform: translate(-50%,-50%) scale(0.1);
     }
     80%{
-        transform: scale(1.5);
+        transform: translate(-50%,-50%) scale(1.5);
     }
     100%{
-        transform: scale(1);
+        transform: translate(-50%,-50%) scale(1);
     }
 }
 #board_close{
@@ -448,24 +459,24 @@ section{
     display: none;
 }
 #again{
-    transform: scale(0.6);
-    @include pos(auto,auto,23%,14%);
+    // transform: scale(0.6);
+    @include pos(auto,0,23%,-31%);
 }
 #gostore{
-    transform: scale(0.6);
-    @include pos(auto,13%,23%,auto);
+    // transform: scale(0.6);
+    @include pos(auto,-33%,23%,0);
 }
 canvas{
     width: 100%;
     height: auto;
 }
 
-@include rwd(tablet){
+@include rwd(desktop){
     #introduce{
         @include pos(32.7%,0,auto,0);
         z-index: 1;
         max-width: 671px;
-        width: 55%;
+        width: 34.94%;
         img{
             &:nth-child(1){
                 display: none;
@@ -515,9 +526,6 @@ canvas{
             -webkit-text-stroke: 8px $color_brown;
         }
     }
-    .bonus_house{
-        height: 67%;
-    }
     .card{
         figcaption{
             font-size: 48px;
@@ -528,7 +536,6 @@ canvas{
     }
     .final{
         p{
-            @include pos(48%,0,auto,0);
             font-size: 60px;
         }
     }

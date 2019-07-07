@@ -36,6 +36,7 @@ function handleComplete(evt,comp) {
     exportRoot.addChild(bear);
 
     let isstart = false;
+    let iskey;
     let iskeydown = false;
     let position = 1;
     let speed = 20;
@@ -66,7 +67,7 @@ function handleComplete(evt,comp) {
     document.querySelector("#start").addEventListener("click",tostart);
 
     function tostart(){
-        if(window.innerWidth<768){
+        if(window.innerWidth<992){
             header.style.display="none";
         }
         document.querySelector(".title_decoration").style.display="none";
@@ -75,9 +76,7 @@ function handleComplete(evt,comp) {
             isstart = true;
             window.addEventListener("keydown",keydownmove);
             window.addEventListener("keyup",keyupmove);
-            if(window.innerWidth<768){
-                window.addEventListener("deviceorientation",phonerun);
-            }
+            window.addEventListener("deviceorientation",phonerun);
         },1000)
     }
 
@@ -85,10 +84,10 @@ function handleComplete(evt,comp) {
     
     function keystart(e){
         if(e.keyCode==13 || e.keyCode==108){
-            if(window.innerWidth<768){
+            if(window.innerWidth<992){
                 header.style.display="none";
             }
-            
+            iskey = true;
             document.querySelector(".title_decoration").style.display="none";
             document.querySelector("#introduce").style.display="none";
             setTimeout(function(){
@@ -124,19 +123,21 @@ function handleComplete(evt,comp) {
         if(iskeydown == false){
             return;
         }
-        bear.scaleX = position;
-        bear.x -= speed * position;
-        
-        if(window.innerWidth<768){
- 
+        if(iskey){
+            bear.scaleX = position;
+            bear.x -= speed * position;
+        }else{
             if(beta>0){
                 position = -1;
+                bear.scaleX = position;
                 bear.x -= beta * position * 0.8;
             }else{
                 position = 1 ;
+                bear.scaleX = position;
                 bear.x += beta * position * 0.8;
             }
         }
+        
         
 
         if(bear.x <=96.5){
@@ -342,7 +343,7 @@ function handleComplete(evt,comp) {
                 setTimeout(function(){
                     timeup.style.display = "none";
                     choco_bonus.style.display = "block";
-                    if(window.innerWidth<768){
+                    if(window.innerWidth<992){
                         header.style.display="block";
                     }
                 },3500)

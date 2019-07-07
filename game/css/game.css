@@ -1790,14 +1790,13 @@ section {
 .game_body {
   overflow: hidden;
   background: #DBAA51;
-  height: 100vh;
 }
 
 .blackscreen {
   display: none;
 }
 
-@media all and (orientation: portrait) {
+@media all and (max-width: 992px) and (orientation: portrait) {
   .blackscreen {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1825,6 +1824,8 @@ section {
 .game_container {
   position: relative;
   height: 100%;
+  height: 0px;
+  padding-bottom: 48.95%;
 }
 
 section {
@@ -1968,12 +1969,14 @@ section {
 
 .title_decoration {
   position: absolute;
-  top: 170px;
+  top: 18.104%;
   right: 0;
   bottom: auto;
   left: 0;
   margin: auto;
   z-index: 1;
+  max-width: 595px;
+  width: 30.9%;
 }
 
 #timeup {
@@ -2139,14 +2142,14 @@ section {
 .bonus_house {
   max-width: 900px;
   width: 46.875%;
-  max-height: 625px;
-  height: 60%;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 20%;
-  left: 0;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
   margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -2526,14 +2529,15 @@ section {
 .final {
   max-width: 737px;
   width: 38.385%;
-  max-height: 575px;
-  height: 61.36%;
+  width: 65%;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
   margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 1;
   display: none;
   -webkit-animation: bang .3s forwards;
@@ -2543,11 +2547,13 @@ section {
 .final p {
   font-size: 40px;
   position: absolute;
-  top: 40%;
-  right: 0;
+  top: 50%;
+  right: auto;
   bottom: auto;
-  left: 0;
+  left: 50%;
   margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   text-align: center;
   color: #ED1C24;
 }
@@ -2558,31 +2564,31 @@ section {
 
 @-webkit-keyframes bang {
   0% {
-    -webkit-transform: scale(0.1);
-            transform: scale(0.1);
+    -webkit-transform: translate(-50%, -50%) scale(0.1);
+            transform: translate(-50%, -50%) scale(0.1);
   }
   80% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
   }
 }
 
 @keyframes bang {
   0% {
-    -webkit-transform: scale(0.1);
-            transform: scale(0.1);
+    -webkit-transform: translate(-50%, -50%) scale(0.1);
+            transform: translate(-50%, -50%) scale(0.1);
   }
   80% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -2599,24 +2605,20 @@ section {
 }
 
 #again {
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
   position: absolute;
   top: auto;
-  right: auto;
+  right: 0;
   bottom: 23%;
-  left: 14%;
+  left: -31%;
   margin: auto;
 }
 
 #gostore {
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
   position: absolute;
   top: auto;
-  right: 13%;
+  right: -33%;
   bottom: 23%;
-  left: auto;
+  left: 0;
   margin: auto;
 }
 
@@ -2625,7 +2627,7 @@ canvas {
   height: auto;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 992px) {
   #introduce {
     position: absolute;
     top: 32.7%;
@@ -2635,7 +2637,7 @@ canvas {
     margin: auto;
     z-index: 1;
     max-width: 671px;
-    width: 55%;
+    width: 34.94%;
   }
   #introduce img:nth-child(1) {
     display: none;
@@ -2694,9 +2696,6 @@ canvas {
   #time #outerword {
     -webkit-text-stroke: 8px #592F13;
   }
-  .bonus_house {
-    height: 67%;
-  }
   .card figcaption {
     font-size: 48px;
   }
@@ -2704,12 +2703,6 @@ canvas {
     -webkit-text-stroke: 8px #592F13;
   }
   .final p {
-    position: absolute;
-    top: 48%;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    margin: auto;
     font-size: 60px;
   }
   #again {
