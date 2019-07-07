@@ -280,6 +280,7 @@ header {
   padding: 7% 0;
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
+  position: relative;
 }
 
 @media all and (max-width: 767px) {
@@ -322,6 +323,25 @@ header {
 
 .d_header {
   display: none;
+}
+
+.nowpage {
+  position: relative;
+  top: 9px;
+}
+
+.nowpage::before {
+  content: "";
+  background: url("../image/headerfooter/li_bg.png") no-repeat 50% 0/contain;
+  width: 100%;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
 }
 
 @media all and (min-width: 992px) {
@@ -371,6 +391,7 @@ header {
   .d_header .menubox li {
     font-size: 18px;
     margin: 0 12px;
+    position: relative;
   }
   .d_header .menubox li a {
     color: #F6EED4;
@@ -770,7 +791,6 @@ header {
 
 .robot .robot_content .message_area .message {
   position: relative;
-  width: 100%;
   max-width: 80%;
   margin-bottom: 10px;
   padding: 10px;

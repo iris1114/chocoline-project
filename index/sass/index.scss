@@ -100,7 +100,10 @@ body{
             position: absolute;
             top:46%;
             left:27% ;
-            z-index: 2;
+            z-index: 10;
+            animation: black_top 1s infinite alternate;
+
+
 
             .body{
                 position: relative;
@@ -109,15 +112,18 @@ body{
 
             .left_hand{
                 width: 50.76%;
-                @include pos(-86%,0%,0%,-93%);
+                @include pos(-80%,0%,0%,-75%);
                 z-index: -1;
                 animation:hand 1s infinite alternate;
+                transform-origin: 2px 100% 10px;
 
             }
             .right_hand{
                 width:  28.46%;
-                @include pos(32%,0%,0%,32%);
+                @include pos(28%,0%,0%,26%);
                 animation: righthand 1s infinite alternate;
+                transform-origin: 2px 100% 10px;
+
 
 
 
@@ -136,41 +142,46 @@ body{
 
 
             }
-            .left_eye{
-                background: url(../image/index/hero/choco_eye.png) no-repeat center;
-                background-size: contain;
-                width:15%;
-                height: 12%;
-                z-index: 2;
-                @include pos(5%,0%,0%,-5%);
-            }
             .right_eye{
                 background: url(../image/index/hero/choco_eye.png) no-repeat center;
                 background-size: contain;
                 width:15%;
                 height: 12%;
                 z-index: 2;
+                @include pos(5%,0%,0%,-5%);
+                animation:eye 1s infinite alternate;
+
+            }
+            .left_eye{
+                background: url(../image/index/hero/choco_eye.png) no-repeat center;
+                background-size: contain;
+                width:15%;
+                height: 12%;
+                z-index: 2;
                 @include pos(-20%,0%,0%,-55%);
+                animation:eye 1s infinite alternate;
             }
 
-            .left_eyelip{
-                z-index: 3;
-                @include pos(-15%,auto,auto,-5%);
-                width: 10%;
-                height: 0%;
-                background-color: #41261b;
-                border-radius: 50%;
-                animation: eyelid 5s infinite alternate ;
-            
-            }
             .right_eyelip{
                 z-index: 3;
-                @include pos(-35%,auto,auto,-55%);
-                width: 10%;
+                @include pos(44%,auto,auto,43%);
+                transform: rotate(25deg);
+                width: 12%;
                 height: 0%;
                 background-color: #41261b;
-                border-radius: 50%;
-                animation: eyelid 5s infinite alternate;
+                border-radius: 20%;
+                animation: eyelid 3s  infinite alternate ;
+            
+            }
+            .left_eyelip{
+                z-index: 3;
+                @include pos(32%,auto,auto,18%);
+                transform: rotate(20deg);
+                width: 12%;
+                height: 0%;
+                background-color: #41261b;
+                border-radius: 20%;
+                animation: eyelid 3s infinite alternate;
             
             }
 
@@ -184,8 +195,8 @@ body{
             position: absolute;
             top:36%;
             left:38% ;
-            z-index: 1
-            
+            z-index: 1;
+            animation: white_top 1s infinite alternate;     
         }
 
         .choco_milk{
@@ -193,6 +204,8 @@ body{
             position: absolute;
             top:18%;
             left:50% ;
+            animation: milk_top 1s infinite alternate;
+
           
         }
 
@@ -241,16 +254,52 @@ body{
             position: absolute;
             top:60%;
             left:-45% ;
-            z-index: -1;
+            z-index: -2;
+        }
+        .river_move{
+            width: 20%;
+            position: absolute;
+            top:150%;
+            left:85% ;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .river_move_custom{
+            width: 20%;
+            position: absolute;
+            top:133%;
+            left:65% ;
+
         }
 
         .river_qa{
             width: 180%;
             position:absolute;
-            top:210%;
+            top:200%;
             left:-60% ;
             z-index: -2;
         }
+        .river_move_qa{
+            width: 55%;
+            position: absolute;
+            top:320%;
+            left:-30% ;
+
+        }
+        .river_move_rank{
+            width: 55%;
+            position: absolute;
+            top:400%;
+            left:-120% ;
+
+        }
+        .river_move_big,.river_move_big2{
+            width: 30%;
+            position: absolute;
+            top:430%;
+            right:-28% ;
+        }
+    
 
         .river_last{
             width: 165%;
@@ -258,7 +307,11 @@ body{
             top:370%;
             left:-25% ;
             z-index: -3;
+            pointer-events: none;
+
         }
+       
+
         .shark{
        animation: top 5s infinite alternate;
 
@@ -269,12 +322,20 @@ body{
   
     @keyframes eyelid {
     0%,
-    80% {
-      height: 6%;
+    95% {
+      height: 2%;
     }
 
     100% {
-      height: 12%;
+      height: 20%;
+    }
+  }
+  @keyframes eye {
+    0% {
+    }
+
+    100% {
+      transform: rotate(-45deg);
     }
   }
 
@@ -315,15 +376,32 @@ body{
     }
 } 
 
+// @keyframes  white_top {
+//     0%{
+//         top:36%;
+//     }
+//     100%{
+//         top:37%
+//     }
+// } 
 
-@keyframes top {
-    0%{
-        top:0%;
-    }
-    100%{
-        top:10%
-    }
-} 
+// @keyframes  black_top {
+//     0%{
+//         top:46%;
+//     }
+//     100%{
+//         top:47%
+//     }
+// }
+
+// @keyframes  milk_top {
+//     0%{
+//         top:18%;
+//     }
+//     100%{
+//         top:19%
+//     }
+// }
 }
 // -----------index_custom_container---------
 
@@ -817,7 +895,7 @@ body{
             }
 
             .game_things{
-                width: 1480px;
+                width: 1600px;
                 position: absolute;
                 top:-25%;
                 left:-10%;
@@ -840,6 +918,36 @@ body{
      margin-top: 120px;
     //  height: 1500px;
      
+    .ballon{
+        width: 200px;
+        position: absolute;
+        left: 80%;
+        top:-15%;
+    }
+    .cloud{
+        width: 500px;
+        position: absolute;
+        left: 0%;
+        top: -5%;
+        animation: cloud 20s alternate-reverse infinite;
+
+    }
+    .cloud2{
+        width: 500px;
+        position: absolute;
+        right: 10%;
+        top: -5%;
+        z-index: -1;
+        animation: cloud 10s alternate-reverse infinite;
+
+    }
+    .river_move_last{
+        width: 55%;
+        position: absolute;
+        top:90%;
+        right:-20% ;
+    }
+    
 
     .wrap{
         position: relative;
@@ -851,6 +959,7 @@ body{
             position: relative;
             left: 10%;
 
+
             p{
                 @include font_l();
                 position: absolute;
@@ -858,6 +967,7 @@ body{
                 left: 13%;
                 color:$color_brown;
                 width: auto;
+                cursor: pointer;
             }
 
             .taipei{
@@ -910,7 +1020,11 @@ body{
                 position: absolute;
                 top:70%;
                 left: 39%;
-            }        
+            } 
+            .point{
+                cursor: pointer;
+
+            }       
         }
 
         .map_bg{
@@ -918,6 +1032,8 @@ body{
             width: 180%;
             top:27%;
             left: -40%;
+            pointer-events: none;
+
         }
 
         .aboutus_car{
@@ -926,6 +1042,7 @@ body{
             margin-top: -330px;
             position: relative;
             z-index: 1;
+            pointer-events: none;
             .car{
                 position: absolute;
                 right: -175px;
@@ -1027,7 +1144,7 @@ body{
                position: absolute;
                top:46%;
                left:28% ;
-               z-index: 1;
+               z-index: 10;
            }
    
            .choco_white{
@@ -1522,12 +1639,15 @@ body{
           position: relative;
           top:0%;
       }
+      .river_move_last{
+        display: none;
+    }
    }
 
  
    .index_footer{
     width: 100%;
-    height: 160px;
+    // height: 100px;
     padding-bottom: 10px;
     position: relative;
     display: flex;
@@ -1565,7 +1685,7 @@ body{
     height: 100%;
     background: url("../image/headerfooter/m_footer_bg.png") no-repeat 0 100% / 100% 100%;
     position: absolute;
-    top: 0;
+    top: 0%;
     left: 0;
     z-index: -2;
 }  
@@ -1724,7 +1844,32 @@ body{
             display: none;
         }
 
+
+
+        .river_move{
+            width: 20%;
+            position: absolute;
+            top:130%;
+            left:75% ;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .river_move_custom{
+            width: 20%;
+            position: absolute;
+            top:105%;
+            left:66% ;
+
+        }
+    
+        .river_move_big,.river_move_big2,.river_move_qa,{
+            display: none;
+        }
+    
+
+
     }
+}
 }
     
  // -----------index_custom_container/mobile-------------
@@ -2435,6 +2580,9 @@ width: 100%;
             }
         }
 
+    }
+    .ballon,.cloud,.cloud2, .river_move_last{
+        display: none;
     }
  
 }

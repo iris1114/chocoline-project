@@ -1,0 +1,432 @@
+
+@import"../../common/sass/common.scss";
+
+*{
+    // outline: 1px solid red;
+}
+
+body{
+    background-color: #FFF5E3;
+    background: url(../image/member/bg.png) no-repeat 100% 100% /cover;
+   
+}
+
+
+
+
+
+
+
+
+// -------------------------------RWD DESKTOP------------------------------//
+
+
+#member_tabs_container{
+    padding-top: 150px;
+    
+    .wrap{
+        // padding-bottom: 20px;
+        display: flex;
+        // justify-content: space-between;
+
+    .tablink {
+        background-color: #fff;
+        color: $color_blue;
+        cursor: pointer;
+        padding: 10px;
+
+        width: 20%;
+        border: 2px solid $color_blue;
+        border-radius: 10px;
+        @include font_m();
+    }   
+    }
+}
+
+
+.tabcontent {
+    color: white;
+    display: none;
+    // padding: 50px 20px;
+    height: 100%;
+    // margin: 20px;
+    border-radius: 10px;
+}
+
+
+#info{
+    background-color: white;
+    border: 2px solid $color_blue;
+    border-radius: 10px;
+
+
+
+    .my_info{
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-flow: row wrap; 
+        margin: auto;
+       
+    }
+    .profile_pic{
+        width: 200px;
+        margin: auto;
+    } 
+    .upload{
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    .info_th{
+        background-color: $color_blue;
+        color: #fff;
+        border-radius: 5px;
+        padding-left: 10px;
+    } 
+    table{
+        margin: auto;
+        @include font_m();
+        text-align: left;
+        margin-bottom: 50px;
+        width: 80%;     
+    }
+  
+
+    a{
+        @include font_s();
+        margin-left: 40px;
+        border-bottom: 1px solid #000;
+    }
+   
+    .btn{
+        margin :auto ;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    input{
+        width: 70%;
+        line-height: 2;
+        border: 2px solid $color_deepblue;
+        border-radius: 5px;
+        margin: 10px auto 10px auto;
+        @include font_m();
+
+    }
+    button{
+        display: block;
+       
+    }
+    i{
+        padding-left: 10px;
+    }
+    .fa-cc-visa {
+        font-size: 30px;
+        padding-right: 20px;
+
+    }
+    .visa_tr{
+        line-height: 2.5;
+
+    }
+    .upload input{
+        border:none;
+        @include font_s();
+    }
+   
+}
+
+// ---------------order list------------------//
+
+#orderlist {
+    background-color: white;
+    height: 100vh;
+
+
+    .my_order{
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        flex-flow: row wrap; 
+        margin: auto;
+        border: 2px solid $color_deepblue;
+        border-radius: 5px;
+
+        .col_lg_3{
+            @include font_m();
+            padding: 20px;
+            
+        }
+        .order_detail{
+            text-align: center;
+            padding: 10px;
+            @include font_m();
+        }
+         .panel{
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-flow: row wrap; 
+            justify-content: center;
+
+         }
+         .product_img{
+             width: 15%;
+         }
+         .product_detail{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+      
+    }
+
+    .accordion {
+        background-color: #eee;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.4s;
+      }
+      
+
+
+    .active, .accordion:hover {
+        background-color: #ccc;
+        cursor: pointer;
+      }
+      
+      .accordion:after {
+        content: '\002B';
+        color: $color_blue;
+        font-weight: bold;
+        padding-left: 10px;
+      }
+      
+      .active:after {
+        content: "\2212";
+      }
+      
+      .panel {
+        padding: 0px 18px;
+        background-color: white;
+        border: 1px solid $color_deepblue;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+}
+  
+#favorite {
+    background-color: white;
+    height: 100vh;
+
+    .content_favorite {
+        color: white;
+        display: none;
+        // padding: 50px 20px;
+        height: 100%;
+        // margin: 20px;
+    }
+
+    .tab_favorite {
+        background-color: #fff;
+        color: $color_blue;
+        cursor: pointer;
+        padding: 5px;
+        border: 2px solid $color_blue;
+        border-radius: 10px;
+        @include font_s();
+        margin-left: 20px;
+        width: 15%;
+    }   
+    
+    .my_choco{
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        flex-flow: row wrap; 
+        margin: auto;
+     
+    }
+
+    .choco_img{
+        width: 40%;
+        margin: auto;
+        text-align: center;
+
+    
+    }
+    .my_choco_desc{
+        display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .my_choco_box{
+        border: 2px solid $color_deepblue;
+        border-radius: 20px;
+
+    }
+
+    button{
+        margin-bottom: 30px;
+    }
+
+  }
+
+#favorite_product{
+    height: 100vh;
+
+    .my_product{
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap; 
+    margin: auto;
+    
+
+    .my_product_box{
+        border: 2px solid $color_deepblue;
+        border-radius: 20px;
+    }
+
+    button{
+        margin-bottom: 30px;
+    }
+}
+
+}
+
+
+        
+#notification {
+    background-color: white;
+    display: block;
+    height: 100vh;
+
+    .tabcontent{
+        background-color: #fff;
+    }
+
+    .my_notifi{
+        width: 80%;
+        max-width: 1200px;
+        display: flex;
+        flex-flow: row wrap; 
+        justify-content: center;
+        border: 2px solid $color_deepblue;
+        border-radius: 20px;
+        margin: auto auto 20px;
+        padding: 10px;
+        
+
+
+
+        .notifi_icon .fa, .fas{
+            font-size: 50px;
+        }
+        .notifi_icon {
+            text-align: center;
+        }
+        h5{
+            @include font_m();
+            padding-bottom: 10px;
+        }
+
+       
+
+
+     }
+
+     footer{
+         position: fixed;
+         bottom: 0;
+         left: 0;
+     }
+   
+
+
+}
+
+
+ 
+
+// -------------------------------RWD TABLET------------------------------//
+
+@media screen  and (min-width: 768px) and (max-width: 991px){
+
+#info{
+    .profile_pic{
+        width: 150px;
+    } 
+    table{
+        width: 100%;
+    }
+}
+
+#orderlist {
+    .product_img{
+        margin: 0px 15px;
+    }
+
+}
+
+#favorite{
+    button{
+        font-size: 14px;
+    }
+}
+
+   
+
+}
+ 
+// ------------------------------RWD MOBILE------------------------------//
+
+@include rwd(mobile){
+#member_tabs_container .wrap .tablink{
+    font-size: 16px;
+    width: 100%;
+    padding: 10px 0px;
+
+}
+#info{
+    .profile_pic{
+        width: 120px;
+
+    }  
+    table{
+        width: 100%;
+        margin: auto;
+        @include font_s();
+        margin-bottom: 50px;
+    }
+    input{
+        width: 80%;
+    }
+    .col_12{
+        margin-bottom: 30px;
+    }  
+}
+
+
+#orderlist .my_order .col_lg_3{
+    @include font_s();    
+}
+#orderlist .my_order .order_detail{
+    @include font_s();    
+
+}
+
+#favorite{
+    button{
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+}
+  
