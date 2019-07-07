@@ -331,33 +331,54 @@
         <div class="robot_click3"></div>
       </label>
       <div class="robot_content">
-        <!-- <img src="image/robot/robot_tooth.png" alt="機器人的牙齒"> -->
-        <div class="message_area">
-          <p class="message">歡迎光臨CHOCOLINE....!!</p>
-          <p class="message">如何客製商品呢?</p>
-          <p class="message">如何客製商品呢?</p>
-          <p class="message">如何客製商品呢?</p>
+        <div id="robot_message" class="message_area">
+          <p id="message_answer_sample" class="message message_answer">
+            有什麼需要我幫忙的嗎?
+          </p>
+          <p
+            id="message_ask_sample"
+            class="message message_ask"
+            style="display:none"
+          >
+            歡迎光臨CHOCOLINE....!!
+          </p>
         </div>
         <div class="keyword_area">
-          <button class="prev_button"><i class="fas fa-angle-left"></i></button>
-          <div class="keyword_wrap">
-            <span class="keyword">客製商品</span>
-            <span class="keyword">玩遊戲拿點數</span>
-            <span class="keyword">購物車</span>
+          <button id="robot_prev_button" class="prev_button">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <div id="keyword_space" class="keyword_space" style="width:200px">
+            <div
+              id="keyword_wrap"
+              class="keyword_wrap"
+              style="margin-left: 0px;"
+            >
+              <span class="keyword">客製商品</span>
+              <span class="keyword">玩遊戲拿點數</span>
+              <span class="keyword">選美比賽</span>
+              <span class="keyword">推薦商品</span>
+              <span class="keyword">CHOCOLINE</span>
+            </div>
           </div>
-          <button class="next_button">
+          <button id="robot_next_button" class="next_button">
             <i class="fas fa-angle-right"></i>
           </button>
         </div>
-        <div class="query_area">
-          <input type="text" placeholder="請問..." />
-          <input type="submit" value="送出" />
-        </div>
+        <form onsubmit="return returnR(this)" class="query_area">
+          <input
+            id="leave_message"
+            type="text"
+            placeholder="請問..."
+            autocomplete="off"
+          />
+          <input id="message_submit" type="submit" value="送出" />
+        </form>
       </div>
     </div>
-
     <!-- robot end -->
-    <!-- <script src="js/header.js"></script> -->
+
+    <script src="../common/js/robot.js"></script>
+    <!-- robot新增js  -->
     <script src="../common/js/header.js"></script>
     <script src="js/main.js"></script>
   </body>
