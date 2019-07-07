@@ -188,7 +188,7 @@
           </figure>
 
           <figure class="choco choco3">
-            <img src="image/custom/cho_type32.png" class="cho" alt="black" />
+            <img src="image/custom/small/M1_SP_003.png" class="cho" alt="black" />
             <figcaption>
               <p>Black CHOCO</p>
             </figcaption>
@@ -207,23 +207,24 @@
           <ul>
             <li>
               <figure class="active">
-                <img src="image/custom/type1png.png" alt="nuts" />
+                <img src="image/custom/small/fr_b_001.png" class="fruit" alt="blue berry" />
                 <figcaption>
-                  <p>堅果</p>
+                  <p>藍莓</p>
+
                 </figcaption>
               </figure>
             </li>
             <li>
               <figure>
-                <img src="image/custom/type2.png" alt="blue berry" />
+                <img src="image/custom/small/fr_b_002.png" class="fruit" alt="grape" />
                 <figcaption>
-                  <p>藍莓</p>
+                  <p>葡萄</p>
                 </figcaption>
               </figure>
             </li>
             <li>
-              <figure c>
-                <img src="image/custom/type3.png" alt="bo ho" />
+              <figure>
+                <img src="image/custom/small/fr_b_003.png" class="fruit" alt="bo ho" />
                 <figcaption>
                   <p>薄荷</p>
                 </figcaption>
@@ -231,7 +232,7 @@
             </li>
             <li>
               <figure>
-                <img src="image/custom/type5.png" alt="orange" />
+                <img src="image/custom/small/fr_b_004.png" class="fruit" alt="orange" />
                 <figcaption>
                   <p>柑橘</p>
                 </figcaption>
@@ -239,7 +240,7 @@
             </li>
             <li>
               <figure>
-                <img src="image/custom/type6.png" alt="strawberry" />
+                <img src="image/custom/small/fr_b_005.png" class="fruit" alt="strawberry" />
                 <figcaption>
                   <p>草莓</p>
                 </figcaption>
@@ -248,10 +249,19 @@
           </ul>
         </div>
 
+
+
         <div class="info_bar">
-          <!-- <img src="image/custom/type-bar.png" alt="" /> -->
-          <p>藍莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
+
+
+          <p class="fruit_text blue_text">藍莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
+          <p class="fruit_text grape_text">葡萄：莓果的酸甜與滑順巧克力一次品嚐！</p>
+          <p class="fruit_text bo_text">薄荷：莓果的酸甜與滑順巧克力一次品嚐！</p>
+
+          <p class="fruit_text orange_text">柑橘：莓果的酸甜與滑順巧克力一次品嚐！</p>
+          <p class="fruit_text strawberry_text">草莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
         </div>
+
       </div>
 
 
@@ -262,15 +272,17 @@
             <img src="image/custom/talk.png" alt="">
           </div>
           <div class="choco_text black_text">
-            <h3>Black CHOCO</h3>
+            <h3>White CHOCO</h3>
             <p>
-              黑巧克力：可可多酚的高抗氧化作用
+              白巧克力：甜度增加腦內啡，
+
             </p>
-            <p>能夠抑制老化，促進肌膚的代謝！！</p>
+            <p>提升使人產生幸福及愉悅感的！！</p>
 
             <p>
               適合朋友和獨享
             </p>
+
           </div>
           <div class="choco_text milk_text">
             <h3>Milk CHOCO</h3>
@@ -284,12 +296,11 @@
             </p>
           </div>
           <div class="choco_text white_text">
-            <h3>White CHOCO</h3>
+            <h3>Black CHOCO</h3>
             <p>
-              白巧克力：甜度增加腦內啡，
-
+              黑巧克力：可可多酚的高抗氧化作用
             </p>
-            <p>提升使人產生幸福及愉悅感的！！</p>
+            <p>能夠抑制老化，促進肌膚的代謝！！</p>
 
             <p>
               適合朋友和獨享
@@ -1226,7 +1237,42 @@
 
   </script>
 
+  <script>
+    window.addEventListener("load", function () {
+      let fruits = document.getElementsByClassName("fruit");
+      for (var i = 0; i < fruits.length; i++) {
+        fruits[i].addEventListener("click", function (e) {
+          let fruit = e.target;
+          console.log(fruit);
+          let larges = document.getElementById("big_cho");
+          larges.src = fruit.src.replace("small", "big").replace("b_", "");
+        }, false);
+      }
+    }, false);
+  </script>
+  <script>
 
+
+    window.addEventListener("load", function () {
+      let fruits = document.getElementsByClassName("fruit");
+      let fruitTextDivs = document.getElementsByClassName("fruit_text");
+      console.log("chos : ", fruits.length);
+      console.log("test : ", fruitTextDivs.length);
+      for (let i = 0; i < fruitTextDivs.length; i++) {
+        fruits[i].addEventListener("click", function () {
+          // console.log(chocoTextDivs[i])
+          for (let j = 0; j < fruitTextDivs.length; j++) {
+            if (j == i) {
+              fruitTextDivs[j].style.display = "block";
+            } else {
+              fruitTextDivs[j].style.display = "none";
+            }
+          }
+        })
+      }
+    });
+
+  </script>
 </body>
 
 </html>
