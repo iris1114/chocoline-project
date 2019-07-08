@@ -1747,22 +1747,22 @@ body{
 
 
 @keyframes move{
-    0% {right: -100%;}
+    0% {right: -80%;}
     20% {
-        top: 90%;
-    }
-    40% {
         top: 70%;
     }
+    40% {
+        top: 60%;
+    }
     60% {
-        top: 80%;
+        top: 70%;
     }
     80% {
-        top: 90%;
+        top: 60%;
     }
     100% {
         right:100%;
-        top: 100%;
+        top: 80%;
     }
 }
 
@@ -1785,6 +1785,8 @@ body{
             top:40%;
             left:26% ;
             z-index: 2;
+            animation: black_top 5s infinite alternate;
+
         }
 
         .choco_white{
@@ -1792,6 +1794,8 @@ body{
             position: absolute;
             top:32%;
             left:40% ;
+            animation: white_top 5s infinite alternate;
+
         }
 
         .choco_milk{
@@ -1799,6 +1803,9 @@ body{
             position: absolute;
             top:18%;
             left:55% ;
+            animation: milk_top 5s infinite alternate;
+
+            
         }
 
         .love_l{
@@ -1862,20 +1869,44 @@ body{
 
         }
     
-        .river_move_big,.river_move_big2,.river_move_qa,{
+        .river_move_big,.river_move_big2,.river_move_qa{
             display: none;
         }
-    
+    }
 
+@keyframes  white_top {
+    0%{
+        top:30%;
+    }
+    100%{
+        top:32%
+    }
+} 
 
+@keyframes  black_top {
+    0%{
+        top:41%;
+    }
+    100%{
+        top:40%
+    }
+}
+
+@keyframes  milk_top {
+    0%{
+        top:16%;
+    }
+    100%{
+        top:18%
     }
 }
 }
+
     
  // -----------index_custom_container/mobile-------------
         
 .index_custom_container{
-    margin-top: 200px;
+    margin-top: 100px;
     .wrap{
     position: relative;
     z-index: 3;
@@ -2115,7 +2146,7 @@ width: 100%;
 // ----------------stage_container/mobile--------------------
 .stage_container{
     position: relative;
-    padding-top: 120px;
+    padding-top: 50px;
     .wrap{
         position: relative;
         z-index: 1;
@@ -2196,13 +2227,12 @@ width: 100%;
         .vote{
             @include pos(auto,0,-27%,15%);
         }
-    }
-    
+    } 
     .CHOCO{
         animation: dance 4s infinite;
     }
     .vote{
-        width: 40px;
+        width: 44px;
         @include pos(auto,0,-17%,20%);
         z-index: 1;
         animation: upanddown 1s infinite linear alternate;
@@ -2213,7 +2243,7 @@ width: 100%;
             @include pos(7%,0,auto,0);
             p{
                 // @include font_l();
-                font-size: 12px;
+                font-size: 11px;
             }
             span{
                 font-size: 12px;
@@ -2253,7 +2283,6 @@ width: 100%;
             transform: translateY(5%);
         }
     }
-
     .board{
         width: 100%;
         height: 100%;
@@ -2321,7 +2350,6 @@ width: 100%;
     }
     .connect{
         width: 100%;
-        // height: 100%;
         text-align: center;
         @include pos(110%,0,auto,0);
     }
@@ -2329,7 +2357,6 @@ width: 100%;
         width: 170px;
     }
     .cyan_l{
-        margin-top: 5%;
         width: 170px;
     }
     .firstlc{
@@ -2399,6 +2426,53 @@ width: 100%;
         }
     }
 }
+.stage_container{
+    .title_decoration{
+        margin: auto;
+        h2{
+            font-size: 18px;
+            top: 15%;
+        }
+    }
+    .stage{
+        // width: 374px;
+        // height: 380px;
+        width: 100%;
+        height: 0;
+        padding-bottom: 101%;
+    }
+    #fourth_place{
+        .vote{
+            @include pos(auto,0,-14%,30%);
+        }
+    }
+    #fifth_place{
+        .vote{
+            @include pos(auto,0,-18%,15%);
+        }
+    }
+    .vote{
+        @include pos(auto,0,-7%,20%);
+    }
+    .cus_photo{
+        width: 40px;
+        height: 40px;
+    }
+    .connect{
+        display: flex;
+        justify-content: center;
+    }
+    .orange_l{
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 1;
+    }
+    .cyan_l{
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
+
     // ----------------game_container/mobile--------------------
     
 .game_container{
@@ -2630,12 +2704,13 @@ width: 100%;
     top: 0;
     left: 0;
     z-index: -2;
-}  
-}   
-
-
+    }  
 }
-    
+   
+}
+
+
+   
 
 
 
