@@ -41,7 +41,7 @@ function mouse_out() {
 
 function doFirst(){
 
-    var acc = document.getElementsByClassName("accordion");
+    var acc = document.getElementsByClassName("order_detail_title");
 var i;
 
 for (i = 0; i < acc.length; i++) {
