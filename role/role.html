@@ -86,11 +86,14 @@
 <!-- header end -->
 <!-- introduce_container start -->
     <section class="introduce_container">
+        <figure class="back">
+            <img src="image/role/light.png" alt="light">
+        </figure>
         <div class="front">
             <div class="wrap">
                 <div class="bread">
                     <img src="image/role/bread.png" alt="bread">
-                    <p>CHOCO選美 > <span class="choconame">WHOWHOWHO</span> > 角色詳情</p>
+                    <p>CHOCO選美 > <span class="choconame">WHOWHOWHO</span> 角色詳情</p>
                 </div>
                 <div class="contain">
                     <div class="player">
@@ -107,23 +110,36 @@
                     </div>
                     <div class="detail">
                         <div class="information">
-                            <figure id="cardfront">
+                            <div id="choco_information" class="rotate_l">
+                                <ul>
+                                    <li><p>角色名稱 : </p></li>
+                                    <li><p id="choco_name">WHOWHOWHO</p></li>
+                                    <li></li>
+                                    <li><p>內容物 : <span id="choco_content"></span>榛果、黑巧克力</p></li>
+                                    <li><p>效用 : <span id="choco_ability">養顏美容、延緩衰老</span></p></li>
+                                </ul>
+                            </div>
+                            <figure id="cardfront" class="rotate_m">
                                 <img src="image/role/cardfront.png" alt="card">
                             </figure>
-                            <figure id="cardback">
+                            <figure id="cardback" class="rotate_r">
                                 <img src="image/role/cardback.png" alt="card">
                             </figure>
                         </div>
                         <div class="collect_vote">
-                            
+                            <a href="javascript:;" class="collect_btn btn cyan_l">
+                                <span>
+                                    <i class="heart_unclick far fa-heart"></i>
+                                    <i class="heart_clicked fas fa-heart"></i>
+                                    收藏
+                                </span>
+                            </a>
+                            <a href="#" class="btn orange_l"><span>投票</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <figure class="back">
-            <img src="image/role/light.png" alt="light">
-        </figure>
         <figure class="firstlc">
             <img src="image/role/firstlc.png" alt="firstlc">
         </figure>
@@ -154,6 +170,7 @@
         <figure class="cookies_bg">
             <img src="image/role/cookies_bg.png" alt="cookies">
         </figure>
+        
     </section>
 <!-- introduce_container end -->
 <!-- footer start -->

@@ -278,16 +278,65 @@ var choco_black =new TimelineMax({
     scale:1,
     rotate:20,
 }).to('.choco_black', 1, {
+    y:450,
+    x: 250,
+    scale:1,
+    rotate:20,
+})
+.to('.choco_black', 1, {
+    y:500,
+    x: 500,
+    scale:1,
+    rotate:20,
+}).to('.choco_black', 1, {
+    y:530,
+    x: 500,
+    scale:1,
+    rotate:20,
+}).to('.choco_black', 1, {
+    y:570,
+    x: 500,
+    scale:1,
+    rotate:20,
+})
+.to('.choco_black', 1, {
     y:600,
-    x: 600,
+    x: 700,
     scale:1.3,
 }).to('.choco_black', 1, {
-    y:800,
+    y:700,
+    x: 700,
+    scale:1.3,
+   
+})
+.to('.choco_black', 1, {
+    y:750,
     x: 700,
     scale:0.9,  
 }).to('.choco_black', 1, {
     y:800,
     x: 700,
+    scale:0.8,
+    rotation:-20,  
+})
+.to('.choco_black', 1, {
+    y:830,
+    x: 730,
+    scale:0.8,
+    rotation:-20,  
+}).to('.choco_black', 1, {
+    y:880,
+    x: 780,
+    scale:0.8,
+    rotation:-20,  
+}).to('.choco_black', 1, {
+    y:880,
+    x: 800,
+    scale:0.8,
+    rotation:-20,  
+}).to('.choco_black', 1, {
+    y:880,
+    x: 825,
     scale:0.8,
     rotation:-20,  
 })
@@ -373,13 +422,7 @@ var choco_black =new TimelineMax({
     scale:0.6,
     rotation:-20,
    opacity:1, 
-}) .to('.choco_black', 1, {
-    y:1500,
-    x:780,
-    scale:0.6,
-    rotation:-20,
-   opacity:1, 
-}).to('.choco_black', 1, {  //qa
+}) .to('.choco_black', 1, {  //qa
     y:1550,
     x:750,
     scale:0.6,
@@ -391,19 +434,16 @@ var choco_black =new TimelineMax({
     scale:0.6,
     rotation:-20,
    opacity:1, 
-}).to('.choco_black', 1, {  //qa
+})
+.to('.choco_black', 1, {  //qa
     y:1700,
     x:760,
     scale:0.6,
     rotation:-20,
    opacity:1, 
-}).to('.choco_black', 1, {
-    y:1800,
-    x:770,
-    scale:0.6,
-    rotation:-50,
-   opacity:1, 
-}).to('.choco_black', 1, {
+})
+
+.to('.choco_black', 1, {
     y:1820,
     x:660,
     scale:0.6,
@@ -463,43 +503,59 @@ var choco_black =new TimelineMax({
     scale:0.8,
     rotation:-20,
    opacity:1, 
-}).to('.choco_black', 3, {
+}).to('.choco_black', 1, {
+    y:2600,
+    x:750,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+})
+.to('.choco_black', 3, {
     y:2650,
     x:850,
     scale:0.8,
     rotation:-20,
    opacity:1, 
-}) .to('.choco_black', 3, {
+}) .to('.choco_black', 3, {  //rank
     y:2700,
-    x:1000,
+    x:900,
     scale:0.8,
     rotation:-20,
    opacity:1, 
 }) .to('.choco_black', 3, {
     y:2800,
-    x:920,
+    x:850,
     scale:0.8,
     rotation:0,
    opacity:1, 
-}).to('.choco_black', 3, {
-    y:2800,
-    x:820,
-    scale:0.8,
-    rotation:-20,
-   opacity:1, 
-}).to('.choco_black', 3, {
+})
+.to('.choco_black', 3, {
     y:3200,
     x:820,
     scale:1,
     rotation:20,
    opacity:1, 
 }).to('.choco_black', 3, {
+    y:3400,
+    x:750,
+    scale:1,
+    rotation:20,
+   opacity:1, 
+})
+.to('.choco_black', 3, {
     y:3600,
     x:700,
     scale:0.8,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
+    y:3800,
+    x:700,
+    scale:0.8,
+    rotation:-20,
+   opacity:1, 
+})
+.to('.choco_black', 3, {
     y:4050,
     x:700,
     scale:1,
@@ -513,43 +569,43 @@ var choco_black =new TimelineMax({
    opacity:1, 
 }).to('.choco_black', 3, {
     y:4500,
-    x:900,
+    x:860,
     scale:0.8,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
     y:4700,
-    x:900,
+    x:770,
     scale:0.8,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
     y:4800,
-    x:900,
+    x:770,
     scale:0.8,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
     y:4900,
-    x:900,
+    x:750,
     scale:1,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
     y:5200,
-    x:900,
+    x:600,
     scale:1,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
     y:5600,
-    x:900,
+    x:600,
     scale:1.3,
     rotation:-20,
    opacity:1, 
 }).to('.choco_black', 3, {
     y:5600,
-    x:900,
+    x:600,
     scale:1.3,
     rotation:-20,
    opacity:1, 
@@ -683,13 +739,13 @@ var scene_03 = new ScrollMagic.Scene({
 
 
 
-// $(function () {
-// if($('window').width() < 1200) {
-//     TweenMax.killTweensOf(choco_black);
-//     TweenMax.killTweensOf(choco_white);
-//     TweenMax.killTweensOf(choco_milk);
-// } 
-// });
+$(function () {
+if($('window').width() < 1200) {
+    TweenMax.killTweensOf('.choco_black');
+    TweenMax.killTweensOf('.choco_white');
+    TweenMax.killTweensOf('.choco_milk');
+} 
+});
 
 
 // if($(window).width() >= 1024){

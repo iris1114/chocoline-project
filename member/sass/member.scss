@@ -8,10 +8,22 @@
 body{
     background-color: #FFF5E3;
     background: url(../image/member/bg.png) no-repeat 100% 100% /cover;
-   
+    overflow-x: hidden;
+
 }
 
 
+.cloud{
+    position: absolute;
+    z-index: -1;
+    top:20%;
+    animation: cloud 40s linear  infinite;
+}
+
+@keyframes cloud {
+    0% {transform: translateX(-10%)}
+    100% {transform: translateX(10%)}
+}    
 
 
 
@@ -23,6 +35,7 @@ body{
 
 #member_tabs_container{
     padding-top: 150px;
+    
     
     .wrap{
         // padding-bottom: 20px;
@@ -58,6 +71,8 @@ body{
     background-color: white;
     border: 2px solid $color_blue;
     border-radius: 10px;
+    margin-bottom: 150px;
+
 
 
 
@@ -140,7 +155,9 @@ body{
 
 #orderlist {
     background-color: white;
-    height: 100vh;
+    height: 730px;
+    border: 2px solid $color_blue;
+    border-radius: 10px;
 
 
     .my_order{
@@ -157,17 +174,18 @@ body{
             padding: 20px;
             
         }
-        .order_detail{
+        .order_detail_box{
             text-align: center;
             padding: 10px;
             @include font_m();
         }
-         .panel{
+         .order_content{
             width: 100%;
             max-width: 1200px;
             display: flex;
             flex-flow: row wrap; 
             justify-content: center;
+            
 
          }
          .product_img{
@@ -181,7 +199,7 @@ body{
       
     }
 
-    .accordion {
+    .order_detail_title {
         background-color: #eee;
         cursor: pointer;
         width: 100%;
@@ -190,12 +208,12 @@ body{
       
 
 
-    .active, .accordion:hover {
+    .active, .order_detail_title:hover {
         background-color: #ccc;
         cursor: pointer;
       }
       
-      .accordion:after {
+      .order_detail_title:after {
         content: '\002B';
         color: $color_blue;
         font-weight: bold;
@@ -206,7 +224,7 @@ body{
         content: "\2212";
       }
       
-      .panel {
+      .order_content {
         padding: 0px 18px;
         background-color: white;
         border: 1px solid $color_deepblue;
@@ -218,7 +236,9 @@ body{
   
 #favorite {
     background-color: white;
-    height: 100vh;
+    height: 730px;
+    border: 2px solid $color_blue;
+    border-radius: 10px;
 
     .content_favorite {
         color: white;
@@ -265,6 +285,7 @@ body{
     .my_choco_box{
         border: 2px solid $color_deepblue;
         border-radius: 20px;
+        margin:50px 0px;
 
     }
 
@@ -275,7 +296,7 @@ body{
   }
 
 #favorite_product{
-    height: 100vh;
+    height: 730px;
 
     .my_product{
     width: 90%;
@@ -302,7 +323,9 @@ body{
 #notification {
     background-color: white;
     display: block;
-    height: 100vh;
+    height: 730px;
+    border: 2px solid $color_blue;
+    border-radius: 10px;
 
     .tabcontent{
         background-color: #fff;
@@ -337,16 +360,11 @@ body{
 
 
      }
-
-     footer{
-         position: fixed;
-         bottom: 0;
-         left: 0;
-     }
    
 
 
 }
+
 
 
  
@@ -354,6 +372,9 @@ body{
 // -------------------------------RWD TABLET------------------------------//
 
 @media screen  and (min-width: 768px) and (max-width: 991px){
+body{
+    overflow-x: hidden;
+}
 
 #info{
     .profile_pic{
@@ -367,6 +388,10 @@ body{
 #orderlist {
     .product_img{
         margin: 0px 15px;
+    }
+
+    .my_order .order_content{
+        max-height: 150px;
     }
 
 }
@@ -383,7 +408,16 @@ body{
  
 // ------------------------------RWD MOBILE------------------------------//
 
+
+
+
 @include rwd(mobile){
+.cloud{
+    width: 200%;
+    animation: cloud 20s linear  infinite;
+
+}
+
 #member_tabs_container .wrap .tablink{
     font-size: 16px;
     width: 100%;
@@ -400,7 +434,13 @@ body{
         margin: auto;
         @include font_s();
         margin-bottom: 50px;
+
+        th{
+            width: 28%;
+        }
     }
+
+   
     input{
         width: 80%;
     }
@@ -410,20 +450,48 @@ body{
 }
 
 
-#orderlist .my_order .col_lg_3{
-    @include font_s();    
-}
-#orderlist .my_order .order_detail{
-    @include font_s();    
-
-}
-
-#favorite{
-    button{
-        font-size: 12px;
+#orderlist {
+    height: 100%;
+    padding-bottom: 50px;
+    .my_order .col_lg_3{
+        @include font_s(); 
+        padding: 10px 20px;   
+    }
+    .my_order .order_detail{
+        @include font_s();    
+    
     }
 }
 
+
+#favorite{
+    height: 100%;
+
+    button{
+        font-size: 11px;
+        width: 100px;
+    }
+
+    .tab_favorite{
+        width: 140px;
+    }
+    .my_choco,.my_product{
+        padding-bottom: 50px;
+    }
+    .my_choco_box{
+        margin: 20px 0px;
+    }
+
+
+
+}
+
+#notification{
+    height: 100%;
+    .my_notifi{
+        margin-bottom: 50px;
+    }
+}
 
 
 

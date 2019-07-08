@@ -81,18 +81,27 @@
     </div>
 </header>
 <!-- header end -->
+
+    <div class="cloud" >
+        <img src="image/member/cloud.png" alt="cloud">
+    </div>
+
+<!------ tabs_container ------->
 <section class="col_12" id="member_tabs_container">
     <div class="wrap">
-        <button class="tablink " onclick="open_page('info', this,'#367e90','white')" >我的資料</button>
+        <button class="tablink " onclick="open_page('info', this,'#367e90','white')"id="default_open" >我的資料</button>
         <button class="tablink" onclick="open_page('orderlist', this,'#367e90','white')" >訂單紀錄</button>
         <button class="tablink" onclick="open_page('favorite', this,'#367e90','white' )">我的收藏</button>
-        <button class="tablink" onclick="open_page('notification', this, '#367e90','white')"id="defaultOpen">最新通知</button>     
+        <button class="tablink" onclick="open_page('notification', this, '#367e90','white')">最新通知</button>     
     </div>
 </section>
 
+<!------ member_container ------->
 
 <main class="member_container">
   <div class="wrap">
+
+ <!------ info ------->
 
       <section id="info" class="tabcontent ">
         <form action="">
@@ -112,6 +121,7 @@
                 </div>
               </div>
           </div>
+          
 
         <div class="col_12 col_md_8 col_lg_9">
           <table class="info_table">
@@ -179,6 +189,7 @@
       </form>
       </section>
 
+<!------ orderlist ------->
 
      <section id="orderlist" class="tabcontent">
           <form action="" class="clearfix">
@@ -203,9 +214,9 @@
 
               <div class="my_order">
                 <div class="detail col_md_12 col_lg_12">
-                    <div class="order_detail">
-                        <h2 class="accordion font-20">查看明細</h2>
-                        <div class="panel">
+                    <div class="order_detail_box">
+                        <h2 class="order_detail_title font-20">查看明細</h2>
+                        <div class="order_content">
                           <div class="product_img col_md_6 col_lg_6">
                               <img src="image/common/logo_icon.png" alt="product">
                           </div>
@@ -222,6 +233,7 @@
        </section>
 
 
+<!------ favorite ------->
 
         
         <section id="favorite" class="tabcontent">
@@ -269,6 +281,8 @@
                 </div>
             </div>
         </section>
+
+<!------ notification ------->
         
         <section id="notification" class="tabcontent">
           <div class="my_notifi">
@@ -432,14 +446,13 @@
 
     }
     
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+    document.getElementById("default_open").click();
 
 
     </script>
 
     <script>
-        var acc = document.getElementsByClassName("accordion");
+        var acc = document.getElementsByClassName("order_detail_title");
 var i;
 
 for (i = 0; i < acc.length; i++) {

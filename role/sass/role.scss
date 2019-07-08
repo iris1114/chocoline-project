@@ -5,3 +5,271 @@
     -moz-user-select: none;  /* for Firefox */ 
     -webkit-user-select: none;   /* for Chrome */
 }
+
+*{
+    font-family:'Noto Sans TC', sans-serif;
+    // outline: 1px solid #f00;
+}
+
+.introduce_container{
+    padding-top: 150px;
+    height: 960px; //刪
+    background: url("../image/role/fitst_bg.png") no-repeat 0 -10%;
+    position: relative;
+
+    .back{
+        opacity: .7;
+        @include pos(50%,auto,auto,50%);
+        animation: circle 540s infinite linear;
+    }
+    @keyframes circle {
+        0%{
+            transform: translate(-50%,-50%) rotate(0deg) scale(5);
+        }
+        100%{
+            transform: translate(-50%,-50%) rotate(360deg) scale(5);
+        }
+    }
+    
+    .front{
+        position: relative;
+        z-index: 1;
+        height: 800px;
+        background: url("../image/role/slippery.png") no-repeat 90% 80%,
+                    url("../image/role/pool.png") no-repeat 50% -35%,
+                    url("../image/role/downgrass.png") no-repeat 7% 64%,
+                    url("../image/role/right_bg.png") no-repeat 50% -31%,
+                    url("../image/role/upgrass.png") no-repeat 5% 33%,
+                    url("../image/role/left_bg.png") no-repeat 0% -205%;
+        // background: url("../image/role/slippery.png") no-repeat 90% 20%,
+        //             url("../image/role/pool.png") no-repeat 50% -50%,
+        //             url("../image/role/downgrass.png") no-repeat 7% 34%,
+        //             url("../image/role/right_bg.png") no-repeat 50% -40%,
+        //             url("../image/role/upgrass.png") no-repeat 5% 16%,
+        //             url("../image/role/left_bg.png") no-repeat 0% 77%;
+    }
+    .bread{
+        width: 414px;
+        position: relative;
+        p{
+            @include pos(50%,auto,auto,50%);
+            transform: translate(-50%,-50%);
+            white-space: nowrap;
+            color: $color_milk;
+            @include font_m();
+            span{
+                color: $color_milk;
+                @include font_m();
+            }
+        }
+    }
+    .contain{
+       display: flex;
+       align-items: center; 
+       padding-top: 50px;
+    }
+    .player{
+        width: 350px;
+        position: relative;
+        flex: 0 0 auto;
+        
+    }
+    .choconame{
+        width: 30%;
+        @include font_m();
+    }
+    .votenum{
+        width: 100%;
+        @include font_s();
+    }
+    .CHOCO{
+        img{
+            transform: translateX(-10%);
+        }
+        figcaption{
+            position: relative;
+            top: -20px;
+            text-align: center;
+            p{
+                @include font_s();
+                color: $color_milk;
+            }
+            span{
+                color: $color_milk;
+            }
+        }
+    }
+    .ring{
+        display: block;
+        @include pos(auto,0,0,0);
+        // width: 240px;
+        width: 80%;
+        z-index: -1;
+    }
+
+    .information{
+        display: flex;
+    }
+
+    #choco_information{
+        width: 265px;
+        height: 360px;
+        background: #fff;
+        border: 3px solid #1A99AD;
+        border-radius: 15px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        
+        box-shadow: 11px 11px 0 #4EA5A5;
+        ul{
+            width: 100%;
+        }
+        li{
+            word-break: break-all;
+            padding: 5px 0;
+            &:nth-child(1){
+                p{
+                    @include font_l();
+                }
+            }
+            &:nth-child(2){
+                padding-bottom: 20px;
+                p{
+                    @include font_l();
+                }
+            }
+            &:nth-child(3){
+                text-align: center;
+                width: 100%;
+                height: 3px;
+                padding: 0;
+                background: #777;
+            }
+            &:nth-child(4){
+                padding-top: 20px;
+                p{
+                    @include font_s();
+                }
+            }
+            &:nth-child(5){
+                p{
+                    @include font_s();
+                }
+            }
+        }
+    }
+    #cardfront{
+        width: 340px;
+        
+    }
+    #cardback{
+        width: 290px;
+    }
+    .rotate_l{
+        transform: rotate(-10deg) translate(20% , 0%);
+        transition: .5s;
+        z-index: 3;
+    }
+    .rotate_m{
+        transform: rotate(0deg) translate(0% , -10%);
+        transition: .5s;
+        z-index: 2;
+    }
+    .rotate_r{
+        transform: rotate(15deg) translate(-20% , 5%);
+        transition: .5s;
+        z-index: 1;
+    }
+    
+    
+   
+    
+    
+    
+  
+    .heart_unclick {
+        color: $color_milk;
+      }
+    .heart_clicked {
+        display: none;
+        color: $color_milk;
+    }
+    
+    .firstlc{
+        width: 217px;
+        @include pos(19%,auto,auto,5%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .secondlc{
+        width: 151px;
+        @include pos(22%,auto,auto,56%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .thirdlc{
+        width: 217px;
+        @include pos(39%,auto,auto,74%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .fourthlc{
+        width: 158px;
+        @include pos(17%,auto,auto,82%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .shinel{
+        width: 92px;
+        @include pos(13%,auto,auto,30%);
+        animation: opacity 3s infinite alternate;
+    }
+    .shiner{
+        width: 46px;
+        @include pos(33%,auto,auto,88%);
+        animation: opacity 3s infinite alternate;
+    }
+    .circle1,.circle2,.circle3{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #ffffff;
+        @include pos(17%,auto,auto,5%);
+    }
+    .circle2{
+        width: 47px;
+        height: 47px;
+        @include pos(23%,auto,auto,72%);
+    }
+    .circle3{
+        width: 35px;
+        height: 35px;
+        @include pos(14%,auto,auto,80%);
+    }
+    @keyframes cloudmove {
+        0%{
+            transform: translateX(-30%)
+        }
+        100%{
+            transform: translateX(30%)
+        }
+    }
+    @keyframes opacity {
+        0%{
+            opacity: 1;
+        }
+        20%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0.7;
+        }
+    }
+    .cake_bg{
+        width: 99px;
+    }
+    .donut_bg{
+        width: 65px;
+    }
+    .cookies_bg{
+        width: 88px;
+    }
+}

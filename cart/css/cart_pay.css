@@ -1156,13 +1156,16 @@ section {
 
 body {
   background-color: #FFF5E3;
-  background: url(../image/member/bg.png) no-repeat 100% 100%/cover;
+  background: url(../image/cart/bg.png) no-repeat 100% 100%/cover;
   overflow-x: hidden; }
+
+.w-100 {
+  width: 100px; }
 
 .cloud {
   position: absolute;
   z-index: -1;
-  top: 20%;
+  top: 30%;
   animation: cloud 40s linear  infinite; }
 
 @keyframes cloud {
@@ -1171,398 +1174,227 @@ body {
   100% {
     transform: translateX(10%); } }
 
-#member_tabs_container {
-  padding-top: 150px; }
-  #member_tabs_container .wrap {
-    display: flex; }
-    #member_tabs_container .wrap .tablink {
-      background-color: #fff;
-      color: #1A99AD;
-      cursor: pointer;
-      padding: 10px;
-      width: 20%;
-      border: 2px solid #1A99AD;
-      border-radius: 10px;
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: normal; }
-      @media all and (max-width: 767px) {
-        #member_tabs_container .wrap .tablink {
-          font-size: 18px; } }
-      @media all and (min-width: 768px) {
-        #member_tabs_container .wrap .tablink {
-          font-size: 18px; } }
-      @media all and (min-width: 992px) {
-        #member_tabs_container .wrap .tablink {
-          font-size: 20px; } }
+.box {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto;
+  justify-content: center; }
 
-.tabcontent {
-  color: white;
-  display: none;
-  height: 100%;
-  border-radius: 10px; }
-
-#info {
-  background-color: white;
-  border: 2px solid #1A99AD;
-  border-radius: 10px;
-  margin-bottom: 150px; }
-  #info .my_info {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: auto; }
-  #info .profile_pic {
-    width: 200px;
-    margin: auto; }
-  #info .upload {
-    text-align: center;
-    line-height: 1.8; }
-  #info .info_th {
-    background-color: #1A99AD;
-    color: #fff;
-    border-radius: 5px;
-    padding-left: 10px; }
-  #info table {
-    margin: auto;
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    text-align: left;
-    margin-bottom: 50px;
-    width: 80%; }
-    @media all and (max-width: 767px) {
-      #info table {
-        font-size: 18px; } }
-    @media all and (min-width: 768px) {
-      #info table {
-        font-size: 18px; } }
-    @media all and (min-width: 992px) {
-      #info table {
-        font-size: 20px; } }
-  #info a {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    margin-left: 40px;
-    border-bottom: 1px solid #000; }
-    @media all and (max-width: 767px) {
-      #info a {
-        font-size: 16px; } }
-    @media all and (min-width: 768px) {
-      #info a {
-        font-size: 16px; } }
-    @media all and (min-width: 992px) {
-      #info a {
-        font-size: 16px; } }
-  #info .btn {
-    margin: auto;
-    text-align: center;
-    margin-bottom: 40px; }
-  #info input {
-    width: 70%;
-    line-height: 2;
-    border: 2px solid #157E8F;
-    border-radius: 5px;
-    margin: 10px auto 10px auto;
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal; }
-    @media all and (max-width: 767px) {
-      #info input {
-        font-size: 18px; } }
-    @media all and (min-width: 768px) {
-      #info input {
-        font-size: 18px; } }
-    @media all and (min-width: 992px) {
-      #info input {
-        font-size: 20px; } }
-  #info button {
-    display: block; }
-  #info i {
-    padding-left: 10px; }
-  #info .fa-cc-visa {
-    font-size: 30px;
-    padding-right: 20px; }
-  #info .visa_tr {
-    line-height: 2.5; }
-  #info .upload input {
-    border: none;
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal; }
-    @media all and (max-width: 767px) {
-      #info .upload input {
-        font-size: 16px; } }
-    @media all and (min-width: 768px) {
-      #info .upload input {
-        font-size: 16px; } }
-    @media all and (min-width: 992px) {
-      #info .upload input {
-        font-size: 16px; } }
-
-#orderlist {
-  background-color: white;
-  height: 730px;
-  border: 2px solid #1A99AD;
-  border-radius: 10px; }
-  #orderlist .my_order {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: auto;
-    border: 2px solid #157E8F;
-    border-radius: 5px; }
-    #orderlist .my_order .col_lg_3 {
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: normal;
-      padding: 20px; }
-      @media all and (max-width: 767px) {
-        #orderlist .my_order .col_lg_3 {
-          font-size: 18px; } }
-      @media all and (min-width: 768px) {
-        #orderlist .my_order .col_lg_3 {
-          font-size: 18px; } }
-      @media all and (min-width: 992px) {
-        #orderlist .my_order .col_lg_3 {
-          font-size: 20px; } }
-    #orderlist .my_order .order_detail_box {
-      text-align: center;
-      padding: 10px;
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: normal; }
-      @media all and (max-width: 767px) {
-        #orderlist .my_order .order_detail_box {
-          font-size: 18px; } }
-      @media all and (min-width: 768px) {
-        #orderlist .my_order .order_detail_box {
-          font-size: 18px; } }
-      @media all and (min-width: 992px) {
-        #orderlist .my_order .order_detail_box {
-          font-size: 20px; } }
-    #orderlist .my_order .order_content {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center; }
-    #orderlist .my_order .product_img {
-      width: 15%; }
-    #orderlist .my_order .product_detail {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; }
-  #orderlist .order_detail_title {
-    background-color: #eee;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.4s; }
-  #orderlist .active, #orderlist .order_detail_title:hover {
-    background-color: #ccc;
-    cursor: pointer; }
-  #orderlist .order_detail_title:after {
-    content: '\002B';
-    color: #1A99AD;
-    font-weight: bold;
-    padding-left: 10px; }
-  #orderlist .active:after {
-    content: "\2212"; }
-  #orderlist .order_content {
-    padding: 0px 18px;
-    background-color: white;
-    border: 1px solid #157E8F;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out; }
-
-#favorite {
-  background-color: white;
-  height: 730px;
-  border: 2px solid #1A99AD;
-  border-radius: 10px; }
-  #favorite .content_favorite {
-    color: white;
-    display: none;
-    height: 100%; }
-  #favorite .tab_favorite {
-    background-color: #fff;
-    color: #1A99AD;
-    cursor: pointer;
-    padding: 5px;
-    border: 2px solid #1A99AD;
-    border-radius: 10px;
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    margin-left: 20px;
-    width: 15%; }
-    @media all and (max-width: 767px) {
-      #favorite .tab_favorite {
-        font-size: 16px; } }
-    @media all and (min-width: 768px) {
-      #favorite .tab_favorite {
-        font-size: 16px; } }
-    @media all and (min-width: 992px) {
-      #favorite .tab_favorite {
-        font-size: 16px; } }
-  #favorite .my_choco {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: auto; }
-  #favorite .choco_img {
-    width: 40%;
-    margin: auto;
-    text-align: center; }
-  #favorite .my_choco_desc {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; }
-  #favorite .my_choco_box {
-    border: 2px solid #157E8F;
-    border-radius: 20px;
-    margin: 50px 0px; }
-  #favorite button {
-    margin-bottom: 30px; }
-
-#favorite_product {
-  height: 730px; }
-  #favorite_product .my_product {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: auto; }
-    #favorite_product .my_product .my_product_box {
-      border: 2px solid #157E8F;
-      border-radius: 20px; }
-    #favorite_product .my_product button {
-      margin-bottom: 30px; }
-
-#notification {
-  background-color: white;
-  display: block;
-  height: 730px;
-  border: 2px solid #1A99AD;
-  border-radius: 10px; }
-  #notification .tabcontent {
-    background-color: #fff; }
-  #notification .my_notifi {
-    width: 80%;
-    max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    border: 2px solid #157E8F;
-    border-radius: 20px;
-    margin: auto auto 20px;
-    padding: 10px; }
-    #notification .my_notifi .notifi_icon .fa, #notification .my_notifi .fas {
-      font-size: 50px; }
-    #notification .my_notifi .notifi_icon {
-      text-align: center; }
-    #notification .my_notifi h5 {
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: normal;
-      padding-bottom: 10px; }
-      @media all and (max-width: 767px) {
-        #notification .my_notifi h5 {
-          font-size: 18px; } }
-      @media all and (min-width: 768px) {
-        #notification .my_notifi h5 {
-          font-size: 18px; } }
-      @media all and (min-width: 992px) {
-        #notification .my_notifi h5 {
-          font-size: 20px; } }
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  body {
-    overflow-x: hidden; }
-  #info .profile_pic {
-    width: 150px; }
-  #info table {
-    width: 100%; }
-  #orderlist .product_img {
-    margin: 0px 15px; }
-  #orderlist .my_order .order_content {
-    max-height: 150px; }
-  #favorite button {
-    font-size: 14px; } }
+@media all and (min-width: 992px) {
+  .lg_d_n {
+    display: none; } }
 
 @media all and (max-width: 767px) {
-  .cloud {
-    width: 200%;
-    animation: cloud 20s linear  infinite; }
-  #member_tabs_container .wrap .tablink {
-    font-size: 16px;
-    width: 100%;
-    padding: 10px 0px; }
-  #info .profile_pic {
-    width: 120px; }
-  #info table {
-    width: 100%;
-    margin: auto;
+  .m_d_n {
+    display: none; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .t_d_n {
+    display: none; } }
+
+.cart_title_box {
+  background-color: #1A99AD;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: #F6EED4 2px solid; }
+  .cart_title_box h5 {
+    color: #F6EED4;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal; }
+    @media all and (max-width: 767px) {
+      .cart_title_box h5 {
+        font-size: 18px; } }
+    @media all and (min-width: 768px) {
+      .cart_title_box h5 {
+        font-size: 18px; } }
+    @media all and (min-width: 992px) {
+      .cart_title_box h5 {
+        font-size: 20px; } }
+
+.cart_show_box {
+  background-color: #fff;
+  border: #1A99AD solid 2px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  align-items: center; }
+  @media all and (max-width: 767px) {
+    .cart_show_box {
+      font-size: 18px; } }
+  @media all and (min-width: 768px) {
+    .cart_show_box {
+      font-size: 18px; } }
+  @media all and (min-width: 992px) {
+    .cart_show_box {
+      font-size: 20px; } }
+
+#cartflow_container {
+  padding-top: 150px; }
+
+.cart_form {
+  background-color: #fff;
+  padding: 20px;
+  border: #1A99AD solid 2px;
+  border-radius: 10px; }
+  .cart_form .cart_total {
+    text-align: right;
+    padding: 10px;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal; }
+    @media all and (max-width: 767px) {
+      .cart_form .cart_total {
+        font-size: 18px; } }
+    @media all and (min-width: 768px) {
+      .cart_form .cart_total {
+        font-size: 18px; } }
+    @media all and (min-width: 992px) {
+      .cart_form .cart_total {
+        font-size: 20px; } }
+    .cart_form .cart_total :last-child {
+      padding-top: 30px; }
+  .cart_form .amout {
     font-family: "Noto Sans TC", sans-serif;
     line-height: normal;
-    margin-bottom: 50px; } }
+    color: #ED1C24; }
+    @media all and (max-width: 767px) {
+      .cart_form .amout {
+        font-size: 18px; } }
+    @media all and (min-width: 768px) {
+      .cart_form .amout {
+        font-size: 24px; } }
+    @media all and (min-width: 992px) {
+      .cart_form .amout {
+        font-size: 28px; } }
+
+.cart_btn_group {
+  padding-top: 50px;
+  text-align: center; }
+
+#cart_total_container {
+  padding-top: 0px; }
+
+#cart_payment_container input {
+  width: 50%;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  margin: 5px 20px;
+  border: 2px solid #1A99AD;
+  border-radius: 5px; }
+  @media all and (max-width: 767px) {
+    #cart_payment_container input {
+      font-size: 18px; } }
+  @media all and (min-width: 768px) {
+    #cart_payment_container input {
+      font-size: 18px; } }
+  @media all and (min-width: 992px) {
+    #cart_payment_container input {
+      font-size: 20px; } }
+
+#creditcard_contatiner {
+  padding-top: 0px; }
+  #creditcard_contatiner .creditcard_box {
+    text-align: left;
+    width: 60%; }
+  #creditcard_contatiner input {
+    width: 10%;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal;
+    margin: 5px;
+    border: 2px solid #1A99AD;
+    border-radius: 5px; }
+    @media all and (max-width: 767px) {
+      #creditcard_contatiner input {
+        font-size: 18px; } }
+    @media all and (min-width: 768px) {
+      #creditcard_contatiner input {
+        font-size: 18px; } }
+    @media all and (min-width: 992px) {
+      #creditcard_contatiner input {
+        font-size: 20px; } }
+  #creditcard_contatiner select {
+    width: 15%; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #cartflow_container {
+    padding-top: 20%; }
+  #creditcard_contatiner .creditcard_box {
+    width: 100%; }
+  #creditcard_contatiner input {
+    width: 10%; }
+  #creditcard_contatiner select {
+    width: 12%; } }
+
+@media all and (max-width: 767px) {
+  .col_md_12 {
+    padding: 0; }
+  .cart_title_box {
+    height: 55px; }
+  h5, p {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal; } }
   @media all and (max-width: 767px) and (max-width: 767px) {
-    #info table {
+    h5, p {
       font-size: 16px; } }
   @media all and (max-width: 767px) and (min-width: 768px) {
-    #info table {
+    h5, p {
       font-size: 16px; } }
   @media all and (max-width: 767px) and (min-width: 992px) {
-    #info table {
+    h5, p {
       font-size: 16px; } }
 
 @media all and (max-width: 767px) {
-    #info table th {
-      width: 28%; }
-  #info input {
-    width: 80%; }
-  #info .col_12 {
-    margin-bottom: 30px; }
-  #orderlist {
-    height: 100%;
-    padding-bottom: 50px; }
-    #orderlist .my_order .col_lg_3 {
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: normal;
-      padding: 10px 20px; } }
-    @media all and (max-width: 767px) and (max-width: 767px) {
-      #orderlist .my_order .col_lg_3 {
-        font-size: 16px; } }
-    @media all and (max-width: 767px) and (min-width: 768px) {
-      #orderlist .my_order .col_lg_3 {
-        font-size: 16px; } }
-    @media all and (max-width: 767px) and (min-width: 992px) {
-      #orderlist .my_order .col_lg_3 {
-        font-size: 16px; } }
+  #cartflow_container {
+    padding-top: 120px; }
+    #cartflow_container .wrap img {
+      display: none; }
+  #cart_title_container .cart_title_box {
+    display: none; }
+  .col_12 {
+    padding: 0; }
+  #cart_show_container {
+    margin-top: 30px;
+    padding: 0; }
+  .cart_form {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 80px; }
+  .cart_btn_group {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    padding: 0;
+    margin: 0; }
+    .cart_btn_group .btn {
+      width: 187.5px;
+      margin: 0;
+      border: #c3771b 2px solid;
+      border-radius: 5px 5px 0px 0px; }
+  #cart_payment_container input {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: normal; } }
+  @media all and (max-width: 767px) and (max-width: 767px) {
+    #cart_payment_container input {
+      font-size: 16px; } }
+  @media all and (max-width: 767px) and (min-width: 768px) {
+    #cart_payment_container input {
+      font-size: 16px; } }
+  @media all and (max-width: 767px) and (min-width: 992px) {
+    #cart_payment_container input {
+      font-size: 16px; } }
 
 @media all and (max-width: 767px) {
-    #orderlist .my_order .order_detail {
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: normal; } }
-    @media all and (max-width: 767px) and (max-width: 767px) {
-      #orderlist .my_order .order_detail {
-        font-size: 16px; } }
-    @media all and (max-width: 767px) and (min-width: 768px) {
-      #orderlist .my_order .order_detail {
-        font-size: 16px; } }
-    @media all and (max-width: 767px) and (min-width: 992px) {
-      #orderlist .my_order .order_detail {
-        font-size: 16px; } }
-
-@media all and (max-width: 767px) {
-  #favorite {
-    height: 100%; }
-    #favorite button {
-      font-size: 11px;
-      width: 100px; }
-    #favorite .tab_favorite {
-      width: 140px; }
-    #favorite .my_choco, #favorite .my_product {
-      padding-bottom: 50px; }
-    #favorite .my_choco_box {
-      margin: 20px 0px; }
-  #notification {
-    height: 100%; }
-    #notification .my_notifi {
-      margin-bottom: 50px; } }
+  #creditcard_contatiner .wrap {
+    padding-bottom: 80px; }
+  #creditcard_contatiner .creditcard_box {
+    width: 100%; }
+  #creditcard_contatiner input {
+    width: 10%; }
+  #creditcard_contatiner select {
+    width: 12%; }
+  footer {
+    display: none; } }
