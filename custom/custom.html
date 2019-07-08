@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
 
   <title>客製CHOCO</title>
@@ -108,19 +108,19 @@
       <div class="custom_type">
 
         <div class="shape shapePos0">
-          <img src="image/custom/long.png" alt="long" />
+          <img src="image/custom/long.png" id="big_cho" alt="long" />
         </div>
         <div class="shape shapePos1">
-          <img src="image/custom/roll.png" alt="roll" />
+          <img src="image/custom/roll.png" id="big_cho" alt="roll" />
         </div>
         <div class="shape shapePos2">
-          <img src="image/custom/1.png" alt="bear" />
+          <img src="image/custom/1.png" id="big_cho" alt="bear" />
         </div>
         <div class="shape shapePos3">
-          <img src="image/custom/cake.png" alt="cake" />
+          <img src="image/custom/cake.png" id="big_cho" alt="cake" />
         </div>
         <div class="shape shapePos4">
-          <img src="image/custom/oero.png" alt="oero" />
+          <img src="image/custom/oero.png" id="big_cho" alt="oero" />
         </div>
         <img src="image/custom/right.png" alt="right" class="right_btn" id="toRight" />
         <img src="image/custom/left.png" alt="left" class="left_btn" id="toLeft" />
@@ -133,1179 +133,1233 @@
     </div>
 
 
-<!-- 
+    <!-- 
   <div class="choco_background">
     <img src="image/custom/bg3.png" alt="" class="choco_img" />
   </div> -->
 
-  <!-- ----- 第一屏 End ----- -->
+    <!-- ----- 第一屏 End ----- -->
 
-  <!-- ----- 第二屏 Start ----- -->
+    <!-- ----- 第二屏 Start ----- -->
 
-  <section class="base" id="second">
-    <div class="choose_base">
-      <div class="select_base">
-        <div class="second_step">
-          <div class="second_stepInfo">
-            <h3>第二步:</h3>
-            <p>選擇巧克力基底/配料口味</p>
+    <section class="base" id="second">
+      <div class="choose_base">
+        <div class="select_base">
+          <div class="second_step">
+            <div class="second_stepInfo">
+              <h3>第二步:</h3>
+              <p>選擇巧克力基底/配料口味</p>
+            </div>
+          </div>
+          <div class="base_choco">
+            <figure class="choco choco1">
+              <img src="image/custom/small/M1_SP_001.png" class="cho" alt="white" />
+              <figcaption>
+                <p class="White_CHO">White CHOCO</p>
+              </figcaption>
+            </figure>
+
+            <figure class="choco choco2">
+              <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk" />
+              <figcaption>
+                <p>Milk CHOCO</p>
+              </figcaption>
+            </figure>
+
+            <figure class="choco choco3">
+              <img src="image/custom/small/M1_SP_003.png" class="cho" alt="black" />
+              <figcaption>
+                <p>Black CHOCO</p>
+              </figcaption>
+            </figure>
           </div>
         </div>
-        <div class="base_choco">
-          <figure class="choco choco1">
-            <img src="image/custom/small/M1_SP_001.png" class="cho" alt="white" />
-            <figcaption>
-              <p class="White_CHO">White CHOCO</p>
-            </figcaption>
-          </figure>
 
-          <figure class="choco choco2">
-            <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk" />
-            <figcaption>
-              <p>Milk CHOCO</p>
-            </figcaption>
-          </figure>
+        <div class="select_type ">
+          <div class="choco_overview">
+            <img src="" alt="type" />
+          </div>
 
-          <figure class="choco choco3">
-            <img src="image/custom/small/M1_SP_003.png" class="cho" alt="black" />
-            <figcaption>
-              <p>Black CHOCO</p>
-            </figcaption>
-          </figure>
+
+
+          <div class="choco_type">
+            <ul>
+              <li>
+                <figure class="active">
+                  <img src="image/custom/small/fr_b_001.png" class="fruit" alt="blue berry" />
+                  <figcaption>
+                    <p>藍莓</p>
+
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="image/custom/small/fr_b_002.png" class="fruit" alt="grape" />
+                  <figcaption>
+                    <p>葡萄</p>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="image/custom/small/fr_b_003.png" class="fruit" alt="bo ho" />
+                  <figcaption>
+                    <p>薄荷</p>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="image/custom/small/fr_b_004.png" class="fruit" alt="orange" />
+                  <figcaption>
+                    <p>柑橘</p>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="image/custom/small/fr_b_005.png" class="fruit" alt="strawberry" />
+                  <figcaption>
+                    <p>草莓</p>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+
+
+          <div class="info_bar">
+
+
+            <p class="fruit_text blue_text">藍莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
+            <p class="fruit_text grape_text">葡萄：莓果的酸甜與滑順巧克力一次品嚐！</p>
+            <p class="fruit_text bo_text">薄荷：莓果的酸甜與滑順巧克力一次品嚐！</p>
+
+            <p class="fruit_text orange_text">柑橘：莓果的酸甜與滑順巧克力一次品嚐！</p>
+            <p class="fruit_text strawberry_text">草莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
+          </div>
+
+        </div>
+
+
+
+        <div class="select_info">
+          <div class="cho_info">
+            <div class="cho_info_photo">
+              <img src="image/custom/talk.png" alt="">
+            </div>
+            <div class="choco_text black_text">
+              <h3>White CHOCO</h3>
+              <p>
+                白巧克力：甜度增加腦內啡，
+
+              </p>
+              <p>提升使人產生幸福及愉悅感的！！</p>
+
+              <p>
+                適合朋友和獨享
+              </p>
+
+            </div>
+            <div class="choco_text milk_text">
+              <h3>Milk CHOCO</h3>
+              <p>
+                牛奶巧克力：可運動後飲用低脂巧克力牛奶
+              </p>
+              <p>提供平等的或可能優於肌肉恢復藥物！！</p>
+
+              <p>
+                適合朋友和獨享
+              </p>
+            </div>
+            <div class="choco_text white_text">
+              <h3>Black CHOCO</h3>
+              <p>
+                黑巧克力：可可多酚的高抗氧化作用
+              </p>
+              <p>能夠抑制老化，促進肌膚的代謝！！</p>
+
+              <p>
+                適合朋友和獨享
+              </p>
+            </div>
+            <!-- <img src="image/custom/talk.png" alt="" /> -->
+
+          </div>
+
+          <div class="total_price">
+            <img src="image/custom/price.png" alt="price" />
+            <h4>TOTAL</h4>
+            <p class="price">
+              NT$350
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ----- 第二屏 End ----- -->
+
+
+    <!-- ----- 第三屏 Start ----- -->
+
+    <section class="outlook">
+      <div class="thrid_step_moble">
+        <img src="image/custom/bg8.png" alt="background">
+        <div class="thrid_stepInfo">
+          <h3>第三步:</h3>
+          <p>幫專屬CHOCO星人取名字</p>
+          <p>選擇表情和飾品</p>
         </div>
       </div>
 
-      <div class="select_type ">
-        <div class="choco_overview">
-          <img src="" id="big_cho" alt="type" />
+      <div class="outlok_wrap">
+
+        <!-- ----- left side start ----- -->
+
+
+        <div class="select_outlook">
+
+          <div class="outlook_name">
+            <div class="outlook_name_photo">
+              <img src="image/custom/bg7.png" alt="" />
+            </div>
+            <div class="for_name">
+
+              <h3>給CHOCO星人名字</h3>
+              <input type="text" name="" id="" class="name_text" placeholder="請給CHOCO星人名字" />
+            </div>
+
+          </div>
+
+          <div class="fix_photo_mobile">
+            <img src="image/custom/bear1.png" alt="bear">
+          </div>
+          <div class="fix_bar_mobile">
+            <div class="bar_photo">
+              <img src="image/custom/bar_item6.png" alt="large">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item5.png" alt="small">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item1.png" alt="right">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item2.png" alt="left">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item.png" alt="reset">
+            </div>
+          </div>
+          <!-- ----- item select start----- -->
+
+          <div class="select_item">
+            <div class="tab_item">
+              <button class="tab_link" onclick="openCity(event, 'eyes')">眼睛</button>
+              <button class="tab_link" onclick="openCity(event, 'mouses')">嘴巴</button>
+              <button class="tab_link" onclick="openCity(event, 'other')">飾品</button>
+            </div>
+            <div class="clearfix"></div>
+            <script>
+              window.addEventListener("load", function () {
+
+
+                let eyes = document.getElementsByClassName("eye_type");
+                let mouses = document.getElementsByClassName("mouse_type");
+                let others = document.getElementsByClassName("others_type");
+
+
+
+              })
+            </script>
+            <!-- ----- 眼睛 start----- -->
+            <div class="eye type" id="eyes">
+              <div class="eye_types">
+                <div class="eye_items">
+                  <img src="image/custom/eye1.png" class="eye_type" alt="eye1" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="eye2" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                </div>
+              </div>
+              <div class="eye_types">
+                <div class="eye_items">
+                  <img src="image/custom/eye1.png" class="eye_type" alt="eye1" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="eye2" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                </div>
+              </div>
+              <div class="eye_types">
+                <div class="eye_items">
+                  <img src="image/custom/eye1.png" class="eye_type" alt="eye1" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="eye2" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!-- ----- 眼睛 End ----- -->
+
+            <!-- ----- 嘴巴 start----- -->
+
+            <div class="mouse type" id="mouses">
+              <div class="mouse_types">
+                <div class="mouse_items">
+                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                </div>
+              </div>
+              <div class="mouse_types">
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                </div>
+              </div>
+              <div class="mouse_types">
+                <div class="mouse_items">
+                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye.png" class="mouse_type" alt="" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                </div>
+              </div>
+            </div>
+
+
+            <!-- ----- 嘴巴 End ----- -->
+
+            <!-- ----- 飾品 start----- -->
+
+            <div class="others type" id="other">
+              <div class="others_types">
+                <div class="others_items">
+                  <img src="image/custom/eye1.png" class="others_type" alt="eye1" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="eye2" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                </div>
+              </div>
+              <div class="others_types">
+                <div class="others_items">
+                  <img src="image/custom/eye1.png" class="others_type" alt="eye1" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="eye2" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                </div>
+              </div>
+              <div class="others_types">
+                <div class="others_items">
+                  <img src="image/custom/eye1.png" class="others_type" alt="eye1" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="eye2" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                </div>
+                <div class="others_items">
+                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!-- ----- 飾品 End ----- -->
+          </div>
+        </div>
+
+        <!-- ----- left side End ----- -->
+
+
+        <!-- ----- middle side start ----- -->
+
+        <div class="outlook_fix">
+          <div class="fix_photo">
+            <img src="image/custom/bear1.png" alt="bear">
+          </div>
+
+          <div class="fix_bar">
+            <div class="bar_photo">
+              <img src="image/custom/bar_item6.png" alt="large">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item5.png" alt="small">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item1.png" alt="right">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item2.png" alt="left">
+            </div>
+            <div class="bar_photo">
+              <img src="image/custom/bar_item.png" alt="reset">
+            </div>
+          </div>
+
+          <div class="total_price">
+            <img src="image/custom/price.png" alt="price" />
+            <h4>TOTAL</h4>
+            <p class="price">
+              NT$350
+            </p>
+          </div>
+        </div>
+
+        <!-- ----- middle side End ----- -->
+
+
+        <!-- ----- right side start ----- -->
+        <div class="step_info">
+
+          <div class="thrid_step">
+            <img src="image/custom/bg8.png" alt="background">
+            <div class="thrid_stepInfo">
+              <h3>第三步:</h3>
+              <p>幫專屬CHOCO星人取名字</p>
+              <p>選擇表情和飾品</p>
+            </div>
+          </div>
+          <div class="right_side_background">
+            <img src="image/custom/bg10.png" alt="">
+          </div>
         </div>
 
 
+      </div>
+      </div>
+    </section>
 
-        <div class="choco_type">
-          <ul>
-            <li>
-              <figure class="active">
-                <img src="image/custom/small/fr_b_001.png" class="fruit" alt="blue berry" />
-                <figcaption>
-                  <p>藍莓</p>
+    <!-- ----- 第三屏 End ----- -->
 
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="image/custom/small/fr_b_002.png" class="fruit" alt="grape" />
-                <figcaption>
-                  <p>葡萄</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="image/custom/small/fr_b_003.png" class="fruit" alt="bo ho" />
-                <figcaption>
-                  <p>薄荷</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="image/custom/small/fr_b_004.png" class="fruit" alt="orange" />
-                <figcaption>
-                  <p>柑橘</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="image/custom/small/fr_b_005.png" class="fruit" alt="strawberry" />
-                <figcaption>
-                  <p>草莓</p>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </div>
+    <!-- ----- 第四屏 Start ----- -->
 
 
+    <section class="card">
 
-        <div class="info_bar">
-
-
-          <p class="fruit_text blue_text">藍莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
-          <p class="fruit_text grape_text">葡萄：莓果的酸甜與滑順巧克力一次品嚐！</p>
-          <p class="fruit_text bo_text">薄荷：莓果的酸甜與滑順巧克力一次品嚐！</p>
-
-          <p class="fruit_text orange_text">柑橘：莓果的酸甜與滑順巧克力一次品嚐！</p>
-          <p class="fruit_text strawberry_text">草莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
+      <div class="fourth_step">
+        <img src="image/custom/8.png" alt="">
+        <div class="fourth_step_info">
+          <h3>第四步:</h3>
+          <p>搭配卡片樣式/輸入內容</p>
         </div>
 
       </div>
 
+      <div class="card_wrap">
 
+        <!-- ----- 第2層 ----- -->
 
-      <div class="select_info">
-        <div class="cho_info">
-          <div class="cho_info_photo">
-            <img src="image/custom/talk.png" alt="">
+        <div class="card_custom">
+
+          <div class="card_back">
+            <img src="image/custom/caed.png" alt="">
           </div>
-          <div class="choco_text black_text">
-            <h3>White CHOCO</h3>
-            <p>
-              白巧克力：甜度增加腦內啡，
 
-            </p>
-            <p>提升使人產生幸福及愉悅感的！！</p>
-
-            <p>
-              適合朋友和獨享
-            </p>
-
+          <div class="card_write">
+            <img src="image/custom/caed1.png" alt="">
           </div>
-          <div class="choco_text milk_text">
-            <h3>Milk CHOCO</h3>
-            <p>
-              牛奶巧克力：可運動後飲用低脂巧克力牛奶
-            </p>
-            <p>提供平等的或可能優於肌肉恢復藥物！！</p>
 
-            <p>
-              適合朋友和獨享
+          <div class="card_items">
+
+            <div class="tab_item">
+              <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
+              <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
+              <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- -------- 卡片樣式 start-------- -->
+
+            <div class="card_color type" id="card_colors">
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- -------- 卡片樣式 End-------- -->
+
+            <!-- -------- 文字樣式 start-------- -->
+
+            <div class="text_color type" id="text_colors">
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/eye1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/eye1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="" />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- -------- 文字樣式 End-------- -->
+
+            <!-- -------- 裝飾圖樣 start-------- -->
+
+            <div class="pic_color type" id="card_backgrounds">
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+            </div>
+            <div class="upload">
+              <input type="file" name="上傳檔案">
+            </div>
+          </div>
+        </div>
+
+        <!-- -------- 裝飾圖樣 End-------- -->
+
+
+        <!-- ----- 第3層 ----- -->
+
+
+        <div class="card_info">
+
+          <div class="paint_text">
+
+            <div class="paint">
+
+              <span class="paint_pen">
+                <p>畫筆</p>
+              </span>
+
+              <div class="paint_photo">
+                <img src="image/custom/line.png" alt="">
+              </div>
+
+            </div>
+            <div class="paint_color">
+              <img src="image/custom/color-bar.png" alt="">
+            </div>
+          </div>
+
+          <div class="total_price">
+            <img src="image/custom/price.png" alt="price" />
+            <h4>TOTAL</h4>
+            <p class="price">
+              NT$350
             </p>
           </div>
-          <div class="choco_text white_text">
-            <h3>Black CHOCO</h3>
-            <p>
-              黑巧克力：可可多酚的高抗氧化作用
-            </p>
-            <p>能夠抑制老化，促進肌膚的代謝！！</p>
-
-            <p>
-              適合朋友和獨享
-            </p>
+          <div class="final_btn">
+            <a href="#" class="btn orange_l"><span>加入購物車</span></a>
+            <a href="#" class="btn cyan_l"><span>重新設定</span></a>
           </div>
-          <!-- <img src="image/custom/talk.png" alt="" /> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ----- 第四屏 End ----- -->
+
+
+
+
+
+
+
+
+    <!-- ----- 第四屏 mobile Start ----- -->
+
+
+    <section class="card_mobile">
+
+      <div class="fourth_step">
+        <img src="image/custom/8.png" alt="">
+        <div class="fourth_step_info">
+          <h3>第四步:</h3>
+          <p>搭配卡片樣式/輸入內容</p>
+        </div>
+
+      </div>
+
+      <div class="card_wrap">
+
+        <!-- ----- 第2層 ----- -->
+
+        <div class="card_custom">
+
+          <div class="card_back">
+            <img src="image/custom/caed.png" alt="">
+          </div>
+
+          <div class="card_write">
+            <img src="image/custom/caed1.png" alt="">
+          </div>
+
 
         </div>
 
-        <div class="total_price">
-          <img src="image/custom/price.png" alt="price" />
-          <h4>TOTAL</h4>
-          <p class="price">
-            NT$350
+        <!-- -------- 裝飾圖樣 End-------- -->
+
+
+        <!-- ----- 第3層 ----- -->
+
+
+        <div class="card_info_mobile">
+
+          <div class="card_items">
+
+            <div class="tab_item">
+              <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
+              <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
+              <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- -------- 卡片樣式 start-------- -->
+
+            <div class="card_color type" id="card_colors">
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- -------- 卡片樣式 End-------- -->
+
+            <!-- -------- 文字樣式 start-------- -->
+
+            <div class="text_color type" id="text_colors">
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/eye1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/eye1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/eye.png" alt="" />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- -------- 文字樣式 End-------- -->
+
+            <!-- -------- 裝飾圖樣 start-------- -->
+
+            <div class="pic_color type" id="card_backgrounds">
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color.png" alt="" />
+                </div>
+              </div>
+
+              <div class="card_background">
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye1" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="eye2" />
+                </div>
+                <div class="background_color">
+                  <img src="image/custom/color1.png" alt="" />
+                </div>
+              </div>
+
+            </div>
+            <div class="upload">
+              <input type="file" name="上傳檔案">
+            </div>
+          </div>
+          <div class="paint_text">
+
+            <div class="paint">
+
+              <span class="paint_pen">
+                <p>畫筆</p>
+              </span>
+
+              <div class="paint_photo">
+                <img src="image/custom/line.png" alt="">
+              </div>
+
+            </div>
+            <div class="paint_color">
+              <img src="image/custom/color-bar.png" alt="">
+            </div>
+          </div>
+
+          <div class="total_price">
+            <img src="image/custom/price.png" alt="price" />
+            <h4>TOTAL</h4>
+            <p class="price">
+              NT$350
+            </p>
+          </div>
+          <div class="final_btn">
+            <a href="#" class="btn orange_l"><span>加入購物車</span></a>
+            <a href="#" class="btn cyan_l"><span>重新設定</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- ----- 第四屏 mobile End ----- -->
+
+
+
+
+
+    <!-- robot start -->
+    <input id="robot_close_control" type="checkbox" />
+
+    <div id="robot" class="robot">
+      <span class="robot_prompt">快來詢問我!!</span>
+      <div class="eye1"></div>
+      <div class="eyelid1"></div>
+      <div class="eye2"></div>
+      <div class="eyelid2"></div>
+
+      <label for="robot_close_control">
+        <div id="robot_close" class="robot_close"></div>
+        <div class="robot_click1"></div>
+        <div class="robot_click2"></div>
+        <div class="robot_click3"></div>
+      </label>
+      <div class="robot_content">
+        <div id="robot_message" class="message_area">
+          <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
+          <p id="message_ask_sample" class="message message_ask" style="display:none">
+            歡迎光臨CHOCOLINE....!!
           </p>
         </div>
+        <div class="keyword_area">
+          <button id="robot_prev_button" class="prev_button"><i class="fas fa-angle-left"></i></button>
+          <div id="keyword_space" class="keyword_space" style="width:200px">
+            <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;">
+              <span class="keyword">客製商品</span>
+              <span class="keyword">玩遊戲拿點數</span>
+              <span class="keyword">選美比賽</span>
+              <span class="keyword">推薦商品</span>
+              <span class="keyword">CHOCOLINE</span>
+            </div>
+          </div>
+          <button id="robot_next_button" class="next_button">
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+        <form onsubmit="return returnR(this)" class="query_area">
+          <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
+          <input id="message_submit" type="submit" value="送出" />
+        </form>
       </div>
     </div>
-  </section>
-
-
-  <!-- ----- 第二屏 End ----- -->
-
-
-  <!-- ----- 第三屏 Start ----- -->
-
-  <section class="outlook">
-    <div class="thrid_step_moble">
-      <img src="image/custom/bg8.png" alt="background">
-      <div class="thrid_stepInfo">
-        <h3>第三步:</h3>
-        <p>幫專屬CHOCO星人取名字</p>
-        <p>選擇表情和飾品</p>
+    <!-- robot end -->
+    <!-- footer start -->
+    <footer>
+      <div class="connect">
+        <figure>
+          <a href="javascript:;">
+            <img src="image/headerfooter/icon_fb.png" alt="Facebook" />
+          </a>
+        </figure>
+        <figure>
+          <a href="javascript:;">
+            <img src="image/headerfooter/icon_pinterest.png" alt="Pinterest" />
+          </a>
+        </figure>
+        <figure>
+          <a href="javascript:;">
+            <img src="image/headerfooter/icon_ig.png" alt="Instagram" />
+          </a>
+        </figure>
       </div>
-    </div>
-
-    <div class="outlok_wrap">
-
-      <!-- ----- left side start ----- -->
-
-
-      <div class="select_outlook">
-
-        <div class="outlook_name">
-          <div class="outlook_name_photo">
-            <img src="image/custom/bg7.png" alt="" />
-          </div>
-          <div class="for_name">
-
-            <h3>給CHOCO星人名字</h3>
-            <input type="text" name="" id="" class="name_text" placeholder="請給CHOCO星人名字" />
-          </div>
-
-        </div>
-
-        <div class="fix_photo_mobile">
-          <img src="image/custom/bear1.png" alt="bear">
-        </div>
-        <div class="fix_bar_mobile">
-          <div class="bar_photo">
-            <img src="image/custom/bar_item6.png" alt="large">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item5.png" alt="small">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item1.png" alt="right">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item2.png" alt="left">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item.png" alt="reset">
-          </div>
-        </div>
-        <!-- ----- item select start----- -->
-
-        <div class="select_item">
-          <div class="tab_item">
-            <button class="tab_link" onclick="openCity(event, 'eyes')">眼睛</button>
-            <button class="tab_link" onclick="openCity(event, 'mouses')">嘴巴</button>
-            <button class="tab_link" onclick="openCity(event, 'other')">飾品</button>
-          </div>
-          <div class="clearfix"></div>
-
-          <!-- ----- 眼睛 start----- -->
-          <div class="eye type" id="eyes">
-            <div class="eye_types">
-              <div class="eye_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-            <div class="eye_types">
-              <div class="eye_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-            <div class="eye_types">
-              <div class="eye_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="eye_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <!-- ----- 眼睛 End ----- -->
-
-          <!-- ----- 嘴巴 start----- -->
-
-          <div class="mouse type" id="mouses">
-            <div class="mouse_types">
-              <div class="mouse_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-            </div>
-            <div class="mouse_types">
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-            </div>
-            <div class="mouse_types">
-              <div class="mouse_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="mouse_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ----- 嘴巴 End ----- -->
-
-          <!-- ----- 飾品 start----- -->
-
-          <div class="others type" id="other">
-            <div class="others_types">
-              <div class="others_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-            <div class="others_types">
-              <div class="others_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-            <div class="others_types">
-              <div class="others_items">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-              <div class="others_items">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <!-- ----- 飾品 End ----- -->
-        </div>
+      <p>Copyright © 2019 CHOCOLINE All rights reserved</p>
+      <div class="bg">
+        <figure class="footer_water">
+          <img src="image/headerfooter/footer_water_bg.png" alt="water" />
+        </figure>
+        <figure class="footer_square1">
+          <img src="image/headerfooter/footer_1_bg.png" alt="chocolate" />
+        </figure>
+        <figure class="footer_square2">
+          <img src="image/headerfooter/footer_2_bg.png" alt="chocolate" />
+        </figure>
+        <figure class="footer_square3">
+          <img src="image/headerfooter/footer_3_bg.png" alt="chocolate" />
+        </figure>
+        <figure class="footer_square4">
+          <img src="image/headerfooter/footer_4_bg.png" alt="chocolate" />
+        </figure>
       </div>
+    </footer>
+    <!-- footer end -->
 
-      <!-- ----- left side End ----- -->
 
 
-      <!-- ----- middle side start ----- -->
 
-      <div class="outlook_fix">
-        <div class="fix_photo">
-          <img src="image/custom/bear1.png" alt="bear">
-        </div>
 
-        <div class="fix_bar">
-          <div class="bar_photo">
-            <img src="image/custom/bar_item6.png" alt="large">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item5.png" alt="small">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item1.png" alt="right">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item2.png" alt="left">
-          </div>
-          <div class="bar_photo">
-            <img src="image/custom/bar_item.png" alt="reset">
-          </div>
-        </div>
 
-        <div class="total_price">
-          <img src="image/custom/price.png" alt="price" />
-          <h4>TOTAL</h4>
-          <p class="price">
-            NT$350
-          </p>
-        </div>
-      </div>
 
-      <!-- ----- middle side End ----- -->
 
+    <script src="../common/js/header.js"></script>
+    <script src="../common/js/robot.js"></script>
 
-      <!-- ----- right side start ----- -->
-      <div class="step_info">
 
-        <div class="thrid_step">
-          <img src="image/custom/bg8.png" alt="background">
-          <div class="thrid_stepInfo">
-            <h3>第三步:</h3>
-            <p>幫專屬CHOCO星人取名字</p>
-            <p>選擇表情和飾品</p>
-          </div>
-        </div>
-        <div class="right_side_background">
-          <img src="image/custom/bg10.png" alt="">
-        </div>
-      </div>
-
-
-    </div>
-    </div>
-  </section>
-
-  <!-- ----- 第三屏 End ----- -->
-
-  <!-- ----- 第四屏 Start ----- -->
-
-
-  <section class="card">
-
-    <div class="fourth_step">
-      <img src="image/custom/8.png" alt="">
-      <div class="fourth_step_info">
-        <h3>第四步:</h3>
-        <p>搭配卡片樣式/輸入內容</p>
-      </div>
-
-    </div>
-
-    <div class="card_wrap">
-
-      <!-- ----- 第2層 ----- -->
-
-      <div class="card_custom">
-
-        <div class="card_back">
-          <img src="image/custom/caed.png" alt="">
-        </div>
-
-        <div class="card_write">
-          <img src="image/custom/caed1.png" alt="">
-        </div>
-
-        <div class="card_items">
-
-          <div class="tab_item">
-            <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
-            <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
-            <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <!-- -------- 卡片樣式 start-------- -->
-
-          <div class="card_color type" id="card_colors">
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-          </div>
-
-          <!-- -------- 卡片樣式 End-------- -->
-
-          <!-- -------- 文字樣式 start-------- -->
-
-          <div class="text_color type" id="text_colors">
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-
-          </div>
-
-          <!-- -------- 文字樣式 End-------- -->
-
-          <!-- -------- 裝飾圖樣 start-------- -->
-
-          <div class="pic_color type" id="card_backgrounds">
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-          </div>
-          <div class="upload">
-            <input type="file" name="上傳檔案">
-          </div>
-        </div>
-      </div>
-
-      <!-- -------- 裝飾圖樣 End-------- -->
-
-
-      <!-- ----- 第3層 ----- -->
-
-
-      <div class="card_info">
-
-        <div class="paint_text">
-
-          <div class="paint">
-
-            <span class="paint_pen">
-              <p>畫筆</p>
-            </span>
-
-            <div class="paint_photo">
-              <img src="image/custom/line.png" alt="">
-            </div>
-
-          </div>
-          <div class="paint_color">
-            <img src="image/custom/color-bar.png" alt="">
-          </div>
-        </div>
-
-        <div class="total_price">
-          <img src="image/custom/price.png" alt="price" />
-          <h4>TOTAL</h4>
-          <p class="price">
-            NT$350
-          </p>
-        </div>
-        <div class="final_btn">
-          <a href="#" class="btn orange_l"><span>加入購物車</span></a>
-          <a href="#" class="btn cyan_l"><span>重新設定</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ----- 第四屏 End ----- -->
-
-
-
-
-
-
-
-
-  <!-- ----- 第四屏 mobile Start ----- -->
-
-
-  <section class="card_mobile">
-
-    <div class="fourth_step">
-      <img src="image/custom/8.png" alt="">
-      <div class="fourth_step_info">
-        <h3>第四步:</h3>
-        <p>搭配卡片樣式/輸入內容</p>
-      </div>
-
-    </div>
-
-    <div class="card_wrap">
-
-      <!-- ----- 第2層 ----- -->
-
-      <div class="card_custom">
-
-        <div class="card_back">
-          <img src="image/custom/caed.png" alt="">
-        </div>
-
-        <div class="card_write">
-          <img src="image/custom/caed1.png" alt="">
-        </div>
-
-
-      </div>
-
-      <!-- -------- 裝飾圖樣 End-------- -->
-
-
-      <!-- ----- 第3層 ----- -->
-
-
-      <div class="card_info_mobile">
-
-        <div class="card_items">
-
-          <div class="tab_item">
-            <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
-            <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
-            <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <!-- -------- 卡片樣式 start-------- -->
-
-          <div class="card_color type" id="card_colors">
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-          </div>
-
-          <!-- -------- 卡片樣式 End-------- -->
-
-          <!-- -------- 文字樣式 start-------- -->
-
-          <div class="text_color type" id="text_colors">
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/eye1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/eye.png" alt="" />
-              </div>
-            </div>
-
-          </div>
-
-          <!-- -------- 文字樣式 End-------- -->
-
-          <!-- -------- 裝飾圖樣 start-------- -->
-
-          <div class="pic_color type" id="card_backgrounds">
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color.png" alt="" />
-              </div>
-            </div>
-
-            <div class="card_background">
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye1" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="eye2" />
-              </div>
-              <div class="background_color">
-                <img src="image/custom/color1.png" alt="" />
-              </div>
-            </div>
-
-          </div>
-          <div class="upload">
-            <input type="file" name="上傳檔案">
-          </div>
-        </div>
-        <div class="paint_text">
-
-          <div class="paint">
-
-            <span class="paint_pen">
-              <p>畫筆</p>
-            </span>
-
-            <div class="paint_photo">
-              <img src="image/custom/line.png" alt="">
-            </div>
-
-          </div>
-          <div class="paint_color">
-            <img src="image/custom/color-bar.png" alt="">
-          </div>
-        </div>
-
-        <div class="total_price">
-          <img src="image/custom/price.png" alt="price" />
-          <h4>TOTAL</h4>
-          <p class="price">
-            NT$350
-          </p>
-        </div>
-        <div class="final_btn">
-          <a href="#" class="btn orange_l"><span>加入購物車</span></a>
-          <a href="#" class="btn cyan_l"><span>重新設定</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- ----- 第四屏 mobile End ----- -->
-
-
-
-
- 
-<!-- robot start -->
-<input id="robot_close_control" type="checkbox" />
-
-<div id="robot" class="robot">
-  <span class="robot_prompt">快來詢問我!!</span>
-  <div class="eye1"></div>
-  <div class="eyelid1"></div>
-  <div class="eye2"></div>
-  <div class="eyelid2"></div>
-
-  <label for="robot_close_control">
-    <div id="robot_close" class="robot_close"></div>
-    <div class="robot_click1"></div>
-    <div class="robot_click2"></div>
-    <div class="robot_click3"></div>
-  </label>
-  <div class="robot_content">
-    <div id="robot_message" class="message_area">
-      <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
-      <p
-        id="message_ask_sample"
-        class="message message_ask"
-        style="display:none"
-      >
-        歡迎光臨CHOCOLINE....!!
-      </p>
-    </div>
-    <div class="keyword_area">
-      <button id="robot_prev_button"  class="prev_button"><i class="fas fa-angle-left"></i></button>
-      <div id="keyword_space" class="keyword_space" style="width:200px">
-        <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;" >
-          <span class="keyword">客製商品</span>
-          <span class="keyword">玩遊戲拿點數</span>
-          <span class="keyword">選美比賽</span>
-          <span class="keyword">推薦商品</span>
-          <span class="keyword">CHOCOLINE</span>
-        </div>
-      </div>
-      <button id="robot_next_button" class="next_button">
-        <i class="fas fa-angle-right"></i>
-      </button>
-    </div>
-    <form onsubmit="return returnR(this)" class="query_area">
-      <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
-      <input id="message_submit" type="submit" value="送出" />
-    </form>
-  </div>
-</div>
-<!-- robot end -->
- <!-- footer start -->
- <footer>
-  <div class="connect">
-    <figure>
-      <a href="javascript:;">
-        <img src="image/headerfooter/icon_fb.png" alt="Facebook" />
-      </a>
-    </figure>
-    <figure>
-      <a href="javascript:;">
-        <img src="image/headerfooter/icon_pinterest.png" alt="Pinterest" />
-      </a>
-    </figure>
-    <figure>
-      <a href="javascript:;">
-        <img src="image/headerfooter/icon_ig.png" alt="Instagram" />
-      </a>
-    </figure>
-  </div>
-  <p>Copyright © 2019 CHOCOLINE All rights reserved</p>
-  <div class="bg">
-    <figure class="footer_water">
-      <img src="image/headerfooter/footer_water_bg.png" alt="water" />
-    </figure>
-    <figure class="footer_square1">
-      <img src="image/headerfooter/footer_1_bg.png" alt="chocolate" />
-    </figure>
-    <figure class="footer_square2">
-      <img src="image/headerfooter/footer_2_bg.png" alt="chocolate" />
-    </figure>
-    <figure class="footer_square3">
-      <img src="image/headerfooter/footer_3_bg.png" alt="chocolate" />
-    </figure>
-    <figure class="footer_square4">
-      <img src="image/headerfooter/footer_4_bg.png" alt="chocolate" />
-    </figure>
-  </div>
-</footer>
-<!-- footer end -->
-
-
-
-
-
-
-
-
-  <script src="../common/js/header.js"></script>
-  <script src="../common/js/robot.js"></script>
-
-
-  <script type="text/javascript">
-    window.addEventListener("load", function () {
-      var shapes = document.getElementsByClassName("shape");
-      var shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
-      let midimg = document.getElementsByClassName("choco_overview");
-      document.getElementById("toRight").onclick = function () {
-        for (var i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.remove(shapePosArr[i])
-        }
-        shapePosArr.push(shapePosArr.shift());
-        for (var i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.add(shapePosArr[i])
-        }
-          
-        for (var i = 0; i < shapePosArr.length; i++) {
-          if(shapes[i].classList.contains("shapePos2") ){
-            var shapeObj = shapes[i].innerHTML;
-            console.log(shapeObj);
-            document.getElementById("next_page").onclick = function () {
-                let midimg = document.getElementsByClassName("choco_overview");
-                console.log(  midimg[0].innerHTML)
-                midimg[0].innerHTML = shapeObj;
-           };
-            
+    <script type="text/javascript">
+      window.addEventListener("load", function () {
+        var shapes = document.getElementsByClassName("shape");
+        var shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
+        let midimg = document.getElementsByClassName("choco_overview");
+        document.getElementById("toRight").onclick = function () {
+          for (var i = 0; i < shapePosArr.length; i++) {
+            shapes[i].classList.remove(shapePosArr[i])
           }
-          
-        }
-      };
+          shapePosArr.push(shapePosArr.shift());
+          for (var i = 0; i < shapePosArr.length; i++) {
+            shapes[i].classList.add(shapePosArr[i])
+          }
 
-      document.getElementById("toLeft").onclick = function () {
-        for (var i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.remove(shapePosArr[i])
-        }
-        shapePosArr.unshift(shapePosArr.pop());
-        for (var i = 0; i < shapePosArr.length; i++) {
-          shapes[i].classList.add(shapePosArr[i])
-        }
+          for (var i = 0; i < shapePosArr.length; i++) {
+            if (shapes[i].classList.contains("shapePos2")) {
+              var shapeObj = shapes[i].innerHTML;
+              console.log(shapeObj);
+              document.getElementById("next_page").onclick = function () {
+                let midimg = document.getElementsByClassName("choco_overview");
+                console.log(midimg[0].innerHTML)
+                midimg[0].innerHTML = shapeObj;
+              };
+
+            }
+
+          }
+        };
+
+        document.getElementById("toLeft").onclick = function () {
+          for (var i = 0; i < shapePosArr.length; i++) {
+            shapes[i].classList.remove(shapePosArr[i])
+          }
+          shapePosArr.unshift(shapePosArr.pop());
+          for (var i = 0; i < shapePosArr.length; i++) {
+            shapes[i].classList.add(shapePosArr[i])
+          }
 
 
 
+          document.getElementById("next_page").onclick = function () {
+
+            let abc = document.getElementsByClassName("shapePos2");
+            let midimg = document.getElementsByClassName("choco_overview");
+            midimg[0].innerHTML = abc[0].innerHTML;
+            console.log(abc[0].innerHTML)
+          };
+          //.................................
+          // for (var i = 0; i < shapePosArr.length; i++) {
+          //   if(shapes[i].classList.contains("shapePos2") ){
+          //     var shapeObj = shapes[i].innerHTML;
+          //     console.log(shapeObj)
+
+
+          //       document.getElementById("next_page").onclick = function () {
+          //         let midimg = document.getElementsByClassName("choco_overview");
+          //         console.log(  midimg[0].innerHTML)
+          //         midimg[0].innerHTML = shapeObj;
+
+          //           };
+
+
+
+          //   }
+
+          // }
+          //.................................
+
+        };
+        // midimg.innerHTML = shapeObj;
+
+        // let a = shapes[2].innerHTML;
+        // console.log(a);
         document.getElementById("next_page").onclick = function () {
 
-let abc =  document.getElementsByClassName("shapePos2") ;
-  let midimg = document.getElementsByClassName("choco_overview");
-  midimg[0].innerHTML=  abc[0].innerHTML ;
-  console.log(abc[0].innerHTML)
-};
-        //.................................
-        // for (var i = 0; i < shapePosArr.length; i++) {
-        //   if(shapes[i].classList.contains("shapePos2") ){
-        //     var shapeObj = shapes[i].innerHTML;
-        //     console.log(shapeObj)
-
-    
-        //       document.getElementById("next_page").onclick = function () {
-        //         let midimg = document.getElementsByClassName("choco_overview");
-        //         console.log(  midimg[0].innerHTML)
-        //         midimg[0].innerHTML = shapeObj;
-                
-        //           };
-            
-            
-            
-        //   }
-        
-        // }
-        //.................................
-        
-      };
-      // midimg.innerHTML = shapeObj;
-
-      // let a = shapes[2].innerHTML;
-      // console.log(a);
-      document.getElementById("next_page").onclick = function () {
-
-      let abc =  document.getElementsByClassName("shape") ;
-        let midimg = document.getElementsByClassName("choco_overview");
-        midimg[0].innerHTML=  abc[2].innerHTML ;
-        console.log(abc[2].innerHTML)
-      };
-    })
-  </script>
+          let abc = document.getElementsByClassName("shape");
+          let midimg = document.getElementsByClassName("choco_overview");
+          midimg[0].innerHTML = abc[2].innerHTML;
+          console.log(abc[2].innerHTML)
+        };
+      })
+    </script>
 
 
 
 
-  <script>
-    function openCity(evt, types) {
-      // Declare all variables
-      var i, type, tablink;
+    <script>
+      function openCity(evt, types) {
+        // Declare all variables
+        var i, type, tablink;
 
-      // Get all elements with class="tabcontent" and hide them
-      type = document.getElementsByClassName("type");
-      for (i = 0; i < type.length; i++) {
-        type[i].style.display = "none";
-      }
+        // Get all elements with class="tabcontent" and hide them
+        type = document.getElementsByClassName("type");
+        for (i = 0; i < type.length; i++) {
+          type[i].style.display = "none";
+        }
 
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablink = document.getElementsByClassName("tablink");
-      for (i = 0; i < tablink.length; i++) {
-        tablink[i].className = tablink[i].className.replace(" active", "");
-      }
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablink = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablink.length; i++) {
+          tablink[i].className = tablink[i].className.replace(" active", "");
+        }
 
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(types).style.display = "flex";
-      evt.currentTarget.className += " active";
-    } </script>
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(types).style.display = "flex";
+        evt.currentTarget.className += " active";
+      } </script>
 
-  <script>
-    window.addEventListener("load", function () {
-      let chos = document.getElementsByClassName("cho");
-      for (var i = 0; i < chos.length; i++) {
-        chos[i].addEventListener("click", function (e) {
-          let cho = e.target;
-          console.log(cho);
-          let large = document.getElementById("big_cho");
-          large.src = cho.src.replace("small", "big").replace("SP_", "");
-        }, false);
-      }
-    }, false);
-  </script>
+    <script>
+      // window.addEventListener("load", function () {
+      //   let chos = document.getElementsByClassName("cho");
+      //   for (var i = 0; i < chos.length; i++) {
+      //     chos[i].addEventListener("click", function (e) {
+      //       let cho = e.target;
+      //       console.log(cho);
+      //       let large = document.getElementById("big_cho");
+      //       large.src = cho.src.replace("small", "big").replace("M1", "w1");
+      //     }, false);
+      //   }
+      // }, false);
 
-  <script>
+      window.addEventListener("load", function () {
+        let chos = document.getElementsByClassName("cho");
+        let large = document.getElementById("big_cho");
+        for (var i = 0; i < chos.length; i++) {
+          chos[i].addEventListener("click", function (e) {
+            let cho = e.target;
+            console.log(cho);
 
 
-    window.addEventListener("load", function () {
-      let chos = document.getElementsByClassName("cho");
-      let chocoTextDivs = document.getElementsByClassName("choco_text");
-      console.log("chos : ", chos.length);
-      console.log("test : ", chocoTextDivs.length);
-      for (let i = 0; i < chos.length; i++) {
-        chos[i].addEventListener("click", function () {
-          // console.log(chocoTextDivs[i])
-          for (let j = 0; j < chocoTextDivs.length; j++) {
-            if (j == i) {
-              chocoTextDivs[j].style.display = "block";
-            } else {
-              chocoTextDivs[j].style.display = "none";
+            large.src = cho.src.replace("small", "big").replace("SP_", "");
+            console.log(large);
+            console.log("large.src", large.src);
+          }, false);
+        }
+      }, false);
+
+    </script>
+
+    <script>
+
+
+      window.addEventListener("load", function () {
+        let chos = document.getElementsByClassName("cho");
+        let chocoTextDivs = document.getElementsByClassName("choco_text");
+        console.log("chos : ", chos.length);
+        console.log("test : ", chocoTextDivs.length);
+        for (let i = 0; i < chos.length; i++) {
+          chos[i].addEventListener("click", function () {
+            // console.log(chocoTextDivs[i])
+            for (let j = 0; j < chocoTextDivs.length; j++) {
+              if (j == i) {
+                chocoTextDivs[j].style.display = "block";
+              } else {
+                chocoTextDivs[j].style.display = "none";
+              }
             }
-          }
-        })
-      }
-    });
+          })
+        }
+      });
 
-  </script>
+    </script>
 
-  <script>
-    window.addEventListener("load", function () {
-      let fruits = document.getElementsByClassName("fruit");
-      for (var i = 0; i < fruits.length; i++) {
-        fruits[i].addEventListener("click", function (e) {
-          let fruit = e.target;
-          console.log(fruit);
-          let larges = document.getElementById("big_cho");
-          larges.src = fruit.src.replace("small", "big").replace("b_", "");
-        }, false);
-      }
-    }, false);
-  </script>
-  <script>
+    <script>
+      // window.addEventListener("load", function () {
+      //   let fruits = document.getElementsByClassName("fruit");
+      //   for (var i = 0; i < fruits.length; i++) {
+      //     fruits[i].addEventListener("click", function (e) {
+      //       let fruit = e.target;
+      //       console.log(fruit);
+      //       let larges = document.getElementById("big_cho");
+      //       larges.src = fruit.src.replace("big", "fruit").replace("w1", "b1");
+      //     }, false);
+      //   }
+      // }, false);
+
+      window.addEventListener("load", function () {
+        let fruits = document.getElementsByClassName("fruit");
+        for (var i = 0; i < fruits.length; i++) {
+          fruits[i].addEventListener("click", function (e) {
+            let fruit = e.target;
+            console.log(fruit);
+            let larges = document.getElementById("big_cho");
+            larges.src = fruit.src.replace("small", "big").replace("b_", "");
+          }, false);
+        }
+      }, false);
+    </script>
+    <script>
 
 
-    window.addEventListener("load", function () {
-      let fruits = document.getElementsByClassName("fruit");
-      let fruitTextDivs = document.getElementsByClassName("fruit_text");
-      console.log("chos : ", fruits.length);
-      console.log("test : ", fruitTextDivs.length);
-      for (let i = 0; i < fruitTextDivs.length; i++) {
-        fruits[i].addEventListener("click", function () {
-          // console.log(chocoTextDivs[i])
-          for (let j = 0; j < fruitTextDivs.length; j++) {
-            if (j == i) {
-              fruitTextDivs[j].style.display = "block";
-            } else {
-              fruitTextDivs[j].style.display = "none";
+      window.addEventListener("load", function () {
+        let fruits = document.getElementsByClassName("fruit");
+        let fruitTextDivs = document.getElementsByClassName("fruit_text");
+        console.log("chos : ", fruits.length);
+        console.log("test : ", fruitTextDivs.length);
+        for (let i = 0; i < fruitTextDivs.length; i++) {
+          fruits[i].addEventListener("click", function () {
+            // console.log(chocoTextDivs[i])
+            for (let j = 0; j < fruitTextDivs.length; j++) {
+              if (j == i) {
+                fruitTextDivs[j].style.display = "block";
+              } else {
+                fruitTextDivs[j].style.display = "none";
+              }
             }
-          }
-        })
-      }
-    });
+          })
+        }
+      });
 
-  </script>
+    </script>
+
+    <script>
+
+      window.addEventListener("load", function () {
+        let eye_types = document.getElementsByClassName("eye_type");
+        for (var i = 0; i < eye_types.length; i++) {
+          console.log("eye_types : ", eye_types.length);
+          eye_types[i].addEventListener("click", function (e) {
+            let fruit = e.target;
+            console.log(fruit);
+            let larges = document.getElementById("big_cho");
+            larges.src = fruit.src.replace("small", "big").replace("b_", "");
+          }, false);
+        }
+      }, false);
+    </script>
+
+
 </body>
 
 </html>
