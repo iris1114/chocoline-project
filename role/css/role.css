@@ -1791,6 +1791,14 @@ section {
   font-family: 'Noto Sans TC', sans-serif;
 }
 
+html {
+  overflow: auto;
+}
+
+body {
+  overflow: hidden;
+}
+
 .introduce_container {
   padding-top: 150px;
   height: 960px;
@@ -1836,7 +1844,12 @@ section {
   position: relative;
   z-index: 1;
   height: 800px;
-  background: url("../image/role/slippery.png") no-repeat 90% 80%, url("../image/role/pool.png") no-repeat 50% -35%, url("../image/role/downgrass.png") no-repeat 7% 64%, url("../image/role/right_bg.png") no-repeat 50% -31%, url("../image/role/upgrass.png") no-repeat 5% 33%, url("../image/role/left_bg.png") no-repeat 0% -205%;
+  background: url("../image/role/slippery.png") no-repeat 90% 100%, url("../image/role/pool.png") no-repeat 50% -40%, url("../image/role/downgrass.png") no-repeat 7% 72%, url("../image/role/right_bg.png") no-repeat 50% -35%, url("../image/role/upgrass.png") no-repeat 5% 33%, url("../image/role/left_bg.png") no-repeat 0% -205%;
+}
+
+.introduce_container .front .wrap {
+  z-index: 1;
+  position: relative;
 }
 
 .introduce_container .bread {
@@ -2028,7 +2041,7 @@ section {
   width: 265px;
   height: 360px;
   background: #fff;
-  border: 3px solid #1A99AD;
+  border: 3px solid #157E8F;
   border-radius: 15px;
   padding: 0 20px;
   display: -webkit-box;
@@ -2038,8 +2051,8 @@ section {
       -ms-flex-align: center;
           align-items: center;
   text-align: left;
-  -webkit-box-shadow: 11px 11px 0 #4EA5A5;
-          box-shadow: 11px 11px 0 #4EA5A5;
+  -webkit-box-shadow: 11px 11px 0 #1A99AD;
+          box-shadow: 11px 11px 0 #1A99AD;
 }
 
 .introduce_container #choco_information ul {
@@ -2189,6 +2202,10 @@ section {
   -webkit-transition: .5s;
   transition: .5s;
   z-index: 1;
+}
+
+.introduce_container .collect_vote {
+  text-align: center;
 }
 
 .introduce_container .heart_unclick {
@@ -2353,14 +2370,245 @@ section {
   }
 }
 
-.introduce_container .cake_bg {
-  width: 99px;
+.introduce_container .peanut_bg {
+  width: 65px;
+  position: absolute;
+  top: auto;
+  right: 2%;
+  bottom: 23%;
+  left: auto;
+  margin: auto;
 }
 
 .introduce_container .donut_bg {
   width: 65px;
+  position: absolute;
+  top: auto;
+  right: 8%;
+  bottom: 19%;
+  left: auto;
+  margin: auto;
+}
+
+.introduce_container .cake_bg {
+  width: 99px;
+  position: absolute;
+  top: auto;
+  right: 11%;
+  bottom: 10%;
+  left: auto;
+  margin: auto;
 }
 
 .introduce_container .cookies_bg {
   width: 88px;
+  position: absolute;
+  top: auto;
+  right: 4%;
+  bottom: 5%;
+  left: auto;
+  margin: auto;
+}
+
+.message_board_container {
+  height: 1750px;
+  position: relative;
+  margin-top: -50px;
+  background: url("../image/role/pool.png") no-repeat 50% 22.4%, url("../image/role/swan.png") no-repeat 8% 30%, url("../image/role/leftball.png") no-repeat 3% 40%, url("../image/role/rightball.png") no-repeat 97% 30%, #FFF5E3;
+}
+
+.message_board_container .message_board_wrap {
+  padding: 0 8%;
+}
+
+.message_board_container .message_block {
+  width: 100%;
+  padding: 2% 0;
+}
+
+.message_board_container .message_block::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.message_board_container .message_block:nth-child(odd) .message_item {
+  float: left;
+}
+
+.message_board_container .message_block:nth-child(even) .message_item {
+  float: right;
+}
+
+.message_board_container .message_item {
+  width: 550px;
+  height: 230px;
+  background: url("../image/role/message_bg.png") 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message_board_container .message {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 4%;
+}
+
+.message_board_container .cus_photo {
+  width: 125px;
+  height: 125px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  border-radius: 15px;
+  border: 2px solid #592F13;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message_board_container .cus_photo img {
+  border-radius: 15px;
+}
+
+.message_board_container .message_contain {
+  width: 60%;
+  margin-left: 5%;
+}
+
+.message_board_container .message_contain .memName {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_contain .memName {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .message_contain .memName {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .message_contain .memName {
+    font-size: 20px;
+  }
+}
+
+.message_board_container .message_contain .mseeage_text {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  padding-top: 5%;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_contain .mseeage_text {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .message_contain .mseeage_text {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .message_contain .mseeage_text {
+    font-size: 16px;
+  }
+}
+
+.message_board_container .status {
+  width: 20%;
+  text-align: center;
+}
+
+.message_board_container .status p {
+  padding-top: 20%;
+}
+
+.message_board_container .message_date {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  color: #9B9B9B;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_date {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .message_date {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .message_date {
+    font-size: 16px;
+  }
+}
+
+.message_board_container .input_message_wrap {
+  padding-top: 150px;
+}
+
+.message_board_container .input_message {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  border: 2px solid #1A99AD;
+}
+
+.message_board_container #input_text {
+  width: 80%;
+  height: 100%;
+  border: none;
+  list-style: none;
+}
+
+.message_board_container #submit_btn {
+  width: 15%;
+  height: 100%;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container #submit_btn {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container #submit_btn {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container #submit_btn {
+    font-size: 28px;
+  }
+}
+
+footer {
+  z-index: 1;
+  background: #AD9380;
 }

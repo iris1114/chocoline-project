@@ -10,7 +10,12 @@
     font-family:'Noto Sans TC', sans-serif;
     // outline: 1px solid #f00;
 }
-
+html{
+    overflow: auto;
+}
+body{
+    overflow: hidden;
+}
 .introduce_container{
     padding-top: 150px;
     height: 960px; //刪
@@ -35,18 +40,16 @@
         position: relative;
         z-index: 1;
         height: 800px;
-        background: url("../image/role/slippery.png") no-repeat 90% 80%,
-                    url("../image/role/pool.png") no-repeat 50% -35%,
-                    url("../image/role/downgrass.png") no-repeat 7% 64%,
-                    url("../image/role/right_bg.png") no-repeat 50% -31%,
+        background: url("../image/role/slippery.png") no-repeat 90% 100%,
+                    url("../image/role/pool.png") no-repeat 50% -40%,
+                    url("../image/role/downgrass.png") no-repeat 7% 72%,
+                    url("../image/role/right_bg.png") no-repeat 50% -35%,
                     url("../image/role/upgrass.png") no-repeat 5% 33%,
                     url("../image/role/left_bg.png") no-repeat 0% -205%;
-        // background: url("../image/role/slippery.png") no-repeat 90% 20%,
-        //             url("../image/role/pool.png") no-repeat 50% -50%,
-        //             url("../image/role/downgrass.png") no-repeat 7% 34%,
-        //             url("../image/role/right_bg.png") no-repeat 50% -40%,
-        //             url("../image/role/upgrass.png") no-repeat 5% 16%,
-        //             url("../image/role/left_bg.png") no-repeat 0% 77%;
+        .wrap{
+            z-index: 1;
+            position: relative;
+        }
     }
     .bread{
         width: 414px;
@@ -115,14 +118,14 @@
         width: 265px;
         height: 360px;
         background: #fff;
-        border: 3px solid #1A99AD;
+        border: 3px solid $color_deepblue;
         border-radius: 15px;
         padding: 0 20px;
         display: flex;
         align-items: center;
         text-align: left;
         
-        box-shadow: 11px 11px 0 #4EA5A5;
+        box-shadow: 11px 11px 0 $color_blue;
         ul{
             width: 100%;
         }
@@ -182,13 +185,10 @@
         transition: .5s;
         z-index: 1;
     }
-    
-    
-   
-    
-    
-    
-  
+    .collect_vote{
+        text-align: center;
+    }
+
     .heart_unclick {
         color: $color_milk;
       }
@@ -263,13 +263,120 @@
             opacity: 0.7;
         }
     }
-    .cake_bg{
-        width: 99px;
+    .peanut_bg{
+        width: 65px;
+        @include pos(auto,2%,23%,auto);
     }
     .donut_bg{
         width: 65px;
+        @include pos(auto,8%,19%,auto);
+    }
+    .cake_bg{
+        width: 99px;
+        @include pos(auto,11%,10%,auto);
     }
     .cookies_bg{
         width: 88px;
+        @include pos(auto,4%,5%,auto);
     }
+}
+.message_board_container{
+    height: 1750px;
+    position: relative;
+    margin-top: -50px;
+    background: url("../image/role/pool.png") no-repeat 50% 22.4%,
+                url("../image/role/swan.png") no-repeat 8% 30%,
+                url("../image/role/leftball.png") no-repeat 3% 40%,
+                url("../image/role/rightball.png") no-repeat 97% 30%,
+                #FFF5E3 ;
+    .message_board_wrap{
+        padding: 0 8%;
+    }
+    .message_block{
+        width: 100%;
+        padding: 2% 0;
+        &::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        &:nth-child(odd) .message_item{
+            float: left;
+        }
+        &:nth-child(even) .message_item{
+            float: right;
+        }
+    }
+    .message_item{
+        width: 550px;
+        height: 230px;
+        background: url("../image/role/message_bg.png") 0 0;
+        display: flex;
+        align-items: center;
+    }
+    .message{
+        width: 100%;
+        display: flex;
+        padding: 0 4%;
+    }
+    .cus_photo{
+        width: 125px;
+        height: 125px;
+        flex: 0 0 auto;
+        border-radius: 15px;
+        border: 2px solid $color_brown;
+        display: flex;
+        align-items: center;
+        img{
+            border-radius: 15px;
+        }
+    }
+    .message_contain{
+        width: 60%;
+        margin-left: 5%;
+        .memName{
+            @include font_m();
+        }
+        .mseeage_text{
+            @include font_s();
+            padding-top: 5%;
+        }
+    }
+    .status{
+        width: 20%;
+        text-align: center;
+        p{
+            padding-top: 20%;
+        }
+    }
+    .message_date{
+        @include font_s();
+        color: $color_gray;
+    }
+
+    .input_message_wrap{
+        padding-top: 150px;
+    }
+    .input_message{
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        border: 2px solid $color_blue;
+    }
+    #input_text{
+        width: 80%;
+        height: 100%;
+        border: none;
+        list-style: none;
+    }
+    #submit_btn{
+        width: 15%;
+        height: 100%;
+        @include font_l();
+    }
+}
+
+footer{
+    z-index: 1;
+    background: #AD9380;
 }
