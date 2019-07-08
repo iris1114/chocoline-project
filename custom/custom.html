@@ -24,7 +24,7 @@
           </figure>
         </div>
         <div class="logo">
-          <a href="index.html">
+          <a href="../index/index.html">
             <img src="image/headerfooter/logo.png" alt="CHOCOLINE" />
           </a>
         </div>
@@ -42,11 +42,11 @@
         </div>
       </div>
       <ul class="menubox">
-        <li><a href="custom.html">客製CHOCO</a></li>
-        <li><a href="contest.html">CHOCO選美</a></li>
-        <li><a href="game.html">CHOCO遊戲</a></li>
-        <li><a href="store.html">CHOCO商城</a></li>
-        <li><a href="about.html">關於CHOCO</a></li>
+        <li><a href="../custom/custom.html">客製CHOCO</a></li>
+        <li><a href="../contest/contest.html">CHOCO選美</a></li>
+        <li><a href="../game/game.html">CHOCO遊戲</a></li>
+        <li><a href="../store/store.html">CHOCO商城</a></li>
+        <li><a href="../about/about.html">關於CHOCO</a></li>
         <figure id="menuclose">
           <img src="../image/headerfooter/menuclose.png" alt="close" />
         </figure>
@@ -54,17 +54,17 @@
     </div>
     <div class="d_header">
       <div class="logo">
-        <a href="index.html">
+        <a href="../index/index.html">
           <img src="image/headerfooter/logo.png" alt="CHOCOLINE" />
         </a>
       </div>
       <div class="navbar">
         <ul class="menubox">
-          <li><a href="custom.html">客製CHOCO</a></li>
-          <li><a href="contest.html">CHOCO選美</a></li>
-          <li><a href="game.html">CHOCO遊戲</a></li>
-          <li><a href="store.html">CHOCO商城</a></li>
-          <li><a href="about.html">關於CHOCO</a></li>
+          <li class="nowpage"><a href="../custom/custom.html">客製CHOCO</a></li>
+          <li><a href="../contest/contest.html">CHOCO選美</a></li>
+          <li><a href="../game/game.html">CHOCO遊戲</a></li>
+          <li><a href="../store/store.html">CHOCO商城</a></li>
+          <li><a href="../about/about.html">關於CHOCO</a></li>
         </ul>
         <div class="status">
           <figure>
@@ -125,39 +125,18 @@
         <img src="image/custom/right.png" alt="right" class="right_btn" id="toRight" />
         <img src="image/custom/left.png" alt="left" class="left_btn" id="toLeft" />
       </div>
-      <!-- <div class="next_button">
-        <a href="#second" class="btn cyan_s next_page"><span>選擇巧克力基底/配料口味</span></a>
-      </div> -->
+      <div class="next_button">
+        <a href="#second" class="btn cyan_s " id="next_page"><span>選擇巧克力基底/配料口味</span></a>
+      </div>
 
       <!-- ----- 形狀輪播 End ----- -->
     </div>
 
 
-
-  </section>
-
-  <script>
-    window.addEventListener("load", function () {
-
-      document.getElementsByClassName("btn").onclick = function () {
-
-
-        let chose = document.getElementsByClassName("shapePos2");
-        console.log("chose:", chose);
-        let midimg = document.getElementsByClassName("choco_overview");
-
-        midimg.innerHTML = chose;
-
-      };
-
-
-    })
-  </script>
-
-
+<!-- 
   <div class="choco_background">
     <img src="image/custom/bg3.png" alt="" class="choco_img" />
-  </div>
+  </div> -->
 
   <!-- ----- 第一屏 End ----- -->
 
@@ -198,7 +177,7 @@
 
       <div class="select_type ">
         <div class="choco_overview">
-          <img src="image/custom/big/M1_001.png" id="big_cho" alt="type" />
+          <img src="" id="big_cho" alt="type" />
         </div>
 
 
@@ -1044,102 +1023,112 @@
 
 
 
-  <input id="robot_close_control" type="checkbox" />
+ 
+<!-- robot start -->
+<input id="robot_close_control" type="checkbox" />
 
-  <div id="robot" class="robot">
-    <span class="robot_prompt">快來詢問我!!</span>
-    <div class="eye1"></div>
-    <div class="eyelid1"></div>
-    <div class="eye2"></div>
-    <div class="eyelid2"></div>
+<div id="robot" class="robot">
+  <span class="robot_prompt">快來詢問我!!</span>
+  <div class="eye1"></div>
+  <div class="eyelid1"></div>
+  <div class="eye2"></div>
+  <div class="eyelid2"></div>
 
-    <label for="robot_close_control">
-      <div id="robot_close" class="robot_close"></div>
-      <div class="robot_click1"></div>
-      <div class="robot_click2"></div>
-      <div class="robot_click3"></div>
-    </label>
-    <div class="robot_content">
-      <!-- <img src="image/robot/robot_tooth.png" alt="機器人的牙齒"> -->
-      <div class="message_area">
-        <p class="message">歡迎光臨CHOCOLINE....!!</p>
-        <p class="message">如何客製商品呢?</p>
-        <p class="message">如何客製商品呢?</p>
-        <p class="message">如何客製商品呢?</p>
-      </div>
-      <div class="keyword_area">
-        <button class="prev_button"><i class="fas fa-angle-left"></i></button>
-        <div class="keyword_wrap">
+  <label for="robot_close_control">
+    <div id="robot_close" class="robot_close"></div>
+    <div class="robot_click1"></div>
+    <div class="robot_click2"></div>
+    <div class="robot_click3"></div>
+  </label>
+  <div class="robot_content">
+    <div id="robot_message" class="message_area">
+      <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
+      <p
+        id="message_ask_sample"
+        class="message message_ask"
+        style="display:none"
+      >
+        歡迎光臨CHOCOLINE....!!
+      </p>
+    </div>
+    <div class="keyword_area">
+      <button id="robot_prev_button"  class="prev_button"><i class="fas fa-angle-left"></i></button>
+      <div id="keyword_space" class="keyword_space" style="width:200px">
+        <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;" >
           <span class="keyword">客製商品</span>
           <span class="keyword">玩遊戲拿點數</span>
-          <span class="keyword">購物車</span>
+          <span class="keyword">選美比賽</span>
+          <span class="keyword">推薦商品</span>
+          <span class="keyword">CHOCOLINE</span>
         </div>
-        <button class="next_button">
-          <i class="fas fa-angle-right"></i>
-        </button>
       </div>
-      <div class="query_area">
-        <input type="text" placeholder="請問..." />
-        <input type="submit" value="送出" />
-      </div>
+      <button id="robot_next_button" class="next_button">
+        <i class="fas fa-angle-right"></i>
+      </button>
     </div>
+    <form onsubmit="return returnR(this)" class="query_area">
+      <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
+      <input id="message_submit" type="submit" value="送出" />
+    </form>
   </div>
-  <!-- robot end -->
-
-  <!-- footer start -->
-  <footer>
-    <div class="connect">
-      <figure>
-        <a href="javascript:;">
-          <img src="image/headerfooter/icon_fb.png" alt="Facebook" />
-        </a>
-      </figure>
-      <figure>
-        <a href="javascript:;">
-          <img src="image/headerfooter/icon_pinterest.png" alt="Pinterest" />
-        </a>
-      </figure>
-      <figure>
-        <a href="javascript:;">
-          <img src="image/headerfooter/icon_ig.png" alt="Instagram" />
-        </a>
-      </figure>
-    </div>
-    <p>Copyright © 2019 CHOCOLINE All rights reserved</p>
-    <div class="bg">
-      <figure class="footer_water">
-        <img src="image/headerfooter/footer_water_bg.png" alt="water" />
-      </figure>
-      <figure class="footer_square1">
-        <img src="image/headerfooter/footer_1_bg.png" alt="chocolate" />
-      </figure>
-      <figure class="footer_square2">
-        <img src="image/headerfooter/footer_2_bg.png" alt="chocolate" />
-      </figure>
-      <figure class="footer_square3">
-        <img src="image/headerfooter/footer_3_bg.png" alt="chocolate" />
-      </figure>
-      <figure class="footer_square4">
-        <img src="image/headerfooter/footer_4_bg.png" alt="chocolate" />
-      </figure>
-    </div>
-  </footer>
-  <!-- footer end -->
-
-
+</div>
+<!-- robot end -->
+ <!-- footer start -->
+ <footer>
+  <div class="connect">
+    <figure>
+      <a href="javascript:;">
+        <img src="image/headerfooter/icon_fb.png" alt="Facebook" />
+      </a>
+    </figure>
+    <figure>
+      <a href="javascript:;">
+        <img src="image/headerfooter/icon_pinterest.png" alt="Pinterest" />
+      </a>
+    </figure>
+    <figure>
+      <a href="javascript:;">
+        <img src="image/headerfooter/icon_ig.png" alt="Instagram" />
+      </a>
+    </figure>
+  </div>
+  <p>Copyright © 2019 CHOCOLINE All rights reserved</p>
+  <div class="bg">
+    <figure class="footer_water">
+      <img src="image/headerfooter/footer_water_bg.png" alt="water" />
+    </figure>
+    <figure class="footer_square1">
+      <img src="image/headerfooter/footer_1_bg.png" alt="chocolate" />
+    </figure>
+    <figure class="footer_square2">
+      <img src="image/headerfooter/footer_2_bg.png" alt="chocolate" />
+    </figure>
+    <figure class="footer_square3">
+      <img src="image/headerfooter/footer_3_bg.png" alt="chocolate" />
+    </figure>
+    <figure class="footer_square4">
+      <img src="image/headerfooter/footer_4_bg.png" alt="chocolate" />
+    </figure>
+  </div>
+</footer>
+<!-- footer end -->
 
 
 
 
 
 
-  <script src="js/header.js"></script>
+
+
+  <script src="../common/js/header.js"></script>
+  <script src="../common/js/robot.js"></script>
 
 
   <script type="text/javascript">
     window.addEventListener("load", function () {
       var shapes = document.getElementsByClassName("shape");
       var shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
+      let midimg = document.getElementsByClassName("choco_overview");
       document.getElementById("toRight").onclick = function () {
         for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.remove(shapePosArr[i])
@@ -1147,6 +1136,20 @@
         shapePosArr.push(shapePosArr.shift());
         for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.add(shapePosArr[i])
+        }
+          
+        for (var i = 0; i < shapePosArr.length; i++) {
+          if(shapes[i].classList.contains("shapePos2") ){
+            var shapeObj = shapes[i].innerHTML;
+            console.log(shapeObj);
+            document.getElementById("next_page").onclick = function () {
+                let midimg = document.getElementsByClassName("choco_overview");
+                console.log(  midimg[0].innerHTML)
+                midimg[0].innerHTML = shapeObj;
+           };
+            
+          }
+          
         }
       };
 
@@ -1158,18 +1161,48 @@
         for (var i = 0; i < shapePosArr.length; i++) {
           shapes[i].classList.add(shapePosArr[i])
         }
-        var chose = shapes[i].innerHTML;
-        console.log("chose:", chose);
+
+
+
+        document.getElementById("next_page").onclick = function () {
+
+let abc =  document.getElementsByClassName("shapePos2") ;
+  let midimg = document.getElementsByClassName("choco_overview");
+  midimg[0].innerHTML=  abc[0].innerHTML ;
+  console.log(abc[0].innerHTML)
+};
+        //.................................
+        // for (var i = 0; i < shapePosArr.length; i++) {
+        //   if(shapes[i].classList.contains("shapePos2") ){
+        //     var shapeObj = shapes[i].innerHTML;
+        //     console.log(shapeObj)
+
+    
+        //       document.getElementById("next_page").onclick = function () {
+        //         let midimg = document.getElementsByClassName("choco_overview");
+        //         console.log(  midimg[0].innerHTML)
+        //         midimg[0].innerHTML = shapeObj;
+                
+        //           };
+            
+            
+            
+        //   }
+        
+        // }
+        //.................................
+        
       };
+      // midimg.innerHTML = shapeObj;
 
       // let a = shapes[2].innerHTML;
       // console.log(a);
-      document.getElementsByClassName("btn").onclick = function () {
+      document.getElementById("next_page").onclick = function () {
 
+      let abc =  document.getElementsByClassName("shape") ;
         let midimg = document.getElementsByClassName("choco_overview");
-        console.log("123", midimg);
-        midimg.innerHTML = chose;
-
+        midimg[0].innerHTML=  abc[2].innerHTML ;
+        console.log(abc[2].innerHTML)
       };
     })
   </script>

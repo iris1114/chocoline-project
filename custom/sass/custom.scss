@@ -8,16 +8,10 @@ body {
   // position: relative;
 }
 
-
-
-
-
-
 // ------ 第一屏 mobile Start --------
 // * {
 //   outline: 1px solid red;
 // }
-
 
 @media (max-width: 767px) {
   .custom {
@@ -49,7 +43,7 @@ body {
       .playground {
         // display: none;
         width: 100%;
-        
+
         img {
           width: 95%;
           position: absolute;
@@ -185,58 +179,35 @@ body {
       //   width: 100%;
       //   text-align: center;
       //   padding-top: 50%;
-     
+
       //   .next_page{
       //     width: 60%;
       //     display: inline-block;
       //     z-index: 5;
-      //     // margin: auto; 
+      //     // margin: auto;
       //   }
       // }
-      
     }
   }
-  
 
+  // ------ 第一屏 mobile End --------
 
+  // ---- 巧克力背景 mobile Start -------
 
-// ------ 第一屏 mobile End --------
-
-
-
-
-
-
-// ---- 巧克力背景 mobile Start -------
-
-
-.choco_background {
-  width: 100%;
-  // position: relative;
-  .choco_img {
-    width: 140%;
-    position: absolute;
-    top:82%;
-    left: -20%;
+  .choco_background {
+    width: 100%;
+    // position: relative;
+    .choco_img {
+      width: 140%;
+      position: absolute;
+      top: 82%;
+      left: -20%;
+    }
   }
-}
 
+  // ---- 巧克力背景 mobile End -------
 
-
-// ---- 巧克力背景 mobile End -------
-
-
-
-
-
-
-
-
-
-// ----- 第二屏 mobile Start -----
-
-
-
+  // ----- 第二屏 mobile Start -----
 
   // * {
   //   outline: 1px solid red;
@@ -515,7 +486,7 @@ body {
         width: 100%;
         // height: 636px;
         text-align: center;
-        position: relative; 
+        position: relative;
         display: none;
         // padding-top: 13%;
         // background-image: url("../image/custom/talk.png");
@@ -658,46 +629,40 @@ body {
           left: 0;
           right: 0;
         }
-         
       }
     }
   }
 
-
-
-
   // ----- 第二屏 mobile End -----
-
-
 
   // ----- 第三屏 mobile Start -----
 
   // * {
   //   outline: 1px solid red;
   // }
-  .outlook { 
+  .outlook {
     width: 100%;
     // padding-top: 150px;
 
     background-color: #fff4e2;
     // max-width: 1200px;
     margin: 0 auto;
-    .thrid_step_moble{
+    .thrid_step_moble {
       width: 100%;
       position: relative;
-        text-align: center;
-        .thrid_stepInfo {
-          position: absolute;
-          top: 17%;
-          left: 10%;
-          right: 0;
-          h3 {
-            // width: 90%;
-            font-size: 28px;
-            padding: 2% 0;
-          }
+      text-align: center;
+      .thrid_stepInfo {
+        position: absolute;
+        top: 17%;
+        left: 10%;
+        right: 0;
+        h3 {
+          // width: 90%;
+          font-size: 28px;
+          padding: 2% 0;
+        }
+      }
     }
-  }
 
     .outlok_wrap {
       max-width: 1200px;
@@ -710,7 +675,7 @@ body {
       padding-bottom: 50px;
 
       //  left side start
-   
+
       .select_outlook {
         width: 100%;
         // display: flex;
@@ -765,7 +730,7 @@ body {
           display: flex;
           justify-content: center;
           background-color: white;
-          
+
           .bar_photo {
             width: 20%;
             padding: 3%;
@@ -783,7 +748,7 @@ body {
           box-shadow: 10px 10px #4ea5a5;
           border-radius: 20px;
           overflow: hidden;
-         margin-top: 5%;
+          margin-top: 5%;
           .tab_item {
             width: 100%;
             // padding-bottom: 5%;
@@ -899,7 +864,7 @@ body {
         // flex-flow: column wrap;
         // justify-content: space-around;
         .fix_photo {
-          display:none;
+          display: none;
           width: 100%;
           padding-bottom: 5%;
         }
@@ -974,10 +939,7 @@ body {
 
   // ----- 第三屏 mobile End -----
 
-
-
-
- // ----- 第四屏 mobile Start -----
+  // ----- 第四屏 mobile Start -----
 
   // * {
   //   outline: 1px solid red;
@@ -1243,13 +1205,10 @@ body {
       }
     }
 
-
-     // ----- 第四屏 mobile End -----
-
-
+    // ----- 第四屏 mobile End -----
   }
 
-  .card_mobile{
+  .card_mobile {
     width: 100%;
     // display: none;
     // padding-top: 150px;
@@ -1306,7 +1265,6 @@ body {
             // margin: auto;
           }
         }
-       
       }
 
       .card_info_mobile {
@@ -1316,7 +1274,7 @@ body {
         flex-flow: column wrap;
         // justify-content: space-between;
         margin: auto;
-        
+
         .card_items {
           width: 100%;
           background-color: #7fc3c6;
@@ -1513,27 +1471,19 @@ body {
       }
     }
 
-
-     // ----- 第四屏 mobile End -----
+    // ----- 第四屏 mobile End -----
   }
 }
 
-
-
-
 // ------ 第一屏 tablet Start --------
 
-
-
-
 @media (min-width: 768px) and (max-width: 991px) {
-  
   .custom {
     width: 100%;
     background: url("../image/custom/bg.png") no-repeat;
     margin: 0 auto;
     background-size: cover;
-        background-repeat: no-repeat;
+    background-repeat: no-repeat;
     padding-top: 150px;
     padding-bottom: 450px;
     position: relative;
@@ -1560,7 +1510,7 @@ body {
       .playground {
         // display: none;
         width: 100%;
-        
+
         img {
           width: 100%;
           position: absolute;
@@ -1644,7 +1594,7 @@ body {
         .shapePos2 {
           width: 50%;
           position: absolute;
-          top:123%;
+          top: 123%;
           left: 25%;
 
           // top: 73%;
@@ -1696,58 +1646,35 @@ body {
       //   width: 100%;
       //   text-align: center;
       //   padding-top: 50%;
-     
+
       //   .next_page{
       //     width: 60%;
       //     display: inline-block;
       //     z-index: 5;
-      //     // margin: auto; 
+      //     // margin: auto;
       //   }
       // }
-      
     }
   }
-  
 
+  // ------ 第一屏 tablet End --------
 
+  // ---- 巧克力背景 tablet Start -------
 
-// ------ 第一屏 tablet End --------
-
-
-
-
-
-
-// ---- 巧克力背景 tablet Start -------
-
-
-.choco_background {
-  width: 100%;
-  // position: relative;
-  .choco_img {
-    width: 140%;
-    position: absolute;
-    top:95%;
-    left: -20%;
+  .choco_background {
+    width: 100%;
+    // position: relative;
+    .choco_img {
+      width: 140%;
+      position: absolute;
+      top: 95%;
+      left: -20%;
+    }
   }
-}
 
+  // ---- 巧克力背景 tablet End -------
 
-
-// ---- 巧克力背景 tablet End -------
-
-
-
-
-
-
-
-
-
-// ----- 第二屏 tablet Start -----
-
-
-
+  // ----- 第二屏 tablet Start -----
 
   // * {
   //   outline: 1px solid red;
@@ -2026,7 +1953,7 @@ body {
         width: 100%;
         // height: 636px;
         text-align: center;
-        position: relative; 
+        position: relative;
         display: none;
         // padding-top: 13%;
         // background-image: url("../image/custom/talk.png");
@@ -2158,7 +2085,7 @@ body {
         h4 {
           font-size: 28px;
           position: absolute;
-          top:32.5%;
+          top: 32.5%;
           left: 0;
           right: 0;
         }
@@ -2169,17 +2096,11 @@ body {
           left: 0;
           right: 0;
         }
-        
       }
     }
   }
 
-
-
-
   // ----- 第二屏 tablet End -----
-
-
 
   // ----- 第三屏 tablet Start -----
 
@@ -2193,22 +2114,22 @@ body {
     background-color: #fff4e2;
     // max-width: 1200px;
     margin: 0 auto;
-    .thrid_step_moble{
+    .thrid_step_moble {
       width: 100%;
       position: relative;
-        text-align: center;
-        .thrid_stepInfo {
-          position: absolute;
-          top: 17%;
-          left: 10%;
-          right: 0;
-          h3 {
-            // width: 90%;
-            font-size: 28px;
-            padding: 2% 0;
-          }
+      text-align: center;
+      .thrid_stepInfo {
+        position: absolute;
+        top: 17%;
+        left: 10%;
+        right: 0;
+        h3 {
+          // width: 90%;
+          font-size: 28px;
+          padding: 2% 0;
+        }
+      }
     }
-  }
 
     .outlok_wrap {
       max-width: 1200px;
@@ -2221,7 +2142,7 @@ body {
       padding-bottom: 50px;
 
       //  left side start
-   
+
       .select_outlook {
         width: 100%;
         // display: flex;
@@ -2276,7 +2197,7 @@ body {
           display: flex;
           justify-content: center;
           background-color: white;
-          
+
           .bar_photo {
             width: 20%;
             padding: 3%;
@@ -2294,7 +2215,7 @@ body {
           box-shadow: 10px 10px #4ea5a5;
           border-radius: 20px;
           overflow: hidden;
-         margin-top: 5%;
+          margin-top: 5%;
           .tab_item {
             width: 100%;
             // padding-bottom: 5%;
@@ -2410,7 +2331,7 @@ body {
         // flex-flow: column wrap;
         // justify-content: space-around;
         .fix_photo {
-          display:none;
+          display: none;
           width: 100%;
           padding-bottom: 5%;
         }
@@ -2485,10 +2406,7 @@ body {
 
   // ----- 第三屏 tablet End -----
 
-
-
-
- // ----- 第四屏 tablet Start -----
+  // ----- 第四屏 tablet Start -----
 
   // * {
   //   outline: 1px solid red;
@@ -2754,13 +2672,10 @@ body {
       }
     }
 
-
-     // ----- 第四屏 mobile End -----
-
-
+    // ----- 第四屏 mobile End -----
   }
 
-  .card_mobile{
+  .card_mobile {
     width: 100%;
     // display: none;
     // padding-top: 150px;
@@ -2817,7 +2732,6 @@ body {
             // margin: auto;
           }
         }
-       
       }
 
       .card_info_mobile {
@@ -2827,7 +2741,7 @@ body {
         flex-flow: column wrap;
         // justify-content: space-between;
         margin: auto;
-        
+
         .card_items {
           width: 90%;
           background-color: #7fc3c6;
@@ -3024,12 +2938,9 @@ body {
       }
     }
 
-
-     // ----- 第四屏 tablet End -----
+    // ----- 第四屏 tablet End -----
   }
 }
-
-
 
 // ------ 第一屏 desktop Start --------
 @keyframes fadeEffect {
@@ -3040,7 +2951,7 @@ body {
     opacity: 1;
   }
 }
-@media (min-width: 1200px)  {
+@media (min-width: 1200px) {
   // * {
   //   outline: 1px solid red;
   // }
@@ -3050,7 +2961,7 @@ body {
 
   .custom {
     width: 100%;
-    background: url("../image/custom/bg.png") no-repeat;
+    background: url("../image/custom/123.png") no-repeat;
     margin: 0 auto;
     padding-top: 150px;
     position: relative;
@@ -3075,10 +2986,10 @@ body {
         width: 100%;
 
         img {
-          width: 50%;
+          width: 58%;
           position: absolute;
-          top: 31%;
-        left: 11%;
+          top: 17%;
+          left: -5%;
           z-index: 1;
         }
       }
@@ -3091,8 +3002,8 @@ body {
         background-repeat: no-repeat;
         // padding-top: 19%;
         position: absolute;
-        top: 33%;
-        right: 13%;
+        top: 27%;
+        right: 5%;
         transform: rotate(12deg);
         text-align: center;
         &Info {
@@ -3134,8 +3045,8 @@ body {
           width: 20%;
           // position: relative;
           position: absolute;
-          top: 45%;
-          left: 28%;
+          top: 35%;
+          left: 25%;
           transition: 2s;
           transform: scale(0.675);
           z-index: 1;
@@ -3143,8 +3054,8 @@ body {
         .shapePos1 {
           width: 20%;
           position: absolute;
-          top: 65%;
-          left: 18%;
+          top: 55%;
+          left: 15%;
           /*left:386px;*/
           z-index: 2;
           transition: 1.5s;
@@ -3153,7 +3064,7 @@ body {
         .shapePos2 {
           width: 20%;
           position: absolute;
-          top: 73%;
+          top: 63%;
           left: 40%;
           /*left:175px;*/
           z-index: 3;
@@ -3162,9 +3073,9 @@ body {
         .shapePos3 {
           width: 20%;
           position: absolute;
-          top: 65%;
+          top: 55%;
 
-          left: 62%;
+          left: 65%;
           /*left:900px;*/
           z-index: 2;
           transition: 1.5s;
@@ -3173,7 +3084,7 @@ body {
         .shapePos4 {
           width: 20%;
           position: absolute;
-          top: 45%;
+          top: 35%;
           left: 57%;
           /*left:785px;*/
           transition: 1.5s;
@@ -3183,7 +3094,7 @@ body {
         .right_btn {
           width: 3%;
           position: absolute;
-          bottom: 1%;
+          bottom: 11%;
           left: 60.5%;
           z-index: 4;
           cursor: pointer;
@@ -3191,30 +3102,26 @@ body {
         .left_btn {
           width: 3%;
           position: absolute;
-          bottom: 1%;
+          bottom: 11%;
           left: 37%;
           z-index: 4;
           cursor: pointer;
         }
       }
-     .next_button{
+      .next_button {
         width: 100%;
         text-align: center;
         padding-top: 10%;
         z-index: 1;
-        .next_page{
+        .next_page {
           width: 15%;
           display: inline-block;
-          margin: auto; 
+          margin: auto;
         }
       }
     }
   }
   // ------ 第一屏 desktop  End -------
-
-
-
-
 
   // ---- 巧克力背景 desktop Start -------
 
@@ -3229,10 +3136,6 @@ body {
   }
 
   // ---- 巧克力背景 desktop End -------
-
-
-
-
 
   // ----- 第二屏 desktop Start -----
 
@@ -3423,7 +3326,7 @@ body {
             justify-content: center;
           }
           img {
-            width: 75%;
+            width: 60%;
 
             p {
               // padding-top: 20%;
@@ -3670,23 +3573,23 @@ body {
     background-color: #fff4e2;
     // max-width: 1200px;
     margin: 0 auto;
-   .thrid_step_moble{
+    .thrid_step_moble {
+      display: none;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      .thrid_stepInfo {
         display: none;
-        width: 100%;
-        position: relative;
-          text-align: center;
-          .thrid_stepInfo {
-            display: none;
-            position: absolute;
-            top: 17%;
-            left: 10%;
-            right: 0;
-            h3 {
-              display: none;
-              // width: 90%;
-              font-size: 28px;
-              padding: 2% 0;
-            }
+        position: absolute;
+        top: 17%;
+        left: 10%;
+        right: 0;
+        h3 {
+          display: none;
+          // width: 90%;
+          font-size: 28px;
+          padding: 2% 0;
+        }
       }
     }
     .outlok_wrap {
@@ -3698,7 +3601,6 @@ body {
       margin: auto;
       padding-bottom: 50px;
 
-   
       //  left side start
 
       .select_outlook {
@@ -3741,7 +3643,7 @@ body {
           }
         }
         .fix_photo_mobile {
-          display:none;
+          display: none;
           width: 90%;
           padding-bottom: 5%;
           margin: auto;
@@ -3755,7 +3657,7 @@ body {
           display: flex;
           justify-content: center;
           background-color: white;
-          
+
           .bar_photo {
             display: none;
             width: 20%;
@@ -4226,7 +4128,7 @@ body {
       }
     }
   }
-  .card_mobile{
+  .card_mobile {
     width: 100%;
     display: none;
     // padding-top: 150px;
@@ -4283,7 +4185,6 @@ body {
             // margin: auto;
           }
         }
-       
       }
 
       .card_info_mobile {
@@ -4293,7 +4194,7 @@ body {
         flex-flow: column wrap;
         // justify-content: space-between;
         margin: auto;
-        
+
         .card_items {
           width: 100%;
           background-color: #7fc3c6;
@@ -4490,8 +4391,7 @@ body {
       }
     }
 
-
-     // ----- 第四屏 mobile End -----
+    // ----- 第四屏 mobile End -----
   }
   // ----- 第四屏 desktop End -----
 }
