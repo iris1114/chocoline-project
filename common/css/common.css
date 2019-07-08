@@ -197,7 +197,8 @@ header {
       text-align: center;
       padding: 7% 0;
       font-family: "Noto Sans TC", sans-serif;
-      line-height: normal; }
+      line-height: normal;
+      position: relative; }
       @media all and (max-width: 767px) {
         .m_header .menubox li {
           font-size: 18px; } }
@@ -209,6 +210,9 @@ header {
           font-size: 28px; } }
       .m_header .menubox li a {
         color: #F6EED4; }
+    @media all and (orientation: landscape) {
+      .m_header .menubox li {
+        padding: 2% 0; } }
     .m_header .menubox #menuclose {
       position: absolute;
       width: 50px;
@@ -223,6 +227,22 @@ header {
 
 .d_header {
   display: none; }
+
+.nowpage {
+  position: relative;
+  top: 9px; }
+  .nowpage::before {
+    content: "";
+    background: url("../image/headerfooter/li_bg.png") no-repeat 50% 0/contain;
+    width: 100%;
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto; }
 
 @media all and (min-width: 992px) {
   .m_header {
@@ -249,7 +269,8 @@ header {
       justify-content: center; }
       .d_header .menubox li {
         font-size: 18px;
-        margin: 0 12px; }
+        margin: 0 12px;
+        position: relative; }
         .d_header .menubox li a {
           color: #F6EED4;
           display: block; } }
@@ -322,7 +343,7 @@ header {
     border-radius: 10px;
     border: 2px solid #592F13;
     background-color: white;
-    animation: prompt_move 1s infinite alternate; }
+    animation: prompt_move 1.5s infinite alternate; }
     @media all and (max-width: 767px) {
       .robot .robot_prompt {
         font-size: 16px; } }
@@ -349,7 +370,7 @@ header {
 
 @keyframes prompt_move {
   0% {
-    top: -12%; }
+    top: -11%; }
   100% {
     top: -10%; } }
     .robot .robot_prompt:after {
@@ -456,6 +477,46 @@ header {
       margin: auto;
       transform: rotate(45deg);
       transition: transform 1s; }
+  .robot .robot_click1 {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 70px;
+    cursor: pointer; }
+  .robot .robot_click2 {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 12%;
+    margin: auto;
+    width: 20%;
+    height: 20%;
+    cursor: pointer; }
+  .robot .robot_click3 {
+    position: absolute;
+    top: 0;
+    right: 11%;
+    bottom: auto;
+    left: auto;
+    margin: auto;
+    width: 20%;
+    height: 20%;
+    cursor: pointer; }
+  .robot .robot_click1 {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 70px;
+    cursor: pointer; }
   .robot .robot_content {
     position: absolute;
     top: 35%;
@@ -476,49 +537,49 @@ header {
       width: 194px;
       z-index: 11; }
     .robot .robot_content .message_area {
-      padding: 30px 20px 10px 20px;
+      padding: 20px 20px 0 20px;
       width: 100%;
       height: 47%;
       overflow-y: scroll;
       overflow-x: hidden; }
       .robot .robot_content .message_area .message {
         position: relative;
-        width: 100%;
         max-width: 80%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         padding: 10px;
         background-color: #F6EED4;
-        border-radius: 10px; }
-        .robot .robot_content .message_area .message:nth-child(odd) {
-          float: left; }
-          .robot .robot_content .message_area .message:nth-child(odd):before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: auto;
-            bottom: auto;
-            left: -15px;
-            margin: auto;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 15px 5px 0;
-            border-color: transparent #F6EED4 transparent transparent; }
-        .robot .robot_content .message_area .message:nth-child(even) {
-          float: right; }
-          .robot .robot_content .message_area .message:nth-child(even):before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: -15px;
-            bottom: auto;
-            left: auto;
-            margin: auto;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 0 5px 15px;
-            border-color: transparent transparent transparent #F6EED4; }
+        border-radius: 10px;
+        word-break: break-all; }
+      .robot .robot_content .message_area .message_ask {
+        float: right; }
+        .robot .robot_content .message_area .message_ask:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -15px;
+          bottom: auto;
+          left: auto;
+          margin: auto;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 0 5px 15px;
+          border-color: transparent transparent transparent #F6EED4; }
+      .robot .robot_content .message_area .message_answer {
+        float: left; }
+        .robot .robot_content .message_area .message_answer:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: auto;
+          bottom: auto;
+          left: -15px;
+          margin: auto;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 15px 5px 0;
+          border-color: transparent #F6EED4 transparent transparent; }
     .robot .robot_content .keyword_area {
       padding: 5px;
       width: 90%;
@@ -537,26 +598,27 @@ header {
         .robot .robot_content .keyword_area .prev_button i,
         .robot .robot_content .keyword_area .next_button i {
           color: #F6EED4; }
-      .robot .robot_content .keyword_area .keyword_wrap {
-        display: flex;
-        width: 80%;
+      .robot .robot_content .keyword_area .keyword_space {
         overflow: hidden; }
-        .robot .robot_content .keyword_area .keyword_wrap .keyword {
-          color: #F6EED4;
-          font-family: "Noto Sans TC", sans-serif;
-          line-height: normal;
-          padding: 5px;
-          cursor: pointer;
-          white-space: nowrap; }
-          @media all and (max-width: 767px) {
-            .robot .robot_content .keyword_area .keyword_wrap .keyword {
-              font-size: 16px; } }
-          @media all and (min-width: 768px) {
-            .robot .robot_content .keyword_area .keyword_wrap .keyword {
-              font-size: 16px; } }
-          @media all and (min-width: 992px) {
-            .robot .robot_content .keyword_area .keyword_wrap .keyword {
-              font-size: 16px; } }
+        .robot .robot_content .keyword_area .keyword_space .keyword_wrap {
+          display: flex; }
+          .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
+            color: #F6EED4;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: normal;
+            padding: 5px;
+            display: inline-block;
+            cursor: pointer;
+            white-space: nowrap; }
+            @media all and (max-width: 767px) {
+              .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
+                font-size: 16px; } }
+            @media all and (min-width: 768px) {
+              .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
+                font-size: 16px; } }
+            @media all and (min-width: 992px) {
+              .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
+                font-size: 16px; } }
     .robot .robot_content .query_area {
       background-color: #ff8d8d;
       width: 90%;
