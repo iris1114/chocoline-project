@@ -1,0 +1,280 @@
+
+@import"../../common/sass/common.scss";
+
+*{
+    // outline: 1px solid red;
+}
+$color_milk: #F6EED4;
+$color_gray: #9B9B9B;
+$color_ship: #84512F;
+$color_brown: #592F13;
+$color_red: #ED1C24;
+$color_blue:#1A99AD;
+$color_deepblue:#157E8F;
+$color_orange:#EF9021;
+$color_deeporange: #c3771b;
+
+
+
+body{
+    background-color: #FFF5E3; 
+    background: url(../image/cart/bg.png) no-repeat  100% 100%/ cover; 
+    overflow-x: hidden;
+
+}
+
+
+// -------------global class----------//
+.w-100{
+    width: 100px;
+}
+
+.cloud{
+    position: absolute;
+    z-index: -1;
+    top:30%;
+    animation: cloud 40s linear  infinite;
+}
+
+@keyframes cloud {
+    0% {transform: translateX(-10%)}
+    100% {transform: translateX(10%)}
+}    
+
+
+.box{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap; 
+    margin: auto;
+    justify-content: center;
+}
+
+@include rwd(desktop){
+    .lg_d_n{
+        display: none;
+    }
+}
+
+@include rwd(mobile){
+    .m_d_n{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .t_d_n{
+        display: none;
+    }
+} 
+
+.cart_title_box{
+    background-color: $color_blue;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: $color_milk 2px solid;
+    h5{
+        color: $color_milk;
+        @include font_m();
+    }
+}
+
+
+.cart_show_box{
+    background-color: #fff;
+    border: $color_blue solid 2px; 
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    @include font_m();
+    align-items: center;
+
+}
+
+#cartflow_container{
+    padding-top: 150px;
+    }
+
+
+// --------cart_form--------//
+
+.cart_form{
+    background-color: #fff;
+    padding: 20px;
+    border: $color_blue solid 2px;
+    border-radius: 10px;  
+    .cart_total {
+        text-align: right;
+        padding: 10px;
+        @include font_m();
+
+        & :last-child{
+            padding-top: 30px;
+           
+        }
+    }
+    .amout{
+        @include font_l();
+        color: $color_red;
+    }
+}
+
+// --------cart_btn_group --------//
+
+
+.cart_btn_group {
+    padding-top: 50px;
+    text-align: center;
+}
+
+
+
+
+// ----------------------------------------------------//
+// -----------------cart——shipping---------------------//
+#cart_shipping_container{
+
+    .shipping_box{
+       display: flex;
+       justify-content: space-between;
+    }
+
+}
+
+
+#cart_bonus_container{
+    padding-top: 0px;
+    .bonus_box{
+        display: flex;
+        justify-content: space-between;
+       
+        .bonus_decs{
+            text-align: left;
+            a{
+                @include font_s();
+                text-decoration: underline;
+
+            }
+        }
+        .bonus_input{
+            text-align: right;
+            input{
+                width: 20%;
+                @include font_m();
+                border:2px solid $color_blue;
+                border-radius: 5px; 
+                text-align: right;  
+            }
+        }
+       
+    }
+}
+
+
+#cart_total_container{
+    padding-top: 0px;
+}
+
+
+
+
+// -------------------------------RWD TABLET------------------------------//
+
+@media (min-width: 768px) and (max-width: 991px){
+  
+#cartflow_container{
+    padding-top: 20%;
+}
+
+
+
+
+
+
+} 
+// ------------------------------RWD MOBILE------------------------------//
+
+
+
+
+@include rwd(mobile){
+//-------- #cartflow_container ---------//
+body{
+    height: 100vh; 
+
+}
+
+.col_md_12{
+    padding: 0;
+}
+
+.cart_title_box{
+    height: 55px; 
+}
+
+h5,p{
+    @include font_s();
+}
+
+#cartflow_container{
+    padding-top: 120px;
+        .wrap img{
+            display: none;
+        }
+    }   
+ 
+// --------cart_title_container--------//   
+
+#cart_title_container  {
+    .cart_title_box{
+        display: none;
+    }
+    
+}
+
+.wrap{
+    padding: 0;
+}
+
+
+
+
+#cart_show_container{
+    margin-top: 30px;
+    padding: 0;
+
+
+}  
+ 
+
+.cart_form{
+    width: 92%;
+    margin: auto;
+    margin-bottom: 80px;
+
+}
+
+.cart_btn_group{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    .btn{
+        width: 187.5px;
+        margin: 0;
+        border: $color_deeporange 2px solid;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    
+}
+
+
+footer{
+    display:none;
+}
+
+}
