@@ -1797,6 +1797,7 @@ html {
 
 body {
   overflow: hidden;
+  background: #AD9380;
 }
 
 .introduce_container {
@@ -1852,6 +1853,12 @@ body {
   position: relative;
 }
 
+@media all and (max-width: 767px) {
+  .introduce_container .front {
+    background: url("../image/role/slippery.png") no-repeat 60% 100%, url("../image/role/pool.png") no-repeat 50% -40%, url("../image/role/downgrass.png") no-repeat 7% 72%, url("../image/role/right_bg.png") no-repeat 50% -35%, url("../image/role/upgrass.png") no-repeat 5% 33%, url("../image/role/left_bg.png") no-repeat 0% -205%;
+  }
+}
+
 .introduce_container .choco_playing {
   width: 1920px;
   position: absolute;
@@ -1860,7 +1867,8 @@ body {
 }
 
 .introduce_container .bread {
-  width: 414px;
+  width: 100%;
+  max-width: 414px;
   position: relative;
 }
 
@@ -1931,12 +1939,33 @@ body {
   padding-top: 50px;
 }
 
+@media all and (max-width: 991px) {
+  .introduce_container .contain {
+    display: block;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .contain {
+    padding: 0;
+  }
+}
+
 .introduce_container .player {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  margin: 0 auto;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .player {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
 }
 
 .introduce_container .choconame {
@@ -2038,15 +2067,48 @@ body {
   z-index: -1;
 }
 
+@media all and (max-width: 1300px) {
+  .introduce_container .detail {
+    width: 70%;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .introduce_container .detail {
+    width: 100%;
+    margin: auto;
+    padding-top: 50px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .detail {
+    padding: 0;
+  }
+}
+
 .introduce_container .information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+@media all and (max-width: 767px) {
+  .introduce_container .information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .introduce_container .information::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .introduce_container #choco_information {
   width: 265px;
-  height: 360px;
+  max-height: 360px;
   background: #fff;
   border: 3px solid #157E8F;
   border-radius: 15px;
@@ -2121,6 +2183,24 @@ body {
   }
 }
 
+@media all and (max-width: 1300px) {
+  .introduce_container #choco_information li:nth-child(2) p {
+    font-size: 24px;
+  }
+}
+
+@media all and (max-width: 1055px) {
+  .introduce_container #choco_information li:nth-child(2) p {
+    font-size: 22px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container #choco_information li:nth-child(2) p {
+    font-size: px;
+  }
+}
+
 .introduce_container #choco_information li:nth-child(3) {
   text-align: center;
   width: 100%;
@@ -2180,35 +2260,59 @@ body {
 }
 
 .introduce_container #cardfront {
-  width: 340px;
+  width: 290px;
 }
 
 .introduce_container #cardback {
   width: 290px;
 }
 
-.introduce_container .rotate_l {
-  -webkit-transform: rotate(-10deg) translate(20%, 0%);
-          transform: rotate(-10deg) translate(20%, 0%);
-  -webkit-transition: .5s;
-  transition: .5s;
-  z-index: 3;
+@media all and (max-width: 767px) {
+  .introduce_container #choco_information {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 203px;
+    margin: 0 20px;
+  }
+  .introduce_container #cardfront {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 203px;
+    margin: 0 20px;
+  }
+  .introduce_container #cardback {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 203px;
+    margin: 0 20px;
+  }
 }
 
-.introduce_container .rotate_m {
-  -webkit-transform: rotate(0deg) translate(0%, -10%);
-          transform: rotate(0deg) translate(0%, -10%);
-  -webkit-transition: .5s;
-  transition: .5s;
-  z-index: 2;
-}
-
-.introduce_container .rotate_r {
-  -webkit-transform: rotate(15deg) translate(-20%, 5%);
-          transform: rotate(15deg) translate(-20%, 5%);
-  -webkit-transition: .5s;
-  transition: .5s;
-  z-index: 1;
+@media all and (min-width: 768px) {
+  .introduce_container .rotate_l {
+    -webkit-transform: rotate(-10deg) translate(20%, 0%);
+            transform: rotate(-10deg) translate(20%, 0%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    z-index: 3;
+  }
+  .introduce_container .rotate_m {
+    -webkit-transform: rotate(0deg) translate(0%, -10%);
+            transform: rotate(0deg) translate(0%, -10%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    z-index: 2;
+  }
+  .introduce_container .rotate_r {
+    -webkit-transform: rotate(15deg) translate(-20%, 5%);
+            transform: rotate(15deg) translate(-20%, 5%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    z-index: 1;
+  }
 }
 
 .introduce_container .collect_vote {
@@ -2217,6 +2321,12 @@ body {
 
 .introduce_container .collect_vote span::after {
   bottom: 0;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .collect_vote {
+    padding-top: 30px;
+  }
 }
 
 .introduce_container .heart_unclick {
@@ -2448,9 +2558,26 @@ body {
   background: url("../image/role/pool.png") no-repeat 50% 22.4%, url("../image/role/swan.png") no-repeat 8% 30%, url("../image/role/leftball.png") no-repeat 3% 40%, url("../image/role/rightball.png") no-repeat 97% 30%, #FFF5E3;
 }
 
+.message_board_container .phone_message_title {
+  display: none;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.message_board_container .phone_message_title p {
+  font-size: 36px;
+  color: #F6EED4;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .phone_message_title {
+    display: block;
+  }
+}
+
 .message_board_container .message_board_wrap {
   height: 1350px;
-  width: 1000px;
+  max-width: 1000px;
   overflow-y: auto;
 }
 
@@ -2511,6 +2638,29 @@ body {
 
 .message_board_container .cus_photo img {
   border-radius: 15px;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_board_wrap {
+    height: 510px;
+  }
+  .message_board_container .message_block {
+    padding: 0;
+  }
+  .message_board_container .message_item {
+    width: 100%;
+    height: 170px;
+    background: url("../image/role/message_bg.png") 50% 50% no-repeat/contain;
+  }
+  .message_board_container .message {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    padding: 0;
+  }
+  .message_board_container .cus_photo {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .message_board_container .message_contain {
@@ -2601,6 +2751,7 @@ body {
 
 .message_board_container .input_message_wrap {
   padding-top: 100px;
+  background: #AD9380;
 }
 
 .message_board_container .input_message {
@@ -2611,6 +2762,16 @@ body {
   position: relative;
   border-radius: 9px;
   margin: auto;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .input_message_wrap {
+    padding-top: 50px;
+  }
+  .message_board_container .input_message {
+    width: 100%;
+    height: 65px;
+  }
 }
 
 .message_board_container #input_text {
@@ -2706,7 +2867,26 @@ body {
   background: #1A99AD;
 }
 
+@media all and (max-width: 991px) {
+  .message_board_container {
+    padding-top: 40%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container {
+    height: auto;
+    padding-top: 30%;
+  }
+}
+
 footer {
   z-index: 1;
   background: #AD9380;
+}
+
+@media all and (max-width: 991px) {
+  footer {
+    margin-top: 30%;
+  }
 }
