@@ -1259,11 +1259,13 @@
           chos[i].addEventListener("click", function (e) {
             let cho = e.target;
             console.log(cho);
-
-
-            large.src = cho.src.replace("small", "big").replace("SP_", "");
-            console.log(large);
-            console.log("large.src", large.src);
+            console.log(cho.src);
+            
+            // newSrc = cho.src.replace("small", "big").replace("SP_", "");
+            newSrc = "M1_001.png";
+            document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/'+ newSrc +'" id="big_cho" alt="bear">';
+            console.log(newSrc);
+            // console.log("large.src", large.src);
           }, false);
         }
       }, false);
