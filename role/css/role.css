@@ -1852,6 +1852,13 @@ body {
   position: relative;
 }
 
+.introduce_container .choco_playing {
+  width: 1920px;
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+}
+
 .introduce_container .bread {
   width: 414px;
   position: relative;
@@ -2208,6 +2215,10 @@ body {
   text-align: center;
 }
 
+.introduce_container .collect_vote span::after {
+  bottom: 0;
+}
+
 .introduce_container .heart_unclick {
   color: #F6EED4;
 }
@@ -2378,6 +2389,8 @@ body {
   bottom: 23%;
   left: auto;
   margin: auto;
+  -webkit-animation: chocowalk 5s infinite linear;
+          animation: chocowalk 5s infinite linear;
 }
 
 .introduce_container .donut_bg {
@@ -2388,6 +2401,8 @@ body {
   bottom: 19%;
   left: auto;
   margin: auto;
+  -webkit-animation: chocowalk 5s -2s infinite linear;
+          animation: chocowalk 5s -2s infinite linear;
 }
 
 .introduce_container .cake_bg {
@@ -2398,6 +2413,8 @@ body {
   bottom: 10%;
   left: auto;
   margin: auto;
+  -webkit-animation: chocowalk 5s -4s infinite linear;
+          animation: chocowalk 5s -4s infinite linear;
 }
 
 .introduce_container .cookies_bg {
@@ -2405,9 +2422,23 @@ body {
   position: absolute;
   top: auto;
   right: 4%;
-  bottom: 5%;
+  bottom: 0%;
   left: auto;
   margin: auto;
+  -webkit-animation: chocowalk 5s -6s infinite linear;
+          animation: chocowalk 5s -6s infinite linear;
+}
+
+.introduce_container .bear_bg {
+  width: 109px;
+  position: absolute;
+  top: auto;
+  right: 8%;
+  bottom: -15%;
+  left: auto;
+  margin: auto;
+  -webkit-animation: chocowalk 5s -8s infinite linear;
+          animation: chocowalk 5s -8s infinite linear;
 }
 
 .message_board_container {
@@ -2418,12 +2449,14 @@ body {
 }
 
 .message_board_container .message_board_wrap {
-  padding: 0 8%;
+  height: 1350px;
+  width: 1000px;
+  overflow-y: auto;
 }
 
 .message_board_container .message_block {
   width: 100%;
-  padding: 2% 0;
+  padding: 20px 0;
 }
 
 .message_board_container .message_block::after {
@@ -2512,6 +2545,7 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
   padding-top: 5%;
+  word-break: break-all;
 }
 
 @media all and (max-width: 767px) {
@@ -2566,14 +2600,17 @@ body {
 }
 
 .message_board_container .input_message_wrap {
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .message_board_container .input_message {
-  width: 100%;
+  width: 80%;
   height: 100px;
   background: #fff;
-  border: 2px solid #1A99AD;
+  border: 2px solid #157E8F;
+  position: relative;
+  border-radius: 9px;
+  margin: auto;
 }
 
 .message_board_container #input_text {
@@ -2581,13 +2618,55 @@ body {
   height: 100%;
   border: none;
   list-style: none;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  border-radius: 9px;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  padding: 0 10px;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container #input_text {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container #input_text {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container #input_text {
+    font-size: 28px;
+  }
+}
+
+.message_board_container #input_text:focus {
+  outline: none;
 }
 
 .message_board_container #submit_btn {
-  width: 15%;
+  width: 20%;
   height: 100%;
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
 }
 
 @media all and (max-width: 767px) {
@@ -2606,6 +2685,25 @@ body {
   .message_board_container #submit_btn {
     font-size: 28px;
   }
+}
+
+.message_board_container #submit_btn:focus {
+  outline: none;
+}
+
+.message_board_container #submit_btn:before {
+  content: "";
+  width: 2px;
+  opacity: .5;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #1A99AD;
 }
 
 footer {

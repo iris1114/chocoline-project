@@ -90,18 +90,23 @@
             <img src="image/role/light.png" alt="light">
         </figure>
         <div class="front">
-            <figure class="peanut_bg">
-                <img src="image/role/peanut_bg.png" alt="peanut">
-            </figure>
-            <figure class="donut_bg">
-                <img src="image/role/donut_bg.png" alt="donut">
-            </figure>
-            <figure class="cake_bg">
-                <img src="image/role/cake_bg.png" alt="cake">
-            </figure>
-            <figure class="cookies_bg">
-                <img src="image/role/cookies_bg.png" alt="cookies">
-            </figure>
+            <div class="choco_playing">
+                <figure class="peanut_bg">
+                    <img src="image/role/peanut_bg.png" alt="peanut">
+                </figure>
+                <figure class="donut_bg">
+                    <img src="image/role/donut_bg.png" alt="donut">
+                </figure>
+                <figure class="cake_bg">
+                    <img src="image/role/cake_bg.png" alt="cake">
+                </figure>
+                <figure class="cookies_bg">
+                    <img src="image/role/cookies_bg.png" alt="cookies">
+                </figure>
+                <figure class="bear_bg">
+                    <img src="image/role/bear_bg.png" alt="bear">
+                </figure>
+            </div>
             <div class="wrap">
                 <div class="bread">
                     <img src="image/role/bread.png" alt="bread">
@@ -178,7 +183,7 @@
 <!-- introduce_container end -->
 <!-- message_board start -->
     <section class="message_board_container">
-        <div class="wrap message_board_wrap">
+        <div class="wrap message_board_wrap" id="message_board_wrap">
             <div class="message_block">
                 <div class="message_item">
                     <div class="message">
@@ -274,10 +279,48 @@
                     </div>
                 </div>
             </div>
+            <div class="message_block">
+                <div class="message_item">
+                    <div class="message">
+                        <figure class="cus_photo">
+                            <img src="image/role/dongdong.png" alt="memphoto">
+                        </figure>
+                        <div class="message_contain">
+                            <p class="memName">董董</p>
+                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
+                        </div>
+                        <div class="status">
+                            <a href="javascrupt:;" class="btn cyan_s">
+                                <span>檢舉</span>
+                            </a>
+                            <p class="message_date">2019/07/24</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message_block">
+                <div class="message_item">
+                    <div class="message">
+                        <figure class="cus_photo">
+                            <img src="image/role/dongdong.png" alt="memphoto">
+                        </figure>
+                        <div class="message_contain">
+                            <p class="memName">董董</p>
+                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
+                        </div>
+                        <div class="status">
+                            <a href="javascrupt:;" class="btn cyan_s">
+                                <span>檢舉</span>
+                            </a>
+                            <p class="message_date">2019/07/24</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="wrap input_message_wrap">
             <div class="input_message">
-                <input type="text" name="" id="input_text">
+                <input type="text" name="" id="input_text" placeholder="快來留言..." maxlength="50">
                 <button id="submit_btn">送出</button>
             </div>
         </div>
@@ -340,11 +383,7 @@
     <div class="robot_content">
     <div id="robot_message" class="message_area">
         <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
-        <p
-        id="message_ask_sample"
-        class="message message_ask"
-        style="display:none"
-        >
+        <p id="message_ask_sample" class="message message_ask" style="display:none">
         歡迎光臨CHOCOLINE....!!
         </p>
     </div>
@@ -370,6 +409,7 @@
     </div>
 </div>
 <!-- robot end -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src="../common/js/header.js"></script>
 <script src="../common/js/robot.js"></script>
 <script src="js/role.js"></script>

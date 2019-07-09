@@ -51,6 +51,12 @@ body{
             position: relative;
         }
     }
+    .choco_playing{
+        width: 1920px;
+        position: absolute;
+        height: 100%;
+        z-index: 1;
+    }
     .bread{
         width: 414px;
         position: relative;
@@ -187,6 +193,9 @@ body{
     }
     .collect_vote{
         text-align: center;
+        span::after{
+            bottom: 0;
+        }
     }
 
     .heart_unclick {
@@ -195,6 +204,7 @@ body{
     .heart_clicked {
         display: none;
         color: $color_milk;
+        
     }
     
     .firstlc{
@@ -266,19 +276,47 @@ body{
     .peanut_bg{
         width: 65px;
         @include pos(auto,2%,23%,auto);
+        animation: chocowalk 5s infinite linear;
     }
     .donut_bg{
         width: 65px;
         @include pos(auto,8%,19%,auto);
+        animation: chocowalk 5s -2s infinite linear;
     }
     .cake_bg{
         width: 99px;
         @include pos(auto,11%,10%,auto);
+        animation: chocowalk 5s -4s infinite linear;
     }
     .cookies_bg{
         width: 88px;
-        @include pos(auto,4%,5%,auto);
+        @include pos(auto,4%,0%,auto);
+        animation: chocowalk 5s -6s infinite linear;
     }
+    .bear_bg{
+        width: 109px;
+        @include pos(auto,8%,-15%,auto);
+        animation: chocowalk 5s -8s infinite linear;
+    }
+    
+    // @keyframes chocowalk {
+    //     0%{
+    //         transform: translate(0%,0%)
+    //     }
+    //     40%{
+    //         transform: translate(-10%,5%)
+    //     }
+    //     60%{
+    //         transform: translate(-2%,3%)
+    //     }
+    //     80%{
+    //         transform: translate(5%,-2%)
+    //     }
+    //     100%{
+    //         transform: translate(0%,%)
+    //     }
+
+    // }
 }
 .message_board_container{
     height: 1750px;
@@ -289,12 +327,15 @@ body{
                 url("../image/role/leftball.png") no-repeat 3% 40%,
                 url("../image/role/rightball.png") no-repeat 97% 30%,
                 #FFF5E3 ;
+    
     .message_board_wrap{
-        padding: 0 8%;
+        height: 1350px;
+        width: 1000px;
+        overflow-y: auto;
     }
     .message_block{
         width: 100%;
-        padding: 2% 0;
+        padding: 20px 0;
         &::after{
             content: "";
             display: block;
@@ -340,6 +381,7 @@ body{
         .mseeage_text{
             @include font_s();
             padding-top: 5%;
+            word-break: break-all;
         }
     }
     .status{
@@ -355,24 +397,51 @@ body{
     }
 
     .input_message_wrap{
-        padding-top: 150px;
+        padding-top: 100px;
     }
     .input_message{
-        width: 100%;
+        width: 80%;
         height: 100px;
         background: #fff;
-        border: 2px solid $color_blue;
+        border: 2px solid $color_deepblue;
+        position: relative;
+        border-radius: 9px;
+        margin: auto;
     }
     #input_text{
         width: 80%;
         height: 100%;
         border: none;
         list-style: none;
+        @include pos(0,auto,auto,auto);
+        border-radius: 9px;
+        @include font_l();
+        padding: 0 10px;
+        &:focus{
+            outline: none;
+        }
     }
     #submit_btn{
-        width: 15%;
+        width: 20%;
         height: 100%;
         @include font_l();
+        @include pos(0,0,auto,auto);
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 9px;
+        &:focus{
+            outline: none;
+        }
+        &:before{
+            content: "";
+            width: 2px;
+            opacity: .5;
+            height: 80%;
+            display: block;
+            @include pos(0,auto,0,0);
+            background: $color_blue;
+        }
     }
 }
 
