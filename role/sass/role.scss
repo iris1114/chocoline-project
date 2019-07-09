@@ -15,6 +15,7 @@ html{
 }
 body{
     overflow: hidden;
+    background: #AD9380;
 }
 .introduce_container{
     padding-top: 150px;
@@ -51,6 +52,16 @@ body{
             position: relative;
         }
     }
+    @media all and (max-width:767px){
+        .front{
+            background: url("../image/role/slippery.png") no-repeat 60% 100%,
+                    url("../image/role/pool.png") no-repeat 50% -40%,
+                    url("../image/role/downgrass.png") no-repeat 7% 72%,
+                    url("../image/role/right_bg.png") no-repeat 50% -35%,
+                    url("../image/role/upgrass.png") no-repeat 5% 33%,
+                    url("../image/role/left_bg.png") no-repeat 0% -205%;
+        }
+    }
     .choco_playing{
         width: 1920px;
         position: absolute;
@@ -58,7 +69,8 @@ body{
         z-index: 1;
     }
     .bread{
-        width: 414px;
+        width: 100%;
+        max-width: 414px;
         position: relative;
         p{
             @include pos(50%,auto,auto,50%);
@@ -77,11 +89,27 @@ body{
        align-items: center; 
        padding-top: 50px;
     }
+    @media all and (max-width:991px){
+        .contain{
+            display: block;
+        }
+    }
+    @media all and (max-width:767px){
+        .contain{
+            padding: 0;
+        }
+    }
     .player{
-        width: 350px;
+        width: 100%;
+        max-width: 350px;
         position: relative;
         flex: 0 0 auto;
-        
+        margin: 0 auto;
+    }
+    @media all and (max-width:767px){
+        .player{
+            transform: scale(0.7);
+        }
     }
     .choconame{
         width: 30%;
@@ -116,13 +144,39 @@ body{
         z-index: -1;
     }
 
+    @media all and (max-width:1300px){
+        .detail{
+            width: 70%;
+        }
+    }
+    @media all and (max-width:991px){
+        .detail{
+            width: 100%;
+            margin: auto;
+            padding-top: 50px;
+        }
+    }
+    @media all and (max-width:767px){
+        .detail{
+            padding: 0;
+        }
+    }
     .information{
         display: flex;
     }
-
+    @media all and (max-width:767px){
+        .information{
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
     #choco_information{
         width: 265px;
-        height: 360px;
+        max-height: 360px;
         background: #fff;
         border: 3px solid $color_deepblue;
         border-radius: 15px;
@@ -130,8 +184,8 @@ body{
         display: flex;
         align-items: center;
         text-align: left;
-        
         box-shadow: 11px 11px 0 $color_blue;
+        // flex: 0 0 auto;
         ul{
             width: 100%;
         }
@@ -147,6 +201,21 @@ body{
                 padding-bottom: 20px;
                 p{
                     @include font_l();
+                }
+                @media all and (max-width:1300px){
+                    p{
+                        font-size: 24px;
+                    }
+                }
+                @media all and (max-width:1055px){
+                    p{
+                        font-size: 22px;
+                    }
+                }
+                @media all and (max-width:767px){
+                    p{
+                        font-size: px;
+                    }
                 }
             }
             &:nth-child(3){
@@ -170,26 +239,44 @@ body{
         }
     }
     #cardfront{
-        width: 340px;
-        
+        width: 290px;
     }
     #cardback{
         width: 290px;
     }
-    .rotate_l{
-        transform: rotate(-10deg) translate(20% , 0%);
-        transition: .5s;
-        z-index: 3;
+    @media all and (max-width:767px){
+        #choco_information{
+            flex: 0 0 auto;
+            width: 203px;
+            margin: 0 20px;
+        }
+        #cardfront{
+            flex: 0 0 auto;
+            width: 203px;
+            margin: 0 20px;
+        }
+        #cardback{
+            flex: 0 0 auto;
+            width: 203px;
+            margin: 0 20px;
+        }
     }
-    .rotate_m{
-        transform: rotate(0deg) translate(0% , -10%);
-        transition: .5s;
-        z-index: 2;
-    }
-    .rotate_r{
-        transform: rotate(15deg) translate(-20% , 5%);
-        transition: .5s;
-        z-index: 1;
+    @media all and (min-width:768px){
+        .rotate_l{
+            transform: rotate(-10deg) translate(20% , 0%);
+            transition: .5s;
+            z-index: 3;
+        }
+        .rotate_m{
+            transform: rotate(0deg) translate(0% , -10%);
+            transition: .5s;
+            z-index: 2;
+        }
+        .rotate_r{
+            transform: rotate(15deg) translate(-20% , 5%);
+            transition: .5s;
+            z-index: 1;
+        }
     }
     .collect_vote{
         text-align: center;
@@ -197,7 +284,11 @@ body{
             bottom: 0;
         }
     }
-
+    @media all and (max-width:767px){
+        .collect_vote{
+            padding-top: 30px;
+        }
+    }
     .heart_unclick {
         color: $color_milk;
       }
@@ -327,10 +418,23 @@ body{
                 url("../image/role/leftball.png") no-repeat 3% 40%,
                 url("../image/role/rightball.png") no-repeat 97% 30%,
                 #FFF5E3 ;
-    
+    .phone_message_title{
+        display: none;
+        text-align: center;
+        padding: 30px 0;
+        p{
+            font-size: 36px;
+            color: $color_milk;
+        }
+    }
+    @media all and (max-width:767px){
+        .phone_message_title{
+            display: block;
+        }
+    }
     .message_board_wrap{
         height: 1350px;
-        width: 1000px;
+        max-width: 1000px;
         overflow-y: auto;
     }
     .message_block{
@@ -360,6 +464,7 @@ body{
         display: flex;
         padding: 0 4%;
     }
+   
     .cus_photo{
         width: 125px;
         height: 125px;
@@ -370,6 +475,27 @@ body{
         align-items: center;
         img{
             border-radius: 15px;
+        }
+    }
+    @media all and (max-width:767px){
+        .message_board_wrap{
+            height: 510px;
+        }
+        .message_block{
+            padding: 0;
+        }
+        .message_item{
+            width: 100%;
+            height: 170px;
+            background: url("../image/role/message_bg.png") 50% 50% no-repeat / contain;
+        }
+        .message{
+            transform: scale(0.9);
+            padding: 0;
+        }
+        .cus_photo{
+            width: 80px;
+            height: 80px;
         }
     }
     .message_contain{
@@ -398,6 +524,7 @@ body{
 
     .input_message_wrap{
         padding-top: 100px;
+        background: #AD9380;
     }
     .input_message{
         width: 80%;
@@ -407,6 +534,15 @@ body{
         position: relative;
         border-radius: 9px;
         margin: auto;
+    }
+    @media all and (max-width:767px){
+        .input_message_wrap{
+            padding-top: 50px;
+        }
+        .input_message{
+            width: 100%;
+            height: 65px;
+        }
     }
     #input_text{
         width: 80%;
@@ -444,8 +580,23 @@ body{
         }
     }
 }
-
+@media all and (max-width:991px){
+    .message_board_container{
+        padding-top: 40%;
+    }
+}
+@media all and (max-width:767px){
+    .message_board_container{
+        height: auto;
+        padding-top: 30%;
+    }
+}
 footer{
     z-index: 1;
     background: #AD9380;
+}
+@media all and (max-width:991px){
+    footer{
+        margin-top: 30%;
+    }
 }
