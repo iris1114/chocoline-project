@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/product.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="../common/js/robot.js"></script>
     <title>CHOCO商品</title>
@@ -105,7 +104,7 @@
             <h2>商品詳情</h2>
         </div>
         <div class="product_wrap wrap">
-            <p class="crumbs"><a href="">首頁</a> > <a href="">CHOCO商城</a> > <a>濃情巧克力禮盒</a></p>
+            <p class="crumbs"><a href="../index/index.html">首頁</a> > <a href="../store/store.html">CHOCO商城</a> > <a>濃情巧克力禮盒</a></p>
             <div class="product_pic_introduce">
                 <div class="choco_man">
                     <div class="choco_man_body"><img src="image/product/choco_man_body.png" alt=""></div>
@@ -153,9 +152,7 @@
 
                         <p class="price">價格 NT$350元</p>
                         <div class="qty_buttons">
-                            <input id="minus" class="minus" type="button" value="-" /><input id="qty" class="qty"
-                                type="text" value="1" min="1" max="10" step="1" name="qty" /><input id="plus"
-                                class="plus" type="button" value="+" />
+                            <input id="minus" class="minus" type="button" value="-" /><input id="qty" class="qty" type="text" value="1" min="1" max="10" step="1" name="qty" /><input id="plus" class="plus" type="button" value="+" />
                         </div>
 
                         <div class="product_button">
@@ -336,6 +333,7 @@
         pics[i].onclick = change_pic;
         console.log(pics[i]);
     }
+
     function change_pic() {
         for (var i = 0; i < pics.length; i++) {
             pics[i].style.border = "3px solid transparent";
@@ -361,6 +359,7 @@
             this.nextSibling.value = 1;
         }
     }
+
     function plus1() {
         var val = parseInt(this.previousSibling.value);
         console.log(this.previousSibling.value);
@@ -372,7 +371,7 @@
         }
     }
 
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
         var qty = document.getElementsByClassName("qty");
         var minus = document.getElementsByClassName("minus");
         var plus = document.getElementsByClassName("plus");
@@ -393,12 +392,12 @@
 
 <!-- collect start -->
 <script>
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
         var collect_btn = document.getElementsByClassName("collect_btn");
 
 
         for (i = 0; i < collect_btn.length; i++) {
-            collect_btn[i].addEventListener("click", function () {
+            collect_btn[i].addEventListener("click", function() {
                 var heart_clicked = this.getElementsByClassName("heart_clicked")[0];
                 var heart_unclick = this.getElementsByClassName("heart_unclick")[0];
 
@@ -418,18 +417,19 @@
 
 
 <script>
-    window.addEventListener("load", function () {
+    window.addEventListener("load", function() {
 
         var prev_button = document.getElementById("prev_button");
         var next_button = document.getElementById("next_button");
         var slideIndex = 1;
 
-        prev_button.onclick = function () {
+        prev_button.onclick = function() {
             plus_count(-1);
         };
-        next_button.onclick = function () {
+        next_button.onclick = function() {
             plus_count(1);
         };
+
         function plus_count(n) {
 
             car_change(slideIndex += n);
@@ -444,7 +444,9 @@
                 slideIndex = 1;
             }
 
-            if (n < 1) { slideIndex = cars.length }
+            if (n < 1) {
+                slideIndex = cars.length
+            }
             for (i = 0; i < cars.length; i++) {
 
                 cars[i].style.display = "none";
@@ -457,8 +459,6 @@
 
 
     })
-
-
 </script>
 
 <!-- slide end -->
