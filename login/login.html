@@ -81,7 +81,7 @@
 				</div>
 			</div>
 		</div>
-		<form action="login.php" method="post">
+		<!-- <form action="login.php" method="post"> -->
 		<!-- 燈箱：登入 -->
 		<div id="lightBox" style="display:none">
 			<div id="tableLogin">
@@ -91,8 +91,8 @@
 						<img src="image/login/login_closeicon.png" alt="">
 					</a>			
 					<h3>會員登入</h3>
-					<input type="text" name="memId" id="memId" value="" placeholder="帳號"><br>
-					<input type="password" name="memPsw" id="memPsw" value="" placeholder="密碼"><br>
+					<input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
+					<input type="password" name="mem_psw" id="mem_psw" value="" placeholder="密碼"><br>
 					<a href="#" id="forget_password">忘記密碼</a><br>
 					<a href="#" class="btn orange_l" id="btnLogin">登入</a><br>
 					<span>不是會員嗎?</span>
@@ -112,9 +112,9 @@
 					<h3>重設密碼</h3>
 					<p>請輸入帳號註冊時所留的電子<br>
 						郵件地址，以驗證您的資料</p>
-					<input type="mail" name="mail" id="userEmail" value="" placeholder="輸入E-mail"><br>
-					<input type="password" name="memPsw" id="newMemPsw" value="" placeholder="輸入新密碼"><br>
-					<input type="password" name="memPsw" id="reNewMemPsw" value="" placeholder="再次確認新密碼"><br>
+					<input type="mail" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+					<input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
+					<input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
 					<a href="#" class="btn orange_l" id="repassword">送出</a><br>
 				</div>
 			</div>
@@ -125,21 +125,21 @@
 				<img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
 				<div class="login_register">
 					<a href="#" class="btnLoginCancel">
-						<img src="image/login/login_closeicon.png" alt="">
+						<img src="image/login/login_closeicon.png" alt="btnLoginCancel">
 					</a>			
 					<h3>會員註冊</h3>
 					<p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
 							請填下您的個人資料。</p>
-					<span>*帳號</span><input type="text" name="memPsw" id="newMemId" value="" placeholder="設定帳號"><br>
-					<span>*E-mail</span><input type="mail" name="mail" id="newmemEmail" value="" placeholder="輸入E-mail"><br>
-					<span>*密碼</span><input type="password" name="memPsw" id="newMemPsw" value="" placeholder="設定密碼"><br>
-					<span>*密碼確認</span><input type="password" name="memPsw" id="renewMemPsw" value="" placeholder="再次確認密碼"><br>
+					<span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
+					<span>*E-mail</span><input type="mail" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
+					<span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
+					<span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
 					<p>* 為必填欄位，請填妥欄位資訊。</p>
 					<a href="#" class="btn orange_l" id="repassword">送出</a><br>
 				</div>
 			</div>
 		</div>
-		</form>
+		<!-- </form> -->
 
 	</header>
 	<!-- header end -->

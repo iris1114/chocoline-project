@@ -1,37 +1,21 @@
 @import "../../common/sass/common.scss";
 
+html{
+    overflow: auto; 
+}
 .game_body{
     overflow: hidden;
     background: #DBAA51;
-    // height: 100vh;
 }
 .blackscreen{
     display: none;
 }
-@media all and (max-width:992px){
-
-    @media all and (orientation: portrait){
-        .blackscreen{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 10vw;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0,0,0,.95);
-            color: $color_milk;
-            position: fixed;
-            z-index: 20;
-            user-select: none;
-        } 
-    }
-}
 .game_container{
     position: relative;
-    height: 100%;
     height: 0px;
     padding-bottom: 48.95%;
 }
+
 section{
     padding: 0;
 }
@@ -546,5 +530,56 @@ canvas{
     #gostore{
         transform: scale(1);
         @include pos(auto,19%,23%,auto);
+    }
+}
+
+
+@media all and (orientation: portrait){
+    @media all and (max-width:992px){
+        html{
+            overflow: auto;
+            position: fixed;
+        }
+        .game_body{
+            transform: rotate(90deg);
+            width: 100vh;
+            height: 100vw;
+            transform-origin: 29% 50%;
+        }
+        .blackscreen{
+            display: flex;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 10vw;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,.95);
+            color: $color_milk;
+            position: fixed;
+            z-index: 20;
+            user-select: none;
+        } 
+
+        .game_container{
+            position: unset;
+            padding: 0;
+        }
+        .bonus_house{
+            top: 25%;
+        }
+        .final{
+            top: 28%;
+        }
+    }
+    @media all and (max-width:375px){
+        .game_body{
+            transform-origin: 34% 50%;
+        }
+        #time{
+            p{
+                letter-spacing: 5px;
+            }
+        }
     }
 }
