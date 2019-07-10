@@ -65,7 +65,11 @@ function handleComplete(evt,comp) {
 
 
     document.querySelector("#start").addEventListener("click",tostart);
-
+    window.addEventListener("keydown",function(e){
+        if(e.keyCode==13 || e.keyCode==108){
+            tostart();
+        }
+    })
     function tostart(){
         if(window.innerWidth<992){
             header.style.display="none";
@@ -76,34 +80,24 @@ function handleComplete(evt,comp) {
             isstart = true;
             window.addEventListener("keydown",keydownmove);
             window.addEventListener("keyup",keyupmove);
-            window.addEventListener("deviceorientation",phonerun);
+            if(window.DeviceOrientationEvent){
+                window.addEventListener("deviceorientation",phonerun);
+            }else{
+                alert("請改用firefox")
+            }
         },1000)
     }
-
-    window.addEventListener("keydown",keystart)
-    
-    function keystart(e){
-        if(e.keyCode==13 || e.keyCode==108){
-            if(window.innerWidth<992){
-                header.style.display="none";
-            }
-            iskey = true;
-            document.querySelector(".title_decoration").style.display="none";
-            document.querySelector("#introduce").style.display="none";
-            setTimeout(function(){
-                isstart = true;
-                window.addEventListener("keydown",keydownmove);
-                window.addEventListener("keyup",keyupmove);
-            },1000)
-        }
-    }
-
+    var lkeycode = false;
+    var rkeycode = false;
     function keydownmove (e){
         if(iskeydown){
             return;
         }
         if(e.keyCode === 37 || e.keyCode === 39){
             iskeydown = true;
+            iskey = true;
+            
+            
             if(e.keyCode === 37){
                 position = 1;
             }else{
@@ -137,7 +131,6 @@ function handleComplete(evt,comp) {
                 bear.x += beta * position * 0.8;
             }
         }
-        
         
 
         if(bear.x <=96.5){
