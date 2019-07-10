@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" /> -->
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
 
   <title>客製CHOCO</title>
@@ -108,25 +108,25 @@
       <div class="custom_type">
 
         <div class="shape shapePos0">
-          <img src="image/custom/small/long.png" id="big_cho" alt="long" />
+          <img src="image/custom/small/long.png" class="big_cho" alt="long" />
         </div>
         <div class="shape shapePos1">
-          <img src="image/custom/small/roll.png" id="big_cho" alt="roll" />
+          <img src="image/custom/small/roll_null_null.png" class="big_cho" alt="roll" />
         </div>
         <div class="shape shapePos2">
-          <img src="image/custom/small/M1_001.png" id="big_cho" alt="bear" />
+          <img src="image/custom/small/bear_null_null.png" class="big_cho" alt="bear" />
         </div>
         <div class="shape shapePos3">
-          <img src="image/custom/small/cake.png" id="big_cho" alt="cake" />
+          <img src="image/custom/small/cake.png" class="big_cho" alt="cake" />
         </div>
         <div class="shape shapePos4">
-          <img src="image/custom/small/oero.png" id="big_cho" alt="oero" />
+          <img src="image/custom/small/oero.png" class="big_cho" alt="oero" />
         </div>
         <img src="image/custom/right.png" alt="right" class="right_btn" id="toRight" />
         <img src="image/custom/left.png" alt="left" class="left_btn" id="toLeft" />
       </div>
       <div class="next_button">
-        <a href="#second" class="btn cyan_s " id="next_page"><span>選擇巧克力基底/配料口味</span></a>
+        <a href="#second" class="btn cyan_s " id="next_page"><span>第一步</span></a>
       </div>
 
       <!-- ----- 形狀輪播 End ----- -->
@@ -160,7 +160,7 @@
             </figure>
 
             <figure class="choco choco2">
-              <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk1" />
+              <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk" />
               <figcaption>
                 <p>Milk CHOCO</p>
               </figcaption>
@@ -176,8 +176,8 @@
         </div>
 
         <div class="select_type ">
-          <div class="choco_overview">
-            <!-- <img src="image/custom/small/M1_SP_003.png" class="cho" alt="black" /> -->
+          <div class="choco_overview" id="aaa">
+
           </div>
 
 
@@ -298,6 +298,9 @@
           </div>
         </div>
       </div>
+
+
+
     </section>
 
 
@@ -1148,22 +1151,28 @@
           for (var i = 0; i < shapePosArr.length; i++) {
             if (shapes[i].classList.contains("shapePos2")) {
               var shapeObj = shapes[i].innerHTML;
-              console.log(shapeObj);
+              // console.log(shapeObj);
               document.getElementById("next_page").onclick = function () {
                 let midimg = document.getElementsByClassName("choco_overview");
                 // console.log(midimg[0].innerHTML)
                 midimg[0].innerHTML = shapeObj;
                 let cc = midimg[0].innerHTML;
                 let m = cc.lastIndexOf("alt");
-                console.log(m);
+                // console.log(m);
                 let h = cc.substring(62, 66);
-                console.log(h);
+                // console.log(h);
+                var large = document.getElementsByClassName("big_cho")[i];
+                //  console.log(large.src);
+                 console.log(large);
+                 var aa = large.alt;
               };
 
             }
 
           }
         };
+
+
 
         document.getElementById("toLeft").onclick = function () {
           for (var i = 0; i < shapePosArr.length; i++) {
@@ -1174,32 +1183,38 @@
             shapes[i].classList.add(shapePosArr[i])
           }
 
-
-
           document.getElementById("next_page").onclick = function () {
 
             let abc = document.getElementsByClassName("shapePos2");
             let midimg = document.getElementsByClassName("choco_overview");
             midimg[0].innerHTML = abc[0].innerHTML;
-            console.log(abc[0].innerHTML)
+            // console.log(abc[0].innerHTML)
             let cc = midimg[0].innerHTML;
             let m = cc.lastIndexOf("alt");
-            console.log(m);
+            // console.log(m);
             let h = cc.substring(62, 66);
-            console.log(h);
+            // console.log(h);
+            var large = document.getElementsByClassName("big_cho")[i];
+        // console.log(large.src);
+        console.log(large.alt);
           };
         };
+
+
 
         document.getElementById("next_page").onclick = function () {
           let abc = document.getElementsByClassName("shape");
           let midimg = document.getElementsByClassName("choco_overview");
           midimg[0].innerHTML = abc[2].innerHTML;
-          console.log(midimg[0].innerHTML)
+          // console.log(`IMG${midimg[0].innerHTML}`)
           let cc = midimg[0].innerHTML;
           let m = cc.lastIndexOf("alt");
-          console.log(m);
+          // console.log(`M:${m}`);
           let h = cc.substring(62, 66);
-          console.log(h);
+          // console.log(h);
+          var large = document.getElementsByClassName("big_cho")[2];
+        // console.log(large.src);
+           console.log(large.alt);
         };
 
 
@@ -1208,8 +1223,8 @@
 
         let chos = document.getElementsByClassName("cho");
         let chocoTextDivs = document.getElementsByClassName("choco_text");
-        console.log("chos : ", chos.length);
-        console.log("test : ", chocoTextDivs.length);
+        // console.log("chos : ", chos.length);
+        // console.log("test : ", chocoTextDivs.length);
         for (let i = 0; i < chos.length; i++) {
           chos[i].addEventListener("click", function () {
             // console.log(chocoTextDivs[i])
@@ -1223,94 +1238,58 @@
           })
         }
 
-        let large = document.getElementById("big_cho");
+        
+        // let large = document.getElementsByClassName("big_cho")[2];
+        // console.log(large.src);
+        
+      
 
         for (var i = 0; i < chos.length; i++) {
 
           chos[i].addEventListener("click", function (e) {
-            let cho = e.target;
+            let cho_type = e.target;
+         
             let cc = midimg[0].innerHTML;
-            console.log(midimg[0].innerHTML);
-            // console.log(large);
-            let m = cc.lastIndexOf("alt=");
-            console.log(m);
+            // console.log(cc);
+            let model = document.getElementById("aaa");
+            let model_img = model.childNodes[1].alt;
+            let modelsrc = model.childNodes[1].src
 
-            let h = cc.substring(70, 74);
-            console.log(h);
-            console.log(large.src);
-            // console.log(cho);C:\Users\abc\Desktop\11\custom\image\custom\fruit
-            // console.log(cho.src);
-            console.log(cho.alt);
-            let hh = cho.alt;
-
-            if (h == "bear") {
-
-              if (hh == "white") {
-
-                newSrc = "M1_002.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '            <img src="image/custom/fruit/' + newSrc + '" id="big_cho" alt="bear1">';
-              } else if (hh == "milk1") {
-
-                newSrc = "M1_003.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '            <img src="image/custom/fruit/' + newSrc + '" id="big_cho" alt="bear1">';
-              } else if (hh == "black") {
-
-                newSrc = "M1_004.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '            <img src="image/custom/fruit/' + newSrc + '" id="big_cho" alt="bear1">';
-              }
-            } else if (hh == "cake") {
-              if (hh == "white") {
-                newSrc = "M1_002.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "milk") {
-                newSrc = "M1_003.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "black") {
-                newSrc = "M1_004.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              }
-            } else if (hh == "roll") {
-              if (hh == "white") {
-                newSrc = "M1_002.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "milk") {
-                newSrc = "M1_003.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "black") {
-                newSrc = "M1_004.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              }
-            } else if (hh == "long") {
-              if (hh == "white") {
-                newSrc = "M1_002.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "milk") {
-                newSrc = "M1_003.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "black") {
-                newSrc = "M1_004.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              }
-            } else if (hh == "oero") {
-              if (hh == "white") {
-                newSrc = "M1_002.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "milk") {
-                newSrc = "M1_003.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              } else if (hh == "black") {
-                newSrc = "M1_004.png";
-                document.getElementsByClassName("choco_overview")[0].innerHTML = '<img src="image/custom/small/' + newSrc + '" id="big_cho" alt="bear">';
-              }
+            // let hh =  cc.src ;
+            // console.log(model.childNodes[1].src);
+             let srcTemp = modelsrc.lastIndexOf('/');
+             console.log(srcTemp);
+             let ooo = modelsrc.substring(0,60);
+             console.log(ooo);
+            let fileName = modelsrc.substring(srcTemp+1);
+            // console.log(fileName);
+            let frist = fileName.substring(0,5);
+            // console.log(frist);
+            let thrid =  fileName.substring(9);
+            // console.log(thrid);
+         
+           
+            if (cho_type.alt == "white" ){
+              let total =ooo+frist+"w"+thrid ;
+             
+             
+              model.childNodes[1].src =total;
+              console.log( model.childNodes[1].src);
+              // console.log( model.childNodes[1].src);
             }
-            // newSrc = cho.src.replace("small", "big").replace("SP_", "");
-
-            // console.log(newSrc);
-            // console.log("large.src", large.src);
-          }, false);
+                   }, false);
 
           // let chos = document.getElementsByClassName("cho");
 
+        }
+        let fruits = document.getElementsByClassName("fruit");
+        for (var i = 0; i < fruits.length; i++) {
+          fruits[i].addEventListener("click", function (e) {
+            let fruit = e.target;
+            // console.log(fruit);
+            let larges = document.getElementById("big_cho");
+            larges.src = fruit.src.replace("small", "big").replace("b_", "");
+          }, false);
         }
       })
     </script>
@@ -1354,15 +1333,7 @@
       // }, false);
 
       window.addEventListener("load", function () {
-        let fruits = document.getElementsByClassName("fruit");
-        for (var i = 0; i < fruits.length; i++) {
-          fruits[i].addEventListener("click", function (e) {
-            let fruit = e.target;
-            console.log(fruit);
-            let larges = document.getElementById("big_cho");
-            larges.src = fruit.src.replace("small", "big").replace("b_", "");
-          }, false);
-        }
+      
       }, false);
     </script>
     <script>
@@ -1371,8 +1342,8 @@
       window.addEventListener("load", function () {
         let fruits = document.getElementsByClassName("fruit");
         let fruitTextDivs = document.getElementsByClassName("fruit_text");
-        console.log("chos : ", fruits.length);
-        console.log("test : ", fruitTextDivs.length);
+        // console.log("fruits : ", fruits.length);
+        // console.log("test : ", fruitTextDivs.length);
         for (let i = 0; i < fruitTextDivs.length; i++) {
           fruits[i].addEventListener("click", function () {
             // console.log(chocoTextDivs[i])
@@ -1394,10 +1365,10 @@
       window.addEventListener("load", function () {
         let eye_types = document.getElementsByClassName("eye_type");
         for (var i = 0; i < eye_types.length; i++) {
-          console.log("eye_types : ", eye_types.length);
+          // console.log("eye_types : ", eye_types.length);
           eye_types[i].addEventListener("click", function (e) {
             let fruit = e.target;
-            console.log(fruit);
+            // console.log(fruit);
             let larges = document.getElementById("big_cho");
             larges.src = fruit.src.replace("small", "big").replace("b_", "");
           }, false);
