@@ -108,19 +108,19 @@
       <div class="custom_type">
 
         <div class="shape shapePos0">
-          <img src="image/custom/small/long.png" class="big_cho" alt="long" />
+          <img src="image/custom/small/long_n_n.png" class="big_cho" alt="long" />
         </div>
         <div class="shape shapePos1">
-          <img src="image/custom/small/roll_null_null.png" class="big_cho" alt="roll" />
+          <img src="image/custom/small/roll_n_n.png" class="big_cho" alt="roll" />
         </div>
         <div class="shape shapePos2">
-          <img src="image/custom/small/bear_null_null.png" class="big_cho" alt="bear" />
+          <img src="image/custom/small/bear_n_n.png" class="big_cho" alt="bear" />
         </div>
         <div class="shape shapePos3">
-          <img src="image/custom/small/cake.png" class="big_cho" alt="cake" />
+          <img src="image/custom/small/cake_n_n.png" class="big_cho" alt="cake" />
         </div>
         <div class="shape shapePos4">
-          <img src="image/custom/small/oero.png" class="big_cho" alt="oero" />
+          <img src="image/custom/small/cicr_n_n.png" class="big_cho" alt="cicr" />
         </div>
         <img src="image/custom/right.png" alt="right" class="right_btn" id="toRight" />
         <img src="image/custom/left.png" alt="left" class="left_btn" id="toLeft" />
@@ -191,6 +191,7 @@
                     <p>藍莓</p>
 
                   </figcaption>
+                  blue berry
                 </figure>
               </li>
               <li>
@@ -1163,8 +1164,8 @@
                 // console.log(h);
                 var large = document.getElementsByClassName("big_cho")[i];
                 //  console.log(large.src);
-                 console.log(large);
-                 var aa = large.alt;
+                console.log(large);
+                var aa = large.alt;
               };
 
             }
@@ -1195,8 +1196,8 @@
             let h = cc.substring(62, 66);
             // console.log(h);
             var large = document.getElementsByClassName("big_cho")[i];
-        // console.log(large.src);
-        console.log(large.alt);
+            // console.log(large.src);
+            console.log(large.alt);
           };
         };
 
@@ -1213,8 +1214,8 @@
           let h = cc.substring(62, 66);
           // console.log(h);
           var large = document.getElementsByClassName("big_cho")[2];
-        // console.log(large.src);
-           console.log(large.alt);
+          console.log(large);
+          console.log(large.alt);
         };
 
 
@@ -1238,46 +1239,60 @@
           })
         }
 
-        
+
         // let large = document.getElementsByClassName("big_cho")[2];
         // console.log(large.src);
-        
-      
+
+
 
         for (var i = 0; i < chos.length; i++) {
 
           chos[i].addEventListener("click", function (e) {
             let cho_type = e.target;
-         
+
             let cc = midimg[0].innerHTML;
             // console.log(cc);
             let model = document.getElementById("aaa");
             let model_img = model.childNodes[1].alt;
+            // console.log(model_img);
             let modelsrc = model.childNodes[1].src
 
             // let hh =  cc.src ;
             // console.log(model.childNodes[1].src);
-             let srcTemp = modelsrc.lastIndexOf('/');
-             console.log(srcTemp);
-             let ooo = modelsrc.substring(0,60);
-             console.log(ooo);
-            let fileName = modelsrc.substring(srcTemp+1);
-            // console.log(fileName);
-            let frist = fileName.substring(0,5);
-            // console.log(frist);
-            let thrid =  fileName.substring(9);
-            // console.log(thrid);
-         
-           
-            if (cho_type.alt == "white" ){
-              let total =ooo+frist+"w"+thrid ;
-             
-             
-              model.childNodes[1].src =total;
-              console.log( model.childNodes[1].src);
+            let srcTemp = modelsrc.lastIndexOf('/');
+            // console.log("srcTemp", srcTemp);
+            let ooo = modelsrc.substring(0, 58);
+            // console.log("ooo", ooo);
+            let fileName = modelsrc.substring(srcTemp + 1);
+            // console.log("fileName", fileName);
+            let frist = fileName.substring(0, 5);
+            // console.log("frist", frist);
+            let thrid = fileName.substring(6);
+            // console.log("thrid", thrid);
+
+
+            if (cho_type.alt == "white") {
+              let total = ooo + frist + "w" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
               // console.log( model.childNodes[1].src);
+            } else if (cho_type.alt == "black") {
+              let total = ooo + frist + "d" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
+            } else if (cho_type.alt == "milk") {
+              let total = ooo + frist + "m" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
             }
-                   }, false);
+
+          }, false);
 
           // let chos = document.getElementsByClassName("cho");
 
@@ -1285,10 +1300,62 @@
         let fruits = document.getElementsByClassName("fruit");
         for (var i = 0; i < fruits.length; i++) {
           fruits[i].addEventListener("click", function (e) {
-            let fruit = e.target;
-            // console.log(fruit);
-            let larges = document.getElementById("big_cho");
-            larges.src = fruit.src.replace("small", "big").replace("b_", "");
+            let fruit_type = e.target;
+
+            let cc = midimg[0].innerHTML;
+            console.log(fruit_type);
+            let model = document.getElementById("aaa");
+            let model_img = model.childNodes[1].alt;
+            console.log(model_img);
+            let modelsrc = model.childNodes[1].src
+
+            let srcTemp = modelsrc.lastIndexOf('/');
+            console.log("srcTemp", srcTemp);
+            let ooo = modelsrc.substring(0, 58);
+            console.log("ooo", ooo);
+            let fileName = modelsrc.substring(srcTemp + 1);
+            console.log("fileName", fileName);
+            let frist = fileName.substring(0, 7);
+            console.log("frist", frist);
+            let thrid = fileName.substring(8);
+            console.log("thrid", thrid);
+            if (fruit_type.alt == "blue berry") {
+              let total = ooo + frist + "b" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
+              // console.log( model.childNodes[1].src);
+            } else if (fruit_type.alt == "grape") {
+              let total = ooo + frist + "g" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
+            } else if (fruit_type.alt == "bo ho") {
+              let total = ooo + frist + "h" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
+            } else if (fruit_type.alt == "orange") {
+              let total = ooo + frist + "o" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
+            } else if (fruit_type.alt == "strawberry") {
+              let total = ooo + frist + "s" + thrid;
+
+
+              model.childNodes[1].src = total;
+              // console.log(model.childNodes[1].src);
+            }
+
+
+
+
+
           }, false);
         }
       })
@@ -1333,7 +1400,7 @@
       // }, false);
 
       window.addEventListener("load", function () {
-      
+
       }, false);
     </script>
     <script>
@@ -1360,7 +1427,7 @@
 
     </script>
 
-    <script>
+    <!-- <script>
 
       window.addEventListener("load", function () {
         let eye_types = document.getElementsByClassName("eye_type");
@@ -1375,7 +1442,7 @@
         }
       }, false);
     </script>
-
+ -->
 
 </body>
 
