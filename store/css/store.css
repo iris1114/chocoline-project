@@ -795,6 +795,14 @@ header {
   overflow-x: hidden;
 }
 
+.robot .robot_content .message_area #message_answer_sample {
+  width: 100%;
+}
+
+.robot .robot_content .message_area #message_ask_sample {
+  width: 100%;
+}
+
 .robot .robot_content .message_area .message {
   position: relative;
   max-width: 80%;
@@ -2159,6 +2167,7 @@ body {
     left: 0;
     margin: auto;
     height: 36px;
+    cursor: pointer;
   }
   .hot_product_container .cable_car .left_to_right_first {
     -webkit-animation: left_to_right1 2s linear 1 forwards;

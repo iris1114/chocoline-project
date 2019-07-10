@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/product.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../common/js/header.js"></script>
     <script src="../common/js/robot.js"></script>
     <title>CHOCO商品</title>
 </head>
@@ -281,16 +282,16 @@
         <div class="eyelid2"></div>
 
         <label for="robot_close_control">
-            <div id="robot_close" class="robot_close"></div>
-            <div class="robot_click1"></div>
-            <div class="robot_click2"></div>
-            <div class="robot_click3"></div>
-        </label>
+        <div id="robot_close" class="robot_close"></div>
+        <div class="robot_click1"></div>
+        <div class="robot_click2"></div>
+        <div class="robot_click3"></div>
+      </label>
         <div class="robot_content">
             <div id="robot_message" class="message_area">
                 <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
                 <p id="message_ask_sample" class="message message_ask" style="display:none">
-                    歡迎光臨CHOCOLINE....!!
+                    亂入一下!
                 </p>
             </div>
             <div class="keyword_area">
@@ -305,8 +306,8 @@
                     </div>
                 </div>
                 <button id="robot_next_button" class="next_button">
-                    <i class="fas fa-angle-right"></i>
-                </button>
+            <i class="fas fa-angle-right"></i>
+          </button>
             </div>
             <form onsubmit="return returnR(this)" class="query_area">
                 <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
@@ -462,6 +463,38 @@
 </script>
 
 <!-- slide end -->
+
+<!-- ajax start -->
+
+<!-- <script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.status == 200) {
+            // if( xhr.responseText == "error"){
+            //   alert("帳密錯誤");
+            // }else{ //登入成功
+            $id("memName").innerHTML = xhr.responseText;
+            //將登入表單上的資料清空，並隱藏燈箱
+            $id('lightBox').style.display = 'none';
+            $id('memId').value = '';
+            $id('memPsw').value = '';
+            $id('spanLogin').innerHTML = "登出";
+            // }
+
+        } else {
+            alert(xhr.status);
+        }
+    }
+
+    xhr.open("post", "ajaxLogin.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    var data_info = `memId=${$id("memId").value}&memPsw=${$id("memPsw").value}`;
+    xhr.send(data_info);
+</script> -->
+
+
+<!-- ajax end -->
+
 
 <script>
     function returnR() {
