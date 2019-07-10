@@ -22,7 +22,7 @@ function showLoginForm() {
     xhr.onload = function() {
       if (xhr.status == 200) {
         islogin = true;
-        $id("memName").innerHTML = "&nbsp";
+        $id("mem_name").innerHTML = "&nbsp";
         // $id("spanLogin").innerHTML = "登入";
         spanLogin[i].innerHTML = "登入";
       } else {
@@ -46,11 +46,11 @@ function sendForm() {
         alert("帳密錯誤");
       } else {
         //登入成功
-        $id("memName").innerHTML = xhr.responseText;
+        $id("mem_name").innerHTML = xhr.responseText;
         //將登入表單上的資料清空，並隱藏燈箱
         $id("lightBox").style.display = "none";
-        $id("memId").value = "";
-        $id("memPsw").value = "";
+        $id("mem_id").value = "";
+        $id("mem_psw").value = "";
         // $id("spanLogin").innerHTML = "登出";
         console.log(spanLogin[i]);
         spanLogin[i].innerHTML = "登出";
@@ -62,7 +62,7 @@ function sendForm() {
 
   xhr.open("post", "login.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  var data_info = `memId=${$id("memId").value}&memPsw=${$id("memPsw").value}`;
+  var data_info = `mem_id=${$id("mem_id").value}&mem_psw=${$id("mem_psw").value}`;
   xhr.send(data_info);
   //..........................................................
 }
@@ -83,8 +83,8 @@ function cancelLogin() {
   $id("lightBox").style.display = "none";
   $id("passwordLightBox").style.display = "none";
   $id("registerLightBox").style.display = "none";
-  $id("memId").value = "";
-  $id("memPsw").value = "";
+  $id("mem_id").value = "";
+  $id("mem_psw").value = "";
 }
 
 function init() {
