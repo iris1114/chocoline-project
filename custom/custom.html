@@ -93,7 +93,7 @@
         <h2>動手做專屬CHOCO星人<br />送給想傳情的人吧</h2>
       </div>
       <div class="playground">
-        <img src="image/custom/bg6.png" alt="" />
+        <!-- <img src="image/custom/bg6.png" alt="" /> -->
       </div>
 
       <div class="frist_step">
@@ -191,7 +191,7 @@
                     <p>藍莓</p>
 
                   </figcaption>
-                  blue berry
+                  
                 </figure>
               </li>
               <li>
@@ -1260,8 +1260,11 @@
             // let hh =  cc.src ;
             // console.log(model.childNodes[1].src);
             let srcTemp = modelsrc.lastIndexOf('/');
+            let srcpos =modelsrc.substr(0,srcTemp+1);
+            // let xx =srcTemp+1;
+            console.log(srcpos);
             // console.log("srcTemp", srcTemp);
-            let ooo = modelsrc.substring(0, 58);
+            // let ooo = modelsrc.substring(0, 60);
             // console.log("ooo", ooo);
             let fileName = modelsrc.substring(srcTemp + 1);
             // console.log("fileName", fileName);
@@ -1272,20 +1275,20 @@
 
 
             if (cho_type.alt == "white") {
-              let total = ooo + frist + "w" + thrid;
+              let total = srcpos+ frist + "w" + thrid;
 
 
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
               // console.log( model.childNodes[1].src);
             } else if (cho_type.alt == "black") {
-              let total = ooo + frist + "d" + thrid;
+              let total = srcpos + frist + "d" + thrid;
 
 
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
             } else if (cho_type.alt == "milk") {
-              let total = ooo + frist + "m" + thrid;
+              let total = srcpos + frist + "m" + thrid;
 
 
               model.childNodes[1].src = total;
@@ -1310,9 +1313,13 @@
             let modelsrc = model.childNodes[1].src
 
             let srcTemp = modelsrc.lastIndexOf('/');
+            
             console.log("srcTemp", srcTemp);
-            let ooo = modelsrc.substring(0, 58);
-            console.log("ooo", ooo);
+            let srcpos =modelsrc.substr(0,srcTemp+1);
+            // let xx =srcTemp+1;
+            console.log(srcpos);
+            // let ooo = modelsrc.substring(0,60);
+            // console.log("ooo", ooo);
             let fileName = modelsrc.substring(srcTemp + 1);
             console.log("fileName", fileName);
             let frist = fileName.substring(0, 7);
@@ -1320,32 +1327,32 @@
             let thrid = fileName.substring(8);
             console.log("thrid", thrid);
             if (fruit_type.alt == "blue berry") {
-              let total = ooo + frist + "b" + thrid;
+              let total = srcpos + frist + "b" + thrid;
 
 
               model.childNodes[1].src = total;
-              // console.log(model.childNodes[1].src);
+              console.log(model.childNodes[1].src);
               // console.log( model.childNodes[1].src);
             } else if (fruit_type.alt == "grape") {
-              let total = ooo + frist + "g" + thrid;
+              let total = srcpos + frist + "g" + thrid;
 
 
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
             } else if (fruit_type.alt == "bo ho") {
-              let total = ooo + frist + "h" + thrid;
+              let total = srcpos+ frist + "h" + thrid;
 
 
               model.childNodes[1].src = total;
-              // console.log(model.childNodes[1].src);
+              console.log(model.childNodes[1].src);
             } else if (fruit_type.alt == "orange") {
-              let total = ooo + frist + "o" + thrid;
+              let total = srcpos+ frist + "o" + thrid;
 
 
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
             } else if (fruit_type.alt == "strawberry") {
-              let total = ooo + frist + "s" + thrid;
+              let total = srcpos + frist + "s" + thrid;
 
 
               model.childNodes[1].src = total;
