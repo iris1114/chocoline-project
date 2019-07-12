@@ -9,6 +9,8 @@
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" /> -->
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
 
   <title>客製CHOCO</title>
 </head>
@@ -191,7 +193,7 @@
                     <p>藍莓</p>
 
                   </figcaption>
-                  
+
                 </figure>
               </li>
               <li>
@@ -297,7 +299,11 @@
               NT$350
             </p>
           </div>
+          <div class="next_button">
+            <a href="#thrid" class="btn cyan_s " id="next_page2"><span>第一步</span></a>
+          </div>
         </div>
+
       </div>
 
 
@@ -310,7 +316,7 @@
 
     <!-- ----- 第三屏 Start ----- -->
 
-    <section class="outlook">
+    <section class="outlook" id="thrid">
       <div class="thrid_step_moble">
         <img src="image/custom/bg8.png" alt="background">
         <div class="thrid_stepInfo">
@@ -368,60 +374,49 @@
               <button class="tab_link" onclick="openCity(event, 'other')">飾品</button>
             </div>
             <div class="clearfix"></div>
-            <script>
-              window.addEventListener("load", function () {
 
-
-                let eyes = document.getElementsByClassName("eye_type");
-                let mouses = document.getElementsByClassName("mouse_type");
-                let others = document.getElementsByClassName("others_type");
-
-
-
-              })
-            </script>
             <!-- ----- 眼睛 start----- -->
             <div class="eye type" id="eyes">
               <div class="eye_types">
                 <div class="eye_items">
-                  <img src="image/custom/eye1.png" class="eye_type" alt="eye1" />
+                  <img src="image/custom/small/eye1.png" class="eye_type" alt="eye1" />
                 </div>
                 <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="eye2" />
+                  <img src="image/custom/small/eye2.png" class="eye_type" alt="eye2" />
                 </div>
                 <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                  <img src="image/custom/small/eye3.png" class="eye_type" alt="" />
                 </div>
                 <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="" />
-                </div>
-              </div>
-              <div class="eye_types">
-                <div class="eye_items">
-                  <img src="image/custom/eye1.png" class="eye_type" alt="eye1" />
-                </div>
-                <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="eye2" />
-                </div>
-                <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="" />
-                </div>
-                <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                  <img src="image/custom/small/eye4.png " class="eye_type" alt="" />
                 </div>
               </div>
               <div class="eye_types">
                 <div class="eye_items">
-                  <img src="image/custom/eye1.png" class="eye_type" alt="eye1" />
+                  <img src="image/custom/small/eye5.png" class="eye_type" alt="eye1" />
                 </div>
                 <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="eye2" />
+                  <img src="image/custom/small/eye5.png" class="eye_type" alt="eye2" />
                 </div>
                 <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                  <img src="image/custom/small/eye7.png" class="eye_type" alt="" />
                 </div>
                 <div class="eye_items">
-                  <img src="image/custom/eye.png" class="eye_type" alt="" />
+                  <img src="image/custom/small/eye8.png" class="eye_type" alt="" />
+                </div>
+              </div>
+              <div class="eye_types">
+                <div class="eye_items">
+                  <img src="image/custom/small/eye9.png" class="eye_type" alt="eye1" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/small/eye10.png" class="eye_type" alt="eye2" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/small/eye11.png" class="eye_type" alt="" />
+                </div>
+                <div class="eye_items">
+                  <img src="image/custom/small/eye12.png" class="eye_type" alt="" />
                 </div>
               </div>
             </div>
@@ -433,44 +428,44 @@
             <div class="mouse type" id="mouses">
               <div class="mouse_types">
                 <div class="mouse_items">
-                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                  <img src="image/custom/small/mouse1.png" class="mouse_type" alt="eye1" />
                 </div>
                 <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                  <img src="image/custom/small/mouse2.png" class="mouse_type" alt="eye2" />
                 </div>
                 <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="" />
+                  <img src="image/custom/small/mouse3.png" class="mouse_type" alt="" />
                 </div>
                 <div class="mouse_items">
-                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
-                </div>
-              </div>
-              <div class="mouse_types">
-                <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
-                </div>
-                <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="" />
-                </div>
-                <div class="mouse_items">
-                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
-                </div>
-                <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                  <img src="image/custom/small/mouse4.png" class="mouse_type" alt="eye1" />
                 </div>
               </div>
               <div class="mouse_types">
                 <div class="mouse_items">
-                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                  <img src="image/custom/small/mouse5.png" class="mouse_type" alt="eye2" />
                 </div>
                 <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="eye2" />
+                  <img src="image/custom/small/mouse6.png" class="mouse_type" alt="" />
                 </div>
                 <div class="mouse_items">
-                  <img src="image/custom/eye.png" class="mouse_type" alt="" />
+                  <img src="image/custom/small/mouse7.png" class="mouse_type" alt="eye1" />
                 </div>
                 <div class="mouse_items">
-                  <img src="image/custom/eye1.png" class="mouse_type" alt="eye1" />
+                  <img src="image/custom/small/mouse8.png" class="mouse_type" alt="eye2" />
+                </div>
+              </div>
+              <div class="mouse_types">
+                <div class="mouse_items">
+                  <img src="image/custom/small/mouse9.png" class="mouse_type" alt="eye1" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/small/mouse10.png" class="mouse_type" alt="eye2" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/small/mouse11.png" class="mouse_type" alt="" />
+                </div>
+                <div class="mouse_items">
+                  <img src="image/custom/small/mouse12.png" class="mouse_type" alt="eye1" />
                 </div>
               </div>
             </div>
@@ -535,8 +530,15 @@
         <!-- ----- middle side start ----- -->
 
         <div class="outlook_fix">
+          <div id="eye_pos">
+          </div>
+          <div id="mouse_pos">
+          </div>
+          <div id="others_pos">
+          </div>
           <div class="fix_photo">
-            <img src="image/custom/bear1.png" alt="bear">
+
+            <!-- <img src="image/custom/bear1.png" alt="bear"> -->
           </div>
 
           <div class="fix_bar">
@@ -1137,6 +1139,8 @@
 
     <script type="text/javascript">
       window.addEventListener("load", function () {
+
+        // <!-- ----- 形狀輪播 Start ----- -->
         var shapes = document.getElementsByClassName("shape");
         var shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
         let midimg = document.getElementsByClassName("choco_overview");
@@ -1218,6 +1222,10 @@
           console.log(large.alt);
         };
 
+        // <!-- ----- 形狀輪播 end ----- -->
+
+
+
 
 
         // ----------------------基底介紹--------------------------
@@ -1240,9 +1248,10 @@
         }
 
 
-        // let large = document.getElementsByClassName("big_cho")[2];
-        // console.log(large.src);
+        // ----------------------基底介紹 end --------------------------
 
+
+        // --------------------------選擇巧克力配料口味--------------------------
 
 
         for (var i = 0; i < chos.length; i++) {
@@ -1257,15 +1266,12 @@
             // console.log(model_img);
             let modelsrc = model.childNodes[1].src
 
-            // let hh =  cc.src ;
-            // console.log(model.childNodes[1].src);
+
             let srcTemp = modelsrc.lastIndexOf('/');
-            let srcpos =modelsrc.substr(0,srcTemp+1);
+            let srcpos = modelsrc.substr(0, srcTemp + 1);
             // let xx =srcTemp+1;
             console.log(srcpos);
-            // console.log("srcTemp", srcTemp);
-            // let ooo = modelsrc.substring(0, 60);
-            // console.log("ooo", ooo);
+
             let fileName = modelsrc.substring(srcTemp + 1);
             // console.log("fileName", fileName);
             let frist = fileName.substring(0, 5);
@@ -1275,7 +1281,7 @@
 
 
             if (cho_type.alt == "white") {
-              let total = srcpos+ frist + "w" + thrid;
+              let total = srcpos + frist + "w" + thrid;
 
 
               model.childNodes[1].src = total;
@@ -1313,9 +1319,9 @@
             let modelsrc = model.childNodes[1].src
 
             let srcTemp = modelsrc.lastIndexOf('/');
-            
+
             console.log("srcTemp", srcTemp);
-            let srcpos =modelsrc.substr(0,srcTemp+1);
+            let srcpos = modelsrc.substr(0, srcTemp + 1);
             // let xx =srcTemp+1;
             console.log(srcpos);
             // let ooo = modelsrc.substring(0,60);
@@ -1340,36 +1346,64 @@
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
             } else if (fruit_type.alt == "bo ho") {
-              let total = srcpos+ frist + "h" + thrid;
+              let total = srcpos + frist + "h" + thrid;
 
 
               model.childNodes[1].src = total;
               console.log(model.childNodes[1].src);
             } else if (fruit_type.alt == "orange") {
-              let total = srcpos+ frist + "o" + thrid;
+              let total = srcpos + frist + "o" + thrid;
 
 
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
             } else if (fruit_type.alt == "strawberry") {
               let total = srcpos + frist + "s" + thrid;
-
-
               model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
             }
-
-
-
-
-
           }, false);
         }
+
+
+        // --------------------------選擇巧克力配料口味--------------------------
+
+
+
+
+        document.getElementById("next_page2").onclick = function () {
+
+          let third_model = document.getElementsByClassName("choco_overview");
+          let third_model_pos = document.getElementsByClassName("fix_photo");
+          third_model_pos[0].innerHTML = third_model[0].innerHTML
+
+          console.log(third_model_pos[0]);
+
+        };
+
+        $(document).ready(function () {
+          // for (let i = 0; i <  )
+          $('.eye_type').click(function () {
+            $(this).clone().appendTo('#eye_pos');
+          });
+        });
+
+        $(document).ready(function () {
+          // for (let i = 0; i <  )
+          $('.mouse_type').click(function () {
+            $(this).clone().appendTo('#mouse_pos');
+          });
+        });
+
+        $(document).ready(function () {
+          // for (let i = 0; i <  )
+          $('.others_type').click(function () {
+            $(this).clone().appendTo('#others_pos');
+          });
+        });
+
       })
     </script>
-
-
-
 
     <script>
       function openCity(evt, types) {
@@ -1394,25 +1428,6 @@
       } </script>
 
     <script>
-      // window.addEventListener("load", function () {
-      //   let fruits = document.getElementsByClassName("fruit");
-      //   for (var i = 0; i < fruits.length; i++) {
-      //     fruits[i].addEventListener("click", function (e) {
-      //       let fruit = e.target;
-      //       console.log(fruit);
-      //       let larges = document.getElementById("big_cho");
-      //       larges.src = fruit.src.replace("big", "fruit").replace("w1", "b1");
-      //     }, false);
-      //   }
-      // }, false);
-
-      window.addEventListener("load", function () {
-
-      }, false);
-    </script>
-    <script>
-
-
       window.addEventListener("load", function () {
         let fruits = document.getElementsByClassName("fruit");
         let fruitTextDivs = document.getElementsByClassName("fruit_text");
@@ -1434,22 +1449,6 @@
 
     </script>
 
-    <!-- <script>
-
-      window.addEventListener("load", function () {
-        let eye_types = document.getElementsByClassName("eye_type");
-        for (var i = 0; i < eye_types.length; i++) {
-          // console.log("eye_types : ", eye_types.length);
-          eye_types[i].addEventListener("click", function (e) {
-            let fruit = e.target;
-            // console.log(fruit);
-            let larges = document.getElementById("big_cho");
-            larges.src = fruit.src.replace("small", "big").replace("b_", "");
-          }, false);
-        }
-      }, false);
-    </script>
- -->
 
 </body>
 
