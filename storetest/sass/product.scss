@@ -1,0 +1,518 @@
+@import "../../common/sass/common.scss";
+* {
+  //   outline: 1px solid red;
+}
+
+body {
+  background-color: $color_milk;
+}
+
+.product_container {
+  padding-top: 150px;
+  background: url(../image/product/first_bg.png) no-repeat 0 0/100% 100%;
+  height: 950px;
+  width: 100%;
+  position: relative;
+
+  .product_wrap {
+    .crumbs {
+      @include font_s;
+      display: inline-block;
+      line-height: 50px;
+      height: 50px;
+    }
+    .product_pic_introduce {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      position: relative;
+      .choco_man {
+        @include pos(auto, auto, 40px, -160px);
+        width: 160px;
+        height: 185px;
+        // background: url(../image/product/choco_man_body.png) no-repeat 0 0/100% 100%;
+        // margin-right: 10px;
+        // margin-bottom: 40px;
+        animation: choco_man_move 3s linear 1 forwards;
+        .choco_man_body {
+          // position: relative;
+          width: 100%;
+          height: 100%;
+        //   z-index: 1;
+        }
+        .left_hand {
+          @include pos(50%, auto, auto, 80%);
+          width: 92px;
+          height: 28px;
+          //   background: url(../image/product/left_hand.png) no-repeat 0 0/100% 100%;
+          transform-origin: left;
+          transform: rotate(-45deg);
+        //   z-index: -1;
+        }
+        .right_hand {
+          @include pos(45%, 0, auto, 15%);
+          width: 115px;
+          height: 34px;
+          //   background: url(../image/product/right_hand.png) no-repeat 0 0/100% 100%;
+          transform-origin: left;
+          transform: rotate(30deg);
+          animation: right_hand_move 1s linear 3 forwards alternate;
+        }
+        .left_leg {
+          @include pos(auto, 15%, -15%, auto);
+          width: 40px;
+          height: 52px;
+        //   background: url(../image/product/left_leg.png) no-repeat 0 0/100% 100%;
+          transform-origin: top;
+          transform: rotate(-10deg);
+          animation: left_leg_move 1s linear 3 forwards alternate;
+        }
+        .right_leg {
+          @include pos(auto, auto, -20%, 18%);
+          width: 46px;
+          height: 60px;
+        //   background: url(../image/product/right_leg.png) no-repeat 0 0/100% 100%;
+          transform-origin: top;
+          transform: rotate(10deg);
+          animation: right_leg_move 1s linear 3 forwards alternate;
+        }
+
+        @keyframes left_hand_move {
+          0% {
+          }
+
+          100% {
+          }
+        }
+        @keyframes right_hand_move {
+          0% {
+            transform: rotate(30deg);
+          }
+
+          100% {
+            transform: rotate(60deg);
+          }
+        }
+        @keyframes left_leg_move {
+          0% {
+            transform: rotate(-10deg);
+          }
+
+          100% {
+            transform: rotate(10deg);
+          }
+        }
+        @keyframes right_leg_move {
+          0% {
+            transform: rotate(10deg);
+          }
+
+          100% {
+            transform: rotate(-10deg);
+          }
+        }
+        @keyframes pic_move {
+          0% {
+            margin-right: 160px;
+          }
+
+          100% {
+            margin-right: 0;
+          }
+        }
+        @keyframes choco_man_move {
+          0% {
+            left: -160px;
+          }
+
+          100% {
+            left: 0;
+          }
+        }
+      }
+
+      .product_pic_area {
+        width: 520px;
+        height: 600px;
+        background: url(../image/product/dining_car1.png) no-repeat 0 0/100% 100%;
+        padding: 160px 45px 50px 60px;
+        position: relative;
+        .wheel_left {
+          @include pos(auto, auto, 0, 17%);
+          width: 93px;
+          height: 93px;
+          background: url(../image/product/wheel_left.png) no-repeat 0 0/100% 100%;
+          animation: wheel_rotate_clocwise 3s linear 1 forwards;
+        }
+        .wheel_right {
+          @include pos(auto, 12.8%, 0, auto);
+          width: 59px;
+          height: 59px;
+          background: url(../image/product/wheel_right.png) no-repeat 0 0/100% 100%;
+          animation: wheel_rotate_clocwise 3s linear 1 forwards;
+        }
+
+        @keyframes wheel_rotate_clocwise {
+          0% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(180deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        .main_pic {
+          width: 250px;
+          height: 250px;
+          margin: auto;
+          img {
+            width: 100%;
+          }
+        }
+
+        .other_pic_wrap {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          height: 120px;
+          .pics {
+            width: 100px;
+            height: 100px;
+            transform: scale(1.2);
+            cursor: pointer;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .product_introduce_area {
+        width: 440px;
+        padding: 50px 0 50px 40px;
+        animation: pic_move 3s linear 1 forwards;
+        .product_introduce {
+          border: 3px solid $color_blue;
+          border-radius: 20px;
+          width: 100%;
+          padding: 10px;
+          box-shadow: 8px 8px #7fc3c6;
+          position: relative;
+          background-color: $color_milk;
+
+          &:before {
+            content: "";
+            @include pos(0, auto, 0, -67px);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 23px 67px 23px 0;
+            border-color: transparent $color_blue transparent transparent;
+          }
+          &:after {
+            content: "";
+            @include pos(0, auto, 0, -60px);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 60px 20px 0;
+            border-color: transparent $color_milk transparent transparent;
+          }
+
+          // .ballon{
+          //     position: absolute;
+          //     width: 100px;
+          //     height: 160px;
+
+          // }
+          // .x1{
+          //     background: url(../image/product/car_head1.png) no-repeat 0 0/100% 100%;
+          // }
+          // .x2{
+          //     @include pos(0, 0, 0,0);
+          //     transform: scale(1.1);
+          //     background: url(../image/product/ballon_green.png) no-repeat top /contain;
+          //     animation: moveclouds 40s linear infinite;
+          // }
+          // .x3{
+
+          // }
+          // .x4{
+
+          // }
+
+          h3 {
+            @include font_l;
+            display: inline-block;
+            padding: 5px;
+          }
+          .product_desc {
+            @include font_s;
+            line-height: 1.2;
+            display: inline-block;
+            padding: 5px;
+          }
+          .sold_qty {
+            @include font_m;
+            display: inline-block;
+            width: 100%;
+            padding: 5px;
+          }
+          .price {
+            @include font_m;
+            display: inline-block;
+            width: 100%;
+            padding: 5px;
+          }
+          .qty_buttons {
+            display: flex;
+            width: 75px;
+            border: 1px solid $color_brown;
+            border-radius: 5px;
+            margin: 5px;
+            .qty {
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              color: $color_red;
+              text-align: center;
+              background-color: $color_milk;
+              border: none;
+            }
+
+            .minus,
+            .plus {
+              display: inline-block;
+
+              background-color: $color_milk;
+              width: 25px;
+              height: 25px;
+              cursor: pointer;
+              @include font_s;
+            }
+            .minus {
+              border: none;
+              border-right: 1px solid $color_brown;
+            }
+            .plus {
+              border: none;
+              border-left: 1px solid $color_brown;
+            }
+          }
+          .product_button {
+            padding: 5px;
+            display: flex;
+            .heart_unclick {
+              color: $color_milk;
+            }
+            .heart_clicked {
+              display: none;
+              color: $color_milk;
+            }
+          }
+          .product_detail {
+            th,
+            td {
+              padding: 5px;
+            }
+            th {
+              width: 100px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.relative_product_container {
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+  // cloud start
+  .cloud_wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    .cloud {
+      position: absolute;
+      width: 200px;
+      height: 150px;
+    }
+
+    .x1 {
+      left: -300px;
+      top: 250px;
+      transform: scale(1.1);
+      background: url(../image/store/cloud2.png) no-repeat top / contain;
+      animation: moveclouds 40s linear infinite;
+    }
+
+    .x2 {
+      left: -300px;
+      top: 400px;
+      transform: scale(0.8);
+      background: url(../image/store/cloud2.png) no-repeat top/contain;
+      animation: moveclouds 40s 5s linear infinite;
+    }
+    .x3 {
+      left: -300px;
+      top: 300px;
+      transform: scale(0.7);
+      background: url(../image/store/cloud2.png) no-repeat top/contain;
+      animation: moveclouds 40s 25s linear infinite;
+    }
+    .x4 {
+      left: -300px;
+      top: 130px;
+      background: url(../image/store/cloud1.png) no-repeat top/contain;
+      animation: moveclouds 40s 10s linear infinite;
+    }
+    .x5 {
+      left: -300px;
+      top: 300px;
+      background: url(../image/store/cloud2.png) no-repeat top/contain;
+      animation: moveclouds 40s 30s linear infinite;
+    }
+    .x6 {
+      left: -300px;
+      top: 350px;
+      transform: scale(0.7);
+      background: url(../image/store/cloud1.png) no-repeat top/contain;
+      animation: moveclouds 40s 20s linear infinite;
+    }
+    .x7 {
+      left: -300px;
+      top: 0;
+      transform: scale(0.9);
+      background: url(../image/store/cloud2.png) no-repeat top/contain;
+      animation: moveclouds 40s 35s linear infinite;
+    }
+  }
+
+  @keyframes moveclouds {
+    0% {
+    }
+    100% {
+      left: 2000px;
+    }
+  }
+
+  // cloud end
+
+  .circle_bg {
+    @include pos(-50%, 0, auto, -20%);
+    width: 2620px;
+    height: 1150px;
+    background: url(../image/product/circle_bg.png) no-repeat;
+    // transform: translateX(-50%);
+  }
+  .relative_product_wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    .car_head {
+      width: 490px;
+      height: 570px;
+      background: url(../image/product/car_head1.png) no-repeat 0 0/100% 100%;
+      padding: 195px 5px 20px 150px;
+      position: relative;
+
+      .wheel_left {
+        @include pos(auto, auto, 0, 17%);
+        background: url(../image/product/car_wheel.png) no-repeat 0 0/100% 100%;
+        width: 68px;
+        height: 68px;
+        animation: wheel_rotate_counter_clocwise 3s linear infinite forwards;
+      }
+      .wheel_right {
+        @include pos(auto, 7%, 0, auto);
+        background: url(../image/product/car_wheel.png) no-repeat 0 0/100% 100%;
+        width: 68px;
+        height: 68px;
+        animation: wheel_rotate_counter_clocwise 3s linear infinite forwards;
+      }
+
+      @keyframes wheel_rotate_counter_clocwise {
+        0% {
+          transform: rotate(360deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      .relative_product_pic {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto auto auto;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+      }
+      .relative_product_text {
+        text-align: center;
+        margin: 20px auto auto auto;
+        h3 {
+          @include font_m;
+        }
+        .price {
+          @include font_s;
+        }
+      }
+    }
+
+    .car_body {
+      width: 280px;
+      height: 380px;
+      background: url(../image/product/car_body1.png) no-repeat 0 0/100% 100%;
+      padding-left: 20px;
+      position: relative;
+
+      .wheel_left {
+        @include pos(auto, auto, 0, 8%);
+        background: url(../image/product/car_wheel.png) no-repeat 0 0/100% 100%;
+        width: 68px;
+        height: 68px;
+        animation: wheel_rotate_counter_clocwise 3s linear infinite forwards;
+      }
+      .wheel_right {
+        @include pos(auto, 8%, 0, auto);
+        background: url(../image/product/car_wheel.png) no-repeat 0 0/100% 100%;
+        width: 68px;
+        height: 68px;
+        animation: wheel_rotate_counter_clocwise 3s linear infinite forwards;
+      }
+
+      .relative_product_pic {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto auto auto;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+      }
+      .relative_product_text {
+        text-align: center;
+        margin: 20px auto auto auto;
+        h3 {
+          @include font_m;
+        }
+        .price {
+          @include font_s;
+        }
+      }
+    }
+  }
+}
