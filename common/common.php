@@ -1,3 +1,22 @@
+
+<?php
+$errMsg = "";
+try {
+	require_once("connectChoco.php");
+
+	$sql = "select * from classic_products ";    
+    $products = $pdo->query($sql); 
+    
+    // 再看你要連至哪個table  連結table名稱 請依照資料庫實際命名 
+
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+ 
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,29 +39,29 @@
                 </figure>
             </div>
             <div class="logo">
-                <a href="../index/index.html">
+                <a href="../index/index.php">
                     <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
             </div> 
             <div class="status">
                 <figure>
-                    <a href="../member/member.html">
+                    <a href="../member/member.php">
                         <img src="image/headerfooter/icon_member.png" alt="member">
                     </a>
                 </figure>
                 <figure>
-                    <a href="../cart/cart.html">
+                    <a href="../cart/cart.php">
                         <img src="image/headerfooter/icon_cart.png" alt="cart">
                     </a>
                 </figure>
             </div>
         </div>
         <ul class="menubox">
-            <li><a href="../custom/custom.html">客製 CHOCO</a></li>
-            <li><a href="../contest/contest.html">CHOCO 選美</a></li>
-            <li><a href="../game/game.html">CHOCO 遊戲</a></li>
-            <li><a href="../store/store.html">CHOCO 商城</a></li>
-            <li><a href="../about/about.html">關於 CHOCO</a></li>
+            <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+            <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+            <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+            <li><a href="../store/store.php">CHOCO 商城</a></li>
+            <li><a href="../about/about.php">關於 CHOCO</a></li>
             <figure id="menuclose">
                 <img src="image/headerfooter/menuclose.png" alt="close">
             </figure>
@@ -50,26 +69,26 @@
     </div>
     <div class="d_header">
         <div class="logo">
-            <a href="../index/index.html">
+            <a href="../index/index.php">
                 <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
             </a>
         </div>
         <div class="navbar">
             <ul class="menubox">
-                <li><a href="../custom/custom.html">客製 CHOCO</a></li>
-                <li><a href="../contest/contest.html">CHOCO 選美</a></li>
-                <li><a href="../game/game.html">CHOCO 遊戲</a></li>
-                <li><a href="../store/store.html">CHOCO 商城</a></li>
-                <li><a href="../about/about.html">關於 CHOCO</a></li>
+                <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+                <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+                <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+                <li><a href="../store/store.php">CHOCO 商城</a></li>
+                <li><a href="../about/about.php">關於 CHOCO</a></li>
             </ul>
             <div class="status">
                 <figure>
-                    <a href="../member/member.html">
+                    <a href="../member/member.php">
                         <img src="image/headerfooter/icon_member.png" alt="member">
                     </a>
                 </figure>
                 <figure>
-                    <a href="../cart/cart.html">
+                    <a href="../cart/cart.php">
                         <img src="image/headerfooter/icon_cart.png" alt="cart">
                     </a>
                 </figure>
