@@ -1636,14 +1636,14 @@ header {
             position: absolute;
             right: 0; }
           header #registerLightBox #registered .login_register h3 {
-            font-size: 36px;
+            font-size: 30px;
             color: #f0ecdd;
-            padding: 4% 0; }
+            padding: 0; }
           header #registerLightBox #registered .login_register p {
             color: #f0ecdd;
             font-size: 12px;
             line-height: 20px;
-            margin: 5% 0; }
+            margin: 2% 0; }
           header #registerLightBox #registered .login_register span {
             width: 20%;
             float: left;
