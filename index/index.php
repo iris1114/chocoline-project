@@ -27,29 +27,29 @@
                 </figure>
             </div>
             <div class="logo">
-                <a href="../index/index.html">
+                <a href="../index/index.php">
                     <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
             </div> 
             <div class="status">
                 <figure>
-                    <a href="../member/member.html">
+                    <a href="../member/member.php">
                         <img src="image/headerfooter/icon_member.png" alt="member">
                     </a>
                 </figure>
                 <figure>
-                    <a href="../cart/cart.html">
+                    <a href="../cart/cart.php">
                         <img src="image/headerfooter/icon_cart.png" alt="cart">
                     </a>
                 </figure>
             </div>
         </div>
         <ul class="menubox">
-            <li><a href="../custom/custom.html">客製 CHOCO</a></li>
-            <li><a href="../contest/contest.html">CHOCO 選美</a></li>
-            <li><a href="../game/game.html">CHOCO 遊戲</a></li>
-            <li><a href="../store/store.html">CHOCO 商城</a></li>
-            <li><a href="../about/about.html">關於 CHOCO</a></li>
+            <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+            <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+            <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+            <li><a href="../store/store.php">CHOCO 商城</a></li>
+            <li><a href="../about/about.php">關於 CHOCO</a></li>
             <figure id="menuclose">
                 <img src="image/headerfooter/menuclose.png" alt="close">
             </figure>
@@ -57,26 +57,26 @@
     </div>
     <div class="d_header">
         <div class="logo">
-            <a href="../index/index.html">
+            <a href="../index/index.php">
                 <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
             </a>
         </div>
         <div class="navbar">
             <ul class="menubox">
-                <li><a href="../custom/custom.html">客製 CHOCO</a></li>
-                <li><a href="../contest/contest.html">CHOCO 選美</a></li>
-                <li><a href="../game/game.html">CHOCO 遊戲</a></li>
-                <li><a href="../store/store.html">CHOCO 商城</a></li>
-                <li><a href="../about/about.html">關於 CHOCO</a></li>
+                <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+                <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+                <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+                <li><a href="../store/store.php">CHOCO 商城</a></li>
+                <li><a href="../about/about.php">關於 CHOCO</a></li>
             </ul>
             <div class="status">
                 <figure>
-                    <a href="../member/member.html">
+                    <a href="../member/member.php">
                         <img src="image/headerfooter/icon_member.png" alt="member">
                     </a>
                 </figure>
                 <figure>
-                    <a href="../cart/cart.html">
+                    <a href="../cart/cart.php">
                         <img src="image/headerfooter/icon_cart.png" alt="cart">
                     </a>
                 </figure>
@@ -96,7 +96,7 @@
 
     <div class="sky_wrap">
         <div id="space_ship">
-           <a href="custom.html"><img src="image/index/hero/space_ship.png" alt="space_ship"></a> 
+           <a href="../custom/custom.php"><img src="image/index/hero/space_ship.png" alt="space_ship"></a> 
         </div>  
         <div id="cloud">
             <img src="image/index/hero/cloud.png" alt="cloud">
@@ -129,11 +129,11 @@
                     <img src="image/index/hero/body1.png" alt="body" class="body" >
                 </div>
                 <div class="choco_white" >
-                    <a href="../custom/custom.html"><img src="image/index/hero/choco_white.png" alt="choco"></a> 
+                    <a href="../custom/custom.php"><img src="image/index/hero/choco_white.png" alt="choco"></a> 
                     </div>
 
                 <div class="choco_milk" >
-                        <a href="../custom/custom.html"><img src="image/index/hero/choco_milk.png" alt="choco"></a> 
+                        <a href="../custom/custom.php"><img src="image/index/hero/choco_milk.png" alt="choco"></a> 
                     </div> 
 
                 <div class="love_l">
@@ -146,7 +146,7 @@
                     <img src="image/index/hero/love_s.png" alt="love">
                 </div> 
                 <div class="card">
-                   <a href="../custom/custom.html"> <img src="image/index/hero/card.png" alt="card"></a>
+                   <a href="../custom/custom.php"> <img src="image/index/hero/card.png" alt="card"></a>
                 </div>
                 <div class="shadow">
                     <img src="image/index/hero/shadow.png" alt="shadow">
@@ -232,7 +232,7 @@
                 <img src="image/index/custom/right.png" alt="right" class="right_btn" id="toRight" />
                 <img src="image/index/custom/left.png" alt="left" class="left_btn" id="toLeft" />
               </div>
-        <a href="../custom/custom.html" class="btn orange_l"><span> 繼續客制</span></a>
+        <a href="../custom/custom.php" class="btn orange_l"><span> 繼續客制</span></a>
 
         
       
@@ -431,7 +431,7 @@
                         </div>
                     </div>
                     <div class="connect">
-                        <a href="../contest/contest.html" class="btn orange_l"><span>去投票</span></a>
+                        <a href="../contest/contest.php" class="btn orange_l"><span>去投票</span></a>
                     </div>
                 </div>
             </div>
@@ -455,7 +455,7 @@
                     <p>遊戲方式：</p>
                     <p>遊戲方式:按下方向鍵 <span class="keyboard"> <img src="image/index/game/keyboard.png" alt=""> </span> 控制CHOCO星人~</p>
                     <p>在時間內接到巧克力來獲取點數</p>
-                    <a href="../game/game.html" class="btn orange_xl"><span>START</span></a>
+                    <a href="../game/game.php" class="btn orange_xl"><span>START</span></a>
                 </div>
             </div>
             <div class="game_things">
@@ -520,19 +520,19 @@
         </div>
         <div class="aboutus_car">
             <div class="car car_taipai">
-                <a href="../about/about.html"> <img src="image/aboutus/aboutus_taipeicar.png" alt="car_taipai"></a>
+                <a href="../about/about.php"> <img src="image/aboutus/aboutus_taipeicar.png" alt="car_taipai"></a>
             </div>
             <div class="car car_taoyuan">
-                <a href="../about/about.html"> <img src="image/aboutus/aboutus_taoyuancar.png" alt="car_taoyuan"></a>
+                <a href="../about/about.php"> <img src="image/aboutus/aboutus_taoyuancar.png" alt="car_taoyuan"></a>
             </div>
             <div class="car car_taichung">
-                <a href="../about/about.html">  <img src="image/aboutus/aboutus_taichungcar.png" alt="taichung"></a>
+                <a href="../about/about.php">  <img src="image/aboutus/aboutus_taichungcar.png" alt="taichung"></a>
             </div>
             <div class="car car_hualien">
-                <a href="../about/about.html"> <img src="image/aboutus/aboutus_hualiencar.png" alt="car_hualien"></a>
+                <a href="../about/about.php"> <img src="image/aboutus/aboutus_hualiencar.png" alt="car_hualien"></a>
             </div>
             <div class="car car_kaohsiung">
-                <a href="../about/about.html"> <img src="image/aboutus/aboutus_kaohsiungcar.png" alt="car_kaohsiung"></a>
+                <a href="../about/about.php"> <img src="image/aboutus/aboutus_kaohsiungcar.png" alt="car_kaohsiung"></a>
             </div>
         </div> 
     </div>  
