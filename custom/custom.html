@@ -530,31 +530,31 @@
         <!-- ----- middle side start ----- -->
 
         <div class="outlook_fix">
-       
-          <div class="fix_photo" >
+
+          <div class="fix_photo" id="fix">
             <div id="eye_pos">
             </div>
             <div id="mouse_pos">
             </div>
             <div id="others_pos">
             </div>
-            <!-- <img src="image/custom/bear1.png" alt="bear"> -->
+            <img src="image/custom/123 (2).png" alt="bear">
           </div>
 
           <div class="fix_bar">
-            <div class="bar_photo">
-              <img src="image/custom/bar_item6.png" alt="large">
+            <div class="bar_photo big">
+              <img src="image/custom/bar_item6.png" alt="big">
             </div>
-            <div class="bar_photo">
+            <div class="bar_photo small">
               <img src="image/custom/bar_item5.png" alt="small">
             </div>
-            <div class="bar_photo">
+            <div class="bar_photo right">
               <img src="image/custom/bar_item1.png" alt="right">
             </div>
-            <div class="bar_photo">
+            <div class="bar_photo left">
               <img src="image/custom/bar_item2.png" alt="left">
             </div>
-            <div class="bar_photo">
+            <div class="bar_photo reset">
               <img src="image/custom/bar_item.png" alt="reset">
             </div>
           </div>
@@ -1267,13 +1267,13 @@
             let modelsrc = model.childNodes[1].src;
             // console.log("modelsrc " + modelsrc);
 
-            
+
             let pathIndex = modelsrc.indexOf('image');
 
             let srcpos = modelsrc.substring(pathIndex);
-        
+
             console.log(srcpos);
-            
+
             //檔名
             // let fileIndex = modelsrc.indexOf('/');
             // let fileName = modelsrc.substring(fileIndex + 1);
@@ -1284,7 +1284,7 @@
             // let thrid = fileName.substring(6);
             // // console.log("thrid", thrid);
 
-            let modelColor = srcpos.substr(-7,1);
+            let modelColor = srcpos.substr(-7, 1);
             console.log("new!!!!!! ", modelColor);
 
             // bear_n_n.png 原本
@@ -1292,105 +1292,105 @@
 
             // var res = srcpos.replace(modelColor, "w");
             // console.log(srcpos)
-  
-  
-//   document.getElementById("demo").innerHTML = res;
-// }
+
+
+            //   document.getElementById("demo").innerHTML = res;
+            // }
             if (cho_type.alt == "white") {
 
               var img = document.createElement("img");
               var res = srcpos.replace(modelColor, "w");
-              
-            // console.log(res)
-             img.src =res;
 
-             img.className = "big_cho2";
-             console.log(img)
-            //  console.log(cc)
+              // console.log(res)
+              img.src = res;
 
-             var final = document.getElementsByClassName("big_cho");
-             img[0]    = final[0] ;
+              img.className = "big_cho2";
+              console.log(img)
+              //  console.log(cc)
 
-             $(document).ready(function(){
-              
-					$('.big_cho').removeAttr('src');
-            console.log(final[0]);
-            
-				$('.big_cho').attr('src',res);
-        console.log(final[0]);
-				});
+              var final = document.getElementsByClassName("big_cho");
+              img[0] = final[0];
 
-			
-            //  console.log( final[0]);
+              $(document).ready(function () {
+
+                $('.big_cho').removeAttr('src');
+                console.log(final[0]);
+
+                $('.big_cho').attr('src', res);
+                console.log(final[0]);
+              });
+
+
+              //  console.log( final[0]);
               // let total = srcpos + frist + "w" + thrid;
               // console.log(total);
               // model.childNodes[1].src = total;
               // console.log(model.childNodes[1].src);
               // console.log( model.childNodes[1].src);
             } else if (cho_type.alt == "black") {
-              
+
               var img = document.createElement("img");
               var res = srcpos.replace(modelColor, "d");
-              
-            // console.log(res)
-             img.src =res;
 
-            //  img.className = "big_cho2";
-            // //  console.log(img)
-            //  console.log(cc)
+              // console.log(res)
+              img.src = res;
 
-             var final = document.getElementsByClassName("big_cho");
-            //  final[0] = im。g;
+              //  img.className = "big_cho2";
+              // //  console.log(img)
+              //  console.log(cc)
 
-             $(document).ready(function(){
-              $('.big_cho').removeClass('big_cho');
-              $('table tr:nth-child(odd)').addClass('highlight');
-					$('.big_cho2').removeAttr('src');
-            // console.log(final[0]);
-            
-				$('.big_cho2').attr('src',res);
-        console.log(final[0]);
-				});
+              var final = document.getElementsByClassName("big_cho");
+              //  final[0] = im。g;
+
+              $(document).ready(function () {
+                $('.big_cho').removeClass('big_cho');
+                $('table tr:nth-child(odd)').addClass('highlight');
+                $('.big_cho2').removeAttr('src');
+                // console.log(final[0]);
+
+                $('.big_cho2').attr('src', res);
+                console.log(final[0]);
+              });
 
 
             } else if (cho_type.alt == "milk") {
-              
-              
+
+
               var img = document.createElement("img");
               var res = srcpos.replace(modelColor, "m");
-              
-            // console.log(res)
-             img.src =res;
 
-            //  img.className = "big_cho2";
-            // //  console.log(img)
-            //  console.log(cc)
+              // console.log(res)
+              img.src = res;
 
-             var final = document.getElementsByClassName("big_cho");
-            //  final[0] = im。g;
+              //  img.className = "big_cho2";
+              // //  console.log(img)
+              //  console.log(cc)
 
-             $(document).ready(function(){
-			
-					$('.big_cho').removeAttr('src');
-            // console.log(final[0]);
-            
-				$('.big_cho').attr('src',res);
-        console.log(final[0]);
-				});
+              var final = document.getElementsByClassName("big_cho");
+              //  final[0] = im。g;
+
+              $(document).ready(function () {
+
+                $('.big_cho').removeAttr('src');
+                // console.log(final[0]);
+
+                $('.big_cho').attr('src', res);
+                console.log(final[0]);
+              });
             }
 
           }, false);
         }
 
 
-  // --------------------------選擇巧克力配料口味--------------------------
+        // --------------------------選擇巧克力配料口味--------------------------
 
 
 
 
 
 
-  // --------------------------選擇配料口味--------------------------
+        // --------------------------選擇配料口味--------------------------
 
 
         let fruits = document.getElementsByClassName("fruit");
@@ -1455,19 +1455,23 @@
 
         // --------------------------選擇配料口味--------------------------
 
-        $(document).ready(function(){
-				$('#next_page2').click(function(){
-					var name = $('.big_cho[0]').src;
-          console.log(name);
 
-					// // $('#feedback').text(name);
-					// $('#feedback').append(name + '<br>').css('textDecoration','underline');
-				});
-			});		
+
+        // ---------------------drag--------------------------
+
+        $(document).ready(function () {
+          $('#next_page2').click(function () {
+            var name = $('.big_cho[0]').src;
+            console.log(name);
+
+            // // $('#feedback').text(name);
+            // $('#feedback').append(name + '<br>').css('textDecoration','underline');
+          });
+        });
 
 
         document.getElementById("next_page2").onclick = function () {
-          
+
           let third_model = document.getElementsByClassName("choco_overview");
           let third_model_pos = document.getElementsByClassName("fix_photo");
           let aaa = third_model_pos[0].innerHTML;
@@ -1482,55 +1486,192 @@
           console.log(aaa);
 
 
-          
+
 
         };
 
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          $('.eye_type').click(function () {
+          $('.eye_items').click(function () {
             $(this).clone().appendTo('#eye_pos').addClass('demo_eye');
-           let eye_checks =  document.getElementsByClassName('demo_eye');
-            let eye_check = new Array(1)
+            let eye_check = document.querySelectorAll('demo_eye');
 
-           for (let i  = 0 ; i < eye_checks.length ; i++){
-            // console.log(eye_check[i]);
-             if(eye_checks.length == 2 ){
-              console.log("yes");
-              eye_checks.disable = true;
-               $('eye_items').addClass('disable');
-             }
-          
-           }
+
+            for (let i = 0; i < eye_check.length; i++) {
+              // console.log(eye_check[i]);
+              if (eye_check.length == 2) {
+                console.log("yes");
+                // eye_checks.disable = true;
+                $('.eye_items').attr('disable');
+              }
+
+            }
           });
-          drag_img()
+
         });
 
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          $('.mouse_type').click(function () {
+          $('.mouse_items').click(function () {
             $(this).clone().appendTo('#mouse_pos').addClass('demo_mouse');
           });
-          });
-          drag_img()
         });
 
-        $(document).ready(function () {
-          // for (let i = 0; i <  )
-          $('.others_type').click(function () {
-            $(this).clone().appendTo('#others_pos').addClass('demo_others');
-          });;
-          drag_img();
-          });
+      });
+
+      $(document).ready(function () {
+        // for (let i = 0; i <  )
+        $('.others_items').click(function () {
+          $(this).clone().appendTo('#others_pos').addClass('demo_others');
+        });;
+
+      });
+
+      $("#eye_pos").draggable({
+        containment: "parent",
+        scroll: false,
+        start: function () { ClikDragEyes() }
+      });
+      $("#mouse_pos").draggable({
+        containment: "parent",
+        scroll: false
+      });
+      $("#others_pos").draggable({
+        containment: "parent",
+        scroll: false
+      });
+
+      function ClikDragEyes() {
+        $('#eye_pos').removeClass('selector__choose').addClass('selector__choose--choosed').siblings().removeClass('selector__choose--choosed');
+      }
+
+      // ---------------------drag--------------------------
 
 
-    function drag_img() {
-    $( ".demo_eye" ).draggable({ containment: ".fix_photo", scroll:true });
-    $( ".demo_mouse" ).draggable({ containment: ".fix_photo", scroll:true});
-    $( ".demo_others" ).draggable({ containment: ".fix_photo",scroll:true});
-  } ;
+      // ---------------------drag--------------------------
+
+
+
+
+
+
+
+
+
+
     </script>
 
+    <script>
+
+      function doFirst() {
+        eyesscale = 1; //原始尺吋1
+        eyesdeg = 0; //原始角度0
+        mouthscale = 1; //原始尺吋1
+        mouthdeg = 0; //原始角度
+        accessoryscale = 1;
+        accessorydeg = 0;
+
+
+        document.getElementsByClassName('big')[0].addEventListener('click', big);
+        document.getElementsByClassName('small')[0].addEventListener('click', small);
+        document.getElementsByClassName('right')[0].addEventListener('click', right);
+        document.getElementsByClassName('left')[0].addEventListener('click', left);
+        document.getElementsByClassName('reset')[0].addEventListener('click', reset);
+
+        eyes = document.querySelectorAll('.demo_eye');
+        mouth = document.querySelectorAll('.demo_mouse');
+        others = document.querySelectorAll('.demo_others');
+      }
+
+      function big() {
+        console.log("yes");
+        if ($('.demo_eye').is('.selector__choose--choosed')) {
+          eyesscale += 0.25; //先判斷在加
+          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
+        }
+        if ($('.demo_mouse').is('.selector__choose--choosed')) {
+          mouthscale += 0.25;
+          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
+        }
+        if ($('.demo_others').is('.selector__choose--choosed')) {
+          accessoryscale += 0.25;
+          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
+        }
+      }
+      //減
+      function small() {
+        if ($('#eyesbutton').is('.selector__choose--choosed')) {
+          eyesscale -= 0.25; //先判斷在加
+          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
+        }
+        if ($('#mouthbutton').is('.selector__choose--choosed')) {
+          mouthscale -= 0.25;
+          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
+        }
+        if ($('#accessorybutton').is('.selector__choose--choosed')) {
+          accessoryscale -= 0.25;
+          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
+        }
+      }
+      //轉
+      function right() {
+        if ($('#eyesbutton').is('.selector__choose--choosed')) {
+          eyesdeg -= 10; //先判斷在加
+          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
+        }
+        if ($('#mouthbutton').is('.selector__choose--choosed')) {
+          mouthdeg -= 10;
+          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
+        }
+        if ($('#accessorybutton').is('.selector__choose--choosed')) {
+          accessorydeg -= 10;
+          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
+        }
+      }
+
+      function left() {
+        if ($('#eyesbutton').is('.selector__choose--choosed')) {
+          eyesdeg -= 10; //先判斷在加
+          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
+        }
+        if ($('#mouthbutton').is('.selector__choose--choosed')) {
+          mouthdeg -= 10;
+          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
+        }
+        if ($('#accessorybutton').is('.selector__choose--choosed')) {
+          accessorydeg -= 10;
+          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
+        }
+      }
+
+      // 丟
+      function reset() {
+        document.querySelector('.mownster__eyesposition img').src = ""
+        eyesscale = 1; //原始尺吋1
+        eyesdeg = 0; //原始角度0
+        eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
+        eyes.style = "";
+
+        document.querySelector('.mownster__mouthposition img').src = ""
+        mouthscale = 1; //原始尺吋1
+        mouthdeg = 0; //原始角度
+        mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
+        mouth.style += "top:45%,left:35%";
+        mouth.style = "";
+
+        document.querySelector('.mownster__accessoryposition img').src = ""
+        accessoryscale = 1;
+        accessorydeg = 0;
+        accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
+        accessory.style = "";
+      };
+
+
+
+
+      window.addEventListener('load', doFirst);
+
+    </script>
     <script>
       function openCity(evt, types) {
         // Declare all variables
