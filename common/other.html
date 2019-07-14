@@ -96,6 +96,31 @@
     <!--------------prev next btn------------->
 
     <span id="prev_btn">❮</span> 
-    <span id="next_btn">❯</span>    
+    <span id="next_btn">❯</span>   
+    
+<!--------------light_box------------->
+<a href="#" id="alert_btn" class="btn orange_l"><span>加入購物車</span></a>
+
+<div id="alert_box" style="display: none">
+    <div id="alert_content">
+        <p>成功加入購物車～</p>
+        <img id="alert_close" src="image/common/login_closeicon2.png" alt="">
+    </div>
+</div>
+
+
+<script>
+function do_first(){
+    document.getElementById("alert_btn").onclick = function(){
+    document.getElementById('alert_box').style.display= "block";
+    document.getElementById('alert_close').onclick = function(){
+    document.getElementById('alert_box').style.display= "none";
+    }
+    }
+}
+    window.addEventListener('load',do_first)
+</script>
+
+
 </body>
 </html>

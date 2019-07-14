@@ -995,6 +995,47 @@ header {
   #next_btn:hover {
     background-color: #187f8f; }
 
+#alert_box {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(66, 66, 66, 0.6);
+  z-index: 11; }
+  #alert_box #alert_content {
+    width: 300px;
+    height: 300px;
+    background: url(../image/common/lightbox.png) no-repeat center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
+    #alert_box #alert_content p {
+      font-size: 20px;
+      color: #F6EED4;
+      padding-top: 40%;
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: normal; }
+      @media all and (max-width: 767px) {
+        #alert_box #alert_content p {
+          font-size: 18px; } }
+      @media all and (min-width: 768px) {
+        #alert_box #alert_content p {
+          font-size: 24px; } }
+      @media all and (min-width: 992px) {
+        #alert_box #alert_content p {
+          font-size: 28px; } }
+    #alert_box #alert_content #alert_close {
+      cursor: pointer;
+      position: absolute;
+      right: 10%;
+      top: 8%;
+      width: 10%; }
+
 .wrap {
   width: 100%;
   max-width: 1200px;
