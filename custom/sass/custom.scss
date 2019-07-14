@@ -3805,10 +3805,14 @@ body {
         // flex-flow: column wrap;
         // justify-content: space-around;
         position: relative;
-        
+
         .fix_photo {
           width: 100%;
           padding-bottom: 5%;
+          -webkit-mask-image: url(../image/custom/2.png);
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-position: center;
+          -webkit-mask-size: contain;
           #eye_pos {
             width: 150px;
             height: 30px;
@@ -3970,8 +3974,7 @@ body {
       .card_custom {
         width: 100%;
         display: flex;
-
-        justify-content: space-between;
+        justify-content: space-around;
         margin: auto;
         .card_back {
           width: 33.333333%;
