@@ -581,6 +581,11 @@ canvas{
             top: 28%;
         }
     }
+    @media all and (max-width:768px){
+        .game_body{
+            transform-origin: 38% 50%;
+        }
+    }
     @media all and (max-width:375px){
         .game_body{
             transform-origin: 34% 50%;
