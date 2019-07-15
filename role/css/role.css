@@ -478,7 +478,7 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 10;
+  z-index: 9;
   -webkit-transition: bottom 2s;
   transition: bottom 2s;
 }
@@ -1866,6 +1866,57 @@ body {
   z-index: 1;
 }
 
+.introduce_container .choco_playing figure {
+  -webkit-animation: dance 4s infinite;
+          animation: dance 4s infinite;
+}
+
+@-webkit-keyframes dance {
+  0% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  25% {
+    -webkit-transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+            transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateX(5%) translateY(-2%) rotate(5deg);
+            transform: translateX(5%) translateY(-2%) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+}
+
+@keyframes dance {
+  0% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  25% {
+    -webkit-transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+            transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateX(5%) translateY(-2%) rotate(5deg);
+            transform: translateX(5%) translateY(-2%) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+}
+
 .introduce_container .bread {
   width: 100%;
   max-width: 414px;
@@ -2091,6 +2142,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 0;
 }
 
 @media all and (max-width: 767px) {
@@ -2106,7 +2159,7 @@ body {
   }
 }
 
-.introduce_container #choco_information {
+.introduce_container .choco_information {
   width: 265px;
   max-height: 360px;
   background: #fff;
@@ -2122,86 +2175,87 @@ body {
   text-align: left;
   -webkit-box-shadow: 11px 11px 0 #1A99AD;
           box-shadow: 11px 11px 0 #1A99AD;
+  cursor: pointer;
 }
 
-.introduce_container #choco_information ul {
+.introduce_container .choco_information ul {
   width: 100%;
 }
 
-.introduce_container #choco_information li {
+.introduce_container .choco_information li {
   word-break: break-all;
   padding: 5px 0;
 }
 
-.introduce_container #choco_information li:nth-child(1) p {
+.introduce_container .choco_information li:nth-child(1) p {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
 
 @media all and (max-width: 767px) {
-  .introduce_container #choco_information li:nth-child(1) p {
+  .introduce_container .choco_information li:nth-child(1) p {
     font-size: 18px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .introduce_container #choco_information li:nth-child(1) p {
+  .introduce_container .choco_information li:nth-child(1) p {
     font-size: 24px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .introduce_container #choco_information li:nth-child(1) p {
+  .introduce_container .choco_information li:nth-child(1) p {
     font-size: 28px;
   }
 }
 
-.introduce_container #choco_information li:nth-child(2) {
+.introduce_container .choco_information li:nth-child(2) {
   padding-bottom: 20px;
 }
 
-.introduce_container #choco_information li:nth-child(2) p {
+.introduce_container .choco_information li:nth-child(2) p {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
 
 @media all and (max-width: 767px) {
-  .introduce_container #choco_information li:nth-child(2) p {
+  .introduce_container .choco_information li:nth-child(2) p {
     font-size: 18px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .introduce_container #choco_information li:nth-child(2) p {
+  .introduce_container .choco_information li:nth-child(2) p {
     font-size: 24px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .introduce_container #choco_information li:nth-child(2) p {
+  .introduce_container .choco_information li:nth-child(2) p {
     font-size: 28px;
   }
 }
 
 @media all and (max-width: 1300px) {
-  .introduce_container #choco_information li:nth-child(2) p {
+  .introduce_container .choco_information li:nth-child(2) p {
     font-size: 24px;
   }
 }
 
 @media all and (max-width: 1055px) {
-  .introduce_container #choco_information li:nth-child(2) p {
+  .introduce_container .choco_information li:nth-child(2) p {
     font-size: 22px;
   }
 }
 
 @media all and (max-width: 767px) {
-  .introduce_container #choco_information li:nth-child(2) p {
+  .introduce_container .choco_information li:nth-child(2) p {
     font-size: px;
   }
 }
 
-.introduce_container #choco_information li:nth-child(3) {
+.introduce_container .choco_information li:nth-child(3) {
   text-align: center;
   width: 100%;
   height: 3px;
@@ -2209,80 +2263,82 @@ body {
   background: #777;
 }
 
-.introduce_container #choco_information li:nth-child(4) {
+.introduce_container .choco_information li:nth-child(4) {
   padding-top: 20px;
 }
 
-.introduce_container #choco_information li:nth-child(4) p {
+.introduce_container .choco_information li:nth-child(4) p {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
 
 @media all and (max-width: 767px) {
-  .introduce_container #choco_information li:nth-child(4) p {
+  .introduce_container .choco_information li:nth-child(4) p {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .introduce_container #choco_information li:nth-child(4) p {
+  .introduce_container .choco_information li:nth-child(4) p {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .introduce_container #choco_information li:nth-child(4) p {
+  .introduce_container .choco_information li:nth-child(4) p {
     font-size: 16px;
   }
 }
 
-.introduce_container #choco_information li:nth-child(5) p {
+.introduce_container .choco_information li:nth-child(5) p {
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
 
 @media all and (max-width: 767px) {
-  .introduce_container #choco_information li:nth-child(5) p {
+  .introduce_container .choco_information li:nth-child(5) p {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .introduce_container #choco_information li:nth-child(5) p {
+  .introduce_container .choco_information li:nth-child(5) p {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .introduce_container #choco_information li:nth-child(5) p {
+  .introduce_container .choco_information li:nth-child(5) p {
     font-size: 16px;
   }
 }
 
-.introduce_container #cardfront {
+.introduce_container .cardfront {
   width: 290px;
+  cursor: pointer;
 }
 
-.introduce_container #cardback {
+.introduce_container .cardback {
   width: 290px;
+  cursor: pointer;
 }
 
 @media all and (max-width: 767px) {
-  .introduce_container #choco_information {
+  .introduce_container .choco_information {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     width: 203px;
     margin: 0 20px;
   }
-  .introduce_container #cardfront {
+  .introduce_container .cardfront {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     width: 203px;
     margin: 0 20px;
   }
-  .introduce_container #cardback {
+  .introduce_container .cardback {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -2578,7 +2634,7 @@ body {
 .message_board_container .message_board_wrap {
   height: 1350px;
   max-width: 1000px;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .message_board_container .message_block {
@@ -2749,6 +2805,16 @@ body {
   }
 }
 
+.message_board_container .page_wrap {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.message_board_container .pagination {
+  background: #fff;
+  border-radius: 5px;
+}
+
 .message_board_container .input_message_wrap {
   padding-top: 100px;
   background: #AD9380;
@@ -2865,6 +2931,112 @@ body {
   left: 0;
   margin: auto;
   background: #1A99AD;
+}
+
+.message_board_container .report {
+  width: 370px;
+  height: 270px;
+  background: #FF4D50;
+  border-radius: 15px;
+  -webkit-box-shadow: 11px 11px 0 #FFA6AB;
+          box-shadow: 11px 11px 0 #FFA6AB;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.message_board_container .report .contain {
+  width: 90%;
+  margin: auto;
+}
+
+.message_board_container .report p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  color: #F6EED4;
+  text-align: left;
+  padding: 10px 0;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .report p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .report p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .report p {
+    font-size: 20px;
+  }
+}
+
+.message_board_container .report textarea {
+  padding: 10px;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  border-radius: 15px;
+  width: 100%;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .report textarea {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .report textarea {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .report textarea {
+    font-size: 20px;
+  }
+}
+
+.message_board_container .report .btn {
+  margin-top: 20px;
+}
+
+.message_board_container .close_btn {
+  width: 30px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+}
+
+.message_board_container .report_bear {
+  width: 134px;
+  position: absolute;
+  top: auto;
+  right: -20%;
+  bottom: -3%;
+  left: auto;
+  margin: auto;
 }
 
 @media all and (max-width: 991px) {

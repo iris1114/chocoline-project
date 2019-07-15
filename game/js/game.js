@@ -71,19 +71,20 @@ function handleComplete(evt,comp) {
         }
     })
     function tostart(){
-        if(window.innerWidth<992){
-            header.style.display="none";
-        }
+        
         document.querySelector(".title_decoration").style.display="none";
         document.querySelector("#introduce").style.display="none";
         setTimeout(function(){
             isstart = true;
             window.addEventListener("keydown",keydownmove);
             window.addEventListener("keyup",keyupmove);
-            if(window.DeviceOrientationEvent){
-                window.addEventListener("deviceorientation",phonerun);
-            }else{
-                alert("請改用firefox")
+            if(window.innerWidth<992){
+                header.style.display="none";
+                if(window.DeviceOrientationEvent){
+                    window.addEventListener("deviceorientation",phonerun);
+                }else{
+                    alert("請改用firefox")
+                }
             }
         },1000)
     }
@@ -286,7 +287,7 @@ function handleComplete(evt,comp) {
     }
 
     clearInterval(timer);
-    var timer = setInterval(countdown,1000)
+    var timer = setInterval(countdown,500)
     function countdown(){
         if(!isstart){
             return;
@@ -361,9 +362,10 @@ function handleComplete(evt,comp) {
             for(i=0;i<card.length;i++){
                 card[i].classList.add("nopointer");       
             }
-
+            
             finalpoint.innerText = score * this.querySelector(".back").querySelector(".outtext").innerText.replace("x ","");
-           
+            submit_point();
+            // document.querySelector("#submit_point").value = finalpoint.innerText;
             setTimeout(function(){
                 bonus_house.style.display = "none";
                 final.style.display = "block";
@@ -410,6 +412,55 @@ function handleComplete(evt,comp) {
     //     console.log(bear.x);
         
     // },1000)
+
+
+    let burger = document.querySelector(".burger figure");
+    let menubox = document.querySelector(".menubox");
+    let menuclose = document.querySelector("#menuclose");
+
+    burger.addEventListener("click",function(){
+        menubox.style.display="block";
+        setTimeout(function(){
+            menubox.classList.add("menuboxopen");
+        },100)
+        document.body.style.overflowY = "hidden";
+    });
+
+    menuclose.addEventListener("click",function(){
+        
+        menubox.classList.remove("menuboxopen");
+        setTimeout(function(){
+            menubox.style.display="none";
+        },500)
+        document.body.style.overflowY = "hidden";
+    })
+
+
+    //送資料
+
+    function submit_point(){
+        var xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+            //modify here
+            console.log(`成功`);
+            
+            }else{
+            alert( xhr.status );
+            }
+        }
+        
+        //設定好所要連結的程式
+        var url = "php/update_point.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        // var data_info = "memId=" + 1& + "points=" + finalpoint.innerText;
+        var data_info = `memId=1&points=${finalpoint.innerText}`;
+        xhr.send( data_info);
+    }
+
+
 
     //Registers the "tick" event listener.
 	fnStartAnimation = function() {

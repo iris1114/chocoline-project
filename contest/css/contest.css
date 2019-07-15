@@ -305,6 +305,12 @@ header {
   color: #F6EED4;
 }
 
+@media all and (orientation: landscape) {
+  .m_header .menubox li {
+    padding: 2% 0;
+  }
+}
+
 .m_header .menubox #menuclose {
   position: absolute;
   width: 50px;
@@ -472,7 +478,7 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 10;
+  z-index: 9;
   -webkit-transition: bottom 2s;
   transition: bottom 2s;
 }
@@ -782,7 +788,7 @@ header {
 }
 
 .robot .robot_content .message_area {
-  padding: 30px 20px 10px 20px;
+  padding: 20px 20px 0 20px;
   width: 100%;
   height: 47%;
   overflow-y: scroll;
@@ -791,38 +797,19 @@ header {
 
 .robot .robot_content .message_area .message {
   position: relative;
-  width: 100%;
   max-width: 80%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 10px;
   background-color: #F6EED4;
   border-radius: 10px;
+  word-break: break-all;
 }
 
-.robot .robot_content .message_area .message:nth-child(odd) {
-  float: left;
-}
-
-.robot .robot_content .message_area .message:nth-child(odd):before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: auto;
-  bottom: auto;
-  left: -15px;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 15px 5px 0;
-  border-color: transparent #F6EED4 transparent transparent;
-}
-
-.robot .robot_content .message_area .message:nth-child(even) {
+.robot .robot_content .message_area .message_ask {
   float: right;
 }
 
-.robot .robot_content .message_area .message:nth-child(even):before {
+.robot .robot_content .message_area .message_ask:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -835,6 +822,25 @@ header {
   border-style: solid;
   border-width: 5px 0 5px 15px;
   border-color: transparent transparent transparent #F6EED4;
+}
+
+.robot .robot_content .message_area .message_answer {
+  float: left;
+}
+
+.robot .robot_content .message_area .message_answer:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: -15px;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 15px 5px 0;
+  border-color: transparent #F6EED4 transparent transparent;
 }
 
 .robot .robot_content .keyword_area {
@@ -865,37 +871,40 @@ header {
   color: #F6EED4;
 }
 
-.robot .robot_content .keyword_area .keyword_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 80%;
+.robot .robot_content .keyword_area .keyword_space {
   overflow: hidden;
 }
 
-.robot .robot_content .keyword_area .keyword_wrap .keyword {
+.robot .robot_content .keyword_area .keyword_space .keyword_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
   color: #F6EED4;
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
   padding: 5px;
+  display: inline-block;
   cursor: pointer;
   white-space: nowrap;
 }
 
 @media all and (max-width: 767px) {
-  .robot .robot_content .keyword_area .keyword_wrap .keyword {
+  .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .robot .robot_content .keyword_area .keyword_wrap .keyword {
+  .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .robot .robot_content .keyword_area .keyword_wrap .keyword {
+  .robot .robot_content .keyword_area .keyword_space .keyword_wrap .keyword {
     font-size: 16px;
   }
 }
@@ -2835,6 +2844,10 @@ html {
   padding-left: 30px;
 }
 
+.player_container .contain {
+  overflow: hidden;
+}
+
 .player_container .contain::after {
   content: "";
   display: block;
@@ -4148,6 +4161,9 @@ html {
     padding-top: 150px;
     text-align: left;
   }
+  .player_container .contain {
+    height: 2415px;
+  }
   .player_container .contain::after {
     content: "";
     display: block;
@@ -4468,4 +4484,3 @@ html {
     transition: .5s;
   }
 }
-/*# sourceMappingURL=contest.css.map */

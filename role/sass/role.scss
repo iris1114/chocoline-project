@@ -67,6 +67,35 @@ body{
         position: absolute;
         height: 100%;
         z-index: 1;
+        figure{
+
+            animation: dance 4s infinite;
+        }
+    }
+
+    @keyframes dance {
+        0%{
+            transform: translateX(0%)
+                        translateY(0%);
+        }
+        25%{
+            transform: translateX(-5%)
+                        translateY(-2%)
+                        rotate(-5deg);
+        }
+        50%{
+            transform: translateX(0%)
+                        translateY(0%);
+        }
+        75%{
+            transform: translateX(5%)
+                        translateY(-2%)
+                        rotate(5deg);
+        }
+        100%{
+            transform: translateX(0%)
+                        translateY(0%);
+        }
     }
     .bread{
         width: 100%;
@@ -163,6 +192,8 @@ body{
     }
     .information{
         display: flex;
+        position: relative;
+        z-index: 0;
     }
     @media all and (max-width:767px){
         .information{
@@ -174,7 +205,7 @@ body{
             }
         }
     }
-    #choco_information{
+    .choco_information{
         width: 265px;
         max-height: 360px;
         background: #fff;
@@ -186,6 +217,7 @@ body{
         text-align: left;
         box-shadow: 11px 11px 0 $color_blue;
         // flex: 0 0 auto;
+        cursor: pointer;
         ul{
             width: 100%;
         }
@@ -238,29 +270,51 @@ body{
             }
         }
     }
-    #cardfront{
+    .cardfront{
         width: 290px;
+        cursor: pointer;
     }
-    #cardback{
+    .cardback{
         width: 290px;
+        cursor: pointer;
     }
     @media all and (max-width:767px){
-        #choco_information{
+        .choco_information{
             flex: 0 0 auto;
             width: 203px;
             margin: 0 20px;
         }
-        #cardfront{
+        .cardfront{
             flex: 0 0 auto;
             width: 203px;
             margin: 0 20px;
         }
-        #cardback{
+        .cardback{
             flex: 0 0 auto;
             width: 203px;
             margin: 0 20px;
         }
     }
+    // .show_big_pic{
+    //     width: 290px;
+    //     max-height: 360px;
+    //     position: fixed;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     margin: auto;
+    //     z-index: 1;
+    //     .choco_information{
+    //         height: 100%;
+    //     }
+    //     .cardfront{
+    //         display: none;
+    //     }
+    //     .cardback{
+    //         display: none;
+    //     }
+    // }
     @media all and (min-width:768px){
         .rotate_l{
             transform: rotate(-10deg) translate(20% , 0%);
@@ -435,7 +489,7 @@ body{
     .message_board_wrap{
         height: 1350px;
         max-width: 1000px;
-        overflow-y: auto;
+        overflow: hidden;
     }
     .message_block{
         width: 100%;
@@ -521,7 +575,14 @@ body{
         @include font_s();
         color: $color_gray;
     }
-
+    .page_wrap{
+        text-align: center;
+        padding-top: 50px;
+    }
+    .pagination{
+        background: #fff;
+        border-radius: 5px;
+    }
     .input_message_wrap{
         padding-top: 100px;
         background: #AD9380;
@@ -578,6 +639,52 @@ body{
             @include pos(0,auto,0,0);
             background: $color_blue;
         }
+    }   
+    .report{
+        width: 370px;
+        height: 270px;
+        background: #FF4D50;
+        border-radius: 15px;
+        box-shadow: 11px 11px 0 #FFA6AB;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        z-index: 1;
+        text-align: center;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        display: none;
+        .contain{
+            width: 90%;
+            margin: auto;
+        }
+        p{
+            @include font_m();
+            color: $color_milk;
+            text-align: left;
+            padding: 10px 0;
+        }
+        textarea{
+            padding: 10px;
+            @include font_m();
+            border-radius: 15px;
+            width: 100%;
+        }
+        .btn{
+            margin-top: 20px;
+        }
+    }
+    .close_btn{
+        width: 30px;
+        @include pos(0%,0%,auto,auto);
+    }
+    .report_bear{
+        width: 134px;
+        @include pos(auto,-20%,-3%,auto);
     }
 }
 @media all and (max-width:991px){

@@ -23,30 +23,30 @@
 					</figure>
 				</div>
 				<div class="logo">
-					<a href="index.html">
+					<a href="../index/index.php">
 						<img src="image/headerfooter/logo.png" alt="CHOCOLINE" />
 					</a>
 				</div>
 				<div class="status">
 					<figure>
-						<a  class="spanLogin" href="../member/member.html">
+						<a  class="spanLogin" href="../member/member.php">
 							<img src="image/headerfooter/icon_member.png" alt="member" />
 							<!-- icon點擊後跳出登入註冊燈箱 -->
 						</a>
 					</figure>
 					<figure>
-						<a href="../cart/cart.html">
+						<a href="../cart/cart.php">
 							<img src="image/headerfooter/icon_cart.png" alt="cart" />
 						</a>
 					</figure>
 				</div>
 			</div>
 			<ul class="menubox">
-				<li><a href="../custom/custom.html">客製 CHOCO</a></li>
-				<li><a href="../contest/contest.html">CHOCO 選美</a></li>
-				<li><a href="../game/game.html">CHOCO 遊戲</a></li>
-				<li><a href="../store/store.html">CHOCO 商城</a></li>
-				<li><a href="../about/about.html">關於 CHOCO</a></li>
+				<li><a href="../custom/custom.php">客製 CHOCO</a></li>
+				<li><a href="../contest/contest.php">CHOCO 選美</a></li>
+				<li><a href="../game/game.php">CHOCO 遊戲</a></li>
+				<li><a href="../store/store.php">CHOCO 商城</a></li>
+				<li><a href="../about/about.php">關於 CHOCO</a></li>
 				<figure id="menuclose">
 					<img src="image/headerfooter/menuclose.png" alt="close" />
 				</figure>
@@ -54,17 +54,17 @@
 		</div>
 		<div class="d_header">
 			<div class="logo">
-				<a href="../index/index.html">
+				<a href="../index/index.php">
 					<img src="image/headerfooter/logo.png" alt="CHOCOLINE" />
 				</a>
 			</div>
 			<div class="navbar">
 				<ul class="menubox">
-					<li><a href="../custom/custom.html">客製 CHOCO</a></li>
-					<li><a href="../contest/contest.html">CHOCO 選美</a></li>
-					<li><a href="../game/game.html">CHOCO 遊戲</a></li>
-					<li><a href="../store/store.html">CHOCO 商城</a></li>
-					<li><a href="../about/about.html">關於 CHOCO</a></li>
+					<li><a href="../custom/custom.php">客製 CHOCO</a></li>
+					<li><a href="../contest/contest.php">CHOCO 選美</a></li>
+					<li><a href="../game/game.php">CHOCO 遊戲</a></li>
+					<li><a href="../store/store.php">CHOCO 商城</a></li>
+					<li><a href="../about/about.php">關於 CHOCO</a></li>
 				</ul>
 				<div class="status">
 					<figure>
@@ -72,9 +72,11 @@
 							<img src="image/headerfooter/icon_member.png" alt="member" />
 							<!-- icon點擊後跳出登入註冊燈箱 -->
 						</a>
+						<span id="mem_name">&nbsp;</span>
+						<span id="spanLoginText">登入</span>
 					</figure>
 					<figure>
-						<a href="../cart/cart.html">
+						<a href="../cart/cart.php">
 							<img src="image/headerfooter/icon_cart.png" alt="cart" />
 						</a>
 					</figure>
@@ -112,7 +114,7 @@
 					<h3>重設密碼</h3>
 					<p>請輸入帳號註冊時所留的電子<br>
 						郵件地址，以驗證您的資料</p>
-					<input type="mail" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+					<input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
 					<input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
 					<input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
 					<a href="#" class="btn orange_l" id="repassword">送出</a><br>
@@ -131,12 +133,14 @@
 					<p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
 							請填下您的個人資料。</p>
 					<span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
-					<input type="button" id="btnCheckId" value="檢查帳號是否可用"><span id="idMsg"></span><br>
-					<span>*E-mail</span><input type="mail" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
+					<span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
+					<!-- <span id="idMsg"></span><br> -->
+					<p id="idMsg">請輸入帳號</p><br>
+					<span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
 					<span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
 					<span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
 					<p>* 為必填欄位，請填妥欄位資訊。</p>
-					<a href="#" class="btn orange_l" id="repassword">送出</a><br>
+					<a href="#" class="btn orange_l" id="register_btn">送出</a><br>
 				</div>
 			</div>
 		</div>

@@ -178,7 +178,9 @@
         </div>
 
         <div class="select_type ">
-          <div class="choco_overview" id="aaa">
+          <div class="choco_overview" id="choco_pos">
+
+            <img src="" alt="" id="base_">
 
           </div>
 
@@ -186,9 +188,9 @@
 
           <div class="choco_type">
             <ul>
-              <li>
-                <figure class="active">
-                  <img src="image/custom/small/fr_b_001.png" class="fruit" alt="blue berry" />
+              <li class="fruit">
+                <figure>
+                  <img src="image/custom/small/fr_b_001.png" alt="blue berry" />
                   <figcaption>
                     <p>藍莓</p>
 
@@ -196,33 +198,33 @@
 
                 </figure>
               </li>
-              <li>
+              <li class="fruit">
                 <figure>
-                  <img src="image/custom/small/fr_b_002.png" class="fruit" alt="grape" />
+                  <img src="image/custom/small/fr_b_002.png" alt="grape" />
                   <figcaption>
                     <p>葡萄</p>
                   </figcaption>
                 </figure>
               </li>
-              <li>
+              <li class="fruit">
                 <figure>
-                  <img src="image/custom/small/fr_b_003.png" class="fruit" alt="bo ho" />
+                  <img src="image/custom/small/fr_b_003.png" alt="bo ho" />
                   <figcaption>
                     <p>薄荷</p>
                   </figcaption>
                 </figure>
               </li>
-              <li>
+              <li class="fruit">
                 <figure>
-                  <img src="image/custom/small/fr_b_004.png" class="fruit" alt="orange" />
+                  <img src="image/custom/small/fr_b_004.png" alt="orange" />
                   <figcaption>
                     <p>柑橘</p>
                   </figcaption>
                 </figure>
               </li>
-              <li>
+              <li class="fruit">
                 <figure>
-                  <img src="image/custom/small/fr_b_005.png" class="fruit" alt="strawberry" />
+                  <img src="image/custom/small/fr_b_005.png" alt="strawberry" />
                   <figcaption>
                     <p>草莓</p>
                   </figcaption>
@@ -376,7 +378,7 @@
             <div class="clearfix"></div>
 
             <!-- ----- 眼睛 start----- -->
-            <div class="eye type" id="eyes">
+            <div class="eye_select type" id="eyes">
               <div class="eye_types">
                 <div class="eye_items">
                   <img src="image/custom/small/eye1.png" class="eye_type" alt="eye1" />
@@ -425,7 +427,7 @@
 
             <!-- ----- 嘴巴 start----- -->
 
-            <div class="mouse type" id="mouses">
+            <div class="mouse_select type" id="mouses">
               <div class="mouse_types">
                 <div class="mouse_items">
                   <img src="image/custom/small/mouse1.png" class="mouse_type" alt="eye1" />
@@ -475,47 +477,47 @@
 
             <!-- ----- 飾品 start----- -->
 
-            <div class="others type" id="other">
+            <div class="others_select type" id="other">
               <div class="others_types">
                 <div class="others_items">
-                  <img src="image/custom/eye1.png" class="others_type" alt="eye1" />
+                  <img src="image/custom/small/others1.png" class="others_type" alt="eye1" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="eye2" />
+                  <img src="image/custom/small/others2.png" class="others_type" alt="eye2" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                  <img src="image/custom/small/others3.png" class="others_type" alt="" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                  <img src="image/custom/small/others4.png" class="others_type" alt="" />
                 </div>
               </div>
               <div class="others_types">
                 <div class="others_items">
-                  <img src="image/custom/eye1.png" class="others_type" alt="eye1" />
+                  <img src="image/custom/small/others5.png" class="others_type" alt="eye1" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="eye2" />
+                  <img src="image/custom/small/others6.png" class="others_type" alt="eye2" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                  <img src="image/custom/small/others7.png" class="others_type" alt="" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                  <img src="image/custom/small/others8.png" class="others_type" alt="" />
                 </div>
               </div>
               <div class="others_types">
                 <div class="others_items">
-                  <img src="image/custom/eye1.png" class="others_type" alt="eye1" />
+                  <img src="image/custom/small/others9.png" class="others_type" alt="eye1" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="eye2" />
+                  <img src="image/custom/small/others10.png" class="others_type" alt="eye2" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                  <img src="image/custom/small/others11.png" class="others_type" alt="" />
                 </div>
                 <div class="others_items">
-                  <img src="image/custom/eye.png" class="others_type" alt="" />
+                  <img src="image/custom/small/others12.png" class="others_type" alt="" />
                 </div>
               </div>
             </div>
@@ -531,14 +533,24 @@
 
         <div class="outlook_fix">
 
+
           <div class="fix_photo" id="fix">
-            <div id="eye_pos">
+            <div class="eye_pos">
+              <img src="" alt="" class="eye_demo">
             </div>
-            <div id="mouse_pos">
+            <div class="eye_pos">
+              <img src="" alt="" class="eye_demo">
             </div>
-            <div id="others_pos">
+            <div class="mouse_pos">
+              <img src="" alt="" class="mouse_demo">
             </div>
-            <img src="image/custom/123 (2).png" alt="bear">
+            <div class="others_pos">
+              <img src="" alt="" class="others_demo">
+            </div>
+            <div class="others_pos">
+              <img src="" alt="" class="others_demo">
+            </div>
+            <img src="" alt="" id="cho_pos">
           </div>
 
           <div class="fix_bar">
@@ -615,7 +627,7 @@
         <div class="card_custom">
 
           <div class="card_back">
-            <img src="image/custom/caed.png" alt="">
+            <img src="image/custom/color4.png" alt="">
           </div>
 
           <div class="card_write">
@@ -1208,9 +1220,9 @@
 
 
         document.getElementById("next_page").onclick = function () {
-          let abc = document.getElementsByClassName("shape");
+          let select_choco = document.getElementsByClassName("shape");
           let midimg = document.getElementsByClassName("choco_overview");
-          midimg[0].innerHTML = abc[2].innerHTML;
+          midimg[0].innerHTML = select_choco[2].innerHTML;
           // console.log(`IMG${midimg[0].innerHTML}`)
           let cc = midimg[0].innerHTML;
           let m = cc.lastIndexOf("alt");
@@ -1251,139 +1263,65 @@
         // ----------------------基底介紹 end --------------------------
 
 
-        // --------------------------選擇巧克力配料口味--------------------------
+
+        // ----------------------口味介紹--------------------------
+
+        let fruits = document.getElementsByClassName("fruit");
+        let fruitTextDivs = document.getElementsByClassName("fruit_text");
+        // console.log("fruits : ", fruits.length);
+        // console.log("test : ", fruitTextDivs.length);
+        for (let i = 0; i < fruitTextDivs.length; i++) {
+          fruits[i].addEventListener("click", function () {
+            // console.log(chocoTextDivs[i])
+            for (let j = 0; j < fruitTextDivs.length; j++) {
+              if (j == i) {
+                fruitTextDivs[j].style.display = "block";
+              } else {
+                fruitTextDivs[j].style.display = "none";
+              }
+            }
+          })
+        }
+
+        // ----------------------口味介紹 end --------------------------
+
+
+
+
+        // --------------------------選擇巧克力口味--------------------------
 
 
         for (var i = 0; i < chos.length; i++) {
 
           chos[i].addEventListener("click", function (e) {
             let cho_type = e.target;
+            let model = document.getElementById("choco_pos");
+            let model_img = model.childNodes[1];
 
-            let cc = midimg[0].innerHTML;
-            // console.log("cc: " + cc);
-            let model = document.getElementById("aaa");
-            let model_img = model.childNodes[1].alt;
-            // console.log("model_img: " + model_img);
-            let modelsrc = model.childNodes[1].src;
-            // console.log("modelsrc " + modelsrc);
+            let modelsrc = $("#choco_pos img").attr("src");
 
-
-            let pathIndex = modelsrc.indexOf('image');
-
-            let srcpos = modelsrc.substring(pathIndex);
-
-            console.log(srcpos);
-
-            //檔名
-            // let fileIndex = modelsrc.indexOf('/');
-            // let fileName = modelsrc.substring(fileIndex + 1);
-            // // console.log("fileIndex", fileIndex);
-
-            // let frist = fileName.substring(0, 5);
-            // // console.log("frist", frist);
-            // let thrid = fileName.substring(6);
-            // // console.log("thrid", thrid);
-
-            let modelColor = srcpos.substr(-7, 1);
-            console.log("new!!!!!! ", modelColor);
-
-            // bear_n_n.png 原本
-            // bear_w_n.png 要改的
-
-            // var res = srcpos.replace(modelColor, "w");
-            // console.log(srcpos)
-
-
-            //   document.getElementById("demo").innerHTML = res;
-            // }
+            // console.log("modelsrc  ", modelsrc);
             if (cho_type.alt == "white") {
+              var N = $("#choco_pos img").attr("src").substr(24, 3);
+              let ann = modelsrc.replace(N, 'w_x');
+              $("#choco_pos img").attr("src", ann);
 
-              var img = document.createElement("img");
-              var res = srcpos.replace(modelColor, "w");
-
-              // console.log(res)
-              img.src = res;
-
-              img.className = "big_cho2";
-              console.log(img)
-              //  console.log(cc)
-
-              var final = document.getElementsByClassName("big_cho");
-              img[0] = final[0];
-
-              $(document).ready(function () {
-
-                $('.big_cho').removeAttr('src');
-                console.log(final[0]);
-
-                $('.big_cho').attr('src', res);
-                console.log(final[0]);
-              });
-
-
-              //  console.log( final[0]);
-              // let total = srcpos + frist + "w" + thrid;
-              // console.log(total);
-              // model.childNodes[1].src = total;
-              // console.log(model.childNodes[1].src);
-              // console.log( model.childNodes[1].src);
             } else if (cho_type.alt == "black") {
-
-              var img = document.createElement("img");
-              var res = srcpos.replace(modelColor, "d");
-
-              // console.log(res)
-              img.src = res;
-
-              //  img.className = "big_cho2";
-              // //  console.log(img)
-              //  console.log(cc)
-
-              var final = document.getElementsByClassName("big_cho");
-              //  final[0] = im。g;
-
-              $(document).ready(function () {
-                $('.big_cho').removeClass('big_cho');
-                $('table tr:nth-child(odd)').addClass('highlight');
-                $('.big_cho2').removeAttr('src');
-                // console.log(final[0]);
-
-                $('.big_cho2').attr('src', res);
-                console.log(final[0]);
-              });
-
+              var N = $("#choco_pos img").attr("src").substr(24, 3);
+              let ann = modelsrc.replace(N, 'd_x');
+              $("#choco_pos img").attr("src", ann);
 
             } else if (cho_type.alt == "milk") {
+              var N = $("#choco_pos img").attr("src").substr(24, 3);
+              let ann = modelsrc.replace(N, 'm_x');
+              $("#choco_pos img").attr("src", ann);
 
-
-              var img = document.createElement("img");
-              var res = srcpos.replace(modelColor, "m");
-
-              // console.log(res)
-              img.src = res;
-
-              //  img.className = "big_cho2";
-              // //  console.log(img)
-              //  console.log(cc)
-
-              var final = document.getElementsByClassName("big_cho");
-              //  final[0] = im。g;
-
-              $(document).ready(function () {
-
-                $('.big_cho').removeAttr('src');
-                // console.log(final[0]);
-
-                $('.big_cho').attr('src', res);
-                console.log(final[0]);
-              });
             }
-
           }, false);
         }
 
 
-        // --------------------------選擇巧克力配料口味--------------------------
+        // --------------------------選擇巧克力口味--------------------------
 
 
 
@@ -1393,286 +1331,233 @@
         // --------------------------選擇配料口味--------------------------
 
 
-        let fruits = document.getElementsByClassName("fruit");
+        // let fruits = document.getElementsByClassName("fruit");
         for (var i = 0; i < fruits.length; i++) {
+
           fruits[i].addEventListener("click", function (e) {
             let fruit_type = e.target;
 
-            let cc = midimg[0].innerHTML;
-            console.log(fruit_type);
-            let model = document.getElementById("aaa");
-            let model_img = model.childNodes[1].alt;
-            console.log(model_img);
-            let modelsrc = model.childNodes[1].src
+            let model = document.getElementById("choco_pos");
+            let model_img = model.childNodes[1];
 
-            let srcTemp = modelsrc.lastIndexOf('/');
+            let modelsrc = $("#choco_pos img").attr("src");
 
-            console.log("srcTemp", srcTemp);
-            let srcpos = modelsrc.substr(0, srcTemp + 1);
-            // let xx =srcTemp+1;
-            console.log(srcpos);
-            // let ooo = modelsrc.substring(0,60);
-            // console.log("ooo", ooo);
-            let fileName = modelsrc.substring(srcTemp + 1);
-            console.log("fileName", fileName);
-            let frist = fileName.substring(0, 7);
-            console.log("frist", frist);
-            let thrid = fileName.substring(8);
-            console.log("thrid", thrid);
+
             if (fruit_type.alt == "blue berry") {
-              let total = srcpos + frist + "b" + thrid;
 
-
-              model.childNodes[1].src = total;
-              console.log(model.childNodes[1].src);
-              // console.log( model.childNodes[1].src);
+              var N = $("#choco_pos img").attr("src").substr(25, 2);
+              // console.log("N", N);
+              let ann = modelsrc.replace(N, '_b');
+              // console.log("ann", ann);
+              $("#choco_pos img").attr("src", ann);
             } else if (fruit_type.alt == "grape") {
-              let total = srcpos + frist + "g" + thrid;
-
-
-              model.childNodes[1].src = total;
-              // console.log(model.childNodes[1].src);
+              var N = $("#choco_pos img").attr("src").substr(25, 2);
+              // console.log("N", N);
+              let ann = modelsrc.replace(N, '_g');
+              // console.log("ann", ann);
+              $("#choco_pos img").attr("src", ann);
             } else if (fruit_type.alt == "bo ho") {
-              let total = srcpos + frist + "h" + thrid;
-
-
-              model.childNodes[1].src = total;
-              console.log(model.childNodes[1].src);
+              var N = $("#choco_pos img").attr("src").substr(25, 2);
+              // console.log("N", N);
+              let ann = modelsrc.replace(N, '_h');
+              // console.log("ann", ann);
+              $("#choco_pos img").attr("src", ann);
             } else if (fruit_type.alt == "orange") {
-              let total = srcpos + frist + "o" + thrid;
-
-
-              model.childNodes[1].src = total;
-              // console.log(model.childNodes[1].src);
+              var N = $("#choco_pos img").attr("src").substr(25, 2);
+              // console.log("N", N);
+              let ann = modelsrc.replace(N, '_o');
+              // console.log("ann", ann);
+              $("#choco_pos img").attr("src", ann);
             } else if (fruit_type.alt == "strawberry") {
-              let total = srcpos + frist + "s" + thrid;
-              model.childNodes[1].src = total;
-              // console.log(model.childNodes[1].src);
+              var N = $("#choco_pos img").attr("src").substr(25, 2);
+              // console.log("N", N);
+              let ann = modelsrc.replace(N, '_s');
+              // console.log("ann", ann);
+              $("#choco_pos img").attr("src", ann);
             }
           }, false);
         }
 
 
         // --------------------------選擇配料口味--------------------------
+
+
+
+
+
+
+        // --------------------------next_page--------------------------
+
+
+        document.getElementById("next_page2").onclick = function () {
+
+          let modelsrc = $("#choco_pos img").attr("src");
+          let cust = $("#cho_pos").attr("src", modelsrc);
+          console.log(modelsrc);
+          let mask = document.getElementsByClassName("fix_photo");
+          // mask[0].style.WebkitMaskImage = "url(../" + modelsrc + ")";
+          // console.log(mmm);
+        };
+
+        // -----------------------next_page--------------------------
+
+
+
+        // ---------- 眼睛 start select----------
+
+        $(document).ready(function () {
+          // for (let i = 0; i <  )
+          $('.eye_items').click(function () {
+            // let eye_src = $(".eye_type").attr("src");
+            let eye_src = $(".eye_type").attr("src");
+            console.log(eye_src);
+            let custs = $(".eye_demo").attr("src", eye_src);
+            let eye_src2 = $(".eye_type").attr("src");
+            let custs2 = $(".eye_demo2").attr("src", eye_src2);
+            // console.log(custs);
+
+          });
+
+        });
+
+        // ---------- 眼睛 End  select----------
+
+
+        // ---------- 嘴巴 start select----------
+
+
+        $(document).ready(function () {
+          // for (let i = 0; i <  )
+          $('.mouse_items').click(function () {
+            let mouse_src = $(".mouse_type").attr("src");
+            console.log(mouse_src);
+            let custss = $(".mouse_demo").attr("src", mouse_src);
+          })
+        });
+
+
+        // ---------- 嘴巴 End select----------
+
+
+        // ---------- 飾品 start select----------
+
+
+        $(document).ready(function () {
+          // for (let i = 0; i <  )
+          $('.others_items').click(function () {
+            let others_src = $(".others_type").attr("src");
+            console.log(others_src);
+
+            let custss = $(".others_demo").attr("src", others_src);
+          });;
+
+        });
+
+        // ---------- 飾品 End select----------
 
 
 
         // ---------------------drag--------------------------
 
-        $(document).ready(function () {
-          $('#next_page2').click(function () {
-            var name = $('.big_cho[0]').src;
-            console.log(name);
-
-            // // $('#feedback').text(name);
-            // $('#feedback').append(name + '<br>').css('textDecoration','underline');
-          });
-        });
-
-
-        document.getElementById("next_page2").onclick = function () {
-
-          let third_model = document.getElementsByClassName("choco_overview");
-          let third_model_pos = document.getElementsByClassName("fix_photo");
-          let aaa = third_model_pos[0].innerHTML;
-          //third_model_pos[0].innerHTML = third_model[0].innerHTML
-          // console.log(third_model[0].innerHTML);
-          var img = document.createElement("img");
-          img.src = "file:///C:/Users/Java/Desktop/111/custom/image/custom/small/bear_w_g.png";
-          img.className = "big_cho";
-
-          third_model_pos[0].appendChild(img);
-
-          console.log(aaa);
-
-
-
-
-        };
-
-        $(document).ready(function () {
-          // for (let i = 0; i <  )
-          $('.eye_items').click(function () {
-            $(this).clone().appendTo('#eye_pos').addClass('demo_eye');
-            let eye_check = document.querySelectorAll('demo_eye');
-
-
-            for (let i = 0; i < eye_check.length; i++) {
-              // console.log(eye_check[i]);
-              if (eye_check.length == 2) {
-                console.log("yes");
-                // eye_checks.disable = true;
-                $('.eye_items').attr('disable');
-              }
-
-            }
-          });
+        $(".eye_pos").draggable({
+          containment: "parent",
+          scroll: false
 
         });
-
-        $(document).ready(function () {
-          // for (let i = 0; i <  )
-          $('.mouse_items').click(function () {
-            $(this).clone().appendTo('#mouse_pos').addClass('demo_mouse');
-          });
+        $(".mouse_pos").draggable({
+          containment: "parent",
+          scroll: false
+        });
+        $(".others_pos").draggable({
+          containment: "parent",
+          scroll: false
         });
 
+        // ---------------------drag--------------------------
+
+
+        var eyechange = document.querySelector(".eye_demo");
+        var mousechange = document.querySelector(".mouse_demo");
+        var otherschange = document.querySelector(".others_demo");
+
+        var big = document.getElementsByClassName("big");
+        var small = document.getElementsByClassName("small");
+        var right = document.getElementsByClassName("right");
+        var left = document.getElementsByClassName("left");
+        var reset = document.getElementsByClassName("reset");
+
+        eyescale = 1;
+        eyerotate = 0;
+        mousescale = 1;
+        mouserotate = 0;
+        otherscale = 1;
+        otherrotate = 0;
+        big[0].addEventListener("click", function () {
+          console.log("yes");
+
+          eyescale += 0.2;
+
+          eyechange.style.transform = "scale(" + eyescale + ")";
+
+          mousescale += 0.2;
+          mousechange.style.transform = "scale(" + mousescale + ")";
+          otherscale += 0.2;
+          otherschange.style.transform = "scale(" + otherscale + ")";
+        });
+        small[0].addEventListener("click", function () {
+          console.log("yes");
+
+          eyescale -= 0.2;
+
+          eyechange.style.transform = "scale(" + eyescale + ")";
+
+          mousescale -= 0.2;
+          mousechange.style.transform = "scale(" + mousescale + ")";
+          otherscale -= 0.2;
+          otherschange.style.transform = "scale(" + otherscale + ")";
+        });
+        right[0].addEventListener("click", function () {
+
+
+          eyerotate += 15;
+
+          eyechange.style.transform = "rotate(" + eyerotate + "deg )";
+          console.log("yes");
+          mouserotate += 15;
+          mousechange.style.transform = "rotate(" + mouserotate + "deg )";
+          otherrotate += 15;
+          otherschange.style.transform = "rotate(" + otherrotate + "deg )";
+        });
+        left[0].addEventListener("click", function () {
+          console.log("yes");
+          eyerotate -= 15;
+
+          eyechange.style.transform = "rotate(" + eyerotate + "deg )";
+          console.log("yes");
+          mouserotate -= 15;
+          mousechange.style.transform = "rotate(" + mouserotate + "deg )";
+          otherrotate -= 15;
+          otherschange.style.transform = "rotate(" + otherrotate + "deg )";
+        });
+        reset[0].addEventListener("click", function () {
+          console.log("yes");
+
+          eyescale += 0.2;
+
+          eyechange.style.transform = "scale(" + eyescale + ")";
+
+          mousescale += 0.2;
+          mousechange.style.transform = "scale(" + mousescale + ")";
+          otherscale += 0.2;
+          otherschange.style.transform = "scale(" + otherscale + ")";
+        });
       });
-
-      $(document).ready(function () {
-        // for (let i = 0; i <  )
-        $('.others_items').click(function () {
-          $(this).clone().appendTo('#others_pos').addClass('demo_others');
-        });;
-
-      });
-
-      $("#eye_pos").draggable({
-        containment: "parent",
-        scroll: false,
-        start: function () { ClikDragEyes() }
-      });
-      $("#mouse_pos").draggable({
-        containment: "parent",
-        scroll: false
-      });
-      $("#others_pos").draggable({
-        containment: "parent",
-        scroll: false
-      });
-
-      function ClikDragEyes() {
-        $('#eye_pos').removeClass('selector__choose').addClass('selector__choose--choosed').siblings().removeClass('selector__choose--choosed');
-      }
-
-      // ---------------------drag--------------------------
-
-
-      // ---------------------drag--------------------------
-
-
-
-
-
-
-
-
-
 
     </script>
 
+
     <script>
 
-      function doFirst() {
-        eyesscale = 1; //原始尺吋1
-        eyesdeg = 0; //原始角度0
-        mouthscale = 1; //原始尺吋1
-        mouthdeg = 0; //原始角度
-        accessoryscale = 1;
-        accessorydeg = 0;
-
-
-        document.getElementsByClassName('big')[0].addEventListener('click', big);
-        document.getElementsByClassName('small')[0].addEventListener('click', small);
-        document.getElementsByClassName('right')[0].addEventListener('click', right);
-        document.getElementsByClassName('left')[0].addEventListener('click', left);
-        document.getElementsByClassName('reset')[0].addEventListener('click', reset);
-
-        eyes = document.querySelectorAll('.demo_eye');
-        mouth = document.querySelectorAll('.demo_mouse');
-        others = document.querySelectorAll('.demo_others');
-      }
-
-      function big() {
-        console.log("yes");
-        if ($('.demo_eye').is('.selector__choose--choosed')) {
-          eyesscale += 0.25; //先判斷在加
-          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
-        }
-        if ($('.demo_mouse').is('.selector__choose--choosed')) {
-          mouthscale += 0.25;
-          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
-        }
-        if ($('.demo_others').is('.selector__choose--choosed')) {
-          accessoryscale += 0.25;
-          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
-        }
-      }
-      //減
-      function small() {
-        if ($('#eyesbutton').is('.selector__choose--choosed')) {
-          eyesscale -= 0.25; //先判斷在加
-          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
-        }
-        if ($('#mouthbutton').is('.selector__choose--choosed')) {
-          mouthscale -= 0.25;
-          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
-        }
-        if ($('#accessorybutton').is('.selector__choose--choosed')) {
-          accessoryscale -= 0.25;
-          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
-        }
-      }
-      //轉
-      function right() {
-        if ($('#eyesbutton').is('.selector__choose--choosed')) {
-          eyesdeg -= 10; //先判斷在加
-          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
-        }
-        if ($('#mouthbutton').is('.selector__choose--choosed')) {
-          mouthdeg -= 10;
-          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
-        }
-        if ($('#accessorybutton').is('.selector__choose--choosed')) {
-          accessorydeg -= 10;
-          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
-        }
-      }
-
-      function left() {
-        if ($('#eyesbutton').is('.selector__choose--choosed')) {
-          eyesdeg -= 10; //先判斷在加
-          eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
-        }
-        if ($('#mouthbutton').is('.selector__choose--choosed')) {
-          mouthdeg -= 10;
-          mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
-        }
-        if ($('#accessorybutton').is('.selector__choose--choosed')) {
-          accessorydeg -= 10;
-          accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
-        }
-      }
-
-      // 丟
-      function reset() {
-        document.querySelector('.mownster__eyesposition img').src = ""
-        eyesscale = 1; //原始尺吋1
-        eyesdeg = 0; //原始角度0
-        eyes.style.transform = "scale(" + eyesscale + ") rotate(" + eyesdeg + "deg)";
-        eyes.style = "";
-
-        document.querySelector('.mownster__mouthposition img').src = ""
-        mouthscale = 1; //原始尺吋1
-        mouthdeg = 0; //原始角度
-        mouth.style.transform = "scale(" + mouthscale + ") rotate(" + mouthdeg + "deg)";
-        mouth.style += "top:45%,left:35%";
-        mouth.style = "";
-
-        document.querySelector('.mownster__accessoryposition img').src = ""
-        accessoryscale = 1;
-        accessorydeg = 0;
-        accessory.style.transform = "scale(" + accessoryscale + ") rotate(" + accessorydeg + "deg)";
-        accessory.style = "";
-      };
-
-
-
-
-      window.addEventListener('load', doFirst);
-
-    </script>
-    <script>
       function openCity(evt, types) {
         // Declare all variables
         var i, type, tablink;
@@ -1696,22 +1581,7 @@
 
     <script>
       window.addEventListener("load", function () {
-        let fruits = document.getElementsByClassName("fruit");
-        let fruitTextDivs = document.getElementsByClassName("fruit_text");
-        // console.log("fruits : ", fruits.length);
-        // console.log("test : ", fruitTextDivs.length);
-        for (let i = 0; i < fruitTextDivs.length; i++) {
-          fruits[i].addEventListener("click", function () {
-            // console.log(chocoTextDivs[i])
-            for (let j = 0; j < fruitTextDivs.length; j++) {
-              if (j == i) {
-                fruitTextDivs[j].style.display = "block";
-              } else {
-                fruitTextDivs[j].style.display = "none";
-              }
-            }
-          })
-        }
+
       });
 
     </script>
