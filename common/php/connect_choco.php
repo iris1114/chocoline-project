@@ -5,4 +5,3 @@
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
 	$pdo = new PDO( $dsn, $user, $password, $options);  
 ?>
-<!-- 帳號密碼根據個人去更改 -->

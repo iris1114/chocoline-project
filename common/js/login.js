@@ -32,7 +32,7 @@ function showLoginForm() {
     //......................................
   }
 } //showLoginForm
-
+var mem_id_hide = "";
 function sendForm() {
   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上
   //..........................................................
@@ -45,6 +45,9 @@ function sendForm() {
       } else {//登入成功
         alert("登入成功！"); 
         $id("mem_name").innerHTML = xhr.responseText;
+        console.log(xhr.responseText);
+        
+        // mem_id_hide
         //將登入表單上的資料清空，並隱藏燈箱
         $id('lightBox').style.display = 'none';
         $id('mem_id').value = '';
