@@ -24,7 +24,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 10;
+    z-index: 9;
     transition: bottom 2s;
     .robot_prompt {
         @include pos(-12%,
