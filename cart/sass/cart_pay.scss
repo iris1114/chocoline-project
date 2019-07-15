@@ -272,25 +272,6 @@ h5,p{
     
 }
 
-#cart_payment_container input{
-    @include font_s();
-}
-
-#creditcard_contatiner{
-    .wrap{
-        padding-bottom: 80px;
-    }
-    .creditcard_box{
-        width: 100%;
-    }
-    input{
-        width:10%;
-
-    }
-    select{
-        width:12%; 
-    }
-}
 
 
 

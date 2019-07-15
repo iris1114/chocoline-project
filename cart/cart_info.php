@@ -1,3 +1,9 @@
+<?php
+ob_start();
+session_start(); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +15,7 @@
     <link rel="stylesheet" href="css/cart_ship.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 
     <title>CHOCO 購物車</title>
 </head>
@@ -104,6 +111,8 @@
         </div>
   </div>
 </section>
+<div id="app">
+
 
 <section class="col_12" id="cart_bonus_container">
         <div class="wrap">
@@ -119,7 +128,7 @@
                         <a href="game.html">玩遊戲賺點數</a>
                     </div>
                 <div class="bonus_input " >
-                 NT$<input type="number" name="" id=""> 
+                 NT$<input type="number" name="bonus_input" id="bonus_input"  v-model="point"> 
                 </div>
                 </div>
             </div>
@@ -131,21 +140,81 @@
     <div class="wrap">
         <div class="cart_form">
                 <div class="cart_total">       
-                  <p>商品金額: <span>NT$ 350</span></p>
+                  <p>商品金額: <span><?php $_SESSION["p_total"][$p_no]?></span></p>
                   <p>運費小計: <span>NT$ 100</span></p>
-                  <p>點數折抵: <span>NT$  20</span></p>
-                  <p>應付金額: <span class="amout" >NT$ 440</span></p>
+                  <p>點數折抵: <span>NT$ <span id="point">{{point}}</span></span></p>
+                  <p>應付金額: <span class="amout" >NT$ </span></p>
         
                 </div>
               </div>
-              <div class="cart_btn_group">
-                  <a href="cart.html" class="btn orange_l"><span> 上一步</span></a>
-                  <a href="cart_pay.html" class="btn orange_l"><span> 進行結帳</span></a>
-              </div>
           </div>
         </div>
-
 </section>      
+</div>
+
+
+<section class="col_12" id="cart_payment_container">
+    <div class="wrap">
+        <div class="box cart_title_box">
+            <div class=" col_lg_12 ">
+                <h5> 填寫資料</h5>
+           </div>
+        </div>
+        <div class="box cart_show_box ">
+              <div class=" col_12 col_m_4 col_lg_4 purchaser_box ">
+                  <p>訂購人資訊</p>
+                  <p><span class="w-100">姓名:</span><input type="text" name="purchaser_name" value="123"></p>
+                  <p><span class="w-100">電話:</span><input type="text" name="purchaser_phone" value="0987654321"></p>
+                  <p><span class="w-100">地址:</span><input type="text" name="purchaser_address"></p>
+              </div>
+               <div class=" col_12 col_m_4 col_lg_4 receiver_box ">
+                      <p>收件人資訊</p>
+                      <p><span class="w-100">姓名:</span><input type="text" name="purchaser_name" value="123"></p>
+                      <p><span class="w-100">電話:</span><input type="text" name="purchaser_phone" value="0987654321"></p>
+                      <p><span class="w-100">地址:</span><input type="text" name="purchaser_address"></p>
+                  </div>
+              </div>
+          </div>
+    </div>
+  </section>
+  
+  <section  class="col_12"  id="creditcard_contatiner">
+      <div class="wrap">
+          <div class="box cart_title_box">
+              <div class=" col_lg_12 ">
+                  <h5> 信用卡付費</h5>
+              </div>
+          </div>
+  
+          <div class="box cart_show_box ">
+          <div class=" col_12 col_m_4 col_lg_10 creditcard_box ">
+              <p> <span>信用卡帳號:</span> 
+                  <input type="text" name="creditCard-1">
+                  <span>-</span>
+                  <input type="text" name="creditCard-2">
+                  <span>-</span>
+                  <input type="text" name="creditCard-3">
+                  <span>-</span>
+                  <input type="text" name="creditCard-4">
+              </p>
+              <p> <span>有效期限:</span> 
+                  <select name="select_month" id="select_month"></select>
+                  <select name="select_year" id="select_year"></select>
+               </p> 
+  
+               <p> <span>背面安全碼:</span>
+                  <input type="text" name="creditCard-3">
+               </p> 
+          </div> 
+          </div> 
+         
+      </div>     
+  </section>
+
+  <div class="cart_btn_group">
+    <a href="cart2.php" class="btn orange_l"><span> 上一步</span></a>
+    <a href="cart_pay.php" class="btn orange_l"><span> 進行結帳</span></a>
+</div>
     
 
 
@@ -253,8 +322,15 @@
 <script src="../common/js/robot.js"></script>
 
 
-
-
+<script>
+		
+    new Vue({
+        el: '#app',		
+        data: {			
+            point: '0',
+        },
+    });
+</script>       
 
 </body>
 </html>

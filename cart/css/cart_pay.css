@@ -1374,27 +1374,5 @@ body {
       margin: 0;
       border: #c3771b 2px solid;
       border-radius: 5px 5px 0px 0px; }
-  #cart_payment_container input {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal; } }
-  @media all and (max-width: 767px) and (max-width: 767px) {
-    #cart_payment_container input {
-      font-size: 16px; } }
-  @media all and (max-width: 767px) and (min-width: 768px) {
-    #cart_payment_container input {
-      font-size: 16px; } }
-  @media all and (max-width: 767px) and (min-width: 992px) {
-    #cart_payment_container input {
-      font-size: 16px; } }
-
-@media all and (max-width: 767px) {
-  #creditcard_contatiner .wrap {
-    padding-bottom: 80px; }
-  #creditcard_contatiner .creditcard_box {
-    width: 100%; }
-  #creditcard_contatiner input {
-    width: 10%; }
-  #creditcard_contatiner select {
-    width: 12%; }
   footer {
     display: none; } }

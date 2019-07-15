@@ -10,5 +10,5 @@ if(isset($_SESSION["p_name"][$p_no]) === false){
 
 
 
-header("location:cart.php");
+header("location:cart2.php");
  ?>

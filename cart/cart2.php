@@ -11,7 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="image/common/logo_icon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cart2.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 
@@ -100,7 +100,7 @@ session_start();
 
 <!--------cart_title_container-------->
 
-<section class="col_12" id="cart_title_container">
+<section class="col_12 m_d_n" id="cart_title_container">
   <div class="wrap">
       <div class="box cart_title_box">
           <div class=" col_md_2 col_lg_3 ">
@@ -122,42 +122,45 @@ session_start();
               <h5 >刪除</h5>
           </div>
       </div>
+ 
   </div>
+</section>
+
+<!--------mobile_cart_title_container-------->
+<section id="m_cart_title_box">
+<div class="wrap">
+<div class="box cart_title_box lg_d_n t_d_n">
+    <div class="col_12 ">
+        <h5> 確認購物車</h5>
+    </div>
+</div>
+</div>
 </section>
 
 
 
 
-<!--------cart_show_container-------->
-<section class="col_lg_12 col_md_12  " id="cart_show_container">
+<section class="col_lg_12 col_md_12  m_d_n " id="cart_show_container">
   <div class="wrap">
-        <div class="box cart_title_box lg_d_n t_d_n">
-            <div class="col_12 ">
-                <h5> 確認購物車</h5>
-            </div>
-        </div>
 
 
-     
-     
-
-
-      <div class="box cart_show_box m_d_n">
-      <?php 
+<?php 
 
 if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ //尚無購物資料或購物車中的商品被刪光了
-  echo "尚無購物資料";
-}else{  //有購物資料
-	$total = 0;
-	foreach( $_SESSION["p_name"] as $p_no => $data){ 
-		$subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
-		$total = $total + $subTotal;  //計算總計
-     ?>	
-     <form action="cart_update.php">
-<input type="hidden" name="p_no" value="<?php echo $p_no;?>">
-<input type="hidden" name="p_total" value="<?php echo $subTotal?>">
+echo "<div class='box cart_show_box '>尚無購物資料";
 
-          <div class=" cart_img col_lg_3 col_md_2 m_d_n ">
+}else{  //有購物資料
+$total = 0;
+foreach( $_SESSION["p_name"] as $p_no => $data){ 
+    $subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
+    $total = $total + $subTotal;  //計算總計
+?>	
+<form action="cart_update.php">
+<input type="hidden" name="p_no" value="<?php echo $p_no;?>">
+<input type="hidden" name="sumtotal" value="<?php number_format($total); ?> ">
+<div class="box cart_show_box ">
+
+       <div class=" cart_img col_lg_3 col_md_2 m_d_n ">
              <img src=" <?php echo $_SESSION["p_img"][$p_no]; ?>  " alt="choco">
           </div> 
           <div class="cart_pname  col_lg_2 col_md_2 m_d_n">
@@ -173,8 +176,7 @@ if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ //�
                 class="minus"
                 type="button"
                 value="-"
-              />
-              <input
+              /><input
                 id="qty"
                 class="qty"
                 type="text"
@@ -183,40 +185,86 @@ if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ //�
                 max="10"
                 step="1"
                 name="cart_qty"
-              />
-              <input id="plus" class="plus" type="button" value="+" />
+              /><input id="plus" class="plus" type="button" value="+" />
             </div>
           </div>
           <div class="col_lg_2  cart_amout m_d_n">
               <h5 >NT$ <?php echo $subTotal?></h5>
           </div>
-         
 
           <div class=" cart_delete col_lg_1 m_d_n">
-          <input type="submit" name="btn_delete" value="刪除">
+          <input class="btn" type="submit" name="btn_delete" value="刪除">
           </div>
-  </form>  
-  </div>        
+          </form>  
+<?php
+}
+?>
+
+
+<section class="col_lg_12" id="cart_form_container  " >
+  <div class="wrap">
+
+	<?php 
+
+
+echo " <div class='cart_form' style = 'width:100%'>
+<div class='cart_total'>
+
+  <p>商品金額: <span>NT", number_format($total), "</span></p>
+  <p>運費小計: <span>尚未選擇</span></p>
+  <p>點數折抵: <span>尚未折抵</span></p>
+  <p>應付金額: <span class='amout'> NT$",  number_format($total)," </span></p>
+
+</div>
+</div>";
+     
+
+
+?>
+</div>
+</section>
+
+
+
+
+<?php
+}
+?>
+    </div>
+  
   </div>
-  </div>    
- </section>        
+</section>  
 
 
 <!-- mobile cart desc --> 
-<!-- <section>
-<div class="box cart_show_box t_d_n  lg_d_n">
+<section class="t_d_n lg_d_n">
+<?php 
 
+if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ //尚無購物資料或購物車中的商品被刪光了
+echo "<div class='box cart_show_box '>尚無購物資料</div>";
+
+}else{  //有購物資料
+$total = 0;
+foreach( $_SESSION["p_name"] as $p_no => $data){ 
+    $subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
+    $total = $total + $subTotal;  //計算總計
+?> 
+<form action="cart_update.php">
+<input type="hidden" name="p_no" value="<?php echo $p_no;?>">
+
+<div class="box cart_show_box t_d_n  lg_d_n"> 
     
   <div class=" cart_img col_6 lg_d_n t_d_n ">
         <img src=" <?php echo $_SESSION["p_img"][$p_no]; ?>  " alt="choco">
-    </div> 
+    </div>
+  
 
     <div class="mobile_cart_desc lg_d_n t_d_n col_6 ">
             <div class="cart_pname">
             <h5> <?php echo $_SESSION["p_name"][$p_no]; ?></h5>
             </div>
             <div class="cart_price   ">
-                <h5 >  單價：  NT$ 350</h5>
+                <h5 >  單價：  NT$  <?php echo $_SESSION["p_price"][$p_no]; ?></h5>
             </div>
             <div class="qty">    
               <div class="qty_buttons">
@@ -241,25 +289,28 @@ if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ //�
               
             </div>
             <div class=" cart_amout">
-                <h5 >總計： NT$ 350</h5>
+                <h5 >總計：NT$ <?php echo $subTotal?></h5>
+             
             </div>
             <div class=" cart_delete  ">
-                <p >刪除</p>
+            <input type="submit" name="btn_delete" value="刪除">
             </div>
-  
       </div> 
-  
   </div>
-</section> -->
+  </form>
+  <?php
+}
 
- 
-<section id="cart_form_container" >
+?>
+
+
+<section id="cart_form_container  " >
   <div class="wrap">
 
 	<?php 
-}	// } //foreach
 
-echo " <div class='cart_form' style = 'width:100%'>
+
+echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
 <div class='cart_total'>
 
   <p>商品金額: <span>NT", number_format($total), "</span></p>
@@ -270,21 +321,28 @@ echo " <div class='cart_form' style = 'width:100%'>
 </div>
 </div>";
      
-}
+
 
 ?>
 </div>
 </section>
 
 
+<?php
+}
+?>  
+</section>
+
+
+
+
  <!-------cart_btn_group-------->
 
-      <div class="cart_btn_group">
-          <a href="../store/store.html" class="btn orange_l "><span> 繼續購物</span></a>
-          <a href="cart_ship.html" class="btn orange_l"><span> 進行結帳</span></a>
+ <div class="cart_btn_group">
+          <a href="../store/store.php" class="btn orange_l "><span> 繼續購物</span></a>
+          <a href="cart_info.php" class="btn orange_l" id="check"><span> 進行結帳</span></a>
       </div>
   </div>
-
 
 
 
@@ -385,7 +443,7 @@ echo " <div class='cart_form' style = 'width:100%'>
 
 
 
-
+<script src="js/cart.js"></script>
 <script src="../common/js/header.js"></script>
 <script src="../common/js/robot.js"></script>
 
@@ -399,25 +457,28 @@ window.addEventListener('resize', () => {
 });
 
 </script>
+
+
 <script>
       function minus1() {
         var val = parseInt(this.nextSibling.value);
-        console.log(this.nextSibling.value);
+        console.log(this.parentNode.querySelectorAll(".qty")[0].value);
         if ((val > 1) & (val <= 10)) {
           val -= 1;
-          this.nextSibling.value = val;
+
+          this.parentNode.querySelectorAll(".qty")[0].value = val;
         } else {
-          this.nextSibling.value = 1;
+            this.parentNode.querySelectorAll(".qty")[0].value = 1;
         }
       }
       function plus1() {
-        var val = parseInt(this.previousSibling.value);
+        var val = parseInt(this.parentNode.querySelectorAll(".qty")[0].value);
         console.log(this.previousSibling.value);
         if ((val >= 1) & (val < 10)) {
           val += 1;
-          this.previousSibling.value = val;
+          this.parentNode.querySelectorAll(".qty")[0].value = val;
         } else {
-          this.previousSibling.value = 1;
+          this.parentNode.querySelectorAll(".qty")[0].value = 1;
         }
       }
 
@@ -434,7 +495,8 @@ window.addEventListener('resize', () => {
         }
       });
     </script>
-    <!-- qty control end -->
+
+
 
 </body>
 </html>

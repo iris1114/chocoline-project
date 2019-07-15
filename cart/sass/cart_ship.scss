@@ -91,6 +91,8 @@ body{
     @include font_m();
     align-items: center;
 
+  
+
 }
 
 #cartflow_container{
@@ -101,10 +103,10 @@ body{
 // --------cart_form--------//
 
 .cart_form{
+    width:100%;
     background-color: #fff;
     padding: 20px;
-    border: $color_blue solid 2px;
-    border-radius: 10px;  
+    border-top: 2px solid $color_blue;  
     .cart_total {
         text-align: right;
         padding: 10px;
@@ -140,6 +142,7 @@ body{
        display: flex;
        justify-content: space-between;
     }
+
 
 }
 
@@ -177,6 +180,43 @@ body{
     padding-top: 0px;
 }
 
+// -----------------cart——pay---------------------//
+
+#cart_payment_container{
+    input{
+        width: 50%;
+        @include font_m();
+        margin: 5px 20px;
+        border:2px solid $color_blue;
+        border-radius: 5px;   
+    }
+}
+
+// ----------------credit card---------------------//
+
+#creditcard_contatiner{
+    padding-top: 0px;
+    .creditcard_box{
+        text-align: left;
+        width: 60%;
+    
+    }
+    input{
+        width:10%;
+        @include font_m();
+        margin: 5px;
+        border:2px solid $color_blue;
+        border-radius: 5px;   
+    }
+    select{
+        width:15%;
+    }
+    
+}
+
+
+
+
 
 
 
@@ -186,6 +226,23 @@ body{
   
 #cartflow_container{
     padding-top: 20%;
+}
+
+#cartflow_container{
+    padding-top: 20%;
+}
+
+#creditcard_contatiner{
+    .creditcard_box{
+        width: 100%;
+    }
+    input{
+        width:10%;
+    }
+    select{
+        width:12%;
+     
+    }
 }
 
 
@@ -201,10 +258,7 @@ body{
 
 @include rwd(mobile){
 //-------- #cartflow_container ---------//
-body{
-    height: 100vh; 
 
-}
 
 .col_md_12{
     padding: 0;
@@ -245,8 +299,13 @@ h5,p{
     margin-top: 30px;
     padding: 0;
 
-
 }  
+
+.shipping_box{
+    display:flex;
+    justify-content: space-between;
+}
+
  
 
 .cart_form{
@@ -271,6 +330,36 @@ h5,p{
 
     
 }
+
+// ------------cart_payment----------//
+
+#cart_payment_container input{
+    @include font_s();
+}
+
+#creditcard_contatiner{
+    .wrap{
+        padding-bottom: 80px;
+    }
+    .creditcard_box{
+        width: 100%;
+       
+    }
+    input{
+        width:18%;
+
+    }
+    select{
+        width:12%; 
+    }
+
+
+}
+
+.creditcard_box p span:first-child{
+    display:block;
+}
+
 
 
 footer{

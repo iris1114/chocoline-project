@@ -15,6 +15,9 @@ $color_orange:#EF9021;
 $color_deeporange: #c3771b;
 
 
+section{
+    padding-top: 0px;
+}
 
 body{
     background-color: #FFF5E3; 
@@ -22,6 +25,7 @@ body{
     overflow-x: hidden;
 
 }
+
 
 
 // -------------global class----------//
@@ -49,6 +53,7 @@ body{
     flex-flow: row wrap; 
     margin: auto;
     justify-content: center;
+    border: $color_milk 2px solid;
 }
 
 @include rwd(desktop){
@@ -81,6 +86,50 @@ body{
     }
 }
 
+.qty_buttons {
+    display: flex;
+    width: 80%;
+    border: 1px solid $color_brown;
+    margin: auto;
+
+    border-radius: 5px;
+    .qty {
+      display: inline-block;
+      width: 40%;
+      height: 100%;
+      color: $color_brown;
+      text-align: center;
+      border: none;
+      @include font_m();
+
+      // pointer-events: none;
+    }
+
+    .minus,
+    .plus {
+      display: inline-block;
+      width: 40%;
+      height: 100%;
+      cursor: pointer;
+      @include font_s;
+      line-height: 20px;
+      @include font_m();
+
+    }
+    .minus {
+      border: none;
+      border-right: 1px solid $color_brown;
+      background-color: $color_brown;
+      color: $color_milk;
+    }
+    .plus {
+      border: none;
+      border-left: 1px solid $color_brown;
+      background-color: $color_brown;
+      color: $color_milk;
+    }
+  }
+
 //-------- #cartflow_container ---------//
 
 #cartflow_container{
@@ -105,10 +154,6 @@ padding-top: 150px;
     }
 }
 
-
-
-
-
 // --------cart_show_container--------//
 
 .cart_show_box{
@@ -129,10 +174,9 @@ padding-top: 150px;
 
     .cart_show_box{
             background-color: #fff;
-
-            border: $color_blue solid 2px; 
-            padding: 15px;
-            border-radius: 10px;
+            border: none; 
+            padding: 0px;
+            border-radius: 0px;
             text-align: center;
             @include font_m();
             align-items: center;
@@ -148,49 +192,7 @@ padding-top: 150px;
         }
     }
    
-    .qty_buttons {
-        display: flex;
-        width: 80%;
-        border: 1px solid $color_brown;
-        margin: auto;
-
-        border-radius: 5px;
-        .qty {
-          display: inline-block;
-          width: 40%;
-          height: 100%;
-          color: $color_brown;
-          text-align: center;
-          border: none;
-          @include font_m();
-
-          // pointer-events: none;
-        }
-
-        .minus,
-        .plus {
-          display: inline-block;
-          width: 40%;
-          height: 100%;
-          cursor: pointer;
-          @include font_s;
-          line-height: 20px;
-          @include font_m();
-
-        }
-        .minus {
-          border: none;
-          border-right: 1px solid $color_brown;
-          background-color: $color_brown;
-          color: $color_milk;
-        }
-        .plus {
-          border: none;
-          border-left: 1px solid $color_brown;
-          background-color: $color_brown;
-          color: $color_milk;
-        }
-      }
+ 
       .cart_delete{
         text-decoration: underline;
       }
@@ -199,13 +201,15 @@ padding-top: 150px;
 
 // --------cart_form--------//
 
-.cart_form_container{
+#card{
     padding-top: 0px;
 }
 
-
+#cart_form_container{
+    width: 100%;
+}
 .cart_form{
-
+    width:100%;
     background-color: #fff;
     padding: 5px;
     border-top: 2px solid $color_blue;
@@ -235,7 +239,12 @@ padding-top: 150px;
     text-align: center;
 }
 
-
+.cart_delete{
+    .btn{
+        background-color: $color_blue;
+        font-size: 16px;
+        }
+}
 
 
 #cart_total_container{
@@ -283,6 +292,7 @@ padding-top: 150px;
     }
 
     .cart_show_box{
+
         display: flex;
         width: 100%;
         justify-content: space-evenly;
@@ -321,12 +331,12 @@ body{
  
 // --------cart_title_container--------//   
 
-#m_cart_title_box{
-    .wrap{
-        padding: 0px 15px;
+#cart_title_container  {
+    .cart_title_box{
+        display: none;
     }
+    
 }
-
 
 
 
@@ -338,6 +348,10 @@ body{
     .cart_title_box{
         width: 90%;
     }
+    .cart_show_box{
+        padding: 0px;
+        
+    }
 
 
     h5,p{
@@ -347,6 +361,8 @@ body{
 
     .cart_show_box{ 
         width: 90%;
+        border: red 1px solid;
+
         
             .cart_pname,.cart_price,.cart_qty,.cart_amout{
                 border-right: none;   
@@ -383,6 +399,12 @@ body{
     margin: auto;
     margin-bottom: 50px;
 }
+
+#cart_form_container{
+    padding-top: 0px;
+    width:100%;
+}
+
 
 .cart_btn_group{
     position: fixed;
