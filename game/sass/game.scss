@@ -1,7 +1,7 @@
 @import "../../common/sass/common.scss";
 
 html{
-    overflow: auto; 
+    // overflow: auto; 
 }
 .game_body{
     overflow: hidden;
@@ -539,6 +539,15 @@ canvas{
         html{
             overflow: auto;
             position: fixed;
+        }
+        header{
+            .m_header{
+                .menubox{
+                    li{
+                        padding: 2% 0;
+                    }
+                }
+            }
         }
         .game_body{
             transform: rotate(90deg);
