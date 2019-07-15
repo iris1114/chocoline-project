@@ -6,16 +6,13 @@ function showLoginForm() {
   //檢查登入bar面版上 spanLogin 的字是登入或登出
   //如果是登入，就顯示登入用的燈箱(lightBox)
   //如果是登出
-  //將登入bar面版上，登入者資料清空
+  //將登入bar面版上，登入者資料清空r
   //spanLogin的字改成登入
   //將頁面上的使用者資料清掉
-  var islogin = false;
-  //抓取      var xx =  document.getElementsByClassName("spanLogin")[0].href 
-  //var xx =  document.getElementsByClassName("spanLogin")[0].href;
-  if (!(islogin == true) ) {
-      // $id("passwordLightBox").style.display = "none";
-      $id("lightBox").style.display = "block";
-      
+  // var islogin = false;
+  // if (!(islogin == true) ) {
+  if($id('spanLoginText').innerHTML == "登入"){
+      $id('lightBox').style.display = 'block';
   } else{
     //................登出時，除了處理前端頁面，也要回server端清session
 
@@ -23,16 +20,14 @@ function showLoginForm() {
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {
       if (xhr.status == 200) {
-        islogin = true;
+        // islogin = true;
         $id("lightBox").style.display = "none";
-        // $id("mem_name").innerHTML = "&nbsp";
-        // $id("spanLogin").innerHTML = "登入";
-        // spanLogin[i].innerHTML = "登入";
+        $id('spanLoginText').innerHTML = '登入';
       } else {
         alert(xhr.status);
       }
     };
-    xhr.open("get", "ajaxLogout.php", true);
+    xhr.open("get", "logout.php", true);
     xhr.send(null);
     //......................................
   }
@@ -47,12 +42,14 @@ function sendForm() {
     if (xhr.status == 200) {
       if (xhr.responseText == "error") {
         alert("帳密錯誤");
-      } else {
+      } else {//登入成功
         alert("登入成功！"); 
-        //登入成功
-        // $id("mem_name").innerHTML = xhr.responseText;
+        $id("mem_name").innerHTML = xhr.responseText;
         //將登入表單上的資料清空，並隱藏燈箱
-        $id("lightBox").style.display = "none";
+        $id('lightBox').style.display = 'none';
+        $id('mem_id').value = '';
+        $id('mem_psw').value = '';
+        $id('spanLoginText').innerHTML = "登出";
 
         spanLogin = document.querySelectorAll(".spanLogin img" );
         for(i=0;i<spanLogin.length;i++){
@@ -60,11 +57,6 @@ function sendForm() {
         }
         document.getElementsByClassName("spanLogin")[0].href = "../member/member.html";
         document.getElementsByClassName("spanLogin")[1].href = "../member/member.html";
-        // $id("mem_id").value = "";
-        // $id("mem_psw").value = "";
-        // $id("spanLogin").innerHTML = "登出";
-        // console.log(spanLogin[i]);
-        // spanLogin[i].innerHTML = "登出";
       }
     } else {
       alert(xhr.status);
@@ -84,12 +76,15 @@ function forgetPassword(){
   $id("rebtnLogin").onclick = showLoginForm;
 }
 
-function register(){
+function openRegisterBox(){
   $id("lightBox").style.display = "none";
   $id("registerLightBox").style.display = "block";
+}
+
+function checkAccount() {
   //產生XMLHttpRequest物件
   var xhr = new XMLHttpRequest();
-  //註冊callback function 
+  //偵測帳號是否有重複 function 
   xhr.onload = function(){
     console.log("onload : ", xhr.readyState);
       if( xhr.status == 200){
@@ -99,11 +94,35 @@ function register(){
       }
   }
   //設定好所要連結的程式
+  var url = "checkAccount.php";
+  xhr.open("post", url, true);
+  xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+  //送出資料
+  var data_info = "mem_id=" + document.getElementById("f_mem_id").value;
+  xhr.send( data_info);
+}
+
+function register() {
+  //產生XMLHttpRequest物件
+  var xhr = new XMLHttpRequest();
+  //註冊callback function 
+  xhr.onload = function(){
+    console.log("onload : ", xhr.readyState);
+    if( xhr.status == 200){
+      alert(xhr.responseText);
+    }else{
+      alert(xhr.status);
+    }
+  }
+  //設定好所要連結的程式
   var url = "register.php";
   xhr.open("post", url, true);
   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
   //送出資料
-  var data_info = "mem_Id=" + document.getElementById("mem_Id").value;
+  var data_info = "mem_id=" + document.getElementById("f_mem_id").value + "&" + "mem_email=" + document.getElementById("f_mem_email").value + "&" + "mem_psw=" + document.getElementById("f_mem_psw").value;
+  console.log(document.getElementById("f_mem_id").value);
+  console.log(data_info);
+  // var data_info = `mem_id=${$id("f_mem_id").value}&mem_email=${$id("f_mem_email").value}&mem_psw=${$id("f_mem_psw").value}`;
   xhr.send( data_info);
 }
 
@@ -112,8 +131,8 @@ function cancelLogin() {
   $id("lightBox").style.display = "none";
   $id("passwordLightBox").style.display = "none";
   $id("registerLightBox").style.display = "none";
-  // $id("mem_id").value = "";
-  // $id("mem_psw").value = "";
+  // $id('memId').value = '';
+  // $id('memPsw').value = '';
 }
 
 function init() {
@@ -121,8 +140,7 @@ function init() {
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
   if( xhr.responseText != "notLogin"){ //已登入
-    // document.getElementById("mem_name").innerHTML = xhr.responseText;
-    // document.getElementById("spanLogin").innerHTML = "登出";
+    document.getElementById("spanLoginText").innerHTML = "登出";
     spanLogin = document.querySelectorAll(".spanLogin img" );
     for(i=0;i<spanLogin.length;i++){
       spanLogin[i].src = "image/login/logo_icon.png";
@@ -146,16 +164,18 @@ $id("btnLogin").onclick = sendForm;
 
 $id("forget_password").onclick = forgetPassword;
 
-$id("register").onclick = register;
+$id("register").onclick = openRegisterBox;
+$id("btnCheckId").onclick = checkAccount;
+$id("register_btn").onclick = register;
 
 //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin
 // $id("btnLoginCancel").onclick = cancelLogin;
-var btnLoginCancel = document.getElementsByClassName("btnLoginCancel" );
-var k;
-for(k=0;k<btnLoginCancel.length;k++){
-  btnLoginCancel[k].onclick = cancelLogin;
+  var btnLoginCancel = document.getElementsByClassName("btnLoginCancel" );
+  var k;
+  for(k=0;k<btnLoginCancel.length;k++){
+    btnLoginCancel[k].onclick = cancelLogin;
+  }
 }
-} //window.onload
 
 // window.onload = init;
 window.addEventListener("load",init,false);
