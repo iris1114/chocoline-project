@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $errMsg = "";
 try {
 	require_once("../common/php/connect_choco.php");
