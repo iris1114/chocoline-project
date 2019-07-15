@@ -2,7 +2,7 @@
 <?php
 $errMsg = "";
 try {
-	require_once("connectChoco.php");
+	require_once("../common/php/connect_choco.php");
 
 	$sql = "select * from classic_products ";    
     $products = $pdo->query($sql); 
