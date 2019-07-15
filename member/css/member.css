@@ -1154,6 +1154,9 @@ section {
     padding: 0 15px;
     box-sizing: border-box; } }
 
+* {
+  outline: 1px solid red; }
+
 body {
   background-color: #FFF5E3;
   background: url(../image/member/bg.png) no-repeat 100% 100%/cover;
@@ -1218,6 +1221,10 @@ body {
   #info .upload {
     text-align: center;
     line-height: 1.8; }
+  #info .upload img {
+    border-radius: 50%; }
+  #info .profile_pic img {
+    border-radius: 50%; }
   #info .info_th {
     background-color: #1A99AD;
     color: #fff;
@@ -1257,6 +1264,10 @@ body {
     margin: auto;
     text-align: center;
     margin-bottom: 40px; }
+  #info .btn_edit input {
+    width: 120px;
+    border: none;
+    border-radius: 10px; }
   #info input {
     width: 70%;
     line-height: 2;
@@ -1296,6 +1307,9 @@ body {
     @media all and (min-width: 992px) {
       #info .upload input {
         font-size: 16px; } }
+  #info .btn_group input {
+    width: 0%;
+    border: none; }
 
 #orderlist {
   background-color: white;

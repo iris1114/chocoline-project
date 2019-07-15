@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="member_section">
+
+                <div class="show_order_light_box_bg"></div>
+                
+                <!-- <div class="member_content"> -->
+                
+                <div class="profile col-sm-12 col-md-12 col-lg-12 col-xl-12" id="profile_edit">
+                    <script>
+                        function show_member(jsonStr){
+                            // console.log(jsonStr);
+                            var str="";
+                            var ary_member=jsonStr.split("split");
+                            for (let i = 0; i < ary_member.length; i++) {
+                                var column = JSON.parse(ary_member[i]);
+                                if( column.account ){
+                
+                                    str1 =
+                                    `<div class='col-sm-12 col-md-6 col-lg-6 col-xl-2 edit_personal_picture' id='edit_personal_picture'>
+                                    <label for='select_head_pic'><img id='personal_picture' src='"${column.image_path}"' alt=''>
+                                    `;
+                                    str +="<div>編輯大頭貼<input type='file' id='select_head_pic' style='display:none'><img class='member_edit' src='img/member/pencil.png' alt=''></div></label>";
+                                    str +="<form class='textform' method='post' accept-charset='utf-8' name='form_member_pic'>";
+                                    str +="<input name='hidden_data' id='hidden_data' type='hidden' /></form>";
+                                    str +="</div>";
+                                    str +="<div class='col-sm-12 col-md-12 col-lg-12 col-xl-10'>";
+                                    str +="<div class='col-sm-12 col-md-12 col-lg-6 col-xl-3'>";
+                                    str +="<p class='profile_name'><input type='text' name='' id='edit_name_input' class='input_edit disable_edit' readonly value='"+column.name+"'><img id='edit_name' class='member_edit' src='img/member/pencil.png' alt=''></p>";
+                                    str +="<p>帳號:"+column.account+"</p>";
+                                    str +="<p>密碼:<input type='password' name='' id='edit_password_input' class='input_edit disable_edit' readonly value='"+column.password+"'><img id='edit_password' class='member_edit' src='img/member/pencil.png' alt=''></p>";
+                                    str +="</div>";
+                                    str +="<div class='col-sm-12 col-md-12 col-lg-6 col-xl-4'>";
+                                    str +="<p>生日:<input type='date' name='' id='edit_birthday_input' class='input_edit disable_edit' readonly value='"+column.birthday+"'><img id='edit_birthday' class='member_edit' src='img/member/pencil.png' alt=''></p>";
+                                    str +="<p>電話:<input type='text' name='' id='edit_mobile_phone_input' class='input_edit disable_edit' readonly value='"+column.mobile_phone+"'><img id='edit_mobile_phone' class='member_edit' src='img/member/pencil.png' alt=''></p>";
+                                    str +="</div>";
+                                    str +="<div class='col-sm-12 col-md-12 col-lg-6 col-xl-5'>";
+                                    str +="<p>E-mail:<input type='text' name='' id='edit_email_input' class='input_edit disable_edit' readonly value='"+column.email+"'><img id='edit_email' class='member_edit' src='img/member/pencil.png' alt=''></p>";
+                                    str +="<p>地址:<input type='text' name='' id='edit_address_input' class='input_edit disable_edit' readonly value='"+column.address+"'><img id='edit_address' class='member_edit' src='img/member/pencil.png' alt=''></p>";
+                                    str +="</div>";  
+                                    str +="</div>";      
+                                }else{
+                                    
+                                    str += "<p>資料異常!</p>";
+                                   
+                                }
+                            }
+                            document.getElementById("profile_edit").innerHTML = str;
+                
+                            let obj= document.getElementsByClassName("member_edit");
+                            for(var i=0;i<obj.length;i++){
+                                obj[i].addEventListener("click",modify_member,false);
+                            }
+                
+                            //20190101
+                            let obj2= document.getElementById('select_head_pic');
+                            obj2.addEventListener("change",change_picture,false);
+                           
+                        }
+                
+                        function get_member(){
+                            var xhr = new XMLHttpRequest();
+                            xhr.onload=function (){
+                                if( xhr.status == 200 ){
+                                    show_member( xhr.responseText );
+                                }else{
+                                    alert( xhr.status );
+                                }
+                            }
+                            var url = "get_membertest.php";
+                            xhr.open("Get", url, true);
+                            xhr.send( null );
+                        }
+                    </script>
+                </div>
+
+
+<script>
+function modify_member(e) {
+  let obj=e.target;
+  console.log(obj.id);
+  console.log(obj.className);
+  let input_item='#'+obj.id+'_input';
+  console.log(input_item);
+  $(input_item).toggleClass('disable_edit');
+  if($(input_item).prop("readonly")==true){
+      $(input_item).attr("readonly",false);
+      // $(input_item).focus();
+      // $(input_item).select();
+      let index=$(input_item).val();
+      $(input_item).val("").focus().val(index);
+  }
+  else{
+      // $(input_item).attr("readonly",true);
+      $(".input_edit").attr("readonly",true);
+      $(".input_edit").removeClass('disable_edit');
+      $(".input_edit").addClass('disable_edit');
+      update_member();
+  }
+ 
+}
+
+
+function change_picture() {
+var file = document.getElementById('select_head_pic').files[0];
+
+var readFile = new FileReader();
+readFile.readAsDataURL(file);
+readFile.addEventListener('load', function () {
+  var image = document.getElementById('personal_picture');
+  image.src = this.result;
+  console.log(image.src);
+  save_personal_picture();
+  document.getElementById('select_head_pic').style.display='none';
+});
+}
+
+
+
+function save_personal_picture() {
+let pic = document.getElementById("personal_picture");
+document.getElementById('hidden_data').value = pic.src;
+var formData = new FormData(document.forms["form_member_pic"]);
+
+var xhr = new XMLHttpRequest();
+
+xhr.open('POST', 'php/save_member_headpic.php', true);
+
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+          let pic_save_path=xhr.responseText;
+          // console.log(pic_save_path);
+          let img_path=pic_save_path.replace("../", "");
+         
+          document.getElementById("personal_picture").alt=img_path;
+          update_member();
+         
+      } else {
+          alert(xhr.status);
+      }
+  }
+};
+
+xhr.send(formData);
+
+}
+
+function update_member(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+      if( xhr.status == 200 ){
+          showAlert(xhr.responseText);
+      }else{
+          alert( xhr.status );
+      }
+  }
+  let password=document.getElementById("edit_password_input").value;
+  let name=document.getElementById("edit_name_input").value;
+  let mobile_phone=document.getElementById("edit_mobile_phone_input").value;
+  let address=document.getElementById("edit_address_input").value;
+  let email=document.getElementById("edit_email_input").value;
+  let birthday=document.getElementById("edit_birthday_input").value;
+  let image_path=document.getElementById('personal_picture').alt;
+  var url = "php/update_member.php?password="+password+"&name="+name+"&mobile_phone="+mobile_phone+"&address="+address+"&email="+email+"&birthday="+birthday+"&image_path="+image_path;
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+                
+                
+</script>
+    <script src="member.js"></script>
+</body>
+</html>

@@ -104,7 +104,6 @@
  <!------ info ------->
 
       <section id="info" class="tabcontent ">
-        <form action="">
         <div class="my_info">
           <div class="  col_12 col_md_4 col_lg_3"> 
               <div class="profile_pic">
@@ -123,71 +122,116 @@
           </div>
           
 
-        <div class="col_12 col_md_8 col_lg_9">
-          <table class="info_table">
+        <div class="col_12 col_md_8 col_lg_9" id="profile_edit">
+ <script>
+function show_member(jsonStr){
+  var str="";
+  var ary_member=jsonStr.split("split");
+  for (let i = 0; i < ary_member.length; i++) {
+      var column = JSON.parse(ary_member[i]);
+      if( column.account ){
+        str += 
+        ` <table class="info_table">
             <tr><th colspan="2"  class="info_th" > 我的資料</th></tr>
             <tr><td></td></tr>
-
             <tr>
               <th>帳號：</th>
-              <td><input type="text"><i class="fas fa-pen"></i></td>
+              <td><input type="text" id='edit_name_input' class='input_edit disable_edit' readonly value="${column.mem_id}"><i class=" member_edit fas fa-pen"></i></td>
             </tr>
-
             <tr>
               <th>姓名：</th>
-              <td><input type="text"><i class="fas fa-pen"></i></td>
+              <td><input type="text" id='edit_name_input' class='input_edit disable_edit' readonly value="${column.mem_name}"><i class=" member_edit fas fa-pen"></i></td>
             </tr>
+           </table> 
+         
+        `
 
-            <tr>
+      }else{
+                    
+                    str += "<p>資料異常!</p>";
+                   
+                }
+            }
+            document.getElementById("profile_edit").innerHTML = str;
+
+            // let obj= document.getElementsByClassName("member_edit");
+            // for(var i=0;i<obj.length;i++){
+            //     obj[i].addEventListener("click",modify_member,false);
+            // }
+
+            // //20190101
+            // let obj2= document.getElementById('select_head_pic');
+            // obj2.addEventListener("change",change_picture,false);
+           
+        }
+
+
+function get_member(){
+    var xhr = new XMLHttpRequest();
+    xhr.onload=function (){
+        if( xhr.status == 200 ){
+            //modify here
+
+            show_member( xhr.responseText );
+        }else{
+            alert( xhr.status );
+        }
+    }
+    var url = "get_membertest2.php";
+    xhr.open("Get", url, true);
+    xhr.send( null );
+}
+</script>
+                
+
+        
+      
+      
+        </div>
+         
+         
+          <button class="btn orange_l"><span>確定修改</span></button>
+
+        </div>
+      </section>
+
+      <!-- <tr>
               <th>Email：</th>
               <td><input type="text"><i class="fas fa-pen"></i></td>
             </tr>
-
             <tr>
               <th>手機號碼：</th>
               <td><input type="text"><i class="fas fa-pen"></i></td>
             </tr>
-
               <tr>
                 <th>生日：</th>
                 <td><input type="text"><i class="fas fa-pen"></i></td>
               </tr>
-
           <th colspan="2" class="info_th">我的信用卡</th>
           <td></td>
-
            <tr class="visa_tr">
               <td  ><i class="fab fa-cc-visa"></i></td>
               <td><input type="text"><i class="fas fa-pen"></i></td>
           </tr>
-
           <tr>
             <th colspan="2 "class="info_th">我的收件地址</th>
             <td></td>
           </tr>
-
           <tr>
             <th>宅配地址:</th>
             <td><input type="text"><i class="fas fa-pen"></i></td>
           </tr>
-
           <tr>
             <th colspan="2"class="info_th"> 我的點數</th>
             <td></td>
           </tr>
-
           <tr>
             <th>目前點數:</th>
             <td> 50點 <a href="game.html">玩遊戲賺點數</a></td>
           </tr>
+          </table>    -->
+        
 
-          </table>          
-
-          <button class="btn orange_l"><span>確定修改</span></button>
-          </div>
-        </div>
-      </form>
-      </section>
 
 <!------ orderlist ------->
 
@@ -499,7 +543,7 @@ for (i = 0; i < acc.length; i++) {
 
     </script>
 
-
+<script src="member.js"></script>
 </body>
 </html>
 
