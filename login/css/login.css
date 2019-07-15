@@ -1659,6 +1659,10 @@ header {
               color: #999; }
             header #registerLightBox #registered .login_register #f_mem_id::placeholder {
               color: #999; }
+          header #registerLightBox #registered .login_register #btnCheckId {
+            font-size: 8px; }
+          header #registerLightBox #registered .login_register #idMsg {
+            font-size: 8px; }
           header #registerLightBox #registered .login_register #f_mem_email {
             width: 55%;
             margin-bottom: 3%;
