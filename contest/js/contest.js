@@ -109,4 +109,49 @@ window.addEventListener("load",function(){
         }
 
     })
+
+
+    var pagenums = document.querySelectorAll(".pagenums");
+
+    //參賽按鈕點擊事件裡面要包增加pagenum的函式
+
+    $pagenums = Math.ceil($(".player").length / 18);
+    for(let i=0;i<$pagenums;i++){
+        $("#nextpage_btn").before(`<a href="javascript:;" class="pagenums">${i+1}</a>`);
+    }
+
+    pagenum();
+    function pagenum(){
+        $pagenums = Math.ceil($(".player").length / 18);
+        if( $pagenums == $(".pagination a").length-2){
+            return;
+        }
+        
+        $("#nextpage_btn").before(`<a href="javascript:;" class="pagenums">${$pagenums}</a>`);
+        pagenums = document.querySelectorAll(".pagenums");
+        console.log(pagenums.length);
+        
+        for(let i=0;i<pagenums.length;i++){
+            pagenums[i].addEventListener("click",function(){
+                
+                let player = document.querySelectorAll(".player");
+                // console.log(this);
+                
+                for(let i=0;i<player.length;i++){
+                    player[i].style.display="block"
+                }
+    
+                for(let j=0; j<pagenums.length;j++){
+                    pagenums[j].classList.remove("active");
+                }
+    
+                this.classList.add("active");
+                // console.log(this.innerText);
+                for(let i=0;i<((this.innerText-1) * 18);i++){
+                    player[i].style.display="none";
+                    
+                }
+            })
+        }
+    }
 })

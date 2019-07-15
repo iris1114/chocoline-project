@@ -574,6 +574,7 @@ html{
         padding-left: 30px;
     }
     .contain{
+        overflow: hidden;
         &::after{
             content: "";
             display: block;
@@ -640,9 +641,9 @@ html{
                     @include font_s();
                     // color: $color_milk;
                 }
-                span{
-                    // color: $color_milk;
-                }
+                // span{
+                //     color: $color_milk;
+                // }
             }
         }
         .ring{
@@ -1316,6 +1317,7 @@ html{
         padding-top: 150px;
         text-align: left;
         .contain{
+            height: 2415px;
             &::after{
                 content: "";
                 display: block;
