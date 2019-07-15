@@ -1,6 +1,9 @@
 
 <?php
 session_start();
+if(isset($_SESSION["mem_id"])!=true){
+    $_SESSION["mem_id"] = null;
+}
 $errMsg = "";
 try {
 	require_once("../common/php/connect_choco.php");
@@ -95,7 +98,7 @@ try {
                     <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                     <!-- icon點擊後跳出登入註冊燈箱 -->
                 </a>
-                <span id="mem_name">&nbsp;</span>
+                <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
                 <span id="spanLoginText">登入</span>
             </figure>
             <figure>
