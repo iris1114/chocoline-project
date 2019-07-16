@@ -21,7 +21,7 @@ try{
   	$_SESSION["mem_email"] = $memRow["mem_email"];
 
     //送出登入者的姓名資料
-    echo $memRow["mem_name"];
+    echo $memRow["mem_id"];
   }
 }catch(PDOException $e){
   echo $e->getMessage();

@@ -98,6 +98,7 @@ try {
                     <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                     <!-- icon點擊後跳出登入註冊燈箱 -->
                 </a>
+                <!-- <span id="mem_name">&nbsp;</span> -->
                 <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
                 <span id="spanLoginText">登入</span>
             </figure>
@@ -264,10 +265,9 @@ try {
 <!-- <script src="../common/js/robot.js"></script>     -->
 <!--    robot新增js  -->
     
-
-<script src="js/header.js"></script>
-<script src="js/robot.js"></script>
-
+<script src="../common/js/header.js"></script>
+<script src="../common/js/login.js"></script>
+<script src="/common/robot.js"></script>
 <!-- <script src="../common/js/header.js"></script> -->
 <!-- <script src="../common/js/robot.js"></script> -->
 
