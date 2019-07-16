@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -536,62 +535,65 @@
           
           <div class="fix_photo" id="fix">
 
-            <div class="eye_pos pos1">
-              <img src="" alt="" class="eye_demo demo"style = "transform:rotate(0deg) scale(1) " >
+            <div class="eye_pos">
+              <img src="" alt="" class="eye_demo demo">
             </div>
 
-            <div class="eye_pos pos2">
-              <img src="" alt="" class="eye_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
+            <div class="eye_pos">
+              <img src="" alt="" class="eye_demo demo">
             </div>
             
-            <div class="mouse_pos ">
-              <img src="" alt="" class="mouse_demo demo"style = "transform:rotate(0deg) scale(1.0) ">
+            <div class="mouse_pos">
+              <img src="" alt="" class="mouse_demo demo">
             </div>
 
             <div class="others_pos">
-              <img src="" alt="" class="others_demo demo"style = "transform:rotate(0deg) scale(1.0) ">
-            </div> 
-
-            <div class="others_pos">
-              <img src="" alt=""class="others_demo demo"style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="others_demo demo">
             </div>
 
-            <img src="image/custom/small/cicr_w_b.png" alt="" id="cho_pos">
+            <div class="others_pos">
+              <img src="" alt="" class="others_demo demo">
+            </div>
 
+            <img src="image/custom/cake_d_h.png" alt="" id="cho_pos">
+         
           </div>
+          
 
           <div class="fix_bar">
 
-            <div class="bar_photo"  id="big">
+            <div class="bar_photo big">
               <img src="image/custom/bar_item6.png" alt="big">
             </div>
 
-            <div class="bar_photo" id="small">
+            <div class="bar_photo small">
               <img src="image/custom/bar_item5.png" alt="small">
             </div>
 
-            <div class="bar_photo"id="right">
+            <div class="bar_photo right">
               <img src="image/custom/bar_item1.png" alt="right">
             </div>
 
-            <div class="bar_photo"id="left">
+            <div class="bar_photo left">
               <img src="image/custom/bar_item2.png" alt="left">
             </div>
 
-            <div class="bar_photo"id="reset">
+            <div class="bar_photo reset">
               <img src="image/custom/bar_item.png" alt="reset">
             </div>
 
           </div>
 
           <div class="total_price">
+            
             <img src="image/custom/price.png" alt="price" />
             <h4>TOTAL</h4>
             <p class="price">
               NT$350
             </p>
+
           </div>
-          
+
         </div>
 
         <!-- ----- middle side End ----- -->
@@ -648,7 +650,7 @@
             <img src="image/custom/caed1.png" alt="">
           </div>
 
-          <!-- <div class="card_items">
+          <div class="card_items">
 
             <div class="tab_item">
               <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
@@ -656,11 +658,11 @@
               <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
             </div>
 
-            <div class="clearfix"></div> -->
+            <div class="clearfix"></div>
 
             <!-- -------- 卡片樣式 start-------- -->
 
-            <!-- <div class="card_color type" id="card_colors">
+            <div class="card_color type" id="card_colors">
 
               <div class="card_background">
                 <div class="background_color">
@@ -698,7 +700,7 @@
                 </div>
               </div>
 
-            </div> -->
+            </div>
 
             <!-- -------- 卡片樣式 End-------- -->
 
@@ -1409,7 +1411,7 @@
           let cust = $("#cho_pos").attr("src", modelsrc);
           console.log(modelsrc);
           let mask = document.getElementsByClassName("fix_photo");
-          // $(".fix_photo").css("-webkit-mask-image",'url(../'+modelsrc+')');
+          // mask[0].style.WebkitMaskImage = "url(../" + modelsrc + ")";
           // console.log(mmm);
         };
 
@@ -1418,23 +1420,24 @@
 
 
         // ---------- 眼睛 start select----------
-        var eye_num = 0;
+
+
         $(document).ready(function () {
           // for (let i = 0; i <  )
           var eye_items_length =  $('.eye_items').length ;
-         
+          var eye_num = 0;
           for(let i =0 ; i <eye_items_length; i++ ){
              $(".eye_items").eq(i).click(function(){
-                        console.log(i)
-                      var eye_src=   $(".eye_items").eq(i).children("img").attr("src");     
-                    console.log(eye_src);
+                    // console.log(i)
+                    var eye_src=$(".eye_items").eq(i).children("img").attr("src");     
+                    // console.log(eye_src);
                     $(".eye_demo").eq(eye_num).attr("src", eye_src);
-                    
                     eye_num++;
-                    console.log("yes");
-                    })
-                }
-                });
+  
+
+                  })
+          }
+        });
               
 
         // ---------- 眼睛 End  select----------
@@ -1442,11 +1445,11 @@
 
         // ---------- 嘴巴 start select----------
 
-        var mouse_num = 0;
+
         $(document).ready(function () {
           // for (let i = 0; i <  )
           var mouse_items_length =  $('.mouse_items').length ;
-         
+          var mouse_num = 0;
           for(let i =0 ; i <mouse_items_length; i++ ){
              $(".mouse_items").eq(i).click(function(){
                         console.log(i)
@@ -1465,11 +1468,11 @@
         // ---------- 飾品 start select----------
 
 
-        var others_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
        // for (let i = 0; i <  )
        var others_items_length =  $('.others_items').length ;
+          var others_num = 0;
           for(let i =0 ; i < others_items_length; i++ ){
              $(".others_items").eq(i).click(function(){
                         console.log(i)
@@ -1503,7 +1506,7 @@
         });
 
         // ---------------------drag--------------------------
- 
+
 
         var eyechange = document.querySelectorAll(".eye_demo");
         // console.log(eyechange.length);
@@ -1511,275 +1514,145 @@
         var otherschange = document.querySelectorAll(".others_demo");
         var itemall =  document.querySelectorAll(".demo");
         console.log(itemall.length);
-        
-        var btn =document.querySelectorAll(".bar_photo");
-        var imgcontrol = [" big"," small"," right"," left"," big",]
-        var big = document.getElementById("big");
-        var small = document.getElementById("small");
-        var right = document.getElementById("right");
-        var left = document.getElementById("left");
-        var reset = document.getElementById("reset");
-        for(i=0;i<btn.length;i++){
-          
-          btn[i].addEventListener("click",control);
-        }
-        // eyescale = 1;
-        // eyerotate = 0;
-        // mousescale = 1;
-        // mouserotate = 0;
-        // otherscale = 1;
-        // otherrotate = 0;
-        // var whoselected = "";
+        var big = document.getElementsByClassName("big");
+        var small = document.getElementsByClassName("small");
+        var right = document.getElementsByClassName("right");
+        var left = document.getElementsByClassName("left");
+        var reset = document.getElementsByClassName("reset");
 
-        
-         var arr =[];
-      
+        eyescale = 1;
+        eyerotate = 0;
+        mousescale = 1;
+        mouserotate = 0;
+        otherscale = 1;
+        otherrotate = 0;
+
+
+        var eyearr =[];
+        var whoselected = "";
+         
         for(let i=0;i<eyechange.length;i++){
-            eyechange[i].addEventListener("click",function(e){
-               if(arr.indexOf(this)==-1){
-                  arr.push(this);
-                  console.log(arr);
-               }
-       
+            eyechange[i].addEventListener("click",function(){
+              if(eyearr.indexOf(this)==-1){
+                eyearr.push(this);
+              }else{
+                whoselected = eyearr.indexOf(this)
+              }
+              console.log(eyearr);
+              console.log(whoselected);
             })
         }
-        for(let i=0;i<mousechange.length;i++){
-          mousechange[i].addEventListener("click",function(){
-               if(arr.indexOf(this)==-1){
-                  arr.push(this);
-                  console.log(arr);
-               }
+        // for(let i=0;i<mousechange.length;i++){
+        //   mousechange[i].addEventListener("click",function(){
+        //         whoselected1 = this;
        
-            })
-        }
-        for(let i=0;i<otherschange.length;i++){
-          otherschange[i].addEventListener("click",function(){
-               if(arr.indexOf(this)==-1){
-                  arr.push(this);
-                  console.log(arr);
-                  
-               }
+        //     })
+        // }
+        // for(let i=0;i<otherschange.length;i++){
+        //   otherschange[i].addEventListener("click",function(){
+        //         whoselected2 = this;
        
-            })
-        }
-        let fix_photo = document.querySelector(".fix_photo")
-        let draggable = fix_photo.querySelectorAll(".demo");
+        //     })
+        // }
 
-
-        for(let i=0;i<draggable.length;i++){
+        // for(let i=0;i<itemall.length;i++){
                 
-          draggable[i].addEventListener("click",function(e){
-                var ttt = e.target;
-                    for(j=0;j<draggable.length;j++){
-                      draggable[j].classList.remove("selector");
-                    }
-          this.classList.add("selector");
-                })
-            }
-            console.log(arr);
-                  
- 
-            
-            function control(e){
+        //     itemall[i].addEventListener("click",function(e){
+        //         var ttt = e.target;
+        //             for(j=0;j<itemall.length;j++){
+        //                 itemall[j].classList.remove("selector");
+        //             }
+        //   this.classList.add("selector");
+        //         })
+        //     }
+         
 
-              switch(this.id){
-              
-              case "big":
-              console.log(arr);
-
-                for(let i=0; i<arr.length; i++){
-                  if (arr[i].classList.contains("selector")){
-                    console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                  //  console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                   
-                    let newscale = parseFloat(ccc[1].replace("scale(","").replace(")",""))+0.5;
-                    // console.log(newscale);
-                    ccc[1] = " scale("+newscale+")";
-                    // console.log(ccc[0]);
-                    ddd = ccc[0]+ccc[1];
-                    // console.log("bbb",ddd);
-                    var eee = $(arr[i]).attr('style',ddd);
-                    // console.log(eee)
-                    var yyy = $(arr[i]).attr('style');
-                    // console.log(yyy);
-                    
-                }
-              }
-              break;
-
-                case "small":
-
-                for(let i=0; i<arr.length; i++){
-                  if (arr[i].classList.contains("selector")){
-                    // console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                  //  console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                   
-                    let newscale = parseFloat(ccc[1].replace("scale(","").replace(")",""))-0.5;
-                    // console.log(newscale);
-                    ccc[1] = " scale("+newscale+")";
-                    // console.log(ccc[0]);
-                    ddd = ccc[0]+ccc[1];
-                    // console.log("bbb",ddd);
-                    var eee = $(arr[i]).attr('style',ddd);
-                    // console.log(eee)
-                    var yyy = $(arr[i]).attr('style');
-                    // console.log(yyy);
-                  
-               }
-              }
-              break;
-
-              case "right":
-                
-              for(let i=0; i<arr.length; i++){
-                  if (arr[i].classList.contains("selector")){
-                    // console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                   console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                    console.log(ccc[0]); //transform:rotate(0deg);
-                    //...................................
-                    let start = ccc[0].indexOf("(");
-                    let end = ccc[0].indexOf("deg)");
-                    let tempDegree = ccc[0].substring(start+1,end); //0
-                    let newDegree = parseInt( tempDegree ) + 10;
-                    ccc[0] = ccc[0].replace(tempDegree, newDegree);
-                    let newStyle = ccc[0] + " " + ccc[1];
-                    var eee = $(arr[i]).attr('style',newStyle);
-
-                    var yyy = $(arr[i]).attr('style');
-
-               }
-              }
-              break;
-
-              
-              case "left":
-                
-              for(let i=0; i<arr.length; i++){
-                  if (arr[i].classList.contains("selector")){
-                    // console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                   console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                    console.log(ccc[0]); //transform:rotate(0deg);
-                    //...................................
-                    let start = ccc[0].indexOf("(");
-                    let end = ccc[0].indexOf("deg)");
-                    let tempDegree = ccc[0].substring(start+1,end); //0
-                    let newDegree = parseInt( tempDegree ) - 10;
-                    ccc[0] = ccc[0].replace(tempDegree, newDegree);
-                    let newStyle = ccc[0] + " " + ccc[1];
-                    var eee = $(arr[i]).attr('style',newStyle);
-
-                    var yyy = $(arr[i]).attr('style');
-
-               }
-              }
-              break;
-              case "reset":
-          
-          
-                arr.splice(0,arr.length);
-                console.log(arr);
-                for(let i = 0 ; i <itemall.length ; i++){
-                  $(".demo").attr("src" ,"");
-
-                  console.log(arr);
-                }
-                others_num = 0;
-                mouse_num = 0;
-                eye_num = 0;
-                
-                $(".demo").css("transform","rotate(0deg) scale(1)")
-              break;
-              
-            
-                default:
-                console.log("no");
-            }
-            
-
-            }
            
-        // big[0].addEventListener("click", function () {
+        big[0].addEventListener("click", function () {
+
           
-        // //     if($ ( eyechange).is('.selector')){
-        // //         console.log("yes");
-        // //   eyescale += 0.2;
-
-        // //   eyechange.style.transform = "scale(" + eyescale + ")", "rotate(" + eyerotate + "deg )";
-        // //     }
-        //     eyescale += 0.2;
-
-        //     whoselected.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-        // //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-        //   mousescale += 0.2;
-        //   mousechange.style.transform = "scale(" + mousescale + ")rotate(" + mouserotate + "deg )";
-        //   otherscale += 0.2;
-        //   otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
-        // });
+              eyescale += 0.2;
+              eyearr[whoselected].style.transform = `scale(${eyescale}) rotate(${eyerotat}deg)`;
+              console.log(eyearr[whoselected].style.transform);
 
 
-        // small[0].addEventListener("click", function () {
-        //   console.log("yes");
-
-        //   eyescale -= 0.2;
-
-        //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-
-        //   mousescale -= 0.2;
-        //   mousechange.style.transform = "scale(" + mousescale + ")rotate(" +mouserotate + "deg )";
-        //   otherscale -= 0.2;
-        //   otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
-        // });
+          // mousescale += 0.2;
+          // whoselected1.style.transform = "scale(" + mousescale + ")rotate(" + mouserotate + "deg )";
+         
+         
+          // otherscale += 0.2;
+          // whoselected2.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
+        });
 
 
-        // right[0].addEventListener("click", function () {
+        small[0].addEventListener("click", function () {
+          // console.log("yes");
 
+          eyescale -= 0.2;
 
-        //   eyerotate += 15;
-
-        //   whoselected.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
-        // //   eyechange.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
-        //   console.log("yes");
-        //   mouserotate += 15;
-        //   mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" + mousescale  + ")";
-        //   otherrotate += 15;
-        //   otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
-        // });
-
-
-        // left[0].addEventListener("click", function () {
-        //   console.log("yes");
-        //   eyerotate -= 15;
-
-        //   eye[i].style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
-        // //   eyechange.style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
-        //   console.log("yes");
-        //   mouserotate -= 15;
-        //   mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" +mouserscale + ")";
-        //   otherrotate -= 15;
-        //   otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
-        // });
+          eyearr[whoselected].style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
+          console.log(eyearr[whoselected].style.transform);
+          // mousescale -= 0.2;
+          // whoselected1.style.transform = "scale(" + mousescale + ")rotate(" +mouserotate + "deg )";
+          // otherscale -= 0.2;
+          // whoselected2.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
+        });
 
         
-        // reset[0].addEventListener("click", function () {
-        //   console.log("yes");
+        right[0].addEventListener("click", function () {
+          
+          
+          eyerotate += 15;
+          eyearr[whoselected].style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
+          
+          rotatel = eyearr[whoselected].style.transform.indexOf("(");
+          rotater = eyearr[whoselected].style.transform.indexOf(")");
+          rotate = eyearr[whoselected].style.transform.substring(rotatel + 1,rotater - 3);
+          // rotate_value = rotate;
+          console.log( rotate);
+          
+          eyearr[whoselected].style.transform = `rotate(${rotate}deg) scale(${eyescale})`;
+          
+          
+          // eyearr[whoselected].style.transform =`rotate(15deg) scale(eyescale)`;
+          
+          
+          //   eyechange.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
+          // console.log("yes");
+          // mouserotate += 15;
+          // whoselected1.style.transform = "rotate(" + mouserotate + "deg )scale(" + mousescale  + ")";
+          // otherrotate += 15;
+          // whoselected2.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
+        });
 
-        //   eyescale += 0.2;
 
-        //   eyechange.style.transform = "scale(" + eyescale + ")";
+        left[0].addEventListener("click", function () {
+          // console.log("yes");
+          eyerotate -= 15;
 
-        //   mousescale += 0.2;
-        //   mousechange.style.transform = "scale(" + mousescale + ")";
-        //   otherscale += 0.2;
-        //   otherschange.style.transform = "scale(" + otherscale + ")";
-        // });
+          eyearr[whoselected].style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
+          console.log(eyearr[whoselected].style.transform);
+          //   eyechange.style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
+          // console.log("yes");
+          // mouserotate -= 15;
+          // whoselected1.style.transform = "rotate(" + mouserotate + "deg )scale(" +mousescale + ")";
+          // otherrotate -= 15;
+          // whoselected2.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
+        });
+
+        
+        reset[0].addEventListener("click", function () {
+          console.log("yes");
+
+          eyescale += 0.2;
+
+          eyechange.style.transform = "scale(" + eyescale + ")";
+
+          mousescale += 0.2;
+          mousechange.style.transform = "scale(" + mousescale + ")";
+          otherscale += 0.2;
+          otherschange.style.transform = "scale(" + otherscale + ")";
+        });
       });
 
     </script>

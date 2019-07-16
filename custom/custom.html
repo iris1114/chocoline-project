@@ -1456,7 +1456,6 @@
         // ---------- 飾品 End select----------
 
 
-
         // ---------------------drag--------------------------
 
         $(".eye_pos").draggable({
@@ -1475,11 +1474,12 @@
 
         // ---------------------drag--------------------------
 
-
-        var eyechange = document.querySelector(".eye_demo");
+  var eyechange = document.querySelectorAll(".eye_pos");
+        // console.log(eyechange.length);
         var mousechange = document.querySelector(".mouse_demo");
         var otherschange = document.querySelector(".others_demo");
-
+        var itemall =  document.querySelectorAll(".demo");
+        console.log(itemall.length);
         var big = document.getElementsByClassName("big");
         var small = document.getElementsByClassName("small");
         var right = document.getElementsByClassName("right");
@@ -1492,53 +1492,98 @@
         mouserotate = 0;
         otherscale = 1;
         otherrotate = 0;
+        var whoselected = "";
+
+        
+         var eyearr =new Array(1);
+         
+        for(let i=0;i<eyechange.length;i++){
+            eyechange[i].addEventListener("click",function(){
+                whoselected = this;
+                eyearr[i] = this ;
+
+                // console.log(eyearr[i]);
+                // console.log(whoselected); 
+                var yyy = eyearr[1];
+            console.log(yyy);
+       
+            })
+        }
+        for(let i=0;i<itemall.length;i++){
+                
+            itemall[i].addEventListener("click",function(e){
+                var ttt = e.target;
+                    for(j=0;j<itemall.length;j++){
+                        itemall[j].classList.remove("selector");
+                    }
+          this.classList.add("selector");
+                })
+            }
+         
+
+           
         big[0].addEventListener("click", function () {
-          console.log("yes");
+          
+        //     if($ ( eyechange).is('.selector')){
+        //         console.log("yes");
+        //   eyescale += 0.2;
 
-          eyescale += 0.2;
+        //   eyechange.style.transform = "scale(" + eyescale + ")", "rotate(" + eyerotate + "deg )";
+        //     }
+            eyescale += 0.2;
 
-          eyechange.style.transform = "scale(" + eyescale + ")";
-
+            whoselected.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
+        //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
           mousescale += 0.2;
-          mousechange.style.transform = "scale(" + mousescale + ")";
+          mousechange.style.transform = "scale(" + mousescale + ")rotate(" + mouserotate + "deg )";
           otherscale += 0.2;
-          otherschange.style.transform = "scale(" + otherscale + ")";
+          otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
         });
+
+
         small[0].addEventListener("click", function () {
           console.log("yes");
 
           eyescale -= 0.2;
 
-          eyechange.style.transform = "scale(" + eyescale + ")";
+          eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
 
           mousescale -= 0.2;
-          mousechange.style.transform = "scale(" + mousescale + ")";
+          mousechange.style.transform = "scale(" + mousescale + ")rotate(" +mouserotate + "deg )";
           otherscale -= 0.2;
-          otherschange.style.transform = "scale(" + otherscale + ")";
+          otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
         });
+
+
         right[0].addEventListener("click", function () {
 
 
           eyerotate += 15;
 
-          eyechange.style.transform = "rotate(" + eyerotate + "deg )";
+          whoselected.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
+        //   eyechange.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
           console.log("yes");
           mouserotate += 15;
-          mousechange.style.transform = "rotate(" + mouserotate + "deg )";
+          mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" + mousescale  + ")";
           otherrotate += 15;
-          otherschange.style.transform = "rotate(" + otherrotate + "deg )";
+          otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
         });
+
+
         left[0].addEventListener("click", function () {
           console.log("yes");
           eyerotate -= 15;
 
-          eyechange.style.transform = "rotate(" + eyerotate + "deg )";
+          eye[i].style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
+        //   eyechange.style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
           console.log("yes");
           mouserotate -= 15;
-          mousechange.style.transform = "rotate(" + mouserotate + "deg )";
+          mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" +mouserscale + ")";
           otherrotate -= 15;
-          otherschange.style.transform = "rotate(" + otherrotate + "deg )";
+          otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
         });
+
+        
         reset[0].addEventListener("click", function () {
           console.log("yes");
 

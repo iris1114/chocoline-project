@@ -5418,13 +5418,15 @@ body {
             flex-flow: row wrap;
   }
   .choose_base .select_type .choco_overview {
-    width: 100%;
+    width: 450px;
+    height: 450px;
     text-align: center;
     position: relative;
     z-index: 1;
   }
   .choose_base .select_type .choco_overview img {
-    width: 80%;
+    width: 450px;
+    height: 450px;
   }
   .choose_base .select_type .choco_type {
     width: 100%;
@@ -5931,13 +5933,30 @@ body {
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo {
     width: 100%;
-    padding-bottom: 5%;
-    -webkit-mask-image: url(../image/custom/2.png);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
   }
+  .outlook .outlok_wrap .outlook_fix .fix_photo img {
+    width: 360px;
+    height: 360px;
+  }
   .outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos .eye_demo {
+    width: 50px;
+    height: 50px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: roate(0);
+            transform: roate(0);
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .pos1 {
     width: 50px;
     height: 50px;
     z-index: 10;
@@ -5946,13 +5965,13 @@ body {
     left: 35%;
     right: 0;
   }
-  .outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos .eye_demo {
+  .outlook .outlok_wrap .outlook_fix .fix_photo .pos2 {
     width: 50px;
     height: 50px;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    z-index: 10;
+    position: absolute;
+    top: 18%;
+    right: 35%;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos {
     width: 50px;
@@ -5964,12 +5983,12 @@ body {
     right: 0;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos .mouse_demo {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    -webkit-transform: roate(0);
+            transform: roate(0);
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos {
     width: 50px;
@@ -5981,14 +6000,17 @@ body {
     right: 0;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos .others_demo {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    -webkit-transform: roate(0);
+            transform: roate(0);
   }
-  .outlook .outlok_wrap .outlook_fix .fix_bar {
+  .outlook .outlok_wrap .outlook_fix .fix_photo .selector {
+    border: 1px solid black;
+  }
+  .outlook .outlok_wrap .fix_bar {
     width: 90%;
     border: 2px solid #1c99ae;
     border-radius: 10px;
@@ -6001,30 +6023,30 @@ body {
             justify-content: center;
     background-color: white;
   }
-  .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo {
+  .outlook .outlok_wrap .fix_bar .bar_photo {
     width: 20%;
     padding: 3%;
   }
-  .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo .demo {
+  .outlook .outlok_wrap .fix_bar .bar_photo .demo {
     width: 1000px;
   }
-  .outlook .outlok_wrap .outlook_fix .total_price {
+  .outlook .outlok_wrap .total_price {
     width: 100%;
     padding-top: 18%;
     text-align: center;
     position: relative;
   }
-  .outlook .outlok_wrap .outlook_fix .total_price img {
+  .outlook .outlok_wrap .total_price img {
     width: 90%;
   }
-  .outlook .outlok_wrap .outlook_fix .total_price h4 {
+  .outlook .outlok_wrap .total_price h4 {
     font-size: 28px;
     position: absolute;
     top: 29%;
     left: 0;
     right: 0;
   }
-  .outlook .outlok_wrap .outlook_fix .total_price p {
+  .outlook .outlok_wrap .total_price p {
     font-size: 28px;
     position: absolute;
     top: 65%;
