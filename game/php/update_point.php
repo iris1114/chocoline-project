@@ -5,21 +5,16 @@ session_start();
 $errMsg = "";
 try {
     
-    $dsn="mysql:host=localhost;port=3306;dbname=chocoline;charset=utf8";
-	$user="root";
-	$password="root";
-	$options=array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-	$pdo = new PDO($dsn, $user, $password, $options);
-
+    require_once("../../common/php/connect_choco.php");
     $points = $_REQUEST["points"];
-    $mem_no = $_REQUEST["memId"];
+    $mem_Id = $_REQUEST["memId"];
     // $mem_no = $_REQUEST("mem_no");
     
-    $sql = "update member set mem_point = mem_point + :points where mem_no = :mem_no  ";
+    $sql = "update test_member set mem_point = mem_point + :points where mem_id = :mem_id  ";
 
     $mem_points = $pdo->prepare($sql); //編譯好指令
     $mem_points->bindValue(":points", $points);//代入資料
-    $mem_points->bindValue(":mem_no", $mem_no);//代入資料
+    $mem_points->bindValue(":mem_id", $mem_Id);//代入資料
     $mem_points->execute();
 
 } catch (PDOException $e) {
