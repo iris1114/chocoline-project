@@ -44,7 +44,7 @@ function sendForm() {
         alert("帳密錯誤");
       } else {//登入成功
         alert("登入成功！"); 
-        $id("mem_name").innerHTML = xhr.responseText;
+        $id("mem_id_hide").innerHTML = xhr.responseText;
         console.log(xhr.responseText);
         
         // mem_id_hide
