@@ -537,7 +537,7 @@
           <div class="fix_photo" id="fix">
 
             <div class="eye_pos pos1">
-              <img src="" alt="" class="eye_demo demo"style = "transform:rotate(0deg) scale(1) " >
+              <img src="" alt="" class="eye_demo demo" style = "transform:rotate(0deg) scale(1) " >
             </div>
 
             <div class="eye_pos pos2">
@@ -545,15 +545,15 @@
             </div>
             
             <div class="mouse_pos ">
-              <img src="" alt="" class="mouse_demo demo"style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="mouse_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
             </div>
 
             <div class="others_pos">
-              <img src="" alt="" class="others_demo demo"style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="others_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
             </div> 
 
             <div class="others_pos">
-              <img src="" alt=""class="others_demo demo"style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="others_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
             </div>
 
             <img src="image/custom/small/cicr_w_b.png" alt="" id="cho_pos">
@@ -1675,7 +1675,6 @@
                     ccc[0] = ccc[0].replace(tempDegree, newDegree);
                     let newStyle = ccc[0] + " " + ccc[1];
                     var eee = $(arr[i]).attr('style',newStyle);
-
                     var yyy = $(arr[i]).attr('style');
 
                }
