@@ -495,15 +495,19 @@ header #lightBox #tableLogin .login_password .btnLoginCancel {
   right: 0;
 }
 
+header #lightBox #tableLogin .login_password input {
+  margin-left: 0;
+}
+
 header #lightBox #tableLogin .login_password h3 {
   font-size: 28px;
   color: #f0ecdd;
-  padding: 4% 0;
+  padding: 8% 0;
 }
 
 header #lightBox #tableLogin .login_password #mem_id {
-  width: 45%;
-  margin-bottom: 5%;
+  width: 65%;
+  margin: 0 0 5% 0;
   border-radius: 10px;
   line-height: 24px;
 }
@@ -529,8 +533,8 @@ header #lightBox #tableLogin .login_password #mem_id::placeholder {
 }
 
 header #lightBox #tableLogin .login_password #mem_psw {
-  width: 45%;
-  margin-bottom: 2%;
+  width: 65%;
+  margin: 0 0 2% 0;
   border-radius: 10px;
   line-height: 24px;
 }
@@ -561,7 +565,8 @@ header #lightBox #tableLogin .login_password #forget_password {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   display: block;
-  margin-left: 25%;
+  text-align: right;
+  margin-right: 18%;
   margin-bottom: 1%;
 }
 
@@ -634,7 +639,7 @@ header #passwordLightBox #getPassword .login_password p {
 }
 
 header #passwordLightBox #getPassword .login_password #mem_email {
-  width: 55%;
+  width: 65%;
   margin: 3% 0;
   border-radius: 10px;
   line-height: 24px;
@@ -661,7 +666,7 @@ header #passwordLightBox #getPassword .login_password #mem_email::placeholder {
 }
 
 header #passwordLightBox #getPassword .login_password #new_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 3%;
   border-radius: 10px;
   line-height: 24px;
@@ -688,7 +693,7 @@ header #passwordLightBox #getPassword .login_password #new_mem_psw::placeholder 
 }
 
 header #passwordLightBox #getPassword .login_password #re_new_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 3%;
   border-radius: 10px;
   line-height: 24px;
@@ -766,8 +771,12 @@ header #registerLightBox #registered .login_register h3 {
 
 header #registerLightBox #registered .login_register p {
   color: #f0ecdd;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 8px;
+  line-height: 16px;
+}
+
+header #registerLightBox #registered .login_register #idMsg {
+  padding-top: 8px;
 }
 
 header #registerLightBox #registered .login_register span {
@@ -779,10 +788,10 @@ header #registerLightBox #registered .login_register span {
 }
 
 header #registerLightBox #registered .login_register #f_mem_id {
-  width: 55%;
+  width: 65%;
   margin: 1% 0;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
@@ -806,10 +815,10 @@ header #registerLightBox #registered .login_register #f_mem_id::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_mem_email {
-  width: 55%;
+  width: 65%;
   margin-bottom: 1%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
@@ -833,10 +842,10 @@ header #registerLightBox #registered .login_register #f_mem_email::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 1%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
@@ -860,10 +869,10 @@ header #registerLightBox #registered .login_register #f_mem_psw::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_re_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 2%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
@@ -947,10 +956,10 @@ header #registerLightBox #registered .login_register #forget_password {
   header #lightBox #tableLogin .login_password h3 {
     font-size: 36px;
     color: #f0ecdd;
-    padding: 4% 0;
+    padding: 6% 0;
   }
   header #lightBox #tableLogin .login_password #mem_id {
-    width: 45%;
+    width: 65%;
     margin-bottom: 5%;
     border-radius: 10px;
     line-height: 24px;
@@ -971,7 +980,7 @@ header #registerLightBox #registered .login_register #forget_password {
     color: #999;
   }
   header #lightBox #tableLogin .login_password #mem_psw {
-    width: 45%;
+    width: 65%;
     margin-bottom: 2%;
     border-radius: 10px;
     line-height: 24px;
@@ -1059,7 +1068,7 @@ header #registerLightBox #registered .login_register #forget_password {
     padding: 8% 0;
   }
   header #lightBox #tableLogin .login_password #mem_id {
-    width: 45%;
+    width: 65%;
     margin-bottom: 5%;
     border-radius: 10px;
     line-height: 24px;
@@ -1080,7 +1089,7 @@ header #registerLightBox #registered .login_register #forget_password {
     color: #999;
   }
   header #lightBox #tableLogin .login_password #mem_psw {
-    width: 45%;
+    width: 65%;
     margin-bottom: 2%;
     border-radius: 10px;
     line-height: 24px;
@@ -1106,7 +1115,7 @@ header #registerLightBox #registered .login_register #forget_password {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
     display: block;
-    margin-left: 25%;
+    margin-left: 0%;
     margin-bottom: 3%;
   }
   header #lightBox #tableLogin .login_password span {
@@ -1267,15 +1276,14 @@ header #registerLightBox #registered .login_register #forget_password {
     margin: 2% 0;
   }
   header #registerLightBox #registered .login_register span {
-    width: 20%;
-    float: left;
-    margin: 8px 0 8px 30px;
+    width: 25%;
+    margin: 8px 0 8px 40px;
     text-align: left;
     color: #f0ecdd;
   }
   header #registerLightBox #registered .login_register #f_mem_id {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1294,9 +1302,17 @@ header #registerLightBox #registered .login_register #forget_password {
   header #registerLightBox #registered .login_register #f_mem_id::placeholder {
     color: #999;
   }
+  header #registerLightBox #registered .login_register #btnCheckId {
+    font-size: 8px;
+    margin: 0 5% 3% 0;
+  }
+  header #registerLightBox #registered .login_register #idMsg {
+    font-size: 8px;
+    padding-top: 0;
+  }
   header #registerLightBox #registered .login_register #f_mem_email {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1317,7 +1333,7 @@ header #registerLightBox #registered .login_register #forget_password {
   }
   header #registerLightBox #registered .login_register #f_mem_psw {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1338,7 +1354,7 @@ header #registerLightBox #registered .login_register #forget_password {
   }
   header #registerLightBox #registered .login_register #f_re_mem_psw {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }

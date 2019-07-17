@@ -1,22 +1,22 @@
 
 <?php
 session_start();
-if(isset($_SESSION["mem_id"])!=true){
+if(!isset($_SESSION["mem_id"])){
     $_SESSION["mem_id"] = null;
 }
-$errMsg = "";
-try {
-	require_once("../common/php/connect_choco.php");
+// $errMsg = "";
+// try {
+// 	require_once("../common/php/connect_choco.php");
 
-	$sql = "select * from classic_products ";    
-    $products = $pdo->query($sql); 
+// 	$sql = "select * from classic_products ";    
+//     $products = $pdo->query($sql); 
     
-    // 再看你要連至哪個table  連結table名稱 請依照資料庫實際命名 
+//     // 再看你要連至哪個table  連結table名稱 請依照資料庫實際命名 
 
-} catch (PDOException $e) {
-	echo "錯誤 : ", $e -> getMessage(), "<br>";
-	echo "行號 : ", $e -> getLine(), "<br>";
-}
+// } catch (PDOException $e) {
+// 	echo "錯誤 : ", $e -> getMessage(), "<br>";
+// 	echo "行號 : ", $e -> getLine(), "<br>";
+// }
  
 ?> 
 
@@ -52,9 +52,11 @@ try {
             </div> 
             <div class="status">
                 <figure>
-                    <a class="spanLogin" href="../member/member.php">
+                    <a class="spanLogin" href="javascript:;">
                         <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
+                        <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                        <span id="spanLoginText_mobile" style="display:none">登入</span>
                     </a>
                 </figure>
                 <figure>
@@ -98,9 +100,8 @@ try {
                     <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                     <!-- icon點擊後跳出登入註冊燈箱 -->
                 </a>
-                <!-- <span id="mem_name">&nbsp;</span> -->
                 <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                <span id="spanLoginText">登入</span>
+                <span id="spanLoginText" style="display:none">登入</span>
             </figure>
             <figure>
                 <a href="../cart/cart.php">
@@ -141,7 +142,7 @@ try {
                 <p>請輸入帳號註冊時所留的電子<br>
                     郵件地址，以驗證您的資料</p>
                 <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
-                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
+                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼  (6位字母、數字)"><br>
                 <input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
                 <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
             </div>
@@ -157,15 +158,13 @@ try {
                 </a>			
                 <h3>會員註冊</h3>
                 <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
-                        請填下您的個人資料。</p>
+                        請填下您的個人資料！* 為必填。</p>
                 <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
                 <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
-                <!-- <span id="idMsg"></span><br> -->
                 <p id="idMsg">請輸入帳號</p><br>
-                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
-                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
-                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
-                <p>* 為必填欄位，請填妥欄位資訊。</p>
+                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
+                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼 (6位字母、數字)"><br>
+                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼 (再次確認)"><br>
                 <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
             </div>
         </div>
@@ -267,9 +266,7 @@ try {
     
 <script src="../common/js/header.js"></script>
 <script src="../common/js/login.js"></script>
-<script src="/common/robot.js"></script>
-<!-- <script src="../common/js/header.js"></script> -->
-<!-- <script src="../common/js/robot.js"></script> -->
+<script src="../common/robot.js"></script>
 
 <!-- 請用這個連結 -->
 

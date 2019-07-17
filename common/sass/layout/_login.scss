@@ -6,11 +6,11 @@
 header{
 // 會員登入
   #lightBox{
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	top: 0;
-	background: rgba(66,66,66,.6);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: rgba(66,66,66,.6);
     #tableLogin{
       position: relative;
       top: 23%;
@@ -19,27 +19,31 @@ header{
       min-width: 300px;
       margin:0 auto;
       text-align: center;
+
       #login_bg{
         width: 100%;
         @include pos (0,0,0,0);
       }
       .login_password{
         @include pos (5%,0,0,0);
-		width: 90%;
-      .btnLoginCancel{
-        width: 25px;
-        position: absolute;
-        right: 0;
-      }
+		      width: 90%;
+          .btnLoginCancel{
+          width: 25px;
+          position: absolute;
+          right: 0;
+          }
+          input{
+            margin-left: 0;
+          }
         h3{
           font-size: 28px;
           color: #f0ecdd;
-          padding: 4% 0;
-		}
+          padding: 8% 0;
+          }
         #mem_id{
-		  width: 45%;
-		  margin-bottom: 5%;
-		  border-radius: 10px;
+          width: 65%;
+          margin: 0 0 5% 0;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
@@ -49,36 +53,37 @@ header{
           }
         }
         #mem_psw{
-		  width: 45%;
-		  margin-bottom: 2%;
-		  border-radius: 10px;
+          width: 65%;
+          margin: 0 0 2% 0;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
-		#forget_password{
-			color: #f0ecdd;
-			font-size: 12px;
-			text-decoration-line: underline;
-			display: block;
-			margin-left: 25%;
-			margin-bottom: 1%;
-		}
-		span{
-			color: #E48C28;
-			font-size: 12px;
-			margin-right: 8%;
-		}
-		#register{
-			color: #f0ecdd;
-			font-size: 12px;
-			text-decoration-line: underline;
-		}
-	  }
+		      }
+		    }
+        #forget_password{
+          color: #f0ecdd;
+          font-size: 12px;
+          text-decoration-line: underline;
+          display: block;
+          text-align: right;
+          margin-right: 18%;
+          margin-bottom: 1%;
+        }
+        span{
+          color: #E48C28;
+          font-size: 12px;
+          margin-right: 8%;
+        }
+        #register{
+          color: #f0ecdd;
+          font-size: 12px;
+          text-decoration-line: underline;
+        }
+	    }
     }
   }
 // 重設密碼
@@ -116,9 +121,9 @@ header{
 			position: absolute;
 			right: 0;
 		}
-        h3{
-          font-size: 28px;
-          color: #f0ecdd;
+    h3{
+      font-size: 28px;
+      color: #f0ecdd;
 		  padding: 2% 0;
 		}
 		p{
@@ -126,40 +131,40 @@ header{
 			font-size: 12px;
 			line-height: 20px;
 		}
-        #mem_email{
-		  width: 55%;
+    #mem_email{
+		  width: 65%;
 		  margin: 3% 0;
 		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
-          }
-        }
-        #new_mem_psw{
-		  width: 55%;
+      line-height: 24px;
+      ::-webkit-input-placeholder{
+        color: #999;
+      }
+      &::placeholder{
+        color: #999;
+      }
+    }
+    #new_mem_psw{
+		  width: 65%;
 		  margin-bottom: 3%;
 		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
+      line-height: 24px;
+      ::-webkit-input-placeholder{
+        color: #999;
+      }
+      &::placeholder{
+        color: #999;
 		  }
 		}
-        #re_new_mem_psw{
-		  width: 55%;
+      #re_new_mem_psw{
+		  width: 65%;
 		  margin-bottom: 3%;
 		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
+      line-height: 24px;
+      ::-webkit-input-placeholder{
+        color: #999;
+      }
+      &::placeholder{
+        color: #999;
 		  }
 		}
 		#forget_password{
@@ -173,102 +178,111 @@ header{
 	  }
     }
   }
-//   會員註冊
+// 會員註冊
   #registerLightBox{
-	position: fixed;
+	  position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     background: rgba(66,66,66,.6);
-    #registered{
-      position: relative;
-      top: 23%;
-      width: 36%;
-      max-width: 480px;
-      min-width: 300px;
-      margin:0 auto;
-      text-align: center;
-      .login_register{
-        @include pos (5%,0,0,0);
-		width: 90%;
-		.btnLoginCancel{
-			width: 25px;
-			position: absolute;
-			right: 0;
-		}
-        h3{
-          font-size: 28px;
-          color: #f0ecdd;
-		  padding: 2% 0;
-		}
-		p{
-			color: #f0ecdd;
-			font-size: 12px;
-			line-height: 20px;
-		}
-		span{
-			width: 35%;
-			float: left;
-			margin-top: 8px;
-			text-align: left;
-			color: #f0ecdd;
-		}
-        #f_mem_id{
-		  width: 55%;
-		  margin: 1% 0;
-		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
-          }
+      #registered{
+        position: relative;
+        top: 23%;
+        width: 36%;
+        max-width: 480px;
+        min-width: 300px;
+        margin:0 auto;
+        text-align: center;
+        .login_register{
+          @include pos (5%,0,0,0);
+          width: 90%;
+      .btnLoginCancel{
+        width: 25px;
+        position: absolute;
+        right: 0;
+      }
+      h3{
+        font-size: 28px;
+        color: #f0ecdd;
+        padding: 2% 0;
+      }
+      p{
+        color: #f0ecdd;
+        font-size: 8px;
+        line-height: 16px;
+      }
+      #idMsg{
+        padding-top: 8px;
+      }
+      span{
+        width:35%;
+        float: left;
+        margin-top: 8px;
+        text-align: left;
+        color: #f0ecdd;
+      }
+      #f_mem_id{
+        width: 65%;
+        margin: 1% 0;
+        border-radius: 10px;
+        line-height: 20px;
+        ::-webkit-input-placeholder{
+          color: #999;
         }
-        #f_mem_email{
-		  width: 55%;
-		  margin-bottom: 1%;
-		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
-		  }
-		}
-        #f_mem_psw{
-		  width: 55%;
-		  margin-bottom: 1%;
-		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
-		  }
-		}
-        #f_re_mem_psw{
-		  width: 55%;
-		  margin-bottom: 2%;
-		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
-		  }
-		}
-		#forget_password{
-			color: #E48C28;
-			font-size: 12px;
-			text-decoration-line: underline;
-			display: block;
-			margin-left: 25%;
-			margin-bottom: 1%;
-		}
+        &::placeholder{
+          color: #999;
+        }
+      }
+      #f_mem_email{
+        width: 65%;
+        margin-bottom: 1%;
+        border-radius: 10px;
+        line-height: 20px;
+        ::-webkit-input-placeholder{
+          color: #999;
+        }
+        &::placeholder{
+          color: #999;
+        }
+      }
+      #f_mem_psw{
+        width: 65%;
+        margin-bottom: 1%;
+        border-radius: 10px;
+        line-height: 20px;
+        ::-webkit-input-placeholder{
+          color: #999;
+        }
+        &::placeholder{
+          color: #999;
+        }
+      }
+      #f_re_mem_psw{
+        width: 65%;
+        margin-bottom: 2%;
+        border-radius: 10px;
+        line-height: 20px;
+        ::-webkit-input-placeholder{
+          color: #999;
+        }
+        &::placeholder{
+          color: #999;
+        }
+      }
+      // #mem_headshot{
+      //   background: url('image/login/logo_icon_200x200.png') no-repeat 0 0 transparent; 
+      //   // additionally you can add height width to image for better results 
+      //   height: 200px; 
+      //   width: 200px; 
+      // }
+      #forget_password{
+        color: #E48C28;
+        font-size: 12px;
+        text-decoration-line: underline;
+        display: block;
+        margin-left: 25%;
+        margin-bottom: 1%;
+      }
 	  }
     }
   }
@@ -306,26 +320,26 @@ header{
       text-align: center;
 
       #login_bg{
-		width: 100%;
-		@include pos (0,0,0,0);
+        width: 100%;
+        @include pos (0,0,0,0);
       }
       .login_password{
         @include pos (5%,0,0,0);
-		width: 90%;
-		.btnLoginCancel{
-			width: 25px;
-			position: absolute;
-			right: 0;
-		}
+        width: 90%;
+        .btnLoginCancel{
+          width: 25px;
+          position: absolute;
+          right: 0;
+        }
         h3{
           font-size: 36px;
           color: #f0ecdd;
-          padding: 4% 0;
-		}
+          padding: 6% 0;
+        }
         #mem_id{
-		  width: 45%;
-		  margin-bottom: 5%;
-		  border-radius: 10px;
+          width: 65%;
+          margin-bottom: 5%;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
@@ -335,36 +349,36 @@ header{
           }
         }
         #mem_psw{
-		  width: 45%;
-		  margin-bottom: 2%;
-		  border-radius: 10px;
+          width: 65%;
+          margin-bottom: 2%;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
-		#forget_password{
-			color: #E48C28;
-			font-size: 16px;
-			text-decoration-line: underline;
-			display: block;
-			margin-left: 25%;
-			margin-bottom: 1%;
-		}
-		span{
-			color: #f0ecdd;
-			margin-right: 8%;
-			font-size: 12px;
-		}
-		#register{
-			color: #E48C28;
-			text-decoration-line: underline;
-			font-size: 12px;
-		}
-	  }
+      }
+    }
+    #forget_password{
+      color: #E48C28;
+      font-size: 16px;
+      text-decoration-line: underline;
+      display: block;
+      margin-left: 25%;
+      margin-bottom: 1%;
+    }
+    span{
+      color: #f0ecdd;
+      margin-right: 8%;
+      font-size: 12px;
+    }
+    #register{
+      color: #E48C28;
+      text-decoration-line: underline;
+      font-size: 12px;
+    }
+    }
     }
   }
 }
@@ -374,7 +388,7 @@ header{
   //992 up
 
   header{
-// 會員登入
+  // 會員登入
   #lightBox{
     position: fixed;
     width: 100%;
@@ -389,28 +403,27 @@ header{
       min-width: 300px;
       margin:0 auto;
       text-align: center;
-
       #login_bg{
-		width: 100%;
-		@include pos (23%,0,0,0);
+        width: 100%;
+        @include pos (23%,0,0,0);
       }
       .login_password{
         @include pos (5%,0,0,0);
-		width: 90%;
-		.btnLoginCancel{
-			width: 25px;
-			position: absolute;
-			right: 0;
-		}
+        width: 90%;
+        .btnLoginCancel{
+          width: 25px;
+          position: absolute;
+          right: 0;
+        }
         h3{
           font-size: 36px;
           color: #f0ecdd;
           padding: 8% 0;
-		}
+        }
         #mem_id{
-		  width: 45%;
-		  margin-bottom: 5%;
-		  border-radius: 10px;
+          width: 65%;
+          margin-bottom: 5%;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
@@ -420,36 +433,36 @@ header{
           }
         }
         #mem_psw{
-		  width: 45%;
-		  margin-bottom: 2%;
-		  border-radius: 10px;
+          width: 65%;
+          margin-bottom: 2%;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
-		#forget_password{
-			color: #E48C28;
-			font-size: 16px;
-			text-decoration-line: underline;
-			display: block;
-			margin-left: 25%;
-			margin-bottom: 3%;
-		}
-		span{
-			color: #f0ecdd;
-			margin-right: 8%;
-			font-size: 16px;
-		}
-		#register{
-			color: #E48C28;
-			text-decoration-line: underline;
-			font-size: 16px;
-		}
-	  }
+          }
+        }
+        #forget_password{
+          color: #E48C28;
+          font-size: 16px;
+          text-decoration-line: underline;
+          display: block;
+          margin-left: 0%;
+          margin-bottom: 3%;
+        }
+        span{
+          color: #f0ecdd;
+          margin-right: 8%;
+          font-size: 16px;
+        }
+        #register{
+          color: #E48C28;
+          text-decoration-line: underline;
+          font-size: 16px;
+        }
+      }
     }
   }
 // 重設密碼
@@ -457,34 +470,34 @@ header{
     #getPassword{
       .login_password{
         @include pos (5%,0,0,0);
-		width: 90%;
-		#rebtnLogin{
-			color: #E48C28;
-			font-size: 16px;
-			text-decoration-line: underline;
-			position: absolute;
-			left: 3%;
-		}
-		.btnLoginCancel{
-			width: 25px;
-			position: absolute;
-			right: 0;
-		}
+        width: 90%;
+        #rebtnLogin{
+          color: #E48C28;
+          font-size: 16px;
+          text-decoration-line: underline;
+          position: absolute;
+          left: 3%;
+        }
+        .btnLoginCancel{
+          width: 25px;
+          position: absolute;
+          right: 0;
+        }
         h3{
           font-size: 36px;
           color: #f0ecdd;
-		  padding: 6% 0 4% 0;
-		}
-		p{
-			color: #f0ecdd;
-			font-size: 12px;
-			line-height: 20px;
-			padding: 2% 0 2% 0;
-		}
+          padding: 6% 0 4% 0;
+        }
+        p{
+          color: #f0ecdd;
+          font-size: 12px;
+          line-height: 20px;
+          padding: 2% 0 2% 0;
+        }
         #mem_email{
-		  width: 55%;
-		  margin: 3% 0;
-		  border-radius: 10px;
+          width: 55%;
+          margin: 3% 0;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
@@ -494,43 +507,43 @@ header{
           }
         }
         #new_mem_psw{
-		  width: 55%;
-		  margin-bottom: 3%;
-		  border-radius: 10px;
+          width: 55%;
+          margin-bottom: 3%;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
+          }
+        }
         #re_new_mem_psw{
-		  width: 55%;
-		  margin-bottom: 3%;
-		  border-radius: 10px;
+          width: 55%;
+          margin-bottom: 3%;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
-		#forget_password{
-			color: #E48C28;
-			font-size: 12px;
-			text-decoration-line: underline;
-			display: block;
-			margin-left: 25%;
-			margin-bottom: 1%;
-		}
-	  }
+          }
+        }
+        #forget_password{
+          color: #E48C28;
+          font-size: 12px;
+          text-decoration-line: underline;
+          display: block;
+          margin-left: 25%;
+          margin-bottom: 1%;
+        }
+      }
     }
   }
 // 會員註冊
   #registerLightBox{
-	position: fixed;
+    position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
@@ -545,34 +558,54 @@ header{
       text-align: center;
       .login_register{
         @include pos (5%,0,0,0);
-		width: 90%;
-		.btnLoginCancel{
-			width: 25px;
-			position: absolute;
-			right: 0;
-		}
+        width: 90%;
+        .btnLoginCancel{
+          width: 25px;
+          position: absolute;
+          right: 0;
+        }
         h3{
           font-size: 30px;
           color: #f0ecdd;
-		      padding: 0;
-		}
-		p{
-			color: #f0ecdd;
-			font-size: 12px;
-			line-height: 20px;
-			margin: 2% 0;
-		}
-		span{
-			width: 20%;
-			float: left;
-			margin: 8px 0 8px 30px;
-			text-align: left;
-			color: #f0ecdd;
-		}
+          padding: 0;
+        }
+        p{
+          color: #f0ecdd;
+          font-size: 12px;
+          line-height: 20px;
+          margin: 2% 0;
+        }
+        span{
+          width: 25%;
+          // float: left;
+          margin: 8px 0 8px 40px;
+          text-align: left;
+          color: #f0ecdd;
+        }
         #f_mem_id{
-		  width: 55%;
-		  margin-bottom: 3%;
-		  border-radius: 10px;
+          width: 55%;
+          margin: 0 5% 3% 0;
+          border-radius: 10px;
+          line-height: 24px;
+            ::-webkit-input-placeholder{
+              color: #999;
+            }
+            &::placeholder{
+              color: #999;
+            }
+          }
+        #btnCheckId{
+          font-size: 8px;
+          margin: 0 5% 3% 0;
+        }
+        #idMsg{
+          font-size: 8px;
+          padding-top: 0;
+        }
+        #f_mem_email{
+          width: 55%;
+          margin: 0 5% 3% 0;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
@@ -581,51 +614,39 @@ header{
             color: #999;
           }
         }
-        #f_mem_email{
-		  width: 55%;
-		  margin-bottom: 3%;
-		  border-radius: 10px;
-          line-height: 24px;
-          ::-webkit-input-placeholder{
-            color: #999;
-          }
-          &::placeholder{
-            color: #999;
-		  }
-		}
         #f_mem_psw{
-		  width: 55%;
-		  margin-bottom: 3%;
-		  border-radius: 10px;
+          width: 55%;
+          margin: 0 5% 3% 0;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
+          }
+        }
         #f_re_mem_psw{
-		  width: 55%;
-		  margin-bottom: 3%;
-		  border-radius: 10px;
+          width: 55%;
+          margin: 0 5% 3% 0;
+          border-radius: 10px;
           line-height: 24px;
           ::-webkit-input-placeholder{
             color: #999;
           }
           &::placeholder{
             color: #999;
-		  }
-		}
-		#forget_password{
-			color: #E48C28;
-			font-size: 12px;
-			text-decoration-line: underline;
-			display: block;
-			margin-left: 25%;
-			margin-bottom: 1%;
-		}
-	  }
+          }
+        }
+        #forget_password{
+          color: #E48C28;
+          font-size: 12px;
+          text-decoration-line: underline;
+          display: block;
+          margin-left: 25%;
+          margin-bottom: 1%;
+        }
+      }
     }
   }
 }
