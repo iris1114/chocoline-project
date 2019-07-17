@@ -1,9 +1,7 @@
 
 @import"../../common/sass/common.scss";
 
-*{
-    // outline: 1px solid red;
-}
+
 $color_milk: #F6EED4;
 $color_gray: #9B9B9B;
 $color_ship: #84512F;
@@ -19,10 +17,16 @@ section{
     padding-top: 0px;
 }
 
+*{
+    outline: none;
+}
 body{
     background-color: #FFF5E3; 
     background: url(../image/cart/bg.png) no-repeat  100% 100%/ cover; 
     overflow-x: hidden;
+  
+  
+   
 
 }
 
@@ -91,7 +95,6 @@ body{
     width: 80%;
     border: 1px solid $color_brown;
     margin: auto;
-
     border-radius: 5px;
     .qty {
       display: inline-block;
@@ -171,6 +174,11 @@ padding-top: 150px;
 
 #cart_show_container{
     padding-top: 0px;
+    min-height:120px;
+    
+    .wrap{
+        font-size: 18px;
+    }
 
     .cart_show_box{
             background-color: #fff;
@@ -178,7 +186,7 @@ padding-top: 150px;
             padding: 0px;
             border-radius: 0px;
             text-align: center;
-            @include font_m();
+            font-size: 18px;
             align-items: center;
             
             .cart_pname,.cart_price,.cart_qty,.cart_amout{
@@ -280,6 +288,9 @@ padding-top: 150px;
 
 
 
+
+
+
 // -------------------------------RWD TABLET------------------------------//
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -316,6 +327,8 @@ padding-top: 150px;
 //-------- #cartflow_container ---------//
 body{
     height: 100vh; 
+    font-size: 12px;
+    
 
 }
 .wrap{
@@ -338,12 +351,61 @@ body{
     
 }
 
+// 
+
+
+.qty_buttons {
+    display: flex;
+    width: 100%;
+    border: none;
+    margin: auto;
+    padding-top: 10px;
+    .qty {
+      display: inline-block;
+      width: 30%;
+      height: 30px;
+      color: $color_brown;
+      text-align: center;
+      border: none;
+     
+      font-size: 14px;
+      border: rgb(187, 141, 110) 1px solid
+
+      // pointer-events: none;
+    }
+
+    .minus,
+    .plus {
+      display: inline-block;
+      width: 30%;
+      height: 30px;
+      cursor: pointer;
+      line-height: 20px;
+      font-size: 14px;
+
+    }
+    .minus {
+      border: none;
+      border-right: 1px solid $color_brown;
+      background-color: $color_brown;
+      color: $color_milk;
+    }
+    .plus {
+      border: none;
+      border-left: 1px solid $color_brown;
+      background-color: $color_brown;
+      color: $color_milk;
+    }
+  }
+
 
 
 
 #cart_show_container{
     margin-top: 30px;
     padding: 0;
+    text-align: left;
+    
 
     .cart_title_box{
         width: 90%;
@@ -354,14 +416,10 @@ body{
     }
 
 
-    h5,p{
-        @include font_s();
-    }
- 
-
     .cart_show_box{ 
         width: 90%;
         border: red 1px solid;
+        font-size: 14px;
 
         
             .cart_pname,.cart_price,.cart_qty,.cart_amout{
@@ -394,6 +452,11 @@ body{
 
 }
 
+.cart_show_box{
+    font-size: 16px;
+    text-align: left;
+}
+
 .cart_form{
     width: 90%;
     margin: auto;
@@ -411,20 +474,74 @@ body{
     bottom: 0;
     display: flex;
     padding: 0;
+    font-size: 18px;
   
     .btn{
         width: 187.5px;
+        height: 45px;
         margin: 0;
-        border: $color_deeporange 2px solid;
-        border-radius: 5px 5px 0px 0px;
+        border-left: $color_deeporange 2px solid;
+        border-radius: 0px 0px 0px 0px;
+        font-size: 18px;
+        padding: 15px;
     }
 
-    
+    #btn_delete{
+        font-size: 14px;
+    }  
 }
+
+
+
+.qty_buttons {
+    display: flex;
+    width: 100%;
+    border: none;
+    margin: auto;
+    padding-top: 10px;
+    .qty {
+      display: inline-block;
+      width: 30%;
+      height: 30px;
+      color: $color_brown;
+      text-align: center;
+      border: none;
+     
+      font-size: 14px;
+      border: rgb(187, 141, 110) 1px solid
+
+      // pointer-events: none;
+    }
+
+    .minus,
+    .plus {
+      display: inline-block;
+      width: 30%;
+      height: 30px;
+      cursor: pointer;
+      line-height: 20px;
+      font-size: 14px;
+
+    }
+    .minus {
+      border: none;
+      border-right: 1px solid $color_brown;
+      background-color: $color_brown;
+      color: $color_milk;
+    }
+    .plus {
+      border: none;
+      border-left: 1px solid $color_brown;
+      background-color: $color_brown;
+      color: $color_milk;
+    }
+  }
+
+
 
 
 footer{
     display:none;
 }
 
-}
+} 

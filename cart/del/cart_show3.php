@@ -1,3 +1,5 @@
+
+
 <?php
 ob_start();
 session_start(); 
@@ -11,7 +13,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="image/common/logo_icon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="css/cart2.css">
+     <link rel="stylesheet" href="css/cart_show3.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 
@@ -146,8 +148,9 @@ session_start();
 
 <?php 
 
-if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ //尚無購物資料或購物車中的商品被刪光了
+if( isset($_SESSION["p_name"]) === false || count($_SESSION["p_name"])==0){ 
 echo "<div class='box cart_show_box '>尚無購物資料";
+echo "<script> window.onload=btnShopHide(); </script>";
 
 }else{  //有購物資料
 $total = 0;
@@ -155,13 +158,13 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
     $subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
     $total = $total + $subTotal;  //計算總計
 ?>	
-<form action="cart_update.php">
-<input type="hidden" name="p_no" value="<?php echo $p_no;?>">
-<input type="hidden" name="sumtotal" value="<?php number_format($total); ?> ">
+<!-- <form action="cartshow_delete.php">
+<input type="hidden" name="p_no" value="<?php //echo $p_no;?>">
+<input type="hidden" name="sumtotal" value="<?php //number_format($total); ?> "> -->
 <div class="box cart_show_box ">
 
        <div class=" cart_img col_lg_3 col_md_2 m_d_n ">
-             <img src=" <?php echo $_SESSION["p_img"][$p_no]; ?>  " alt="choco">
+             <img src="<?php echo $_SESSION["p_img"][$p_no]; ?>  " alt="choco">
           </div> 
           <div class="cart_pname  col_lg_2 col_md_2 m_d_n">
             <h5> <?php echo $_SESSION["p_name"][$p_no]; ?></h5>
@@ -170,32 +173,33 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
               <h5 > <span class="lg_d_n  t_d_n"> 單價：</span>  NT$ <?php echo $_SESSION["p_price"][$p_no]; ?></h5>
           </div>    
           <div class=" cart_qty  col_lg_2 col_md_2 m_d_n">
+            
+            <form  >
+            <input type="hidden" name="p_no" value="<?php echo $p_no;?>">
+            <input type="hidden" name="p_name" value="<?php echo $_SESSION["p_name"][$p_no]; ?>">
+            <input type="hidden" name="p_price" value="<?php echo $_SESSION["p_price"][$p_no]; ?>">
+            <input type="hidden" name="p_img" value="<?php echo $_SESSION["p_img"][$p_no]; ?>">
+            <input type="hidden" name="p_total" value="<?php echo $total ?>">
+
+
             <div class="qty_buttons">
-              <input
-                id="minus"
-                class="minus"
-                type="button"
-                value="-"
-              /><input
-                id="qty"
-                class="qty"
-                type="text"
-                value="<?php echo $_SESSION["p_qty"][$p_no]; ?>"
-                min="1"
-                max="10"
-                step="1"
-                name="cart_qty"
-              /><input id="plus" class="plus" type="button" value="+" />
+            <input id="minus" class="minus" type="button" value="-" name="minus"/>
+            <input id="qty" class="qty classic_product_qty" type="text" value="<?php echo $_SESSION["p_qty"][$p_no]; ?>" min="1" max="10" step="1" name="p_qty" />
+            <input id="plus" class="plus" type="button" value="+" name="plus" />
+
             </div>
+
           </div>
           <div class="col_lg_2  cart_amout m_d_n">
-              <h5 >NT$ <?php echo $subTotal?></h5>
+              <h5 > NT$ <?php echo $subTotal?></h5>
           </div>
 
-          <div class=" cart_delete col_lg_1 m_d_n">
-          <input class="btn" type="submit" name="btn_delete" value="刪除">
+          <div class=" cart_delete col_lg_1 m_d_n"  id='btn_delete' >
+          <input class="btn" type="submit" name="btn_delete"  value="刪除">
           </div>
-          </form>  
+          
+       
+          <!-- </form>   -->
 <?php
 }
 ?>
@@ -221,6 +225,7 @@ echo " <div class='cart_form' style = 'width:100%'>
 
 
 ?>
+   </form>
 </div>
 </section>
 
@@ -236,7 +241,8 @@ echo " <div class='cart_form' style = 'width:100%'>
 </section>  
 
 
-<!-- mobile cart desc --> 
+<!--------------------------- mobile cart desc ------------------------> 
+
 <section class="t_d_n lg_d_n">
 <?php 
 
@@ -249,8 +255,13 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
     $subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
     $total = $total + $subTotal;  //計算總計
 ?> 
-<form action="cart_update.php">
-<input type="hidden" name="p_no" value="<?php echo $p_no;?>">
+<!-- <form>
+<input type="hidden" name="p_no" value="<?php echo $p_no; ?>">
+<input type="hidden" name="p_name" value="<?php echo $_SESSION["p_name"][$p_no]; ?>">
+<input type="hidden" name="p_price" value="<?php echo $_SESSION["p_price"][$p_no]; ?>">
+<input type="hidden" name="p_img" value="../store/image/store/<?php echo $prodRow["product_img_src"]; ?>"> -->
+<!-- <form action="cart_update.php"> -->
+<!-- <input type="hidden" name="p_no" value="<?php //echo $p_no;?>"> -->
 
 <div class="box cart_show_box t_d_n  lg_d_n"> 
     
@@ -266,26 +277,14 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
             <div class="cart_price   ">
                 <h5 >  單價：  NT$  <?php echo $_SESSION["p_price"][$p_no]; ?></h5>
             </div>
-            <div class="qty">    
-              <div class="qty_buttons">
-                <input
-                  id="minus"
-                  class="minus"
-                  type="button"
-                  value="-"
-                />
-                <input
-                  id="qty"
-                  class="qty"
-                  type="text"
-                  value="<?php echo $_SESSION["p_qty"][$p_no]; ?>"
-                  min="1"
-                  max="10"
-                  step="1"
-                  name="classic_qty"
-                />
-                <input id="plus" class="plus" type="button" value="+" />
-              </div>
+            <form  action="cartshow_del2.php" >
+            <input type="hidden" name="p_no" value="<?php// echo $p_no;?>">
+            <input type="hidden" name="p_name" value="<?php //echo $_SESSION["p_name"][$p_no]; ?>">
+            <input type="hidden" name="p_price" value="<?php //echo $_SESSION["p_price"][$p_no]; ?>">
+            <input type="hidden" name="p_img" value="<?php //echo $_SESSION["p_img"][$p_no]; ?>">
+            <div class="qty_buttons">
+            <input id="minus" class="minus" type="button" value="-" /><input id="qty" class="qty classic_product_qty" type="number" value="<?php echo $_SESSION["p_qty"][$p_no]; ?>" min="1" max="10" step="1" name="p_qty" /><input id="plus" class="plus" type="button" value="+" />
+            <!-- </form> -->
               
             </div>
             <div class=" cart_amout">
@@ -295,34 +294,26 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
             <div class=" cart_delete  ">
             <input type="submit" name="btn_delete" value="刪除">
             </div>
+            </form>
       </div> 
   </div>
-  </form>
   <?php
 }
 
 ?>
 
-
 <section id="cart_form_container  " >
   <div class="wrap">
 
 	<?php 
-
-
 echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
 <div class='cart_total'>
-
   <p>商品金額: <span>NT", number_format($total), "</span></p>
   <p>運費小計: <span>尚未選擇</span></p>
   <p>點數折抵: <span>尚未折抵</span></p>
   <p>應付金額: <span class='amout'> NT$",  number_format($total)," </span></p>
-
 </div>
-</div>";
-     
-
-
+</div>";    
 ?>
 </div>
 </section>
@@ -333,14 +324,11 @@ echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
 ?>  
 </section>
 
-
-
-
  <!-------cart_btn_group-------->
 
  <div class="cart_btn_group">
           <a href="../store/store.php" class="btn orange_l "><span> 繼續購物</span></a>
-          <a href="cart_info.php" class="btn orange_l" id="check"><span> 進行結帳</span></a>
+          <a href="cart_info.php" class="btn orange_l " id=" btn_shop"><span> 進行結帳</span></a>
       </div>
   </div>
 
@@ -443,7 +431,7 @@ echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
 
 
 
-<script src="js/cart.js"></script>
+
 <script src="../common/js/header.js"></script>
 <script src="../common/js/robot.js"></script>
 
@@ -460,43 +448,52 @@ window.addEventListener('resize', () => {
 
 
 <script>
-      function minus1() {
-        var val = parseInt(this.nextSibling.value);
-        console.log(this.parentNode.querySelectorAll(".qty")[0].value);
-        if ((val > 1) & (val <= 10)) {
-          val -= 1;
+  
+// qty control start
 
-          this.parentNode.querySelectorAll(".qty")[0].value = val;
-        } else {
-            this.parentNode.querySelectorAll(".qty")[0].value = 1;
-        }
-      }
-      function plus1() {
-        var val = parseInt(this.parentNode.querySelectorAll(".qty")[0].value);
-        console.log(this.previousSibling.value);
-        if ((val >= 1) & (val < 10)) {
-          val += 1;
-          this.parentNode.querySelectorAll(".qty")[0].value = val;
-        } else {
-          this.parentNode.querySelectorAll(".qty")[0].value = 1;
-        }
-      }
+function minus1() {
+    var val = parseInt(this.parentNode.querySelectorAll(".qty")[0].value);
+    if ((val > 1) & (val <= 10)) {
+        val -= 1;
+        this.parentNode.querySelectorAll(".qty")[0].value = val;
+    } else {
+        this.parentNode.querySelectorAll(".qty")[0].value = 1;
+    }
+}
 
-      window.addEventListener("load", function() {
-        var qty = document.getElementsByClassName("qty");
-        var minus = document.getElementsByClassName("minus");
-        var plus = document.getElementsByClassName("plus");
-        var length = qty.length;
+function plus1() {
+    var val = parseInt(this.parentNode.querySelectorAll(".qty")[0].value);
+    if ((val >= 1) & (val < 10)) {
+        val += 1;
+        this.parentNode.querySelectorAll(".qty")[0].value = val;
+    } else {
+        this.parentNode.querySelectorAll(".qty")[0].value = 1;
+    }
+}
 
-        for (var i = 0; i < length; i++) {
-          // qty[i].onkeyup = qty_reset;
-          minus[i].onclick = minus1;
-          plus[i].onclick = plus1;
-        }
-      });
+window.addEventListener("load", function() {
+    var qty = document.getElementsByClassName("qty");
+    var minus = document.getElementsByClassName("minus");
+    var plus = document.getElementsByClassName("plus");
+    var length = qty.length;
+
+    for (var i = 0; i < length; i++) {
+        // qty[i].onkeyup = qty_reset;
+        minus[i].onclick = minus1;
+        plus[i].onclick = plus1;
+    }
+});
+
     </script>
 
+    <script>
+      function btnShopHide(){
+        document.getElementById('btn_shop').style.display="none";
+      }
+    
+    </script>
 
+<script src="js/cart_show.js"></script>
 
 </body>
 </html>

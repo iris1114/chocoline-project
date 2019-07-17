@@ -2,7 +2,7 @@
 @import"../../common/sass/common.scss";
 
 *{
-    // outline: 1px solid red;
+    outline: none;
 }
 $color_milk: #F6EED4;
 $color_gray: #9B9B9B;
@@ -91,20 +91,22 @@ body{
     @include font_m();
     align-items: center;
 
+  
+
 }
 
 #cartflow_container{
-padding-top: 150px;
-}
+    padding-top: 150px;
+    }
 
 
 // --------cart_form--------//
 
 .cart_form{
+    width:100%;
     background-color: #fff;
     padding: 20px;
-    border: $color_blue solid 2px;
-    border-radius: 10px;  
+    border-top: 2px solid $color_blue;  
     .cart_total {
         text-align: right;
         padding: 10px;
@@ -132,6 +134,47 @@ padding-top: 150px;
 
 
 
+// ----------------------------------------------------//
+// -----------------cart——shipping---------------------//
+#cart_shipping_container{
+
+    .shipping_box{
+       display: flex;
+       justify-content: space-between;
+    }
+
+
+}
+
+
+#cart_bonus_container{
+    padding-top: 0px;
+    .bonus_box{
+        display: flex;
+        justify-content: space-between;
+       
+        .bonus_decs{
+            text-align: left;
+            a{
+                @include font_s();
+                text-decoration: underline;
+
+            }
+        }
+        .bonus_input{
+            text-align: right;
+            input{
+                width: 20%;
+                @include font_m();
+                border:2px solid $color_blue;
+                border-radius: 5px; 
+                text-align: right;  
+            }
+        }
+       
+    }
+}
+
 
 #cart_total_container{
     padding-top: 0px;
@@ -156,6 +199,7 @@ padding-top: 150px;
     .creditcard_box{
         text-align: left;
         width: 60%;
+    
     }
     input{
         width:10%;
@@ -175,10 +219,15 @@ padding-top: 150px;
 
 
 
+
 // -------------------------------RWD TABLET------------------------------//
 
 @media (min-width: 768px) and (max-width: 991px){
   
+#cartflow_container{
+    padding-top: 20%;
+}
+
 #cartflow_container{
     padding-top: 20%;
 }
@@ -195,6 +244,8 @@ padding-top: 150px;
      
     }
 }
+
+
 
 
 
@@ -228,7 +279,6 @@ h5,p{
         }
     }   
  
-  
 // --------cart_title_container--------//   
 
 #cart_title_container  {
@@ -238,20 +288,31 @@ h5,p{
     
 }
 
-.col_12{
+.wrap{
     padding: 0;
 }
+
+
+
 
 #cart_show_container{
     margin-top: 30px;
     padding: 0;
+
 }  
+
+.shipping_box{
+    display:flex;
+    justify-content: space-between;
+}
+
  
 
 .cart_form{
-    width: 100%;
+    width: 92%;
     margin: auto;
     margin-bottom: 80px;
+
 }
 
 .cart_btn_group{
@@ -260,8 +321,6 @@ h5,p{
     display: flex;
     padding: 0;
     margin: 0;
-
-
     .btn{
         width: 187.5px;
         margin: 0;
@@ -272,7 +331,34 @@ h5,p{
     
 }
 
+// ------------cart_payment----------//
 
+#cart_payment_container input{
+    @include font_s();
+}
+
+#creditcard_contatiner{
+    .wrap{
+        padding-bottom: 80px;
+    }
+    .creditcard_box{
+        width: 100%;
+       
+    }
+    input{
+        width:18%;
+
+    }
+    select{
+        width:12%; 
+    }
+
+
+}
+
+.creditcard_box p span:first-child{
+    display:block;
+}
 
 
 
