@@ -52,7 +52,7 @@ $errMsg="";
                     $_SESSION["mem_headshot"] =$mem_headshot;
           
                      $statement -> execute();
-                    header("Location: member.php");
+                    header("Location: ../member.php");
             
                     
                     
@@ -96,7 +96,7 @@ $errMsg="";
                     $_SESSION["mem_address"] =$mem_address;
           
                     $statement->execute();
-                    header("Location: member.php");
+                    header("Location: ../member.php");
                         
             }catch(PDOException $e){
                 $errMsg = "錯誤原因" . $e -> getMessage() . "<br>" ;
