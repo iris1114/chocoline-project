@@ -5,7 +5,7 @@ $errMsg="";
 
    if(isset($_POST['updated_it'])){
 
-    $mem_no = 1; // $_SESSION[""];
+    $mem_id = $_SESSION['mem_id'];
     $mem_name = $_POST['mem_name'];
     $mem_email = $_POST['mem_email'];
     $mem_tel = $_POST['mem_tel'];
@@ -22,12 +22,14 @@ $errMsg="";
                 echo $_FILES['memUpFile']['name'];
                 $from = $_FILES['memUpFile']['tmp_name'];
                 $to = $dir . $_FILES['memUpFile']['name'];
+                echo $from ,"<br>",$to;
                 copy($from, $to);
                 try{
                     @require_once("connectChoco.php");
+                    
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
-                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_point=:mem_point WHERE mem_id=:mem_id ";
+                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_point=:mem_point,mem_headshot=:mem_headshot WHERE mem_id=:mem_id ";
                     
                     $statement =  $pdo-> prepare($sql);
                     $statement -> bindValue(':mem_name', $mem_name);
@@ -36,10 +38,13 @@ $errMsg="";
                     $statement -> bindValue(':mem_birth', $mem_birth);
                     $statement -> bindValue(':mem_credit', $mem_credit);
                     $statement -> bindValue(':mem_address', $mem_address);
-                    $statement -> bindValue(':mem_no', $mem_no);
+                    $statement -> bindValue(':mem_point', $mem_point);
+                    $statement -> bindValue(':mem_id', $mem_id);
+                    $statement -> bindValue(':mem_headshot', $mem_headshot);
+
                   
 
-                    $updateRow = $statement -> execute();
+                     $statement -> execute();
                     header("Location: member.php");
             
                     
