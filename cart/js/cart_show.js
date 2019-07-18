@@ -1,10 +1,23 @@
+
 var cart = {};
 
+// function getTotalMoney(){
+//   total =0;
+//   for(let psn in cart){
+//     total =cart[psn].price * cart[psn].qty;
+//   }
+//   return total;
+
+// }
+
 function getTotalMoney(){
-  
+  total =0;
+  let subtotal =document.getElementsByClassName('subtotal');
+  for(i=0 ;i<subtotal.length;i++){
+    total += parseInt(subtotal [i].innerText);
+  }
+  return total;
 }
-
-
 
 // -------數量＋— --------//
 function changeCart(e) {
@@ -19,6 +32,7 @@ function changeCart(e) {
     xhr.open("post", url, true);
     let myForm = new FormData(e.target.parentNode.parentNode);
     xhr.send(myForm);
+
 }
 
     
@@ -40,13 +54,21 @@ window.addEventListener("load", function() {
 
           if( qty>1){
               qty--;
-              console.log(qty);
+              // console.log(qty);
               qtyBox.value = qty;
-              console.log(qtyBox.value);
+              // console.log(qtyBox.value);
+
+              // 改變小計
               let price = parseInt( e.target.form.parentNode.previousElementSibling.querySelector("h5 .price").innerText);
               let subtotal = price * qty;
               console.log("-------",subtotal);
               e.target.form.parentNode.nextElementSibling.querySelector("h5 .subtotal").innerText= subtotal;
+
+              //改變總計
+              document.getElementById( 'cart_total').innerText =getTotalMoney();
+
+
+
 
               //.....
               changeCart(e);
@@ -67,11 +89,14 @@ window.addEventListener("load", function() {
           qtyBox.value = qty;
           console.log(qtyBox.value);
           
+          // 改變小計
           let price = parseInt( e.target.form.parentNode.previousElementSibling.querySelector("h5 .price").innerText);
           let subtotal = price * qty;
           console.log("-------",subtotal);
           e.target.form.parentNode.nextElementSibling.querySelector("h5 .subtotal").innerText= subtotal;
 
+           //改變總計
+           document.getElementById( 'cart_total').innerText =getTotalMoney();
 
           changeCart(e);
       };
@@ -82,7 +107,7 @@ window.addEventListener("load", function() {
 
 // -------刪除 --------//
 	function getTrash(e){
-		console.log(e);
+		// console.log(e);
 		let itemRows = document.getElementById("item_row");
     let item = e.target.parentNode.parentNode;
     console.log(e.target.parentNode.parentNode);
@@ -91,14 +116,22 @@ window.addEventListener("load", function() {
 		
 		xhr.onload = function (){
 			itemRows.removeChild(item);// 消除視覺介面
-			cart = JSON.parse(xhr.responseText);
+      cart = JSON.parse(xhr.responseText);
+    //  if(document.getElementById( 'cart_total').innerText === 0 ){
+      document.getElementById( 'cart_total').innerText =getTotalMoney();
+    //  }else{
+    //     document.getElementById( 'cart_total').innerText ="無購物資料";
+    //  }
+ 
+
 			// delete cart[prod_no]; 消除記憶體	
 		}
 		let url = "php/trash.php?psn=" + psn;
 		xhr.open("get",url,true);
 		console.log(this.parentNode);
 		// let myForm = new FormData(this.parentNode);
-		xhr.send(null);
+    xhr.send(null);
+    
 	}
 
 
@@ -106,7 +139,7 @@ window.addEventListener("load", function() {
 window.addEventListener('load',function(){
 let trash = document.getElementsByClassName('btn_delete');
 
-for(i=0;i<trash.length;i++){
+for(i=0 ;i <trash.length;i++){
   trash[i].onclick = getTrash;
 }
 });
@@ -115,38 +148,16 @@ for(i=0;i<trash.length;i++){
 
 // // -------驗證登入--------//
 
-// window.addEventListener('load',function(){
-// document.getElementById('btn_shop').onclick=showLoginForm;
-// });
 
 
-// function showLoginForm() {
-//   //檢查登入bar面版上 spanLogin 的字是登入或登出
-//   //如果是登入，就顯示登入用的燈箱(lightBox)
-//   //如果是登出
-//   //將登入bar面版上，登入者資料清空r
-//   //spanLogin的字改成登入
-//   //將頁面上的使用者資料清掉
-//   // var islogin = false;
-//   // if (!(islogin == true) ) {
-//   if($id('spanLoginText').innerHTML == "登入"){
-//       $id('lightBox').style.display = 'block';
-//   } else{
-//     //................登出時，除了處理前端頁面，也要回server端清session
 
-//     //......................................
-//     var xhr = new XMLHttpRequest();
-//     xhr.onload = function() {
-//       if (xhr.status == 200) {
-//         // islogin = true;
-//         $id("lightBox").style.display = "none";
-//         $id('spanLoginText').innerHTML = '登入';
-//       } else {
-//         alert(xhr.status);
-//       }
-//     };
-//     xhr.open("get", "../common/php/logout.php", true);
-//     xhr.send(null);
-//     //......................................
-//   }
-// } 
+
+
+
+
+  window.addEventListener('load',function(){
+    document.getElementById('btn_shop').onclick=init;
+
+  });
+    
+  

@@ -195,7 +195,7 @@ padding-top: 150px;
             align-items: center;
             padding: 15px;
             
-            .cart_pname,.cart_price,.cart_qty,.cart_amout{
+            .cart_pname,.cart_price,.cart_qty,.cart_amount{
                 border-right: $color_brown solid 2px;     
             }
             .cart_pname{
@@ -233,7 +233,7 @@ padding-top: 150px;
            
         }
     }
-    .amout{
+    .amount{
         @include font_l();
         color: $color_red;
     }
@@ -316,7 +316,7 @@ footer{
             padding: 10px 0px;
         } 
         
-        .cart_pname,.cart_price,.cart_qty,.cart_amout{
+        .cart_pname,.cart_price,.cart_qty,.cart_amount{
             border-right: none;     
         }
         .cart_pname{

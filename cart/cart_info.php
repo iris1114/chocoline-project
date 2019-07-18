@@ -1,25 +1,30 @@
+
 <?php
-ob_start();
-session_start(); 
-
-$errMsg = "";
-try {
-	require_once("php/connectChoco.php");
-
-  $sql = "select * from member where mem_no = 1";
-  // $sql = "select * from member where member_id=:member_id";
-
-  $members = $pdo->query($sql); 
-  $memRow = $members -> fetch(PDO::FETCH_ASSOC);
-  $mem_point=$memRow['mem_point'];
-  $_SESSION['mem_no']=1;
-
-}catch (PDOException $e) {
-	echo "錯誤 : ", $e -> getMessage(), "<br>";
-	echo "行號 : ", $e -> getLine(), "<br>";
+session_start();
+if(!isset($_SESSION["mem_id"])){
+    $_SESSION["mem_id"] = null;    
 }
+
+
+
+// $errMsg = "";
+// try {
+// 	require_once("php/connectChoco.php");
+
+//   $sql = "select * from member where mem_no = 1";
+//   // $sql = "select * from member where member_id=:member_id";
+
+//   $members = $pdo->query($sql); 
+//   $memRow = $members -> fetch(PDO::FETCH_ASSOC);
+//   $mem_point=$memRow['mem_point'];
+//   $_SESSION['mem_no']=1;
+
+// }catch (PDOException $e) {
+// 	echo "錯誤 : ", $e -> getMessage(), "<br>";
+// 	echo "行號 : ", $e -> getLine(), "<br>";
+// }
  
-echo $errMsg;
+// echo $errMsg;
 
 ?>
 
@@ -46,68 +51,140 @@ echo $errMsg;
         <div class="navbar">
             <div class="burger">
                 <figure>
-                    <img src="image/headerfooter/burger.png" alt="burger">
+                    <img src="../common/image/headerfooter/burger.png" alt="burger">
                 </figure>
             </div>
             <div class="logo">
-                <a href="../index/index.html">
-                    <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                <h1>
+                    CHOCOLINE
+                </h1>
+                <a href="../index/index.php">
+                    <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
             </div> 
             <div class="status">
                 <figure>
-                    <a href="../member/member.html">
-                        <img src="image/headerfooter/icon_member.png" alt="member">
+                    <a class="spanLogin" href="../member/member.php">
+                        <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                        <!-- icon點擊後跳出登入註冊燈箱 -->
                     </a>
                 </figure>
                 <figure>
-                    <a href="../cart/cart.html">
-                        <img src="image/headerfooter/icon_cart.png" alt="cart">
+                    <a href="../cart/cart.php">
+                        <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
                     </a>
                 </figure>
             </div>
         </div>
         <ul class="menubox">
-            <li><a href="../custom/custom.html">客製 CHOCO</a></li>
-            <li><a href="../contest/contest.html">CHOCO 選美</a></li>
-            <li><a href="../game/game.html">CHOCO 遊戲</a></li>
-            <li><a href="../store/store.html">CHOCO 商城</a></li>
-            <li><a href="../about/about.html">關於 CHOCO</a></li>
+            <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+            <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+            <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+            <li><a href="../store/store.php">CHOCO 商城</a></li>
+            <li><a href="../about/about.php">關於 CHOCO</a></li>
             <figure id="menuclose">
-                <img src="image/headerfooter/menuclose.png" alt="close">
+                <img src="../common/image/headerfooter/menuclose.png" alt="close">
             </figure>
         </ul>
     </div>
     <div class="d_header">
         <div class="logo">
-            <a href="../index/index.html">
-                <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+            <h1>
+                CHOCOLINE
+            </h1>
+            <a href="../index/index.php">
+                <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
             </a>
         </div>
         <div class="navbar">
             <ul class="menubox">
-                <li><a href="../custom/custom.html">客製 CHOCO</a></li>
-                <li><a href="../contest/contest.html">CHOCO 選美</a></li>
-                <li><a href="../game/game.html">CHOCO 遊戲</a></li>
-                <li><a href="../store/store.html">CHOCO 商城</a></li>
-                <li><a href="../about/about.html">關於 CHOCO</a></li>
+                <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+                <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+                <li class="nowpage"><a href="../game/game.php">CHOCO 遊戲</a></li>
+                <li><a href="../store/store.php">CHOCO 商城</a></li>
+                <li><a href="../about/about.php">關於 CHOCO</a></li>
             </ul>
             <div class="status">
-                <figure>
-                    <a href="../member/member.html">
-                        <img src="image/headerfooter/icon_member.png" alt="member">
-                    </a>
-                </figure>
-                <figure>
-                    <a href="../cart/cart.html">
-                        <img src="image/headerfooter/icon_cart.png" alt="cart">
-                    </a>
-                </figure>
+            <figure>
+                <a class="spanLogin" href="javascript:;">
+                    <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                    <!-- icon點擊後跳出登入註冊燈箱 -->
+                </a>
+                <!-- <span id="mem_name">&nbsp;</span> -->
+                <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                <span id="spanLoginText">登入</span>
+            </figure>
+            <figure>
+                <a href="../cart/cart.php">
+                    <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
+                </a>
+            </figure>
+            </div>
+        </div>
+    </div>
+    <!-- 燈箱：登入 -->
+    <div id="lightBox" style="display:none">
+        <div id="tableLogin">
+            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <div class="login_password">
+                <a href="javascript:;" class="btnLoginCancel">
+                    <img src="../common/image/login/login_closeicon.png" alt="">
+                </a>			
+                <h3>會員登入</h3>
+                <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
+                <input type="password" name="mem_psw" id="mem_psw" value="" placeholder="密碼"><br>
+                <a href="javascript:;" id="forget_password">忘記密碼</a><br>
+                <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
+                <span>不是會員嗎?</span>
+                <a href="javascript:;" id="register">立即註冊</a><br>
+            </div>
+        </div>
+    </div>
+    <!-- 重設密碼 -->
+    <div id="passwordLightBox" style="display:none">
+        <div id="getPassword">
+            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <div class="login_password">
+                <a href="javascript:;" class="btnLoginCancel">
+                    <img src="../common/image/login/login_closeicon.png" alt="">
+                </a>			
+                <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
+                <h3>重設密碼</h3>
+                <p>請輸入帳號註冊時所留的電子<br>
+                    郵件地址，以驗證您的資料</p>
+                <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
+                <input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
+                <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
+            </div>
+        </div>
+    </div>
+    <!-- 會員註冊 -->
+    <div id="registerLightBox" style="display:none">
+        <div id="registered">
+            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <div class="login_register">
+                <a href="javascript:;" class="btnLoginCancel">
+                    <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
+                </a>			
+                <h3>會員註冊</h3>
+                <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
+                        請填下您的個人資料。</p>
+                <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
+                <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
+                <!-- <span id="idMsg"></span><br> -->
+                <p id="idMsg">請輸入帳號</p><br>
+                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
+                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
+                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
+                <p>* 為必填欄位，請填妥欄位資訊。</p>
+                <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
             </div>
         </div>
     </div>
 </header>
 <!-- header end -->
+
 <section  id="cartflow_container">
  <div class="cloud" >
      <img src="image/cart/cloud.png" alt="cloud">
@@ -350,6 +427,7 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
 
 <script src="../common/js/header.js"></script>
 <script src="../common/js/robot.js"></script>
+<script src="../common/js/login.js"></script>
 
 
 <script>

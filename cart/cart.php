@@ -1,10 +1,12 @@
 
 
 <?php
-ob_start();
-session_start(); 
+session_start();
+if(!isset($_SESSION["mem_id"])){
+    $_SESSION["mem_id"] = null;
+}
 
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,9 +41,11 @@ session_start();
             </div> 
             <div class="status">
                 <figure>
-                    <a class="spanLogin" href="../member/member.php">
+                    <a class="spanLogin" href="javascript:;">
                         <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
+                        <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                        <span id="spanLoginText_mobile" style="display:none">登入</span>
                     </a>
                 </figure>
                 <figure>
@@ -85,9 +89,8 @@ session_start();
                     <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                     <!-- icon點擊後跳出登入註冊燈箱 -->
                 </a>
-                <!-- <span id="mem_name">&nbsp;</span> -->
                 <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                <span id="spanLoginText">登入</span>
+                <span id="spanLoginText" style="display:none">登入</span>
             </figure>
             <figure>
                 <a href="../cart/cart.php">
@@ -118,17 +121,17 @@ session_start();
     <!-- 重設密碼 -->
     <div id="passwordLightBox" style="display:none">
         <div id="getPassword">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
             <div class="login_password">
                 <a href="javascript:;" class="btnLoginCancel">
-                    <img src="../common/image/login/login_closeicon.png" alt="">
+                    <img src="image/login/login_closeicon.png" alt="">
                 </a>			
                 <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
                 <h3>重設密碼</h3>
                 <p>請輸入帳號註冊時所留的電子<br>
                     郵件地址，以驗證您的資料</p>
                 <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
-                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
+                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼  (6位字母、數字)"><br>
                 <input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
                 <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
             </div>
@@ -137,22 +140,20 @@ session_start();
     <!-- 會員註冊 -->
     <div id="registerLightBox" style="display:none">
         <div id="registered">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
             <div class="login_register">
                 <a href="javascript:;" class="btnLoginCancel">
-                    <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
+                    <img src="image/login/login_closeicon.png" alt="btnLoginCancel">
                 </a>			
                 <h3>會員註冊</h3>
                 <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
-                        請填下您的個人資料。</p>
+                        請填下您的個人資料！* 為必填。</p>
                 <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
                 <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
-                <!-- <span id="idMsg"></span><br> -->
                 <p id="idMsg">請輸入帳號</p><br>
-                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
-                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
-                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
-                <p>* 為必填欄位，請填妥欄位資訊。</p>
+                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
+                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼 (6位字母、數字)"><br>
+                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼 (再次確認)"><br>
                 <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
             </div>
         </div>
@@ -216,112 +217,103 @@ session_start();
 
 
 <section class="col_12 col_lg_12 col_md_12  " id="cart_show_container">
- <div class="wrap" id="item_row">
+    <div class="wrap" id="item_row">
 
-<?php 
-if( isset($_SESSION["cart"]) === false || count($_SESSION["cart"])==0){ 
-echo "<div class='box cart_show_box '>尚無購物資料";
-echo "<script> window.onload=btnShopHide(); </script>";
+        <?php 
+        if( isset($_SESSION["cart"]) === false || count($_SESSION["cart"])==0){ 
+        echo "<div class='box cart_show_box '>尚無購物資料";
+        echo "<script> window.onload=btnShopHide(); </script>";
 
-}else{  //有購物資料
-$total = 0;
-foreach($_SESSION['cart'] as $i=>$value){
+        }else{  //有購物資料
+        $total = 0;
+        foreach($_SESSION['cart'] as $i=>$value){
 
-// foreach( $_SESSION["cart"][$psn]["pname"] as $psn => $data){ 
-    $subTotal = $_SESSION["cart"][$i]["price"] * $_SESSION["cart"][$i]["qty"];  //計算小計
-    $total = $total + $subTotal;  //計算總計
-?>	
+        // foreach( $_SESSION["cart"][$psn]["pname"] as $psn => $data){ 
+            $subTotal = $_SESSION["cart"][$i]["price"] * $_SESSION["cart"][$i]["qty"];  //計算小計
+            $total = $total + $subTotal;  //計算總計
+        ?>	
 
 <!--－－－－－－－－－ 一般商品－－－－－－－－－－ -->
-<div class="box cart_show_box " >
+    <div class="box cart_show_box " >
         <span style='display:none'><?php echo $_SESSION["cart"][$i]["psn"]; ?></span>
-       <div class="item cart_img col_12 col_lg_3 col_md_2  ">
-             <img src="<?php echo $_SESSION["cart"][$i]["pimg"]; ?>  " alt="choco">
-          </div> 
-            
-          <div class="item cart_pname col_6  col_lg_2 col_md_2 ">
-            <h5> <?php echo $_SESSION["cart"][$i]["pname"]; ?></h5>
-          </div>
-          <div class="item cart_price  col_6  col_lg_2 col_md_2">
-              <h5 > <span class="d_d_n  t_d_n"> 單價：</span>  NT$ <span class="price"> <?php echo  $_SESSION["cart"][$i]["price"]; ?></span></h5>
-          </div>    
-          <div class="item cart_qty   col_6 col_lg_2 col_md_2 ">
-            
-        <form >
-            <input type="hidden" name="psn" value="<?php echo  $_SESSION["cart"][$i]["psn"];?>">
-            <input type="hidden" name="p_name" value="<?php echo $_SESSION["cart"][$i]["pname"]; ?>">
-            <input type="hidden" name="p_price" value="<?php echo $_SESSION["cart"][$i]["price"]; ?>">
-            <input type="hidden" name="p_img" value="<?php echo $_SESSION["cart"][$i]["pimg"]; ?>">
-            <input type="hidden" name="p_total" value="<?php echo $total ?>">
-            <input type="hidden" name="p_total" value="<?php echo $subTotal ?>">
-            <div class="item qty_buttons">     
-            <input id="minus" class="minus  qtyminus" type="button" value="-" name="minus"/><input id="qty" class="qty classic_product_qty" type="text" value="<?php echo $_SESSION["cart"][$i]["qty"]; ?>" min="1" max="10" step="1" name="p_qty" /><input id="plus" class="plus qtyplus" type="button" value="+" name="plus" />
-            </div>
-        </form>     
        
-          </div>
-          <div class="item col_lg_2 col_6 cart_amout ">
-              <h5 ><span class="d_d_n t_d_n">小計：</span> NT$ <span class="subtotal"><?php echo $subTotal?></span> </h5>
-          </div>
+        <div class="item cart_img col_12 col_lg_3 col_md_2  ">
+        <a href="chocoline-project/store/product.php?classic_product_no=<?php echo $_SESSION["cart"][$i]["psn"];?>"> <img src="<?php echo $_SESSION["cart"][$i]["pimg"]; ?>  " alt="choco"> </a>
+        </div> 
+       
+                
+        <div class="item cart_pname col_6  col_lg_2 col_md_2 ">
+        <h5> <?php echo $_SESSION["cart"][$i]["pname"]; ?></h5>
+        </div>
 
-          <div class="item cart_delete col_lg_1 " >
-           <div class="btn btn_delete">刪除</div>   
-          <!-- <input class="btn" type="submit" name="btn_delete"  value="刪除"> -->
-          </div>
-</div>  
-</div>
+        <div class="item cart_price  col_6  col_lg_2 col_md_2">
+            <h5 > <span class="d_d_n  t_d_n"> 單價：</span>  NT$ <span class="price"> <?php echo  $_SESSION["cart"][$i]["price"]; ?></span></h5>
+        </div>   
+
+        <div class="item cart_qty   col_6 col_lg_2 col_md_2 ">      
+            <form >
+                <input type="hidden" name="psn" value="<?php echo  $_SESSION["cart"][$i]["psn"];?>">
+                <input type="hidden" name="p_name" value="<?php echo $_SESSION["cart"][$i]["pname"]; ?>">
+                <input type="hidden" name="p_price" value="<?php echo $_SESSION["cart"][$i]["price"]; ?>">
+                <input type="hidden" name="p_img" value="<?php echo $_SESSION["cart"][$i]["pimg"]; ?>">
+                <input type="hidden" name="p_total" value="<?php echo $total ?>">
+                <input type="hidden" name="p_total" value="<?php echo $subTotal ?>">
+                <div class="item qty_buttons">     
+                <input id="minus" class="minus  qtyminus" type="button" value="-" name="minus"/><input id="qty" class="qty classic_product_qty" type="text" value="<?php echo $_SESSION["cart"][$i]["qty"]; ?>" min="1" max="10" step="1" name="p_qty" /><input id="plus" class="plus qtyplus" type="button" value="+" name="plus" />
+                </div>
+            </form>     
+        </div>
+
+        <div class="item col_lg_2 col_6 cart_amout ">
+            <h5 ><span class="d_d_n t_d_n">小計：</span> NT$ <span class="subtotal"><?php echo $subTotal?></span> </h5>
+        </div>
+
+        <div class="item cart_delete col_lg_1 " >
+            <div class="btn btn_delete">刪除</div>   
+        </div>
+    </div>  
 
 
 
+<?php
+
+}
+
+?>
 
 <!--－－－－－－－－－ 客制商品－－－－－－－－－－ -->
 
 
  
 <section id="cart_form_container  " >
-  <div class="wrap">
-<?php
-}
-if( isset($_SESSION["cart"]) === false || count($_SESSION["cart"])==0){ 
-echo "<div class='box cart_show_box '>尚無購物資料";
-}else{
+    <div class="wrap">
+            <?php
+            // }
+            // if( isset($_SESSION["cart"]) === false || count($_SESSION["cart"])==0){ 
+            // echo "<div class='box cart_show_box '>尚無購物資料";
+            // }else{
 
-echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
-<div class='cart_total'>
-  <p>商品金額: <span>NT", number_format($total), "</span></p>
-  <p>運費小計: <span>尚未選擇</span></p>
-  <p>點數折抵: <span>尚未折抵</span></p>
-  <p>應付金額: <span class='amout'> NT$", number_format($total), "</span></p>
-</div>
-</div>";    
-}
-}
-?>
-</div>
+            echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
+            <div class='cart_total'>
+            <p>商品金額:NT$ <span class='amount' id='cart_total'>", number_format($total), "</span></p>
+            </div>
+            </div>";    
+            }
+      
+            ?>
+        </div>
 </section>
 
-
+</div>
 </section>
-
-
-
-<!-- cart form -->
-
-
-
-
-
-
-
 
 
  <!-------cart_btn_group-------->
 
  <div class="cart_btn_group">
-          <a href="../store/store.php" class="btn orange_l "><span> 繼續購物</span></a>
-          <a href="cart_info.php" class="btn orange_l " id=" btn_shop"><span> 進行結帳</span></a>
-      </div>
-  </div>
+    <a href="../store/store.php" class="btn orange_l "><span> 繼續購物</span></a>
+    <a href="cart_info.php" class="btn orange_l " id=" btn_shop"><span> 進行結帳</span></a>
+</div>
 
 
 
