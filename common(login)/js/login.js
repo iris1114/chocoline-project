@@ -78,10 +78,10 @@ function forgetPassword(){
 }
 
 function repassword(){
-  var reg = new RegExp(/[a-zA-Z0-9]{6}/);
+  var reg = new RegExp(/[a-zA-Z0-9]{6,12}/);
   var psetest = $id("new_mem_psw").value;
   if(!reg.test(psetest)){
-    alert("新密碼必須由 6位字母、數字");	
+    alert("新密碼必須由 6-12位字母、數字");	
     $id("new_mem_psw").value="";
     $id("re_new_mem_psw").value="";
     return;	
@@ -154,10 +154,10 @@ function register() {
     return;
   } 
 
-  var reg = new RegExp(/[a-zA-Z0-9]{6}/);
+  var reg = new RegExp(/[a-zA-Z0-9]{6,12}/);
   var psetest = $id("f_mem_psw").value;
   if(!reg.test(psetest)){
-    alert("新密碼必須由 6位字母、數字");	
+    alert("新密碼必須由 6-12位字母、數字");	
     $id("f_mem_psw").value="";
     $id("f_re_mem_psw").value="";
     return;	

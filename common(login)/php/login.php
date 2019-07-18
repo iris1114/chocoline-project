@@ -18,7 +18,7 @@ try{
   	$_SESSION["mem_no"] = $memRow["mem_no"];
   	$_SESSION["mem_id"] = $memRow["mem_id"];
   	$_SESSION["mem_name"] = $memRow["mem_name"];
-  	$_SESSION["mem_psw"] = $memRow["mem_pws"];
+  	$_SESSION["mem_psw"] = $memRow["mem_psw"];
   	$_SESSION["mem_email"] = $memRow["mem_email"];
   	$_SESSION["mem_birth"] = $memRow["mem_birth"];
   	$_SESSION["mem_tel"] = $memRow["mem_tel"];
