@@ -443,7 +443,7 @@ try {
                     <div class="product_img">
                         <img src="https://picsum.photos/200/200/?random=1">
                     </div>
-                </div> -->
+                    </div> -->
 
 
                 </div>
