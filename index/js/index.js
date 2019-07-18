@@ -959,7 +959,6 @@ var select_result = {};
 
 // select products start
 function send_select(select_data) {
-    console.log(select_data);
     let xhr = new XMLHttpRequest();
 
     xhr.onload = function() {
@@ -967,7 +966,7 @@ function send_select(select_data) {
         if (xhr.status == 200) {
 
             select_result = JSON.parse(xhr.responseText);
-            console.log(select_result);
+
 
         } else {
             alert(xhr.status);
@@ -978,7 +977,7 @@ function send_select(select_data) {
     xhr.open("get", url, false);
     xhr.send(null);
 
-    // show_select_result();
+    show_select_result();
 
 }
 
@@ -1010,44 +1009,30 @@ function send_select(select_data) {
 
 function show_select_result() {
 
+    var submit_btn = document.getElementById("submit_question_btn");
     var qa_box = document.getElementById("qa_box");
-    var html = "";
+    var product_result = "";
 
-    for (var i = 0; i < select_result.length; i++) { //cart[psn]
-        html +=
-            `<div class="product_item col_lg_5">
-                <div class="product_pic_content">
-                    <div class="product_pic">
-                        <a href="product.php?classic_product_no=${select_result[i]["classic_product_no"]}">
-                            <img src="image/store/${select_result[i]["product_img_src"]}" />
-                        </a>
-                        <a href="product.php?classic_product_no=${select_result[i]["classic_product_no"]}   ">
-                            <img src="image/store/${select_result[i]["product_hover_src"]}" alt="" />
-                        </a>
-                    </div>
-                    <div class="product_content">
-                        <h2>${select_result[i]["classic_product_name"]}</h2>
-                        <p class="sold_qty">已售出 <span>${select_result[i]["product_sold"]}</span></p>
-                        <p class="price">NT$ <span>${select_result[i]["product_price"]}</p>
-                        <div class="qty_buttons">
-                            <input id="minus" class="minus" type="button" value="-" /><input id="qty" class="qty classic_product_qty" type="text" value="1" min="1" max="10" step="1" name="qty" /><input id="plus" class="plus" type="button" value="+" />
-                        </div>
+    submit_btn.onclick = function() {
+        product_result += `<img src="image/index/question/question.png" alt="question">
+        <div class="recommand_box">
+        <div class="recommand_title">
+            <h4>巧克力好推薦！<br>你就愛那一味～</h4>
+            <span>${select_result[0]["classic_product_name"]}</span>
+        </div>
+        <div class="product_img">
+            <img src="../store/image/store/${select_result[0]["product_img_src"]}">
+        </div>
+        </div>`;
 
-                    </div>
-                </div>
-                <div class="product_button">
-                    <a href="javascript:;" class="collect_btn btn cyan_m"><span>
-                            <i class="heart_unclick far fa-heart"></i>
-                            <i class="heart_clicked fas fa-heart"></i>
-
-                            收藏</span></a>
-                    <a href="javascript:;" class="btn orange_m classic_product_add_cart_btn"><span>加入購物車</span></a>
-                </div>
-            </div>`;
+        qa_box.innerHTML = product_result;
     }
-    qa_box.innerHTML = html;
 
 }
+
+
+
+
 
 
 
