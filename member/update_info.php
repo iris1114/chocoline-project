@@ -24,11 +24,7 @@ $errMsg="";
                 $to = $dir . $_FILES['memUpFile']['name'];
                 copy($from, $to);
                 try{
-                    $dsn="mysql:host=localhost;port=3306;dbname=choco;charset=utf8";
-                    $user="root";
-                    $password="";
-                    $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
-                    $pdo = new PDO($dsn, $user, $password, $options);
+                    @require_once("connectChoco.php");
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
                     $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_point=:mem_point WHERE mem_no=:mem_no ";
@@ -66,11 +62,7 @@ $errMsg="";
             case 4:
             
                 try{
-                    $dsn="mysql:host=localhost;port=3306;dbname=choco;charset=utf8";
-                    $user="root";
-                    $password="";
-                    $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
-                    $pdo = new PDO($dsn, $user, $password, $options);
+                    @require_once("connectChoco.php");
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
                     $sql .= "mem_credit=:mem_credit,mem_address=:mem_address WHERE mem_no=:mem_no ";

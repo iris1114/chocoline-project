@@ -25,16 +25,15 @@ new Vue({
 // 
 
 
-   document.getElementsByClassName("tablink").addEventListener("mouseover", mouse_over);
-   document.getElementsByClassName("tablink").addEventListener("mouseout", mouse_out);
+// document.getElementsByClassName("tablink").addEventListener("mouseover", mouse_over);
+// document.getElementsByClassName("tablink").addEventListener("mouseout", mouse_out);
 
-function mouse_over() {
-  document.getElementsByClassName("tablink").style.color = "#fff";
-}
-
-function mouse_out() {
-  document.getElementsByClassName("tablink").style.color = "#367e90 ";
-}
+// function mouse_over() {
+//   document.getElementsByClassName("tablink").style.color = "#fff";
+// }
+// function mouse_out() {
+//   document.getElementsByClassName("tablink").style.color = "#367e90 ";
+// }
 
 
 //
@@ -57,6 +56,4 @@ for (i = 0; i < acc.length; i++) {
 }
 
 }
-
-
 window.addEventListener("laod",doFirst)

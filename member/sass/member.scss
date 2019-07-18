@@ -2,7 +2,7 @@
 @import"../../common/sass/common.scss";
 
 *{
-    outline: 1px solid red;
+    outline: none;
 }
 
 body{
@@ -82,6 +82,10 @@ body{
         display: flex;
         flex-flow: row wrap; 
         margin: auto;
+
+    .image_box,.col_12,.col_md_4,.col_lg_3{
+        text-align: center;
+    }    
        
     }
     .profile_pic{
@@ -96,6 +100,9 @@ body{
     .upload img{
         border-radius: 50%;
 
+    }
+    .logout_btn{
+        margin: auto;
     }
 
     .profile_pic img{
