@@ -16,9 +16,9 @@ $errMsg="";
 
         switch($_FILES['memUpFile']['error']){
             case 0:
-                $dir = "image/member/";
-                if( file_exists("image/member") === false){
-                    mkdir( "image/member" ); //make directory
+                $dir = "../image/member/";
+                if( file_exists("../image/member") === false){
+                    mkdir( "../image/member" ); //make directory
                 }
                 echo $_FILES['memUpFile']['name'];
                 $from = $_FILES['memUpFile']['tmp_name'];

@@ -150,10 +150,10 @@ echo $errMsg;
     <!-- 重設密碼 -->
     <div id="passwordLightBox" style="display:none">
         <div id="getPassword">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
             <div class="login_password">
                 <a href="javascript:;" class="btnLoginCancel">
-                    <img src="../common/image/login/login_closeicon.png" alt="">
+                    <img src="image/login/login_closeicon.png" alt="">
                 </a>			
                 <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
                 <h3>重設密碼</h3>
@@ -169,7 +169,7 @@ echo $errMsg;
     <!-- 會員註冊 -->
     <div id="registerLightBox" style="display:none">
         <div id="registered">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+            <img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
             <div class="login_register">
                 <a href="javascript:;" class="btnLoginCancel">
                     <img src="image/login/login_closeicon.png" alt="btnLoginCancel">
