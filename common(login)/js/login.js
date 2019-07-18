@@ -131,6 +131,8 @@ function checkAccount() {
         document.getElementById("idMsg").innerHTML = xhr.responseText;
       }else{
         alert(xhr.status);
+        $id("f_mem_id").value="";
+        return;	
       }
   }
   //設定好所要連結的程式
