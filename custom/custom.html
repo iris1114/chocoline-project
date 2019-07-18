@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +12,7 @@
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha256-AAhU14J4Gv8bFupUUcHaPQfvrdNauRHMt+S4UVcaJb0=" crossorigin="anonymous"></script>
 
   <title>客製CHOCO</title>
 </head>
@@ -346,7 +348,7 @@
             </div>
 
           </div>
-
+<!-- 
           <div class="fix_photo_mobile">
             <img src="image/custom/bear1.png" alt="bear">
           </div>
@@ -366,7 +368,7 @@
             <div class="bar_photo">
               <img src="image/custom/bar_item.png" alt="reset">
             </div>
-          </div>
+          </div> -->
           <!-- ----- item select start----- -->
 
           <div class="select_item">
@@ -379,7 +381,7 @@
 
             <!-- ----- 眼睛 start----- -->
             <div class="eye_select type" id="eyes">
-              <div class="eye_types">
+              <div class="owl-carousel eye_types ">
                 <div class="eye_items">
                   <img src="image/custom/small/eye1.png" class="eye_type" alt="eye1" />
                 </div>
@@ -532,43 +534,55 @@
         <!-- ----- middle side start ----- -->
 
         <div class="outlook_fix">
-
-
+          
           <div class="fix_photo" id="fix">
-            <div class="eye_pos">
-              <img src="" alt="" class="eye_demo">
+
+            <div class="eye_pos pos1">
+              <img src="" alt="" class="eye_demo demo" style = "transform: rotate(0deg) scale(1)" >
             </div>
-            <div class="eye_pos">
-              <img src="" alt="" class="eye_demo">
+
+            <div class="eye_pos pos2">
+              <img src="" alt="" class="eye_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
-            <div class="mouse_pos">
-              <img src="" alt="" class="mouse_demo">
+            
+            <div class="mouse_pos ">
+              <img src="" alt="" class="mouse_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
+
             <div class="others_pos">
-              <img src="" alt="" class="others_demo">
-            </div>
+              <img src="" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
+            </div> 
+
             <div class="others_pos">
-              <img src="" alt="" class="others_demo">
+              <img src="" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
+
             <img src="" alt="" id="cho_pos">
+
           </div>
 
-          <div class="fix_bar">
-            <div class="bar_photo big">
+          <div class="fix_bar ">
+
+            <div class="bar_photo"  id="big">
               <img src="image/custom/bar_item6.png" alt="big">
             </div>
-            <div class="bar_photo small">
+
+            <div class="bar_photo" id="small">
               <img src="image/custom/bar_item5.png" alt="small">
             </div>
-            <div class="bar_photo right">
+
+            <div class="bar_photo"id="right">
               <img src="image/custom/bar_item1.png" alt="right">
             </div>
-            <div class="bar_photo left">
+
+            <div class="bar_photo"id="left">
               <img src="image/custom/bar_item2.png" alt="left">
             </div>
-            <div class="bar_photo reset">
+
+            <div class="bar_photo"id="reset">
               <img src="image/custom/bar_item.png" alt="reset">
             </div>
+
           </div>
 
           <div class="total_price">
@@ -578,6 +592,7 @@
               NT$350
             </p>
           </div>
+          
         </div>
 
         <!-- ----- middle side End ----- -->
@@ -634,7 +649,7 @@
             <img src="image/custom/caed1.png" alt="">
           </div>
 
-          <div class="card_items">
+          <!-- <div class="card_items">
 
             <div class="tab_item">
               <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
@@ -642,11 +657,11 @@
               <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
             </div>
 
-            <div class="clearfix"></div>
+            <div class="clearfix"></div> -->
 
             <!-- -------- 卡片樣式 start-------- -->
 
-            <div class="card_color type" id="card_colors">
+            <!-- <div class="card_color type" id="card_colors">
 
               <div class="card_background">
                 <div class="background_color">
@@ -684,7 +699,7 @@
                 </div>
               </div>
 
-            </div>
+            </div> -->
 
             <!-- -------- 卡片樣式 End-------- -->
 
@@ -868,7 +883,7 @@
 
         <div class="card_info_mobile">
 
-          <div class="card_items">
+          <!-- <div class="card_items">
 
             <div class="tab_item">
               <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
@@ -876,11 +891,11 @@
               <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
             </div>
 
-            <div class="clearfix"></div>
+            <div class="clearfix"></div> -->
 
             <!-- -------- 卡片樣式 start-------- -->
 
-            <div class="card_color type" id="card_colors">
+            <!-- <div class="card_color type" id="card_colors">
 
               <div class="card_background">
                 <div class="background_color">
@@ -918,12 +933,12 @@
                 </div>
               </div>
 
-            </div>
+            </div> -->
 
             <!-- -------- 卡片樣式 End-------- -->
 
             <!-- -------- 文字樣式 start-------- -->
-
+<!-- 
             <div class="text_color type" id="text_colors">
 
               <div class="card_background">
@@ -962,13 +977,13 @@
                 </div>
               </div>
 
-            </div>
+            </div> -->
 
             <!-- -------- 文字樣式 End-------- -->
 
             <!-- -------- 裝飾圖樣 start-------- -->
 
-            <div class="pic_color type" id="card_backgrounds">
+            <!-- <div class="pic_color type" id="card_backgrounds">
 
               <div class="card_background">
                 <div class="background_color">
@@ -1009,7 +1024,7 @@
             </div>
             <div class="upload">
               <input type="file" name="上傳檔案">
-            </div>
+            </div> -->
           </div>
           <div class="paint_text">
 
@@ -1395,7 +1410,7 @@
           let cust = $("#cho_pos").attr("src", modelsrc);
           console.log(modelsrc);
           let mask = document.getElementsByClassName("fix_photo");
-          // mask[0].style.WebkitMaskImage = "url(../" + modelsrc + ")";
+          // $(".fix_photo").css("-webkit-mask-image",'url(../'+modelsrc+')');
           // console.log(mmm);
         };
 
@@ -1404,35 +1419,44 @@
 
 
         // ---------- 眼睛 start select----------
-
+        var eye_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          $('.eye_items').click(function () {
-            // let eye_src = $(".eye_type").attr("src");
-            let eye_src = $(".eye_type").attr("src");
-            console.log(eye_src);
-            let custs = $(".eye_demo").attr("src", eye_src);
-            let eye_src2 = $(".eye_type").attr("src");
-            let custs2 = $(".eye_demo2").attr("src", eye_src2);
-            // console.log(custs);
-
-          });
-
-        });
+          var eye_items_length =  $('.eye_items').length ;
+         
+          for(let i =0 ; i <eye_items_length; i++ ){
+             $(".eye_items").eq(i).click(function(){
+                        console.log(i)
+                      var eye_src=   $(".eye_items").eq(i).children("img").attr("src");     
+                    console.log(eye_src);
+                    $(".eye_demo").eq(eye_num).attr("src", eye_src);
+                    
+                    eye_num++;
+                    console.log("yes");
+                    })
+                }
+                });
+              
 
         // ---------- 眼睛 End  select----------
 
 
         // ---------- 嘴巴 start select----------
 
-
+        var mouse_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          $('.mouse_items').click(function () {
-            let mouse_src = $(".mouse_type").attr("src");
-            console.log(mouse_src);
-            let custss = $(".mouse_demo").attr("src", mouse_src);
-          })
+          var mouse_items_length =  $('.mouse_items').length ;
+         
+          for(let i =0 ; i <mouse_items_length; i++ ){
+             $(".mouse_items").eq(i).click(function(){
+                        console.log(i)
+                      var mouse_src=   $(".mouse_items").eq(i).children("img").attr("src");     
+                    console.log(mouse_src);
+                    $(".mouse_demo").eq(mouse_num).attr("src", mouse_src);
+                    mouse_num++;
+                    })
+                }
         });
 
 
@@ -1442,18 +1466,25 @@
         // ---------- 飾品 start select----------
 
 
+        var others_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          $('.others_items').click(function () {
-            let others_src = $(".others_type").attr("src");
-            console.log(others_src);
-
-            let custss = $(".others_demo").attr("src", others_src);
-          });;
+       // for (let i = 0; i <  )
+       var others_items_length =  $('.others_items').length ;
+          for(let i =0 ; i < others_items_length; i++ ){
+             $(".others_items").eq(i).click(function(){
+                        console.log(i)
+                      var others_src=   $(".others_items").eq(i).children("img").attr("src");     
+                    console.log(others_src);
+                    $(".others_demo").eq(others_num).attr("src", others_src);
+                    others_num++;
+                    })
+                }
 
         });
 
         // ---------- 飾品 End select----------
+
 
 
         // ---------------------drag--------------------------
@@ -1473,129 +1504,261 @@
         });
 
         // ---------------------drag--------------------------
+ 
 
-  var eyechange = document.querySelectorAll(".eye_pos");
+        var eyechange = document.querySelectorAll(".eye_demo");
         // console.log(eyechange.length);
-        var mousechange = document.querySelector(".mouse_demo");
-        var otherschange = document.querySelector(".others_demo");
+        var mousechange = document.querySelectorAll(".mouse_demo");
+        var otherschange = document.querySelectorAll(".others_demo");
         var itemall =  document.querySelectorAll(".demo");
-        console.log(itemall.length);
-        var big = document.getElementsByClassName("big");
-        var small = document.getElementsByClassName("small");
-        var right = document.getElementsByClassName("right");
-        var left = document.getElementsByClassName("left");
-        var reset = document.getElementsByClassName("reset");
-
-        eyescale = 1;
-        eyerotate = 0;
-        mousescale = 1;
-        mouserotate = 0;
-        otherscale = 1;
-        otherrotate = 0;
-        var whoselected = "";
+        // console.log(itemall.length);
+        
+        var btn =document.querySelectorAll(".bar_photo");
+        var imgcontrol = [" big"," small"," right"," left"," big",]
+        var big = document.getElementById("big");
+        var small = document.getElementById("small");
+        var right = document.getElementById("right");
+        var left = document.getElementById("left");
+        var reset = document.getElementById("reset");
+        for(i=0;i<btn.length;i++){
+          
+          btn[i].addEventListener("click",control);
+        }
+        // eyescale = 1;
+        // eyerotate = 0;
+        // mousescale = 1;
+        // mouserotate = 0;
+        // otherscale = 1;
+        // otherrotate = 0;
+        // var whoselected = "";
 
         
-         var eyearr =new Array(1);
-         
+         var arr =[];
+      
         for(let i=0;i<eyechange.length;i++){
-            eyechange[i].addEventListener("click",function(){
-                whoselected = this;
-                eyearr[i] = this ;
-
-                // console.log(eyearr[i]);
-                // console.log(whoselected); 
-                var yyy = eyearr[1];
-            console.log(yyy);
+            eyechange[i].addEventListener("click",function(e){
+               if(arr.indexOf(this)==-1){
+                  arr.push(this);
+                  // console.log(arr);
+               }
        
             })
         }
-        for(let i=0;i<itemall.length;i++){
+        for(let i=0;i<mousechange.length;i++){
+          mousechange[i].addEventListener("click",function(){
+               if(arr.indexOf(this)==-1){
+                  arr.push(this);
+                  // console.log(arr);
+               }
+       
+            })
+        }
+        for(let i=0;i<otherschange.length;i++){
+          otherschange[i].addEventListener("click",function(){
+               if(arr.indexOf(this)==-1){
+                  arr.push(this);
+                  console.log(arr);
+                  
+               }
+       
+            })
+        }
+        let fix_photo = document.querySelector(".fix_photo")
+        let draggable = fix_photo.querySelectorAll(".demo");
+
+
+        for(let i=0;i<draggable.length;i++){
                 
-            itemall[i].addEventListener("click",function(e){
+          draggable[i].addEventListener("click",function(e){
                 var ttt = e.target;
-                    for(j=0;j<itemall.length;j++){
-                        itemall[j].classList.remove("selector");
+                    for(j=0;j<draggable.length;j++){
+                      draggable[j].classList.remove("selector");
                     }
           this.classList.add("selector");
                 })
             }
-         
+            // console.log(arr);
+                  
+ 
+            
+            function control(e){
 
-           
-        big[0].addEventListener("click", function () {
+              switch(this.id){
+              
+              case "big":
+              // console.log(arr);
+
+                for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+                
+                    let  items_style =  $(arr[i]).attr('style');
+                    let  items_blocks = items_style.split(" ");
+                    let newscale = parseFloat(items_blocks[2].replace("scale(","").replace(")",""))+0.5;
+                    items_blocks[2] = " scale("+newscale+")";
+                    items_blocks[1] = " "+items_blocks[1];
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                    var items_newstyle = $(arr[i]).attr('style',items_new);
+
+                }
+              }
+              break;
+
+                case "small":
+
+                for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+               
+                   let items_style =  $(arr[i]).attr('style');
+             
+                    let items_blocks = items_style.split(" ");
+            
+                    let newscale = parseFloat(items_blocks[2].replace("scale(","").replace(")",""))-0.5;
+                    
+                    items_blocks[2] = " scale("+newscale+")";
+                    items_blocks[1] = " "+items_blocks[1];
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                    var items_newstyle = $(arr[i]).attr('style',items_new);
+
+                  
+               }
+              }
+              break;
+
+              case "right":
+                
+              for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+                    let items_style =  $(arr[i]).attr('style');
+             
+             let items_blocks = items_style.split(" ");
+                     let newDegree = parseFloat(items_blocks[1].replace("rotate(","").replace("deg)",""))+ 10;;
+                 
+                    items_blocks[1] = " rotate("+newDegree+"deg) ";
+                 
+                      items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                      var items_newstyle = $(arr[i]).attr('style',items_new);
+ 
+
+               }
+              }
+              break;
+
+              
+              case "left":
+                
+              for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+                    let items_style =  $(arr[i]).attr('style');
+             
+             let items_blocks = items_style.split(" ");
+                    let newDegree = parseFloat(items_blocks[1].replace("rotate(","").replace("deg)",""))-  10;;
+                 
+                    items_blocks[1] = " rotate("+newDegree+"deg) ";
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                      var items_newstyle = $(arr[i]).attr('style',items_new);
+
+               }
+              }
+              break;
+              case "reset":
           
-        //     if($ ( eyechange).is('.selector')){
-        //         console.log("yes");
-        //   eyescale += 0.2;
+          
+                arr.splice(0,arr.length);
+                console.log(arr);
+                for(let i = 0 ; i <itemall.length ; i++){
+                  $(".demo").attr("src" ,"");
 
-        //   eyechange.style.transform = "scale(" + eyescale + ")", "rotate(" + eyerotate + "deg )";
-        //     }
-            eyescale += 0.2;
+                  console.log(arr);
+                }
+                others_num = 0;
+                mouse_num = 0;
+                eye_num = 0;
+                
+                $(".demo").css("transform","rotate(0deg) scale(1)")
+              break;
+              
+            
+                default:
+                console.log("no");
+            }
+            
 
-            whoselected.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
+            }
+           
+        // big[0].addEventListener("click", function () {
+          
+        // //     if($ ( eyechange).is('.selector')){
+        // //         console.log("yes");
+        // //   eyescale += 0.2;
+
+        // //   eyechange.style.transform = "scale(" + eyescale + ")", "rotate(" + eyerotate + "deg )";
+        // //     }
+        //     eyescale += 0.2;
+
+        //     whoselected.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
+        // //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
+        //   mousescale += 0.2;
+        //   mousechange.style.transform = "scale(" + mousescale + ")rotate(" + mouserotate + "deg )";
+        //   otherscale += 0.2;
+        //   otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
+        // });
+
+
+        // small[0].addEventListener("click", function () {
+        //   console.log("yes");
+
+        //   eyescale -= 0.2;
+
         //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-          mousescale += 0.2;
-          mousechange.style.transform = "scale(" + mousescale + ")rotate(" + mouserotate + "deg )";
-          otherscale += 0.2;
-          otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
-        });
+
+        //   mousescale -= 0.2;
+        //   mousechange.style.transform = "scale(" + mousescale + ")rotate(" +mouserotate + "deg )";
+        //   otherscale -= 0.2;
+        //   otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
+        // });
 
 
-        small[0].addEventListener("click", function () {
-          console.log("yes");
-
-          eyescale -= 0.2;
-
-          eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-
-          mousescale -= 0.2;
-          mousechange.style.transform = "scale(" + mousescale + ")rotate(" +mouserotate + "deg )";
-          otherscale -= 0.2;
-          otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
-        });
+        // right[0].addEventListener("click", function () {
 
 
-        right[0].addEventListener("click", function () {
+        //   eyerotate += 15;
+
+        //   whoselected.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
+        // //   eyechange.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
+        //   console.log("yes");
+        //   mouserotate += 15;
+        //   mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" + mousescale  + ")";
+        //   otherrotate += 15;
+        //   otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
+        // });
 
 
-          eyerotate += 15;
+        // left[0].addEventListener("click", function () {
+        //   console.log("yes");
+        //   eyerotate -= 15;
 
-          whoselected.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
-        //   eyechange.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
-          console.log("yes");
-          mouserotate += 15;
-          mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" + mousescale  + ")";
-          otherrotate += 15;
-          otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
-        });
-
-
-        left[0].addEventListener("click", function () {
-          console.log("yes");
-          eyerotate -= 15;
-
-          eye[i].style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
-        //   eyechange.style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
-          console.log("yes");
-          mouserotate -= 15;
-          mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" +mouserscale + ")";
-          otherrotate -= 15;
-          otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
-        });
+        //   eye[i].style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
+        // //   eyechange.style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
+        //   console.log("yes");
+        //   mouserotate -= 15;
+        //   mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" +mouserscale + ")";
+        //   otherrotate -= 15;
+        //   otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
+        // });
 
         
-        reset[0].addEventListener("click", function () {
-          console.log("yes");
+        // reset[0].addEventListener("click", function () {
+        //   console.log("yes");
 
-          eyescale += 0.2;
+        //   eyescale += 0.2;
 
-          eyechange.style.transform = "scale(" + eyescale + ")";
+        //   eyechange.style.transform = "scale(" + eyescale + ")";
 
-          mousescale += 0.2;
-          mousechange.style.transform = "scale(" + mousescale + ")";
-          otherscale += 0.2;
-          otherschange.style.transform = "scale(" + otherscale + ")";
-        });
+        //   mousescale += 0.2;
+        //   mousechange.style.transform = "scale(" + mousescale + ")";
+        //   otherscale += 0.2;
+        //   otherschange.style.transform = "scale(" + otherscale + ")";
+        // });
       });
 
     </script>
@@ -1625,9 +1788,20 @@
       } </script>
 
     <script>
-      window.addEventListener("load", function () {
-
-      });
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+    
+    }
+})
 
     </script>
 

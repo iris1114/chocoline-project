@@ -20,6 +20,7 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -451,6 +452,923 @@ header {
   }
 }
 
+header #lightBox {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: rgba(66, 66, 66, 0.6);
+}
+
+header #lightBox #tableLogin {
+  position: relative;
+  top: 23%;
+  width: 36%;
+  max-width: 480px;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header #lightBox #tableLogin #login_bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+header #lightBox #tableLogin .login_password {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 90%;
+}
+
+header #lightBox #tableLogin .login_password .btnLoginCancel {
+  width: 25px;
+  position: absolute;
+  right: 0;
+}
+
+header #lightBox #tableLogin .login_password h3 {
+  font-size: 28px;
+  color: #f0ecdd;
+  padding: 4% 0;
+}
+
+header #lightBox #tableLogin .login_password #mem_id {
+  width: 45%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #lightBox #tableLogin .login_password #mem_id ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_id::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_id:-ms-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_id::-ms-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_id::placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_psw {
+  width: 45%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #lightBox #tableLogin .login_password #mem_psw ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_psw::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_psw:-ms-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_psw::-ms-input-placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #mem_psw::placeholder {
+  color: #999;
+}
+
+header #lightBox #tableLogin .login_password #forget_password {
+  color: #f0ecdd;
+  font-size: 12px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  display: block;
+  margin-left: 25%;
+  margin-bottom: 1%;
+}
+
+header #lightBox #tableLogin .login_password span {
+  color: #E48C28;
+  font-size: 12px;
+  margin-right: 8%;
+}
+
+header #lightBox #tableLogin .login_password #register {
+  color: #f0ecdd;
+  font-size: 12px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+header #passwordLightBox {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: rgba(66, 66, 66, 0.6);
+}
+
+header #passwordLightBox #getPassword {
+  position: relative;
+  top: 23%;
+  width: 36%;
+  max-width: 480px;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header #passwordLightBox #getPassword .login_password {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 90%;
+}
+
+header #passwordLightBox #getPassword .login_password #rebtnLogin {
+  color: #E48C28;
+  font-size: 12px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  position: absolute;
+  left: 3%;
+}
+
+header #passwordLightBox #getPassword .login_password .btnLoginCancel {
+  width: 25px;
+  position: absolute;
+  right: 0;
+}
+
+header #passwordLightBox #getPassword .login_password h3 {
+  font-size: 28px;
+  color: #f0ecdd;
+  padding: 2% 0;
+}
+
+header #passwordLightBox #getPassword .login_password p {
+  color: #f0ecdd;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+header #passwordLightBox #getPassword .login_password #mem_email {
+  width: 55%;
+  margin: 3% 0;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #passwordLightBox #getPassword .login_password #mem_email ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #mem_email::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #mem_email:-ms-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #mem_email::-ms-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #mem_email::placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #new_mem_psw {
+  width: 55%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #passwordLightBox #getPassword .login_password #new_mem_psw ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #new_mem_psw::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #new_mem_psw:-ms-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #new_mem_psw::-ms-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #new_mem_psw::placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #re_new_mem_psw {
+  width: 55%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #passwordLightBox #getPassword .login_password #re_new_mem_psw ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #re_new_mem_psw::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #re_new_mem_psw:-ms-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #re_new_mem_psw::-ms-input-placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #re_new_mem_psw::placeholder {
+  color: #999;
+}
+
+header #passwordLightBox #getPassword .login_password #forget_password {
+  color: #E48C28;
+  font-size: 12px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  display: block;
+  margin-left: 25%;
+  margin-bottom: 1%;
+}
+
+header #registerLightBox {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: rgba(66, 66, 66, 0.6);
+}
+
+header #registerLightBox #registered {
+  position: relative;
+  top: 23%;
+  width: 36%;
+  max-width: 480px;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header #registerLightBox #registered .login_register {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 90%;
+}
+
+header #registerLightBox #registered .login_register .btnLoginCancel {
+  width: 25px;
+  position: absolute;
+  right: 0;
+}
+
+header #registerLightBox #registered .login_register h3 {
+  font-size: 28px;
+  color: #f0ecdd;
+  padding: 2% 0;
+}
+
+header #registerLightBox #registered .login_register p {
+  color: #f0ecdd;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+header #registerLightBox #registered .login_register span {
+  width: 35%;
+  float: left;
+  margin-top: 8px;
+  text-align: left;
+  color: #f0ecdd;
+}
+
+header #registerLightBox #registered .login_register #f_mem_id {
+  width: 55%;
+  margin: 1% 0;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_id::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_id:-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_id::-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_id::placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_email {
+  width: 55%;
+  margin-bottom: 1%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_email::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_email:-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_email::-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_email::placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_psw {
+  width: 55%;
+  margin-bottom: 1%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_psw::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_psw:-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_psw::-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_mem_psw::placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_re_mem_psw {
+  width: 55%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_re_mem_psw::-webkit-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_re_mem_psw:-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_re_mem_psw::-ms-input-placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #f_re_mem_psw::placeholder {
+  color: #999;
+}
+
+header #registerLightBox #registered .login_register #forget_password {
+  color: #E48C28;
+  font-size: 12px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  display: block;
+  margin-left: 25%;
+  margin-bottom: 1%;
+}
+
+.container .aboutus {
+  height: 960px;
+  padding: 0 20px;
+  background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media all and (min-width: 768px) {
+  header #lightBox {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: rgba(66, 66, 66, 0.6);
+  }
+  header #lightBox #tableLogin {
+    position: relative;
+    top: 23%;
+    width: 36%;
+    max-width: 480px;
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header #lightBox #tableLogin #login_bg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  header #lightBox #tableLogin .login_password {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+  }
+  header #lightBox #tableLogin .login_password .btnLoginCancel {
+    width: 25px;
+    position: absolute;
+    right: 0;
+  }
+  header #lightBox #tableLogin .login_password h3 {
+    font-size: 36px;
+    color: #f0ecdd;
+    padding: 4% 0;
+  }
+  header #lightBox #tableLogin .login_password #mem_id {
+    width: 45%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #lightBox #tableLogin .login_password #mem_id ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id:-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id::-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id::placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw {
+    width: 45%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw:-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw::-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw::placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #forget_password {
+    color: #E48C28;
+    font-size: 16px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    display: block;
+    margin-left: 25%;
+    margin-bottom: 1%;
+  }
+  header #lightBox #tableLogin .login_password span {
+    color: #f0ecdd;
+    margin-right: 8%;
+    font-size: 12px;
+  }
+  header #lightBox #tableLogin .login_password #register {
+    color: #E48C28;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    font-size: 12px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  header #lightBox {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: rgba(66, 66, 66, 0.6);
+  }
+  header #lightBox #tableLogin {
+    position: relative;
+    top: 23%;
+    width: 36%;
+    max-width: 480px;
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header #lightBox #tableLogin #login_bg {
+    width: 100%;
+    position: absolute;
+    top: 23%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  header #lightBox #tableLogin .login_password {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+  }
+  header #lightBox #tableLogin .login_password .btnLoginCancel {
+    width: 25px;
+    position: absolute;
+    right: 0;
+  }
+  header #lightBox #tableLogin .login_password h3 {
+    font-size: 36px;
+    color: #f0ecdd;
+    padding: 8% 0;
+  }
+  header #lightBox #tableLogin .login_password #mem_id {
+    width: 45%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #lightBox #tableLogin .login_password #mem_id ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id:-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id::-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_id::placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw {
+    width: 45%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw:-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw::-ms-input-placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #mem_psw::placeholder {
+    color: #999;
+  }
+  header #lightBox #tableLogin .login_password #forget_password {
+    color: #E48C28;
+    font-size: 16px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    display: block;
+    margin-left: 25%;
+    margin-bottom: 3%;
+  }
+  header #lightBox #tableLogin .login_password span {
+    color: #f0ecdd;
+    margin-right: 8%;
+    font-size: 16px;
+  }
+  header #lightBox #tableLogin .login_password #register {
+    color: #E48C28;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    font-size: 16px;
+  }
+  header #passwordLightBox #getPassword .login_password {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+  }
+  header #passwordLightBox #getPassword .login_password #rebtnLogin {
+    color: #E48C28;
+    font-size: 16px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    position: absolute;
+    left: 3%;
+  }
+  header #passwordLightBox #getPassword .login_password .btnLoginCancel {
+    width: 25px;
+    position: absolute;
+    right: 0;
+  }
+  header #passwordLightBox #getPassword .login_password h3 {
+    font-size: 36px;
+    color: #f0ecdd;
+    padding: 6% 0 4% 0;
+  }
+  header #passwordLightBox #getPassword .login_password p {
+    color: #f0ecdd;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 2% 0 2% 0;
+  }
+  header #passwordLightBox #getPassword .login_password #mem_email {
+    width: 55%;
+    margin: 3% 0;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #passwordLightBox #getPassword .login_password #mem_email ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #mem_email::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #mem_email:-ms-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #mem_email::-ms-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #mem_email::placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #new_mem_psw {
+    width: 55%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #passwordLightBox #getPassword .login_password #new_mem_psw ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #new_mem_psw::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #new_mem_psw:-ms-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #new_mem_psw::-ms-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #new_mem_psw::placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #re_new_mem_psw {
+    width: 55%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #passwordLightBox #getPassword .login_password #re_new_mem_psw ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #re_new_mem_psw::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #re_new_mem_psw:-ms-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #re_new_mem_psw::-ms-input-placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #re_new_mem_psw::placeholder {
+    color: #999;
+  }
+  header #passwordLightBox #getPassword .login_password #forget_password {
+    color: #E48C28;
+    font-size: 12px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    display: block;
+    margin-left: 25%;
+    margin-bottom: 1%;
+  }
+  header #registerLightBox {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: rgba(66, 66, 66, 0.6);
+  }
+  header #registerLightBox #registered {
+    position: relative;
+    top: 23%;
+    width: 36%;
+    max-width: 480px;
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header #registerLightBox #registered .login_register {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+  }
+  header #registerLightBox #registered .login_register .btnLoginCancel {
+    width: 25px;
+    position: absolute;
+    right: 0;
+  }
+  header #registerLightBox #registered .login_register h3 {
+    font-size: 30px;
+    color: #f0ecdd;
+    padding: 0;
+  }
+  header #registerLightBox #registered .login_register p {
+    color: #f0ecdd;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 2% 0;
+  }
+  header #registerLightBox #registered .login_register span {
+    width: 20%;
+    float: left;
+    margin: 8px 0 8px 30px;
+    text-align: left;
+    color: #f0ecdd;
+  }
+  header #registerLightBox #registered .login_register #f_mem_id {
+    width: 55%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_id::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_id:-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_id::-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_id::placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_email {
+    width: 55%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_email::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_email:-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_email::-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_email::placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_psw {
+    width: 55%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_psw::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_psw:-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_psw::-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_mem_psw::placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_re_mem_psw {
+    width: 55%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    line-height: 24px;
+  }
+  header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_re_mem_psw::-webkit-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_re_mem_psw:-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_re_mem_psw::-ms-input-placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #f_re_mem_psw::placeholder {
+    color: #999;
+  }
+  header #registerLightBox #registered .login_register #forget_password {
+    color: #E48C28;
+    font-size: 12px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    display: block;
+    margin-left: 25%;
+    margin-bottom: 1%;
+  }
+}
+
 #robot_close_control {
   display: none;
 }
@@ -479,7 +1397,7 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 10;
+  z-index: 9;
   -webkit-transition: bottom 2s;
   transition: bottom 2s;
 }
@@ -1873,7 +2791,7 @@ section {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 10;
+  z-index: 9;
   -webkit-transition: bottom 2s;
   transition: bottom 2s;
 }
@@ -2471,6 +3389,16 @@ body {
     left: 10%;
     z-index: 4;
   }
+  .custom .wrap_custom .next_button {
+    width: 100%;
+    text-align: center;
+    padding-top: 50%;
+  }
+  .custom .wrap_custom .next_button .next_page {
+    width: 60%;
+    display: inline-block;
+    z-index: 5;
+  }
   .choco_background {
     width: 100%;
   }
@@ -2918,11 +3846,13 @@ body {
             box-shadow: 5px 5px #1c99ae;
   }
   .outlook .outlok_wrap .select_outlook .fix_photo_mobile {
+    display: none;
     width: 90%;
     padding-bottom: 5%;
     margin: auto;
   }
   .outlook .outlok_wrap .select_outlook .fix_bar_mobile {
+    display: none;
     width: 90%;
     border: 2px solid #1c99ae;
     border-radius: 10px;
@@ -2973,7 +3903,7 @@ body {
   .outlook .outlok_wrap .select_outlook .select_item .tab_item button.active {
     background-color: #1c99ae;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select {
     width: 100%;
     padding: 5%;
     -webkit-animation: fadeEffect 1s;
@@ -2990,16 +3920,17 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
     padding-bottom: 5%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types .eye_items {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items {
     width: 20%;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
@@ -3010,10 +3941,10 @@ body {
     text-align: center;
     border-radius: 10px;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types .eye_items img {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items img {
     width: 100%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select {
     display: none;
     width: 100%;
     padding: 5%;
@@ -3028,7 +3959,7 @@ body {
             animation: fadeEffect 1s;
     /* Fading effect takes 1 second */
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3037,7 +3968,7 @@ body {
         justify-content: space-around;
     padding-bottom: 5%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types .mouse_items {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items {
     width: 20%;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
@@ -3048,10 +3979,10 @@ body {
     text-align: center;
     border-radius: 5px;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types .mouse_items img {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items img {
     width: 100%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others {
+  .outlook .outlok_wrap .select_outlook .select_item .others_select {
     display: none;
     width: 100%;
     padding: 5%;
@@ -3066,7 +3997,7 @@ body {
             animation: fadeEffect 1s;
     /* Fading effect takes 1 second */
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others .others_types {
+  .outlook .outlok_wrap .select_outlook .select_item .others_select .others_types {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3075,7 +4006,7 @@ body {
         justify-content: space-around;
     padding-bottom: 5%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others .others_types .others_items {
+  .outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items {
     width: 20%;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
@@ -3086,20 +4017,101 @@ body {
     text-align: center;
     border-radius: 5px;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others .others_types .others_items img {
+  .outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items img {
     width: 100%;
   }
   .outlook .outlok_wrap .outlook_fix {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo {
-    display: none;
     width: 100%;
     padding-bottom: 5%;
+    position: relative;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo img {
+    width: 360px;
+    height: 360px;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos .eye_demo {
+    width: 50px;
+    height: 50px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: roate(0);
+            transform: roate(0);
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .pos1 {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    position: absolute;
+    top: 18%;
+    left: 35%;
+    right: 0;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .pos2 {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    position: absolute;
+    top: 18%;
+    right: 35%;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    position: absolute;
+    top: 27%;
+    left: 35%;
+    right: 0;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos .mouse_demo {
+    width: 60px;
+    height: 60px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: roate(0);
+            transform: roate(0);
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    right: 0;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos .others_demo {
+    width: 100px;
+    height: 100px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: roate(0);
+            transform: roate(0);
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .selector {
+    border: 1px solid black;
   }
   .outlook .outlok_wrap .outlook_fix .fix_bar {
-    display: none;
-    width: 0%;
+    width: 90%;
     border: 2px solid #1c99ae;
     border-radius: 10px;
     margin: auto;
@@ -3112,13 +4124,11 @@ body {
     background-color: white;
   }
   .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo {
-    display: none;
     width: 20%;
     padding: 3%;
   }
   .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo img {
     width: 70%;
-    display: none;
   }
   .outlook .outlok_wrap .outlook_fix .total_price {
     width: 100%;
@@ -4312,11 +5322,13 @@ body {
             box-shadow: 5px 5px #1c99ae;
   }
   .outlook .outlok_wrap .select_outlook .fix_photo_mobile {
+    display: none;
     width: 90%;
     padding-bottom: 5%;
     margin: auto;
   }
   .outlook .outlok_wrap .select_outlook .fix_bar_mobile {
+    display: none;
     width: 90%;
     border: 2px solid #1c99ae;
     border-radius: 10px;
@@ -4367,7 +5379,7 @@ body {
   .outlook .outlok_wrap .select_outlook .select_item .tab_item button.active {
     background-color: #1c99ae;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select {
     width: 100%;
     padding: 5%;
     -webkit-animation: fadeEffect 1s;
@@ -4384,7 +5396,7 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4393,7 +5405,7 @@ body {
         justify-content: space-around;
     padding-bottom: 5%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types .eye_items {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items {
     width: 20%;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
@@ -4404,10 +5416,10 @@ body {
     text-align: center;
     border-radius: 10px;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .eye .eye_types .eye_items img {
+  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items img {
     width: 100%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select {
     display: none;
     width: 100%;
     padding: 5%;
@@ -4422,7 +5434,7 @@ body {
             animation: fadeEffect 1s;
     /* Fading effect takes 1 second */
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4431,7 +5443,7 @@ body {
         justify-content: space-around;
     padding-bottom: 5%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types .mouse_items {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items {
     width: 20%;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
@@ -4442,10 +5454,10 @@ body {
     text-align: center;
     border-radius: 5px;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse .mouse_types .mouse_items img {
+  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items img {
     width: 100%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others {
+  .outlook .outlok_wrap .select_outlook .select_item .others_types {
     display: none;
     width: 100%;
     padding: 5%;
@@ -4460,7 +5472,7 @@ body {
             animation: fadeEffect 1s;
     /* Fading effect takes 1 second */
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others .others_types {
+  .outlook .outlok_wrap .select_outlook .select_item .others_types .others_types {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4469,7 +5481,7 @@ body {
         justify-content: space-around;
     padding-bottom: 5%;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others .others_types .others_items {
+  .outlook .outlok_wrap .select_outlook .select_item .others_types .others_types .others_items {
     width: 20%;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
@@ -4480,7 +5492,7 @@ body {
     text-align: center;
     border-radius: 5px;
   }
-  .outlook .outlok_wrap .select_outlook .select_item .others .others_types .others_items img {
+  .outlook .outlok_wrap .select_outlook .select_item .others_types .others_types .others_items img {
     width: 100%;
   }
   .outlook .outlok_wrap .outlook_fix {
@@ -5847,6 +6859,12 @@ body {
     padding: 5% 5%;
     text-align: center;
     border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items img {
     width: 100%;
@@ -5885,6 +6903,12 @@ body {
     padding: 5% 5%;
     text-align: center;
     border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items img {
     width: 100%;
@@ -5914,7 +6938,8 @@ body {
     padding-bottom: 5%;
   }
   .outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items {
-    width: 20%;
+    width: 80px;
+    height: 80px;
     background-color: #719eaa;
     -webkit-box-shadow: inset 10px 10px #317c84;
             box-shadow: inset 10px 10px #317c84;
@@ -5923,9 +6948,16 @@ body {
     padding: 5% 5%;
     text-align: center;
     border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items img {
-    width: 100%;
+    width: 50px;
+    height: 50px;
   }
   .outlook .outlok_wrap .outlook_fix {
     width: 30%;
@@ -6120,18 +7152,77 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     margin: auto;
+    position: relative;
   }
-  .card .card_wrap .card_custom .card_back {
+  .card .card_wrap .card_custom .color_choice {
     width: 33.333333%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: auto;
   }
-  .card .card_wrap .card_custom .card_write {
+  .card .card_wrap .card_custom .color_choice .colorPicker {
+    width: 100%;
+    padding-bottom: 10%;
+    padding-left: 15%;
+  }
+  .card .card_wrap .card_custom .color_choice #pen {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #eeeeee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .card .card_wrap .card_custom .color_choice h4 {
+    width: 25%;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: azure;
+    border-radius: 10px;
+  }
+  .card .card_wrap .card_custom .color_choice .pw_width {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 5%;
+    pointer-events: none;
+  }
+  .card .card_wrap .card_custom .color_choice .penwidth {
+    background-color: #ef9021;
+  }
+  .card .card_wrap .card_custom .color_choice img {
+    width: 100%;
+  }
+  .card .card_wrap .card_custom #card_draw {
     width: 33.333333%;
-  }
-  .card .card_wrap .card_custom .card_write img {
-    width: 85%;
   }
   .card .card_wrap .card_custom .card_items {
     width: 33.333333%;

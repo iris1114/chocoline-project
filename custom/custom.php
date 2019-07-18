@@ -7,16 +7,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/custom.css" />
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha256-AAhU14J4Gv8bFupUUcHaPQfvrdNauRHMt+S4UVcaJb0=" crossorigin="anonymous"></script>
+  <script src="js/html2canvas.min.js"></script>
+  <script src="../common/js/header.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
 
   <title>客製CHOCO</title>
 </head>
+<style>
 
-<body>
+
+canvas {
+  background: #fff;
+  /* display: block; */
+  margin: 50px auto 10px;
+  border-radius: 5px;
+  /* box-shadow: 0 4px 0 0 #222; */
+
+  cursor: url(../img/cursor.png), crosshair;
+}
+
+.controls {
+  min-height: 60px;
+  margin: 0 auto;
+  width: 600px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  float: left;
+  padding: 10px 0 20px;
+  width: 100%;
+  text-align: center;
+} 
+
+ul li,
+#newColor {
+  display: block;
+  height: 54px;
+  width: 54px;
+  border-radius: 60px;
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 3px 0 0 #222;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 5px 10px;
+}
+
+.red {
+  background: #fc4c4f;
+}
+
+.blue {
+  background: #4fa3fc;
+}
+
+.yellow {
+  background: #ECD13F;
+}
+
+.selected {
+  border: 7px solid #fff;
+  width: 40px;
+  height: 40px;
+}
+
+button {
+  background: #68B25B;
+  box-shadow: 0 3px 0 0 #6A845F;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  text-shadow: 0 1px #6A845F;
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+#revealColorSelect,
+#revealBrushSelect {
+  border: none;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 5px 20px;
+  width: 160px;
+}
+
+
+/* New Color Palette */
+
+#colorSelect,
+#brushSelect {
+  background: #fff;
+  border-radius: 5px;
+  clear: both;
+  margin: 20px auto 0;
+  padding: 10px;
+  width: 305px;
+  position: relative;
+  display: none;
+}
+
+#colorSelect:after,
+#brushSelect:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+#newColor,
+#changeBrush {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+  box-shadow: none;
+  float: left;
+  border: none;
+  margin: 10px 20px 20px 10px;
+}
+
+.sliders p {
+  margin: 8px 0;
+  vertical-align: middle;
+}
+
+.sliders label {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 35px;
+  font-size: 14px;
+  color: #6D574E;
+}
+
+.sliders input {
+  position: relative;
+  top: 2px;
+}
+
+#colorSelect button {
+  border: none;
+  border-top: 1px solid #6A845F;
+  border-radius: 0 0 5px 5px;
+  clear: both;
+  margin: 10px -10px -7px;
+  padding: 5px 10px;
+  width: 325px;
+}
+
+#brushSelect button {
+  border: none;
+  border-top: 1px solid #6A845F;
+  border-radius: 0 0 5px 5px;
+  clear: both;
+  margin: 10px -10px -7px;
+  padding: 5px 10px;
+  width: 325px;
+}
+</style>
+
+<body> 
   <!-- header start -->
   <header>
     <div class="m_header">
@@ -319,7 +488,7 @@
 
     <!-- ----- 第三屏 Start ----- -->
 
-    <section class="outlook" id="thrid">
+    <section class="outlook" >
       <div class="thrid_step_moble">
         <img src="image/custom/bg8.png" alt="background">
         <div class="thrid_stepInfo">
@@ -347,7 +516,7 @@
             </div>
 
           </div>
-
+<!-- 
           <div class="fix_photo_mobile">
             <img src="image/custom/bear1.png" alt="bear">
           </div>
@@ -367,7 +536,7 @@
             <div class="bar_photo">
               <img src="image/custom/bar_item.png" alt="reset">
             </div>
-          </div>
+          </div> -->
           <!-- ----- item select start----- -->
 
           <div class="select_item">
@@ -379,9 +548,9 @@
             <div class="clearfix"></div>
 
             <!-- ----- 眼睛 start----- -->
-            <div class="eye_select type" id="eyes">
-              <div class="eye_types">
-                <div class="eye_items">
+            <div class="eye_select type " id="eyes">
+              <div class="eye_types ">
+                <div class="eye_items ">
                   <img src="image/custom/small/eye1.png" class="eye_type" alt="eye1" />
                 </div>
                 <div class="eye_items">
@@ -528,7 +697,7 @@
         </div>
 
         <!-- ----- left side End ----- -->
-
+ 
 
         <!-- ----- middle side start ----- -->
 
@@ -537,30 +706,30 @@
           <div class="fix_photo" id="fix">
 
             <div class="eye_pos pos1">
-              <img src="" alt="" class="eye_demo demo" style = "transform:rotate(0deg) scale(1) " >
+              <img src="" alt="" class="eye_demo demo" style = "transform: rotate(0deg) scale(1)" >
             </div>
 
             <div class="eye_pos pos2">
-              <img src="" alt="" class="eye_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="eye_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
             
             <div class="mouse_pos ">
-              <img src="" alt="" class="mouse_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="mouse_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
 
             <div class="others_pos">
-              <img src="" alt="" class="others_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div> 
 
             <div class="others_pos">
-              <img src="" alt="" class="others_demo demo" style = "transform:rotate(0deg) scale(1.0) ">
+              <img src="" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
 
-            <img src="image/custom/small/cicr_w_b.png" alt="" id="cho_pos">
+            <img src="" alt="" id="cho_pos">
 
           </div>
 
-          <div class="fix_bar">
+          <div class="fix_bar "  >
 
             <div class="bar_photo"  id="big">
               <img src="image/custom/bar_item6.png" alt="big">
@@ -598,7 +767,7 @@
 
 
         <!-- ----- right side start ----- -->
-        <div class="step_info">
+        <div class="step_info"id="thrid">
 
           <div class="thrid_step">
             <img src="image/custom/bg8.png" alt="background">
@@ -612,9 +781,10 @@
             <img src="image/custom/bg10.png" alt="">
           </div>
         </div>
+    
 
-
-      </div>
+      </div  class="next_button">
+      <input type="button" onclick="aa()" class="btn cyan_s " >
       </div>
     </section>
 
@@ -623,449 +793,93 @@
     <!-- ----- 第四屏 Start ----- -->
 
 
-    <section class="card">
+    <section class= "card">
 
-      <div class="fourth_step">
-        <img src="image/custom/8.png" alt="">
-        <div class="fourth_step_info">
-          <h3>第四步:</h3>
-          <p>搭配卡片樣式/輸入內容</p>
+        <div class="fourth_step">
+
+              <img src="image/custom/8.png" alt="">
+       
+          <div class="fourth_step_info">
+              <h3>第四步:</h3>
+              <p>搭配卡片樣式/輸入內容</p>
+           </div>
+        
         </div>
 
-      </div>
 
-      <div class="card_wrap">
+        <div class="card_wrap">
 
-        <!-- ----- 第2層 ----- -->
+          <div class="card_custom" id="aaa">
+          <canvas  class="ccc" width="400" height="400">
+        
+          </canvas>
+          <button id="SaveCnv">Save Image</button>
+<div class="controls">
 
-        <div class="card_custom">
+  <ul>
+    <li class="red selected"></li>
+    <li class="blue"></li>
+    <li class="yellow"></li>
+  </ul>
+  <button id="revealColorSelect">New Color</button>
+         </div>
+  <div id="colorSelect">
+    <span id="newColor"></span>
+    <div class="sliders">
+      <div class="colorPicker"></div>  
+      <div id ="aaa"></div>
+      <p>
+        <label for="red">Red</label>
+        <input id="red" name="red" type="range" min=0 max=255 value=0>
+      </p>
+      <p>
+        <label for="green">Green</label>
+        <input id="green" name="green" type="range" min=0 max=255 value=0>
+      </p>
+      <p>
+        <label for="blue">Blue</label>
+        <input id="blue" name="blue" type="range" min=0 max=255 value=0>
+      </p>
+    </div>
+    <div>
+      <button id="addNewColor">Add Color</button>
+    </div>
+  </div>
+  <button id="revealBrushSelect">Change Brush</button>
+  <div id="brushSelect">
+    <span id="changeBrush"></span>
+    <div class="sliders">
+      <p>
+        <label for="brush_size">Size</label>
+        <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
+      </p>
+      <form id="brushShapeForm">
+        <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
+        <br>
+        <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
+      </form>
+    </div>
+  </div>
+</div>
 
-          <div class="card_back">
-            <img src="image/custom/color4.png" alt="">
+
+              <div class="card_items"></div>
+
           </div>
 
-          <div class="card_write">
-            <img src="image/custom/caed1.png" alt="">
-          </div>
-
-          <!-- <div class="card_items">
-
-            <div class="tab_item">
-              <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
-              <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
-              <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
-            </div>
-
-            <div class="clearfix"></div> -->
-
-            <!-- -------- 卡片樣式 start-------- -->
-
-            <!-- <div class="card_color type" id="card_colors">
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-            </div> -->
-
-            <!-- -------- 卡片樣式 End-------- -->
-
-            <!-- -------- 文字樣式 start-------- -->
-
-            <div class="text_color type" id="text_colors">
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/eye1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/eye1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="" />
-                </div>
-              </div>
-
-            </div>
-
-            <!-- -------- 文字樣式 End-------- -->
-
-            <!-- -------- 裝飾圖樣 start-------- -->
-
-            <div class="pic_color type" id="card_backgrounds">
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-            </div>
-            <div class="upload">
-              <input type="file" name="上傳檔案">
-            </div>
-          </div>
-        </div>
-
-        <!-- -------- 裝飾圖樣 End-------- -->
 
 
-        <!-- ----- 第3層 ----- -->
+         </div>
+<form method="post" accept-charset="utf-8" id="form1">
+  <input name="final_choco" id='final_choco' type="hidden"/>
+</form>
+<script>
+
+</script>
 
 
-        <div class="card_info">
-
-          <div class="paint_text">
-
-            <div class="paint">
-
-              <span class="paint_pen">
-                <p>畫筆</p>
-              </span>
-
-              <div class="paint_photo">
-                <img src="image/custom/line.png" alt="">
-              </div>
-
-            </div>
-            <div class="paint_color">
-              <img src="image/custom/color-bar.png" alt="">
-            </div>
-          </div>
-
-          <div class="total_price">
-            <img src="image/custom/price.png" alt="price" />
-            <h4>TOTAL</h4>
-            <p class="price">
-              NT$350
-            </p>
-          </div>
-          <div class="final_btn">
-            <a href="#" class="btn orange_l"><span>加入購物車</span></a>
-            <a href="#" class="btn cyan_l"><span>重新設定</span></a>
-          </div>
-        </div>
-      </div>
     </section>
-
-    <!-- ----- 第四屏 End ----- -->
-
-
-
-
-
-
-
-
-    <!-- ----- 第四屏 mobile Start ----- -->
-
-
-    <section class="card_mobile">
-
-      <div class="fourth_step">
-        <img src="image/custom/8.png" alt="">
-        <div class="fourth_step_info">
-          <h3>第四步:</h3>
-          <p>搭配卡片樣式/輸入內容</p>
-        </div>
-
-      </div>
-
-      <div class="card_wrap">
-
-        <!-- ----- 第2層 ----- -->
-
-        <div class="card_custom">
-
-          <div class="card_back">
-            <img src="image/custom/caed.png" alt="">
-          </div>
-
-          <div class="card_write">
-            <img src="image/custom/caed1.png" alt="">
-          </div>
-
-
-        </div>
-
-        <!-- -------- 裝飾圖樣 End-------- -->
-
-
-        <!-- ----- 第3層 ----- -->
-
-
-        <div class="card_info_mobile">
-
-          <div class="card_items">
-
-            <div class="tab_item">
-              <button class="tab_link" onclick="openCity(event, 'card_colors')">卡片樣式</button>
-              <button class="tab_link" onclick="openCity(event, 'text_colors')">文字樣式</button>
-              <button class="tab_link" onclick="openCity(event, 'card_backgrounds')">裝飾圖樣</button>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- -------- 卡片樣式 start-------- -->
-
-            <div class="card_color type" id="card_colors">
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-            </div>
-
-            <!-- -------- 卡片樣式 End-------- -->
-
-            <!-- -------- 文字樣式 start-------- -->
-
-            <div class="text_color type" id="text_colors">
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/eye1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/eye1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/eye.png" alt="" />
-                </div>
-              </div>
-
-            </div>
-
-            <!-- -------- 文字樣式 End-------- -->
-
-            <!-- -------- 裝飾圖樣 start-------- -->
-
-            <div class="pic_color type" id="card_backgrounds">
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color.png" alt="" />
-                </div>
-              </div>
-
-              <div class="card_background">
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye1" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="eye2" />
-                </div>
-                <div class="background_color">
-                  <img src="image/custom/color1.png" alt="" />
-                </div>
-              </div>
-
-            </div>
-            <div class="upload">
-              <input type="file" name="上傳檔案">
-            </div>
-          </div>
-          <div class="paint_text">
-
-            <div class="paint">
-
-              <span class="paint_pen">
-                <p>畫筆</p>
-              </span>
-
-              <div class="paint_photo">
-                <img src="image/custom/line.png" alt="">
-              </div>
-
-            </div>
-            <div class="paint_color">
-              <img src="image/custom/color-bar.png" alt="">
-            </div>
-          </div>
-
-          <div class="total_price">
-            <img src="image/custom/price.png" alt="price" />
-            <h4>TOTAL</h4>
-            <p class="price">
-              NT$350
-            </p>
-          </div>
-          <div class="final_btn">
-            <a href="#" class="btn orange_l"><span>加入購物車</span></a>
-            <a href="#" class="btn cyan_l"><span>重新設定</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-    <!-- ----- 第四屏 mobile End ----- -->
-
-
-
-
+    
 
     <!-- robot start -->
     <input id="robot_close_control" type="checkbox" />
@@ -1151,13 +965,6 @@
       </div>
     </footer>
     <!-- footer end -->
-
-
-
-
-
-
-
 
     <script src="../common/js/header.js"></script>
     <script src="../common/js/robot.js"></script>
@@ -1510,7 +1317,7 @@
         var mousechange = document.querySelectorAll(".mouse_demo");
         var otherschange = document.querySelectorAll(".others_demo");
         var itemall =  document.querySelectorAll(".demo");
-        console.log(itemall.length);
+        // console.log(itemall.length);
         
         var btn =document.querySelectorAll(".bar_photo");
         var imgcontrol = [" big"," small"," right"," left"," big",]
@@ -1523,13 +1330,13 @@
           
           btn[i].addEventListener("click",control);
         }
-        // eyescale = 1;
-        // eyerotate = 0;
-        // mousescale = 1;
-        // mouserotate = 0;
-        // otherscale = 1;
-        // otherrotate = 0;
-        // var whoselected = "";
+        // // eyescale = 1;
+        // // eyerotate = 0;
+        // // mousescale = 1;
+        // // mouserotate = 0;
+        // // otherscale = 1;
+        // // otherrotate = 0;
+        // // var whoselected = "";
 
         
          var arr =[];
@@ -1538,7 +1345,7 @@
             eyechange[i].addEventListener("click",function(e){
                if(arr.indexOf(this)==-1){
                   arr.push(this);
-                  console.log(arr);
+                  // console.log(arr);
                }
        
             })
@@ -1547,7 +1354,7 @@
           mousechange[i].addEventListener("click",function(){
                if(arr.indexOf(this)==-1){
                   arr.push(this);
-                  console.log(arr);
+                  // console.log(arr);
                }
        
             })
@@ -1570,41 +1377,43 @@
                 
           draggable[i].addEventListener("click",function(e){
                 var ttt = e.target;
-                    for(j=0;j<draggable.length;j++){
+                    for(let j=0;j<draggable.length;j++){
                       draggable[j].classList.remove("selector");
+                      
                     }
           this.classList.add("selector");
                 })
+                
             }
-            console.log(arr);
-                  
- 
-            
+            // console.log(arr);
+             
+            var clear =document.getElementById("cho_pos")
+            let demo = document.querySelectorAll(".demo");
+            clear.addEventListener("click",function(e){
+              for(let i=0;i<demo.length;i++){
+                console.log(demo[i]);
+                console.log(e);
+                demo[i].classList.remove("selector");
+              }
+             })
             function control(e){
 
               switch(this.id){
               
               case "big":
-              console.log(arr);
+              // console.log(arr); 
 
                 for(let i=0; i<arr.length; i++){
                   if (arr[i].classList.contains("selector")){
-                    console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                  //  console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                   
-                    let newscale = parseFloat(ccc[1].replace("scale(","").replace(")",""))+0.5;
-                    // console.log(newscale);
-                    ccc[1] = " scale("+newscale+")";
-                    // console.log(ccc[0]);
-                    ddd = ccc[0]+ccc[1];
-                    // console.log("bbb",ddd);
-                    var eee = $(arr[i]).attr('style',ddd);
-                    // console.log(eee)
-                    var yyy = $(arr[i]).attr('style');
-                    // console.log(yyy);
-                    
+                
+                    let  items_style =  $(arr[i]).attr('style');
+                    let  items_blocks = items_style.split(" ");
+                    let newscale = parseFloat(items_blocks[2].replace("scale(","").replace(")",""))+0.5;
+                    items_blocks[2] = " scale("+newscale+")";
+                    items_blocks[1] = " "+items_blocks[1];
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                    var items_newstyle = $(arr[i]).attr('style',items_new);
+
                 }
               }
               break;
@@ -1613,21 +1422,18 @@
 
                 for(let i=0; i<arr.length; i++){
                   if (arr[i].classList.contains("selector")){
-                    // console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                  //  console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                   
-                    let newscale = parseFloat(ccc[1].replace("scale(","").replace(")",""))-0.5;
-                    // console.log(newscale);
-                    ccc[1] = " scale("+newscale+")";
-                    // console.log(ccc[0]);
-                    ddd = ccc[0]+ccc[1];
-                    // console.log("bbb",ddd);
-                    var eee = $(arr[i]).attr('style',ddd);
-                    // console.log(eee)
-                    var yyy = $(arr[i]).attr('style');
-                    // console.log(yyy);
+               
+                   let items_style =  $(arr[i]).attr('style');
+             
+                    let items_blocks = items_style.split(" ");
+            
+                    let newscale = parseFloat(items_blocks[2].replace("scale(","").replace(")",""))-0.5;
+                    
+                    items_blocks[2] = " scale("+newscale+")";
+                    items_blocks[1] = " "+items_blocks[1];
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                    var items_newstyle = $(arr[i]).attr('style',items_new);
+
                   
                }
               }
@@ -1637,21 +1443,16 @@
                 
               for(let i=0; i<arr.length; i++){
                   if (arr[i].classList.contains("selector")){
-                    // console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                   console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                    console.log(ccc[0]); //transform:rotate(0deg);
-                    //...................................
-                    let start = ccc[0].indexOf("(");
-                    let end = ccc[0].indexOf("deg)");
-                    let tempDegree = ccc[0].substring(start+1,end); //0
-                    let newDegree = parseInt( tempDegree ) + 10;
-                    ccc[0] = ccc[0].replace(tempDegree, newDegree);
-                    let newStyle = ccc[0] + " " + ccc[1];
-                    var eee = $(arr[i]).attr('style',newStyle);
-
-                    var yyy = $(arr[i]).attr('style');
+                    let items_style =  $(arr[i]).attr('style');
+             
+             let items_blocks = items_style.split(" ");
+                     let newDegree = parseFloat(items_blocks[1].replace("rotate(","").replace("deg)",""))+ 10;;
+                 
+                    items_blocks[1] = " rotate("+newDegree+"deg) ";
+                 
+                      items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                      var items_newstyle = $(arr[i]).attr('style',items_new);
+ 
 
                }
               }
@@ -1662,20 +1463,14 @@
                 
               for(let i=0; i<arr.length; i++){
                   if (arr[i].classList.contains("selector")){
-                    // console.log(arr[i]);
-                   let bbb =  $(arr[i]).attr('style');
-                   console.log("bbb",bbb);
-                    let ccc =bbb.split(" ");
-                    console.log(ccc[0]); //transform:rotate(0deg);
-                    //...................................
-                    let start = ccc[0].indexOf("(");
-                    let end = ccc[0].indexOf("deg)");
-                    let tempDegree = ccc[0].substring(start+1,end); //0
-                    let newDegree = parseInt( tempDegree ) - 10;
-                    ccc[0] = ccc[0].replace(tempDegree, newDegree);
-                    let newStyle = ccc[0] + " " + ccc[1];
-                    var eee = $(arr[i]).attr('style',newStyle);
-                    var yyy = $(arr[i]).attr('style');
+                    let items_style =  $(arr[i]).attr('style');
+             
+             let items_blocks = items_style.split(" ");
+                    let newDegree = parseFloat(items_blocks[1].replace("rotate(","").replace("deg)",""))-  10;;
+                 
+                    items_blocks[1] = " rotate("+newDegree+"deg) ";
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                      var items_newstyle = $(arr[i]).attr('style',items_new);
 
                }
               }
@@ -1705,80 +1500,7 @@
 
             }
            
-        // big[0].addEventListener("click", function () {
-          
-        // //     if($ ( eyechange).is('.selector')){
-        // //         console.log("yes");
-        // //   eyescale += 0.2;
-
-        // //   eyechange.style.transform = "scale(" + eyescale + ")", "rotate(" + eyerotate + "deg )";
-        // //     }
-        //     eyescale += 0.2;
-
-        //     whoselected.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-        // //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-        //   mousescale += 0.2;
-        //   mousechange.style.transform = "scale(" + mousescale + ")rotate(" + mouserotate + "deg )";
-        //   otherscale += 0.2;
-        //   otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
-        // });
-
-
-        // small[0].addEventListener("click", function () {
-        //   console.log("yes");
-
-        //   eyescale -= 0.2;
-
-        //   eyechange.style.transform = "scale(" + eyescale + ")rotate(" + eyerotate + "deg )";
-
-        //   mousescale -= 0.2;
-        //   mousechange.style.transform = "scale(" + mousescale + ")rotate(" +mouserotate + "deg )";
-        //   otherscale -= 0.2;
-        //   otherschange.style.transform = "scale(" + otherscale + ")rotate(" + otherrotate + "deg )";
-        // });
-
-
-        // right[0].addEventListener("click", function () {
-
-
-        //   eyerotate += 15;
-
-        //   whoselected.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
-        // //   eyechange.style.transform = "rotate(" + eyerotate + "deg ) scale(" + eyescale + ")";
-        //   console.log("yes");
-        //   mouserotate += 15;
-        //   mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" + mousescale  + ")";
-        //   otherrotate += 15;
-        //   otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
-        // });
-
-
-        // left[0].addEventListener("click", function () {
-        //   console.log("yes");
-        //   eyerotate -= 15;
-
-        //   eye[i].style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
-        // //   eyechange.style.transform = "rotate(" + eyerotate + "deg )scale(" + eyescale + ")";
-        //   console.log("yes");
-        //   mouserotate -= 15;
-        //   mousechange.style.transform = "rotate(" + mouserotate + "deg )scale(" +mouserscale + ")";
-        //   otherrotate -= 15;
-        //   otherschange.style.transform = "rotate(" + otherrotate + "deg )scale(" + otherscale + ")";
-        // });
-
-        
-        // reset[0].addEventListener("click", function () {
-        //   console.log("yes");
-
-        //   eyescale += 0.2;
-
-        //   eyechange.style.transform = "scale(" + eyescale + ")";
-
-        //   mousescale += 0.2;
-        //   mousechange.style.transform = "scale(" + mousescale + ")";
-        //   otherscale += 0.2;
-        //   otherschange.style.transform = "scale(" + otherscale + ")";
-        // });
+      
       });
 
     </script>
@@ -1806,12 +1528,200 @@
         document.getElementById(types).style.display = "flex";
         evt.currentTarget.className += " active";
       } </script>
+<script type="text/javascript">
+	
 
+  // Problem: We need to draw on the canvas
+  // Solution: when user interacts cause changes in the canvas
+  var color = $(".selected").css("background-color");
+  var abc = $("canvas");
+  var ctx = abc[0].getContext("2d"); //ctx
+  var lastEvent;
+  var mousedown = false;
+  var  bgImg = new Image();
+  
+
+
+
+ bgImg.onload = function(){
+console.log('圖片載入成功');
+console.log(this);
+bgImg.src = "image/custom/small/card.png";
+ctx1.drawImage(bgImg,0,0,wWidth,wHeight);
+ }
+  // shape of brush
+  var shapeIsSquare = true;
+  var shapeIsCircle = false;
+  
+  //  size of brush
+  var sizeOfBrush = 10;
+  
+  // when clicking on control list items
+  $(".controls").on("click", "li", function() {
+    // deselect sibiling elements
+    $(this).siblings().removeClass("selected");
+    // select clicked element
+    $(this).addClass("selected");
+    // cache current color
+    color = $(this).css("background-color");
+  });
+  
+  
+  // when new color is pressed
+  $("#revealColorSelect").click(function() {
+    // show color select or hide the color select
+    changeColor();
+    $("#colorSelect").toggle();
+  });
+  
+  $("#revealBrushSelect").click(function() {
+    // show brush select or hide the brush select
+    changeBrushSize();
+    $("#brushSelect").toggle();
+  });
+  
+  // update the new color span
+  function changeColor() {
+    var r = $("#red").val();
+    var g = $("#green").val();
+    var b = $("#blue").val();
+        // selectedColor=colorPicker.color.rgbString;
+    $("#newColor").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+  }
+  
+  // update the brush/shape size
+  function changeBrushSize() {
+    var brushSize = $("#brush_size").val();
+    sizeOfBrush = brushSize;
+  }
+  
+  function changeBrushShape() {
+    var shape = $('input[name=brush_shape]:checked', '#brushShapeForm').val();
+    if (shape === "circle") {
+      shapeIsSquare = false;
+      shapeIsCircle = true;
+    } else {
+      shapeIsSquare = true;
+      shapeIsCircle = false;
+    }
+  }
+  
+  $("#brushShapeForm input:radio").click(changeBrushShape);
+  
+  // when sliders change
+  $("input[type=range]")
+    .change(changeColor)
+    .change(changeBrushSize);
+  
+  
+  // when "Add Color" is pressed
+  $("#addNewColor").click(function() {
+    // append the color to the controls ul
+    var $newColor = $("<li></li>");
+    $newColor.css("background-color", $("#newColor").css("background-color"));
+    $(".controls ul").append($newColor);
+    // select the new color
+    $newColor.click();
+  });
+  
+  
+  // on mouse events on the canvas
+  abc.mousedown(function(e) {
+    lastEvent = e;
+    mousedown = true;
+    if (shapeIsSquare) {
+      ctx.fillStyle = color;
+      ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
+    } else if (shapeIsCircle) {
+      var radius = sizeOfBrush/2;
+      ctx.beginPath();
+      ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+  }).mousemove(function(e) {
+    // draw lines
+    if (mousedown) {
+      if (shapeIsSquare) {
+        ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+        ctx.fillStyle = color;
+        ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
+        lastEvent = e;
+      } else if (shapeIsCircle) {
+        var radius = sizeOfBrush;
+        ctx.beginPath();
+        ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = color;
+        ctx.fill();
+        lastEvent = e;
+      }
+    }
+  }).mouseup(function() {
+    mousedown = false;
+  });
+  
+  document.getElementById('SaveCnv').addEventListener("click",function(){
+            window.open(abc[0].toDataURL('image/png'));
+            var gh = (abc[0].toDataURL('png'));
+            console.log(gh);
+            var a = document.createElement('a');
+            a.href = gh;
+            a.download = 'image.png';
+            a.click();
+        });
+    
+  </script>
+  
     <script>
-      window.addEventListener("load", function () {
+function uploadImage(){
+  var canvas = document.getElementById("thecanvas");
+  var dataURL = canvas.toDataURL("image/png");
+  document.getElementById('final_choco').value = dataURL;
+  var formData = new FormData(document.getElementById("form1"));
+  
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if( xhr.status == 200){
+      if(xhr.responseText == "error"){
+        alert("Error");
+      }else{
+        alert('Succesfully uploaded');  
+        console.log(xhr.responseText);
+      }
+    }else{
+      alert(xhr.status)
+    }
+  }
+  
+  xhr.open('POST', 'canvas_load_save.php', true);
+  xhr.send(formData);
+}
 
-      });
+function aa() {
 
+html2canvas(document.getElementById('fix'), {
+    onrendered: function (canvas) {
+        canvas.setAttribute('id', 'thecanvas');	//添加属性
+        document.body.appendChild(canvas);
+        canvas.style.display="none";
+        alert("Hi");
+        uploadImage();
+    },
+    background: "",		//canvas的背景颜色，如果没有设定默认透明
+    logging: true,		//在console.log()中输出信息
+    width: 400,			//图片宽
+    height: 400,		//图片高
+    useCORS: true, // 【重要】开启跨域配置
+});
+
+}
+
+function bb() {
+var oCanvas = document.getElementById("thecanvas");
+
+var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
+saveFile(img_data1, 'richer.png');
+}
     </script>
 
 
