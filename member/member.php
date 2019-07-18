@@ -10,6 +10,7 @@ $errMsg = "";
 try {
 	require_once("../common/php/connect_choco.php");
 
+// -----------資料-----------------//
 
   $sql = "select * from member where mem_id =:mem_id";
   $member = $pdo->prepare($sql); 
@@ -18,10 +19,9 @@ try {
 
 
 // -----------訂單-----------------//
-  $sql = "select * from member where mem_id =:mem_id";
-  $member = $pdo->prepare($sql); 
-  $member->bindValue(":mem_id", $_SESSION["mem_id"]);
-  $member->execute();
+
+
+// -----------收藏-----------------//
 
 
 
@@ -208,7 +208,7 @@ echo $errMsg;
 
 <main class="member_container">
   <div class="wrap">
-  <form action="update_info.php" enctype="multipart/form-data"  method="post">
+  <form action="php/update_info.php" enctype="multipart/form-data"  method="post">
 
  <!------ info ------->
 
@@ -218,29 +218,14 @@ echo $errMsg;
               <div class="profile_pic">
                 <img id="img_preview" src="../common/image/common/<?php echo $_SESSION["mem_headshot"]?>" alt="profile">
               </div>
-
               <div class="upload">
-                    <img  v-if="image" :src="image" width="300">
                     <input type="file" name="memUpFile" id="member_upFile" ><br>
                     <p>上傳照片</p>
                     <p>檔案大小最大為1mb</p>
               </div>
               <div class="btn orange_m logout_btn" id ="logout_btn">登出</div>
-              <!-- <input type="button" name="logout" class="btn orange_l " id=" logout_btn" value="登出"> -->
             </div>
 
-<!-- change headshot js -->
-          <script>
-            $('#member_upFile').change(function () {
-                var file = $('#member_upFile')[0].files[0];
-                var reader = new FileReader;
-                reader.onload = function (e) {
-                    $('#img_preview').attr('src', e.target.result);
-                };
-                reader.readAsDataURL(file);
-            });
-
-        </script>
           
 <!-- info table -->
 
@@ -256,22 +241,22 @@ echo $errMsg;
 
             <tr>
               <th>姓名：</th>
-              <td><input type="text"  id= "mem_name" readonly="readonly" name="mem_name" value ="<?php echo $_SESSION["mem_name"] ?>" ><i class="fas fa-pen"></i></td>
+              <td><input type="text"  id= "mem_name" readonly="readonly" name="mem_name" value ="<?php echo $_SESSION["mem_name"] ?>" ></td>
             </tr>
 
             <tr>
               <th>Email：</th>
-              <td><input type="text"  id= "mem_email" readonly="readonly" name="mem_email" value ="<?php echo $_SESSION["mem_email"] ?>"  ><i class="fas fa-pen"></i></td>
+              <td><input type="text"  id= "mem_email" readonly="readonly" name="mem_email" value ="<?php echo $_SESSION["mem_email"] ?>"  ></td>
             </tr>
 
             <tr>
               <th>手機號碼：</th>
-              <td><input type="text" id= "mem_tel" readonly="readonly" name="mem_tel" value ="<?php echo $_SESSION["mem_tel"] ; ?>"><i class="fas fa-pen"></i></td>
+              <td><input type="text" id= "mem_tel" readonly="readonly" name="mem_tel" value ="<?php echo $_SESSION["mem_tel"] ; ?>"></td>
             </tr>
 
               <tr>
                 <th>生日：</th>
-                <td><input type="text" id= "mem_birth" readonly="readonly" name="mem_birth" value ="<?php echo $_SESSION["mem_birth"] ; ?>"><i class="fas fa-pen"></i></td>
+                <td><input type="text" id= "mem_birth" readonly="readonly" name="mem_birth" value ="<?php echo $_SESSION["mem_birth"] ; ?>"></td>
               </tr>
 
           <th colspan="2" class="info_th"  >我的信用卡</th>
@@ -279,7 +264,7 @@ echo $errMsg;
 
            <tr class="visa_tr">
               <td  ><i class="fab fa-cc-visa"></i></td>
-              <td><input type="text" id= "mem_credit" readonly="readonly"  name="mem_credit" value ="<?php echo  $_SESSION["mem_credit"] ?>"><i class="fas fa-pen"></i></td>
+              <td><input type="text" id= "mem_credit" readonly="readonly"  name="mem_credit" value ="<?php echo  $_SESSION["mem_credit"] ?>"></td>
           </tr>
 
           <tr>
@@ -289,7 +274,7 @@ echo $errMsg;
 
           <tr>
             <th>宅配地址:</th>
-            <td><input type="text" id= "mem_address" readonly="readonly" name="mem_address"  value="<?php echo $_SESSION["mem_address"]; ?>"><i class="fas fa-pen"></i></td>
+            <td><input type="text" id= "mem_address" readonly="readonly" name="mem_address"  value="<?php echo $_SESSION["mem_address"]; ?>"></td>
           </tr>
 
           <tr>
@@ -299,7 +284,7 @@ echo $errMsg;
 
           <tr>
             <th>目前點數:</th>
-            <td><?php echo $_SESSION["mem_point"]?> 點 <a href="../game/game.php">玩遊戲賺點數</a></td>
+            <td><?php echo $_SESSION["mem_point"]; ?>點 <a href="../game/game.php">玩遊戲賺點數</a></td>
           </tr>
 
           </table>  
@@ -314,29 +299,6 @@ echo $errMsg;
       </section>
 </form>
 
-      <script>
-      $('#btn_edit').click(function () {
-            $('#btn_edit').hide();
-            $('#updated_it').show();
-
-            document.getElementById('mem_name').readOnly = false;
-            document.getElementById('mem_email').readOnly = false;
-            document.getElementById('mem_tel').readOnly = false;
-            document.getElementById('mem_birth').readOnly = false;
-            document.getElementById('mem_credit').readOnly = false;
-            document.getElementById('mem_address').readOnly = false;
-          
-        });
-
-
-        $('#updated_it').click(function () {
-            $('#btn_edit').show();
-            $('#updated_it').hide();
-        });
-
-      
-      
-      </script>
 
 <!------ orderlist ------->
 
@@ -563,16 +525,11 @@ echo $errMsg;
 
 
 
-
-
-
-
-
 <script src="../common/js/header.js"></script>
 <script src="../common/js/robot.js"></script>
 <script src="../common/js/login.js"></script>
 
-
+<!------ tab open page ----->
 <script>
     function open_page(pageName,elmnt,bgcolor,color) {
       var i, tabcontent, tablinks;
@@ -584,8 +541,6 @@ echo $errMsg;
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].style.backgroundColor = "";
         tablinks[i].style.color = "#367e90 ";  
-
-
       }
       document.getElementById(pageName).style.display = "block";
       elmnt.style.backgroundColor = bgcolor;
@@ -593,13 +548,13 @@ echo $errMsg;
       document.getElementById(pageName).style.display = "block";
       elmnt.style.color = color;
 
-
     }
     
     document.getElementById("default_open").click();
 
-
     </script>
+
+<!------ order item list open ----->
 
     <script>
         var acc = document.getElementsByClassName("order_detail_title");
@@ -615,10 +570,10 @@ for (i = 0; i < acc.length; i++) {
         panel.style.maxHeight = panel.scrollHeight + "px";
     } 
     });
-}
-    
+}   
     </script>
 
+<!------ open favorite  ----->
 
 <script>
     function open_favorite(pageName,elmnt,bgcolor,color) {
@@ -631,8 +586,6 @@ for (i = 0; i < acc.length; i++) {
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].style.backgroundColor = "";
         tablinks[i].style.color = "#367e90 ";  
-
-
       }
       document.getElementById(pageName).style.display = "block";
       elmnt.style.backgroundColor = bgcolor;
@@ -640,14 +593,51 @@ for (i = 0; i < acc.length; i++) {
       document.getElementById(pageName).style.display = "block";
       elmnt.style.color = color;
 
-
     }
-    
-    // Get the element with id="defaultOpen" and click on it
     document.getElementById("default_favorite").click();
 
+ </script>
 
-    </script>
+
+<!------ edit input list ----->
+
+  <script>
+    $('#btn_edit').click(function () {
+          $('#btn_edit').hide();
+          $('#updated_it').show();
+
+          document.getElementById('mem_name').readOnly = false;
+          document.getElementById('mem_email').readOnly = false;
+          document.getElementById('mem_tel').readOnly = false;
+          document.getElementById('mem_birth').readOnly = false;
+          document.getElementById('mem_credit').readOnly = false;
+          document.getElementById('mem_address').readOnly = false;         
+      });
+
+
+      $('#updated_it').click(function () {
+          $('#btn_edit').show();
+          $('#updated_it').hide();
+      });
+
+</script>
+
+
+
+<!------- uploadFile change headshot  ------>
+<script>
+    $('#member_upFile').change(function () {
+        var file = $('#member_upFile')[0].files[0];
+        var reader = new FileReader;
+        reader.onload = function (e) {
+            $('#img_preview').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    });
+</script>
+
+
+
 
 
 </body>

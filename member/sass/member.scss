@@ -9,7 +9,6 @@ body{
     background-color: #FFF5E3;
     background: url(../image/member/bg.png) no-repeat 100% 100% /cover;
     overflow-x: hidden;
-
 }
 
 
@@ -24,10 +23,6 @@ body{
     0% {transform: translateX(-10%)}
     100% {transform: translateX(10%)}
 }    
-
-
-
-
 
 
 // -------------------------------RWD DESKTOP------------------------------//
@@ -90,15 +85,19 @@ body{
     }
     .profile_pic{
         width: 200px;
+        height: 200px;
         margin: auto;
+        border-radius: 50%;       
     } 
     .upload{
         text-align: center;
         line-height: 1.8;
+        margin-bottom: 80px;
     }
 
     .upload img{
         border-radius: 50%;
+
 
     }
     .logout_btn{
@@ -263,6 +262,9 @@ body{
         transition: max-height 0.2s ease-out;
       }
 }
+
+// ---------------favorite list------------------//
+
   
 #favorite {
     background-color: white;
@@ -348,6 +350,7 @@ body{
 
 }
 
+// ---------------notification------------------//
 
         
 #notification {
@@ -384,11 +387,8 @@ body{
         }
 
        
-
-
      }
    
-
 
 }
 
@@ -409,6 +409,9 @@ body{
     } 
     table{
         width: 100%;
+    }
+    .upload{
+        margin-bottom: 30px;
     }
 }
 
@@ -454,6 +457,7 @@ body{
 #info{
     .profile_pic{
         width: 120px;
+        height: 120px;
 
     }  
     table{

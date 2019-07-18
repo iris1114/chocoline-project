@@ -1803,10 +1803,13 @@ body {
       text-align: center; }
   #info .profile_pic {
     width: 200px;
-    margin: auto; }
+    height: 200px;
+    margin: auto;
+    border-radius: 50%; }
   #info .upload {
     text-align: center;
-    line-height: 1.8; }
+    line-height: 1.8;
+    margin-bottom: 80px; }
   #info .upload img {
     border-radius: 50%; }
   #info .logout_btn {
@@ -2081,6 +2084,8 @@ body {
     width: 150px; }
   #info table {
     width: 100%; }
+  #info .upload {
+    margin-bottom: 30px; }
   #orderlist .product_img {
     margin: 0px 15px; }
   #orderlist .my_order .order_content {
@@ -2097,7 +2102,8 @@ body {
     width: 100%;
     padding: 10px 0px; }
   #info .profile_pic {
-    width: 120px; }
+    width: 120px;
+    height: 120px; }
   #info table {
     width: 100%;
     margin: auto;

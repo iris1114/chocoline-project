@@ -12,6 +12,7 @@ $errMsg="";
     $mem_birth = $_POST['mem_birth'];
     $mem_credit = $_POST['mem_credit'];
     $mem_address = $_POST['mem_address'];
+    // $mem_headshot = $_POST['mem_headshot'];
 
         switch($_FILES['memUpFile']['error']){
             case 0:
@@ -25,11 +26,11 @@ $errMsg="";
                 echo $from ,"<br>",$to;
                 copy($from, $to);
                 try{
-                    @require_once("connectChoco.php");
+                    @require_once("../common/php/connect_choco.php");
                     
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
-                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_point=:mem_point,mem_headshot=:mem_headshot WHERE mem_id=:mem_id ";
+                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_headshot=:mem_headshot WHERE mem_id=:mem_id ";
                     
                     $statement =  $pdo-> prepare($sql);
                     $statement -> bindValue(':mem_name', $mem_name);
@@ -38,12 +39,18 @@ $errMsg="";
                     $statement -> bindValue(':mem_birth', $mem_birth);
                     $statement -> bindValue(':mem_credit', $mem_credit);
                     $statement -> bindValue(':mem_address', $mem_address);
-                    $statement -> bindValue(':mem_point', $mem_point);
                     $statement -> bindValue(':mem_id', $mem_id);
-                    $statement -> bindValue(':mem_headshot', $mem_headshot);
-
-                  
-
+                    $statement -> bindValue(':mem_headshot', $mem_headshot); 
+                 
+  
+                    $_SESSION["mem_name"] = $mem_name;
+                    $_SESSION["mem_email"] =$mem_email;
+                    $_SESSION["mem_birth"] =$mem_birth;
+                    $_SESSION["mem_tel"] = $mem_tel;
+                    $_SESSION["mem_credit"] =$mem_credit;
+                    $_SESSION["mem_address"] =$mem_address;
+                    $_SESSION["mem_headshot"] =$mem_headshot;
+          
                      $statement -> execute();
                     header("Location: member.php");
             
@@ -67,7 +74,7 @@ $errMsg="";
             case 4:
             
                 try{
-                    @require_once("connectChoco.php");
+                    @require_once("../common/php/connect_choco.php");
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
                     $sql .= "mem_credit=:mem_credit,mem_address=:mem_address WHERE mem_id=:mem_id ";
@@ -79,16 +86,21 @@ $errMsg="";
                     $statement -> bindValue(':mem_birth', $mem_birth);
                     $statement -> bindValue(':mem_credit', $mem_credit);
                     $statement -> bindValue(':mem_address', $mem_address);
-                    $statement -> bindValue(':mem_no', $mem_no);
-                    $updateRow = $statement->execute();
+                    $statement -> bindValue(':mem_id', $mem_id);
+
+                    $_SESSION["mem_name"] = $mem_name;
+                    $_SESSION["mem_email"] =$mem_email;
+                    $_SESSION["mem_birth"] =$mem_birth;
+                    $_SESSION["mem_tel"] = $mem_tel;
+                    $_SESSION["mem_credit"] =$mem_credit;
+                    $_SESSION["mem_address"] =$mem_address;
+          
+                    $statement->execute();
                     header("Location: member.php");
-            
-                      
-                
+                        
             }catch(PDOException $e){
                 $errMsg = "錯誤原因" . $e -> getMessage() . "<br>" ;
-                $errMsg .= "錯誤行號" . $e -> getLine() . "<br>" ;
-    
+                $errMsg .= "錯誤行號" . $e -> getLine() . "<br>" ;    
         }
         break;
         
