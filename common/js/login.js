@@ -10,24 +10,10 @@ function showLoginForm() {
   //spanLogin的字改成登入
   //將頁面上的使用者資料清掉
   $id("passwordLightBox").style.display = "none";
-  if($id('spanLoginText').innerHTML == "登入"){
+  if($id('spanLoginText').innerHTML == "登入"){ //未登入
       $id('lightBox').style.display = 'block';
-  } else{
-    //................登出時，除了處理前端頁面，也要回server端清session
-
-    //......................................
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-      if (xhr.status == 200) {
-        $id("lightBox").style.display = "none";
-        $id('spanLoginText_mobile').innerHTML = $id('spanLoginText').innerHTML = '登入';
-      } else {
-        alert(xhr.status);
-      }
-    };
-    xhr.open("get", "../common/php/logout.php", true);
-    xhr.send(null);
-    //......................................
+  }else{                                       //登入   
+    $id('lightBox').style.display = 'none';  
   }
 } 
 
