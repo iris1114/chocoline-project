@@ -2,6 +2,8 @@ function $id(id) {
   return document.getElementById(id);
 }
 
+let islogin = false;
+
 function showLoginForm() {
   //檢查登入bar面版上 spanLogin 的字是登入或登出
   //如果是登入，就顯示登入用的燈箱(lightBox)
@@ -13,7 +15,8 @@ function showLoginForm() {
   if($id('spanLoginText').innerHTML == "登入"){ //未登入
       $id('lightBox').style.display = 'block';
   }else{                                       //登入   
-    $id('lightBox').style.display = 'none';  
+    $id('lightBox').style.display = 'none';
+    islogin = true;
   }
 } 
 
@@ -64,13 +67,13 @@ function forgetPassword(){
 }
 
 function repassword(){
-  var reg = new RegExp(/[a-zA-Z0-9]{6}/);
+  var reg = new RegExp(/[a-zA-Z0-9]{6,12}/);
   var psetest = $id("new_mem_psw").value;
   if(!reg.test(psetest)){
-    alert("新密碼必須由 6位字母、數字");	
+    alert("新密碼必須由 6-12位字母、數字");   
     $id("new_mem_psw").value="";
     $id("re_new_mem_psw").value="";
-    return;	
+    return; 
   }
   if($id("re_new_mem_psw").value!=$id("new_mem_psw").value){
     alert("密碼錯誤，請再次輸入密碼");
@@ -91,6 +94,8 @@ function repassword(){
       }
     }else{
       alert(xhr.status);
+      $id("f_mem_id").value="";
+        return; 
     }
   }
   // 設定好所要連結的程式
@@ -140,10 +145,10 @@ function register() {
     return;
   } 
 
-  var reg = new RegExp(/[a-zA-Z0-9]{6}/);
+  var reg = new RegExp(/[a-zA-Z0-9]{6,12}/);
   var psetest = $id("f_mem_psw").value;
   if(!reg.test(psetest)){
-    alert("新密碼必須由 6位字母、數字");	
+    alert("新密碼必須由 6-12位字母、數字");
     $id("f_mem_psw").value="";
     $id("f_re_mem_psw").value="";
     return;	
@@ -198,6 +203,7 @@ function init() {
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
   if( xhr.responseText != "notLogin"){ //已登入
+    islogin = true;
     document.getElementById("spanLoginText").innerHTML = "登出";
     document.getElementById("spanLoginText_mobile").innerHTML = "登出";
     spanLogin = document.querySelectorAll(".spanLogin img" );
