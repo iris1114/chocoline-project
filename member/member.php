@@ -8,31 +8,20 @@ if(!isset($_SESSION["mem_id"])){
 <?php
 $errMsg = "";
 try {
-	require_once("connectChoco.php");
+	require_once("../common/php/connect_choco.php");
 
-  $sql = "select * from member where mem_no = 1";
-  	// $sql = "select * from member where member_id=:member_id";
 
-  $members = $pdo->query($sql); 
-  $memRow = $members -> fetch(PDO::FETCH_ASSOC);
-  $mem_no = $memRow['mem_no'];
-  $mem_id=$memRow['mem_id'];
-  $mem_name=$memRow['mem_name'];
-  $mem_psw=$memRow['mem_psw'];
-  $mem_email=$memRow['mem_email'];
-  $mem_tel=$memRow['mem_tel'];
-  $mem_birth=$memRow['mem_birth'];
-  $mem_credit=$memRow['mem_credit'];
-  $mem_address=$memRow['mem_address'];
-  $mem_headshot=$memRow['mem_headshot'];
-  $mem_point=$memRow['mem_point'];
-  $_SESSION['mem_no']=1;
+  $sql = "select * from member where mem_id =:mem_id";
+  $member = $pdo->prepare($sql); 
+  $member->bindValue(":mem_id", $_SESSION["mem_id"]);
+  $member->execute();
+
 
 // -----------訂單-----------------//
-  // $sql="SELECT * from order join ( select cardNo,itemName item1Name,itemImg2Url item1Img from carditem1 left outer join item on carditem1.item1No=item.itemNo ) as item1 natural join ( select cardNo,itemName item2Name,itemImg2Url item2Img from carditem2 left outer join item on carditem2.item2No=item.itemNo ) as item2 natural join ( select cardNo,itemName item3Name,itemImg2Url item3Img from carditem3 left outer join item on carditem3.item3No=item.itemNo ) as item3 natural join ( select cardNo,itemName item4Name,itemImg2Url item4Img from carditem4 left outer join item on carditem4.item4No=item.itemNo ) as item4 where memNo=".$_SESSION ['memNo']." and artNo is null and cardStatus=1";
-
-  // $card = $pdo ->query($sql);
-
+  $sql = "select * from member where mem_id =:mem_id";
+  $member = $pdo->prepare($sql); 
+  $member->bindValue(":mem_id", $_SESSION["mem_id"]);
+  $member->execute();
 
 
 
@@ -229,7 +218,7 @@ echo $errMsg;
         <div class="my_info">
           <div class="image_box  col_12 col_md_4 col_lg_3"> 
               <div class="profile_pic">
-                <img id="img_preview" src="../common/image/common/<?php echo $mem_headshot ?>" alt="profile">
+                <img id="img_preview" src="../common/image/common/<?php echo $_SESSION["mem_headshot"]?>" alt="profile">
               </div>
 
               <div class="upload">
@@ -264,27 +253,27 @@ echo $errMsg;
 
             <tr>
               <th>帳號：</th>
-              <td><?php echo $mem_id; ?></td>
+              <td><?php echo $_SESSION["mem_id"] ?></td>
             </tr>
 
             <tr>
               <th>姓名：</th>
-              <td><input type="text"  id= "mem_name" readonly="readonly" name="mem_name" value ="<?php echo $mem_name; ?>" ><i class="fas fa-pen"></i></td>
+              <td><input type="text"  id= "mem_name" readonly="readonly" name="mem_name" value ="<?php echo $_SESSION["mem_name"] ?>" ><i class="fas fa-pen"></i></td>
             </tr>
 
             <tr>
               <th>Email：</th>
-              <td><input type="text"  id= "mem_email" readonly="readonly" name="mem_email" value ="<?php echo $mem_email; ?>"  ><i class="fas fa-pen"></i></td>
+              <td><input type="text"  id= "mem_email" readonly="readonly" name="mem_email" value ="<?php echo $_SESSION["mem_email"] ?>"  ><i class="fas fa-pen"></i></td>
             </tr>
 
             <tr>
               <th>手機號碼：</th>
-              <td><input type="text" id= "mem_tel" readonly="readonly" name="mem_tel" value ="<?php echo $mem_tel; ?>"><i class="fas fa-pen"></i></td>
+              <td><input type="text" id= "mem_tel" readonly="readonly" name="mem_tel" value ="<?php echo $_SESSION["mem_tel"] ; ?>"><i class="fas fa-pen"></i></td>
             </tr>
 
               <tr>
                 <th>生日：</th>
-                <td><input type="text" id= "mem_birth" readonly="readonly" name="mem_birth" value ="<?php echo $mem_birth; ?>"><i class="fas fa-pen"></i></td>
+                <td><input type="text" id= "mem_birth" readonly="readonly" name="mem_birth" value ="<?php echo $_SESSION["mem_birth"] ; ?>"><i class="fas fa-pen"></i></td>
               </tr>
 
           <th colspan="2" class="info_th"  >我的信用卡</th>
@@ -292,7 +281,7 @@ echo $errMsg;
 
            <tr class="visa_tr">
               <td  ><i class="fab fa-cc-visa"></i></td>
-              <td><input type="text" id= "mem_credit" readonly="readonly"  name="mem_credit" value ="<?php echo $mem_credit; ?>"><i class="fas fa-pen"></i></td>
+              <td><input type="text" id= "mem_credit" readonly="readonly"  name="mem_credit" value ="<?php echo  $_SESSION["mem_credit"] ?>"><i class="fas fa-pen"></i></td>
           </tr>
 
           <tr>
@@ -302,7 +291,7 @@ echo $errMsg;
 
           <tr>
             <th>宅配地址:</th>
-            <td><input type="text" id= "mem_address" readonly="readonly" name="mem_address"  value="<?php echo $mem_address; ?>"><i class="fas fa-pen"></i></td>
+            <td><input type="text" id= "mem_address" readonly="readonly" name="mem_address"  value="<?php echo $_SESSION["mem_address"]; ?>"><i class="fas fa-pen"></i></td>
           </tr>
 
           <tr>
@@ -312,7 +301,7 @@ echo $errMsg;
 
           <tr>
             <th>目前點數:</th>
-            <td><?php echo $mem_point; ?> 點 <a href="../game/game.php">玩遊戲賺點數</a></td>
+            <td><?php echo $_SESSION["mem_point"]?> 點 <a href="../game/game.php">玩遊戲賺點數</a></td>
           </tr>
 
           </table>  

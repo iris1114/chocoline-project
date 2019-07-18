@@ -16,8 +16,8 @@ $errMsg="";
         switch($_FILES['memUpFile']['error']){
             case 0:
                 $dir = "image/member/";
-                if( file_exists($dir) === false){
-                    mkdir( $dir ); //make directory
+                if( file_exists("image/member") === false){
+                    mkdir( "image/member" ); //make directory
                 }
                 echo $_FILES['memUpFile']['name'];
                 $from = $_FILES['memUpFile']['tmp_name'];
@@ -27,7 +27,7 @@ $errMsg="";
                     @require_once("connectChoco.php");
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
-                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_point=:mem_point WHERE mem_no=:mem_no ";
+                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address,mem_point=:mem_point WHERE mem_id=:mem_id ";
                     
                     $statement =  $pdo-> prepare($sql);
                     $statement -> bindValue(':mem_name', $mem_name);
@@ -65,7 +65,7 @@ $errMsg="";
                     @require_once("connectChoco.php");
                     $sql = "UPDATE `member` SET  mem_name=:mem_name,mem_email=:mem_email,";
                     $sql .= "mem_tel=:mem_tel,mem_birth=:mem_birth,";
-                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address WHERE mem_no=:mem_no ";
+                    $sql .= "mem_credit=:mem_credit,mem_address=:mem_address WHERE mem_id=:mem_id ";
                     
                     $statement =  $pdo-> prepare($sql);
                     $statement -> bindValue(':mem_name', $mem_name);
@@ -91,7 +91,6 @@ $errMsg="";
             echo "請聯絡網站維護人員<br>";
             echo "error code : ", $_FILES['upFile']['error'],"<br>";
     }
-
 
 echo $errMsg;
 }
