@@ -1,24 +1,20 @@
 <?php
+session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+    $_SESSION["mem_id"] = null;
+}
 $errMsg = "";
 try {
     require_once("connectChoco.php");
 
     $question_sql = "select * from question";
     $questions = $pdo->query($question_sql);
-
-
 } catch (PDOException $e) {
     echo "錯誤 : ", $e->getMessage(), "<br>";
     echo "行號 : ", $e->getLine(), "<br>";
 }
 
 ?>
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -48,23 +44,27 @@ try {
             <div class="navbar">
                 <div class="burger">
                     <figure>
-                        <img src="image/headerfooter/burger.png" alt="burger">
+                        <img src="../common/image/headerfooter/burger.png" alt="burger">
                     </figure>
                 </div>
                 <div class="logo">
+                    <h1>
+                        CHOCOLINE
+                    </h1>
                     <a href="../index/index.php">
-                        <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                        <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                     </a>
                 </div>
                 <div class="status">
                     <figure>
-                        <a href="../member/member.php">
-                            <img src="image/headerfooter/icon_member.png" alt="member">
+                        <a class="spanLogin" href="../member/member.php">
+                            <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                            <!-- icon點擊後跳出登入註冊燈箱 -->
                         </a>
                     </figure>
                     <figure>
                         <a href="../cart/cart.php">
-                            <img src="image/headerfooter/icon_cart.png" alt="cart">
+                            <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
                         </a>
                     </figure>
                 </div>
@@ -76,35 +76,102 @@ try {
                 <li><a href="../store/store.php">CHOCO 商城</a></li>
                 <li><a href="../about/about.php">關於 CHOCO</a></li>
                 <figure id="menuclose">
-                    <img src="image/headerfooter/menuclose.png" alt="close">
+                    <img src="../common/image/headerfooter/menuclose.png" alt="close">
                 </figure>
             </ul>
         </div>
         <div class="d_header">
             <div class="logo">
+                <h1>
+                    CHOCOLINE
+                </h1>
                 <a href="../index/index.php">
-                    <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                    <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
             </div>
             <div class="navbar">
                 <ul class="menubox">
                     <li><a href="../custom/custom.php">客製 CHOCO</a></li>
                     <li><a href="../contest/contest.php">CHOCO 選美</a></li>
-                    <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+                    <li class="nowpage"><a href="../game/game.php">CHOCO 遊戲</a></li>
                     <li><a href="../store/store.php">CHOCO 商城</a></li>
                     <li><a href="../about/about.php">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
                     <figure>
-                        <a href="../member/member.php">
-                            <img src="image/headerfooter/icon_member.png" alt="member">
+                        <a class="spanLogin" href="javascript:;">
+                            <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                            <!-- icon點擊後跳出登入註冊燈箱 -->
                         </a>
+                        <!-- <span id="mem_name">&nbsp;</span> -->
+                        <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
+                        <span id="spanLoginText">登入</span>
                     </figure>
                     <figure>
                         <a href="../cart/cart.php">
-                            <img src="image/headerfooter/icon_cart.png" alt="cart">
+                            <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
                         </a>
                     </figure>
+                </div>
+            </div>
+        </div>
+        <!-- 燈箱：登入 -->
+        <div id="lightBox" style="display:none">
+            <div id="tableLogin">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
+                    </a>
+                    <h3>會員登入</h3>
+                    <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
+                    <input type="password" name="mem_psw" id="mem_psw" value="" placeholder="密碼"><br>
+                    <a href="javascript:;" id="forget_password">忘記密碼</a><br>
+                    <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
+                    <span>不是會員嗎?</span>
+                    <a href="javascript:;" id="register">立即註冊</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 重設密碼 -->
+        <div id="passwordLightBox" style="display:none">
+            <div id="getPassword">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
+                    </a>
+                    <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
+                    <h3>重設密碼</h3>
+                    <p>請輸入帳號註冊時所留的電子<br>
+                        郵件地址，以驗證您的資料</p>
+                    <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+                    <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
+                    <input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
+                    <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 會員註冊 -->
+        <div id="registerLightBox" style="display:none">
+            <div id="registered">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_register">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
+                    </a>
+                    <h3>會員註冊</h3>
+                    <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
+                        請填下您的個人資料。</p>
+                    <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
+                    <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
+                    <!-- <span id="idMsg"></span><br> -->
+                    <p id="idMsg">請輸入帳號</p><br>
+                    <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
+                    <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
+                    <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
+                    <p>* 為必填欄位，請填妥欄位資訊。</p>
+                    <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
                 </div>
             </div>
         </div>
@@ -294,8 +361,7 @@ try {
                                             .cls-1 {
                                                 fill: none;
                                                 stroke: #d72d40;
-                                                strok36
-                                                3e-miterlimit: 10;
+                                                strok36 3e-miterlimit: 10;
                                                 stroke-width: 7px;
                                             }
                                         </style>
@@ -308,7 +374,7 @@ try {
                     </div>
                 </div>
                 <?php
-                $question_rows=$questions->fetchAll(PDO::FETCH_ASSOC);
+                $question_rows = $questions->fetchAll(PDO::FETCH_ASSOC);
                 shuffle($question_rows);
                 ?>
                 <div id="qa_box" class="qa_box  col-12  col-lg-6">
@@ -316,71 +382,73 @@ try {
                     <!-- question -->
                     <div class="question">
                         <div class="title">
-                            <h3>題庫第<?php echo $question_rows[0]['question_no'];?>題 <?php echo $question_rows[0]['question_desc'];?></h3>
+                            <h3>題庫第<?php echo $question_rows[0]['question_no']; ?>題 <?php echo $question_rows[0]['question_desc']; ?></h3>
                         </div>
                         <label class="option" for="q1_1">
-                            <input class="answer" value="<?php echo $question_rows[0]['option1_class'];?>" class="questions" type="radio" checked="checked" name="q1" id="q1_1" />1. <?php echo $question_rows[0]['option1_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[0]['option1_class']; ?>" class="questions" type="radio" checked="checked" name="q1" id="q1_1" />1. <?php echo $question_rows[0]['option1_desc']; ?>
                         </label>
 
                         <label class="option" for="q1_2">
-                            <input class="answer" value="<?php echo $question_rows[0]['option2_class'];?>" class="questions" type="radio" name="q1" id="q1_2" />2. <?php echo $question_rows[0]['option2_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[0]['option2_class']; ?>" class="questions" type="radio" name="q1" id="q1_2" />2. <?php echo $question_rows[0]['option2_desc']; ?>
                         </label>
 
                         <label class="option" for="q1-3">
-                            <input class="answer" value="<?php echo $question_rows[0]['option3_class'];?>" class="questions" type="radio" name="q1" id="q1-3" />3. <?php echo $question_rows[0]['option3_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[0]['option3_class']; ?>" class="questions" type="radio" name="q1" id="q1-3" />3. <?php echo $question_rows[0]['option3_desc']; ?>
                         </label>
-
-                        <label class="option" for="q1-4">
-                            <input class="answer" value="<?php echo $question_rows[0]['option4_class'];?>" class="questions" type="radio" name="q1" id="q1-4" />4. <?php echo $question_rows[0]['option4_desc'];?>
-                        </label>
-                        <a href="javascript:;" class="btn orange_l qa_next_button"><span>提交</span></a>
+                        <a href="javascript:;" class="btn orange_l qa_next_button"><span>下一題</span></a>
                     </div>
                     <div class="question" style="display:none">
                         <div class="title">
-                            <h3>題庫第<?php echo $question_rows[1]['question_no'];?>題 <?php echo $question_rows[1]['question_desc'];?></h3>
+                            <h3>題庫第<?php echo $question_rows[1]['question_no']; ?>題 <?php echo $question_rows[1]['question_desc']; ?></h3>
                         </div>
 
                         <label class="option" for=" q2_1">
-                            <input class="answer" value="<?php echo $question_rows[1]['option1_class'];?>" class="questions" type="radio" checked="checked" name="q2" id="q2_1" />1. <?php echo $question_rows[1]['option1_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[1]['option1_class']; ?>" class="questions" type="radio" checked="checked" name="q2" id="q2_1" />1. <?php echo $question_rows[1]['option1_desc']; ?>
                         </label>
 
                         <label class="option" for="q2_2">
-                            <input class="answer" value="<?php echo $question_rows[1]['option2_class'];?>" class="questions" type="radio" name="q2" id="q2_2" />2. <?php echo $question_rows[1]['option2_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[1]['option2_class']; ?>" class="questions" type="radio" name="q2" id="q2_2" />2. <?php echo $question_rows[1]['option2_desc']; ?>
                         </label>
 
                         <label class="option" for="q2_3">
-                            <input class="answer" value="<?php echo $question_rows[1]['option3_class'];?>" class="questions" type="radio" name="q2" id="q2_3" />3. <?php echo $question_rows[1]['option3_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[1]['option3_class']; ?>" class="questions" type="radio" name="q2" id="q2_3" />3. <?php echo $question_rows[1]['option3_desc']; ?>
                         </label>
 
-                        <label class="option" for="q2_4">
-                            <input class="answer" value="<?php echo $question_rows[1]['option4_class'];?>" class="questions" type="radio" name="q2" id="q2_4" />4. <?php echo $question_rows[1]['option4_desc'];?>
-                        </label>
-                        <a href="javascript:;" class="btn orange_l qa_next_button"><span>提交</span></a>
+                        <a href="javascript:;" class="btn orange_l qa_next_button"><span>下一題</span></a>
                     </div>
                     <div class="question" style="display:none">
                         <div class="title">
-                            <h3>題庫第<?php echo $question_rows[2]['question_no'];?>題 <?php echo $question_rows[2]['question_desc'];?></h3>
+                            <h3>題庫第<?php echo $question_rows[2]['question_no']; ?>題 <?php echo $question_rows[2]['question_desc']; ?></h3>
                         </div>
 
                         <label class="option" for="q3_1">
-                            <input class="answer" value="<?php echo $question_rows[2]['option1_class'];?>" class="questions" type="radio" checked="checked" name="q3" id="q3_1" />1. <?php echo $question_rows[2]['option1_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[2]['option1_class']; ?>" class="questions" type="radio" checked="checked" name="q3" id="q3_1" />1. <?php echo $question_rows[2]['option1_desc']; ?>
                         </label>
 
                         <label class="option" for="q3_2">
-                            <input class="answer" value="<?php echo $question_rows[2]['option2_class'];?>" class="questions" type="radio" name="q3" id="q3_2" />2. <?php echo $question_rows[2]['option2_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[2]['option2_class']; ?>" class="questions" type="radio" name="q3" id="q3_2" />2. <?php echo $question_rows[2]['option2_desc']; ?>
                         </label>
 
                         <label class="option" for="q3_3">
-                            <input class="answer" value="<?php echo $question_rows[2]['option3_class'];?>" class="questions" type="radio" name="q3" id="q3_3" />3. <?php echo $question_rows[2]['option3_desc'];?>
+                            <input class="answer" value="<?php echo $question_rows[2]['option3_class']; ?>" class="questions" type="radio" name="q3" id="q3_3" />3. <?php echo $question_rows[2]['option3_desc']; ?>
                         </label>
 
-                        <label class="option" for="q3_4">
-                            <input class="answer" value="<?php echo $question_rows[2]['option4_class'];?>" class="questions" type="radio" name="q3" id="q3_4" />4. <?php echo $question_rows[2]['option4_desc'];?>
-                        </label>
                         <a href="javascript:;" id="submit_question_btn" class="btn orange_l"><span>提交</span></a>
                     </div>
-                    
+
+                    <!-- <div class="recommand_box">
+                    <div class="recommand_title">
+                        <h4>巧克力好推薦！<br>你就愛那一味～</h4>
+                    </div>
+                    <div class="product_img">
+                        <img src="https://picsum.photos/200/200/?random=1">
+                    </div>
+                </div> -->
+
+
                 </div>
+
+
             </div>
         </section>
 
@@ -584,17 +652,17 @@ try {
                 <div class="map">
                     <img src="image/index/map/map.png" alt="map">
                     <p>TAIWAN</p>
-                    <span class="taipei"><a href="#">台北</a> </span>
-                    <span class="hualian"><a href="#">花蓮</a> </span>
-                    <span class="taoyuan"><a href="#">桃園</a> </span>
-                    <span class="taizhong"><a href="#">台中</a> </span>
-                    <span class="gaoxiong"><a href="#">高雄</a> </span>
+                    <span class="taipei"><a href="../about/about.php">台北</a> </span>
+                    <span class="hualian"><a href="../about/about.php">花蓮</a> </span>
+                    <span class="taoyuan"><a href="../about/about.php">桃園</a> </span>
+                    <span class="taizhong"><a href="../about/about.php">台中</a> </span>
+                    <span class="gaoxiong"><a href="../about/about.php">高雄</a> </span>
 
-                    <span class="point taipei_point"><a href="#"><img src="image/index/map/point.png" alt="point"></a> </span>
-                    <span class="point hualian_point"><a href="#"><img src="image/index/map/point.png" alt="point"></a> </span>
-                    <span class="point taoyuan_point"><a href="#"><img src="image/index/map/point.png" alt="point"></a> </span>
-                    <span class="point taizhong_point"><a href="#"><img src="image/index/map/point.png" alt="point"></a> </span>
-                    <span class="point gaoxiong_point"><a href="#"><img src="image/index/map/point.png" alt="point"></a> </span>
+                    <span class="point taipei_point"><a href="../about/about.php"><img src="image/index/map/point.png" alt="point"></a> </span>
+                    <span class="point hualian_point"><a href="../about/about.php"><img src="image/index/map/point.png" alt="point"></a> </span>
+                    <span class="point taoyuan_point"><a href="../about/about.php"><img src="image/index/map/point.png" alt="point"></a> </span>
+                    <span class="point taizhong_point"><a href="../about/about.php"><img src="image/index/map/point.png" alt="point"></a> </span>
+                    <span class="point gaoxiong_point"><a href="../about/about.php"><img src="image/index/map/point.png" alt="point"></a> </span>
                 </div>
 
                 <!-- map_bg -->
@@ -706,7 +774,9 @@ try {
 
     <script src="../common/js/header.js"></script>
     <script src="../common/js/robot.js"></script>
-    <!-- <script src="js/index.js"></script> -->
+    <script src="../common/js/login.js"></script>
+    <script src="js/index.js"></script>
+
 
 
     <script type="text/javascript">
