@@ -9,7 +9,7 @@ $errMsg = "";
 // 連線資料庫
 try {
 
-    require_once("../connectChoco.php");
+    require_once("../../common/php/connect_choco.php");
     $sql = "select * from classic_product where $select_str";
     $products = $pdo->prepare($sql);
     $products->execute();
