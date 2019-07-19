@@ -5,7 +5,7 @@ if (isset($_SESSION["mem_id"]) != true) {
 }
 $errMsg = "";
 try {
-    require_once("connectChoco.php");
+    require_once("../common/php/connect_choco.php");
 
     $question_sql = "select * from question";
     $questions = $pdo->query($question_sql);
