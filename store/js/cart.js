@@ -57,7 +57,7 @@ let cart = {};
 //----------------數量改變時的事件處理器
 function changeCart(e) {
     let xhr = new XMLHttpRequest();
-    console.log(this.parentNode.parentNode.parentNode);
+    // console.log(this.parentNode.parentNode.parentNode);
     xhr.onload = function(e) {
         cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
     }
@@ -69,6 +69,7 @@ function changeCart(e) {
 
     xhr.send(myForm);
 }
+
 
 //.............取得購物車資料
 
@@ -91,22 +92,12 @@ function getCart() {
 
 }
 
-function showSession_info() {
-    console.log(cart);
+// function showSession_info() {
+//     console.log(cart);
 
 
-}
-
-
-
-
-
-
-window.addEventListener("load", function() {
-    //.............取得購物車資料
-
-    getCart();
-
+// }
+function add_cart() {
 
     //註冊數量改變時的事件處理器
     let qtys = document.getElementsByClassName("classic_product_qty"); // 數量的輸入盒
@@ -120,11 +111,16 @@ window.addEventListener("load", function() {
 
         }
 
-
-
-
     }
+}
 
+
+
+window.addEventListener("load", function() {
+    //.............取得購物車資料
+
+    getCart();
+    add_cart();
     //----------------註冊+ , - 的事件處理器
     //   let btn_minus = document.getElementsByClassName("minus");  // -
     //   for(let i=0; i<btnMinus.length; i++){
@@ -152,10 +148,10 @@ window.addEventListener("load", function() {
     //   }    
 
     //.............顯示購物車
-    document.getElementById("clear").onclick = function() {
-        //showCart
-        // showCart();
-        showSession_info();
-    };
+    // document.getElementById("clear").onclick = function() {
+    //showCart
+    // showCart();
+    //     showSession_info();
+    // };
 
 });
