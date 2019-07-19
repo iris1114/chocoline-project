@@ -21,14 +21,14 @@
 </head>
 <style>
 
-canvas {
+/* canvas {
   background: #fff;
   display: block;
   margin: 50px auto 10px;
   border-radius: 5px;
   box-shadow: 0 4px 0 0 #222;
   cursor: url(../img/cursor.png), crosshair;
-}
+} */
 
 /* .controls {
   min-height: 60px;
@@ -70,12 +70,12 @@ canvas {
 
 
 button {
-  background: #68B25B;
-  box-shadow: 0 3px 0 0 #6A845F;
+  background: #1c99ae;
+ 
   color: #fff;
   outline: none;
   cursor: pointer;
-  text-shadow: 0 1px #6A845F;
+
   display: block;
   font-size: 16px;
   line-height: 40px;
@@ -803,28 +803,15 @@ button {
     <li class="blue"></li>
     <li class="yellow"></li>
   </ul>
-  <button id="revealColorSelect">New Color</button>
+ 
   <div id="colorSelect">
     <span id="newColor"></span>
-    <div class="sliders">
-      <p>
-        <label for="red">Red</label>
-        <input id="red" name="red" type="range" min=0 max=255 value=0>
-      </p>
-      <p>
-        <label for="green">Green</label>
-        <input id="green" name="green" type="range" min=0 max=255 value=0>
-      </p>
-      <p>
-        <label for="blue">Blue</label>
-        <input id="blue" name="blue" type="range" min=0 max=255 value=0>
-      </p>
-    </div>
+    <div class="colorPicker"></div>  
     <div>
       <button id="addNewColor">Add Color</button>
     </div>
   </div>
-  <button id="revealBrushSelect">Change Brush</button>
+ 
   <div id="brushSelect">
     <span id="changeBrush"></span>
     <div class="sliders">
@@ -846,6 +833,7 @@ button {
         <div class="card_items">
 
               <canvas  class="ccc" width="400" height="400">
+             21651616
               </canvas>
           </div>
      </div>
