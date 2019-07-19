@@ -340,13 +340,15 @@ header #lightBox {
         width: 25px;
         position: absolute;
         right: 0; }
+      header #lightBox #tableLogin .login_password input {
+        margin-left: 0; }
       header #lightBox #tableLogin .login_password h3 {
         font-size: 28px;
         color: #f0ecdd;
-        padding: 4% 0; }
+        padding: 8% 0; }
       header #lightBox #tableLogin .login_password #mem_id {
-        width: 45%;
-        margin-bottom: 5%;
+        width: 65%;
+        margin: 0 0 5% 0;
         border-radius: 10px;
         line-height: 24px; }
         header #lightBox #tableLogin .login_password #mem_id ::-webkit-input-placeholder {
@@ -354,8 +356,8 @@ header #lightBox {
         header #lightBox #tableLogin .login_password #mem_id::placeholder {
           color: #999; }
       header #lightBox #tableLogin .login_password #mem_psw {
-        width: 45%;
-        margin-bottom: 2%;
+        width: 65%;
+        margin: 0 0 2% 0;
         border-radius: 10px;
         line-height: 24px; }
         header #lightBox #tableLogin .login_password #mem_psw ::-webkit-input-placeholder {
@@ -367,7 +369,8 @@ header #lightBox {
         font-size: 12px;
         text-decoration-line: underline;
         display: block;
-        margin-left: 25%;
+        text-align: right;
+        margin-right: 18%;
         margin-bottom: 1%; }
       header #lightBox #tableLogin .login_password span {
         color: #E48C28;
@@ -419,7 +422,7 @@ header #passwordLightBox {
         font-size: 12px;
         line-height: 20px; }
       header #passwordLightBox #getPassword .login_password #mem_email {
-        width: 55%;
+        width: 65%;
         margin: 3% 0;
         border-radius: 10px;
         line-height: 24px; }
@@ -428,7 +431,7 @@ header #passwordLightBox {
         header #passwordLightBox #getPassword .login_password #mem_email::placeholder {
           color: #999; }
       header #passwordLightBox #getPassword .login_password #new_mem_psw {
-        width: 55%;
+        width: 65%;
         margin-bottom: 3%;
         border-radius: 10px;
         line-height: 24px; }
@@ -437,7 +440,7 @@ header #passwordLightBox {
         header #passwordLightBox #getPassword .login_password #new_mem_psw::placeholder {
           color: #999; }
       header #passwordLightBox #getPassword .login_password #re_new_mem_psw {
-        width: 55%;
+        width: 65%;
         margin-bottom: 3%;
         border-radius: 10px;
         line-height: 24px; }
@@ -485,8 +488,10 @@ header #registerLightBox {
         padding: 2% 0; }
       header #registerLightBox #registered .login_register p {
         color: #f0ecdd;
-        font-size: 12px;
-        line-height: 20px; }
+        font-size: 8px;
+        line-height: 16px; }
+      header #registerLightBox #registered .login_register #idMsg {
+        padding-top: 8px; }
       header #registerLightBox #registered .login_register span {
         width: 35%;
         float: left;
@@ -494,37 +499,37 @@ header #registerLightBox {
         text-align: left;
         color: #f0ecdd; }
       header #registerLightBox #registered .login_register #f_mem_id {
-        width: 55%;
+        width: 65%;
         margin: 1% 0;
         border-radius: 10px;
-        line-height: 24px; }
+        line-height: 20px; }
         header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
           color: #999; }
         header #registerLightBox #registered .login_register #f_mem_id::placeholder {
           color: #999; }
       header #registerLightBox #registered .login_register #f_mem_email {
-        width: 55%;
+        width: 65%;
         margin-bottom: 1%;
         border-radius: 10px;
-        line-height: 24px; }
+        line-height: 20px; }
         header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
           color: #999; }
         header #registerLightBox #registered .login_register #f_mem_email::placeholder {
           color: #999; }
       header #registerLightBox #registered .login_register #f_mem_psw {
-        width: 55%;
+        width: 65%;
         margin-bottom: 1%;
         border-radius: 10px;
-        line-height: 24px; }
+        line-height: 20px; }
         header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
           color: #999; }
         header #registerLightBox #registered .login_register #f_mem_psw::placeholder {
           color: #999; }
       header #registerLightBox #registered .login_register #f_re_mem_psw {
-        width: 55%;
+        width: 65%;
         margin-bottom: 2%;
         border-radius: 10px;
-        line-height: 24px; }
+        line-height: 20px; }
         header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
           color: #999; }
         header #registerLightBox #registered .login_register #f_re_mem_psw::placeholder {
@@ -582,9 +587,9 @@ header #registerLightBox {
         header #lightBox #tableLogin .login_password h3 {
           font-size: 36px;
           color: #f0ecdd;
-          padding: 4% 0; }
+          padding: 6% 0; }
         header #lightBox #tableLogin .login_password #mem_id {
-          width: 45%;
+          width: 65%;
           margin-bottom: 5%;
           border-radius: 10px;
           line-height: 24px; }
@@ -593,7 +598,7 @@ header #registerLightBox {
           header #lightBox #tableLogin .login_password #mem_id::placeholder {
             color: #999; }
         header #lightBox #tableLogin .login_password #mem_psw {
-          width: 45%;
+          width: 65%;
           margin-bottom: 2%;
           border-radius: 10px;
           line-height: 24px; }
@@ -657,7 +662,7 @@ header #registerLightBox {
           color: #f0ecdd;
           padding: 8% 0; }
         header #lightBox #tableLogin .login_password #mem_id {
-          width: 45%;
+          width: 65%;
           margin-bottom: 5%;
           border-radius: 10px;
           line-height: 24px; }
@@ -666,7 +671,7 @@ header #registerLightBox {
           header #lightBox #tableLogin .login_password #mem_id::placeholder {
             color: #999; }
         header #lightBox #tableLogin .login_password #mem_psw {
-          width: 45%;
+          width: 65%;
           margin-bottom: 2%;
           border-radius: 10px;
           line-height: 24px; }
@@ -679,7 +684,7 @@ header #registerLightBox {
           font-size: 16px;
           text-decoration-line: underline;
           display: block;
-          margin-left: 25%;
+          margin-left: 0%;
           margin-bottom: 3%; }
         header #lightBox #tableLogin .login_password span {
           color: #f0ecdd;
@@ -786,23 +791,28 @@ header #registerLightBox {
           line-height: 20px;
           margin: 2% 0; }
         header #registerLightBox #registered .login_register span {
-          width: 20%;
-          float: left;
-          margin: 8px 0 8px 30px;
+          width: 25%;
+          margin: 8px 0 8px 40px;
           text-align: left;
           color: #f0ecdd; }
         header #registerLightBox #registered .login_register #f_mem_id {
           width: 55%;
-          margin-bottom: 3%;
+          margin: 0 5% 3% 0;
           border-radius: 10px;
           line-height: 24px; }
           header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
             color: #999; }
           header #registerLightBox #registered .login_register #f_mem_id::placeholder {
             color: #999; }
+        header #registerLightBox #registered .login_register #btnCheckId {
+          font-size: 8px;
+          margin: 0 5% 3% 0; }
+        header #registerLightBox #registered .login_register #idMsg {
+          font-size: 8px;
+          padding-top: 0; }
         header #registerLightBox #registered .login_register #f_mem_email {
           width: 55%;
-          margin-bottom: 3%;
+          margin: 0 5% 3% 0;
           border-radius: 10px;
           line-height: 24px; }
           header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
@@ -811,7 +821,7 @@ header #registerLightBox {
             color: #999; }
         header #registerLightBox #registered .login_register #f_mem_psw {
           width: 55%;
-          margin-bottom: 3%;
+          margin: 0 5% 3% 0;
           border-radius: 10px;
           line-height: 24px; }
           header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
@@ -820,7 +830,7 @@ header #registerLightBox {
             color: #999; }
         header #registerLightBox #registered .login_register #f_re_mem_psw {
           width: 55%;
-          margin-bottom: 3%;
+          margin: 0 5% 3% 0;
           border-radius: 10px;
           line-height: 24px; }
           header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
@@ -1725,6 +1735,9 @@ section {
     padding: 0 15px;
     box-sizing: border-box; } }
 
+* {
+  outline: 1px red; }
+
 section {
   padding-top: 0px; }
 
@@ -1943,6 +1956,8 @@ body {
         font-size: 20px; } }
     .cart_form .cart_total :last-child {
       padding-top: 30px; }
+  .cart_form .cart_total_area {
+    text-align: center; }
   .cart_form .amount {
     font-family: "Noto Sans TC", sans-serif;
     line-height: normal;

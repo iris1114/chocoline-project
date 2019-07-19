@@ -1,15 +1,6 @@
 
 var cart = {};
 
-// function getTotalMoney(){
-//   total =0;
-//   for(let psn in cart){
-//     total =cart[psn].price * cart[psn].qty;
-//   }
-//   return total;
-
-// }
-
 function getTotalMoney(){
   total =0;
   let subtotal =document.getElementsByClassName('subtotal');
@@ -117,14 +108,15 @@ window.addEventListener("load", function() {
 		xhr.onload = function (){
 			itemRows.removeChild(item);// 消除視覺介面
       cart = JSON.parse(xhr.responseText);
-    //  if(document.getElementById( 'cart_total').innerText === 0 ){
-      document.getElementById( 'cart_total').innerText =getTotalMoney();
-    //  }else{
-    //     document.getElementById( 'cart_total').innerText ="無購物資料";
-    //  }
- 
+      var totalMoney = getTotalMoney();
+      if(totalMoney != 0){
+        document.getElementById('cart_total').innerText =total;
+      }else{
+        // document.getElementById( 'cart_total_area').style.display="none";
+        document.getElementById( 'cart_total_area').innerText="尚無購物資料";
+     }
 
-			// delete cart[prod_no]; 消除記憶體	
+			delete cart[psn]; 消除記憶體	
 		}
 		let url = "php/trash.php?psn=" + psn;
 		xhr.open("get",url,true);
@@ -155,9 +147,9 @@ for(i=0 ;i <trash.length;i++){
 
 
 
-  window.addEventListener('load',function(){
-    document.getElementById('btn_shop').onclick=init;
+  // window.addEventListener('load',function(){
+  //   document.getElementById('btn_shop').onclick=init;
 
-  });
+  // });
     
   

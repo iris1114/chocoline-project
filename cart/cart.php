@@ -22,6 +22,7 @@ if(!isset($_SESSION["mem_id"])){
     <title>CHOCO 購物車</title>
 </head>
 <body>
+
 <!-- header start -->
 <header>
     <div class="m_header">
@@ -79,7 +80,7 @@ if(!isset($_SESSION["mem_id"])){
             <ul class="menubox">
                 <li><a href="../custom/custom.php">客製 CHOCO</a></li>
                 <li><a href="../contest/contest.php">CHOCO 選美</a></li>
-                <li class="nowpage"><a href="../game/game.php">CHOCO 遊戲</a></li>
+                <li ><a href="../game/game.php">CHOCO 遊戲</a></li>
                 <li><a href="../store/store.php">CHOCO 商城</a></li>
                 <li><a href="../about/about.php">關於 CHOCO</a></li>
             </ul>
@@ -110,7 +111,7 @@ if(!isset($_SESSION["mem_id"])){
                 </a>			
                 <h3>會員登入</h3>
                 <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
-                <input type="password" name="mem_psw" id="mem_psw" value="" placeholder="密碼"><br>
+                <input type="password" name="mem_psw" id="mem_psw" value="" maxlength="12" placeholder="密碼"><br>
                 <a href="javascript:;" id="forget_password">忘記密碼</a><br>
                 <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
                 <span>不是會員嗎?</span>
@@ -121,18 +122,18 @@ if(!isset($_SESSION["mem_id"])){
     <!-- 重設密碼 -->
     <div id="passwordLightBox" style="display:none">
         <div id="getPassword">
-            <img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
+            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
             <div class="login_password">
                 <a href="javascript:;" class="btnLoginCancel">
-                    <img src="image/login/login_closeicon.png" alt="">
+                    <img src="../common/image/login/login_closeicon.png" alt="">
                 </a>			
                 <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
                 <h3>重設密碼</h3>
                 <p>請輸入帳號註冊時所留的電子<br>
                     郵件地址，以驗證您的資料</p>
                 <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
-                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼  (6位字母、數字)"><br>
-                <input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
+                <input type="password" name="mem_psw" id="new_mem_psw" value="" maxlength="12" placeholder="輸入新密碼  (6-12位字母、數字)"><br>
+                <input type="password" name="mem_psw" id="re_new_mem_psw" value="" maxlength="12" placeholder="再次確認新密碼"><br>
                 <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
             </div>
         </div>
@@ -140,10 +141,10 @@ if(!isset($_SESSION["mem_id"])){
     <!-- 會員註冊 -->
     <div id="registerLightBox" style="display:none">
         <div id="registered">
-            <img class="login_bg" src="image/login/login_bg.png" alt="login_bg">
+            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
             <div class="login_register">
                 <a href="javascript:;" class="btnLoginCancel">
-                    <img src="image/login/login_closeicon.png" alt="btnLoginCancel">
+                    <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
                 </a>			
                 <h3>會員註冊</h3>
                 <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
@@ -152,14 +153,15 @@ if(!isset($_SESSION["mem_id"])){
                 <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
                 <p id="idMsg">請輸入帳號</p><br>
                 <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
-                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼 (6位字母、數字)"><br>
-                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼 (再次確認)"><br>
+                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" maxlength="12" placeholder="設定密碼 (6-12位字母、數字)"><br>
+                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" maxlength="12" placeholder="再次確認密碼 (再次確認)"><br>
                 <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
             </div>
         </div>
     </div>
 </header>
 <!-- header end -->
+
 
 <!--------cartflow_container--------->
 <section  id="cartflow_container">
@@ -222,7 +224,8 @@ if(!isset($_SESSION["mem_id"])){
         <?php 
         if( isset($_SESSION["cart"]) === false || count($_SESSION["cart"])==0){ 
         echo "<div class='box cart_show_box '>尚無購物資料";
-        echo "<script> window.onload=btnShopHide(); </script>";
+        // echo "<script> window.addEventListener('load','btnShopHide',false); </script>";
+        echo "<script> console.log('load'); </script>";
 
         }else{  //有購物資料
         $total = 0;
@@ -281,7 +284,6 @@ if(!isset($_SESSION["mem_id"])){
 
 ?>
 
-<!--－－－－－－－－－ 客制商品－－－－－－－－－－ -->
 
 
  
@@ -295,7 +297,7 @@ if(!isset($_SESSION["mem_id"])){
 
             echo " <div class='cart_form' style = 'height: 500; width: 100%;'>
             <div class='cart_total'>
-            <p>商品金額:NT$ <span class='amount' id='cart_total'>", number_format($total), "</span></p>
+            <p id='cart_total_area'>商品金額:NT$ <span class='amount' id='cart_total'>", number_format($total), "</span></p>
             </div>
             </div>";    
             }
@@ -475,7 +477,6 @@ window.addEventListener('resize', () => {
       function btnShopHide(){
         document.getElementById('btn_shop').style.display="none";
       }
-    
     </script>
 
 <script src="js/cart_show.js"></script>

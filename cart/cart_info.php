@@ -4,29 +4,27 @@ session_start();
 if(!isset($_SESSION["mem_id"])){
     $_SESSION["mem_id"] = null;    
 }
-
-
-
-// $errMsg = "";
-// try {
-// 	require_once("php/connectChoco.php");
-
-//   $sql = "select * from member where mem_no = 1";
-//   // $sql = "select * from member where member_id=:member_id";
-
-//   $members = $pdo->query($sql); 
-//   $memRow = $members -> fetch(PDO::FETCH_ASSOC);
-//   $mem_point=$memRow['mem_point'];
-//   $_SESSION['mem_no']=1;
-
-// }catch (PDOException $e) {
-// 	echo "錯誤 : ", $e -> getMessage(), "<br>";
-// 	echo "行號 : ", $e -> getLine(), "<br>";
-// }
- 
-// echo $errMsg;
-
 ?>
+
+
+<?php
+$errMsg = "";
+try {
+    require_once("../common/php/connect_choco.php"); 
+  $sql = "select * from member where mem_id =:mem_id";
+  $member = $pdo->prepare($sql); 
+  $member->bindValue(":mem_id", $_SESSION["mem_id"]);
+  $member->execute();
+
+
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+ 
+echo $errMsg;
+?> 
+
 
 
 <!DOCTYPE html>
@@ -64,9 +62,11 @@ if(!isset($_SESSION["mem_id"])){
             </div> 
             <div class="status">
                 <figure>
-                    <a class="spanLogin" href="../member/member.php">
+                    <a class="spanLogin" href="javascript:;">
                         <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
+                        <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                        <span id="spanLoginText_mobile" style="display:none">登入</span>
                     </a>
                 </figure>
                 <figure>
@@ -100,7 +100,7 @@ if(!isset($_SESSION["mem_id"])){
             <ul class="menubox">
                 <li><a href="../custom/custom.php">客製 CHOCO</a></li>
                 <li><a href="../contest/contest.php">CHOCO 選美</a></li>
-                <li class="nowpage"><a href="../game/game.php">CHOCO 遊戲</a></li>
+                <li ><a href="../game/game.php">CHOCO 遊戲</a></li>
                 <li><a href="../store/store.php">CHOCO 商城</a></li>
                 <li><a href="../about/about.php">關於 CHOCO</a></li>
             </ul>
@@ -110,9 +110,8 @@ if(!isset($_SESSION["mem_id"])){
                     <img src="../common/image/headerfooter/icon_member.png" alt="member" />
                     <!-- icon點擊後跳出登入註冊燈箱 -->
                 </a>
-                <!-- <span id="mem_name">&nbsp;</span> -->
                 <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                <span id="spanLoginText">登入</span>
+                <span id="spanLoginText" style="display:none">登入</span>
             </figure>
             <figure>
                 <a href="../cart/cart.php">
@@ -132,7 +131,7 @@ if(!isset($_SESSION["mem_id"])){
                 </a>			
                 <h3>會員登入</h3>
                 <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
-                <input type="password" name="mem_psw" id="mem_psw" value="" placeholder="密碼"><br>
+                <input type="password" name="mem_psw" id="mem_psw" value="" maxlength="12" placeholder="密碼"><br>
                 <a href="javascript:;" id="forget_password">忘記密碼</a><br>
                 <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
                 <span>不是會員嗎?</span>
@@ -153,8 +152,8 @@ if(!isset($_SESSION["mem_id"])){
                 <p>請輸入帳號註冊時所留的電子<br>
                     郵件地址，以驗證您的資料</p>
                 <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
-                <input type="password" name="mem_psw" id="new_mem_psw" value="" placeholder="輸入新密碼"><br>
-                <input type="password" name="mem_psw" id="re_new_mem_psw" value="" placeholder="再次確認新密碼"><br>
+                <input type="password" name="mem_psw" id="new_mem_psw" value="" maxlength="12" placeholder="輸入新密碼  (6-12位字母、數字)"><br>
+                <input type="password" name="mem_psw" id="re_new_mem_psw" value="" maxlength="12" placeholder="再次確認新密碼"><br>
                 <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
             </div>
         </div>
@@ -169,15 +168,13 @@ if(!isset($_SESSION["mem_id"])){
                 </a>			
                 <h3>會員註冊</h3>
                 <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
-                        請填下您的個人資料。</p>
+                        請填下您的個人資料！* 為必填。</p>
                 <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
                 <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
-                <!-- <span id="idMsg"></span><br> -->
                 <p id="idMsg">請輸入帳號</p><br>
-                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail"><br>
-                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" placeholder="設定密碼"><br>
-                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" placeholder="再次確認密碼"><br>
-                <p>* 為必填欄位，請填妥欄位資訊。</p>
+                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
+                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" maxlength="12" placeholder="設定密碼 (6-12位字母、數字)"><br>
+                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" maxlength="12" placeholder="再次確認密碼 (再次確認)"><br>
                 <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
             </div>
         </div>
@@ -221,7 +218,7 @@ if(!isset($_SESSION["mem_id"])){
             <div class="box cart_show_box">
                 <div class=" col_md_12 col_lg_12 bonus_box ">
                     <div class="bonus_decs ">
-                        <p>目前可使用點數： <?php echo $mem_point ?>點 (1點折抵1元)</p>
+                        <p>目前可使用點數： <?php echo $_SESSION["mem_point"] ?>點 (1點折抵1元)</p>
                         <a href="game.html">玩遊戲賺點數</a>
                     </div>
                 <div class="bonus_input " >
@@ -238,11 +235,11 @@ if(!isset($_SESSION["mem_id"])){
         <div class="cart_form">
                 <div class="cart_total">   
 <?php
-$total = 0;
-foreach( $_SESSION["p_name"] as $p_no => $data){ 
-    $subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
-    $total = $total + $subTotal;  //計算總計
-}
+// $total = 0;
+// foreach( $_SESSION["p_name"] as $p_no => $data){ 
+//     $subTotal = $_SESSION["p_price"][$p_no] * $_SESSION["p_qty"][$p_no];  //計算小計
+//     $total = $total + $subTotal;  //計算總計
+// }
 ?>
 
 
@@ -270,15 +267,15 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
         <div class="box cart_show_box ">
               <div class=" col_12 col_m_4 col_lg_4 purchaser_box ">
                   <p>訂購人資訊</p>
-                  <p><span class="w-100">姓名:</span><input type="text" name="purchaser_name" value="123"></p>
-                  <p><span class="w-100">電話:</span><input type="text" name="purchaser_phone" value="0987654321"></p>
-                  <p><span class="w-100">地址:</span><input type="text" name="purchaser_address"></p>
+                  <p><span class="w-100">姓名:</span><input type="text" name="purchaser_name" value="<?php echo  $_SESSION["mem_name"]; ?> "></p>
+                  <p><span class="w-100">電話:</span><input type="text" name="purchaser_phone" value="<?php echo  $_SESSION["mem_tel"]; ?>"></p>
+                  <p><span class="w-100">地址:</span><input type="text" name="purchaser_address" value="<?php echo  $_SESSION["mem_address"]; ?>" ></p>
               </div>
                <div class=" col_12 col_m_4 col_lg_4 receiver_box ">
                       <p>收件人資訊</p>
-                      <p><span class="w-100">姓名:</span><input type="text" name="purchaser_name" value="123"></p>
-                      <p><span class="w-100">電話:</span><input type="text" name="purchaser_phone" value="0987654321"></p>
-                      <p><span class="w-100">地址:</span><input type="text" name="purchaser_address"></p>
+                      <p><span class="w-100">姓名:</span><input type="text" name="receiver_name" value=""></p>
+                      <p><span class="w-100">電話:</span><input type="text" name="receiver_phone" value=""></p>
+                      <p><span class="w-100">地址:</span><input type="text" name="receiver_address"></p>
                   </div>
               </div>
           </div>
@@ -296,13 +293,13 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
           <div class="box cart_show_box ">
           <div class=" col_12 col_m_4 col_lg_10 creditcard_box ">
               <p> <span>信用卡帳號:</span> 
-                  <input type="number"  maxlength="4" name="creditCard-1">
+                  <input type="text"  maxlength="4" name="creditCard-1">
                   <span>-</span>
-                  <input type="number" maxlength="4" name="creditCard-2">
+                  <input type="text" maxlength="4" name="creditCard-2">
                   <span>-</span>
-                  <input type="number" maxlength="4" name="creditCard-3">
+                  <input type="text" maxlength="4" name="creditCard-3">
                   <span>-</span>
-                  <input type="number" maxlength="4" name="creditCard-4">
+                  <input type="text" maxlength="4" name="creditCard-4">
               </p>
               <p> <span>有效期限:</span> 
                   <select name="select_month" id="select_month"></select>
@@ -430,6 +427,7 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
 <script src="../common/js/login.js"></script>
 
 
+
 <script>
 		
     new Vue({
@@ -441,7 +439,54 @@ foreach( $_SESSION["p_name"] as $p_no => $data){
 
         }
     });
-</script>       
+</script>  
+
+
+<script src="../common/js/cart_info.js"></script>
+
+
+<script>
+
+
+
+function select_month(){
+    var select_month =document.getElementById('select_month');
+    if(select_month){
+        for(var i=1 ;i<=12; i++){
+            var t =i+"月";
+            var v = i;
+            var new_option = new Option(t, v);
+            select_month.options.add(new_option); 
+        }
+    }
+
+}
+
+function select_year(){
+    var nowTime = new Date();
+    var theYear = nowTime.getFullYear();
+
+    var select_year = document.getElementById("select_year");
+    if(select_year){
+        for (var i = 0; i < 20; i++) {
+            var t = theYear + i + "年";
+            var v = theYear + i;
+            var new_option = new Option(t, v);
+            select_year.options.add(new_option);
+        }
+    }
+}
+
+function do_first(){
+    select_month();
+    select_year();
+}
+
+window.addEventListener('load',do_first);
+
+
+
+</script>
 
 </body>
 </html>

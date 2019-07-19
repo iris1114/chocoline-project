@@ -233,6 +233,10 @@ padding-top: 150px;
            
         }
     }
+    .cart_total_area{
+        text-align: center;
+    }
+
     .amount{
         @include font_l();
         color: $color_red;
