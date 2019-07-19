@@ -69,7 +69,7 @@
 
 
 
-button {
+/* button {
   background: #1c99ae;
  
   color: #fff;
@@ -88,11 +88,11 @@ button {
   margin: 10px auto;
   padding: 5px 20px;
   width: 160px;
-}
+} */
 
 
 /* New Color Palette */
-
+/* 
 #colorSelect,
 #brushSelect {
   background: #fff;
@@ -119,9 +119,9 @@ button {
   border-bottom-color: #fff;
   border-width: 10px;
   margin-left: -10px;
-}
+} */
 
-#newColor,
+/* #newColor,
 #changeBrush {
   width: 80px;
   height: 80px;
@@ -130,8 +130,8 @@ button {
   float: left;
   border: none;
   margin: 10px 20px 20px 10px;
-}
-
+} */
+/* 
 .sliders p {
   margin: 8px 0;
   vertical-align: middle;
@@ -148,7 +148,7 @@ button {
 .sliders input {
   position: relative;
   top: 2px;
-}
+} */
 
 #colorSelect button {
   border: none;
@@ -345,14 +345,10 @@ button {
 
           <div class="choco_type">
             <ul>
-              <li class="fruit">
-                <figure>
+              <li class="fruit " >
+                <figure >
                   <img src="image/custom/small/fr_b_001.png" alt="blue berry" />
-                  <figcaption>
-                    <p>藍莓</p>
-
-                  </figcaption>
-
+                  <p>藍莓</p>
                 </figure>
               </li>
               <li class="fruit">
@@ -794,46 +790,46 @@ button {
         </div>
 
 
-        <div class="card_wrap">
+<div class="card_wrap">
   
-         <div class="card_custom">
-         <div class="controls">
-  <ul>
-    <li class="red selected"></li>
-    <li class="blue"></li>
-    <li class="yellow"></li>
-  </ul>
+    <div class="card_custom">
+        <div class="controls">
+        <ul>
+          <li class="red selected"></li>
+          <li class="blue"></li>
+          <li class="yellow"></li>
+        </ul>
  
-  <div id="colorSelect">
-    <span id="newColor"></span>
-    <div class="colorPicker"></div>  
-    <div>
-      <button id="addNewColor">Add Color</button>
-    </div>
-  </div>
+        <div id="colorSelect">
+          <span id="newColor"></span>
+          <div class="colorPicker"></div>  
+          <div>
+            <button id="addNewColor">Add Color</button>
+          </div>
+        </div>
  
-  <div id="brushSelect">
-    <span id="changeBrush"></span>
-    <div class="sliders">
-      <p>
-        <label for="brush_size">Size</label>
-        <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
-      </p>
-      <form id="brushShapeForm">
-        <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
-        <br>
-        <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
-      </form>
+        <div id="brushSelect">
+          <span id="changeBrush"></span>
+          <div class="sliders">
+            <p>
+              <label for="brush_size">Size</label>
+              <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
+            </p>
+            <form id="brushShapeForm">
+              <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
+              <br>
+              <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-         </div>
         
 
         <div class="card_items">
 
               <canvas  class="ccc" width="400" height="400">
-             21651616
+         
               </canvas>
           </div>
      </div>
@@ -1070,10 +1066,21 @@ button {
             }
           })
         }
-
+     
+        for(let i=0;i<fruits.length;i++){
+        
+        fruits[i].addEventListener("click",function(){
+          for(j=0;j<fruits.length;j++){
+            fruits[j].classList.remove("active");
+          }
+          this.classList.add("active");
+              
+      })
+  }
+  
         // ----------------------口味介紹 end --------------------------
 
-
+  
 
 
         // --------------------------選擇巧克力口味--------------------------
@@ -1107,7 +1114,18 @@ button {
             }
           }, false);
         }
-
+     
+        for(let i=0;i<chos.length;i++){
+        
+          chos[i].addEventListener("click",function(){
+          for(j=0;j<chos.length;j++){
+            chos[j].classList.remove("choosed");
+          }
+          this.classList.add("choosed");
+              
+      })
+  }
+  
 
         // --------------------------選擇巧克力口味--------------------------
 
@@ -1611,7 +1629,24 @@ $canvas.mousedown(function(e) {
 }).mouseup(function() {
   mousedown = false;
 });
-    
+// var colorPicker = new iro.ColorPicker(".colorPicker", {
+//   // color picker options
+//   // Option guide: https://iro.js.org/guide.html#color-picker-options
+//   width: 280,
+//   color: "rgb(255, 0, 0)",
+//   borderWidth: 1,
+//   borderColor: "#fff",
+// });
+// var values = document.getElementById("values");
+
+// colorPicker.on(["color:init", "color:change"], function(color){
+//   color-api
+//   values.innerHTML = [
+//     "hex: " + color.hexString,
+//     "rgb: " + color.rgbString,
+//     "hsl: " + color.hslString,
+//   ].join("<br>");
+// });	
   </script>
   
     <script>
