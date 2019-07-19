@@ -599,12 +599,17 @@ body {
                                     flex-flow: row;
                                     justify-content: center;
                                     padding: 0 5px 5px 5px;
-                                    .heart_unclick {
-                                        color: $color_milk;
-                                    }
-                                    .heart_clicked {
-                                        display: none;
-                                        color: $color_milk;
+                                    span {
+                                        pointer-events: none;
+                                        .heart_unclick {
+                                            color: $color_milk;
+                                            pointer-events: none;
+                                        }
+                                        .heart_clicked {
+                                            display: none;
+                                            color: $color_milk;
+                                            pointer-events: none;
+                                        }
                                     }
                                 }
                             }
@@ -2696,12 +2701,16 @@ body {
                                     flex-flow: row;
                                     justify-content: center;
                                     padding: 10px;
-                                    .heart_unclick {
-                                        color: $color_milk;
-                                    }
-                                    .heart_clicked {
-                                        color: $color_milk;
-                                        display: none;
+                                    span {
+                                        .heart_unclick {
+                                            color: $color_milk;
+                                            pointer-events: none;
+                                        }
+                                        .heart_clicked {
+                                            color: $color_milk;
+                                            display: none;
+                                            pointer-events: none;
+                                        }
                                     }
                                 }
                             }

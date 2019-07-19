@@ -376,27 +376,68 @@ window.addEventListener("load", function() {
 
 
 // selector end
+mem_no = 1;
+
+function add_favorite(e) {
+    console.log(this.parentNode.parentNode.parentNode);
+    let xhr = new XMLHttpRequest();
+    // console.log();
+    xhr.onload = function() {
+
+        if (xhr.status == 200) {
+
+            // select_result = JSON.parse(xhr.responseText);
+            // show_select_result();
+        } else {
+            alert(xhr.status);
+        }
+    }
+    let url = "php/add_favorite.php";
+
+    xhr.open("post", url, false);
+    let myForm = new FormData(e.target.parentNode.parentNode.parentNode);
+    xhr.send(myForm);
+}
+
+// function retreat_favorite() {
+
+
+// }
+
+
+
+
 
 // collect start
 
-window.addEventListener("load", function() {
+window.addEventListener("load", collect_product);
+
+function collect_product() {
     var collect_btn = document.getElementsByClassName("collect_btn");
 
     for (i = 0; i < collect_btn.length; i++) {
-        collect_btn[i].addEventListener("click", function() {
+        collect_btn[i].addEventListener("click", function(e) {
+
+            e.stopPropagation();
+            e.preventDefault();
+            console.log(e.target);
+
+
             var heart_clicked = this.getElementsByClassName("heart_clicked")[0];
             var heart_unclick = this.getElementsByClassName("heart_unclick")[0];
 
             if (heart_clicked.style.display != "inline") {
                 heart_clicked.style.display = "inline";
                 heart_unclick.style.display = "none";
+                add_favorite(e);
             } else {
                 heart_clicked.style.display = "none";
                 heart_unclick.style.display = "inline";
+                // retreat_favorite();
             }
-        });
+        }, true);
     }
-});
+}
 
 // collect end
 
@@ -422,7 +463,9 @@ function plus1() {
     }
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", plus_minus_qty);
+
+function plus_minus_qty() {
     var qty = document.getElementsByClassName("qty");
     var minus = document.getElementsByClassName("minus");
     var plus = document.getElementsByClassName("plus");
@@ -433,7 +476,7 @@ window.addEventListener("load", function() {
         minus[i].onclick = minus1;
         plus[i].onclick = plus1;
     }
-});
+}
 
 
 // qty control end
@@ -448,7 +491,6 @@ function cable_car_move() {
     var k = 3;
     var i = 4;
     var j = 0;
-    // console.log(cable_car_area);
 
     cable_car_next_btn.onclick = function() {
         if (i > 3) {
@@ -463,15 +505,7 @@ function cable_car_move() {
         i++;
         j++;
         k++;
-        // console.log("i:" + i);
-        // console.log("j:" + j);
-        // console.log("k:" + k);
-        // for (var k = 0; k < cable_car_area.length; k++) {
-        //     cable_car_area[k].classList.remove(left_to_right_first);
-        //     cable_car_area[k].classList.remove(left_to_right_second);
 
-        //     console.log("k:" + cable_car_area[k]);
-        // }
         cable_car_area[k].classList.remove("left_to_right_second");
         cable_car_area[i].classList.remove("left_to_right_first");
         cable_car_area[j].classList.add("left_to_right_first");
@@ -484,72 +518,34 @@ function cable_car_move() {
 
 
 
-// window.addEventListener("load", function() {
-// show_product();
 
-// });
-// window.addEventListener("load", show_product);
-
-// function show_product() {
-//     console.log("123");
-//     let product_detail = JSON.parse(jsonStr);
-//     console.log(product_detail);
-
-// }
-
-// function get_selector(){
-
-//     var xhr = new XMLHttpRequest();
-
-//     xhr.onload=function (){
-//         if( xhr.status == 200 ){
+var select_result = {};
 
 
-//             myObj = JSON.parse(this.responseText);
-//             document.getElementById("demo").innerHTML = myObj.name;
-
-
-
-//         }else{
-//            alert( xhr.status );
-//         }
-//    }
-
-//    var url = "getMore_JSON.php?memId=" + document.getElementById("memId").value;
-//    xhr.open("Get", url, true);
-//    xhr.send( null );
-
-// };
-
+// select products start
 function send_select(select_data) {
-    console.log(select_data);
+
     let xhr = new XMLHttpRequest();
 
     xhr.onload = function() {
-        // select_result = {};
+
         if (xhr.status == 200) {
 
             select_result = JSON.parse(xhr.responseText);
-            console.log(select_result);
+            show_select_result();
         } else {
             alert(xhr.status);
         }
     }
     let url = "php/get_select_result.php?select_data=" + select_data;
 
-    xhr.open("get", url, true);
+    xhr.open("get", url, false);
     xhr.send(null);
 
 
 
 
 }
-
-
-
-
-
-
 
 
 function select_item() {
@@ -559,26 +555,98 @@ function select_item() {
 
     for (var i = 0; i < select_items.length; i++) {
 
-
-        select_items[i].onclick = function() {
+        select_items[i].onclick = function(e) {
             var select_data = []
             for (var j = 0; j < select_items.length; j++) {
 
                 if (select_items[j].checked == true) {
-                    select_data.push(1);
-                } else {
-                    select_data.push(0);
+                    select_data.push(select_items[j].value + "=1");
+                    // console.log(select_items[j].value);
                 }
             }
+
             send_select(select_data);
         }
     }
+}
+window.addEventListener("load", select_item);
+
+// select product end
+
+
+
+function show_select_result() {
+
+    var product_list = document.getElementById("product_list");
+
+    // var html = "";
+    var html = '<div class="product_item col_lg_5">' + product_list.firstElementChild.innerHTML + "</div>";
+    // console.log(html);
+    // if (isCartEmpty()) {
+    //     html = "<center>尚無購物資料</center>";
+    // }
+
+    for (var i = 0; i < select_result.length; i++) { //cart[psn]
+        html +=
+            `<form>
+            <input type="hidden" name="p_no" value="${select_result[i]["classic_product_no"]}">
+            <input type="hidden" name="p_name" value="${select_result[i]["classic_product_name"]}">
+            <input type="hidden" name="p_price" value="${select_result[i]["product_price"]}">
+            <input type="hidden" name="p_img" value="image/store/${select_result[i]["product_img_src"]}">
+            
+            <div class="product_item col_lg_5">
+                <div class="product_pic_content">
+                    <div class="product_pic">
+                        <a href="product.php?classic_product_no=${select_result[i]["classic_product_no"]}">
+                            <img src="image/store/${select_result[i]["product_img_src"]}" />
+                        </a>
+                        <a href="product.php?classic_product_no=${select_result[i]["classic_product_no"]}   ">
+                            <img src="image/store/${select_result[i]["product_hover_src"]}" alt="" />
+                        </a>
+                    </div>
+                    <div class="product_content">
+                        <h2>${select_result[i]["classic_product_name"]}</h2>
+                        <p class="sold_qty">已售出 <span>${select_result[i]["product_sold"]}</span></p>
+                        <p class="price">NT$ <span>${select_result[i]["product_price"]}</p>
+                        <div class="qty_buttons">
+                            <input class="minus" type="button" value="-" /><input  class="qty classic_product_qty" type="text" value="1" min="1" max="10" step="1" name="qty" /><input class="plus" type="button" value="+" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product_button">
+                    <a href="javascript:;" class="collect_btn btn cyan_m"><span>
+                            <i class="heart_unclick far fa-heart"></i>
+                            <i class="heart_clicked fas fa-heart"></i>
+
+                            收藏</span></a>
+                    <a href="javascript:;" class="btn orange_m classic_product_add_cart_btn"><span>加入購物車</span></a>
+                </div>
+            </div>
+            </form>`;
+    }
+    html += `<div class="pagination_wrap">
+    <div class="pagination">
+        <a href="javascript:;">❮</a>
+        <a class="active" href="javascript:;">1</a>
+        <a href="javascript:;">2</a>
+        <a href="javascript:;">3</a>
+        <a href="javascript:;">4</a>
+        <a href="javascript:;">5</a>
+        <a href="javascript:;">❯</a>
+    </div>
+</div>`
+    product_list.innerHTML = html;
+
+    plus_minus_qty();
+    collect_product();
+    add_cart();
 
 
 
 }
 
-window.addEventListener("load", select_item);
+
 
 
 

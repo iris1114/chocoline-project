@@ -1,11 +1,7 @@
 <?php
 // session_start();
 try{
-  $dsn = "mysql:host=localhost;port=3306;dbname=chocoline;charset=utf8";
-  $user = "root";
-  $password = "root";
-  $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-  $pdo = new PDO( $dsn, $user, $password, $options);  
+  require_once("../../common/php/connect_choco.php"); 
   
   $sql = "select * from robot where lover_class=:lover and friend_class=:friend and family_class=:family";
   $selector = $pdo->prepare($sql);
