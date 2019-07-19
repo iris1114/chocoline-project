@@ -21,36 +21,34 @@
 </head>
 <style>
 
-
 canvas {
   background: #fff;
-  /* display: block; */
+  display: block;
   margin: 50px auto 10px;
   border-radius: 5px;
-  /* box-shadow: 0 4px 0 0 #222; */
-
+  box-shadow: 0 4px 0 0 #222;
   cursor: url(../img/cursor.png), crosshair;
 }
 
-.controls {
+/* .controls {
   min-height: 60px;
   margin: 0 auto;
   width: 600px;
   border-radius: 5px;
   overflow: hidden;
-}
+} */
 
-ul {
+/* ul {
   list-style: none;
   margin: 0;
   float: left;
   padding: 10px 0 20px;
   width: 100%;
   text-align: center;
-} 
+} */
 
-ul li,
-#newColor {
+/* .abc
+ {
   display: block;
   height: 54px;
   width: 54px;
@@ -58,30 +56,18 @@ ul li,
   cursor: pointer;
   border: 0;
   box-shadow: 0 3px 0 0 #222;
-}
+} */
+/* #newColor {
+  display: block;
+  height: 54px;
+  width: 54px;
+  border-radius: 60px;
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 3px 0 0 #222;
+} */
 
-ul li {
-  display: inline-block;
-  margin: 0 5px 10px;
-}
 
-.red {
-  background: #fc4c4f;
-}
-
-.blue {
-  background: #4fa3fc;
-}
-
-.yellow {
-  background: #ECD13F;
-}
-
-.selected {
-  border: 7px solid #fff;
-  width: 40px;
-  height: 40px;
-}
 
 button {
   background: #68B25B;
@@ -183,6 +169,7 @@ button {
   padding: 5px 10px;
   width: 325px;
 }
+
 </style>
 
 <body> 
@@ -808,26 +795,18 @@ button {
 
 
         <div class="card_wrap">
-
-          <div class="card_custom" id="aaa">
-          <canvas  class="ccc" width="400" height="400">
-        
-          </canvas>
-          <button id="SaveCnv">Save Image</button>
-<div class="controls">
-
+  
+         <div class="card_custom">
+         <div class="controls">
   <ul>
     <li class="red selected"></li>
     <li class="blue"></li>
     <li class="yellow"></li>
   </ul>
   <button id="revealColorSelect">New Color</button>
-         </div>
   <div id="colorSelect">
     <span id="newColor"></span>
     <div class="sliders">
-      <div class="colorPicker"></div>  
-      <div id ="aaa"></div>
       <p>
         <label for="red">Red</label>
         <input id="red" name="red" type="range" min=0 max=255 value=0>
@@ -861,15 +840,15 @@ button {
     </div>
   </div>
 </div>
-
-
-              <div class="card_items"></div>
-
-          </div>
-
-
-
          </div>
+        
+
+        <div class="card_items">
+
+              <canvas  class="ccc" width="400" height="400">
+              </canvas>
+          </div>
+     </div>
 <form method="post" accept-charset="utf-8" id="form1">
   <input name="final_choco" id='final_choco' type="hidden"/>
 </form>
@@ -1529,146 +1508,121 @@ button {
         evt.currentTarget.className += " active";
       } </script>
 <script type="text/javascript">
-	
+var color = $(".selected").css("background-color");
+var $canvas = $("canvas");
+var ctx = $canvas[0].getContext("2d"); //ctx
+var lastEvent;
+var mousedown = false;
 
-  // Problem: We need to draw on the canvas
-  // Solution: when user interacts cause changes in the canvas
-  var color = $(".selected").css("background-color");
-  var abc = $("canvas");
-  var ctx = abc[0].getContext("2d"); //ctx
-  var lastEvent;
-  var mousedown = false;
-  var  bgImg = new Image();
-  
+// shape of brush
+var shapeIsSquare = true;
+var shapeIsCircle = false;
+
+//  size of brush
+var sizeOfBrush = 10;
+
+// when clicking on control list items
+$(".controls").on("click", "li", function() {
+  // deselect sibiling elements
+  $(this).siblings().removeClass("selected");
+  // select clicked element
+  $(this).addClass("selected");
+  // cache current color
+  color = $(this).css("background-color");
+});
 
 
+// when new color is pressed
+$("#revealColorSelect").click(function() {
+  // show color select or hide the color select
+  changeColor();
+  $("#colorSelect").toggle();
+});
 
- bgImg.onload = function(){
-console.log('圖片載入成功');
-console.log(this);
-bgImg.src = "image/custom/small/card.png";
-ctx1.drawImage(bgImg,0,0,wWidth,wHeight);
- }
-  // shape of brush
-  var shapeIsSquare = true;
-  var shapeIsCircle = false;
-  
-  //  size of brush
-  var sizeOfBrush = 10;
-  
-  // when clicking on control list items
-  $(".controls").on("click", "li", function() {
-    // deselect sibiling elements
-    $(this).siblings().removeClass("selected");
-    // select clicked element
-    $(this).addClass("selected");
-    // cache current color
-    color = $(this).css("background-color");
-  });
-  
-  
-  // when new color is pressed
-  $("#revealColorSelect").click(function() {
-    // show color select or hide the color select
-    changeColor();
-    $("#colorSelect").toggle();
-  });
-  
-  $("#revealBrushSelect").click(function() {
-    // show brush select or hide the brush select
-    changeBrushSize();
-    $("#brushSelect").toggle();
-  });
-  
-  // update the new color span
-  function changeColor() {
-    var r = $("#red").val();
-    var g = $("#green").val();
-    var b = $("#blue").val();
-        // selectedColor=colorPicker.color.rgbString;
-    $("#newColor").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+$("#revealBrushSelect").click(function() {
+  // show brush select or hide the brush select
+  changeBrushSize();
+  $("#brushSelect").toggle();
+});
+
+// update the new color span
+function changeColor() {
+  var r = $("#red").val();
+  var g = $("#green").val();
+  var b = $("#blue").val();
+  $("#newColor").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+}
+
+// update the brush/shape size
+function changeBrushSize() {
+  var brushSize = $("#brush_size").val();
+  sizeOfBrush = brushSize;
+}
+
+function changeBrushShape() {
+  var shape = $('input[name=brush_shape]:checked', '#brushShapeForm').val();
+  if (shape === "circle") {
+    shapeIsSquare = false;
+    shapeIsCircle = true;
+  } else {
+    shapeIsSquare = true;
+    shapeIsCircle = false;
   }
-  
-  // update the brush/shape size
-  function changeBrushSize() {
-    var brushSize = $("#brush_size").val();
-    sizeOfBrush = brushSize;
+}
+
+$("#brushShapeForm input:radio").click(changeBrushShape);
+
+// when sliders change
+$("input[type=range]")
+  .change(changeColor)
+  .change(changeBrushSize);
+
+
+// when "Add Color" is pressed
+$("#addNewColor").click(function() {
+  // append the color to the controls ul
+  var $newColor = $("<li></li>");
+  $newColor.css("background-color", $("#newColor").css("background-color"));
+  $(".controls ul").append($newColor);
+  // select the new color
+  $newColor.click();
+});
+
+
+// on mouse events on the canvas
+$canvas.mousedown(function(e) {
+  lastEvent = e;
+  mousedown = true;
+  if (shapeIsSquare) {
+    ctx.fillStyle = color;
+    ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
+  } else if (shapeIsCircle) {
+    var radius = sizeOfBrush/2;
+    ctx.beginPath();
+    ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
+    ctx.fillStyle = color;
+    ctx.fill();
   }
-  
-  function changeBrushShape() {
-    var shape = $('input[name=brush_shape]:checked', '#brushShapeForm').val();
-    if (shape === "circle") {
-      shapeIsSquare = false;
-      shapeIsCircle = true;
-    } else {
-      shapeIsSquare = true;
-      shapeIsCircle = false;
-    }
-  }
-  
-  $("#brushShapeForm input:radio").click(changeBrushShape);
-  
-  // when sliders change
-  $("input[type=range]")
-    .change(changeColor)
-    .change(changeBrushSize);
-  
-  
-  // when "Add Color" is pressed
-  $("#addNewColor").click(function() {
-    // append the color to the controls ul
-    var $newColor = $("<li></li>");
-    $newColor.css("background-color", $("#newColor").css("background-color"));
-    $(".controls ul").append($newColor);
-    // select the new color
-    $newColor.click();
-  });
-  
-  
-  // on mouse events on the canvas
-  abc.mousedown(function(e) {
-    lastEvent = e;
-    mousedown = true;
+}).mousemove(function(e) {
+  // draw lines
+  if (mousedown) {
     if (shapeIsSquare) {
+      ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
       ctx.fillStyle = color;
       ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
+      lastEvent = e;
     } else if (shapeIsCircle) {
-      var radius = sizeOfBrush/2;
+      var radius = sizeOfBrush;
       ctx.beginPath();
       ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
       ctx.fillStyle = color;
       ctx.fill();
+      lastEvent = e;
     }
-  }).mousemove(function(e) {
-    // draw lines
-    if (mousedown) {
-      if (shapeIsSquare) {
-        ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-        ctx.fillStyle = color;
-        ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
-        lastEvent = e;
-      } else if (shapeIsCircle) {
-        var radius = sizeOfBrush;
-        ctx.beginPath();
-        ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = color;
-        ctx.fill();
-        lastEvent = e;
-      }
-    }
-  }).mouseup(function() {
-    mousedown = false;
-  });
-  
-  document.getElementById('SaveCnv').addEventListener("click",function(){
-            window.open(abc[0].toDataURL('image/png'));
-            var gh = (abc[0].toDataURL('png'));
-            console.log(gh);
-            var a = document.createElement('a');
-            a.href = gh;
-            a.download = 'image.png';
-            a.click();
-        });
+  }
+}).mouseup(function() {
+  mousedown = false;
+});
     
   </script>
   

@@ -496,15 +496,19 @@ header #lightBox #tableLogin .login_password .btnLoginCancel {
   right: 0;
 }
 
+header #lightBox #tableLogin .login_password input {
+  margin-left: 0;
+}
+
 header #lightBox #tableLogin .login_password h3 {
   font-size: 28px;
   color: #f0ecdd;
-  padding: 4% 0;
+  padding: 8% 0;
 }
 
 header #lightBox #tableLogin .login_password #mem_id {
-  width: 45%;
-  margin-bottom: 5%;
+  width: 65%;
+  margin: 0 0 5% 0;
   border-radius: 10px;
   line-height: 24px;
 }
@@ -530,8 +534,8 @@ header #lightBox #tableLogin .login_password #mem_id::placeholder {
 }
 
 header #lightBox #tableLogin .login_password #mem_psw {
-  width: 45%;
-  margin-bottom: 2%;
+  width: 65%;
+  margin: 0 0 2% 0;
   border-radius: 10px;
   line-height: 24px;
 }
@@ -562,7 +566,8 @@ header #lightBox #tableLogin .login_password #forget_password {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   display: block;
-  margin-left: 25%;
+  text-align: right;
+  margin-right: 18%;
   margin-bottom: 1%;
 }
 
@@ -635,7 +640,7 @@ header #passwordLightBox #getPassword .login_password p {
 }
 
 header #passwordLightBox #getPassword .login_password #mem_email {
-  width: 55%;
+  width: 65%;
   margin: 3% 0;
   border-radius: 10px;
   line-height: 24px;
@@ -662,7 +667,7 @@ header #passwordLightBox #getPassword .login_password #mem_email::placeholder {
 }
 
 header #passwordLightBox #getPassword .login_password #new_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 3%;
   border-radius: 10px;
   line-height: 24px;
@@ -689,7 +694,7 @@ header #passwordLightBox #getPassword .login_password #new_mem_psw::placeholder 
 }
 
 header #passwordLightBox #getPassword .login_password #re_new_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 3%;
   border-radius: 10px;
   line-height: 24px;
@@ -767,8 +772,12 @@ header #registerLightBox #registered .login_register h3 {
 
 header #registerLightBox #registered .login_register p {
   color: #f0ecdd;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 8px;
+  line-height: 16px;
+}
+
+header #registerLightBox #registered .login_register #idMsg {
+  padding-top: 8px;
 }
 
 header #registerLightBox #registered .login_register span {
@@ -780,10 +789,10 @@ header #registerLightBox #registered .login_register span {
 }
 
 header #registerLightBox #registered .login_register #f_mem_id {
-  width: 55%;
+  width: 65%;
   margin: 1% 0;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
@@ -807,10 +816,10 @@ header #registerLightBox #registered .login_register #f_mem_id::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_mem_email {
-  width: 55%;
+  width: 65%;
   margin-bottom: 1%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
@@ -834,10 +843,10 @@ header #registerLightBox #registered .login_register #f_mem_email::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 1%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
@@ -861,10 +870,10 @@ header #registerLightBox #registered .login_register #f_mem_psw::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_re_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 2%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
@@ -948,10 +957,10 @@ header #registerLightBox #registered .login_register #forget_password {
   header #lightBox #tableLogin .login_password h3 {
     font-size: 36px;
     color: #f0ecdd;
-    padding: 4% 0;
+    padding: 6% 0;
   }
   header #lightBox #tableLogin .login_password #mem_id {
-    width: 45%;
+    width: 65%;
     margin-bottom: 5%;
     border-radius: 10px;
     line-height: 24px;
@@ -972,7 +981,7 @@ header #registerLightBox #registered .login_register #forget_password {
     color: #999;
   }
   header #lightBox #tableLogin .login_password #mem_psw {
-    width: 45%;
+    width: 65%;
     margin-bottom: 2%;
     border-radius: 10px;
     line-height: 24px;
@@ -1060,7 +1069,7 @@ header #registerLightBox #registered .login_register #forget_password {
     padding: 8% 0;
   }
   header #lightBox #tableLogin .login_password #mem_id {
-    width: 45%;
+    width: 65%;
     margin-bottom: 5%;
     border-radius: 10px;
     line-height: 24px;
@@ -1081,7 +1090,7 @@ header #registerLightBox #registered .login_register #forget_password {
     color: #999;
   }
   header #lightBox #tableLogin .login_password #mem_psw {
-    width: 45%;
+    width: 65%;
     margin-bottom: 2%;
     border-radius: 10px;
     line-height: 24px;
@@ -1107,7 +1116,7 @@ header #registerLightBox #registered .login_register #forget_password {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
     display: block;
-    margin-left: 25%;
+    margin-left: 0%;
     margin-bottom: 3%;
   }
   header #lightBox #tableLogin .login_password span {
@@ -1268,15 +1277,14 @@ header #registerLightBox #registered .login_register #forget_password {
     margin: 2% 0;
   }
   header #registerLightBox #registered .login_register span {
-    width: 20%;
-    float: left;
-    margin: 8px 0 8px 30px;
+    width: 25%;
+    margin: 8px 0 8px 40px;
     text-align: left;
     color: #f0ecdd;
   }
   header #registerLightBox #registered .login_register #f_mem_id {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1295,9 +1303,17 @@ header #registerLightBox #registered .login_register #forget_password {
   header #registerLightBox #registered .login_register #f_mem_id::placeholder {
     color: #999;
   }
+  header #registerLightBox #registered .login_register #btnCheckId {
+    font-size: 8px;
+    margin: 0 5% 3% 0;
+  }
+  header #registerLightBox #registered .login_register #idMsg {
+    font-size: 8px;
+    padding-top: 0;
+  }
   header #registerLightBox #registered .login_register #f_mem_email {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1318,7 +1334,7 @@ header #registerLightBox #registered .login_register #forget_password {
   }
   header #registerLightBox #registered .login_register #f_mem_psw {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1339,7 +1355,7 @@ header #registerLightBox #registered .login_register #forget_password {
   }
   header #registerLightBox #registered .login_register #f_re_mem_psw {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -7161,572 +7177,55 @@ body {
     margin: auto;
     position: relative;
   }
-  .card .card_wrap .card_custom .color_choice {
-    width: 33.333333%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin: auto;
-  }
-  .card .card_wrap .card_custom .color_choice .colorPicker {
-    width: 100%;
-    padding-bottom: 10%;
-    padding-left: 15%;
-  }
-  .card .card_wrap .card_custom .color_choice #pen {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #eeeeee;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
-  .card .card_wrap .card_custom .color_choice h4 {
-    width: 25%;
-    text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background-color: azure;
-    border-radius: 10px;
-  }
-  .card .card_wrap .card_custom .color_choice .pw_width {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-left: 5%;
-    pointer-events: none;
-  }
-  .card .card_wrap .card_custom .color_choice .penwidth {
-    background-color: #ef9021;
-  }
-  .card .card_wrap .card_custom .color_choice img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom #card_draw {
-    width: 33.333333%;
-  }
-  .card .card_wrap .card_custom .card_items {
-    width: 33.333333%;
-    background-color: #7fc3c6;
-    margin: auto;
-    -webkit-box-shadow: 10px 10px #4ea5a5;
-            box-shadow: 10px 10px #4ea5a5;
-    border-radius: 20px;
+  .card .card_wrap .card_custom .controls {
+    min-height: 60px;
+    margin: 0 auto;
+    width: 600px;
+    border-radius: 5px;
     overflow: hidden;
   }
-  .card .card_wrap .card_custom .card_items .tab_item {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .tab_item button {
-    width: 33.333333%;
-    background-color: inherit;
+  .card .card_wrap .card_custom .controls ul {
+    list-style: none;
+    margin: 0;
     float: left;
-    border-left: 1px solid #9a999a;
-    border-bottom: none;
+    padding: 10px 0 20px;
+    width: 100%;
+    text-align: center;
+  }
+  .card .card_wrap .card_custom .controls ul li {
+    display: inline-block;
+    margin: 0 5px 10px;
+    height: 54px;
+    width: 54px;
+    border-radius: 60px;
     cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    padding: 3% 0;
+    border: 0;
+    -webkit-box-shadow: 0 3px 0 0 #222;
+            box-shadow: 0 3px 0 0 #222;
   }
-  .card .card_wrap .card_custom .card_items .tab_item button:hover {
-    background-color: blue;
+  .card .card_wrap .card_custom .controls ul .red {
+    background: #fc4c4f;
   }
-  .card .card_wrap .card_custom .card_items .card_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  .card .card_wrap .card_custom .controls ul .blue {
+    background: #4fa3fc;
   }
-  .card .card_wrap .card_custom .card_items .card_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
+  .card .card_wrap .card_custom .controls ul .yellow {
+    background: #ecd13f;
   }
-  .card .card_wrap .card_custom .card_items .card_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
+  .card .card_wrap .card_custom .controls .selected {
+    border: 7px solid #fff;
+    width: 40px;
+    height: 40px;
   }
-  .card .card_wrap .card_custom .card_items .card_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .text_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card .card_wrap .card_custom .card_items .text_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card .card_wrap .card_custom .card_items .text_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_custom .card_items .text_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .upload {
-    width: 80%;
-    text-align: right;
-    margin-left: auto;
-  }
-  .card .card_wrap .card_custom .card_items .upload input {
-    font-size: 16px;
-  }
-  .card .card_wrap .card_info {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-  }
-  .card .card_wrap .card_info .paint_text {
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    margin: 0 auto;
-  }
-  .card .card_wrap .card_info .paint_text .paint {
-    width: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    margin: 0 auto;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_pen {
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 15px;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_pen p {
-    padding-top: 15%;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_photo {
-    width: 60%;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_photo img {
-    width: 100%;
-  }
-  .card .card_wrap .card_info .paint_text .paint_color {
-    width: 100%;
-    text-align: center;
-  }
-  .card .card_wrap .card_info .paint_text .paint_color img {
-    width: 80%;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_info .total_price {
-    width: 30%;
-    text-align: center;
-    position: relative;
-  }
-  .card .card_wrap .card_info .total_price img {
-    width: 80%;
-  }
-  .card .card_wrap .card_info .total_price h4 {
-    font-size: 28px;
-    position: absolute;
-    top: 13%;
-    left: 0;
-    right: 0;
-  }
-  .card .card_wrap .card_info .total_price p {
-    font-size: 28px;
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-  }
-  .card .card_wrap .card_info .final_btn {
-    width: 20%;
-    text-align: center;
-    padding-top: 2.5%;
-  }
-  .card_mobile {
-    width: 100%;
-    display: none;
-    background-color: #fff4e2;
-    margin: 0 auto;
-    position: relative;
-  }
-  .card_mobile .fourth_step {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  .card_mobile .fourth_step img {
-    width: 80%;
-  }
-  .card_mobile .fourth_step .fourth_step_info {
-    position: absolute;
-    top: 5.5%;
-    left: 2%;
-    right: 0;
-  }
-  .card_mobile .fourth_step .fourth_step_info h3 {
-    font-size: 28px;
-    padding: 2% 0;
-  }
-  .card_mobile .card_wrap {
-    max-width: 1200px;
-    padding-top: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-    padding-bottom: 50px;
-  }
-  .card_mobile .card_wrap .card_custom {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-  }
-  .card_mobile .card_wrap .card_custom .card_back {
-    width: 50%;
-  }
-  .card_mobile .card_wrap .card_custom .card_write {
-    width: 50%;
-  }
-  .card_mobile .card_wrap .card_custom .card_write img {
-    width: 85%;
-  }
-  .card_mobile .card_wrap .card_info_mobile {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    margin: auto;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items {
-    width: 100%;
-    background-color: #7fc3c6;
-    margin: auto;
-    -webkit-box-shadow: 10px 10px #4ea5a5;
-            box-shadow: 10px 10px #4ea5a5;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .tab_item {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .tab_item button {
-    width: 33.333333%;
-    background-color: inherit;
-    float: left;
-    border-left: 1px solid #9a999a;
-    border-bottom: none;
+  .card .card_wrap .card_custom .controls #newColor {
+    display: block;
+    height: 54px;
+    width: 54px;
+    border-radius: 60px;
     cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    padding: 3% 0;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .tab_item button:hover {
-    background-color: blue;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color {
-    width: 100%;
-    padding: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .upload {
-    width: 80%;
-    text-align: right;
-    margin-left: auto;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .upload input {
-    font-size: 16px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    margin: 0 auto;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint {
-    width: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    margin: 0 auto;
-    padding-top: 10%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_pen {
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 15px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_pen p {
-    padding-top: 15%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_photo {
-    width: 60%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_photo img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint_color {
-    width: 100%;
-    text-align: center;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint_color img {
-    width: 80%;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price h4 {
-    font-size: 28px;
-    position: absolute;
-    top: 13%;
-    left: 0;
-    right: 0;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price p {
-    font-size: 28px;
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-  }
-  .card_mobile .card_wrap .card_info_mobile .final_btn {
-    width: 100%;
-    text-align: center;
-    padding-top: 2.5%;
+    border: 0;
+    -webkit-box-shadow: 0 3px 0 0 #222;
+            box-shadow: 0 3px 0 0 #222;
   }
 }
 /*# sourceMappingURL=custom.css.map */
