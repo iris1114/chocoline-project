@@ -1,8 +1,11 @@
 
 <?php
 session_start();
-if(!isset($_SESSION["mem_id"])){
+if (!isset($_SESSION["mem_id"])) {
     $_SESSION["mem_id"] = null;
+}
+if (!isset($_SESSION["mem_headshot"])) {
+    $_SESSION["mem_headshot"] = 'icon_member.png';
 }
 // $errMsg = "";
 // try {
@@ -53,7 +56,7 @@ if(!isset($_SESSION["mem_id"])){
             <div class="status">
                 <figure>
                     <a class="spanLogin" href="javascript:;">
-                        <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
                         <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
                         <span id="spanLoginText_mobile" style="display:none">登入</span>
@@ -97,7 +100,7 @@ if(!isset($_SESSION["mem_id"])){
             <div class="status">
             <figure>
                 <a class="spanLogin" href="javascript:;">
-                    <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                    <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
                     <!-- icon點擊後跳出登入註冊燈箱 -->
                 </a>
                 <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
