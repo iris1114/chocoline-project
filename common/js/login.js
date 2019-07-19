@@ -41,12 +41,13 @@ function sendForm() {
         $id('spanLoginText').innerHTML = "登出";
         $id('spanLoginText_mobile').innerHTML = "登出";
 
-        spanLogin = document.querySelectorAll(".spanLogin img" );
-        for(i=0;i<spanLogin.length;i++){
-          spanLogin[i].src = "../common/image/login/logo_icon.png";
-        }
+//         spanLogin = document.querySelectorAll(".spanLogin img" );
+//         for(i=0;i<spanLogin.length;i++){
+//           spanLogin[i].src = "../common/image/login/logo_icon.png";
+//         }
         document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
         document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
+        window.location.reload();
       }
     } else {
       alert(xhr.status);
@@ -206,10 +207,10 @@ xhr.onload = function(){
     islogin = true;
     document.getElementById("spanLoginText").innerHTML = "登出";
     document.getElementById("spanLoginText_mobile").innerHTML = "登出";
-    spanLogin = document.querySelectorAll(".spanLogin img" );
-    for(i=0;i<spanLogin.length;i++){
-      spanLogin[i].src = "../common/image/login/logo_icon.png";
-    }
+//     spanLogin = document.querySelectorAll(".spanLogin img" );
+//     for(i=0;i<spanLogin.length;i++){
+//       spanLogin[i].src = "../common/image/login/logo_icon.png";
+//     }
     document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
     document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
   }
