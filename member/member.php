@@ -18,12 +18,6 @@ try {
   $member->execute();
 
 
-  // -----------訂單-----------------//
-
-
-  // -----------收藏-----------------//
-
-
 
 } catch (PDOException $e) {
   echo "錯誤 : ", $e->getMessage(), "<br>";
@@ -73,7 +67,7 @@ echo $errMsg;
         <div class="status">
           <figure>
             <a class="spanLogin" href="javascript:;">
-              <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+              <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
               <!-- icon點擊後跳出登入註冊燈箱 -->
               <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
               <span id="spanLoginText_mobile" style="display:none">登入</span>
@@ -117,7 +111,7 @@ echo $errMsg;
         <div class="status">
           <figure>
             <a class="spanLogin" href="javascript:;">
-              <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+              <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
               <!-- icon點擊後跳出登入註冊燈箱 -->
             </a>
             <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
@@ -636,8 +630,13 @@ echo $errMsg;
   </script>
 
 
-
-
+  <!------- logout  ------>
+  <script>
+    function logout() {
+      window.location.href = "php/logout.php";
+    }
+    document.getElementById("logout_btn").onclick = logout;
+  </script>
 
 </body>
 

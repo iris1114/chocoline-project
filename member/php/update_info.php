@@ -12,13 +12,13 @@ if (isset($_POST['updated_it'])) {
     $mem_birth = $_POST['mem_birth'];
     $mem_credit = $_POST['mem_credit'];
     $mem_address = $_POST['mem_address'];
-    // $mem_headshot = $_POST['mem_headshot'];
+    $mem_headshot = $_FILES['memUpFile']['name'];
 
     switch ($_FILES['memUpFile']['error']) {
         case 0:
-            $dir = "../image/member/";
-            if (file_exists("../image/member") === false) {
-                mkdir("../image/member"); //make directory
+            $dir = "../../common/image/member/";
+            if (file_exists("../../common/image/member") === false) {
+                mkdir("../../common/image/member"); //make directory
             }
             echo $_FILES['memUpFile']['name'];
             $from = $_FILES['memUpFile']['tmp_name'];

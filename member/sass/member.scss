@@ -106,6 +106,8 @@ body{
 
     .profile_pic img{
         border-radius: 50%;
+        width:200px;
+        height: 200px;
     }
 
     .info_th{
@@ -133,6 +135,7 @@ body{
         margin :auto ;
         text-align: center;
         margin-bottom: 40px;
+        cursor: pointer;
     }
 
     .btn_edit input{
