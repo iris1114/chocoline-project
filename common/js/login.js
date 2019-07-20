@@ -225,10 +225,10 @@ xhr.onload = function(){
     islogin = true;
     document.getElementById("spanLoginText").innerHTML = "登出";
     document.getElementById("spanLoginText_mobile").innerHTML = "登出";
-    spanLogin = document.querySelectorAll(".spanLogin img" );
-    for(i=0;i<spanLogin.length;i++){
-      spanLogin[i].src =`../common/image/member/${split_head[1]}`;
-    }
+    // spanLogin = document.querySelectorAll(".spanLogin img" );
+    // for(i=0;i<spanLogin.length;i++){
+    //   spanLogin[i].src =`../common/image/member/${split_head[1]}`;
+    // }
     document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
     document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
   }
