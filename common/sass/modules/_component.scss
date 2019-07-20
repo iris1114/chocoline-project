@@ -15,6 +15,7 @@
   margin: 5px;
   border-radius: 15px;
   box-shadow: 0 5px #ccc;
+  @include noselect();
     span{
         color: $color_milk;
         display: inline-block;
@@ -312,6 +313,7 @@
 .pagination {
     display: inline-block;
     margin: auto;
+    @include noselect();
     a{
         color: #1c99ae;
         float: left;
@@ -360,7 +362,7 @@
     background: #F0ECDD url(../image/common/select.png)  no-repeat  center ;   
     border-radius: 5px;
     padding-left: 50px;
-
+    @include noselect();
     option{
         color: #187f8f;
     }
@@ -422,6 +424,7 @@ background-color: #1c99ae;
 color: $color_milk;
 border-radius: 5px;
 cursor: pointer;
+@include noselect();
 
 @include font_m;
 
@@ -438,7 +441,7 @@ cursor: pointer;
     color: $color_milk;
     border-radius: 5px;
     cursor: pointer;
-
+    @include noselect();
 
     @include font_m;
     
@@ -450,7 +453,7 @@ cursor: pointer;
 
 
 // ----------alertBox----------------//
-#alert_box {
+.alert_box {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -459,7 +462,7 @@ cursor: pointer;
     background: rgba(66,66,66,.6);
     z-index: 11;
 
-    #alert_content {
+    .alert_content {
         width: 300px;
         height: 300px; 
         background: url(../image/common/lightbox.png) no-repeat center;
@@ -478,7 +481,7 @@ cursor: pointer;
             @include font_l();
             
         }
-        #alert_close {
+        .alert_close {
             cursor: pointer;
             position: absolute;
             right: 10%;

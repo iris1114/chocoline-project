@@ -1,8 +1,11 @@
 @import "../mixins/mixin";
 
-// *{
-//     outline: 1px solid #f00;
-// }
+*{
+    // outline: 1px solid #f00;
+    img{
+        @include noselect();
+    }
+}
 header{
     position: fixed;
     width: 100%;

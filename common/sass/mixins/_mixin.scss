@@ -30,3 +30,9 @@
     left: $l;
     margin: auto;
 }
+
+@mixin noselect {
+    user-select: none;
+    -moz-user-select: none;  /* for Firefox */ 
+    -webkit-user-select: none;   /* for Chrome */
+}

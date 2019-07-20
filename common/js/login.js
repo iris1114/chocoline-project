@@ -22,6 +22,11 @@ function showLoginForm() {
 
 var mem_id_hide = "";
 var mem_id_hide_mobile = "";
+var split_info = "";
+var split_id = "";
+var split_no = ""; 
+var split_name = "";
+var split_head = "";
 function sendForm() {
   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上
   //..........................................................
@@ -31,9 +36,19 @@ function sendForm() {
       if (xhr.responseText == "error") {
         alert("帳密錯誤");
       } else {//登入成功
-        alert("登入成功！"); 
-        $id("mem_id_hide").innerHTML = xhr.responseText;
-        $id("mem_id_hide_mobile").innerHTML = xhr.responseText;
+        alert("登入成功！");
+        split_info = xhr.responseText.split(" ");
+        split_id = split_info[0].split(":");
+        split_no = split_info[1].split(":");
+        split_name = split_info[2].split(":");
+        split_head = split_info[3].split(":");
+
+        $id("mem_id_hide").innerHTML = split_id[1];
+        $id("mem_no_hide").innerHTML = split_no[1];
+        $id("mem_name_hide").innerHTML = split_name[1];
+        $id("mem_headshot_hide").innerHTML = split_head[1];
+        $id("mem_id_hide_mobile").innerHTML = split_id[1];
+        // $id("mem_id_hide").innerHTML = xhr.responseText;
         //將登入表單上的資料清空，並隱藏燈箱
         $id('lightBox').style.display = 'none';
         $id('mem_id').value = '';
@@ -41,13 +56,16 @@ function sendForm() {
         $id('spanLoginText').innerHTML = "登出";
         $id('spanLoginText_mobile').innerHTML = "登出";
 
-//         spanLogin = document.querySelectorAll(".spanLogin img" );
-//         for(i=0;i<spanLogin.length;i++){
-//           spanLogin[i].src = "../common/image/login/logo_icon.png";
-//         }
+        spanLogin = document.querySelectorAll(".spanLogin img" );
+        for(i=0;i<spanLogin.length;i++){
+          spanLogin[i].src =`../common/image/member/${split_head[1]}`;
+        }
         document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
         document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
-        window.location.reload();
+        // window.location.reload();
+        if( callBack ){
+          callBack();
+        }
       }
     } else {
       alert(xhr.status);
@@ -207,10 +225,10 @@ xhr.onload = function(){
     islogin = true;
     document.getElementById("spanLoginText").innerHTML = "登出";
     document.getElementById("spanLoginText_mobile").innerHTML = "登出";
-//     spanLogin = document.querySelectorAll(".spanLogin img" );
-//     for(i=0;i<spanLogin.length;i++){
-//       spanLogin[i].src = "../common/image/login/logo_icon.png";
-//     }
+    spanLogin = document.querySelectorAll(".spanLogin img" );
+    for(i=0;i<spanLogin.length;i++){
+      spanLogin[i].src =`../common/image/member/${split_head[1]}`;
+    }
     document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
     document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
   }

@@ -2498,7 +2498,7 @@ header #registerLightBox #registered .login_register #forget_password {
   background-color: #187f8f;
 }
 
-#alert_box {
+.alert_box {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -2508,7 +2508,7 @@ header #registerLightBox #registered .login_register #forget_password {
   z-index: 11;
 }
 
-#alert_box #alert_content {
+.alert_box .alert_content {
   width: 300px;
   height: 300px;
   background: url(../image/common/lightbox.png) no-repeat center;
@@ -2521,7 +2521,7 @@ header #registerLightBox #registered .login_register #forget_password {
   margin: auto;
 }
 
-#alert_box #alert_content p {
+.alert_box .alert_content p {
   font-size: 20px;
   color: #F6EED4;
   padding-top: 40%;
@@ -2530,24 +2530,24 @@ header #registerLightBox #registered .login_register #forget_password {
 }
 
 @media all and (max-width: 767px) {
-  #alert_box #alert_content p {
+  .alert_box .alert_content p {
     font-size: 18px;
   }
 }
 
 @media all and (min-width: 768px) {
-  #alert_box #alert_content p {
+  .alert_box .alert_content p {
     font-size: 24px;
   }
 }
 
 @media all and (min-width: 992px) {
-  #alert_box #alert_content p {
+  .alert_box .alert_content p {
     font-size: 28px;
   }
 }
 
-#alert_box #alert_content #alert_close {
+.alert_box .alert_content .alert_close {
   cursor: pointer;
   position: absolute;
   right: 10%;

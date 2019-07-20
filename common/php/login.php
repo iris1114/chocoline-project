@@ -27,10 +27,11 @@ try{
   	$_SESSION["mem_point"] = $memRow["mem_point"];
   	$_SESSION["mem_status"] = $memRow["mem_status"];
   	$_SESSION["mem_headshot"] = $memRow["mem_headshot"];
+  	$_SESSION["mem_rest_vote"] = $memRow["mem_rest_vote"];
 
     //送出登入者的姓名資料
-    echo $memRow["mem_id"];
-    // echo "mem_id:".$memRow["mem_id"],"mem_name:".$memRow["mem_name"];
+    // echo $memRow["mem_id"];
+    echo "mem_id:".$memRow["mem_id"]," mem_no:".$memRow["mem_no"]," mem_name:".$memRow["mem_name"]," mem_headshot:".$memRow["mem_headshot"];
 
   }
 }catch(PDOException $e){
