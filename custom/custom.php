@@ -21,134 +21,7 @@
 </head>
 <style>
 
-/* canvas {
-  background: #fff;
-  display: block;
-  margin: 50px auto 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 0 0 #222;
-  cursor: url(../img/cursor.png), crosshair;
-} */
 
-/* .controls {
-  min-height: 60px;
-  margin: 0 auto;
-  width: 600px;
-  border-radius: 5px;
-  overflow: hidden;
-} */
-
-/* ul {
-  list-style: none;
-  margin: 0;
-  float: left;
-  padding: 10px 0 20px;
-  width: 100%;
-  text-align: center;
-} */
-
-/* .abc
- {
-  display: block;
-  height: 54px;
-  width: 54px;
-  border-radius: 60px;
-  cursor: pointer;
-  border: 0;
-  box-shadow: 0 3px 0 0 #222;
-} */
-/* #newColor {
-  display: block;
-  height: 54px;
-  width: 54px;
-  border-radius: 60px;
-  cursor: pointer;
-  border: 0;
-  box-shadow: 0 3px 0 0 #222;
-} */
-
-
-
-/* button {
-  background: #1c99ae;
- 
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-
-  display: block;
-  font-size: 16px;
-  line-height: 40px;
-}
-
-#revealColorSelect,
-#revealBrushSelect {
-  border: none;
-  border-radius: 5px;
-  margin: 10px auto;
-  padding: 5px 20px;
-  width: 160px;
-} */
-
-
-/* New Color Palette */
-/* 
-#colorSelect,
-#brushSelect {
-  background: #fff;
-  border-radius: 5px;
-  clear: both;
-  margin: 20px auto 0;
-  padding: 10px;
-  width: 305px;
-  position: relative;
-  display: none;
-}
-
-#colorSelect:after,
-#brushSelect:after {
-  bottom: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #fff;
-  border-width: 10px;
-  margin-left: -10px;
-} */
-
-/* #newColor,
-#changeBrush {
-  width: 80px;
-  height: 80px;
-  border-radius: 3px;
-  box-shadow: none;
-  float: left;
-  border: none;
-  margin: 10px 20px 20px 10px;
-} */
-/* 
-.sliders p {
-  margin: 8px 0;
-  vertical-align: middle;
-}
-
-.sliders label {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  width: 35px;
-  font-size: 14px;
-  color: #6D574E;
-}
-
-.sliders input {
-  position: relative;
-  top: 2px;
-} */
 
 #colorSelect button {
   border: none;
@@ -790,58 +663,96 @@
         </div>
 
 
-<div class="card_wrap">
-  
-    <div class="card_custom">
-        <div class="controls">
-        <ul>
-          <li class="red selected"></li>
-          <li class="blue"></li>
-          <li class="yellow"></li>
-        </ul>
- 
-        <div id="colorSelect">
-          <span id="newColor"></span>
-          <div class="colorPicker"></div>  
-          <div>
-            <button id="addNewColor">Add Color</button>
-          </div>
-        </div>
- 
-        <div id="brushSelect">
-          <span id="changeBrush"></span>
-          <div class="sliders">
-            <p>
-              <label for="brush_size">Size</label>
-              <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
-            </p>
-            <form id="brushShapeForm">
-              <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
-              <br>
-              <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+          <div class="card_wrap">
+            
+              <div class="card_custom">
+
+                  <div class="controls">
+                    
+                  
+                  <h4>選擇</h4>
+                        <ul>
+                          <li class="red selected"></li>
+                          <li class="blue"></li>
+                          <li class="yellow"></li>
+                        </ul>
+
+                      <div id="colorSelect">
+                          <span id="newColor"></span>
+                          <div class="colorPicker"></div>  
+                      </div>
+
+                      <button id="addNewColor">Add Color</button>
+                
+                    <div id="brushSelect">
+
+                          <span id="changeBrush"></span>
+
+                          <div class="sliders">
+                            <p>
+                              <label for="brush_size">Size</label>
+                              <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
+                            </p>
+                            <form id="brushShapeForm">
+                              <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
+                              <br>
+                              <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
+                            </form>
+                          </div>
+
+                    </div>
+                          <button id="SaveCnv">Save Image</button>  
+                </div>
+           
+            
+
+                  <div class="card_items">
+
+                        <canvas  id="ccc" width="280" height="365" >
+                  
+                        </canvas>
+                    </div>
+
+              <div class="card_acc">
+                      <div class="acc_block">
+                          <div class="acc_item">
+                              <img src="image/custom/card1.png" alt="" id="srcImg1" onclick="loadImage1()">
+                          </div>
+                          <div class="acc_item">
+                              <img src="image/custom/card2.png" alt="" id="srcImg2" onclick="loadImage2()">
+                          </div>
+                      </div>
+
+                      <div class="acc_block">
+                          <div class="acc_item">
+                                <img src="image/custom/card3.png" alt="" id="srcImg3" onclick="loadImage3()">
+                          </div>
+                          <div class="acc_item">
+                                <img src="image/custom/card5.png" alt="" id="srcImg4" onclick="loadImage4()">
+                          </div>
+                      </div>
+
+                      <div class="acc_block">
+                          <div class="acc_item">
+                               <img src="image/custom/card4.png" alt="" id="srcImg5" onclick="loadImage5()">
+                          </div>
+                          <div class="acc_item">
+                                <img src="image/custom/card6.png" alt="" id="srcImg6" onclick="loadImage6()">
+                          </div>      
+                      </div>
+
+             </div>
+                    <!-- <img src="image/custom/bar_item.png" alt="reset" class="zzz" onclick="clean()"> -->
+         </div>
         
-
-        <div class="card_items">
-
-              <canvas  class="ccc" width="400" height="400">
-         
-              </canvas>
-          </div>
-     </div>
+      </div>
 <form method="post" accept-charset="utf-8" id="form1">
   <input name="final_choco" id='final_choco' type="hidden"/>
 </form>
-<script>
-
-</script>
 
 
-    </section>
+
+</section>
     
 
     <!-- robot start -->
@@ -1515,8 +1426,8 @@
       } </script>
 <script type="text/javascript">
 var color = $(".selected").css("background-color");
-var $canvas = $("canvas");
-var ctx = $canvas[0].getContext("2d"); //ctx
+var cnv = $("canvas");
+var ctx = cnv[0].getContext("2d"); //ctx
 var lastEvent;
 var mousedown = false;
 
@@ -1536,27 +1447,40 @@ $(".controls").on("click", "li", function() {
   // cache current color
   color = $(this).css("background-color");
 });
+document.getElementById('SaveCnv').addEventListener("click",function(){
+            // window.open(cnv[0].toDataURL('image/png'));
+            var gh = (cnv[0].toDataURL('png'));
 
+            var a = document.createElement('a');
+            a.href = gh;
+            a.download = 'image.png';
+            a.click();
+        });
 
 // when new color is pressed
-$("#revealColorSelect").click(function() {
-  // show color select or hide the color select
-  changeColor();
-  $("#colorSelect").toggle();
-});
+// $("#revealColorSelect").click(function() {
+//   // show color select or hide the color select
+//   changeColor();
+//   $("#colorSelect").toggle();
+// });
 
-$("#revealBrushSelect").click(function() {
-  // show brush select or hide the brush select
-  changeBrushSize();
-  $("#brushSelect").toggle();
-});
+// $("#revealBrushSelect").click(function() {
+//   // show brush select or hide the brush select
+//   changeBrushSize();
+//   $("#brushSelect").toggle();
+// });
 
 // update the new color span
 function changeColor() {
-  var r = $("#red").val();
-  var g = $("#green").val();
-  var b = $("#blue").val();
-  $("#newColor").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+  // var r = $("#red").val();
+  // var g = $("#green").val();
+  // var b = $("#blue").val();
+  colorPicker.on("color:change", function(){
+  selected = colorPicker.color.rgbString;
+  console.log(selected);
+  $("#newColor").css("background-color",  selected);
+});	
+ 
 }
 
 // update the brush/shape size
@@ -1596,7 +1520,7 @@ $("#addNewColor").click(function() {
 
 
 // on mouse events on the canvas
-$canvas.mousedown(function(e) {
+cnv.mousedown(function(e) {
   lastEvent = e;
   mousedown = true;
   if (shapeIsSquare) {
@@ -1629,25 +1553,97 @@ $canvas.mousedown(function(e) {
 }).mouseup(function() {
   mousedown = false;
 });
-// var colorPicker = new iro.ColorPicker(".colorPicker", {
-//   // color picker options
-//   // Option guide: https://iro.js.org/guide.html#color-picker-options
-//   width: 280,
-//   color: "rgb(255, 0, 0)",
-//   borderWidth: 1,
-//   borderColor: "#fff",
-// });
-// var values = document.getElementById("values");
+var colorPicker = new iro.ColorPicker(".colorPicker", {
+  // color picker options
+  // Option guide: https://iro.js.org/guide.html#color-picker-options
+  width: 150,
+  color: "rgb(255, 0, 0)",
+  borderWidth: 1,
+  borderColor: "#fff",
+});
+var values = document.getElementById("values");
 
-// colorPicker.on(["color:init", "color:change"], function(color){
-//   color-api
-//   values.innerHTML = [
-//     "hex: " + color.hexString,
-//     "rgb: " + color.rgbString,
-//     "hsl: " + color.hslString,
-//   ].join("<br>");
-// });	
+colorPicker.on("color:change", function(){
+  selected = colorPicker.color.rgbString;
+  console.log(selected);
+  $("#newColor").css("background-color",  selected);
+
+});	
   </script>
+
+<script>
+function loadImage1(){
+
+  var img = new Image();
+  img.onload = function(){
+    //ctx.translate(50, 50);
+    //ctx.rotate(0.5); 
+    ctx.drawImage(img,0,0); //drawImage(img,x,y,width,height)
+  }
+  img.src = document.getElementById("srcImg1").src;
+ 
+}
+function loadImage2(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,0,0); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg2").src;
+
+}
+function loadImage3(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,0,0); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg3").src;
+
+}
+function loadImage4(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,130,200); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg4").src;
+
+}
+function loadImage5(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,180,0); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg5").src;
+
+}
+function loadImage6(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,0,250); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg6").src;
+
+}
+
+function clean(){
+  ctx.clearRect(449, 531, ctx.width, ctx.height);
+}
+
+</script>
   
     <script>
 function uploadImage(){

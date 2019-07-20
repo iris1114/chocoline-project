@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,172 +7,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/custom.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
-    integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
-    integrity="sha256-AAhU14J4Gv8bFupUUcHaPQfvrdNauRHMt+S4UVcaJb0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha256-AAhU14J4Gv8bFupUUcHaPQfvrdNauRHMt+S4UVcaJb0=" crossorigin="anonymous"></script>
   <script src="js/html2canvas.min.js"></script>
   <script src="../common/js/header.js"></script>
-
+ 
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
 
   <title>客製CHOCO</title>
 </head>
 <style>
-  /* canvas {
-  background: #fff;
-  display: block;
-  margin: 50px auto 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 0 0 #222;
-  cursor: url(../img/cursor.png), crosshair;
-} */
-
-  /* .controls {
-  min-height: 60px;
-  margin: 0 auto;
-  width: 600px;
-  border-radius: 5px;
-  overflow: hidden;
-} */
-
-  /* ul {
-  list-style: none;
-  margin: 0;
-  float: left;
-  padding: 10px 0 20px;
-  width: 100%;
-  text-align: center;
-} */
-
-  /* .abc
- {
-  display: block;
-  height: 54px;
-  width: 54px;
-  border-radius: 60px;
-  cursor: pointer;
-  border: 0;
-  box-shadow: 0 3px 0 0 #222;
-} */
-  /* #newColor {
-  display: block;
-  height: 54px;
-  width: 54px;
-  border-radius: 60px;
-  cursor: pointer;
-  border: 0;
-  box-shadow: 0 3px 0 0 #222;
-} */
 
 
 
-  button {
-    background: #1c99ae;
+#colorSelect button {
+  border: none;
+  border-top: 1px solid #6A845F;
+  border-radius: 0 0 5px 5px;
+  clear: both;
+  margin: 10px -10px -7px;
+  padding: 5px 10px;
+  width: 325px;
+}
 
-    color: #fff;
-    outline: none;
-    cursor: pointer;
+#brushSelect button {
+  border: none;
+  border-top: 1px solid #6A845F;
+  border-radius: 0 0 5px 5px;
+  clear: both;
+  margin: 10px -10px -7px;
+  padding: 5px 10px;
+  width: 325px;
+}
 
-    display: block;
-    font-size: 16px;
-    line-height: 40px;
-  }
-
-  #revealColorSelect,
-  #revealBrushSelect {
-    border: none;
-    border-radius: 5px;
-    margin: 10px auto;
-    padding: 5px 20px;
-    width: 160px;
-  }
-
-
-  /* New Color Palette */
-
-  #colorSelect,
-  #brushSelect {
-    background: #fff;
-    border-radius: 5px;
-    clear: both;
-    margin: 20px auto 0;
-    padding: 10px;
-    width: 305px;
-    position: relative;
-    display: none;
-  }
-
-  #colorSelect:after,
-  #brushSelect:after {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: #fff;
-    border-width: 10px;
-    margin-left: -10px;
-  }
-
-  #newColor,
-  #changeBrush {
-    width: 80px;
-    height: 80px;
-    border-radius: 3px;
-    box-shadow: none;
-    float: left;
-    border: none;
-    margin: 10px 20px 20px 10px;
-  }
-
-  .sliders p {
-    margin: 8px 0;
-    vertical-align: middle;
-  }
-
-  .sliders label {
-    display: inline-block;
-    margin: 0 10px 0 0;
-    width: 35px;
-    font-size: 14px;
-    color: #6D574E;
-  }
-
-  .sliders input {
-    position: relative;
-    top: 2px;
-  }
-
-  #colorSelect button {
-    border: none;
-    border-top: 1px solid #6A845F;
-    border-radius: 0 0 5px 5px;
-    clear: both;
-    margin: 10px -10px -7px;
-    padding: 5px 10px;
-    width: 325px;
-  }
-
-  #brushSelect button {
-    border: none;
-    border-top: 1px solid #6A845F;
-    border-radius: 0 0 5px 5px;
-    clear: both;
-    margin: 10px -10px -7px;
-    padding: 5px 10px;
-    width: 325px;
-  }
 </style>
 
-<body>
+<body> 
   <!-- header start -->
   <header>
     <div class="m_header">
@@ -344,14 +218,10 @@
 
           <div class="choco_type">
             <ul>
-              <li class="fruit">
-                <figure>
+              <li class="fruit " >
+                <figure >
                   <img src="image/custom/small/fr_b_001.png" alt="blue berry" />
-                  <figcaption>
-                    <p>藍莓</p>
-
-                  </figcaption>
-
+                  <p>藍莓</p>
                 </figure>
               </li>
               <li class="fruit">
@@ -474,7 +344,7 @@
 
     <!-- ----- 第三屏 Start ----- -->
 
-    <section class="outlook">
+    <section class="outlook" >
       <div class="thrid_step_moble">
         <img src="image/custom/bg8.png" alt="background">
         <div class="thrid_stepInfo">
@@ -502,7 +372,7 @@
             </div>
 
           </div>
-          <!-- 
+<!-- 
           <div class="fix_photo_mobile">
             <img src="image/custom/bear1.png" alt="bear">
           </div>
@@ -683,41 +553,41 @@
         </div>
 
         <!-- ----- left side End ----- -->
-
+ 
 
         <!-- ----- middle side start ----- -->
 
         <div class="outlook_fix">
-
+          
           <div class="fix_photo" id="fix">
 
             <div class="eye_pos pos1">
-              <img src="" alt="" class="eye_demo demo" style="transform: rotate(0deg) scale(1)">
+              <img src="" alt="" class="eye_demo demo" style = "transform: rotate(0deg) scale(1)" >
             </div>
 
             <div class="eye_pos pos2">
-              <img src="" alt="" class="eye_demo demo" style="transform: rotate(0deg) scale(1.0)">
+              <img src="" alt="" class="eye_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
-
+            
             <div class="mouse_pos ">
-              <img src="" alt="" class="mouse_demo demo" style="transform: rotate(0deg) scale(1.0)">
+              <img src="" alt="" class="mouse_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
 
             <div class="others_pos">
-              <img src="" alt="" class="others_demo demo" style="transform: rotate(0deg) scale(1.0)">
-            </div>
+              <img src="" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
+            </div> 
 
             <div class="others_pos">
-              <img src="" alt="" class="others_demo demo" style="transform: rotate(0deg) scale(1.0)">
+              <img src="" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
 
             <img src="" alt="" id="cho_pos">
 
           </div>
 
-          <div class="fix_bar ">
+          <div class="fix_bar "  >
 
-            <div class="bar_photo" id="big">
+            <div class="bar_photo"  id="big">
               <img src="image/custom/bar_item6.png" alt="big">
             </div>
 
@@ -725,15 +595,15 @@
               <img src="image/custom/bar_item5.png" alt="small">
             </div>
 
-            <div class="bar_photo" id="right">
+            <div class="bar_photo"id="right">
               <img src="image/custom/bar_item1.png" alt="right">
             </div>
 
-            <div class="bar_photo" id="left">
+            <div class="bar_photo"id="left">
               <img src="image/custom/bar_item2.png" alt="left">
             </div>
 
-            <div class="bar_photo" id="reset">
+            <div class="bar_photo"id="reset">
               <img src="image/custom/bar_item.png" alt="reset">
             </div>
 
@@ -746,14 +616,14 @@
               NT$350
             </p>
           </div>
-
+          
         </div>
 
         <!-- ----- middle side End ----- -->
 
 
         <!-- ----- right side start ----- -->
-        <div class="step_info" id="thrid">
+        <div class="step_info"id="thrid">
 
           <div class="thrid_step">
             <img src="image/custom/bg8.png" alt="background">
@@ -767,10 +637,10 @@
             <img src="image/custom/bg10.png" alt="">
           </div>
         </div>
+    
 
-
-      </div class="next_button">
-      <input type="button" onclick="aa()" class="btn cyan_s ">
+      </div  class="next_button">
+      <input type="button" onclick="aa()" class="btn cyan_s " >
       </div>
     </section>
 
@@ -779,73 +649,111 @@
     <!-- ----- 第四屏 Start ----- -->
 
 
-    <section class="card">
+    <section class= "card">
 
-      <div class="fourth_step">
+        <div class="fourth_step">
 
-        <img src="image/custom/8.png" alt="">
-
-        <div class="fourth_step_info">
-          <h3>第四步:</h3>
-          <p>搭配卡片樣式/輸入內容</p>
+              <img src="image/custom/8.png" alt="">
+       
+          <div class="fourth_step_info">
+              <h3>第四步:</h3>
+              <p>搭配卡片樣式/輸入內容</p>
+           </div>
+        
         </div>
 
+
+          <div class="card_wrap">
+            
+              <div class="card_custom">
+
+                  <div class="controls">
+                    
+                  
+                  <h4>選擇</h4>
+                        <ul>
+                          <li class="red selected"></li>
+                          <li class="blue"></li>
+                          <li class="yellow"></li>
+                        </ul>
+
+                      <div id="colorSelect">
+                          <span id="newColor"></span>
+                          <div class="colorPicker"></div>  
+                      </div>
+
+                      <button id="addNewColor">Add Color</button>
+                
+                    <div id="brushSelect">
+
+                          <span id="changeBrush"></span>
+
+                          <div class="sliders">
+                            <p>
+                              <label for="brush_size">Size</label>
+                              <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
+                            </p>
+                            <form id="brushShapeForm">
+                              <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
+                              <br>
+                              <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
+                            </form>
+                          </div>
+
+                    </div>
+                          <button id="SaveCnv">Save Image</button>  
+                </div>
+           
+            
+
+                  <div class="card_items">
+
+                        <canvas  id="ccc" width="280" height="365" >
+                  
+                        </canvas>
+                    </div>
+
+              <div class="card_acc">
+                      <div class="acc_block">
+                          <div class="acc_item">
+                              <img src="image/custom/card1.png" alt="" id="srcImg1" onclick="loadImage1()">
+                          </div>
+                          <div class="acc_item">
+                              <img src="image/custom/card2.png" alt="" id="srcImg2" onclick="loadImage2()">
+                          </div>
+                      </div>
+
+                      <div class="acc_block">
+                          <div class="acc_item">
+                                <img src="image/custom/card3.png" alt="" id="srcImg3" onclick="loadImage3()">
+                          </div>
+                          <div class="acc_item">
+                                <img src="image/custom/card5.png" alt="" id="srcImg4" onclick="loadImage4()">
+                          </div>
+                      </div>
+
+                      <div class="acc_block">
+                          <div class="acc_item">
+                               <img src="image/custom/card4.png" alt="" id="srcImg5" onclick="loadImage5()">
+                          </div>
+                          <div class="acc_item">
+                                <img src="image/custom/card6.png" alt="" id="srcImg6" onclick="loadImage6()">
+                          </div>      
+                      </div>
+
+             </div>
+                    <!-- <img src="image/custom/bar_item.png" alt="reset" class="zzz" onclick="clean()"> -->
+         </div>
+        
       </div>
+<form method="post" accept-charset="utf-8" id="form1">
+  <input name="final_choco" id='final_choco' type="hidden"/>
+</form>
 
 
-      <div class="card_wrap">
 
-        <div class="card_custom">
-          <div class="controls">
-            <ul>
-              <li class="red selected"></li>
-              <li class="blue"></li>
-              <li class="yellow"></li>
-            </ul>
-
-            <div id="colorSelect">
-              <span id="newColor"></span>
-              <div class="colorPicker"></div>
-              <div>
-                <button id="addNewColor">Add Color</button>
-              </div>
-            </div>
-
-            <div id="brushSelect">
-              <span id="changeBrush"></span>
-              <div class="sliders">
-                <p>
-                  <label for="brush_size">Size</label>
-                  <input id="brush_size" name="brush_size" type="range" min=5 max=100 value=10>
-                </p>
-                <form id="brushShapeForm">
-                  <input id="brush_shape_square" type="radio" name="brush_shape" value="square" checked>Square
-                  <br>
-                  <input id="brush_shape_circle" type="radio" name="brush_shape" value="circle">Circle
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="card_items">
-
-          <canvas class="ccc" width="400" height="400">
-            21651616
-          </canvas>
-        </div>
-      </div>
-      <form method="post" accept-charset="utf-8" id="form1">
-        <input name="final_choco" id='final_choco' type="hidden" />
-      </form>
-      <script>
-
-      </script>
-
-
-    </section>
-
+</section>
+    
 
     <!-- robot start -->
     <input id="robot_close_control" type="checkbox" />
@@ -1069,10 +977,21 @@
             }
           })
         }
-
+     
+        for(let i=0;i<fruits.length;i++){
+        
+        fruits[i].addEventListener("click",function(){
+          for(j=0;j<fruits.length;j++){
+            fruits[j].classList.remove("active");
+          }
+          this.classList.add("active");
+              
+      })
+  }
+  
         // ----------------------口味介紹 end --------------------------
 
-
+  
 
 
         // --------------------------選擇巧克力口味--------------------------
@@ -1106,7 +1025,18 @@
             }
           }, false);
         }
-
+     
+        for(let i=0;i<chos.length;i++){
+        
+          chos[i].addEventListener("click",function(){
+          for(j=0;j<chos.length;j++){
+            chos[j].classList.remove("choosed");
+          }
+          this.classList.add("choosed");
+              
+      })
+  }
+  
 
         // --------------------------選擇巧克力口味--------------------------
 
@@ -1194,21 +1124,21 @@
         var eye_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          var eye_items_length = $('.eye_items').length;
-
-          for (let i = 0; i < eye_items_length; i++) {
-            $(".eye_items").eq(i).click(function () {
-              console.log(i)
-              var eye_src = $(".eye_items").eq(i).children("img").attr("src");
-              console.log(eye_src);
-              $(".eye_demo").eq(eye_num).attr("src", eye_src);
-
-              eye_num++;
-              console.log("yes");
-            })
-          }
-        });
-
+          var eye_items_length =  $('.eye_items').length ;
+         
+          for(let i =0 ; i <eye_items_length; i++ ){
+             $(".eye_items").eq(i).click(function(){
+                        console.log(i)
+                      var eye_src=   $(".eye_items").eq(i).children("img").attr("src");     
+                    console.log(eye_src);
+                    $(".eye_demo").eq(eye_num).attr("src", eye_src);
+                    
+                    eye_num++;
+                    console.log("yes");
+                    })
+                }
+                });
+              
 
         // ---------- 眼睛 End  select----------
 
@@ -1218,17 +1148,17 @@
         var mouse_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          var mouse_items_length = $('.mouse_items').length;
-
-          for (let i = 0; i < mouse_items_length; i++) {
-            $(".mouse_items").eq(i).click(function () {
-              console.log(i)
-              var mouse_src = $(".mouse_items").eq(i).children("img").attr("src");
-              console.log(mouse_src);
-              $(".mouse_demo").eq(mouse_num).attr("src", mouse_src);
-              mouse_num++;
-            })
-          }
+          var mouse_items_length =  $('.mouse_items').length ;
+         
+          for(let i =0 ; i <mouse_items_length; i++ ){
+             $(".mouse_items").eq(i).click(function(){
+                        console.log(i)
+                      var mouse_src=   $(".mouse_items").eq(i).children("img").attr("src");     
+                    console.log(mouse_src);
+                    $(".mouse_demo").eq(mouse_num).attr("src", mouse_src);
+                    mouse_num++;
+                    })
+                }
         });
 
 
@@ -1241,17 +1171,17 @@
         var others_num = 0;
         $(document).ready(function () {
           // for (let i = 0; i <  )
-          // for (let i = 0; i <  )
-          var others_items_length = $('.others_items').length;
-          for (let i = 0; i < others_items_length; i++) {
-            $(".others_items").eq(i).click(function () {
-              console.log(i)
-              var others_src = $(".others_items").eq(i).children("img").attr("src");
-              console.log(others_src);
-              $(".others_demo").eq(others_num).attr("src", others_src);
-              others_num++;
-            })
-          }
+       // for (let i = 0; i <  )
+       var others_items_length =  $('.others_items').length ;
+          for(let i =0 ; i < others_items_length; i++ ){
+             $(".others_items").eq(i).click(function(){
+                        console.log(i)
+                      var others_src=   $(".others_items").eq(i).children("img").attr("src");     
+                    console.log(others_src);
+                    $(".others_demo").eq(others_num).attr("src", others_src);
+                    others_num++;
+                    })
+                }
 
         });
 
@@ -1276,25 +1206,25 @@
         });
 
         // ---------------------drag--------------------------
-
+ 
 
         var eyechange = document.querySelectorAll(".eye_demo");
         // console.log(eyechange.length);
         var mousechange = document.querySelectorAll(".mouse_demo");
         var otherschange = document.querySelectorAll(".others_demo");
-        var itemall = document.querySelectorAll(".demo");
+        var itemall =  document.querySelectorAll(".demo");
         // console.log(itemall.length);
-
-        var btn = document.querySelectorAll(".bar_photo");
-        var imgcontrol = [" big", " small", " right", " left", " big",]
+        
+        var btn =document.querySelectorAll(".bar_photo");
+        var imgcontrol = [" big"," small"," right"," left"," big",]
         var big = document.getElementById("big");
         var small = document.getElementById("small");
         var right = document.getElementById("right");
         var left = document.getElementById("left");
         var reset = document.getElementById("reset");
-        for (i = 0; i < btn.length; i++) {
-
-          btn[i].addEventListener("click", control);
+        for(i=0;i<btn.length;i++){
+          
+          btn[i].addEventListener("click",control);
         }
         // // eyescale = 1;
         // // eyerotate = 0;
@@ -1304,169 +1234,169 @@
         // // otherrotate = 0;
         // // var whoselected = "";
 
-
-        var arr = [];
-
-        for (let i = 0; i < eyechange.length; i++) {
-          eyechange[i].addEventListener("click", function (e) {
-            if (arr.indexOf(this) == -1) {
-              arr.push(this);
-              // console.log(arr);
-            }
-
-          })
+        
+         var arr =[];
+      
+        for(let i=0;i<eyechange.length;i++){
+            eyechange[i].addEventListener("click",function(e){
+               if(arr.indexOf(this)==-1){
+                  arr.push(this);
+                  // console.log(arr);
+               }
+       
+            })
         }
-        for (let i = 0; i < mousechange.length; i++) {
-          mousechange[i].addEventListener("click", function () {
-            if (arr.indexOf(this) == -1) {
-              arr.push(this);
-              // console.log(arr);
-            }
-
-          })
+        for(let i=0;i<mousechange.length;i++){
+          mousechange[i].addEventListener("click",function(){
+               if(arr.indexOf(this)==-1){
+                  arr.push(this);
+                  // console.log(arr);
+               }
+       
+            })
         }
-        for (let i = 0; i < otherschange.length; i++) {
-          otherschange[i].addEventListener("click", function () {
-            if (arr.indexOf(this) == -1) {
-              arr.push(this);
-              console.log(arr);
-
-            }
-
-          })
+        for(let i=0;i<otherschange.length;i++){
+          otherschange[i].addEventListener("click",function(){
+               if(arr.indexOf(this)==-1){
+                  arr.push(this);
+                  console.log(arr);
+                  
+               }
+       
+            })
         }
         let fix_photo = document.querySelector(".fix_photo")
         let draggable = fix_photo.querySelectorAll(".demo");
 
 
-        for (let i = 0; i < draggable.length; i++) {
-
-          draggable[i].addEventListener("click", function (e) {
-            var ttt = e.target;
-            for (let j = 0; j < draggable.length; j++) {
-              draggable[j].classList.remove("selector");
-
+        for(let i=0;i<draggable.length;i++){
+                
+          draggable[i].addEventListener("click",function(e){
+                var ttt = e.target;
+                    for(let j=0;j<draggable.length;j++){
+                      draggable[j].classList.remove("selector");
+                      
+                    }
+          this.classList.add("selector");
+                })
+                
             }
-            this.classList.add("selector");
-          })
+            // console.log(arr);
+             
+            var clear =document.getElementById("cho_pos")
+            let demo = document.querySelectorAll(".demo");
+            clear.addEventListener("click",function(e){
+              for(let i=0;i<demo.length;i++){
+                console.log(demo[i]);
+                console.log(e);
+                demo[i].classList.remove("selector");
+              }
+             })
+            function control(e){
 
-        }
-        // console.log(arr);
-
-        var clear = document.getElementById("cho_pos")
-        let demo = document.querySelectorAll(".demo");
-        clear.addEventListener("click", function (e) {
-          for (let i = 0; i < demo.length; i++) {
-            console.log(demo[i]);
-            console.log(e);
-            demo[i].classList.remove("selector");
-          }
-        })
-        function control(e) {
-
-          switch (this.id) {
-
-            case "big":
+              switch(this.id){
+              
+              case "big":
               // console.log(arr); 
 
-              for (let i = 0; i < arr.length; i++) {
-                if (arr[i].classList.contains("selector")) {
-
-                  let items_style = $(arr[i]).attr('style');
-                  let items_blocks = items_style.split(" ");
-                  let newscale = parseFloat(items_blocks[2].replace("scale(", "").replace(")", "")) + 0.5;
-                  items_blocks[2] = " scale(" + newscale + ")";
-                  items_blocks[1] = " " + items_blocks[1];
-                  items_new = items_blocks[0] + items_blocks[1] + items_blocks[2];
-                  var items_newstyle = $(arr[i]).attr('style', items_new);
-
-                }
-              }
-              break;
-
-            case "small":
-
-              for (let i = 0; i < arr.length; i++) {
-                if (arr[i].classList.contains("selector")) {
-
-                  let items_style = $(arr[i]).attr('style');
-
-                  let items_blocks = items_style.split(" ");
-
-                  let newscale = parseFloat(items_blocks[2].replace("scale(", "").replace(")", "")) - 0.5;
-
-                  items_blocks[2] = " scale(" + newscale + ")";
-                  items_blocks[1] = " " + items_blocks[1];
-                  items_new = items_blocks[0] + items_blocks[1] + items_blocks[2];
-                  var items_newstyle = $(arr[i]).attr('style', items_new);
-
+                for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+                
+                    let  items_style =  $(arr[i]).attr('style');
+                    let  items_blocks = items_style.split(" ");
+                    let newscale = parseFloat(items_blocks[2].replace("scale(","").replace(")",""))+0.5;
+                    items_blocks[2] = " scale("+newscale+")";
+                    items_blocks[1] = " "+items_blocks[1];
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                    var items_newstyle = $(arr[i]).attr('style',items_new);
 
                 }
               }
               break;
 
-            case "right":
+                case "small":
 
-              for (let i = 0; i < arr.length; i++) {
-                if (arr[i].classList.contains("selector")) {
-                  let items_style = $(arr[i]).attr('style');
+                for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+               
+                   let items_style =  $(arr[i]).attr('style');
+             
+                    let items_blocks = items_style.split(" ");
+            
+                    let newscale = parseFloat(items_blocks[2].replace("scale(","").replace(")",""))-0.5;
+                    
+                    items_blocks[2] = " scale("+newscale+")";
+                    items_blocks[1] = " "+items_blocks[1];
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                    var items_newstyle = $(arr[i]).attr('style',items_new);
 
-                  let items_blocks = items_style.split(" ");
-                  let newDegree = parseFloat(items_blocks[1].replace("rotate(", "").replace("deg)", "")) + 10;;
-
-                  items_blocks[1] = " rotate(" + newDegree + "deg) ";
-
-                  items_new = items_blocks[0] + items_blocks[1] + items_blocks[2];
-                  var items_newstyle = $(arr[i]).attr('style', items_new);
-
-
-                }
+                  
+               }
               }
               break;
 
+              case "right":
+                
+              for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+                    let items_style =  $(arr[i]).attr('style');
+             
+             let items_blocks = items_style.split(" ");
+                     let newDegree = parseFloat(items_blocks[1].replace("rotate(","").replace("deg)",""))+ 10;;
+                 
+                    items_blocks[1] = " rotate("+newDegree+"deg) ";
+                 
+                      items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                      var items_newstyle = $(arr[i]).attr('style',items_new);
+ 
 
-            case "left":
-
-              for (let i = 0; i < arr.length; i++) {
-                if (arr[i].classList.contains("selector")) {
-                  let items_style = $(arr[i]).attr('style');
-
-                  let items_blocks = items_style.split(" ");
-                  let newDegree = parseFloat(items_blocks[1].replace("rotate(", "").replace("deg)", "")) - 10;;
-
-                  items_blocks[1] = " rotate(" + newDegree + "deg) ";
-                  items_new = items_blocks[0] + items_blocks[1] + items_blocks[2];
-                  var items_newstyle = $(arr[i]).attr('style', items_new);
-
-                }
+               }
               }
               break;
-            case "reset":
 
+              
+              case "left":
+                
+              for(let i=0; i<arr.length; i++){
+                  if (arr[i].classList.contains("selector")){
+                    let items_style =  $(arr[i]).attr('style');
+             
+             let items_blocks = items_style.split(" ");
+                    let newDegree = parseFloat(items_blocks[1].replace("rotate(","").replace("deg)",""))-  10;;
+                 
+                    items_blocks[1] = " rotate("+newDegree+"deg) ";
+                    items_new = items_blocks[0]+items_blocks[1]+ items_blocks[2];
+                      var items_newstyle = $(arr[i]).attr('style',items_new);
 
-              arr.splice(0, arr.length);
-              console.log(arr);
-              for (let i = 0; i < itemall.length; i++) {
-                $(".demo").attr("src", "");
-
+               }
+              }
+              break;
+              case "reset":
+          
+          
+                arr.splice(0,arr.length);
                 console.log(arr);
-              }
-              others_num = 0;
-              mouse_num = 0;
-              eye_num = 0;
+                for(let i = 0 ; i <itemall.length ; i++){
+                  $(".demo").attr("src" ,"");
 
-              $(".demo").css("transform", "rotate(0deg) scale(1)")
+                  console.log(arr);
+                }
+                others_num = 0;
+                mouse_num = 0;
+                eye_num = 0;
+                
+                $(".demo").css("transform","rotate(0deg) scale(1)")
               break;
+              
+            
+                default:
+                console.log("no");
+            }
+            
 
-
-            default:
-              console.log("no");
-          }
-
-
-        }
-
-
+            }
+           
+      
       });
 
     </script>
@@ -1494,192 +1424,316 @@
         document.getElementById(types).style.display = "flex";
         evt.currentTarget.className += " active";
       } </script>
-    <script type="text/javascript">
-      var color = $(".selected").css("background-color");
-      var $canvas = $("canvas");
-      var ctx = $canvas[0].getContext("2d"); //ctx
-      var lastEvent;
-      var mousedown = false;
+<script type="text/javascript">
+var color = $(".selected").css("background-color");
+var cnv = $("canvas");
+var ctx = cnv[0].getContext("2d"); //ctx
+var lastEvent;
+var mousedown = false;
 
-      // shape of brush
-      var shapeIsSquare = true;
-      var shapeIsCircle = false;
+// shape of brush
+var shapeIsSquare = true;
+var shapeIsCircle = false;
 
-      //  size of brush
-      var sizeOfBrush = 10;
+//  size of brush
+var sizeOfBrush = 10;
 
-      // when clicking on control list items
-      $(".controls").on("click", "li", function () {
-        // deselect sibiling elements
-        $(this).siblings().removeClass("selected");
-        // select clicked element
-        $(this).addClass("selected");
-        // cache current color
-        color = $(this).css("background-color");
-      });
+// when clicking on control list items
+$(".controls").on("click", "li", function() {
+  // deselect sibiling elements
+  $(this).siblings().removeClass("selected");
+  // select clicked element
+  $(this).addClass("selected");
+  // cache current color
+  color = $(this).css("background-color");
+});
+document.getElementById('SaveCnv').addEventListener("click",function(){
+            // window.open(cnv[0].toDataURL('image/png'));
+            var gh = (cnv[0].toDataURL('png'));
 
-
-      // when new color is pressed
-      $("#revealColorSelect").click(function () {
-        // show color select or hide the color select
-        changeColor();
-        $("#colorSelect").toggle();
-      });
-
-      $("#revealBrushSelect").click(function () {
-        // show brush select or hide the brush select
-        changeBrushSize();
-        $("#brushSelect").toggle();
-      });
-
-      // update the new color span
-      function changeColor() {
-        var r = $("#red").val();
-        var g = $("#green").val();
-        var b = $("#blue").val();
-        $("#newColor").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
-      }
-
-      // update the brush/shape size
-      function changeBrushSize() {
-        var brushSize = $("#brush_size").val();
-        sizeOfBrush = brushSize;
-      }
-
-      function changeBrushShape() {
-        var shape = $('input[name=brush_shape]:checked', '#brushShapeForm').val();
-        if (shape === "circle") {
-          shapeIsSquare = false;
-          shapeIsCircle = true;
-        } else {
-          shapeIsSquare = true;
-          shapeIsCircle = false;
-        }
-      }
-
-      $("#brushShapeForm input:radio").click(changeBrushShape);
-
-      // when sliders change
-      $("input[type=range]")
-        .change(changeColor)
-        .change(changeBrushSize);
-
-
-      // when "Add Color" is pressed
-      $("#addNewColor").click(function () {
-        // append the color to the controls ul
-        var $newColor = $("<li></li>");
-        $newColor.css("background-color", $("#newColor").css("background-color"));
-        $(".controls ul").append($newColor);
-        // select the new color
-        $newColor.click();
-      });
-
-
-      // on mouse events on the canvas
-      $canvas.mousedown(function (e) {
-        lastEvent = e;
-        mousedown = true;
-        if (shapeIsSquare) {
-          ctx.fillStyle = color;
-          ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
-        } else if (shapeIsCircle) {
-          var radius = sizeOfBrush / 2;
-          ctx.beginPath();
-          ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
-          ctx.fillStyle = color;
-          ctx.fill();
-        }
-      }).mousemove(function (e) {
-        // draw lines
-        if (mousedown) {
-          if (shapeIsSquare) {
-            ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-            ctx.fillStyle = color;
-            ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
-            lastEvent = e;
-          } else if (shapeIsCircle) {
-            var radius = sizeOfBrush;
-            ctx.beginPath();
-            ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = color;
-            ctx.fill();
-            lastEvent = e;
-          }
-        }
-      }).mouseup(function () {
-        mousedown = false;
-      });
-      var colorPicker = new iro.ColorPicker(".colorPicker", {
-        // color picker options
-        // Option guide: https://iro.js.org/guide.html#color-picker-options
-        width: 280,
-        color: "rgb(255, 0, 0)",
-        borderWidth: 1,
-        borderColor: "#fff",
-      });
-      var values = document.getElementById("values");
-
-      colorPicker.on(["color:init", "color:change"], function (color) {
-        color - api
-        values.innerHTML = [
-          "hex: " + color.hexString,
-          "rgb: " + color.rgbString,
-          "hsl: " + color.hslString,
-        ].join("<br>");
-      });	
-    </script>
-
-    <script>
-      function uploadImage() {
-        var canvas = document.getElementById("thecanvas");
-        var dataURL = canvas.toDataURL("image/png");
-        document.getElementById('final_choco').value = dataURL;
-        var formData = new FormData(document.getElementById("form1"));
-
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-          if (xhr.status == 200) {
-            if (xhr.responseText == "error") {
-              alert("Error");
-            } else {
-              alert('Succesfully uploaded');
-              console.log(xhr.responseText);
-            }
-          } else {
-            alert(xhr.status)
-          }
-        }
-
-        xhr.open('POST', 'canvas_load_save.php', true);
-        xhr.send(formData);
-      }
-
-      function aa() {
-
-        html2canvas(document.getElementById('fix'), {
-          onrendered: function (canvas) {
-            canvas.setAttribute('id', 'thecanvas');	//添加属性
-            document.body.appendChild(canvas);
-            canvas.style.display = "none";
-            alert("Hi");
-            uploadImage();
-          },
-          background: "",		//canvas的背景颜色，如果没有设定默认透明
-          logging: true,		//在console.log()中输出信息
-          width: 400,			//图片宽
-          height: 400,		//图片高
-          useCORS: true, // 【重要】开启跨域配置
+            var a = document.createElement('a');
+            a.href = gh;
+            a.download = 'image.png';
+            a.click();
         });
 
-      }
+// when new color is pressed
+// $("#revealColorSelect").click(function() {
+//   // show color select or hide the color select
+//   changeColor();
+//   $("#colorSelect").toggle();
+// });
 
-      function bb() {
-        var oCanvas = document.getElementById("thecanvas");
+// $("#revealBrushSelect").click(function() {
+//   // show brush select or hide the brush select
+//   changeBrushSize();
+//   $("#brushSelect").toggle();
+// });
 
-        var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
-        saveFile(img_data1, 'richer.png');
+// update the new color span
+function changeColor() {
+  // var r = $("#red").val();
+  // var g = $("#green").val();
+  // var b = $("#blue").val();
+  colorPicker.on("color:change", function(){
+  selected = colorPicker.color.rgbString;
+  console.log(selected);
+  $("#newColor").css("background-color",  selected);
+});	
+ 
+}
+
+// update the brush/shape size
+function changeBrushSize() {
+  var brushSize = $("#brush_size").val();
+  sizeOfBrush = brushSize;
+}
+
+function changeBrushShape() {
+  var shape = $('input[name=brush_shape]:checked', '#brushShapeForm').val();
+  if (shape === "circle") {
+    shapeIsSquare = false;
+    shapeIsCircle = true;
+  } else {
+    shapeIsSquare = true;
+    shapeIsCircle = false;
+  }
+}
+
+$("#brushShapeForm input:radio").click(changeBrushShape);
+
+// when sliders change
+$("input[type=range]")
+  .change(changeColor)
+  .change(changeBrushSize);
+
+
+// when "Add Color" is pressed
+$("#addNewColor").click(function() {
+  // append the color to the controls ul
+  var $newColor = $("<li></li>");
+  $newColor.css("background-color", $("#newColor").css("background-color"));
+  $(".controls ul").append($newColor);
+  // select the new color
+  $newColor.click();
+});
+
+
+// on mouse events on the canvas
+cnv.mousedown(function(e) {
+  lastEvent = e;
+  mousedown = true;
+  if (shapeIsSquare) {
+    ctx.fillStyle = color;
+    ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
+  } else if (shapeIsCircle) {
+    var radius = sizeOfBrush/2;
+    ctx.beginPath();
+    ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+}).mousemove(function(e) {
+  // draw lines
+  if (mousedown) {
+    if (shapeIsSquare) {
+      ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+      ctx.fillStyle = color;
+      ctx.fillRect(e.offsetX, e.offsetY, sizeOfBrush, sizeOfBrush);
+      lastEvent = e;
+    } else if (shapeIsCircle) {
+      var radius = sizeOfBrush;
+      ctx.beginPath();
+      ctx.arc(e.offsetX, e.offsetY, radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = color;
+      ctx.fill();
+      lastEvent = e;
+    }
+  }
+}).mouseup(function() {
+  mousedown = false;
+});
+
+cnv.touchstart(function(e) {
+  lastEvent = e;
+  touchend = true;
+  var elm = $(this).offset();
+  if (shapeIsSquare) {
+    ctx.fillStyle = color;
+    ctx.fillRect((touch.pageX - elm.left)/0.6, (touch.pageY - elm.top)/0.6, sizeOfBrush, sizeOfBrush);
+  } else if (shapeIsCircle) {
+    var radius = sizeOfBrush/2;
+    ctx.beginPath();
+    ctx.arc((touch.pageX - elm.left)/0.6, (touch.pageY - elm.top)/0.6, radius, 0, 2 * Math.PI, false);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+}).touchmove(function(e) {
+  // draw lines
+  var elm = $(this).offset();
+  if (touchstart) {
+    if (shapeIsSquare) {
+      ctx.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+      ctx.fillStyle = color;
+      ctx.fillRect((touch.pageX - elm.left)/0.6, (touch.pageY - elm.top)/0.6, sizeOfBrush, sizeOfBrush);
+      lastEvent = e;
+    } else if (shapeIsCircle) {
+      var radius = sizeOfBrush;
+      
+      ctx.beginPath();
+      ctx.arc((touch.pageX - elm.left)/0.6, (touch.pageY - elm.top)/0.6, radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = color;
+      ctx.fill();
+      lastEvent = e;
+    }
+  }
+}).touchend(function() {
+  touchstart = false;
+});
+
+
+var colorPicker = new iro.ColorPicker(".colorPicker", {
+  // color picker options
+  // Option guide: https://iro.js.org/guide.html#color-picker-options
+  width: 150,
+  color: "rgb(255, 0, 0)",
+  borderWidth: 1,
+  borderColor: "#fff",
+});
+var values = document.getElementById("values");
+
+colorPicker.on("color:change", function(){
+  selected = colorPicker.color.rgbString;
+  console.log(selected);
+  $("#newColor").css("background-color",  selected);
+
+});	
+  </script>
+
+<script>
+function loadImage1(){
+
+  var img = new Image();
+  img.onload = function(){
+    //ctx.translate(50, 50);
+    //ctx.rotate(0.5); 
+    ctx.drawImage(img,0,0); //drawImage(img,x,y,width,height)
+  }
+  img.src = document.getElementById("srcImg1").src;
+ 
+}
+function loadImage2(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,0,0); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg2").src;
+
+}
+function loadImage3(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,0,0); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg3").src;
+
+}
+function loadImage4(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,130,200); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg4").src;
+
+}
+function loadImage5(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,180,0); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg5").src;
+
+}
+function loadImage6(){
+
+var img = new Image();
+img.onload = function(){
+  //ctx.translate(50, 50);
+  //ctx.rotate(0.5); 
+  ctx.drawImage(img,0,250); //drawImage(img,x,y,width,height)
+}
+img.src = document.getElementById("srcImg6").src;
+
+}
+
+function clean(){
+  ctx.clearRect(449, 531, ctx.width, ctx.height);
+}
+
+</script>
+  
+    <script>
+function uploadImage(){
+  var canvas = document.getElementById("thecanvas");
+  var dataURL = canvas.toDataURL("image/png");
+  document.getElementById('final_choco').value = dataURL;
+  var formData = new FormData(document.getElementById("form1"));
+  
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if( xhr.status == 200){
+      if(xhr.responseText == "error"){
+        alert("Error");
+      }else{
+        alert('Succesfully uploaded');  
+        console.log(xhr.responseText);
       }
+    }else{
+      alert(xhr.status)
+    }
+  }
+  
+  xhr.open('POST', 'canvas_load_save.php', true);
+  xhr.send(formData);
+}
+
+function aa() {
+
+html2canvas(document.getElementById('fix'), {
+    onrendered: function (canvas) {
+        canvas.setAttribute('id', 'thecanvas');	//添加属性
+        document.body.appendChild(canvas);
+        canvas.style.display="none";
+        alert("Hi");
+        uploadImage();
+    },
+    background: "",		//canvas的背景颜色，如果没有设定默认透明
+    logging: true,		//在console.log()中输出信息
+    width: 400,			//图片宽
+    height: 400,		//图片高
+    useCORS: true, // 【重要】开启跨域配置
+});
+
+}
+
+function bb() {
+var oCanvas = document.getElementById("thecanvas");
+
+var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
+saveFile(img_data1, 'richer.png');
+}
     </script>
 
 
