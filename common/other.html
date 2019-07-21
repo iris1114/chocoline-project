@@ -104,7 +104,7 @@
 <div class="alert_box" style="display: none">
     <div class="alert_content">
         <p>成功加入購物車～</p>
-        <!-- <img class="alert_close" src="image/common/login_closeicon2.png" alt=""> -->
+        <img class="alert_close" src="image/common/login_closeicon2.png" alt="">
     </div>
 </div>
 
@@ -113,11 +113,11 @@
 function alert_box(){
     document.querySelector(".alert_btn").onclick = function(){
         document.querySelector('.alert_box').style.display= "block";
-        setTimeout(function(){
-            document.querySelector('.alert_box').style.display= "none";
-        },1000);
-        // document.querySelector('.alert_close').onclick = function(){
-        // }
+        // setTimeout(function(){
+        //     document.querySelector('.alert_box').style.display= "none";
+        // },1000);
+        document.querySelector('.alert_close').onclick = function(){
+        }
     }
 }
     window.addEventListener('load',alert_box)

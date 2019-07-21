@@ -20,13 +20,25 @@ try {
     $stage_chocos = $pdo->query($sql);
 
     //投票區角色數量
-    $sql = "SELECT m.mem_name , cp.customized_product_name , c.number_votes , DATE(c.contest_time) contest_time, c.contest_no ,cp.choco_img_src FROM contest c , customized_product cp , member m WHERE cp.mem_no = m.mem_no AND c.customized_product_no=cp.customized_product_no AND (month(c.contest_time) = (month(CURRENT_DATE))) AND (YEAR(c.contest_time) = (YEAR(CURRENT_DATE))) ORDER BY contest_time DESC limit 0,18";
+    $sql = "SELECT m.mem_name , cp.customized_product_name , c.number_votes , DATE(c.contest_time) contest_time, c.contest_no ,cp.choco_img_src FROM contest c , customized_product cp , member m WHERE cp.mem_no = m.mem_no AND c.customized_product_no=cp.customized_product_no AND (month(c.contest_time) = (month(CURRENT_DATE))) AND (YEAR(c.contest_time) = (YEAR(CURRENT_DATE))) ORDER BY c.contest_time DESC limit 0,18";
     $players = $pdo->query($sql);
 
     //目前有多少頁碼
     $sql = "SELECT * FROM contest WHERE (month(contest_time) = (month(CURRENT_DATE))) AND (YEAR(contest_time) = (YEAR(CURRENT_DATE)))";
     $pages = $pdo->query($sql);
     $pagenums = ceil($pages->rowCount()/18);
+
+    //已收藏
+    $sql = "select * from favorites where mem_no=:mem_no ";
+
+    $favorite = $pdo->prepare($sql);
+    $favorite->bindValue(":mem_no",$_SESSION["mem_no"]);
+    $favorite->execute();
+    $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
+    $favorite_arr = array();
+    for ($i = 0; $i < count($favorite_rows); $i++) {
+        array_push($favorite_arr, $favorite_rows[$i]["contest_no"]);
+    }
 
 } catch (PDOException $e) {
 	echo "錯誤 : ", $e -> getMessage(), "<br>";
@@ -382,9 +394,18 @@ try {
                 <div class="player">
                     <div class="board">
                         <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
+                    <?php
+                        if(in_array($player->contest_no, $favorite_arr)){
+                    
+                            echo "<img src='image/contest/wlike.png' alt='like'    class='wlike' style='display:none'>
+                            <img src='image/contest/plike.png' alt='like' class='plike' style='display:block;'>
+                            <figcaption style='color:#F6EED4'>收藏</figcaption>";
+                        }else{
+                            echo "<img src='image/contest/wlike.png' alt='like' class='wlike' style='display:block'>
+                            <img src='image/contest/plike.png' alt='like' class='plike' style='display:none;'>
+                            <figcaption style='color:#592F13'>收藏</figcaption>";
+                        }
+                    ?>
                         </figure>
                         <p class="choconame"><?php echo $player->customized_product_name?></p>
                         <p class="votenum"><?php echo $player->number_votes?>票</p>
@@ -415,7 +436,6 @@ try {
                     <?php
                     }
                     ?>
-                    <!-- <a class="pagenums active"  href="javascript:;">1</a> -->
                     <a href="javascript:;" id="nextpage_btn">❯</a>
                 </div>
             </div>

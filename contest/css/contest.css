@@ -3888,6 +3888,7 @@ html {
 
 .player_container .contain {
   overflow: hidden;
+  padding-bottom: 50px;
 }
 
 .player_container .contain::after {
@@ -5228,9 +5229,6 @@ html {
   .player_container {
     padding-top: 150px;
     text-align: left;
-  }
-  .player_container .contain {
-    max-height: 2415px;
   }
   .player_container .contain::after {
     content: "";
