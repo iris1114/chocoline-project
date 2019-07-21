@@ -3,6 +3,12 @@ session_start();
 if (!isset($_SESSION["mem_id"])) {
     $_SESSION["mem_id"] = null;
 }
+if (!isset($_SESSION["mem_no"])) {
+    $_SESSION["mem_no"] = null;
+}
+if (!isset($_SESSION["mem_name"])) {
+    $_SESSION["mem_name"] = null;
+}
 if (!isset($_SESSION["mem_headshot"])) {
     $_SESSION["mem_headshot"] = 'icon_member.png';
 }
@@ -46,7 +52,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 <div class="status">
                     <figure>
                         <a class="spanLogin" href="javascript:;">
-                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"] ?>" alt="member" />
                             <!-- icon點擊後跳出登入註冊燈箱 -->
                             <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
                             <span id="spanLoginText_mobile" style="display:none">登入</span>
@@ -90,10 +96,13 @@ if (!isset($_SESSION["mem_headshot"])) {
                 <div class="status">
                     <figure>
                         <a class="spanLogin" href="javascript:;">
-                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"] ?>" alt="member" />
                             <!-- icon點擊後跳出登入註冊燈箱 -->
                         </a>
                         <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
+                        <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"] ?></span>
+                        <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"] ?></span>
+                        <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"] ?></span>
                         <span id="spanLoginText" style="display:none">登入</span>
                     </figure>
                     <figure>
@@ -224,11 +233,13 @@ if (!isset($_SESSION["mem_headshot"])) {
     <section class="col_12 col_lg_12 col_md_12  " id="cart_show_container">
         <div class="wrap" id="item_row">
 
+            <!--－－－－－－－－－ 一般商品－－－－－－－－－－ -->
+
             <?php
             if (isset($_SESSION["cart"]) === false || count($_SESSION["cart"]) == 0) {
                 echo "<div class='box cart_show_box '>尚無購物資料";
-                // echo "<script> window.addEventListener('load','btnShopHide',false); </script>";
-                echo "<script> console.log('load'); </script>";
+                echo "<script> window.addEventListener('load','btnShopHide',false); </script>";
+                // echo "<script> console.log('load'); </script>";
             } else {  //有購物資料
                 $total = 0;
                 foreach ($_SESSION['cart'] as $i => $value) {
@@ -238,7 +249,6 @@ if (!isset($_SESSION["mem_headshot"])) {
                     $total = $total + $subTotal;  //計算總計
                     ?>
 
-                    <!--－－－－－－－－－ 一般商品－－－－－－－－－－ -->
                     <div class="box cart_show_box ">
                         <span style='display:none'><?php echo $_SESSION["cart"][$i]["psn"]; ?></span>
 
@@ -285,6 +295,11 @@ if (!isset($_SESSION["mem_headshot"])) {
                 }
 
                 ?>
+
+
+                <!--－－－－－－－－－ 客制商品－－－－－－－－－－ -->
+
+
 
 
 
@@ -434,51 +449,20 @@ if (!isset($_SESSION["mem_headshot"])) {
 
 
     <script>
-        // qty control start
-
-        // function minus1() {
-        //     var val = parseInt(this.parentNode.querySelectorAll(".qty")[0].value);
-        //     if ((val > 1) & (val <= 10)) {
-        //         val -= 1;
-        //         this.parentNode.querySelectorAll(".qty")[0].value = val;
-        //     } else {
-        //         this.parentNode.querySelectorAll(".qty")[0].value = 1;
-        //     }
-        // }
-
-        // function plus1() {
-        //     var val = parseInt(this.parentNode.querySelectorAll(".qty")[0].value);
-        //     if ((val >= 1) & (val < 10)) {
-        //         val += 1;
-        //         this.parentNode.querySelectorAll(".qty")[0].value = val;
-        //     } else {
-        //         this.parentNode.querySelectorAll(".qty")[0].value = 1;
-        //     }
-        // }
-
-        // window.addEventListener("load", function() {
-        //     var qty = document.getElementsByClassName("qty");
-        //     var minus = document.getElementsByClassName("minus");
-        //     var plus = document.getElementsByClassName("plus");
-        //     var length = qty.length;
-
-        //     for (var i = 0; i < length; i++) {
-        //         // qty[i].onkeyup = qty_reset;
-        //         minus[i].onclick = minus1;
-        //         plus[i].onclick = plus1;
-        //     }
-        // });
-    </script>
-
-    <script>
         function btnShopHide() {
             document.getElementById('btn_shop').style.display = "none";
         }
     </script>
 
     <script>
+        whocall = "";
         window.addEventListener('load', function() {
-            document.querySelector('#btn_shop').onclick = function() {
+            let addCart = document.querySelector('#btn_shop');
+            addCart.onclick = function() {
+                whocall = 0;
+                callBack = function() {
+                    addCart.click();
+                }
                 console.log("123");
                 showLoginForm();
                 if (islogin) {

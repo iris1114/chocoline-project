@@ -1,0 +1,94 @@
+
+@import"../../common/sass/common.scss";
+
+
+
+
+body{
+    background-color: #FFF5E3; 
+    background: url(../image/cart/bg.png) no-repeat  100% 100%/ cover; 
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+
+}
+
+
+// -------------global class----------//
+.w-100{
+    width: 100px;
+}
+
+.cloud{
+    position: absolute;
+    z-index: -1;
+    top:30%;
+    animation: cloud 40s linear  infinite;
+}
+
+
+
+@keyframes cloud {
+    0% {transform: translateX(-10%)}
+    100% {transform: translateX(10%)}
+}    
+
+
+
+
+ #cartflow_container{
+    padding-top: 150px;
+    }
+
+
+ #order_container{
+     padding-top: 0px;
+
+
+   .order_text{
+       margin: auto;
+       @include font_l();
+       padding: 20px 0px;
+       text-align: center;
+
+   }
+
+ }
+
+ 
+// ---------------order list------------------//
+
+
+         
+    .order_content{
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-flow: row wrap; 
+        justify-content: center;
+        border: 2px solid $color_blue;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #fff;
+         }
+         .product_img img{
+             width: 150px;
+         }
+         .product_detail{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            @include font_m();
+        }
+      
+
+        .cart_btn_group{
+            text-align: center;
+            padding-top: 50px;
+        }
+
+    
+

@@ -62,7 +62,7 @@ echo $errMsg;
                 <div class="status">
                     <figure>
                         <a class="spanLogin" href="javascript:;">
-                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"] ?>" alt="member" />
                             <!-- icon點擊後跳出登入註冊燈箱 -->
                             <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
                             <span id="spanLoginText_mobile" style="display:none">登入</span>
@@ -106,10 +106,13 @@ echo $errMsg;
                 <div class="status">
                     <figure>
                         <a class="spanLogin" href="javascript:;">
-                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"] ?>" alt="member" />
                             <!-- icon點擊後跳出登入註冊燈箱 -->
                         </a>
                         <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
+                        <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"] ?></span>
+                        <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"] ?></span>
+                        <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"] ?></span>
                         <span id="spanLoginText" style="display:none">登入</span>
                     </figure>
                     <figure>
@@ -209,131 +212,132 @@ echo $errMsg;
     </section>
 
 
-        <section class="col_12" id="cart_bonus_container">
-            <div class="wrap">
-                <div class="box cart_title_box">
-                    <div class="col_md_12 col_lg_12 ">
-                        <h5> 點數折抵</h5>
-                    </div>
+    <section class="col_12" id="cart_bonus_container">
+        <div class="wrap">
+            <div class="box cart_title_box">
+                <div class="col_md_12 col_lg_12 ">
+                    <h5> 點數折抵</h5>
                 </div>
-                <div class="box cart_show_box">
-                    <div class=" col_md_12 col_lg_12 bonus_box ">
-                        <div class="bonus_decs ">
-                            <p>目前可使用點數： <?php echo $_SESSION["mem_point"] ?>點 (1點折抵1元)</p>
-                            <a href="game.html">玩遊戲賺點數</a>
-                        </div>
-                        <div class="bonus_input ">
-                            NT$<input type="number"  max="<?php echo $_SESSION["mem_point"] ?>" name="point_input" id="point_input" value="<?php echo $_SESSION["mem_point"] ?>">
-                        </div>
+            </div>
+            <div class="box cart_show_box">
+                <div class=" col_md_12 col_lg_12 bonus_box ">
+                    <div class="bonus_decs ">
+                        <p>目前可使用點數： <?php echo $_SESSION["mem_point"] ?>點 (1點折抵1元)</p>
+                        <a href="game.html">玩遊戲賺點數</a>
+                    </div>
+                    <div class="bonus_input ">
+                        NT$<input type="number" max="<?php echo $_SESSION["mem_point"] ?>" min="0" name="point_input" id="point_input" value="<?php echo $_SESSION["mem_point"] ?>">
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
+    </section>
+    <form action="cart_done.php" method="post">
         <section id="cart_total_container">
             <div class="wrap">
                 <div class="cart_form">
                     <div class="cart_total">
                         <?php
                         $total = 0;
-                        $amount =0;
+                        $amount = 0;
                         foreach ($_SESSION['cart'] as $i => $value) {
                             $subTotal = $_SESSION["cart"][$i]["price"] * $_SESSION["cart"][$i]["qty"];  //計算小計
                             $total = $total + $subTotal;  //計算總計
-                           
-                            $amount = $total + 100  ;
+
+                            $amount = $total + 100;
                         }
 
-                      
+
                         ?>
 
-<form  action="php/order_update.php">
-<input type="hidden" name="psn" value="<?php echo  $_SESSION["cart"][$i]["psn"]; ?>">
-<input type="hidden" name="p_name" value="<?php echo $_SESSION["cart"][$i]["pname"]; ?>">
-<input type="hidden" name="p_price" value="<?php echo $_SESSION["cart"][$i]["price"]; ?>">
-<input type="hidden" name="p_img" value="<?php echo $_SESSION["cart"][$i]["pimg"]; ?>">
-<input type="hidden" name="p_img" value="<?php echo $_SESSION["cart"][$i]["qty"]; ?>">
-<input type="hidden" name="p_amount" value="<?php echo $amount ?>">
 
-
+                        <input type="hidden" name="p_amount" value="<?php echo $amount ?>">
                         <p>商品金額: <span>NT$ <?php echo $total ?></span></p>
                         <p>運費小計: <span>NT$ 100</span></p>
-                        <p>點數折抵: <span>NT$ <span id="point_output"> <?php echo $_SESSION["mem_point"] ?></span></span></p>
+                        <p>點數折抵: <span>NT$ <span id="point_output"><?php echo $_SESSION["mem_point"] ?></span></span></p>
                         <p>應付金額: <span class="amout">NT$ <?php echo $amount ?></span></p>
+                        <input type="hidden" name="mem_point" value="<?php echo $_SESSION["mem_point"] ?>">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section class="col_12" id="cart_payment_container">
+            <div class="wrap">
+                <div class="box cart_title_box">
+                    <div class=" col_lg_12 ">
+                        <h5> 填寫資料</h5>
+                    </div>
+                </div>
+                <div class="box cart_show_box ">
+                    <div class=" col_12 col_m_4 col_lg_4 purchaser_box ">
+                        <p>訂購人資訊</p>
+                        <p class="name_input"><span class="w-100">姓名:</span><input type="text" name="purchaser_name" class="purchaser_info" value="<?php echo  $_SESSION["mem_name"]; ?> "></p>
+                        <p class="tel_input"><span class="w-100">電話:</span><input type="tel" name="purchaser_phone" class="purchaser_info" value="<?php echo  $_SESSION["mem_tel"]; ?>"></p>
+                        <p class="address_input"><span class="w-100">地址:</span><input type="text" name="purchaser_address" class="purchaser_info" value="<?php echo  $_SESSION["mem_address"]; ?>"></p>
+                    </div>
+
+                    <div class=" col_12 col_m_4 col_lg_4 receiver_box ">
+                        <p>收件人資訊</p>
+                        <p class="name_input"><span class="w-100">姓名:</span><input type="text" name="receiver_name" class="receiver_info" value=""></p>
+                        <p class="tel_input"><span class="w-100">電話:</span><input type="tel" name="receiver_phone" class="receiver_info" value=""></p>
+                        <p class="address_input"><span class="w-100">地址:</span><input type="text" name="receiver_address" class="receiver_info" value=""></p>
+                        <input type="checkbox" id="same_info_btn">
+                        <label for="same_info_btn">同訂購人資料</label>
+
 
                     </div>
                 </div>
             </div>
-    </div>
-    </section>
+            </div>
+        </section>
+
+        <section class="col_12" id="creditcard_contatiner">
+            <div class="wrap">
+                <div class="box cart_title_box">
+                    <div class=" col_lg_12 ">
+                        <h5> 信用卡付費</h5>
+                    </div>
+                </div>
+
+                <div class="box cart_show_box ">
+                    <div class=" col_12 col_m_4 col_lg_10 creditcard_box ">
+                        <?php
+                        $credit_card_arr = explode("-", $_SESSION["mem_credit"]);
+                        ?>
+                        <p> <span>信用卡帳號:</span>
+                            <input type="text" maxlength="4" value="<?php echo $credit_card_arr[0] ?>">
+                            <span>-</span>
+                            <input type="text" maxlength="4" value="<?php echo $credit_card_arr[1] ?>">
+                            <span>-</span>
+                            <input type="text" maxlength="4" value="<?php echo $credit_card_arr[2] ?>">
+                            <span>-</span>
+                            <input type="text" maxlength="4" value="<?php echo $credit_card_arr[3] ?>">
+                        </p>
+                        <p> <span>有效期限:</span>
+                            <select name="select_month" id="select_month"></select>
+                            <select name="select_year" id="select_year"></select>
+                        </p>
+
+                        <p> <span>背面安全碼:</span>
+                            <input type="text" name="creditCard-3" pattern="[0-9]{3}" maxlength="3">
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
 
-    <section class="col_12" id="cart_payment_container">
-        <div class="wrap">
-            <div class="box cart_title_box">
-                <div class=" col_lg_12 ">
-                    <h5> 填寫資料</h5>
-                </div>
-            </div>
-            <div class="box cart_show_box ">
-                <div class=" col_12 col_m_4 col_lg_4 purchaser_box ">
-                    <p>訂購人資訊</p>
-                    <p><span class="w-100">姓名:</span><input type="text" name="purchaser_name" value="<?php echo  $_SESSION["mem_name"]; ?> "></p>
-                    <p><span class="w-100">電話:</span><input type="text" name="purchaser_phone" value="<?php echo  $_SESSION["mem_tel"]; ?>"></p>
-                    <p><span class="w-100">地址:</span><input type="text" name="purchaser_address" value="<?php echo  $_SESSION["mem_address"]; ?>"></p>
-                </div>
-                <div class=" col_12 col_m_4 col_lg_4 receiver_box ">
-                    <p>收件人資訊</p>
-                    <p><span class="w-100">姓名:</span><input type="text" name="receiver_name" value=""></p>
-                    <p><span class="w-100">電話:</span><input type="text" name="receiver_phone" value=""></p>
-                    <p><span class="w-100">地址:</span><input type="text" name="receiver_address"></p>
-                </div>
-            </div>
+
+        <div class="cart_btn_group">
+            <a href="cart.php" class="btn orange_l"><span> 上一步</span></a>
+            <input class="btn orange_l" type="submit" value="進行結帳">
+            <!-- <a href="cart_done.php" id="cart_confirm_btn" class="btn orange_l"><input type="submit" value="進行結帳"></a> -->
         </div>
-        </div>
-    </section>
-
-    <section class="col_12" id="creditcard_contatiner">
-        <div class="wrap">
-            <div class="box cart_title_box">
-                <div class=" col_lg_12 ">
-                    <h5> 信用卡付費</h5>
-                </div>
-            </div>
-
-            <div class="box cart_show_box ">
-                <div class=" col_12 col_m_4 col_lg_10 creditcard_box ">
-                    <p> <span>信用卡帳號:</span>
-                        <input type="text" maxlength="4" name="credit_card" vlaue="">
-                        <span>-</span>
-                        <input type="text" maxlength="4" name="creditCard-2">
-                        <span>-</span>
-                        <input type="text" maxlength="4" name="creditCard-3">
-                        <span>-</span>
-                        <input type="text" maxlength="4" name="creditCard-4">
-                    </p>
-                    <p> <span>有效期限:</span>
-                        <select name="select_month" id="select_month"></select>
-                        <select name="select_year" id="select_year"></select>
-                    </p>
-
-                    <p> <span>背面安全碼:</span>
-                        <input type="text" name="creditCard-3">
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-</form>   
-
-    <div class="cart_btn_group">
-        <a href="cart.php" class="btn orange_l"><span> 上一步</span></a>
-        <a href="php/cart_db.php" class="btn orange_l"><span> 進行結帳</span></a>
-    </div>
-
-
+    </form>
 
 
 
@@ -428,83 +432,12 @@ echo $errMsg;
 
 
 
-
-
-
     <script src="../common/js/header.js"></script>
     <script src="../common/js/robot.js"></script>
     <script src="../common/js/login.js"></script>
+    <script src="js/cart_info.js"></script>
 
 
-<!-- 
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                point: '0',
-            },
-            computed: {
-
-            }
-        });
-    </script> -->
-
-
-    <script src="../common/js/cart_info.js"></script>
-
-
-    <script>
-        function select_month() {
-            var select_month = document.getElementById('select_month');
-            if (select_month) {
-                for (var i = 1; i <= 12; i++) {
-                    var t = i + "月";
-                    var v = i;
-                    var new_option = new Option(t, v);
-                    select_month.options.add(new_option);
-                }
-            }
-
-        }
-
-        function select_year() {
-            var nowTime = new Date();
-            var theYear = nowTime.getFullYear();
-
-            var select_year = document.getElementById("select_year");
-            if (select_year) {
-                for (var i = 0; i < 20; i++) {
-                    var t = theYear + i + "年";
-                    var v = theYear + i;
-                    var new_option = new Option(t, v);
-                    select_year.options.add(new_option);
-                }
-            }
-        }
-
-
-        function change_point(){
-            var point_output =document.getElementById('point_output');
-            document.getElementById('point_input').oninput = function(){
-
-                point_output.innerText = this.value;
-
-                console.log( this.value);
-
-            }
-        }
-
-
-
-
-        function do_first() {
-            select_month();
-            select_year();
-            change_point();
-        }
-
-        window.addEventListener('load', do_first);
-    </script>
 
 
 
