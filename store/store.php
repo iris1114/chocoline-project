@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(!isset($_SESSION["mem_id"])){
+if (!isset($_SESSION["mem_id"])) {
     $_SESSION["mem_id"] = null;
 }
 
@@ -10,8 +10,22 @@ try {
     require_once("../common/php/connect_choco.php");
 
     $sql = "select * from classic_product ORDER BY `classic_product`.`product_sold` DESC";
+
     $products = $pdo->query($sql);
 
+
+
+
+    $sql = "select * from favorites where mem_no=:mem_no ";
+
+    $favorite = $pdo->prepare($sql);
+    $favorite->bindValue(":mem_no",$_SESSION["mem_no"]);
+    $products->execute();
+    $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
+    $favorite_arr = array();
+    for ($i = 0; $i < count($favorite_rows); $i++) {
+        array_push($favorite_arr, $favorite_rows[$i]["classic_product_no"]);
+    }
     // $sql2="SELECT * FROM `classic_product` ORDER BY `classic_product`.`product_sold` DESC";
     // $popular_products = $pdo->query($sql2);
 
@@ -20,7 +34,15 @@ try {
     echo "行號 : ", $e->getLine(), "<br>";
 }
 
+
+
 ?>
+
+<script>
+favorite_arr= new Array();
+favorite_arr = <?php echo json_encode($favorite_arr) ?>;
+
+</script>
 
 
 <!DOCTYPE html>
@@ -39,13 +61,49 @@ try {
 <body>
     <!-- header start -->
     <header>
-    <div class="m_header">
-        <div class="navbar">
-            <div class="burger">
-                <figure>
-                    <img src="../common/image/headerfooter/burger.png" alt="burger">
-                </figure>
+        <div class="m_header">
+            <div class="navbar">
+                <div class="burger">
+                    <figure>
+                        <img src="../common/image/headerfooter/burger.png" alt="burger">
+                    </figure>
+                </div>
+                <div class="logo">
+                    <h1>
+                        CHOCOLINE
+                    </h1>
+                    <a href="../index/index.php">
+                        <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
+                    </a>
+                </div>
+                <div class="status">
+                    <figure>
+                        <a class="spanLogin" href="javascript:;">
+                            <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                            <!-- icon點擊後跳出登入註冊燈箱 -->
+                            <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
+                            <span id="spanLoginText_mobile" style="display:none">登入</span>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="../cart/cart.php">
+                            <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
+                        </a>
+                    </figure>
+                </div>
             </div>
+            <ul class="menubox">
+                <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+                <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+                <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+                <li><a href="../store/store.php">CHOCO 商城</a></li>
+                <li><a href="../about/about.php">關於 CHOCO</a></li>
+                <figure id="menuclose">
+                    <img src="../common/image/headerfooter/menuclose.png" alt="close">
+                </figure>
+            </ul>
+        </div>
+        <div class="d_header">
             <div class="logo">
                 <h1>
                     CHOCOLINE
@@ -53,127 +111,91 @@ try {
                 <a href="../index/index.php">
                     <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
-            </div> 
-            <div class="status">
-                <figure>
-                    <a class="spanLogin" href="javascript:;">
-                        <img src="../common/image/headerfooter/icon_member.png" alt="member" />
-                        <!-- icon點擊後跳出登入註冊燈箱 -->
-                        <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                        <span id="spanLoginText_mobile" style="display:none">登入</span>
+            </div>
+            <div class="navbar">
+                <ul class="menubox">
+                    <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+                    <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+                    <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+                    <li class="nowpage"><a href="../store/store.php">CHOCO 商城</a></li>
+                    <li><a href="../about/about.php">關於 CHOCO</a></li>
+                </ul>
+                <div class="status">
+                    <figure>
+                        <a class="spanLogin" href="javascript:;">
+                            <img src="../common/image/headerfooter/icon_member.png" alt="member" />
+                            <!-- icon點擊後跳出登入註冊燈箱 -->
+                        </a>
+                        <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"] ?></span>
+                        <span id="spanLoginText" style="display:none">登入</span>
+                    </figure>
+                    <figure>
+                        <a href="../cart/cart.php">
+                            <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <!-- 燈箱：登入 -->
+        <div id="lightBox" style="display:none">
+            <div id="tableLogin">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
                     </a>
-                </figure>
-                <figure>
-                    <a href="../cart/cart.php">
-                        <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
+                    <h3>會員登入</h3>
+                    <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
+                    <input type="password" name="mem_psw" id="mem_psw" value="" maxlength="12" placeholder="密碼"><br>
+                    <a href="javascript:;" id="forget_password">忘記密碼</a><br>
+                    <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
+                    <span>不是會員嗎?</span>
+                    <a href="javascript:;" id="register">立即註冊</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 重設密碼 -->
+        <div id="passwordLightBox" style="display:none">
+            <div id="getPassword">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
                     </a>
-                </figure>
+                    <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
+                    <h3>重設密碼</h3>
+                    <p>請輸入帳號註冊時所留的電子<br>
+                        郵件地址，以驗證您的資料</p>
+                    <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+                    <input type="password" name="mem_psw" id="new_mem_psw" value="" maxlength="12" placeholder="輸入新密碼  (6-12位字母、數字)"><br>
+                    <input type="password" name="mem_psw" id="re_new_mem_psw" value="" maxlength="12" placeholder="再次確認新密碼"><br>
+                    <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
+                </div>
             </div>
         </div>
-        <ul class="menubox">
-            <li><a href="../custom/custom.php">客製 CHOCO</a></li>
-            <li><a href="../contest/contest.php">CHOCO 選美</a></li>
-            <li><a href="../game/game.php">CHOCO 遊戲</a></li>
-            <li><a href="../store/store.php">CHOCO 商城</a></li>
-            <li><a href="../about/about.php">關於 CHOCO</a></li>
-            <figure id="menuclose">
-                <img src="../common/image/headerfooter/menuclose.png" alt="close">
-            </figure>
-        </ul>
-    </div>
-    <div class="d_header">
-        <div class="logo">
-            <h1>
-                CHOCOLINE
-            </h1>
-            <a href="../index/index.php">
-                <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
-            </a>
-        </div>
-        <div class="navbar">
-            <ul class="menubox">
-                <li><a href="../custom/custom.php">客製 CHOCO</a></li>
-                <li><a href="../contest/contest.php">CHOCO 選美</a></li>
-                <li><a href="../game/game.php">CHOCO 遊戲</a></li>
-                <li class="nowpage"><a href="../store/store.php">CHOCO 商城</a></li>
-                <li><a href="../about/about.php">關於 CHOCO</a></li>
-            </ul>
-            <div class="status">
-            <figure>
-                <a class="spanLogin" href="javascript:;">
-                    <img src="../common/image/headerfooter/icon_member.png" alt="member" />
-                    <!-- icon點擊後跳出登入註冊燈箱 -->
-                </a>
-                <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                <span id="spanLoginText" style="display:none">登入</span>
-            </figure>
-            <figure>
-                <a href="../cart/cart.php">
-                    <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
-                </a>
-            </figure>
-            </div>
-        </div>
-    </div>
-    <!-- 燈箱：登入 -->
-    <div id="lightBox" style="display:none">
-        <div id="tableLogin">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
-            <div class="login_password">
-                <a href="javascript:;" class="btnLoginCancel">
-                    <img src="../common/image/login/login_closeicon.png" alt="">
-                </a>			
-                <h3>會員登入</h3>
-                <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
-                <input type="password" name="mem_psw" id="mem_psw" value="" maxlength="12" placeholder="密碼"><br>
-                <a href="javascript:;" id="forget_password">忘記密碼</a><br>
-                <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
-                <span>不是會員嗎?</span>
-                <a href="javascript:;" id="register">立即註冊</a><br>
-            </div>
-        </div>
-    </div>
-    <!-- 重設密碼 -->
-    <div id="passwordLightBox" style="display:none">
-        <div id="getPassword">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
-            <div class="login_password">
-                <a href="javascript:;" class="btnLoginCancel">
-                    <img src="../common/image/login/login_closeicon.png" alt="">
-                </a>			
-                <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
-                <h3>重設密碼</h3>
-                <p>請輸入帳號註冊時所留的電子<br>
-                    郵件地址，以驗證您的資料</p>
-                <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
-                <input type="password" name="mem_psw" id="new_mem_psw" value="" maxlength="12" placeholder="輸入新密碼  (6-12位字母、數字)"><br>
-                <input type="password" name="mem_psw" id="re_new_mem_psw" value="" maxlength="12" placeholder="再次確認新密碼"><br>
-                <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
-            </div>
-        </div>
-    </div>
-    <!-- 會員註冊 -->
-    <div id="registerLightBox" style="display:none">
-        <div id="registered">
-            <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
-            <div class="login_register">
-                <a href="javascript:;" class="btnLoginCancel">
-                    <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
-                </a>			
-                <h3>會員註冊</h3>
-                <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
+        <!-- 會員註冊 -->
+        <div id="registerLightBox" style="display:none">
+            <div id="registered">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_register">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
+                    </a>
+                    <h3>會員註冊</h3>
+                    <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
                         請填下您的個人資料！* 為必填。</p>
-                <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
-                <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
-                <p id="idMsg">請輸入帳號</p><br>
-                <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
-                <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" maxlength="12" placeholder="設定密碼 (6-12位字母、數字)"><br>
-                <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" maxlength="12" placeholder="再次確認密碼 (再次確認)"><br>
-                <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
+                    <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
+                    <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
+                    <p id="idMsg">請輸入帳號</p><br>
+                    <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )"><br>
+                    <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" maxlength="12" placeholder="設定密碼 (6-12位字母、數字)"><br>
+                    <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" maxlength="12" placeholder="再次確認密碼 (再次確認)"><br>
+                    <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
     <!-- header end -->
     <!-- bannner start -->
     <!-- <div class="slides_container">
@@ -302,10 +324,10 @@ try {
                         <form onsubmit="return returnR(this)">
                             <div class="header_clear">
                                 <h3>篩選器</h3>
-                                <div class="selector_clear">
+                                <!-- <div class="selector_clear">
                                     <label for="clear" class="clear_icon"></label>
                                     <input id="clear" type="reset" value="清除" />
-                                </div>
+                                </div> -->
                             </div>
 
                             <ul>
@@ -316,8 +338,8 @@ try {
                                             <div id="range_between" class="range_between"></div>
                                             <button id="range_button1" class="range_button1"></button>
                                             <button id="range_button2" class="range_button2"></button>
-                                            <input id="range_input1" class="range_input1" type="number" min="0" max="1500" /> ~
-                                            <input id="range_input2" class="range_input2" type="number" min="0" max="1500" /> 元
+                                            <input id="range_input1" class="range_input1 selectors" type="number" min="0" max="1500" /> ~
+                                            <input id="range_input2" class="range_input2 selectors" type="number" min="0" max="1500" /> 元
                                         </div>
                                     </div>
                                 </li>
@@ -325,17 +347,17 @@ try {
                                     <h4>巧克力</h4>
                                     <div class="category_content">
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="milk_chocolate_class" type="checkbox" id="milk_chocolate" name="milk_chocolate" />
+                                            <input class="select_checkbox selectors" value="milk_chocolate_class" type="checkbox" id="milk_chocolate" name="milk_chocolate" />
                                             <span>牛奶巧克力</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="white_chocolate_class" type="checkbox" id="white_chocolate" name="white_chocolate" />
+                                            <input class="select_checkbox selectors" value="white_chocolate_class" type="checkbox" id="white_chocolate" name="white_chocolate" />
                                             <span>白巧克力</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="black_chocolate_class" type="checkbox" id="Black_chocolate" name="Black_chocolate" />
+                                            <input class="select_checkbox selectors" value="black_chocolate_class" type="checkbox" id="Black_chocolate" name="Black_chocolate" />
                                             <span>黑巧克力</span>
                                         </label>
                                     </div>
@@ -344,17 +366,17 @@ try {
                                     <h4>口味</h4>
                                     <div class="category_content">
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="fruit_class" type="checkbox" id="fruit" name="fruit" />
+                                            <input class="select_checkbox selectors" value="fruit_class" type="checkbox" id="fruit" name="fruit" />
                                             <span>水果</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="berry_class" type="checkbox" id="berry" name="berry" />
+                                            <input class="select_checkbox selectors" value="berry_class" type="checkbox" id="berry" name="berry" />
                                             <span>莓果</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="nut_class" type="checkbox" id="nut" name="nut" />
+                                            <input class="select_checkbox selectors" value="nut_class" type="checkbox" id="nut" name="nut" />
                                             <span>堅果</span>
                                         </label>
                                     </div>
@@ -363,17 +385,17 @@ try {
                                     <h4>形狀</h4>
                                     <div class="category_content">
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="circle_shape_class" type="checkbox" id="circle" name="circle" />
+                                            <input class="select_checkbox selectors" value="circle_shape_class" type="checkbox" id="circle" name="circle" />
                                             <span>圓形</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="heart_shape_class" type="checkbox" id="heart" name="heart" />
+                                            <input class="select_checkbox selectors" value="heart_shape_class" type="checkbox" id="heart" name="heart" />
                                             <span>心形</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="special_shape_class" type="checkbox" id="special" name="special" />
+                                            <input class="select_checkbox selectors" value="special_shape_class" type="checkbox" id="special" name="special" />
                                             <span>特殊造型</span>
                                         </label>
                                     </div>
@@ -402,21 +424,21 @@ try {
                                     <h4>對象</h4>
                                     <div class="category_content">
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="exclusive_class" type="checkbox" id="self" name="self" />
+                                            <input class="select_checkbox selectors" value="exclusive_class" type="checkbox" id="self" name="self" />
                                             <span>自己</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="family_class" type="checkbox" id="family" name="family" />
+                                            <input class="select_checkbox selectors" value="family_class" type="checkbox" id="family" name="family" />
                                             <span>家人</span>
                                         </label>
                                         <br />
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="lover_class" type="checkbox" id="lover" name="lover" />
+                                            <input class="select_checkbox selectors" value="lover_class" type="checkbox" id="lover" name="lover" />
                                             <span>情人</span>
                                         </label>
                                         <label class="checkbox_text">
-                                            <input class="select_checkbox" value="friend_class" type="checkbox" id="friend" name="friend" />
+                                            <input class="select_checkbox selectors" value="friend_class" type="checkbox" id="friend" name="friend" />
                                             <span>朋友</span>
                                         </label>
                                     </div>
@@ -484,6 +506,8 @@ try {
                             //         echo "<div><center>查無任何商品資料</center></div>";
                             //   }else{
                             // while ($prodRow = $products->fetch(PDO::FETCH_ASSOC)) {
+                            $favorite_row = $favorite->fetchAll(PDO::FETCH_ASSOC);
+
                             for ($i = 0; $i < count($product_rows); $i++) {
                                 ?>
 
@@ -492,6 +516,7 @@ try {
                                     <input type="hidden" name="p_name" value="<?php echo $product_rows[$i]['classic_product_name']; ?>">
                                     <input type="hidden" name="p_price" value="<?php echo $product_rows[$i]['product_price']; ?>">
                                     <input type="hidden" name="p_img" value="../store/image/store/<?php echo $product_rows[$i]['product_img_src']; ?>">
+                                    <input type="hidden" name="mem_no" value="4">
 
                                     <!-- product item start -->
                                     <div class="product_item col_lg_5">
@@ -516,8 +541,18 @@ try {
                                         </div>
                                         <div class="product_button">
                                             <a href="javascript:;" class="collect_btn btn cyan_m"><span>
-                                                    <i class="heart_unclick far fa-heart"></i>
-                                                    <i class="heart_clicked fas fa-heart"></i>
+                                                    <?php
+
+                                                    if (in_array($product_rows[$i]['classic_product_no'], $favorite_arr)) {
+
+                                                        echo '<i class="heart_unclick far fa-heart" style="display:none"></i><i class="heart_clicked fas fa-heart"></i>';
+                                                    } else {
+                                                        echo '<i class="heart_unclick far fa-heart"></i><i class="heart_clicked fas fa-heart" style="display:none"></i>';
+                                                    }
+
+                                                    ?>
+                                                    <!-- <i class="heart_unclick far fa-heart"></i>
+                                                        <i class="heart_clicked fas fa-heart"></i> -->
 
                                                     收藏</span></a>
                                             <a href="javascript:;" class="btn orange_m classic_product_add_cart_btn"><span>加入購物車</span></a>
