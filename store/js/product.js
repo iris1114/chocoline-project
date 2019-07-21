@@ -77,9 +77,24 @@ window.addEventListener("load", function() {
             if (heart_clicked.style.display != "inline") {
                 heart_clicked.style.display = "inline";
                 heart_unclick.style.display = "none";
+
+                let xhr = new XMLHttpRequest();
+                let url = "php/add_favorite.php";
+                xhr.open("post", url, false);
+                let myForm = new FormData(this.parentNode.parentNode);
+                xhr.send(myForm);
+
+
+
             } else {
                 heart_clicked.style.display = "none";
                 heart_unclick.style.display = "inline";
+
+                let xhr = new XMLHttpRequest();
+                let url = "php/delete_favorite.php";
+                xhr.open("post", url, false);
+                let myForm = new FormData(this.parentNode.parentNode);
+                xhr.send(myForm);
             }
         });
     }

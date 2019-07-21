@@ -376,28 +376,28 @@ window.addEventListener("load", function() {
 
 
 // selector end
-mem_no = 1;
+// mem_no = 1;
 
-function add_favorite(e) {
-    console.log(this.parentNode.parentNode.parentNode);
-    let xhr = new XMLHttpRequest();
-    // console.log();
-    xhr.onload = function() {
+// function add_favorite(e) {
+//     console.log(this);
+//     let xhr = new XMLHttpRequest();
+//     console.log(this);
+//     xhr.onload = function() {
 
-        if (xhr.status == 200) {
+//         if (xhr.status == 200) {
 
-            // select_result = JSON.parse(xhr.responseText);
-            // show_select_result();
-        } else {
-            alert(xhr.status);
-        }
-    }
-    let url = "php/add_favorite.php";
+//             // select_result = JSON.parse(xhr.responseText);
+//             // show_select_result();
+//         } else {
+//             alert(xhr.status);
+//         }
+//     }
+//     let url = "php/add_favorite.php";
 
-    xhr.open("post", url, false);
-    let myForm = new FormData(e.target.parentNode.parentNode.parentNode);
-    xhr.send(myForm);
-}
+//     xhr.open("post", url, false);
+//     let myForm = new FormData(e.target.parentNode.parentNode.parentNode);
+//     xhr.send(myForm);
+// }
 
 // function retreat_favorite() {
 
@@ -418,22 +418,35 @@ function collect_product() {
     for (i = 0; i < collect_btn.length; i++) {
         collect_btn[i].addEventListener("click", function(e) {
 
-            e.stopPropagation();
-            e.preventDefault();
-            console.log(e.target);
-
-
             var heart_clicked = this.getElementsByClassName("heart_clicked")[0];
             var heart_unclick = this.getElementsByClassName("heart_unclick")[0];
 
             if (heart_clicked.style.display != "inline") {
                 heart_clicked.style.display = "inline";
                 heart_unclick.style.display = "none";
-                add_favorite(e);
+
+                // 將商品加入我的收藏
+                let xhr = new XMLHttpRequest();
+
+                let url = "php/add_favorite.php";
+
+                xhr.open("post", url, false);
+                let myForm = new FormData(this.parentNode.parentNode.parentNode);
+                xhr.send(myForm);
+
             } else {
                 heart_clicked.style.display = "none";
                 heart_unclick.style.display = "inline";
-                // retreat_favorite();
+
+                // 將商品從我的收藏移出
+                let xhr = new XMLHttpRequest();
+
+                let url = "php/delete_favorite.php";
+
+                xhr.open("post", url, false);
+                let myForm = new FormData(this.parentNode.parentNode.parentNode);
+                xhr.send(myForm);
+
             }
         }, true);
     }
@@ -538,7 +551,7 @@ function send_select(select_data) {
         }
     }
     let url = "php/get_select_result.php?select_data=" + select_data;
-
+    // console.log(url);
     xhr.open("get", url, false);
     xhr.send(null);
 
@@ -548,15 +561,36 @@ function send_select(select_data) {
 }
 
 
+// function clear_select() {
+//     var clear_select_btn = document.querySelectorAll("#select_checkbox");
+//     clear_select_btn.onclick = function(e) {
+//         var select_data = []
+
+
+//         send_select(select_data);
+//     }
+
+// }
+
+
+
 function select_item() {
 
     var select_items = document.querySelectorAll(".select_checkbox");
+    // var selectors = document.querySelectorAll(".selectors");
+    // var range_input1 = document.querySelectorAll(".range_input1");
+    // var range_input2 = document.querySelectorAll(".range_input2");
+
 
 
     for (var i = 0; i < select_items.length; i++) {
 
-        select_items[i].onclick = function(e) {
+        select_items[i].onchange = function(e) {
+
             var select_data = []
+                // var select_range = "product_price>" + range_input1[0].value + " AND product_price<" + range_input2[0].value;
+                // console.log(select_range);
+
             for (var j = 0; j < select_items.length; j++) {
 
                 if (select_items[j].checked == true) {
@@ -578,6 +612,7 @@ window.addEventListener("load", select_item);
 function show_select_result() {
 
     var product_list = document.getElementById("product_list");
+
 
     // var html = "";
     var html = '<div class="product_item col_lg_5">' + product_list.firstElementChild.innerHTML + "</div>";
@@ -615,11 +650,16 @@ function show_select_result() {
                     </div>
                 </div>
                 <div class="product_button">
-                    <a href="javascript:;" class="collect_btn btn cyan_m"><span>
-                            <i class="heart_unclick far fa-heart"></i>
-                            <i class="heart_clicked fas fa-heart"></i>
+                    <a href="javascript:;" class="collect_btn btn cyan_m"><span>`
 
-                            收藏</span></a>
+        if (favorite_arr.indexOf(select_result[i]["classic_product_no"]) == -1) {
+            html += '<i class="heart_unclick far fa-heart"></i><i class="heart_clicked fas fa-heart" style="display:none"></i> ';
+
+        } else {
+            html += '<i class="heart_unclick far fa-heart" style="display:none"></i><i class="heart_clicked fas fa-heart"></i> ';
+        }
+
+        html += `收藏</span></a>
                     <a href="javascript:;" class="btn orange_m classic_product_add_cart_btn"><span>加入購物車</span></a>
                 </div>
             </div>
