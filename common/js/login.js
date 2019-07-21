@@ -63,11 +63,11 @@ function sendForm() {
         document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
         document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
         // window.location.reload();
-        if(whocall == "joingame"){
+        if(whocall == "0"){
           callBack();
-        }else if(whocall == "player_votes"){
+        }else if(whocall == "1"){
           callBack1();
-        }else if(whocall == "like"){
+        }else if(whocall == "2"){
           callBack2();
         }else if(whocall == ""){
           callBack3();
