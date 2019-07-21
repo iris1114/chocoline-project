@@ -6,16 +6,15 @@ try {
     require_once("../../common/php/connect_choco.php");
     
 
-    $sql = "";
-    
-    $players = $pdo->prepare($sql);
-    // $players->bindValue(":sort",$player_sort);//代入資料
-    $players->execute();
-    
+    $sql = "SELECT * FROM contest WHERE (month(contest_time) = (month(CURRENT_DATE))) AND (YEAR(contest_time) = (YEAR(CURRENT_DATE)))";
+    $pages = $pdo->query($sql);
+    $pagenums = ceil($pages->rowCount()/18);
 
-    while($player = $players->fetchObject()){
-
+    echo "<a href='javascript:;' id='prevpage_btn'>❮</a>";
+    for($i=1;$i<=$pagenums;$i++){
+       echo "<a class='pagenums' href='javascript:;'>$i</a>";
     }
+    echo "<a href='javascript:;' id='nextpage_btn'>❯</a>";
     
 
 

@@ -1,3 +1,6 @@
+whocall = "";
+who_collect = "";
+who_vote = "";
 window.addEventListener("load",function(){
     
     collect_color();
@@ -9,18 +12,66 @@ window.addEventListener("load",function(){
         while(i<like.length){
     
             like[i].addEventListener("click",function(){
+                whocall = "like";
+                who_collect = this;
+                callBack2 = function(){
+                    player_sort();
+                    who_collect.click();
+                }
+                showLoginForm();
+                if(!islogin){
+                    return;
+                }
+
                 let wlike = this.querySelector(".wlike"),
                     plike = this.querySelector(".plike"),
                     fig   = this.querySelector("figcaption");
-    
-                if(plike.style.display == "none"){
-                    wlike.style.display = "none";
+                let contest_no = this.parentNode.querySelector(".player_contest_no").href.split("no=");
+                
+                if(plike.style.display == "none"){ 
+                    wlike.style.display = "none";  //加入收藏
                     plike.style.display = "";
                     fig.style.color = "#F6EED4";
+
+                    // 將商品加入我的收藏
+                    let xhr = new XMLHttpRequest();
+                    xhr.onload=function (){
+                        if( xhr.status == 200 ){
+                            console.log(`成功`);
+                            console.log(xhr.responseText);
+                            
+                        }else{
+                            alert( xhr.status );
+                        }
+                    }
+                    
+                    let url = "php/add_favorite.php";
+                    xhr.open("post", url, false);
+                    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                    var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}&contest_no=${contest_no[1]}`;
+                    xhr.send(data_info);
+
                 }else{
-                    plike.style.display = "none";
+                    plike.style.display = "none"; //取消收藏
                     wlike.style.display = "";
                     fig.style.color = "#592F13";
+
+                    // 將商品從我的收藏移出
+                    let xhr = new XMLHttpRequest();
+                    xhr.onload=function (){
+                        if( xhr.status == 200 ){
+                            console.log(`成功`);
+                        }else{
+                            alert( xhr.status );
+                        }
+                    }                    
+
+                    let url = "php/delete_favorite.php";
+                    xhr.open("post", url, false);
+                    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                    var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}&contest_no=${contest_no[1]}`;
+                    xhr.send(data_info);
+
                 }
             });
             i++;
@@ -101,7 +152,7 @@ window.addEventListener("load",function(){
 
 //stage各月分排名    
     let search_month = document.querySelector(".search_month");
-    search_month.options[0].selected = true; 
+    search_month.options[0].selected = true;
     let stage = document.querySelector(".stage");
 
     search_month.addEventListener("input",function(){
@@ -132,7 +183,9 @@ window.addEventListener("load",function(){
 
 //點擊報名參賽
     joingame.addEventListener("click",function(){
+        whocall = "joingame";
         callBack = function(){
+            player_sort();
             joingame.click();
         }
         showLoginForm();
@@ -169,10 +222,6 @@ window.addEventListener("load",function(){
         xhr.send(data_info);
     })
 
-
-
-
-
     
 //將被選中角色放進投票區 
     let join_submit = document.querySelector("#join_submit");
@@ -186,6 +235,7 @@ window.addEventListener("load",function(){
                 document.querySelector(".player_container").querySelector(".contain").innerHTML = xhr.responseText;
                 collect_color();
                 tovote();
+                addpage();
             }else{
                 alert( xhr.status );
             }
@@ -197,7 +247,7 @@ window.addEventListener("load",function(){
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         
-        var data_info = `choco_no=${document.querySelector(".CHOCO_no").innerText}&player_sort=${document.querySelector(".player_sort").value}&mem_id=${document.querySelector("#mem_id_hide").innerText}`;
+        var data_info = `choco_no=${document.querySelector(".CHOCO_no").innerText}&player_sort=${document.querySelector(".player_sort").value}&mem_id=${document.querySelector("#mem_id_hide").innerText}&mem_no=${document.querySelector("#mem_no_hide").innerText}`;
         xhr.send(data_info);
     
     })
@@ -228,9 +278,9 @@ window.addEventListener("load",function(){
     }
 
 //投票區排序
-
+    document.querySelector(".player_sort").options[0].selected = true;
     document.querySelector(".player_sort").addEventListener("input",player_sort)
-
+    
     function player_sort(){
         let xhr = new XMLHttpRequest();
         xhr.onload=function (){
@@ -250,21 +300,26 @@ window.addEventListener("load",function(){
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         
-        var data_info = `nowpage=${nowpagetext}&player_sort=${document.querySelector(".player_sort").value}`;
+        var data_info = `nowpage=${nowpagetext}&player_sort=${document.querySelector(".player_sort").value}&mem_no=${document.querySelector("#mem_no_hide").innerText}`;
         xhr.send(data_info);
     
     }
 //投票
 
     let player_votes = document.querySelectorAll(".player_vote_btn");
-
     tovote();
+    
 
     function tovote(){
         player_votes = document.querySelectorAll(".player_vote_btn");
         for(let i=0;i<player_votes.length;i++){
             player_votes[i].addEventListener("click",function(){
-                
+                whocall = "player_votes";
+                who_voted = this;
+                callBack1 = function(){
+                    who_voted.click();
+                    player_sort();
+                }
                 showLoginForm();
                 if(!islogin){
                     return;
@@ -282,6 +337,7 @@ window.addEventListener("load",function(){
                         // console.log(`${xhr.responseText.replace(" ","")}`);
                         
                         voted.parentNode.querySelector(".votenum").innerHTML =`${xhr.responseText.replace(" ","")}票`;
+
                     }else{
                         alert( xhr.status );
                     }
@@ -325,27 +381,28 @@ window.addEventListener("load",function(){
 
 
 //頁碼
-
-    let pagenums = document.querySelectorAll(".pagenums");
     let nowpage;
     let nowpagetext = 1;
+    let pagenums = document.querySelectorAll(".pagenums");
     document.querySelector(".pagenums").classList.add("active");
+    select_page();
 
-
-
-    for(let i=0;i<pagenums.length;i++){
-
-        pagenums[i].addEventListener("click",function(){
-            nowpage = this;
-            nowpagetext = nowpage.innerText;
-            
-            for(let j=0; j<pagenums.length;j++){
-                pagenums[j].classList.remove("active");
-            }
-            this.classList.add("active");
-
-            player_sort();
-        })
+    function select_page(){
+        pagenums = document.querySelectorAll(".pagenums");
+        for(let i=0;i<pagenums.length;i++){
+    
+            pagenums[i].addEventListener("click",function(){
+                nowpage = this;
+                nowpagetext = nowpage.innerText;
+                
+                for(let j=0; j<pagenums.length;j++){
+                    pagenums[j].classList.remove("active");
+                }
+                this.classList.add("active");
+    
+                player_sort();
+            })
+        }
     }
 
 
@@ -355,7 +412,10 @@ window.addEventListener("load",function(){
         let xhr = new XMLHttpRequest();
         xhr.onload=function (){
             if( xhr.status == 200 ){
-                // console.log(`成功`);
+                console.log(`成功`);
+                document.querySelector(".pagination").innerHTML = xhr.responseText;
+                select_page();
+                pre_next_page();
             }else{
                 alert( xhr.status );
             }
@@ -373,35 +433,45 @@ window.addEventListener("load",function(){
 
 //點擊左右換頁 如果pagenums.length跟 active的innerText一樣 那就是到底了
     let prev_btn = document.querySelector("#prevpage_btn"),
+    next_btn = document.querySelector("#nextpage_btn");
+    pre_next_page();
+    function pre_next_page(){
+        prev_btn = document.querySelector("#prevpage_btn");
         next_btn = document.querySelector("#nextpage_btn");
 
-    prev_btn.addEventListener("click",function(){
-        for(let j=0; j<pagenums.length;j++){
-            pagenums[j].classList.remove("active");
-        }
-        let i = nowpagetext-2;
-        if(i<0){
-            i=0
-        }
-        pagenums[i].classList.add("active");
-        nowpage = pagenums[i];
-        nowpagetext = nowpage.innerText;
-        player_sort();
-    })
+        prev_btn.addEventListener("click",function(){
+            for(let j=0; j<pagenums.length;j++){
+                pagenums[j].classList.remove("active");
+            }
+            let i = nowpagetext-2;
+            if(i<0){
+                i=0
+            }
+            pagenums[i].classList.add("active");
+            nowpage = pagenums[i];
+            nowpagetext = nowpage.innerText;
+            player_sort();
+        })
 
-    next_btn.addEventListener("click",function(){
-        for(let j=0; j<pagenums.length;j++){
-            pagenums[j].classList.remove("active");
-        }
-        let i = nowpagetext;
-        if(i == pagenums.length){
-            i=pagenums.length-1;
-        }
-        pagenums[i].classList.add("active");
-        nowpage = pagenums[i];
-        nowpagetext = nowpage.innerText;
+        next_btn.addEventListener("click",function(){
+            for(let j=0; j<pagenums.length;j++){
+                pagenums[j].classList.remove("active");
+            }
+            let i = nowpagetext;
+            if(i == pagenums.length){
+                i=pagenums.length-1;
+            }
+            pagenums[i].classList.add("active");
+            nowpage = pagenums[i];
+            nowpagetext = nowpage.innerText;
+            player_sort();
+        })
+    }
+
+
+    callBack3 = function(){
         player_sort();
-    })
+    }
 
     window.addEventListener("scroll",function(){
         let scrolltop = document.documentElement.scrollTop ||window.pageYOffset || document.body.scrollTop;

@@ -4,6 +4,12 @@ session_start();
 if(isset($_SESSION["mem_id"])!=true){
     $_SESSION["mem_id"] = null;
 }
+if(isset($_SESSION["mem_no"])!=true){
+    $_SESSION["mem_no"] = null;
+}
+if(isset($_SESSION["mem_name"])!=true){
+    $_SESSION["mem_name"] = null;
+}
 if (!isset($_SESSION["mem_headshot"])) {
     $_SESSION["mem_headshot"] = 'icon_member.png';
 }
@@ -57,9 +63,6 @@ try {
     <title>CHOCO 選美</title>
 </head>
 <body class="contest_body">
-    <?php
-        echo $pages->rowCount();
-    ?>
 <!-- header start -->
     <header>
         <div class="m_header">

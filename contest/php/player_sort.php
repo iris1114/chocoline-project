@@ -5,7 +5,21 @@ try {
     
     require_once("../../common/php/connect_choco.php");
     
-      
+    
+    $mem_no = $_REQUEST["mem_no"];
+    $sql = "select * from favorites where mem_no=:mem_no ";
+
+    $favorite = $pdo->prepare($sql);
+    $favorite->bindValue(":mem_no",$mem_no);
+    $favorite->execute();
+    $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
+    $favorite_arr = array();
+    for ($i = 0; $i < count($favorite_rows); $i++) {
+        array_push($favorite_arr, $favorite_rows[$i]["contest_no"]);
+    }
+
+
+
     $nowpage = $_REQUEST["nowpage"];
     $fromnum = 18*($nowpage - 1);
     $many = 18*($nowpage);
@@ -31,11 +45,18 @@ try {
 
         echo "<div class='player'>
         <div class='board'>
-            <figure class='like_icon'>
-                <img src='image/contest/wlike.png' alt='like' class='wlike'>
+            <figure class='like_icon'>";
+            if(in_array($player->contest_no, $favorite_arr)){
+                    
+                echo "<img src='image/contest/wlike.png' alt='like'    class='wlike' style='display:none'>
+                <img src='image/contest/plike.png' alt='like' class='plike' style='display:block;'>
+                <figcaption style='color:#F6EED4'>收藏</figcaption>";
+            }else{
+                echo "<img src='image/contest/wlike.png' alt='like' class='wlike' style='display:block'>
                 <img src='image/contest/plike.png' alt='like' class='plike' style='display:none;'>
-                <figcaption>收藏</figcaption>
-            </figure>
+                <figcaption style='color:#592F13'>收藏</figcaption>";
+            }
+        echo "</figure>
             <p class='choconame'>$player->customized_product_name</p>
             <p class='votenum'>$player->number_votes 票</p>
             <a href='../role/role.php?contest_no=$player->contest_no' class='btn cyan_s player_contest_no'><span>留言</span></a>

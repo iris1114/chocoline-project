@@ -575,6 +575,7 @@ html{
     }
     .contain{
         overflow: hidden;
+        padding-bottom: 50px;
         &::after{
             content: "";
             display: block;
@@ -1339,7 +1340,7 @@ html{
         padding-top: 150px;
         text-align: left;
         .contain{
-            max-height: 2415px;
+            // max-height: 2415px;
             &::after{
                 content: "";
                 display: block;
