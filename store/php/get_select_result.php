@@ -1,5 +1,8 @@
 <?php
 $select_data = $_REQUEST["select_data"];
+// $select_range = $_REQUEST["select_range"];
+// echo json_encode($select_range);
+// exit();
 $select_data_arr =explode(",", $select_data);
 
 $select_str = implode(" AND ",$select_data_arr);

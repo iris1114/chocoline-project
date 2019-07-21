@@ -6,7 +6,7 @@ $errMsg = "";
 try{
   require_once("../../common/php/connect_choco.php"); 
 
-  $sql ="INSERT INTO `favorites`(`mem_no`,`classic_product_no`) VALUES (:mem_no,:classic_product_no)";
+  $sql ="DELETE from favorites where mem_no=:mem_no AND classic_product_no=:classic_product_no";
   $favorites = $pdo->prepare($sql);
   $favorites->bindValue(":mem_no", $mem_no);
   $favorites->bindValue(":classic_product_no", $classic_product_no);
