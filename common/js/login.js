@@ -63,9 +63,18 @@ function sendForm() {
         document.getElementsByClassName("spanLogin")[0].href = "../member/member.php";
         document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
         // window.location.reload();
-        if( callBack ){
+        if(whocall == "joingame"){
           callBack();
+        }else if(whocall == "player_votes"){
+          callBack1();
+        }else if(whocall == "like"){
+          callBack2();
+        }else if(whocall == ""){
+          callBack3();
         }
+        // if( callBack ){
+        //   callBack();
+        // }
       }
     } else {
       alert(xhr.status);
