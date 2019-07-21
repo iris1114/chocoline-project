@@ -63,52 +63,51 @@ html{
             @include pos(10%,0,0,18%);
             z-index: 1;
         }
-    }
-    #first_place{
-        width: 40%;
-        left: 27%;
-        top: 16%;
-        .CHOCO{
-            &::after{
-                content: "";
-                position: absolute;
-                width: 55%;
-                height: 47%;
-                top: -6%;
-                right: -4%;
-                top: 0%;
-                right: -16%;
-                background: url("../image/contest/no1.png") 0 0  no-repeat / contain;
+        &:nth-of-type(1){
+            width: 40%;
+            left: 27%;
+            top: 16%;
+            .CHOCO{
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 55%;
+                    height: 47%;
+                    top: -6%;
+                    right: -4%;
+                    top: 0%;
+                    right: -16%;
+                    background: url("../image/contest/no1.png") 0 0  no-repeat / contain;
+                }
             }
         }
-        
-    }
-    #second_place{
-        width: 38%;
-        left: 7%;
-        top: 29%;
-    }
-    #third_place{
-        width: 36%;
-        left: 50%;
-        top: 36%;
-    }
-    #fourth_place{
-        width: 34%;
-        left: -8%;
-        top: 46%;
-        .vote{
-            @include pos(auto,0,-21%,30%);
+        &:nth-of-type(2){
+            width: 38%;
+            left: 7%;
+            top: 29%;
+        }
+        &:nth-of-type(3){
+            width: 36%;
+            left: 50%;
+            top: 36%;
+        }
+        &:nth-of-type(4){
+            width: 34%;
+            left: -8%;
+            top: 46%;
+            .vote{
+                @include pos(auto,0,-21%,30%);
+            }
+        }
+        &:nth-of-type(5){
+            width: 32%;
+            left: 70%;
+            top: 49%;
+            .vote{
+                @include pos(auto,0,-27%,15%);
+            }
         }
     }
-    #fifth_place{
-        width: 32%;
-        left: 70%;
-        top: 49%;
-        .vote{
-            @include pos(auto,0,-27%,15%);
-        }
-    } 
     .CHOCO{
         animation: dance 4s infinite;
     }
@@ -166,7 +165,7 @@ html{
     }
     .board{
         width: 100%;
-        height: 100%;
+        // height: 100%;
         position: relative;
         z-index: -1;
         background: url("../image/contest/board.png") 0 0  no-repeat / 100% 100%;
@@ -507,7 +506,7 @@ html{
         }
         .touch_hidden{
             width: 100%;
-            height: 100%;
+            // height: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             &::-webkit-scrollbar {
@@ -517,6 +516,7 @@ html{
         .CHOCO_list{
             position: relative;
             width: 99999px;
+            height: 134px;
             left: 0;
             transition: .5s;
             &::after{
@@ -587,6 +587,18 @@ html{
             float: left;
             // animation: playermove 10s infinite alternate linear;
             transform: scale(0.9);
+            &:nth-child(18n+1) .ring,&:nth-child(18n+6) .ring,&:nth-child(18n+11) .ring,&:nth-child(18n+13) .ring,&:nth-child(18n+18) .ring{
+                background: url("../image/contest/p_ring.png") no-repeat 50% 50% / 100% 100%;
+            }
+            &:nth-child(18n+2) .ring,&:nth-child(18n+7) .ring,&:nth-child(18n+9) .ring,&:nth-child(18n+14) .ring,&:nth-child(18n+16) .ring{
+                background: url("../image/contest/g_ring.png") no-repeat 50% 50% / 100% 100%;
+            }
+            &:nth-child(18n+3) .ring,&:nth-child(18n+5) .ring,&:nth-child(18n+10) .ring,&:nth-child(18n+12) .ring,&:nth-child(18n+17) .ring{
+                background: url("../image/contest/b_ring.png") no-repeat 50% 50% / 100% 100%;
+            }
+            &:nth-child(18n+4) .ring,&:nth-child(18n+8) .ring,&:nth-child(18n+15) .ring{
+                background: url("../image/contest/o_ring.png") no-repeat 50% 50% / 100% 100%;
+            }
         }
 
         @keyframes playermove {
@@ -613,6 +625,7 @@ html{
             width: 60px;
             @include pos(-10%,4%,auto,auto);
             cursor: pointer;
+            @include noselect();
             figcaption{
                 @include pos(5%,0%,0%,0%);
                 @include font_s();
@@ -650,6 +663,7 @@ html{
             @include pos(auto,0,0,0);
             width: 240px;
             width: auto;
+            height: 140px;
             z-index: -1;
             display: none;
         }
@@ -884,7 +898,7 @@ html{
             }
         }
         .connect{
-            @include pos(97%,0,auto,0);
+            @include pos(auto,0,auto,0);
         }
     }
     .active_container{
@@ -932,6 +946,9 @@ html{
             .contain{
                 width: 500px;
                 height: 55%;
+            }
+            .CHOCO_list{
+                height: 224px;
             }
             .CHOCO{
                 width: 200px;
@@ -990,27 +1007,30 @@ html{
         .select_dropdown{
             margin: unset;
         }
-        #first_place{
-            top: 10%;
-        }
-        #second_place{
-            top: 23%;
-        }
-        #third_place{
-            top: 32%;
-        }
-        #fourth_place{
-            top: 43%;
-            .vote{
-                @include pos(auto,0,-10%,30%);
+        .winner{
+            &:nth-of-type(1){
+                top: 10%;
             }
-        }
-        #fifth_place{
-            top: 48%;
-            .vote{
-                @include pos(auto,0,-10%,15%);
+            &:nth-of-type(2){
+                top: 23%;
             }
-        }     
+            &:nth-of-type(3){
+                top: 32%;
+            }
+            &:nth-of-type(4){
+                top: 43%;
+                .vote{
+                    @include pos(auto,0,-10%,30%);
+                }
+            }
+            &:nth-of-type(5){
+                top: 48%;
+                .vote{
+                    @include pos(auto,0,-10%,15%);
+                }
+            }
+
+        }
         .vote{
             width: 100%;
             max-width: 85px;
@@ -1259,7 +1279,7 @@ html{
             }
             .touch_hidden{
                 width: 100%;
-                height: 100%;
+                // height: 100%;
                 padding-left: 2%;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
@@ -1267,9 +1287,11 @@ html{
                     display: none;
                 }
             }
+            
             .CHOCO_list{
                 position: relative;
                 width: 99999px;
+                height: 274px;
                 left: 0;
                 transition: .5s;
                 &::after{
@@ -1317,7 +1339,7 @@ html{
         padding-top: 150px;
         text-align: left;
         .contain{
-            height: 2415px;
+            max-height: 2415px;
             &::after{
                 content: "";
                 display: block;
@@ -1367,6 +1389,7 @@ html{
                 width: 60px;
                 @include pos(-10%,4%,auto,auto);
                 cursor: pointer;
+                @include noselect();
                 figcaption{
                     @include pos(5%,0%,0%,0%);
                     @include font_s();
@@ -1429,23 +1452,23 @@ html{
             .board{
                 width: 540px;
             }
-            #first_place{
-                top: 18%;
-            }
-            #second_place{
-                top: 31%;
-            }
-            #third_place{
-                top: 37%;
-            }
-            #fourth_place{
-                top: 49%;
-            }
-            #fifth_place{
-                top: 53%;
-            }
-        
-        
+            .winner{
+                &:nth-of-type(1){
+                    top: 18%;  
+                }
+                &:nth-of-type(2){
+                    top: 31%;
+                }
+                &:nth-of-type(3){
+                    top: 37%;
+                }
+                &:nth-of-type(4){
+                    top: 49%;
+                }
+                &:nth-of-type(5){
+                    top: 53%;
+                }
+            }   
         }
         .player_container{
             .contain{
@@ -1478,21 +1501,24 @@ html{
             .board{
                 width: 540px;
             }
-            #first_place{
-                top: 24%;
-            }
-            #second_place{
-                top: 36%;
-            }
-            #third_place{
-                top: 42%;
-            }
-            #fourth_place{
-                top: 53%;
-            }
-            #fifth_place{
-                top: 56%;
-            }
+            .winner{
+                &:nth-of-type(1){
+                    top: 24%; 
+                }
+                &:nth-of-type(2){
+                    top: 36%;
+                }
+                &:nth-of-type(3){
+                    top: 42%;
+                }
+                &:nth-of-type(4){
+                    top: 53%;
+                }
+                &:nth-of-type(5){
+                    top: 56%;
+                }
+    
+            } 
         }
         .active_container{
             .bearshow{

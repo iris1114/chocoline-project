@@ -1,3 +1,38 @@
+
+<?php
+session_start();
+if(isset($_SESSION["mem_id"])!=true){
+    $_SESSION["mem_id"] = null;
+}
+if (!isset($_SESSION["mem_headshot"])) {
+    $_SESSION["mem_headshot"] = 'icon_member.png';
+}
+$errMsg = "";
+try {
+	require_once("../common/php/connect_choco.php");
+
+    //最新留言
+    $sql = "SELECT mem_name , mem_headshot , comment , DATE(comment_date) comment_date , c.mem_no , c.contest_no from comment_record c , member m where c.mem_no=m.mem_no order by comment_date desc limit 3";    
+    $messages = $pdo->query($sql); 
+
+    //本月前五名
+    $sql = "SELECT c.contest_no , cp.choco_img_src , c.number_votes from customized_product cp , contest c where (cp.customized_product_no = c.customized_product_no) AND (month(c.contest_time) = (month(CURRENT_DATE))) AND (YEAR(c.contest_time) = (YEAR(CURRENT_DATE))) order BY c.number_votes DESC LIMIT 0,5";
+    $stage_chocos = $pdo->query($sql);
+
+    //投票區角色數量
+    $sql = "SELECT m.mem_name , cp.customized_product_name , c.number_votes , DATE(c.contest_time) contest_time, c.contest_no ,cp.choco_img_src FROM contest c , customized_product cp , member m WHERE cp.mem_no = m.mem_no AND c.customized_product_no=cp.customized_product_no AND (month(c.contest_time) = (month(CURRENT_DATE))) AND (YEAR(c.contest_time) = (YEAR(CURRENT_DATE))) ORDER BY contest_time DESC limit 0,18";
+    $players = $pdo->query($sql);
+
+    //目前有多少頁碼
+    $sql = "SELECT * FROM contest WHERE (month(contest_time) = (month(CURRENT_DATE))) AND (YEAR(contest_time) = (YEAR(CURRENT_DATE)))";
+    $pages = $pdo->query($sql);
+    $pagenums = ceil($pages->rowCount()/18);
+
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +45,16 @@
     <title>CHOCO 選美</title>
 </head>
 <body class="contest_body">
+    <?php
+        echo $pages->rowCount();
+    ?>
 <!-- header start -->
     <header>
         <div class="m_header">
             <div class="navbar">
                 <div class="burger">
                     <figure>
-                        <img src="image/headerfooter/burger.png" alt="burger">
+                        <img src="../common/image/headerfooter/burger.png" alt="burger">
                     </figure>
                 </div>
                 <div class="logo">
@@ -24,18 +62,21 @@
                         CHOCOLINE
                     </h1>
                     <a href="../index/index.php">
-                        <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                        <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                     </a>
                 </div> 
                 <div class="status">
                     <figure>
-                        <a href="../member/member.php">
-                            <img src="image/headerfooter/icon_member.png" alt="member">
+                        <a class="spanLogin" href="javascript:;">
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member"/>
+                            <!-- icon點擊後跳出登入註冊燈箱 -->
+                            <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                            <span id="spanLoginText_mobile" style="display:none">登入</span>
                         </a>
                     </figure>
                     <figure>
                         <a href="../cart/cart.php">
-                            <img src="image/headerfooter/icon_cart.png" alt="cart">
+                            <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
                         </a>
                     </figure>
                 </div>
@@ -47,7 +88,7 @@
                 <li><a href="../store/store.php">CHOCO 商城</a></li>
                 <li><a href="../about/about.php">關於 CHOCO</a></li>
                 <figure id="menuclose">
-                    <img src="image/headerfooter/menuclose.png" alt="close">
+                    <img src="../common/image/headerfooter/menuclose.png" alt="close">
                 </figure>
             </ul>
         </div>
@@ -57,7 +98,7 @@
                     CHOCOLINE
                 </h1>
                 <a href="../index/index.php">
-                    <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                    <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
             </div>
             <div class="navbar">
@@ -69,16 +110,80 @@
                     <li><a href="../about/about.php">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
-                    <figure>
-                        <a href="../member/member.php">
-                            <img src="image/headerfooter/icon_member.png" alt="member">
-                        </a>
-                    </figure>
-                    <figure>
-                        <a href="../cart/cart.php">
-                            <img src="image/headerfooter/icon_cart.png" alt="cart">
-                        </a>
-                    </figure>
+                <figure>
+                    <a class="spanLogin" href="javascript:;">
+                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member" />
+                        <!-- icon點擊後跳出登入註冊燈箱 -->
+                    </a>
+                    <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                    <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"]?></span>
+                    <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"]?></span>
+                    <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"]?></span>
+                    <span id="spanLoginText" style="display:none">登入</span>
+                </figure>
+                <figure>
+                    <a href="../cart/cart.php">
+                        <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
+                    </a>
+                </figure>
+                </div>
+            </div>
+        </div>
+        <!-- 燈箱：登入 -->
+        <div id="lightBox" style="display:none">
+            <div id="tableLogin">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
+                    </a>			
+                    <h3>會員登入</h3>
+                    <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
+                    <input type="password" name="mem_psw" id="mem_psw" value="" maxlength="12" placeholder="密碼"><br>
+                    <a href="javascript:;" id="forget_password">忘記密碼</a><br>
+                    <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
+                    <span>不是會員嗎?</span>
+                    <a href="javascript:;" id="register">立即註冊</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 重設密碼 -->
+        <div id="passwordLightBox" style="display:none">
+            <div id="getPassword">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
+                    </a>			
+                    <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
+                    <h3>重設密碼</h3>
+                    <p>請輸入帳號註冊時所留的電子<br>
+                        郵件地址，以驗證您的資料</p>
+                    <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+                    <input type="password" name="mem_psw" id="new_mem_psw" value="" maxlength="12" placeholder="輸入新密碼  (6-12位字母、數字)"><br>
+                    <input type="password" name="mem_psw" id="re_new_mem_psw" value="" maxlength="12" placeholder="再次確認新密碼"><br>
+                    <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 會員註冊 -->
+        <div id="registerLightBox" style="display:none">
+            <div id="registered">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_register">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
+                    </a>			
+                    <h3>會員註冊</h3>
+                    <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
+                            請填下您的個人資料！* 為必填。</p>
+                    <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
+                    <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
+                    <p id="idMsg">請輸入帳號</p><br>
+                    <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
+                    <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" maxlength="12" placeholder="設定密碼 (6-12位字母、數字)"><br>
+                    <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" maxlength="12" placeholder="再次確認密碼 (再次確認)"><br>
+                    <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
                 </div>
             </div>
         </div>
@@ -94,127 +199,55 @@
                 </div>
             </div>
             <div class="contain">
+                <select class="select_dropdown search_month">
+                    <option value="2019_7" selected>2019年7月</option>
+                    <option value="2019_6">2019年6月</option>
+                    <option value="2019_5">2019年5月</option>
+                </select>
                 <div class="stage">
-                    <select name="" class="select_dropdown">
-                        <option value="2019_07" selected>2019年7月</option>
-                        <option value="2019_06">2019年6月</option>
-                        <option value="2019_05">2019年5月</option>
-                    </select>
-                    <div class="winner" id="first_place">
-                        <a href="../role/role.php"></a>
-                        <figure class="CHOCO">
-                            <img src="image/contest/bear.png" alt="bear">
-                        </figure>
-                        <figure class="vote">
-                            <img src="image/contest/vote.png" alt="vote">
-                            <figcaption>
-                                <p>投我</p>
-                                <span>123票</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="winner" id="second_place">
-                        <a href="../role/role.php"></a>
-                        <figure class="CHOCO">
-                            <img src="image/contest/cake.png" alt="cake">
-                        </figure>
-                        <figure class="vote">
-                            <img src="image/contest/vote.png" alt="vote">
-                            <figcaption>
-                                <p>投我</p>
-                                <span>123票</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="winner" id="third_place">
-                        <a href="../role/role.php"></a>
-                        <figure class="CHOCO">
-                            <img src="image/contest/peanut.png" alt="peanut.png">
-                        </figure>
-                        <figure class="vote">
-                            <img src="image/contest/vote.png" alt="vote">
-                            <figcaption>
-                                <p>投我</p>
-                                <span>123票</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="winner" id="fourth_place">
-                        <a href="../role/role.php"></a>
-                        <figure class="CHOCO">
-                            <img src="image/contest/donut.png" alt="donut.png">
-                        </figure>
-                        <figure class="vote">
-                            <img src="image/contest/vote.png" alt="vote">
-                            <figcaption>
-                                <p>投我</p>
-                                <span>123票</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="winner" id="fifth_place">
-                        <a href="../role/role.php"></a>
-                        <figure class="CHOCO">
-                            <img src="image/contest/cookies.png" alt="cookies.png">
-                        </figure>
-                        <figure class="vote">
-                            <img src="image/contest/vote.png" alt="vote">
-                            <figcaption>
-                                <p>投我</p>
-                                <span>123票</span>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    <?php 
+                        while($stage_choco = $stage_chocos->fetchObject()){
+                    ?>
+                        <div class="winner">
+                            <a href="../role/role.php?contest_no=<?php echo $stage_choco->contest_no?>" class="player_contest_no"></a>
+                            <figure class="CHOCO">
+                                <img src="../common/image/chocos/<?php echo $stage_choco->choco_img_src?>" alt="<?php echo $stage_choco->choco_img_src?>">
+                            </figure>
+                            <figure class="vote player_vote_btn">
+                                <img src="image/contest/vote.png" alt="vote">
+                                <figcaption>
+                                    <p>投我</p>
+                                    <span class="votenum"><?php echo $stage_choco->number_votes?>票</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    <?php }?>
                 </div>
                 <div class="board">
                     <div class="lastest_mseeage">
                         <h3>最新留言</h3>
                         <div class="message_block">
+                        <?php 
+                        while($message = $messages->fetchObject()){
+                        ?>
                             <div class="message">
                                 <figure class="cus_photo">
-                                    <img src="image/contest/amos.png" alt="memphoto">
+                                    <img src="../common/image/member/<?php echo $message->mem_headshot?>" alt="memphoto">
                                 </figure>
                                 <div class="message_contain">
-                                    <p class="memName">哎莫斯</p>
-                                    <p class="mseeage_text">我來推坑啦!!</p>
+                                    <p class="memName"><?php echo $message->mem_name?></p>
+                                    <p class="mseeage_text"><?php echo $message->comment?></p>
                                 </div>
                                 <div class="status">
-                                    <a href="javascrupt:;" class="btn cyan_s">
+                                    <a href="../role/role.php?contest_no=<?php echo $message->contest_no?>" class="btn cyan_s">
                                         <span>查看</span>
                                     </a>
-                                    <p class="message_date">2019/07/24</p>
+                                    <p class="message_date"><?php echo $message->comment_date?></p>
                                 </div>
                             </div>
-                            <div class="message">
-                                <figure class="cus_photo">
-                                    <img src="image/contest/dongdong.png" alt="memphoto">
-                                </figure>
-                                <div class="message_contain">
-                                    <p class="memName">董董</p>
-                                    <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                                </div>
-                                <div class="status">
-                                    <a href="javascrupt:;" class="btn cyan_s">
-                                        <span>查看</span>
-                                    </a>
-                                    <p class="message_date">2019/07/24</p>
-                                </div>
-                            </div>
-                            <div class="message">
-                                <figure class="cus_photo">
-                                    <img src="image/contest/plus0.png" alt="memphoto">
-                                </figure>
-                                <div class="message_contain">
-                                    <p class="memName">+0</p>
-                                    <p class="mseeage_text">大家快來投我可愛的鵝子女鵝!!</p>
-                                </div>
-                                <div class="status">
-                                    <a href="javascrupt:;" class="btn cyan_s">
-                                        <span>查看</span>
-                                    </a>
-                                    <p class="message_date">2019/07/24</p>
-                                </div>
-                            </div>
+                        <?php
+                        }
+                        ?>
                         </div>
                     </div>
                     <div class="connect">
@@ -318,41 +351,7 @@
                 <div class="contain">
                     <div class="touch_hidden">
                         <div class="CHOCO_list">
-                            <figure class="CHOCO">
-                                <img src="image/contest/donut.png" alt="donut">
-                                <figcaption class="CHOCO_name">維尼1</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/cake.png" alt="cake">
-                                <figcaption class="CHOCO_name">維尼2</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/bear.png" alt="bear">
-                                <figcaption class="CHOCO_name">維尼3</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/peanut.png" alt="peanut">
-                                <figcaption class="CHOCO_name">維尼4</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/cookies.png" alt="cookies">
-                                <figcaption class="CHOCO_name">維尼5</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/donut.png" alt="donut">
-                                <figcaption class="CHOCO_name">維尼6</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/donut.png" alt="donut">
-                                <figcaption class="CHOCO_name">維尼6</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/donut.png" alt="donut">
-                                <figcaption class="CHOCO_name">維尼6</figcaption>
-                            </figure>
-                            <figure class="CHOCO">
-                                <img src="image/contest/donut.png" alt="donut">
-                                <figcaption class="CHOCO_name">維尼6</figcaption>
+                            <figure class="CHOCO" style="display:none">
                             </figure>
                         </div>
                     </div>
@@ -360,9 +359,9 @@
                     <span id="next_btn">❯</span>  
                 </div>
                 <div class="status">
-                    <a href="javascript:;" class="btn cyan_m"><span>去客製</span></a>
+                    <a href="../custom/custom.php" class="btn cyan_m"><span>去客製</span></a>
                     <a href="javascript:;" class="btn cyan_m" id="canceljoin"><span>取消</span></a>
-                    <a href="javascript:;" class="btn orange_m"><span>參賽</span></a>
+                    <a href="javascript:;" class="btn orange_m" id="join_submit"><span>參賽</span></a>
                 </div>
             </div>
         </div>
@@ -371,12 +370,15 @@
 <!-- player_container start -->
     <section class="player_container">
         <div class="wrap">
-            <select name="" class="select_dropdown">
+            <select name="" class="select_dropdown player_sort">
                 <option value="lastest" selected>參賽日期 / 最新</option>
                 <option value="old">參賽日期 / 最舊</option>
                 <option value="popular">得票總數 / 最高</option>
             </select>
             <div class="contain">
+            <?php 
+                while($player = $players->fetchObject()){
+            ?>
                 <div class="player">
                     <div class="board">
                         <figure class="like_icon">
@@ -384,487 +386,35 @@
                             <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
                             <figcaption>收藏</figcaption>
                         </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
+                        <p class="choconame"><?php echo $player->customized_product_name?></p>
+                        <p class="votenum"><?php echo $player->number_votes?>票</p>
+                        <a href="../role/role.php?contest_no=<?php echo $player->contest_no?>" class="btn cyan_s player_contest_no"><span>留言</span></a>
+                        <a href="javascript:;" class="btn orange_s player_vote_btn"><span>投票</span></a>
                     </div>
                     <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
+                        <img src="../common/image/chocos/<?php echo $player->choco_img_src?>" alt="<?php echo $player->choco_img_src?>">
                         <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/28</span></p>
-                            <p class="memname">王小明</p>
+                            <p class="date">參賽日期 : <span class="date_ymd"><?php echo $player->contest_time?></span></p>
+                            <p class="memname"><?php echo $player->mem_name?></p>
                         </figcaption>
                     </figure>
                     <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
                     </figure>
                 </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">維尼</p>
-                        <p class="votenum">302票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/bear.png" alt="bear">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/27</span></p>
-                            <p class="memname">黃澄澄</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/g_ring.png" alt="g_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">小餓魔</p>
-                        <p class="votenum">298票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/cake.png" alt="cake">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/27</span></p>
-                            <p class="memname">綠油油</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/b_ring.png" alt="b_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">叮叮</p>
-                        <p class="votenum">273票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/peanut.png" alt="peanut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王志明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/o_ring.png" alt="o_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">歐歐</p>
-                        <p class="votenum">321票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/cookies.png" alt="cookies">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">劉小白</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/b_ring.png" alt="b_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">12票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/bear.png" alt="bear">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/g_ring.png" alt="g_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">叮叮</p>
-                        <p class="votenum">273票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/peanut.png" alt="peanut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王志明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/o_ring.png" alt="o_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">12票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/bear.png" alt="bear">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/g_ring.png" alt="g_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">小餓魔</p>
-                        <p class="votenum">298票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/cake.png" alt="cake">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">綠油油</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/b_ring.png" alt="b_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">歐歐</p>
-                        <p class="votenum">321票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/cookies.png" alt="cookies">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">劉小白</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/b_ring.png" alt="b_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">12票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/bear.png" alt="bear">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/g_ring.png" alt="g_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">叮叮</p>
-                        <p class="votenum">273票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/peanut.png" alt="peanut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王志明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/o_ring.png" alt="o_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">12票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/bear.png" alt="bear">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/g_ring.png" alt="g_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">小餓魔</p>
-                        <p class="votenum">298票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/cake.png" alt="cake">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">綠油油</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/b_ring.png" alt="b_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
-                <!-- ----- -->
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
-                <div class="player">
-                    <div class="board">
-                        <figure class="like_icon">
-                            <img src="image/contest/wlike.png" alt="like" class="wlike">
-                            <img src="image/contest/plike.png" alt="like" class="plike" style="display:none;">
-                            <figcaption>收藏</figcaption>
-                        </figure>
-                        <p class="choconame">安安你好</p>
-                        <p class="votenum">112票</p>
-                        <a href="javascript:;" class="btn cyan_s"><span>留言</span></a>
-                        <a href="javascript:;" class="btn orange_s"><span>投票</span></a>
-                    </div>
-                    <figure class="CHOCO">
-                        <img src="image/contest/donut.png" alt="donut">
-                        <figcaption>
-                            <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                            <p class="memname">王小明</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="ring">
-                        <img src="image/contest/p_ring.png" alt="p_ring">
-                    </figure>
-                </div>
+            <?php
+                }
+            ?>
             </div>
             <div class="page">
                 <div class="pagination">
-                    <a href="javascript:;">❮</a>
+                    <a href="javascript:;" id="prevpage_btn">❮</a>
+                    <?php
+                    for($i=1;$i<=$pagenums;$i++){
+                    ?>
+                        <a class="pagenums"  href="javascript:;"><?php echo $i?></a>
+                    <?php
+                    }
+                    ?>
                     <!-- <a class="pagenums active"  href="javascript:;">1</a> -->
                     <a href="javascript:;" id="nextpage_btn">❯</a>
                 </div>
@@ -962,6 +512,7 @@
 <!-- robot end -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src="../common/js/header.js"></script>
+<script src="../common/js/login.js"></script>
 <script src="../common/js/robot.js"></script>
 <script src="js/contest.js"></script>
 </body>

@@ -1,28 +1,32 @@
 window.addEventListener("load",function(){
-
-    //收藏變色
-    let like  = document.querySelectorAll(".like_icon");
-    let i=0;
-
-    while(i<like.length){
-
-        like[i].addEventListener("click",function(){
-            let wlike = this.querySelector(".wlike"),
-                plike = this.querySelector(".plike"),
-                fig   = this.querySelector("figcaption");
-
-            if(plike.style.display == "none"){
-                wlike.style.display = "none";
-                plike.style.display = "";
-                fig.style.color = "#F6EED4";
-            }else{
-                plike.style.display = "none";
-                wlike.style.display = "";
-                fig.style.color = "#592F13";
-            }
-        })
-        i++;
+    
+    collect_color();
+    // let like = document.querySelectorAll(".like_icon");
+    function collect_color(){
+        //收藏變色
+        let i=0;
+        like = document.querySelectorAll(".like_icon");
+        while(i<like.length){
+    
+            like[i].addEventListener("click",function(){
+                let wlike = this.querySelector(".wlike"),
+                    plike = this.querySelector(".plike"),
+                    fig   = this.querySelector("figcaption");
+    
+                if(plike.style.display == "none"){
+                    wlike.style.display = "none";
+                    plike.style.display = "";
+                    fig.style.color = "#F6EED4";
+                }else{
+                    plike.style.display = "none";
+                    wlike.style.display = "";
+                    fig.style.color = "#592F13";
+                }
+            });
+            i++;
+        }
     }
+    
 
     //參加取消報名
     let canceljoin = document.querySelector("#canceljoin");
@@ -34,72 +38,376 @@ window.addEventListener("load",function(){
         ruleintroduce.style.display="";
     })
 
-    //角色列表長度
-    let joingame = document.querySelector("#joingame");
+    function getStyle(obj,attr){
+        return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,null)[attr];
+    }
     let mychoco = document.querySelector(".my_CHOCO");
     let chocolist = mychoco.querySelector(".CHOCO_list");
     let choco = chocolist.querySelectorAll(".CHOCO");
     let chocowidth = parseInt(getStyle(choco[0],"width"));
+    let joingame = document.querySelector("#joingame");
 
-    function getStyle(obj,attr){
-        return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,null)[attr];
-    }
+    chocolist_block();
 
-    chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
-    joingame.addEventListener("click",function(){
-        ruleintroduce.style.display="none";
-        myCHOCO.style.display="block";
-        chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
-    })
-
-    window.addEventListener("resize",function(){
-        chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
-
+    function chocolist_block(){
+        //角色列表長度
+        choco = chocolist.querySelectorAll(".CHOCO");
         chocowidth = parseInt(getStyle(choco[0],"width"));
-
-
-    })
-   
-    //角色列表左右按鈕
-    let prev = document.querySelector("#prev_btn");
-    let next = document.querySelector("#next_btn");
-    let listleft = 0;
+    
+        window.addEventListener("resize",function(){
+            chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
+            chocowidth = parseInt(getStyle(choco[0],"width"));
+        })
+        
+    
+        chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
+        joingame.addEventListener("click",function(){
+            chocolist.style.width = (choco.length * parseInt(getStyle(choco[0],"width"))) + "px";
+        })
+    
+       
+        //角色列表左右按鈕
+        let prev = document.querySelector("#prev_btn");
+        let next = document.querySelector("#next_btn");
+        let listleft = 0;
+    
+        prev.addEventListener("click",function(){
+            if(listleft < 0){
+                listleft += chocowidth;
+                chocolist.style.left = `${listleft}px`;
+            }
+        })
+        next.addEventListener("click",function(){
+            if(listleft >= (parseInt(getStyle(chocolist,"width")))*-1 + chocowidth*3){
+                listleft -= chocowidth;
+                chocolist.style.left = `${listleft}px`;
+            }
+        })
+    
+        //角色點擊標記
+        for(let i=0;i<choco.length;i++){
+            choco[i].addEventListener("click",function(){
+                for(j=0;j<choco.length;j++){
+                    choco[j].classList.remove("CHOCO_select");
+                }
+                this.classList.add("CHOCO_select");           
+            })
+        }
+    }
     
 
-    prev.addEventListener("click",function(){
-        if(listleft < 0){
-            listleft += chocowidth;
-            chocolist.style.left = `${listleft}px`;
+
+// -----------ajax-----------------------------------------------------
+
+//stage各月分排名    
+    let search_month = document.querySelector(".search_month");
+    search_month.options[0].selected = true; 
+    let stage = document.querySelector(".stage");
+
+    search_month.addEventListener("input",function(){
+        let month_value = document.querySelector(".search_month").value.split("_");
+        // console.log(month_value[0]);
+        
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+                stage.innerHTML = xhr.responseText;
+                tovote();
+            }else{
+                alert( xhr.status );
+            }
         }
         
-    })
-    next.addEventListener("click",function(){
-        if(listleft >= (parseInt(getStyle(chocolist,"width")))*-1 + chocowidth*3){
-            listleft -= chocowidth;
-            chocolist.style.left = `${listleft}px`;
-        }
-       
+        //設定好所要連結的程式
+        var url = "php/month_search.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+
+        var data_info = `year=${month_value[0]}&month=${month_value[1]}`;
+        xhr.send( data_info);
     })
 
-    //角色點擊標記
-    for(let i=0;i<choco.length;i++){
-        
-        choco[i].addEventListener("click",function(){
-            for(j=0;j<choco.length;j++){
-                choco[j].classList.remove("CHOCO_select");
-            }
-            this.classList.add("CHOCO_select");
+
+//點擊報名參賽
+    joingame.addEventListener("click",function(){
+        callBack = function(){
+            joingame.click();
+        }
+        showLoginForm();
+        if(!islogin){
+            return;
+        }
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+                ruleintroduce.style.display="none";
+                myCHOCO.style.display="block";
+                // console.log(xhr.responseText);
                 
+                if(xhr.responseText == " "){
+                    document.querySelector(".CHOCO_list").style="width: 100%;display: flex;justify-content: center;align-items: center;"
+                    document.querySelector(".CHOCO_list").innerHTML = `<p>尚未擁有CHOCO星人，快去客製吧!<p>`
+                }else{
+                    document.querySelector(".CHOCO_list").innerHTML = xhr.responseText;
+                }
+                chocolist_block();
+            }else{
+                alert( xhr.status );
+            }
+        }
+        
+        //設定好所要連結的程式
+        var url = "php/search_chocolist.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        
+        var data_info = `memId=${document.querySelector("#mem_id_hide").innerText}`;
+        xhr.send(data_info);
+    })
+
+
+
+
+
+    
+//將被選中角色放進投票區 
+    let join_submit = document.querySelector("#join_submit");
+    join_submit.addEventListener("click",function(){
+
+        isjoin();
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+                document.querySelector(".player_container").querySelector(".contain").innerHTML = xhr.responseText;
+                collect_color();
+                tovote();
+            }else{
+                alert( xhr.status );
+            }
+        }
+        
+        //設定好所要連結的程式
+        var url = "php/addplayer.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        
+        var data_info = `choco_no=${document.querySelector(".CHOCO_no").innerText}&player_sort=${document.querySelector(".player_sort").value}&mem_id=${document.querySelector("#mem_id_hide").innerText}`;
+        xhr.send(data_info);
+    
+    })
+
+
+    function isjoin(){
+        let xhr = new XMLHttpRequest();
+        
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+                console.log(xhr.responseText);
+                if(xhr.responseText != " "){
+                    alert("本月已參加過選美");
+                }
+            }else{
+                alert( xhr.status );
+            }
+        }
+        //設定好所要連結的程式
+        var url = "php/isjoin.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        
+        var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}`;
+        xhr.send(data_info);
+    }
+
+//投票區排序
+
+    document.querySelector(".player_sort").addEventListener("input",player_sort)
+
+    function player_sort(){
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+                document.querySelector(".player_container").querySelector(".contain").innerHTML = xhr.responseText;
+                collect_color();
+                tovote();
+            }else{
+                alert( xhr.status );
+            }
+        }
+        
+        //設定好所要連結的程式
+        var url = "php/player_sort.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        
+        var data_info = `nowpage=${nowpagetext}&player_sort=${document.querySelector(".player_sort").value}`;
+        xhr.send(data_info);
+    
+    }
+//投票
+
+    let player_votes = document.querySelectorAll(".player_vote_btn");
+
+    tovote();
+
+    function tovote(){
+        player_votes = document.querySelectorAll(".player_vote_btn");
+        for(let i=0;i<player_votes.length;i++){
+            player_votes[i].addEventListener("click",function(){
+                
+                showLoginForm();
+                if(!islogin){
+                    return;
+                }
+                isrest_note();
+
+                voted = this;
+                voteno = voted.parentNode.querySelector(".player_contest_no").href.split("no=");
+                // console.log(voteno[1]);
+                
+                let xhr = new XMLHttpRequest();
+                xhr.onload=function (){
+                    if( xhr.status == 200 ){
+                        // console.log(`成功`);
+                        // console.log(`${xhr.responseText.replace(" ","")}`);
+                        
+                        voted.parentNode.querySelector(".votenum").innerHTML =`${xhr.responseText.replace(" ","")}票`;
+                    }else{
+                        alert( xhr.status );
+                    }
+                }
+                
+                //設定好所要連結的程式
+                var url = "php/addvotes.php";
+                xhr.open("post", url, true);
+                xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                //送出資料
+                
+                var data_info = `contest_no=${voteno[1]}`;
+                xhr.send(data_info);
+            })
+        }
+    }
+
+    function isrest_note(){
+        let xhr = new XMLHttpRequest();
+        
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+                if(xhr.responseText ==0){
+                    alert("今日票數已投完~");
+                    // console.log("今日票數已投完~");
+                }
+            }else{
+                alert( xhr.status );
+            }
+        }
+        //設定好所要連結的程式
+        var url = "php/isrest_vote.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        
+        var data_info = ``;
+        xhr.send(data_info);
+    }
+
+
+//頁碼
+
+    let pagenums = document.querySelectorAll(".pagenums");
+    let nowpage;
+    let nowpagetext = 1;
+    document.querySelector(".pagenums").classList.add("active");
+
+
+
+    for(let i=0;i<pagenums.length;i++){
+
+        pagenums[i].addEventListener("click",function(){
+            nowpage = this;
+            nowpagetext = nowpage.innerText;
+            
+            for(let j=0; j<pagenums.length;j++){
+                pagenums[j].classList.remove("active");
+            }
+            this.classList.add("active");
+
+            player_sort();
         })
     }
-    
 
+
+
+//參賽按鈕點擊事件裡面要包增加pagenum的函式
+    function addpage(){
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+                // console.log(`成功`);
+            }else{
+                alert( xhr.status );
+            }
+        }
+        
+        //設定好所要連結的程式
+        var url = "php/addpage.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //送出資料
+        
+        var data_info = ``;
+        xhr.send(data_info);
+    }
+
+//點擊左右換頁 如果pagenums.length跟 active的innerText一樣 那就是到底了
+    let prev_btn = document.querySelector("#prevpage_btn"),
+        next_btn = document.querySelector("#nextpage_btn");
+
+    prev_btn.addEventListener("click",function(){
+        for(let j=0; j<pagenums.length;j++){
+            pagenums[j].classList.remove("active");
+        }
+        let i = nowpagetext-2;
+        if(i<0){
+            i=0
+        }
+        pagenums[i].classList.add("active");
+        nowpage = pagenums[i];
+        nowpagetext = nowpage.innerText;
+        player_sort();
+    })
+
+    next_btn.addEventListener("click",function(){
+        for(let j=0; j<pagenums.length;j++){
+            pagenums[j].classList.remove("active");
+        }
+        let i = nowpagetext;
+        if(i == pagenums.length){
+            i=pagenums.length-1;
+        }
+        pagenums[i].classList.add("active");
+        nowpage = pagenums[i];
+        nowpagetext = nowpage.innerText;
+        player_sort();
+    })
 
     window.addEventListener("scroll",function(){
         let scrolltop = document.documentElement.scrollTop ||window.pageYOffset || document.body.scrollTop;
         
     //活動介紹動畫
-
+    
         if(scrolltop>890){
             document.querySelector(".bear").classList.add("bearshow");
             document.querySelector(".cake").classList.add("cakeshow");
@@ -107,51 +415,6 @@ window.addEventListener("load",function(){
             document.querySelector(".bear").classList.remove("bearshow");
             document.querySelector(".cake").classList.remove("cakeshow");
         }
-
+    
     })
-
-
-    var pagenums = document.querySelectorAll(".pagenums");
-
-    //參賽按鈕點擊事件裡面要包增加pagenum的函式
-
-    $pagenums = Math.ceil($(".player").length / 18);
-    for(let i=0;i<$pagenums;i++){
-        $("#nextpage_btn").before(`<a href="javascript:;" class="pagenums">${i+1}</a>`);
-    }
-
-    pagenum();
-    function pagenum(){
-        $pagenums = Math.ceil($(".player").length / 18);
-        if( $pagenums == $(".pagination a").length-2){
-            return;
-        }
-        
-        $("#nextpage_btn").before(`<a href="javascript:;" class="pagenums">${$pagenums}</a>`);
-        pagenums = document.querySelectorAll(".pagenums");
-        console.log(pagenums.length);
-        
-        for(let i=0;i<pagenums.length;i++){
-            pagenums[i].addEventListener("click",function(){
-                
-                let player = document.querySelectorAll(".player");
-                // console.log(this);
-                
-                for(let i=0;i<player.length;i++){
-                    player[i].style.display="block"
-                }
-    
-                for(let j=0; j<pagenums.length;j++){
-                    pagenums[j].classList.remove("active");
-                }
-    
-                this.classList.add("active");
-                // console.log(this.innerText);
-                for(let i=0;i<((this.innerText-1) * 18);i++){
-                    player[i].style.display="none";
-                    
-                }
-            })
-        }
-    }
 })
