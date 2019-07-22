@@ -58,13 +58,13 @@ try {
                         CHOCOLINE
                     </h1>
                     <a href="../index/index.php">
-                        <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
+                        <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
                     </a>
                 </div> 
                 <div class="status">
                     <figure>
                         <a class="spanLogin" href="javascript:;">
-                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member"/>
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
                             <!-- icon點擊後跳出登入註冊燈箱 -->
                             <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
                             <span id="spanLoginText_mobile" style="display:none">登入</span>
@@ -100,15 +100,15 @@ try {
             <div class="navbar">
                 <ul class="menubox">
                     <li><a href="../custom/custom.php">客製 CHOCO</a></li>
-                    <li class="nowpage"><a href="../contest/contest.php">CHOCO 選美</a></li>
-                    <li><a href="../game/game.php">CHOCO 遊戲</a></li>
+                    <li><a href="../contest/contest.php">CHOCO 選美</a></li>
+                    <li class="nowpage"><a href="../game/game.php">CHOCO 遊戲</a></li>
                     <li><a href="../store/store.php">CHOCO 商城</a></li>
                     <li><a href="../about/about.php">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
                 <figure>
                     <a class="spanLogin" href="javascript:;">
-                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member" />
+                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
                     </a>
                     <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
@@ -806,7 +806,7 @@ try {
   </div>
   <div class="final_btn">
   <div class="next_button">
-         <button type="submit" class="btn cyan_s add_cart_btn" onclick="aa()">加入購物車</button>
+         <button type="submit" class="btn cyan_s add_cart_btn">加入購物車</button>
       </div>
   </div>
  
@@ -897,7 +897,7 @@ try {
   </div>
   <div class="final_btn">
   <div class="next_button">
-         <button type="submit" class="btn cyan_s add_cart_btn" onclick="aa()">加入購物車</button>
+         <button type="submit" class="btn cyan_s add_cart_btn" >加入購物車</button>
       </div>
   </div>
 </div>
@@ -905,7 +905,7 @@ try {
 
 <form method="post" accept-charset="utf-8" id="my_form">
 
-<input name="final_choco" id='final_choco' type="hidden"/>
+<!-- <input name="final_choco" id='final_choco' type="hidden"/> -->
 <!-- <input type="text"> -->
 
 </form>
@@ -945,8 +945,8 @@ try {
 </section>
     
 
-  <!-- footer start -->
-  <footer>
+   <!-- footer start -->
+   <footer>
         <div class="connect">
             <figure>
                 <a href="javascript:;">
@@ -984,61 +984,58 @@ try {
         </div>
     </footer>
 <!-- footer end -->
-    
-<!-- robot start -->
-<input id="robot_close_control" type="checkbox" />
 
-<div id="robot" class="robot">
-    <span class="robot_prompt">快來詢問我!!</span>
-    <div class="eye1"></div>
-    <div class="eyelid1"></div>
-    <div class="eye2"></div>
-    <div class="eyelid2"></div>
 
-    <label for="robot_close_control">
-    <div id="robot_close" class="robot_close"></div>
-    <div class="robot_click1"></div>
-    <div class="robot_click2"></div>
-    <div class="robot_click3"></div>
-  </label>
-    <div class="robot_content">
-        <div id="robot_message" class="message_area">
-            <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
-            <p id="message_ask_sample" class="message message_ask" style="display:none">
-                亂入一下!
-            </p>
-        </div>
-        <div class="keyword_area">
-            <button id="robot_prev_button" class="prev_button"><i class="fas fa-angle-left"></i></button>
-            <div id="keyword_space" class="keyword_space" style="width:200px">
-                <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;">
-                    <span class="keyword">客製商品</span>
-                    <span class="keyword">玩遊戲拿點數</span>
-                    <span class="keyword">選美比賽</span>
-                    <span class="keyword">推薦商品</span>
-                    <span class="keyword">CHOCOLINE</span>
-                </div>
+ <!-- robot start -->
+    <input id="robot_close_control" type="checkbox" />
+
+    <div id="robot" class="robot">
+        <span class="robot_prompt">快來詢問我!!</span>
+        <div class="eye1"></div>
+        <div class="eyelid1"></div>
+        <div class="eye2"></div>
+        <div class="eyelid2"></div>
+
+        <label for="robot_close_control">
+        <div id="robot_close" class="robot_close"></div>
+        <div class="robot_click1"></div>
+        <div class="robot_click2"></div>
+        <div class="robot_click3"></div>
+      </label>
+        <div class="robot_content">
+            <div id="robot_message" class="message_area">
+                <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
+                <p id="message_ask_sample" class="message message_ask" style="display:none">
+                    亂入一下!
+                </p>
             </div>
-            <button id="robot_next_button" class="next_button">
-        <i class="fas fa-angle-right"></i>
-      </button>
+            <div class="keyword_area">
+                <button id="robot_prev_button" class="prev_button"><i class="fas fa-angle-left"></i></button>
+                <div id="keyword_space" class="keyword_space" style="width:200px">
+                    <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;">
+                        <span class="keyword">客製商品</span>
+                        <span class="keyword">玩遊戲拿點數</span>
+                        <span class="keyword">選美比賽</span>
+                        <span class="keyword">推薦商品</span>
+                        <span class="keyword">CHOCOLINE</span>
+                    </div>
+                </div>
+                <button id="robot_next_button" class="next_button">
+            <i class="fas fa-angle-right"></i>
+          </button>
+            </div>
+            <form onsubmit="return returnR(this)" class="query_area">
+                <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
+                <input id="message_submit" type="submit" value="送出" />
+            </form>
         </div>
-        <form onsubmit="return returnR(this)" class="query_area">
-            <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
-            <input id="message_submit" type="submit" value="送出" />
-        </form>
     </div>
-</div>
-<!-- robot end -->
+    <!-- robot end -->
 
-
+    
 <!-- <script src="../common/js/robot.js"></script>     -->
 <!--    robot新增js  -->
-
-<script src="../common/js/header.js"></script>
-<script src="../common/js/login.js"></script>
-<script src="../common/robot.js"></script>
-
+    
 <script src="../common/js/header.js"></script>
 <script src="../common/js/login.js"></script>
 <script src="../common/robot.js"></script>
@@ -1843,12 +1840,12 @@ try {
            
          // --------------------------next_page--------------------------
 
-        // var choco_base_no = 0;
-        // var choco_flavor_no = 0;
+        choco_base_no = 0;
+        choco_flavor_no = 0;
 
          document.getElementById("next_page3").onclick = function () {
-          var choco_base_no = 0;
-        var choco_flavor_no = 0;
+        //   var choco_base_no = 0;
+        // var choco_flavor_no = 0;
         
           var sub_price = document.getElementById("final_price");
               
@@ -1984,16 +1981,16 @@ $(".controls").on("click", "li", function() {
 
 
 
-// document.getElementById('SaveCnv').addEventListener("click",function(){
-//             // window.open(cnv[0].toDataURL('image/png'));
-//             // card_url = (cnv[0].toDataURL('png'));
-
-//             // console.log("card_url",card_url);
-//             // var a = document.createElement('a');
-//             // a.href = gh;
-//             // a.download = 'image.png';
-//             // a.click();
-//         });
+document.getElementById('SaveCnv').addEventListener("click",function(){
+            // window.open(cnv[0].toDataURL('image/png'));
+            card_url = (cnv[0].toDataURL('png'));
+          
+            // console.log("card_url",card_url);
+            // var a = document.createElement('a');
+            // a.href = gh;
+            // a.download = 'image.png';
+            // a.click();
+        });
 
 // when new color is pressed
 // $("#revealColorSelect").click(function() {
@@ -2181,36 +2178,32 @@ function clean(){
 }
 
 
-function uploadImage(){
-  var canvas = document.getElementById("thecanvas");
-  var choco_url = canvas.toDataURL("image/png");
-  // document.getElementById('final_choco').value = choco_url;
+// function uploadImage(){
+//   var canvas = document.getElementById("thecanvas");
+//   var choco_url = canvas.toDataURL("image/png");
+//   document.getElementById('final_choco').value = choco_url;
 
-  console.log("choco_URL",choco_url);
-  var a = document.createElement('a');
-            a.href = gh;
-            a.download = 'image.png';
-            a.click();
+//   console.log("choco_URL",choco_url);
 
-  var formData = new FormData(document.getElementById("my_form"));
+//   var formData = new FormData(document.getElementById("my_form"));
   
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function(){
-    if( xhr.status == 200){
-      if(xhr.responseText == "error"){
-        alert("Error");
-      }else{
-        alert('Succesfully uploaded');  
-        console.log(xhr.responseText);
-      }
-    }else{
-      alert(xhr.status)
-    }
-  }
+//   var xhr = new XMLHttpRequest();
+//   xhr.onload = function(){
+//     if( xhr.status == 200){
+//       if(xhr.responseText == "error"){
+//         alert("Error");
+//       }else{
+//         alert('Succesfully uploaded');  
+//         console.log(xhr.responseText);
+//       }
+//     }else{
+//       alert(xhr.status)
+//     }
+//   }
   
-  xhr.open('POST', 'canvas_load_save.php', true);
-  xhr.send(formData);
-}
+//   xhr.open('POST', 'canvas_load_save.php', true);
+//   xhr.send(formData);
+// }
 // function uploadImage(){
 //   var canvas = document.getElementById("thecanvas");
 //   var dataURL = canvas.toDataURL("image/png");
@@ -2239,37 +2232,36 @@ function uploadImage(){
 
 function aa() {
 
-html2canvas(document.getElementById('fix'), {
-    onrendered: function (canvas) {
-        canvas.setAttribute('id', 'thecanvas');	//添加属性
-        document.body.appendChild(canvas);
-        canvas.style.display="none";
-        // alert("Hi");
-        uploadImage();
-        card_url = (cnv[0].toDataURL('png'));
+// html2canvas(document.getElementById('fix'), {
+//     onrendered: function (canvas) {
+//         canvas.setAttribute('id', 'thecanvas');	//添加属性
+//         document.body.appendChild(canvas);
+//         canvas.style.display="none";
+//         alert("Hi");
         
-
-console.log("card_url",card_url);
-
-    },
-    background: "",		//canvas的背景颜色，如果没有设定默认透明
-    logging: true,		//在console.log()中输出信息
-    width: 400,			//图片宽
-    height: 400,		//图片高
-    useCORS: true, // 【重要】开启跨域配置
-});
+//         // uploadImage();
+//     },
+//     background: "",		//canvas的背景颜色，如果没有设定默认透明
+//     logging: true,		//在console.log()中输出信息
+//     width: 400,			//图片宽
+//     height: 400,		//图片高
+//     useCORS: true, // 【重要】开启跨域配置
+// });
 
 }
 
-function bb() {
-var oCanvas = document.getElementById("thecanvas");
+// function bb() {
+// var oCanvas = document.getElementById("thecanvas");
 
-var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
-saveFile(img_data1, 'richer.png');
-}
-    </script>
+// var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
+// saveFile(img_data1, 'richer.png');
+// }
+</script>
+
+
 
 
 </body>
+<script src="js/custom_to_session.js"></script>
 
 </html>

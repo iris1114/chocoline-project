@@ -7133,6 +7133,16 @@ body {
   }
   .card .card_wrap .card_custom .controls .sliders {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .card .card_wrap .card_custom .controls .sliders p {
     margin: 8px 0;
@@ -7159,6 +7169,7 @@ body {
   }
   .card .card_wrap .card_custom .controls .sliders #SaveCnv {
     width: 100px;
+    text-align: center;
   }
   .card .card_wrap .card_custom .card_items {
     width: 30%;

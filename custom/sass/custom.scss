@@ -3895,12 +3895,16 @@ body {
               width: 35px;
               font-size: 14px;
               color: #6d574e;
+
               #brush_size {
                 border: none;
                 border-radius: 50%;
                 background-color: #1c99ae;
                 cursor: move;
               }
+            }
+            #brushShapeForm {
+              width: 100%;
             }
             input {
               position: relative;
@@ -3910,6 +3914,7 @@ body {
             }
             #SaveCnv {
               width: 100px;
+              text-align: center;
             }
           }
           // }
