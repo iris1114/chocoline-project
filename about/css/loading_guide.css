@@ -2836,1225 +2836,1774 @@ section {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #e8c7a3;
 }
 
-.container .aboutus {
-  height: 960px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.container .aboutus .about_cloud {
-  position: relative;
-  z-index: 0;
+.loading_sect {
+  background: url("../image/loading/loading_bg.png") center;
   width: 100%;
-  margin: 0 auto;
-}
-
-.container .aboutus .about_cloud .aboutus_cloud1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 20%;
-  padding-top: 10%;
-  -webkit-animation: aboutus_cloud1 200s 0s infinite linear;
-          animation: aboutus_cloud1 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud1 {
-  0% {
-    left: -2%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud1 {
-  0% {
-    left: -2%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10%;
-  padding-top: 20%;
-  -webkit-animation: aboutus_cloud2 200s 0s infinite linear;
-          animation: aboutus_cloud2 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud2 {
-  0% {
-    left: 20%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud2 {
-  0% {
-    left: 20%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud3 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 13%;
-  padding-top: 13%;
-  -webkit-animation: aboutus_cloud3 200s 0s infinite linear;
-          animation: aboutus_cloud3 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud3 {
-  0% {
-    left: 60%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud3 {
-  0% {
-    left: 60%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud4 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 18%;
-  padding-top: 30%;
-  -webkit-animation: aboutus_cloud4 200s 0s infinite linear;
-          animation: aboutus_cloud4 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud4 {
-  0% {
-    left: 80%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud4 {
-  0% {
-    left: 80%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud5 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 18%;
-  padding-top: 28%;
-  -webkit-animation: aboutus_cloud5 200s 0s infinite linear;
-          animation: aboutus_cloud5 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud5 {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud5 {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .aboutus_biglogo {
-  margin: 0 auto;
-  padding-top: 120px;
-}
-
-.container .aboutus .aboutus_biglogo .biglogo1 {
-  width: 100%;
-  -webkit-transform: translateX(-590px);
-          transform: translateX(-590px);
-}
-
-.container .aboutus .aboutus_biglogo .biglogo2 {
-  width: 60%;
-  margin-top: -40px;
-  -webkit-transform: translateX(1920px);
-          transform: translateX(1920px);
-}
-
-.container .aboutus .aboutus_text {
-  padding-top: 15%;
-  position: relative;
-  z-index: 5;
-}
-
-.container .aboutus .aboutus_text p {
-  font-family: "Noto Sans TC", sans-serif;
-  line-height: normal;
-  line-height: 36px;
-  font-weight: 600;
-}
-
-@media all and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 16px;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 16px;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 16px;
-  }
-}
-
-.container .touringcar {
-  height: 960px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_02-1.png") center;
-}
-
-.container .touringcar .aboutus_container {
-  width: 100%;
-  margin: auto;
-  position: relative;
-  z-index: 2;
-}
-
-.container .touringcar .aboutus_container .aboutus_map {
-  width: 100%;
-  position: relative;
-  left: 0;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taipei {
-  position: absolute;
-  top: 16%;
-  left: 48%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .hualian {
-  position: absolute;
-  top: 42%;
-  left: 68%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taoyuan {
-  position: absolute;
-  top: 23%;
-  left: 41%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taizhong {
-  position: absolute;
-  top: 34%;
-  left: 32%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-  position: absolute;
-  top: 68%;
-  left: 29%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taipei_point {
-  position: absolute;
-  top: 12%;
-  left: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .hualian_point {
-  position: absolute;
-  top: 40%;
-  left: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-  position: absolute;
-  top: 20%;
-  left: 52%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-  position: absolute;
-  top: 32%;
-  left: 44%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-  position: absolute;
-  top: 66%;
-  left: 40%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort {
-  width: 90%;
+  height: 100vh;
   padding-top: 0px;
-  margin: 0 auto;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 90px;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-  border-radius: 25px 25px 0 0;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .mapbox {
-  display: none;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_mapbox {
-  width: 84%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 220px;
-  background: #f0ecdd;
-  text-align: center;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_mapbox img {
-  padding-top: 5%;
-  width: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .mapbox {
-  display: none;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_mapbox {
-  width: 84%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 220px;
-  background: #f0ecdd;
-  text-align: center;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_mapbox img {
-  padding-top: 5%;
-  width: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-  border-radius: 0 0 25px 25px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_car {
-  width: 1920px;
-  height: 600px;
-  margin-top: -200px;
+.loading_sect .warp .rocket {
   position: relative;
-  z-index: 0;
 }
 
-.container .touringcar .aboutus_car .aboutus_road1 {
-  margin-left: -10px;
-  padding-top: 130px;
-}
-
-.container .touringcar .aboutus_car .car {
+.loading_sect .warp .rocket .rocket_img .loading_rocket {
   position: absolute;
-  right: -178px;
-  bottom: 85px;
-}
-
-.container .touringcar .aboutus_car .car img {
-  width: 178px;
-}
-
-.container .shopinfo {
-  height: 1050px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 35% 0;
-}
-
-.container .shopinfo .aboutus_shopmovie {
-  width: 100%;
+  right: 0;
+  left: 0;
+  z-index: 5;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 5%;
+  width: 25%;
+  max-width: 195px;
+}
+
+.loading_sect .warp .rocket .rocket_img .loading_fire {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 40%;
+  width: 10%;
+  max-width: 74px;
+  -webkit-animation: fire 1s infinite alternate;
+          animation: fire 1s infinite alternate;
+}
+
+@-webkit-keyframes fire {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  25% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes fire {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  25% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+.loading_sect .warp .rocket .loading_smoke_b .rocket_c {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 0;
+  width: 45%;
+  max-width: 307px;
+}
+
+.loading_sect .warp .rocket .loading_smoke_b .rocket_b {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding-top: 35%;
+  z-index: 0;
+  width: 20%;
+  max-width: 152px;
+}
+
+.loading_sect .warp .rocket .loading_smoke_b .smoke_b {
+  position: absolute;
+  right: 0;
+  left: -35%;
+  margin: 0 auto;
+  padding-top: 60%;
+  z-index: 0;
+  width: 180%;
+  max-width: 1920px;
+  -webkit-animation: smoke_b 1s infinite alternate;
+          animation: smoke_b 1s infinite alternate;
+}
+
+@-webkit-keyframes smoke_b {
+  0% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: .5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes smoke_b {
+  0% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: .5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loading_sect .warp .rocket .loading_smoke_w .rocket_w {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding-top: 50%;
+  z-index: 1;
+  width: 10%;
+  max-width: 152px;
+  -webkit-animation: rocket_w 1s infinite alternate;
+          animation: rocket_w 1s infinite alternate;
+}
+
+@-webkit-keyframes rocket_w {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes rocket_w {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.loading_sect .warp .rocket .loading_smoke_w .smoke_w {
+  position: absolute;
+  right: 0;
+  left: -35%;
+  margin: 0 auto;
+  padding-top: 73%;
+  z-index: 1;
+  width: 180%;
+  max-width: 1920px;
+  -webkit-animation: smoke_w 1s infinite alternate;
+          animation: smoke_w 1s infinite alternate;
+}
+
+@-webkit-keyframes smoke_w {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: .9;
+  }
+  100% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes smoke_w {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: .9;
+  }
+  100% {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+.loading_sect .warp .rocket .loading_smoke_c .smoke_c {
+  position: absolute;
+  right: 0;
+  left: -35%;
+  margin: 0 auto;
+  padding-top: 90%;
+  z-index: 2;
+  width: 180%;
+  max-width: 1920px;
+  text-align: center;
+  -webkit-animation: smoke_c 1s infinite alternate;
+          animation: smoke_c 1s infinite alternate;
+}
+
+@-webkit-keyframes smoke_c {
+  0% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes smoke_c {
+  0% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.loading_sect .warp .stars {
   position: relative;
 }
 
-.container .shopinfo .aboutus_shopmovie .title_bg {
-  width: 300px;
-  margin: auto;
-}
-
-.container .shopinfo .aboutus_shopmovie .title_bg h3 {
-  text-align: center;
-  font-size: 28px;
-  margin-top: -50px;
-}
-
-.container .shopinfo .aboutus_shopmovie .shopmovie_container {
-  width: 100%;
+.loading_sect .warp .stars .star_1 .star_1_img {
+  position: fixed;
+  right: 0;
+  left: -35%;
   margin: 0 auto;
-}
-
-.container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-  width: 5px;
-  opacity: 0;
   padding-top: 0%;
+  z-index: 1;
+  width: 150%;
+  max-width: 1920px;
+  -webkit-animation: star1 1s infinite alternate;
+          animation: star1 1s infinite alternate;
 }
 
-.container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-  width: 100%;
-  padding-top: 15%;
-}
-
-.container .shopinfo .shopinfo_cnotainer {
-  width: 100%;
-}
-
-.container .shopinfo .shopinfo_cnotainer .text {
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 60%;
-}
-
-.container .shopinfo .shopinfo_cnotainer .text h2 {
-  font-size: 28px;
-}
-
-.container .shopinfo .shopinfo_cnotainer .text p {
-  padding-top: 20px;
-  font-size: 16px;
-  line-height: 28px;
-}
-
-.container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-  width: 70%;
-  float: right;
-  margin-top: 30%;
-  margin-right: 0px;
-}
-
-@media all and (min-width: 768px) {
-  .container .aboutus {
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-    margin: 0 auto;
-    text-align: center;
+@-webkit-keyframes star1 {
+  0% {
+    opacity: .5;
   }
-  .container .aboutus .aboutus_biglogo {
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 120px;
-  }
-  .container .aboutus .aboutus_biglogo .biglogo1 {
-    width: 650px;
-    -webkit-transform: translateX(-590px);
-            transform: translateX(-590px);
-  }
-  .container .aboutus .aboutus_biglogo .biglogo2 {
-    width: 350px;
-    margin-top: -60px;
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
-  }
-  .container .aboutus .aboutus_text {
-    padding-top: 5%;
-  }
-  .container .aboutus .aboutus_text p {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    line-height: 36px;
-    font-weight: 600;
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 768px) and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 768px) and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 20px;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .container .touringcar {
-    margin: auto;
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
-  }
-  .container .touringcar .aboutus_container {
-    width: 100%;
-    margin: auto;
-    padding-top: 30px;
-    position: relative;
-    z-index: 2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-  }
-  .container .touringcar .aboutus_container .aboutus_map {
-    width: 60%;
-    position: relative;
-    left: 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei {
-    position: absolute;
-    top: 16%;
-    left: 48%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian {
-    position: absolute;
-    top: 42%;
-    left: 68%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan {
-    position: absolute;
-    top: 23%;
-    left: 41%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong {
-    position: absolute;
-    top: 34%;
-    left: 32%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-    position: absolute;
-    top: 68%;
-    left: 29%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei_point {
-    position: absolute;
-    top: 12%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian_point {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-    position: absolute;
-    top: 20%;
-    left: 52%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-    position: absolute;
-    top: 32%;
-    left: 44%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-    position: absolute;
-    top: 66%;
-    left: 40%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort {
-    width: 40%;
-    padding-top: 5%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 25px 25px 0 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 0 0 25px 25px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_car {
-    width: 1920px;
-    height: 600px;
-    margin-top: -285px;
-    margin-left: -20px;
-    position: relative;
-    z-index: 0;
-  }
-  .container .touringcar .aboutus_car .aboutus_road1 {
-    margin-left: -10px;
-    padding-top: 130px;
-  }
-  .container .touringcar .aboutus_car .car {
-    position: absolute;
-    right: -178px;
-    bottom: 85px;
-  }
-  .container .touringcar .aboutus_car .car img {
-    width: 178px;
-  }
-  .container .shopinfo {
-    height: 1050px;
-    background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 30% 0;
-  }
-  .container .shopinfo .aboutus_shopmovie {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 18%;
-    position: relative;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg h3 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: -50px;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-    width: 44%;
-    padding-top: 1%;
+  100% {
     opacity: 1;
   }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-    width: 55%;
-    padding-top: 0%;
+}
+
+@keyframes star1 {
+  0% {
+    opacity: .5;
   }
-  .container .shopinfo .shopinfo_cnotainer {
-    width: 1200px;
-    margin: 0 auto;
+  100% {
+    opacity: 1;
   }
-  .container .shopinfo .shopinfo_cnotainer .text {
-    width: 60%;
-    margin-left: 17%;
-    margin-top: 13%;
+}
+
+.loading_sect .warp .stars .star_2 .star_2_img {
+  position: fixed;
+  right: 0;
+  left: -35%;
+  margin: 0 auto;
+  padding-top: 0%;
+  z-index: 1;
+  width: 150%;
+  max-width: 1920px;
+  -webkit-animation: star2 1s infinite alternate;
+          animation: star2 1s infinite alternate;
+}
+
+@-webkit-keyframes star2 {
+  0% {
+    opacity: 1;
   }
-  .container .shopinfo .shopinfo_cnotainer .text h2 {
-    font-size: 28px;
+  100% {
+    opacity: .5;
   }
-  .container .shopinfo .shopinfo_cnotainer .text p {
-    padding-top: 20px;
-    font-size: 16px;
-    line-height: 28px;
+}
+
+@keyframes star2 {
+  0% {
+    opacity: 1;
   }
-  .container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-    width: 300px;
-    float: right;
-    margin-top: -230px;
-    margin-right: 110px;
+  100% {
+    opacity: .5;
+  }
+}
+
+.loading_sect .warp .planet .planet_w {
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  margin: 0 auto;
+  padding-top: 10%;
+  width: 15%;
+  max-width: 210px;
+  -webkit-animation: planet_w 100s linear;
+          animation: planet_w 100s linear;
+  -webkit-transform-origin: 50% 70%;
+          transform-origin: 50% 70%;
+}
+
+@-webkit-keyframes planet_w {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes planet_w {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loading_sect .warp .planet .planet_m {
+  position: absolute;
+  left: 8%;
+  z-index: 5;
+  margin: 0 auto;
+  padding-top: 50%;
+  width: 8%;
+  max-width: 160px;
+  -webkit-animation: planet_m 300s linear;
+          animation: planet_m 300s linear;
+  -webkit-transform-origin: 50% 90%;
+          transform-origin: 50% 90%;
+}
+
+@-webkit-keyframes planet_m {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes planet_m {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loading_sect .warp .planet .planet_b {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  margin: 0 auto;
+  padding-top: 3%;
+  width: 25%;
+  max-width: 453px;
+  -webkit-animation: planet_b 200s linear;
+          animation: planet_b 200s linear;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes planet_b {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes planet_b {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loading_sect .warp .front_end {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 6;
+}
+
+.loading_sect .warp .front_end #front_end_img {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  -webkit-transition: top 10s;
+  transition: top 10s;
+  z-index: 5;
+  margin: 0 auto;
+  padding-top: 70%;
+  width: 35%;
+  max-width: 385px;
+  -webkit-animation: front_end 3s infinite alternate;
+          animation: front_end 3s infinite alternate;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.loading_sect .warp .front_end #front_end_img.fly {
+  top: -1000px;
+  z-index: 6;
+}
+
+@-webkit-keyframes front_end {
+  0% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  100% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+}
+
+@keyframes front_end {
+  0% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  100% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+}
+
+.loading_sect .warp .back_end {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 6;
+  display: none;
+}
+
+.loading_sect .warp .back_end #back_end_img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: top 10s;
+  transition: top 10s;
+  z-index: 5;
+  margin: 0 auto;
+  padding-top: 20%;
+  width: 22%;
+  max-width: 385px;
+  -webkit-animation: back_end 3s infinite alternate;
+          animation: back_end 3s infinite alternate;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.loading_sect .warp .back_end #back_end_img.fly2 {
+  top: -1000px;
+  z-index: 6;
+}
+
+@-webkit-keyframes back_end {
+  0% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+}
+
+@keyframes back_end {
+  0% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+}
+
+.loading_sect .warp .logo {
+  width: 100%;
+  max-width: 618px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loading_sect .warp .logo .logo_img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 115%;
+  width: 90%;
+  max-width: 618px;
+}
+
+.loading_sect .warp .logo .logo_c_b {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 90%;
+  -webkit-animation: move_c_b 1s 0s 1 both;
+          animation: move_c_b 1s 0s 1 both;
+}
+
+.loading_sect .warp .logo .logo_c_b img {
+  width: 10%;
+}
+
+@-webkit-keyframes move_c_b {
+  0% {
+    top: -800px;
+    left: 5%;
+  }
+  100% {
+    top: 5px;
+    left: 5%;
+  }
+}
+
+@keyframes move_c_b {
+  0% {
+    top: -800px;
+    left: 5%;
+  }
+  100% {
+    top: 5px;
+    left: 5%;
+  }
+}
+
+.loading_sect .warp .logo .logo_h {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 80%;
+  -webkit-animation: move_h 1s .2s 1 both;
+          animation: move_h 1s .2s 1 both;
+}
+
+.loading_sect .warp .logo .logo_h img {
+  width: 100px;
+}
+
+@-webkit-keyframes move_h {
+  0% {
+    top: -800px;
+    left: 18%;
+  }
+  100% {
+    top: 0px;
+    left: 18%;
+  }
+}
+
+@keyframes move_h {
+  0% {
+    top: -800px;
+    left: 18%;
+  }
+  100% {
+    top: 0px;
+    left: 18%;
+  }
+}
+
+.loading_sect .warp .logo .logo_o {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 80%;
+  -webkit-animation: move_o 1s .4s 1 both;
+          animation: move_o 1s .4s 1 both;
+}
+
+.loading_sect .warp .logo .logo_o img {
+  width: 95px;
+}
+
+@-webkit-keyframes move_o {
+  0% {
+    top: -800px;
+    left: 31%;
+  }
+  100% {
+    top: 30px;
+    left: 31%;
+  }
+}
+
+@keyframes move_o {
+  0% {
+    top: -800px;
+    left: 31%;
+  }
+  100% {
+    top: 30px;
+    left: 31%;
+  }
+}
+
+.loading_sect .warp .logo .logo_c {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 80%;
+  -webkit-animation: move_c 1s .6s 1 both;
+          animation: move_c 1s .6s 1 both;
+}
+
+.loading_sect .warp .logo .logo_c img {
+  width: 83px;
+}
+
+@-webkit-keyframes move_c {
+  0% {
+    top: -800px;
+    left: 43%;
+  }
+  100% {
+    top: 30px;
+    left: 43%;
+  }
+}
+
+@keyframes move_c {
+  0% {
+    top: -800px;
+    left: 43%;
+  }
+  100% {
+    top: 30px;
+    left: 43%;
+  }
+}
+
+.loading_sect .warp .logo .logo_o_1 {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 80%;
+  -webkit-animation: move_o_1 1s .8s 1 both;
+          animation: move_o_1 1s .8s 1 both;
+}
+
+.loading_sect .warp .logo .logo_o_1 img {
+  width: 95px;
+}
+
+@-webkit-keyframes move_o_1 {
+  0% {
+    top: -800px;
+    left: 53%;
+  }
+  100% {
+    top: 30px;
+    left: 53%;
+  }
+}
+
+@keyframes move_o_1 {
+  0% {
+    top: -800px;
+    left: 53%;
+  }
+  100% {
+    top: 30px;
+    left: 53%;
+  }
+}
+
+.loading_sect .warp .logo .logo_bear {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 80%;
+  -webkit-animation: logo_bear 1s .8s 1 both;
+          animation: logo_bear 1s .8s 1 both;
+}
+
+.loading_sect .warp .logo .logo_bear img {
+  width: 180px;
+}
+
+@-webkit-keyframes logo_bear {
+  0% {
+    top: -800px;
+    left: 66%;
+  }
+  100% {
+    top: 0px;
+    left: 66%;
+  }
+}
+
+@keyframes logo_bear {
+  0% {
+    top: -800px;
+    left: 66%;
+  }
+  100% {
+    top: 0px;
+    left: 66%;
+  }
+}
+
+.loading_sect .warp .logo .logo_l {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 104%;
+  -webkit-animation: logo_l 1s 1s 1 both;
+          animation: logo_l 1s 1s 1 both;
+}
+
+.loading_sect .warp .logo .logo_l img {
+  width: 105px;
+}
+
+@-webkit-keyframes logo_l {
+  0% {
+    top: -900px;
+    left: 27%;
+  }
+  100% {
+    top: 0px;
+    left: 27%;
+  }
+}
+
+@keyframes logo_l {
+  0% {
+    top: -900px;
+    left: 27%;
+  }
+  100% {
+    top: 0px;
+    left: 27%;
+  }
+}
+
+.loading_sect .warp .logo .logo_i {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 104%;
+  -webkit-animation: logo_i 1s 1.2s 1 both;
+          animation: logo_i 1s 1.2s 1 both;
+}
+
+.loading_sect .warp .logo .logo_i img {
+  width: 58px;
+}
+
+@-webkit-keyframes logo_i {
+  0% {
+    top: -900px;
+    left: 40%;
+  }
+  100% {
+    top: 0px;
+    left: 40%;
+  }
+}
+
+@keyframes logo_i {
+  0% {
+    top: -900px;
+    left: 40%;
+  }
+  100% {
+    top: 0px;
+    left: 40%;
+  }
+}
+
+.loading_sect .warp .logo .logo_n {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 109%;
+  -webkit-animation: logo_n 1s 1.4s 1 both;
+          animation: logo_n 1s 1.4s 1 both;
+}
+
+.loading_sect .warp .logo .logo_n img {
+  width: 108px;
+}
+
+@-webkit-keyframes logo_n {
+  0% {
+    top: -900px;
+    left: 46%;
+  }
+  100% {
+    top: 0px;
+    left: 46%;
+  }
+}
+
+@keyframes logo_n {
+  0% {
+    top: -900px;
+    left: 46%;
+  }
+  100% {
+    top: 0px;
+    left: 46%;
+  }
+}
+
+.loading_sect .warp .logo .logo_e {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  padding-top: 109%;
+  -webkit-animation: logo_e 1s 1.6s 1 both;
+          animation: logo_e 1s 1.6s 1 both;
+}
+
+.loading_sect .warp .logo .logo_e img {
+  width: 90px;
+}
+
+@-webkit-keyframes logo_e {
+  0% {
+    top: -900px;
+    left: 60%;
+  }
+  100% {
+    top: 0px;
+    left: 60%;
+  }
+}
+
+@keyframes logo_e {
+  0% {
+    top: -900px;
+    left: 60%;
+  }
+  100% {
+    top: 0px;
+    left: 60%;
   }
 }
 
 @media all and (min-width: 992px) {
-  .container .aboutus {
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .container .aboutus .aboutus_biglogo {
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 120px;
-  }
-  .container .aboutus .aboutus_biglogo .biglogo1 {
-    width: 650px;
-    -webkit-transform: translateX(-590px);
-            transform: translateX(-590px);
-  }
-  .container .aboutus .aboutus_biglogo .biglogo2 {
-    width: 350px;
-    margin-top: -60px;
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
-  }
-  .container .aboutus .aboutus_text {
-    padding-top: 5%;
-  }
-  .container .aboutus .aboutus_text p {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    line-height: 36px;
-    font-weight: 600;
-  }
-}
-
-@media all and (min-width: 992px) and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 992px) and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 992px) and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 20px;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .container .touringcar {
-    margin: auto;
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
-  }
-  .container .touringcar .aboutus_container {
+  .loading_sect {
+    background: url("../image/loading/loading_bg.png") center;
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-top: 30px;
-    position: relative;
-    z-index: 2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    height: 100vh;
+    padding-top: 0px;
   }
-  .container .touringcar .aboutus_container .aboutus_map {
-    width: 55%;
+  .loading_sect .warp .rocket {
     position: relative;
+  }
+  .loading_sect .warp .rocket .rocket_img .loading_rocket {
+    position: absolute;
+    right: 0;
     left: 0;
+    z-index: 5;
+    margin: 0 auto;
+    padding-top: 3%;
+    width: 10%;
+    max-width: 195px;
   }
-  .container .touringcar .aboutus_container .aboutus_map .taipei {
+  .loading_sect .warp .rocket .rocket_img .loading_fire {
     position: absolute;
-    top: 16%;
-    left: 48%;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 17%;
+    width: 4%;
+    max-width: 74px;
+    -webkit-animation: fire 1s infinite alternate;
+            animation: fire 1s infinite alternate;
   }
-  .container .touringcar .aboutus_container .aboutus_map .hualian {
+  @-webkit-keyframes fire {
+    0% {
+      -webkit-transform: scale(0.8);
+              transform: scale(0.8);
+    }
+    25% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    80% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+  }
+  @keyframes fire {
+    0% {
+      -webkit-transform: scale(0.8);
+              transform: scale(0.8);
+    }
+    25% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    80% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+  }
+  .loading_sect .warp .rocket .loading_smoke_b .rocket_c {
     position: absolute;
-    top: 42%;
-    left: 68%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan {
-    position: absolute;
-    top: 23%;
-    left: 41%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong {
-    position: absolute;
-    top: 34%;
-    left: 32%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-    position: absolute;
-    top: 68%;
-    left: 29%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei_point {
-    position: absolute;
-    top: 12%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian_point {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-    position: absolute;
-    top: 20%;
-    left: 52%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-    position: absolute;
-    top: 32%;
-    left: 44%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-    position: absolute;
-    top: 66%;
-    left: 40%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort {
-    width: 50%;
-    padding-top: 7%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-    width: 480px;
-    height: 100%;
-    max-height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 25px 25px 0 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus {
-    height: 150px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 0 0 25px 25px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_car {
-    width: 1920px;
-    height: 600px;
-    margin-left: -20px;
-    margin-top: -285px;
-    position: relative;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     z-index: 0;
+    width: 18%;
+    max-width: 307px;
   }
-  .container .touringcar .aboutus_car .aboutus_road1 {
-    margin-left: -10px;
-    padding-top: 130px;
-  }
-  .container .touringcar .aboutus_car .car {
+  .loading_sect .warp .rocket .loading_smoke_b .rocket_b {
     position: absolute;
-    right: -178px;
-    bottom: 85px;
-  }
-  .container .touringcar .aboutus_car .car img {
-    width: 178px;
-  }
-  .container .shopinfo {
-    height: 1050px;
-    background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 40% 0;
-  }
-  .container .shopinfo .aboutus_shopmovie {
-    width: 100%;
-    max-width: 1200px;
+    right: 0;
+    left: 0;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 15%;
+    z-index: 0;
+    width: 6%;
+    max-width: 152px;
+  }
+  .loading_sect .warp .rocket .loading_smoke_b .smoke_b {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 20%;
+    z-index: 0;
+    width: 100%;
+    max-width: 1920px;
+    -webkit-animation: smoke_b 1s infinite alternate;
+            animation: smoke_b 1s infinite alternate;
+  }
+  @-webkit-keyframes smoke_b {
+    0% {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: .5;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes smoke_b {
+    0% {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: .5;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .loading_sect .warp .rocket .loading_smoke_w .rocket_w {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 17%;
+    z-index: 1;
+    width: 4%;
+    max-width: 152px;
+    -webkit-animation: rocket_w 1s infinite alternate;
+            animation: rocket_w 1s infinite alternate;
+  }
+  @-webkit-keyframes rocket_w {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+  @keyframes rocket_w {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+  .loading_sect .warp .rocket .loading_smoke_w .smoke_w {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 25%;
+    z-index: 1;
+    width: 100%;
+    max-width: 1920px;
+    -webkit-animation: smoke_w 1s infinite alternate;
+            animation: smoke_w 1s infinite alternate;
+  }
+  @-webkit-keyframes smoke_w {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: .9;
+    }
+    100% {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02);
+      opacity: 1;
+    }
+  }
+  @keyframes smoke_w {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: .9;
+    }
+    100% {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02);
+      opacity: 1;
+    }
+  }
+  .loading_sect .warp .rocket .loading_smoke_c .smoke_c {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 33%;
+    z-index: 2;
+    width: 105%;
+    max-width: 1920px;
+    text-align: center;
+    -webkit-animation: smoke_c 1s infinite alternate;
+            animation: smoke_c 1s infinite alternate;
+  }
+  @-webkit-keyframes smoke_c {
+    0% {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes smoke_c {
+    0% {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  .loading_sect .warp .stars {
     position: relative;
   }
-  .container .shopinfo .aboutus_shopmovie .title_bg {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg h3 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: -50px;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container {
+  .loading_sect .warp .stars .star_1 .star_1_img {
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding-top: 0%;
+    z-index: 1;
     width: 100%;
-    max-width: 1065px;
+    max-width: 1920px;
+    -webkit-animation: star1 1s infinite alternate;
+            animation: star1 1s infinite alternate;
+  }
+  @-webkit-keyframes star1 {
+    0% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes star1 {
+    0% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .loading_sect .warp .stars .star_2 .star_2_img {
+    position: fixed;
+    right: 0;
+    left: 0;
     margin: 0 auto;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-    width: 44%;
-    max-width: 490px;
     padding-top: 0%;
-    opacity: 1;
+    z-index: 1;
+    width: 100%;
+    max-width: 1920px;
+    -webkit-animation: star2 1s infinite alternate;
+            animation: star2 1s infinite alternate;
   }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-    width: 55%;
-    max-width: 570px;
-    padding-top: 0%;
+  @-webkit-keyframes star2 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .5;
+    }
   }
-  .container .shopinfo .shopinfo_cnotainer {
-    width: 1200px;
+  @keyframes star2 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .5;
+    }
+  }
+  .loading_sect .warp .planet .planet_w {
+    position: absolute;
+    left: 0;
+    z-index: 5;
     margin: 0 auto;
+    padding-top: 10%;
+    width: 15%;
+    max-width: 210px;
+    -webkit-animation: planet_w 100s linear;
+            animation: planet_w 100s linear;
+    -webkit-transform-origin: 50% 70%;
+            transform-origin: 50% 70%;
   }
-  .container .shopinfo .shopinfo_cnotainer .text {
-    width: 500px;
-    margin-left: 18%;
-    margin-top: 10%;
+  @-webkit-keyframes planet_w {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
   }
-  .container .shopinfo .shopinfo_cnotainer .text h2 {
-    font-size: 28px;
+  @keyframes planet_w {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
   }
-  .container .shopinfo .shopinfo_cnotainer .text p {
-    padding-top: 20px;
-    font-size: 18px;
-    line-height: 28px;
+  .loading_sect .warp .planet .planet_m {
+    position: absolute;
+    left: 8%;
+    z-index: 5;
+    margin: 0 auto;
+    padding-top: 30%;
+    width: 8%;
+    max-width: 160px;
+    -webkit-animation: planet_m 300s linear;
+            animation: planet_m 300s linear;
+    -webkit-transform-origin: 50% 90%;
+            transform-origin: 50% 90%;
   }
-  .container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-    width: 300px;
-    float: right;
-    margin-top: -230px;
-    margin-right: 110px;
+  @-webkit-keyframes planet_m {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes planet_m {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  .loading_sect .warp .planet .planet_b {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    margin: 0 auto;
+    padding-top: 3%;
+    width: 25%;
+    max-width: 453px;
+    -webkit-animation: planet_b 200s linear;
+            animation: planet_b 200s linear;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  @-webkit-keyframes planet_b {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes planet_b {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  .loading_sect .warp .front_end {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 6;
+  }
+  .loading_sect .warp .front_end #front_end_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: top 10s;
+    transition: top 10s;
+    z-index: 5;
+    margin: 0 auto;
+    padding-top: 20%;
+    width: 23%;
+    max-width: 385px;
+    -webkit-animation: front_end 3s infinite alternate;
+            animation: front_end 3s infinite alternate;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+  }
+  .loading_sect .warp .front_end #front_end_img.fly {
+    top: -1000px;
+    z-index: 6;
+  }
+  @-webkit-keyframes front_end {
+    0% {
+      -webkit-transform: rotate(3deg);
+              transform: rotate(3deg);
+    }
+    100% {
+      -webkit-transform: rotate(-3deg);
+              transform: rotate(-3deg);
+    }
+  }
+  @keyframes front_end {
+    0% {
+      -webkit-transform: rotate(3deg);
+              transform: rotate(3deg);
+    }
+    100% {
+      -webkit-transform: rotate(-3deg);
+              transform: rotate(-3deg);
+    }
+  }
+  .loading_sect .warp .back_end {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 6;
+    display: block;
+  }
+  .loading_sect .warp .back_end #back_end_img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: top 10s;
+    transition: top 10s;
+    z-index: 5;
+    margin: 0 auto;
+    padding-top: 20%;
+    width: 22%;
+    max-width: 385px;
+    -webkit-animation: back_end 3s infinite alternate;
+            animation: back_end 3s infinite alternate;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+  }
+  .loading_sect .warp .back_end #back_end_img.fly2 {
+    top: -1000px;
+    z-index: 6;
+  }
+  @-webkit-keyframes back_end {
+    0% {
+      -webkit-transform: rotate(-3deg);
+              transform: rotate(-3deg);
+    }
+    100% {
+      -webkit-transform: rotate(3deg);
+              transform: rotate(3deg);
+    }
+  }
+  @keyframes back_end {
+    0% {
+      -webkit-transform: rotate(-3deg);
+              transform: rotate(-3deg);
+    }
+    100% {
+      -webkit-transform: rotate(3deg);
+              transform: rotate(3deg);
+    }
+  }
+  .loading_sect .warp .logo {
+    width: 100%;
+    max-width: 618px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .loading_sect .warp .logo .logo_img {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    width: 90%;
+    max-width: 618px;
+  }
+  .loading_sect .warp .logo .logo_c_b {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    -webkit-animation: move_c_b 1s 0s 1 both;
+            animation: move_c_b 1s 0s 1 both;
+  }
+  .loading_sect .warp .logo .logo_c_b img {
+    width: 115px;
+  }
+  @-webkit-keyframes move_c_b {
+    0% {
+      top: -800px;
+      left: 5%;
+    }
+    100% {
+      top: 5px;
+      left: 5%;
+    }
+  }
+  @keyframes move_c_b {
+    0% {
+      top: -800px;
+      left: 5%;
+    }
+    100% {
+      top: 5px;
+      left: 5%;
+    }
+  }
+  .loading_sect .warp .logo .logo_h {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    -webkit-animation: move_h 1s .2s 1 both;
+            animation: move_h 1s .2s 1 both;
+  }
+  .loading_sect .warp .logo .logo_h img {
+    width: 100px;
+  }
+  @-webkit-keyframes move_h {
+    0% {
+      top: -800px;
+      left: 18%;
+    }
+    100% {
+      top: 0px;
+      left: 18%;
+    }
+  }
+  @keyframes move_h {
+    0% {
+      top: -800px;
+      left: 18%;
+    }
+    100% {
+      top: 0px;
+      left: 18%;
+    }
+  }
+  .loading_sect .warp .logo .logo_o {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    -webkit-animation: move_o 1s .4s 1 both;
+            animation: move_o 1s .4s 1 both;
+  }
+  .loading_sect .warp .logo .logo_o img {
+    width: 95px;
+  }
+  @-webkit-keyframes move_o {
+    0% {
+      top: -800px;
+      left: 31%;
+    }
+    100% {
+      top: 30px;
+      left: 31%;
+    }
+  }
+  @keyframes move_o {
+    0% {
+      top: -800px;
+      left: 31%;
+    }
+    100% {
+      top: 30px;
+      left: 31%;
+    }
+  }
+  .loading_sect .warp .logo .logo_c {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    -webkit-animation: move_c 1s .6s 1 both;
+            animation: move_c 1s .6s 1 both;
+  }
+  .loading_sect .warp .logo .logo_c img {
+    width: 83px;
+  }
+  @-webkit-keyframes move_c {
+    0% {
+      top: -800px;
+      left: 43%;
+    }
+    100% {
+      top: 30px;
+      left: 43%;
+    }
+  }
+  @keyframes move_c {
+    0% {
+      top: -800px;
+      left: 43%;
+    }
+    100% {
+      top: 30px;
+      left: 43%;
+    }
+  }
+  .loading_sect .warp .logo .logo_o_1 {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    -webkit-animation: move_o_1 1s .8s 1 both;
+            animation: move_o_1 1s .8s 1 both;
+  }
+  .loading_sect .warp .logo .logo_o_1 img {
+    width: 95px;
+  }
+  @-webkit-keyframes move_o_1 {
+    0% {
+      top: -800px;
+      left: 53%;
+    }
+    100% {
+      top: 30px;
+      left: 53%;
+    }
+  }
+  @keyframes move_o_1 {
+    0% {
+      top: -800px;
+      left: 53%;
+    }
+    100% {
+      top: 30px;
+      left: 53%;
+    }
+  }
+  .loading_sect .warp .logo .logo_bear {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 80%;
+    -webkit-animation: logo_bear 1s .8s 1 both;
+            animation: logo_bear 1s .8s 1 both;
+  }
+  .loading_sect .warp .logo .logo_bear img {
+    width: 180px;
+  }
+  @-webkit-keyframes logo_bear {
+    0% {
+      top: -800px;
+      left: 66%;
+    }
+    100% {
+      top: 0px;
+      left: 66%;
+    }
+  }
+  @keyframes logo_bear {
+    0% {
+      top: -800px;
+      left: 66%;
+    }
+    100% {
+      top: 0px;
+      left: 66%;
+    }
+  }
+  .loading_sect .warp .logo .logo_l {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 104%;
+    -webkit-animation: logo_l 1s 1s 1 both;
+            animation: logo_l 1s 1s 1 both;
+  }
+  .loading_sect .warp .logo .logo_l img {
+    width: 105px;
+  }
+  @-webkit-keyframes logo_l {
+    0% {
+      top: -900px;
+      left: 27%;
+    }
+    100% {
+      top: 0px;
+      left: 27%;
+    }
+  }
+  @keyframes logo_l {
+    0% {
+      top: -900px;
+      left: 27%;
+    }
+    100% {
+      top: 0px;
+      left: 27%;
+    }
+  }
+  .loading_sect .warp .logo .logo_i {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 104%;
+    -webkit-animation: logo_i 1s 1.2s 1 both;
+            animation: logo_i 1s 1.2s 1 both;
+  }
+  .loading_sect .warp .logo .logo_i img {
+    width: 58px;
+  }
+  @-webkit-keyframes logo_i {
+    0% {
+      top: -900px;
+      left: 40%;
+    }
+    100% {
+      top: 0px;
+      left: 40%;
+    }
+  }
+  @keyframes logo_i {
+    0% {
+      top: -900px;
+      left: 40%;
+    }
+    100% {
+      top: 0px;
+      left: 40%;
+    }
+  }
+  .loading_sect .warp .logo .logo_n {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 109%;
+    -webkit-animation: logo_n 1s 1.4s 1 both;
+            animation: logo_n 1s 1.4s 1 both;
+  }
+  .loading_sect .warp .logo .logo_n img {
+    width: 108px;
+  }
+  @-webkit-keyframes logo_n {
+    0% {
+      top: -900px;
+      left: 46%;
+    }
+    100% {
+      top: 0px;
+      left: 46%;
+    }
+  }
+  @keyframes logo_n {
+    0% {
+      top: -900px;
+      left: 46%;
+    }
+    100% {
+      top: 0px;
+      left: 46%;
+    }
+  }
+  .loading_sect .warp .logo .logo_e {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    margin: 0 auto;
+    padding-top: 109%;
+    -webkit-animation: logo_e 1s 1.6s 1 both;
+            animation: logo_e 1s 1.6s 1 both;
+  }
+  .loading_sect .warp .logo .logo_e img {
+    width: 90px;
+  }
+  @-webkit-keyframes logo_e {
+    0% {
+      top: -900px;
+      left: 60%;
+    }
+    100% {
+      top: 0px;
+      left: 60%;
+    }
+  }
+  @keyframes logo_e {
+    0% {
+      top: -900px;
+      left: 60%;
+    }
+    100% {
+      top: 0px;
+      left: 60%;
+    }
   }
 }

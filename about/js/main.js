@@ -236,3 +236,38 @@ tl.to(".car_kaohsiung", 9, {
     y: "-200%",
     ease: Power0.easeNone
   });
+
+
+
+  // ------------mapbox------------
+
+function taipei_mapbox() {
+  console.log("hihihihihi");
+  var taipei = document.getElementsByClassName("taipei_mapbox")[0];
+  if (taipei.style.display == "none") {
+    taipei.style.display = "block";
+    
+  } else {
+    taipei.style.display = "none";
+  };
+
+  // if (taoyuan.style.display == "block") {
+  
+  //   taoyuan.style.display = "none";
+  // };
+}
+
+function taoyuan_mapbox() {
+  var taoyuan = document.getElementsByClassName("taoyuan_mapbox")[0];
+  if (taoyuan.style.display == "none") {
+  
+    taoyuan.style.display = "block";
+  } else {
+    taoyuan.style.display = "none";
+  };
+  // if (taipei.style.display == "block") {
+  
+  //   taipei.style.display = "none";
+  // };
+}
+

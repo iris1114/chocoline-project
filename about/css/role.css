@@ -2831,1230 +2831,1277 @@ section {
 }
 
 * {
-  margin: 0;
-  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+html {
+  overflow: auto;
 }
 
 body {
-  overflow-x: hidden;
-  background-color: #e8c7a3;
+  overflow: hidden;
+  background: #AD9380;
 }
 
-.container .aboutus {
+.introduce_container {
+  padding-top: 150px;
   height: 960px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.container .aboutus .about_cloud {
+  background: url("../image/role/fitst_bg.png") no-repeat 0 -10%;
   position: relative;
-  z-index: 0;
-  width: 100%;
-  margin: 0 auto;
 }
 
-.container .aboutus .about_cloud .aboutus_cloud1 {
+.introduce_container .back {
+  opacity: .7;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 20%;
-  padding-top: 10%;
-  -webkit-animation: aboutus_cloud1 200s 0s infinite linear;
-          animation: aboutus_cloud1 200s 0s infinite linear;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  margin: auto;
+  -webkit-animation: circle 540s infinite linear;
+          animation: circle 540s infinite linear;
 }
 
-@-webkit-keyframes aboutus_cloud1 {
+@-webkit-keyframes circle {
   0% {
-    left: -2%;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(5);
+            transform: translate(-50%, -50%) rotate(0deg) scale(5);
   }
   100% {
-    left: 105%;
+    -webkit-transform: translate(-50%, -50%) rotate(360deg) scale(5);
+            transform: translate(-50%, -50%) rotate(360deg) scale(5);
   }
 }
 
-@keyframes aboutus_cloud1 {
+@keyframes circle {
   0% {
-    left: -2%;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(5);
+            transform: translate(-50%, -50%) rotate(0deg) scale(5);
   }
   100% {
-    left: 105%;
+    -webkit-transform: translate(-50%, -50%) rotate(360deg) scale(5);
+            transform: translate(-50%, -50%) rotate(360deg) scale(5);
   }
 }
 
-.container .aboutus .about_cloud .aboutus_cloud2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10%;
-  padding-top: 20%;
-  -webkit-animation: aboutus_cloud2 200s 0s infinite linear;
-          animation: aboutus_cloud2 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud2 {
-  0% {
-    left: 20%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud2 {
-  0% {
-    left: 20%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud3 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 13%;
-  padding-top: 13%;
-  -webkit-animation: aboutus_cloud3 200s 0s infinite linear;
-          animation: aboutus_cloud3 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud3 {
-  0% {
-    left: 60%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud3 {
-  0% {
-    left: 60%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud4 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 18%;
-  padding-top: 30%;
-  -webkit-animation: aboutus_cloud4 200s 0s infinite linear;
-          animation: aboutus_cloud4 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud4 {
-  0% {
-    left: 80%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud4 {
-  0% {
-    left: 80%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud5 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 18%;
-  padding-top: 28%;
-  -webkit-animation: aboutus_cloud5 200s 0s infinite linear;
-          animation: aboutus_cloud5 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud5 {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud5 {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .aboutus_biglogo {
-  margin: 0 auto;
-  padding-top: 120px;
-}
-
-.container .aboutus .aboutus_biglogo .biglogo1 {
-  width: 100%;
-  -webkit-transform: translateX(-590px);
-          transform: translateX(-590px);
-}
-
-.container .aboutus .aboutus_biglogo .biglogo2 {
-  width: 60%;
-  margin-top: -40px;
-  -webkit-transform: translateX(1920px);
-          transform: translateX(1920px);
-}
-
-.container .aboutus .aboutus_text {
-  padding-top: 15%;
+.introduce_container .front {
   position: relative;
-  z-index: 5;
+  z-index: 1;
+  height: 800px;
+  background: url("../image/role/slippery.png") no-repeat 90% 100%, url("../image/role/pool.png") no-repeat 50% -40%, url("../image/role/downgrass.png") no-repeat 7% 72%, url("../image/role/right_bg.png") no-repeat 50% -35%, url("../image/role/upgrass.png") no-repeat 5% 33%, url("../image/role/left_bg.png") no-repeat 0% -205%;
 }
 
-.container .aboutus .aboutus_text p {
-  font-family: "Noto Sans TC", sans-serif;
-  line-height: normal;
-  line-height: 36px;
-  font-weight: 600;
+.introduce_container .front .wrap {
+  z-index: 1;
+  position: relative;
 }
 
 @media all and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
+  .introduce_container .front {
+    background: url("../image/role/slippery.png") no-repeat 60% 100%, url("../image/role/pool.png") no-repeat 50% -40%, url("../image/role/downgrass.png") no-repeat 7% 72%, url("../image/role/right_bg.png") no-repeat 50% -35%, url("../image/role/upgrass.png") no-repeat 5% 33%, url("../image/role/left_bg.png") no-repeat 0% -205%;
+  }
+}
+
+.introduce_container .choco_playing {
+  width: 1920px;
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+}
+
+.introduce_container .choco_playing figure {
+  -webkit-animation: dance 4s infinite;
+          animation: dance 4s infinite;
+}
+
+@-webkit-keyframes dance {
+  0% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  25% {
+    -webkit-transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+            transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateX(5%) translateY(-2%) rotate(5deg);
+            transform: translateX(5%) translateY(-2%) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+}
+
+@keyframes dance {
+  0% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  25% {
+    -webkit-transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+            transform: translateX(-5%) translateY(-2%) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateX(5%) translateY(-2%) rotate(5deg);
+            transform: translateX(5%) translateY(-2%) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%) translateY(0%);
+            transform: translateX(0%) translateY(0%);
+  }
+}
+
+.introduce_container .bread {
+  width: 100%;
+  max-width: 414px;
+  position: relative;
+}
+
+.introduce_container .bread p {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: #F6EED4;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .bread p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .bread p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .bread p {
+    font-size: 20px;
+  }
+}
+
+.introduce_container .bread p span {
+  color: #F6EED4;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .bread p span {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .bread p span {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .bread p span {
+    font-size: 20px;
+  }
+}
+
+.introduce_container .contain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 50px;
+}
+
+@media all and (max-width: 991px) {
+  .introduce_container .contain {
+    display: block;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .contain {
+    padding: 0;
+  }
+}
+
+.introduce_container .player {
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 0 auto;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .player {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+.introduce_container .choconame {
+  width: 30%;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choconame {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .choconame {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .choconame {
+    font-size: 20px;
+  }
+}
+
+.introduce_container .votenum {
+  width: 100%;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .votenum {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
+  .introduce_container .votenum {
     font-size: 16px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
+  .introduce_container .votenum {
     font-size: 16px;
   }
 }
 
-.container .touringcar {
-  height: 960px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_02-1.png") center;
+.introduce_container .CHOCO img {
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
 }
 
-.container .touringcar .aboutus_container {
-  width: 100%;
-  margin: auto;
+.introduce_container .CHOCO figcaption {
   position: relative;
-  z-index: 2;
+  top: -20px;
+  text-align: center;
 }
 
-.container .touringcar .aboutus_container .aboutus_map {
-  width: 100%;
-  position: relative;
+.introduce_container .CHOCO figcaption p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  color: #F6EED4;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .CHOCO figcaption p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .CHOCO figcaption p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .CHOCO figcaption p {
+    font-size: 16px;
+  }
+}
+
+.introduce_container .CHOCO figcaption span {
+  color: #F6EED4;
+}
+
+.introduce_container .ring {
+  display: block;
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
   left: 0;
+  margin: auto;
+  width: 80%;
+  z-index: -1;
 }
 
-.container .touringcar .aboutus_container .aboutus_map .taipei {
-  position: absolute;
-  top: 16%;
-  left: 48%;
+@media all and (max-width: 1300px) {
+  .introduce_container .detail {
+    width: 70%;
+  }
 }
 
-.container .touringcar .aboutus_container .aboutus_map .hualian {
-  position: absolute;
-  top: 42%;
-  left: 68%;
+@media all and (max-width: 991px) {
+  .introduce_container .detail {
+    width: 100%;
+    margin: auto;
+    padding-top: 50px;
+  }
 }
 
-.container .touringcar .aboutus_container .aboutus_map .taoyuan {
-  position: absolute;
-  top: 23%;
-  left: 41%;
+@media all and (max-width: 767px) {
+  .introduce_container .detail {
+    padding: 0;
+  }
 }
 
-.container .touringcar .aboutus_container .aboutus_map .taizhong {
-  position: absolute;
-  top: 34%;
-  left: 32%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-  position: absolute;
-  top: 68%;
-  left: 29%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taipei_point {
-  position: absolute;
-  top: 12%;
-  left: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .hualian_point {
-  position: absolute;
-  top: 40%;
-  left: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-  position: absolute;
-  top: 20%;
-  left: 52%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-  position: absolute;
-  top: 32%;
-  left: 44%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-  position: absolute;
-  top: 66%;
-  left: 40%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort {
-  width: 90%;
-  padding-top: 0px;
-  margin: 0 auto;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 90px;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-  border-radius: 25px 25px 0 0;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .mapbox {
-  display: none;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_mapbox {
-  width: 84%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 220px;
-  background: #f0ecdd;
-  text-align: center;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_mapbox img {
-  padding-top: 5%;
-  width: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .mapbox {
-  display: none;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_mapbox {
-  width: 84%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 220px;
-  background: #f0ecdd;
-  text-align: center;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_mapbox img {
-  padding-top: 5%;
-  width: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-  border-radius: 0 0 25px 25px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_car {
-  width: 1920px;
-  height: 600px;
-  margin-top: -200px;
+.introduce_container .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   z-index: 0;
 }
 
-.container .touringcar .aboutus_car .aboutus_road1 {
-  margin-left: -10px;
-  padding-top: 130px;
+@media all and (max-width: 767px) {
+  .introduce_container .information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .introduce_container .information::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.container .touringcar .aboutus_car .car {
-  position: absolute;
-  right: -178px;
-  bottom: 85px;
-}
-
-.container .touringcar .aboutus_car .car img {
-  width: 178px;
-}
-
-.container .shopinfo {
-  height: 1050px;
+.introduce_container .choco_information {
+  width: 265px;
+  max-height: 360px;
+  background: #fff;
+  border: 3px solid #157E8F;
+  border-radius: 15px;
   padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 35% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  -webkit-box-shadow: 11px 11px 0 #1A99AD;
+          box-shadow: 11px 11px 0 #1A99AD;
+  cursor: pointer;
 }
 
-.container .shopinfo .aboutus_shopmovie {
+.introduce_container .choco_information ul {
   width: 100%;
-  margin: 0 auto;
-  padding-top: 80px;
-  position: relative;
 }
 
-.container .shopinfo .aboutus_shopmovie .title_bg {
-  width: 300px;
+.introduce_container .choco_information li {
+  word-break: break-all;
+  padding: 5px 0;
+}
+
+.introduce_container .choco_information li:nth-child(1) p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choco_information li:nth-child(1) p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .choco_information li:nth-child(1) p {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .choco_information li:nth-child(1) p {
+    font-size: 28px;
+  }
+}
+
+.introduce_container .choco_information li:nth-child(2) {
+  padding-bottom: 20px;
+}
+
+.introduce_container .choco_information li:nth-child(2) p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choco_information li:nth-child(2) p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .choco_information li:nth-child(2) p {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .choco_information li:nth-child(2) p {
+    font-size: 28px;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .introduce_container .choco_information li:nth-child(2) p {
+    font-size: 24px;
+  }
+}
+
+@media all and (max-width: 1055px) {
+  .introduce_container .choco_information li:nth-child(2) p {
+    font-size: 22px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choco_information li:nth-child(2) p {
+    font-size: px;
+  }
+}
+
+.introduce_container .choco_information li:nth-child(3) {
+  text-align: center;
+  width: 100%;
+  height: 3px;
+  padding: 0;
+  background: #777;
+}
+
+.introduce_container .choco_information li:nth-child(4) {
+  padding-top: 20px;
+}
+
+.introduce_container .choco_information li:nth-child(4) p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choco_information li:nth-child(4) p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .choco_information li:nth-child(4) p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .choco_information li:nth-child(4) p {
+    font-size: 16px;
+  }
+}
+
+.introduce_container .choco_information li:nth-child(5) p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choco_information li:nth-child(5) p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .choco_information li:nth-child(5) p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .introduce_container .choco_information li:nth-child(5) p {
+    font-size: 16px;
+  }
+}
+
+.introduce_container .cardfront {
+  width: 290px;
+  cursor: pointer;
+}
+
+.introduce_container .cardback {
+  width: 290px;
+  cursor: pointer;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .choco_information {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 203px;
+    margin: 0 20px;
+  }
+  .introduce_container .cardfront {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 203px;
+    margin: 0 20px;
+  }
+  .introduce_container .cardback {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 203px;
+    margin: 0 20px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .introduce_container .rotate_l {
+    -webkit-transform: rotate(-10deg) translate(20%, 0%);
+            transform: rotate(-10deg) translate(20%, 0%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    z-index: 3;
+  }
+  .introduce_container .rotate_m {
+    -webkit-transform: rotate(0deg) translate(0%, -10%);
+            transform: rotate(0deg) translate(0%, -10%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    z-index: 2;
+  }
+  .introduce_container .rotate_r {
+    -webkit-transform: rotate(15deg) translate(-20%, 5%);
+            transform: rotate(15deg) translate(-20%, 5%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    z-index: 1;
+  }
+}
+
+.introduce_container .collect_vote {
+  text-align: center;
+}
+
+.introduce_container .collect_vote span::after {
+  bottom: 0;
+}
+
+@media all and (max-width: 767px) {
+  .introduce_container .collect_vote {
+    padding-top: 30px;
+  }
+}
+
+.introduce_container .heart_unclick {
+  color: #F6EED4;
+}
+
+.introduce_container .heart_clicked {
+  display: none;
+  color: #F6EED4;
+}
+
+.introduce_container .firstlc {
+  width: 217px;
+  position: absolute;
+  top: 19%;
+  right: auto;
+  bottom: auto;
+  left: 5%;
+  margin: auto;
+  -webkit-animation: cloudmove 20s infinite alternate linear;
+          animation: cloudmove 20s infinite alternate linear;
+}
+
+.introduce_container .secondlc {
+  width: 151px;
+  position: absolute;
+  top: 22%;
+  right: auto;
+  bottom: auto;
+  left: 56%;
+  margin: auto;
+  -webkit-animation: cloudmove 20s infinite alternate linear;
+          animation: cloudmove 20s infinite alternate linear;
+}
+
+.introduce_container .thirdlc {
+  width: 217px;
+  position: absolute;
+  top: 39%;
+  right: auto;
+  bottom: auto;
+  left: 74%;
+  margin: auto;
+  -webkit-animation: cloudmove 20s infinite alternate linear;
+          animation: cloudmove 20s infinite alternate linear;
+}
+
+.introduce_container .fourthlc {
+  width: 158px;
+  position: absolute;
+  top: 17%;
+  right: auto;
+  bottom: auto;
+  left: 82%;
+  margin: auto;
+  -webkit-animation: cloudmove 20s infinite alternate linear;
+          animation: cloudmove 20s infinite alternate linear;
+}
+
+.introduce_container .shinel {
+  width: 92px;
+  position: absolute;
+  top: 13%;
+  right: auto;
+  bottom: auto;
+  left: 30%;
+  margin: auto;
+  -webkit-animation: opacity 3s infinite alternate;
+          animation: opacity 3s infinite alternate;
+}
+
+.introduce_container .shiner {
+  width: 46px;
+  position: absolute;
+  top: 33%;
+  right: auto;
+  bottom: auto;
+  left: 88%;
+  margin: auto;
+  -webkit-animation: opacity 3s infinite alternate;
+          animation: opacity 3s infinite alternate;
+}
+
+.introduce_container .circle1, .introduce_container .circle2, .introduce_container .circle3 {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  top: 17%;
+  right: auto;
+  bottom: auto;
+  left: 5%;
   margin: auto;
 }
 
-.container .shopinfo .aboutus_shopmovie .title_bg h3 {
-  text-align: center;
-  font-size: 28px;
+.introduce_container .circle2 {
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  top: 23%;
+  right: auto;
+  bottom: auto;
+  left: 72%;
+  margin: auto;
+}
+
+.introduce_container .circle3 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 14%;
+  right: auto;
+  bottom: auto;
+  left: 80%;
+  margin: auto;
+}
+
+@-webkit-keyframes cloudmove {
+  0% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  100% {
+    -webkit-transform: translateX(30%);
+            transform: translateX(30%);
+  }
+}
+
+@keyframes cloudmove {
+  0% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  100% {
+    -webkit-transform: translateX(30%);
+            transform: translateX(30%);
+  }
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.introduce_container .peanut_bg {
+  width: 65px;
+  position: absolute;
+  top: auto;
+  right: 2%;
+  bottom: 23%;
+  left: auto;
+  margin: auto;
+  -webkit-animation: chocowalk 5s infinite linear;
+          animation: chocowalk 5s infinite linear;
+}
+
+.introduce_container .donut_bg {
+  width: 65px;
+  position: absolute;
+  top: auto;
+  right: 8%;
+  bottom: 19%;
+  left: auto;
+  margin: auto;
+  -webkit-animation: chocowalk 5s -2s infinite linear;
+          animation: chocowalk 5s -2s infinite linear;
+}
+
+.introduce_container .cake_bg {
+  width: 99px;
+  position: absolute;
+  top: auto;
+  right: 11%;
+  bottom: 10%;
+  left: auto;
+  margin: auto;
+  -webkit-animation: chocowalk 5s -4s infinite linear;
+          animation: chocowalk 5s -4s infinite linear;
+}
+
+.introduce_container .cookies_bg {
+  width: 88px;
+  position: absolute;
+  top: auto;
+  right: 4%;
+  bottom: 0%;
+  left: auto;
+  margin: auto;
+  -webkit-animation: chocowalk 5s -6s infinite linear;
+          animation: chocowalk 5s -6s infinite linear;
+}
+
+.introduce_container .bear_bg {
+  width: 109px;
+  position: absolute;
+  top: auto;
+  right: 8%;
+  bottom: -15%;
+  left: auto;
+  margin: auto;
+  -webkit-animation: chocowalk 5s -8s infinite linear;
+          animation: chocowalk 5s -8s infinite linear;
+}
+
+.message_board_container {
+  height: 1750px;
+  position: relative;
   margin-top: -50px;
+  background: url("../image/role/pool.png") no-repeat 50% 22.4%, url("../image/role/swan.png") no-repeat 8% 30%, url("../image/role/leftball.png") no-repeat 3% 40%, url("../image/role/rightball.png") no-repeat 97% 30%, #FFF5E3;
 }
 
-.container .shopinfo .aboutus_shopmovie .shopmovie_container {
+.message_board_container .phone_message_title {
+  display: none;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.message_board_container .phone_message_title p {
+  font-size: 36px;
+  color: #F6EED4;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .phone_message_title {
+    display: block;
+  }
+}
+
+.message_board_container .message_board_wrap {
+  height: 1350px;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+.message_board_container .message_block {
   width: 100%;
-  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-  width: 5px;
-  opacity: 0;
-  padding-top: 0%;
+.message_board_container .message_block::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-.container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-  width: 100%;
-  padding-top: 15%;
+.message_board_container .message_block:nth-child(odd) .message_item {
+  float: left;
 }
 
-.container .shopinfo .shopinfo_cnotainer {
-  width: 100%;
-}
-
-.container .shopinfo .shopinfo_cnotainer .text {
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 60%;
-}
-
-.container .shopinfo .shopinfo_cnotainer .text h2 {
-  font-size: 28px;
-}
-
-.container .shopinfo .shopinfo_cnotainer .text p {
-  padding-top: 20px;
-  font-size: 16px;
-  line-height: 28px;
-}
-
-.container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-  width: 70%;
+.message_board_container .message_block:nth-child(even) .message_item {
   float: right;
-  margin-top: 30%;
-  margin-right: 0px;
 }
 
-@media all and (min-width: 768px) {
-  .container .aboutus {
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-    margin: 0 auto;
-    text-align: center;
+.message_board_container .message_item {
+  width: 550px;
+  height: 230px;
+  background: url("../image/role/message_bg.png") 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message_board_container .message {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 4%;
+}
+
+.message_board_container .cus_photo {
+  width: 125px;
+  height: 125px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  border-radius: 15px;
+  border: 2px solid #592F13;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message_board_container .cus_photo img {
+  border-radius: 15px;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_board_wrap {
+    height: 510px;
   }
-  .container .aboutus .aboutus_biglogo {
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 120px;
+  .message_board_container .message_block {
+    padding: 0;
   }
-  .container .aboutus .aboutus_biglogo .biglogo1 {
-    width: 650px;
-    -webkit-transform: translateX(-590px);
-            transform: translateX(-590px);
+  .message_board_container .message_item {
+    width: 100%;
+    height: 170px;
+    background: url("../image/role/message_bg.png") 50% 50% no-repeat/contain;
   }
-  .container .aboutus .aboutus_biglogo .biglogo2 {
-    width: 350px;
-    margin-top: -60px;
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
+  .message_board_container .message {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    padding: 0;
   }
-  .container .aboutus .aboutus_text {
-    padding-top: 5%;
-  }
-  .container .aboutus .aboutus_text p {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    line-height: 36px;
-    font-weight: 600;
+  .message_board_container .cus_photo {
+    width: 80px;
+    height: 80px;
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
+.message_board_container .message_contain {
+  width: 60%;
+  margin-left: 5%;
+}
+
+.message_board_container .message_contain .memName {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_contain .memName {
     font-size: 18px;
   }
 }
 
-@media all and (min-width: 768px) and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
+@media all and (min-width: 768px) {
+  .message_board_container .message_contain .memName {
     font-size: 18px;
   }
 }
 
-@media all and (min-width: 768px) and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
+@media all and (min-width: 992px) {
+  .message_board_container .message_contain .memName {
     font-size: 20px;
   }
 }
 
-@media all and (min-width: 768px) {
-  .container .touringcar {
-    margin: auto;
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
-  }
-  .container .touringcar .aboutus_container {
-    width: 100%;
-    margin: auto;
-    padding-top: 30px;
-    position: relative;
-    z-index: 2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-  }
-  .container .touringcar .aboutus_container .aboutus_map {
-    width: 60%;
-    position: relative;
-    left: 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei {
-    position: absolute;
-    top: 16%;
-    left: 48%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian {
-    position: absolute;
-    top: 42%;
-    left: 68%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan {
-    position: absolute;
-    top: 23%;
-    left: 41%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong {
-    position: absolute;
-    top: 34%;
-    left: 32%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-    position: absolute;
-    top: 68%;
-    left: 29%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei_point {
-    position: absolute;
-    top: 12%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian_point {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-    position: absolute;
-    top: 20%;
-    left: 52%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-    position: absolute;
-    top: 32%;
-    left: 44%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-    position: absolute;
-    top: 66%;
-    left: 40%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort {
-    width: 40%;
-    padding-top: 5%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 25px 25px 0 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 0 0 25px 25px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_car {
-    width: 1920px;
-    height: 600px;
-    margin-top: -285px;
-    margin-left: -20px;
-    position: relative;
-    z-index: 0;
-  }
-  .container .touringcar .aboutus_car .aboutus_road1 {
-    margin-left: -10px;
-    padding-top: 130px;
-  }
-  .container .touringcar .aboutus_car .car {
-    position: absolute;
-    right: -178px;
-    bottom: 85px;
-  }
-  .container .touringcar .aboutus_car .car img {
-    width: 178px;
-  }
-  .container .shopinfo {
-    height: 1050px;
-    background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 30% 0;
-  }
-  .container .shopinfo .aboutus_shopmovie {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 18%;
-    position: relative;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg h3 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: -50px;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-    width: 44%;
-    padding-top: 1%;
-    opacity: 1;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-    width: 55%;
-    padding-top: 0%;
-  }
-  .container .shopinfo .shopinfo_cnotainer {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text {
-    width: 60%;
-    margin-left: 17%;
-    margin-top: 13%;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text h2 {
-    font-size: 28px;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text p {
-    padding-top: 20px;
+.message_board_container .message_contain .mseeage_text {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  padding-top: 5%;
+  word-break: break-all;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_contain .mseeage_text {
     font-size: 16px;
-    line-height: 28px;
   }
-  .container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-    width: 300px;
-    float: right;
-    margin-top: -230px;
-    margin-right: 110px;
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .message_contain .mseeage_text {
+    font-size: 16px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .container .aboutus {
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .container .aboutus .aboutus_biglogo {
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 120px;
-  }
-  .container .aboutus .aboutus_biglogo .biglogo1 {
-    width: 650px;
-    -webkit-transform: translateX(-590px);
-            transform: translateX(-590px);
-  }
-  .container .aboutus .aboutus_biglogo .biglogo2 {
-    width: 350px;
-    margin-top: -60px;
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
-  }
-  .container .aboutus .aboutus_text {
-    padding-top: 5%;
-  }
-  .container .aboutus .aboutus_text p {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    line-height: 36px;
-    font-weight: 600;
+  .message_board_container .message_contain .mseeage_text {
+    font-size: 16px;
   }
 }
 
-@media all and (min-width: 992px) and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
+.message_board_container .status {
+  width: 20%;
+  text-align: center;
+}
+
+.message_board_container .status p {
+  padding-top: 20%;
+}
+
+.message_board_container .message_date {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  color: #9B9B9B;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .message_date {
+    font-size: 16px;
   }
 }
 
-@media all and (min-width: 992px) and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 992px) and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 20px;
+@media all and (min-width: 768px) {
+  .message_board_container .message_date {
+    font-size: 16px;
   }
 }
 
 @media all and (min-width: 992px) {
-  .container .touringcar {
-    margin: auto;
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
+  .message_board_container .message_date {
+    font-size: 16px;
   }
-  .container .touringcar .aboutus_container {
+}
+
+.message_board_container .page_wrap {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.message_board_container .pagination {
+  background: #fff;
+  border-radius: 5px;
+}
+
+.message_board_container .input_message_wrap {
+  padding-top: 100px;
+  background: #AD9380;
+}
+
+.message_board_container .input_message {
+  width: 80%;
+  height: 100px;
+  background: #fff;
+  border: 2px solid #157E8F;
+  position: relative;
+  border-radius: 9px;
+  margin: auto;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .input_message_wrap {
+    padding-top: 50px;
+  }
+  .message_board_container .input_message {
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-top: 30px;
-    position: relative;
-    z-index: 2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    height: 65px;
   }
-  .container .touringcar .aboutus_container .aboutus_map {
-    width: 55%;
-    position: relative;
-    left: 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei {
-    position: absolute;
-    top: 16%;
-    left: 48%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian {
-    position: absolute;
-    top: 42%;
-    left: 68%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan {
-    position: absolute;
-    top: 23%;
-    left: 41%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong {
-    position: absolute;
-    top: 34%;
-    left: 32%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-    position: absolute;
-    top: 68%;
-    left: 29%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei_point {
-    position: absolute;
-    top: 12%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian_point {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-    position: absolute;
-    top: 20%;
-    left: 52%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-    position: absolute;
-    top: 32%;
-    left: 44%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-    position: absolute;
-    top: 66%;
-    left: 40%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort {
-    width: 50%;
-    padding-top: 7%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-    width: 480px;
-    height: 100%;
-    max-height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 25px 25px 0 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus {
-    height: 150px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 0 0 25px 25px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_car {
-    width: 1920px;
-    height: 600px;
-    margin-left: -20px;
-    margin-top: -285px;
-    position: relative;
-    z-index: 0;
-  }
-  .container .touringcar .aboutus_car .aboutus_road1 {
-    margin-left: -10px;
-    padding-top: 130px;
-  }
-  .container .touringcar .aboutus_car .car {
-    position: absolute;
-    right: -178px;
-    bottom: 85px;
-  }
-  .container .touringcar .aboutus_car .car img {
-    width: 178px;
-  }
-  .container .shopinfo {
-    height: 1050px;
-    background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 40% 0;
-  }
-  .container .shopinfo .aboutus_shopmovie {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 100px;
-    position: relative;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg h3 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: -50px;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container {
-    width: 100%;
-    max-width: 1065px;
-    margin: 0 auto;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-    width: 44%;
-    max-width: 490px;
-    padding-top: 0%;
-    opacity: 1;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-    width: 55%;
-    max-width: 570px;
-    padding-top: 0%;
-  }
-  .container .shopinfo .shopinfo_cnotainer {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text {
-    width: 500px;
-    margin-left: 18%;
-    margin-top: 10%;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text h2 {
-    font-size: 28px;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text p {
-    padding-top: 20px;
+}
+
+.message_board_container #input_text {
+  width: 80%;
+  height: 100%;
+  border: none;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  border-radius: 9px;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  padding: 0 10px;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container #input_text {
     font-size: 18px;
-    line-height: 28px;
   }
-  .container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-    width: 300px;
-    float: right;
-    margin-top: -230px;
-    margin-right: 110px;
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container #input_text {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container #input_text {
+    font-size: 28px;
+  }
+}
+
+.message_board_container #input_text:focus {
+  outline: none;
+}
+
+.message_board_container #submit_btn {
+  width: 20%;
+  height: 100%;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container #submit_btn {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container #submit_btn {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container #submit_btn {
+    font-size: 28px;
+  }
+}
+
+.message_board_container #submit_btn:focus {
+  outline: none;
+}
+
+.message_board_container #submit_btn:before {
+  content: "";
+  width: 2px;
+  opacity: .5;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #1A99AD;
+}
+
+.message_board_container .report {
+  width: 370px;
+  height: 270px;
+  background: #FF4D50;
+  border-radius: 15px;
+  -webkit-box-shadow: 11px 11px 0 #FFA6AB;
+          box-shadow: 11px 11px 0 #FFA6AB;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.message_board_container .report .contain {
+  width: 90%;
+  margin: auto;
+}
+
+.message_board_container .report p {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  color: #F6EED4;
+  text-align: left;
+  padding: 10px 0;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .report p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .report p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .report p {
+    font-size: 20px;
+  }
+}
+
+.message_board_container .report textarea {
+  padding: 10px;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: normal;
+  border-radius: 15px;
+  width: 100%;
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container .report textarea {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .message_board_container .report textarea {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .message_board_container .report textarea {
+    font-size: 20px;
+  }
+}
+
+.message_board_container .report .btn {
+  margin-top: 20px;
+}
+
+.message_board_container .close_btn {
+  width: 30px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+}
+
+.message_board_container .report_bear {
+  width: 134px;
+  position: absolute;
+  top: auto;
+  right: -20%;
+  bottom: -3%;
+  left: auto;
+  margin: auto;
+}
+
+@media all and (max-width: 991px) {
+  .message_board_container {
+    padding-top: 40%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .message_board_container {
+    height: auto;
+    padding-top: 30%;
+  }
+}
+
+footer {
+  z-index: 1;
+  background: #AD9380;
+}
+
+@media all and (max-width: 991px) {
+  footer {
+    margin-top: 30%;
   }
 }

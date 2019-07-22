@@ -18,7 +18,102 @@ body {
     background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
     margin: 0 auto;
     text-align: center;
-
+    .about_cloud{
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      margin: 0 auto;
+      .aboutus_cloud1{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 20%;
+        padding-top: 10%;
+        animation: aboutus_cloud1 200s 0s infinite linear;
+      }
+      @keyframes aboutus_cloud1 {
+        0% {
+          left: -2%;
+        }
+        100% {
+          left: 105%;
+        }
+      }
+      .aboutus_cloud2{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 10%;
+        padding-top: 20%;
+        animation: aboutus_cloud2 200s 0s infinite linear;
+      }
+      @keyframes aboutus_cloud2 {
+        0% {
+          left: 20%;
+        }
+        100% {
+          left: 105%;
+        }
+      }
+      .aboutus_cloud3{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 13%;
+        padding-top: 13%;
+        animation: aboutus_cloud3 200s 0s infinite linear;
+      }
+      @keyframes aboutus_cloud3 {
+        0% {
+          left: 60%;
+        }
+        100% {
+          left: 105%;
+        }
+      }
+      .aboutus_cloud4{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 18%;
+        padding-top: 30%;
+        animation: aboutus_cloud4 200s 0s infinite linear;
+      }
+      @keyframes aboutus_cloud4 {
+        0% {
+          left: 80%;
+        }
+        100% {
+          left: 105%;
+        }
+      }
+      .aboutus_cloud5{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 18%;
+        padding-top: 28%;
+        animation: aboutus_cloud5 200s 0s infinite linear;
+      }
+      @keyframes aboutus_cloud5 {
+        0% {
+          left: -10%;
+        }
+        100% {
+          left: 105%;
+        }
+      }
+    }
     .aboutus_biglogo {
       // width: 90%;
       margin: 0 auto;
@@ -37,6 +132,8 @@ body {
     .aboutus_text {
       // padding-top: 70px;
       padding-top: 15%;
+      position: relative;
+      z-index: 5;
       p {
         @include font_s();
         line-height: 36px;
@@ -138,15 +235,28 @@ body {
             margin-left: 10%;
           }
         }
-        .taipei_carsort:hover {
+        .taipei_carsort:focus {
           background: #1a99ad;
           span {
             color: #f0ecdd;
           }
         }
-        .taipei_carsort:focus {
-          height: 150px;
+        .mapbox {
+          display: none;
         }
+        .taipei_mapbox{
+          width: 84%;
+          max-width: 100%;
+          height: 100%;
+          max-height: 220px;
+          background: #f0ecdd;
+          text-align: center;
+          img{
+            padding-top: 5%;
+            width: 60%;
+          }
+        }
+
         .taoyuan_carsort {
           width: 100%;
           height: 100%;
@@ -168,6 +278,22 @@ body {
             color: #f0ecdd;
           }
         }
+        .mapbox {
+          display: none;
+        }
+        .taoyuan_mapbox{
+          width: 84%;
+          max-width: 100%;
+          height: 100%;
+          max-height: 220px;
+          background: #f0ecdd;
+          text-align: center;
+          img{
+            padding-top: 5%;
+            width: 60%;
+          }
+        }
+
         .taichungcar_carsort {
           width: 100%;
           height: 100%;
@@ -451,9 +577,7 @@ body {
               color: #f0ecdd;
             }
           }
-          .taipei_carsort:focus {
-            height: 150px;
-          }
+
           .taoyuan_carsort {
             width: 100%;
             max-width: 480px;

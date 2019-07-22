@@ -2830,1231 +2830,984 @@ section {
   }
 }
 
-* {
-  margin: 0;
+.game_body {
+  overflow: hidden;
+  background: #DBAA51;
+}
+
+.blackscreen {
+  display: none;
+}
+
+.game_container {
+  position: relative;
+  height: 0px;
+  padding-bottom: 48.95%;
+}
+
+section {
   padding: 0;
 }
 
-body {
-  overflow-x: hidden;
-  background-color: #e8c7a3;
-}
-
-.container .aboutus {
-  height: 960px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.container .aboutus .about_cloud {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.container .aboutus .about_cloud .aboutus_cloud1 {
+#score {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 20%;
-  padding-top: 10%;
-  -webkit-animation: aboutus_cloud1 200s 0s infinite linear;
-          animation: aboutus_cloud1 200s 0s infinite linear;
+  top: 18%;
+  left: 2.09%;
+  z-index: 1;
 }
 
-@-webkit-keyframes aboutus_cloud1 {
-  0% {
-    left: -2%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud1 {
-  0% {
-    left: -2%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10%;
-  padding-top: 20%;
-  -webkit-animation: aboutus_cloud2 200s 0s infinite linear;
-          animation: aboutus_cloud2 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud2 {
-  0% {
-    left: 20%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud2 {
-  0% {
-    left: 20%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud3 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 13%;
-  padding-top: 13%;
-  -webkit-animation: aboutus_cloud3 200s 0s infinite linear;
-          animation: aboutus_cloud3 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud3 {
-  0% {
-    left: 60%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud3 {
-  0% {
-    left: 60%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud4 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 18%;
-  padding-top: 30%;
-  -webkit-animation: aboutus_cloud4 200s 0s infinite linear;
-          animation: aboutus_cloud4 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud4 {
-  0% {
-    left: 80%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud4 {
-  0% {
-    left: 80%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .about_cloud .aboutus_cloud5 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 18%;
-  padding-top: 28%;
-  -webkit-animation: aboutus_cloud5 200s 0s infinite linear;
-          animation: aboutus_cloud5 200s 0s infinite linear;
-}
-
-@-webkit-keyframes aboutus_cloud5 {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-@keyframes aboutus_cloud5 {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 105%;
-  }
-}
-
-.container .aboutus .aboutus_biglogo {
-  margin: 0 auto;
-  padding-top: 120px;
-}
-
-.container .aboutus .aboutus_biglogo .biglogo1 {
-  width: 100%;
-  -webkit-transform: translateX(-590px);
-          transform: translateX(-590px);
-}
-
-.container .aboutus .aboutus_biglogo .biglogo2 {
-  width: 60%;
-  margin-top: -40px;
-  -webkit-transform: translateX(1920px);
-          transform: translateX(1920px);
-}
-
-.container .aboutus .aboutus_text {
-  padding-top: 15%;
-  position: relative;
-  z-index: 5;
-}
-
-.container .aboutus .aboutus_text p {
-  font-family: "Noto Sans TC", sans-serif;
-  line-height: normal;
-  line-height: 36px;
-  font-weight: 600;
-}
-
-@media all and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 16px;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 16px;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 16px;
-  }
-}
-
-.container .touringcar {
-  height: 960px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_02-1.png") center;
-}
-
-.container .touringcar .aboutus_container {
-  width: 100%;
-  margin: auto;
-  position: relative;
-  z-index: 2;
-}
-
-.container .touringcar .aboutus_container .aboutus_map {
-  width: 100%;
-  position: relative;
-  left: 0;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taipei {
-  position: absolute;
-  top: 16%;
-  left: 48%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .hualian {
-  position: absolute;
-  top: 42%;
-  left: 68%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taoyuan {
-  position: absolute;
-  top: 23%;
-  left: 41%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taizhong {
-  position: absolute;
-  top: 34%;
-  left: 32%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-  position: absolute;
-  top: 68%;
-  left: 29%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taipei_point {
-  position: absolute;
-  top: 12%;
-  left: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .hualian_point {
-  position: absolute;
-  top: 40%;
-  left: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-  position: absolute;
-  top: 20%;
-  left: 52%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-  position: absolute;
-  top: 32%;
-  left: 44%;
-}
-
-.container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-  position: absolute;
-  top: 66%;
-  left: 40%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort {
-  width: 90%;
-  padding-top: 0px;
-  margin: 0 auto;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 90px;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-  border-radius: 25px 25px 0 0;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
+#score p {
   font-size: 20px;
-  margin-left: 10%;
+  letter-spacing: 3px;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus {
-  background: #1a99ad;
+#score p:nth-child(1) {
+  color: #592F13;
+  -webkit-text-stroke: 5px #592F13;
+  font-weight: bold;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus span {
-  color: #f0ecdd;
+#score p:nth-child(1) span {
+  font-size: 48px;
+  font-weight: bold;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  margin-left: 15px;
+  visibility: hidden;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .mapbox {
+#score p:nth-child(2) {
+  position: absolute;
+  color: #fff;
+  top: 0;
+}
+
+#scorenum {
+  color: #ED1C24;
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  font-size: 48px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#time {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 21%;
+  z-index: 1;
+}
+
+#time p {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 3px;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  letter-spacing: 17px;
+}
+
+#time #outerword {
+  color: #592F13;
+  -webkit-text-stroke: 5px #592F13;
+  font-weight: bold;
+}
+
+#time #innerword {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#time #innerword span {
+  color: #fff;
+}
+
+.title_decoration {
   display: none;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_mapbox {
-  width: 84%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 220px;
-  background: #f0ecdd;
-  text-align: center;
+#introduce {
+  position: absolute;
+  top: 32.7%;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+  max-width: 671px;
+  width: 55%;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taipei_mapbox img {
-  padding-top: 5%;
-  width: 60%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .mapbox {
+#introduce img:nth-child(2) {
   display: none;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_mapbox {
-  width: 84%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 220px;
-  background: #f0ecdd;
-  text-align: center;
+#introduce img:nth-child(3) {
+  display: none;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taoyuan_mapbox img {
-  padding-top: 5%;
-  width: 60%;
+#introduce img:nth-child(4) {
+  display: none;
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
+@-webkit-keyframes keyshow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
+@keyframes keyshow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-  width: 100%;
-  height: 100%;
-  background: #f0ecdd;
-  border: 2px solid #1a99ad;
-  border-radius: 0 0 25px 25px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-  width: 15%;
-  margin-left: 15%;
-  padding-top: 8px;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-  font-size: 20px;
-  margin-left: 10%;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-  background: #1a99ad;
-}
-
-.container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-  color: #f0ecdd;
-}
-
-.container .touringcar .aboutus_car {
-  width: 1920px;
-  height: 600px;
-  margin-top: -200px;
-  position: relative;
-  z-index: 0;
-}
-
-.container .touringcar .aboutus_car .aboutus_road1 {
-  margin-left: -10px;
-  padding-top: 130px;
-}
-
-.container .touringcar .aboutus_car .car {
+#start {
   position: absolute;
-  right: -178px;
-  bottom: 85px;
-}
-
-.container .touringcar .aboutus_car .car img {
-  width: 178px;
-}
-
-.container .shopinfo {
-  height: 1050px;
-  padding: 0 20px;
-  background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 35% 0;
-}
-
-.container .shopinfo .aboutus_shopmovie {
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 80px;
-  position: relative;
-}
-
-.container .shopinfo .aboutus_shopmovie .title_bg {
-  width: 300px;
+  top: 53.6303%;
+  right: 0;
+  bottom: auto;
+  left: 0;
   margin: auto;
+  z-index: 1;
 }
 
-.container .shopinfo .aboutus_shopmovie .title_bg h3 {
+.title_decoration {
+  position: absolute;
+  top: 18.104%;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+  max-width: 595px;
+  width: 30.9%;
+}
+
+#timeup {
+  max-width: 860px;
+  width: 44.79%;
+  position: absolute;
+  top: 10%;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  z-index: 1;
   text-align: center;
-  font-size: 28px;
-  margin-top: -50px;
+  display: none;
 }
 
-.container .shopinfo .aboutus_shopmovie .shopmovie_container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-  width: 5px;
+#timeup img {
   opacity: 0;
-  padding-top: 0%;
 }
 
-.container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-  width: 100%;
-  padding-top: 15%;
+#timeup img:nth-child(1) {
+  max-width: 145px;
+  width: 16.8%;
+  -webkit-animation: movedown 1s forwards;
+          animation: movedown 1s forwards;
 }
 
-.container .shopinfo .shopinfo_cnotainer {
-  width: 100%;
+#timeup img:nth-child(2) {
+  max-width: 55px;
+  width: 6.4%;
+  -webkit-animation: movedown 1s 0.2s forwards;
+          animation: movedown 1s 0.2s forwards;
 }
 
-.container .shopinfo .shopinfo_cnotainer .text {
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 60%;
+#timeup img:nth-child(3) {
+  max-width: 151px;
+  width: 17.5%;
+  -webkit-animation: movedown 1s 0.3s forwards;
+          animation: movedown 1s 0.3s forwards;
 }
 
-.container .shopinfo .shopinfo_cnotainer .text h2 {
-  font-size: 28px;
+#timeup img:nth-child(4) {
+  max-width: 124px;
+  width: 14.4%;
+  -webkit-animation: movedown 1s 0.4s forwards;
+          animation: movedown 1s 0.4s forwards;
 }
 
-.container .shopinfo .shopinfo_cnotainer .text p {
-  padding-top: 20px;
-  font-size: 16px;
-  line-height: 28px;
+#timeup img:nth-child(5) {
+  max-width: 160px;
+  width: 18.6%;
+  -webkit-animation: movedown 1s 0.5s forwards;
+          animation: movedown 1s 0.5s forwards;
+  margin-left: 1%;
 }
 
-.container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-  width: 70%;
-  float: right;
-  margin-top: 30%;
-  margin-right: 0px;
+#timeup img:nth-child(6) {
+  max-width: 137px;
+  width: 15.9%;
+  -webkit-animation: movedown 1s 0.6s forwards;
+          animation: movedown 1s 0.6s forwards;
 }
 
-@media all and (min-width: 768px) {
-  .container .aboutus {
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-    margin: 0 auto;
-    text-align: center;
+@-webkit-keyframes movedown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
-  .container .aboutus .aboutus_biglogo {
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 120px;
+  12% {
+    -webkit-transform: translateY(10.89px);
+            transform: translateY(10.89px);
   }
-  .container .aboutus .aboutus_biglogo .biglogo1 {
-    width: 650px;
-    -webkit-transform: translateX(-590px);
-            transform: translateX(-590px);
+  24% {
+    -webkit-transform: translateY(43.56px);
+            transform: translateY(43.56px);
   }
-  .container .aboutus .aboutus_biglogo .biglogo2 {
-    width: 350px;
-    margin-top: -60px;
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
+  36% {
+    -webkit-transform: translateY(98.01px);
+            transform: translateY(98.01px);
   }
-  .container .aboutus .aboutus_text {
-    padding-top: 5%;
+  54% {
+    -webkit-transform: translateY(75.02px);
+            transform: translateY(75.02px);
   }
-  .container .aboutus .aboutus_text p {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    line-height: 36px;
-    font-weight: 600;
+  74% {
+    -webkit-transform: translateY(98.37px);
+            transform: translateY(98.37px);
   }
-}
-
-@media all and (min-width: 768px) and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
+  82% {
+    -webkit-transform: translateY(93.75px);
+            transform: translateY(93.75px);
   }
-}
-
-@media all and (min-width: 768px) and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
+  92% {
+    -webkit-transform: translateY(99.34px);
+            transform: translateY(99.34px);
   }
-}
-
-@media all and (min-width: 768px) and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 20px;
+  96% {
+    -webkit-transform: translateY(98.46px);
+            transform: translateY(98.46px);
   }
-}
-
-@media all and (min-width: 768px) {
-  .container .touringcar {
-    margin: auto;
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
-  }
-  .container .touringcar .aboutus_container {
-    width: 100%;
-    margin: auto;
-    padding-top: 30px;
-    position: relative;
-    z-index: 2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-  }
-  .container .touringcar .aboutus_container .aboutus_map {
-    width: 60%;
-    position: relative;
-    left: 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei {
-    position: absolute;
-    top: 16%;
-    left: 48%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian {
-    position: absolute;
-    top: 42%;
-    left: 68%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan {
-    position: absolute;
-    top: 23%;
-    left: 41%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong {
-    position: absolute;
-    top: 34%;
-    left: 32%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-    position: absolute;
-    top: 68%;
-    left: 29%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei_point {
-    position: absolute;
-    top: 12%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian_point {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-    position: absolute;
-    top: 20%;
-    left: 52%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-    position: absolute;
-    top: 32%;
-    left: 44%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-    position: absolute;
-    top: 66%;
-    left: 40%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort {
-    width: 40%;
-    padding-top: 5%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 25px 25px 0 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-    width: 100%;
-    max-width: 480px;
-    height: 100%;
-    max-height: 80px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 0 0 25px 25px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-    width: 17%;
-    margin-left: 10%;
-    padding-top: 8px;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-    font-size: 20px;
-    margin-left: 12%;
-    vertical-align: middle;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_car {
-    width: 1920px;
-    height: 600px;
-    margin-top: -285px;
-    margin-left: -20px;
-    position: relative;
-    z-index: 0;
-  }
-  .container .touringcar .aboutus_car .aboutus_road1 {
-    margin-left: -10px;
-    padding-top: 130px;
-  }
-  .container .touringcar .aboutus_car .car {
-    position: absolute;
-    right: -178px;
-    bottom: 85px;
-  }
-  .container .touringcar .aboutus_car .car img {
-    width: 178px;
-  }
-  .container .shopinfo {
-    height: 1050px;
-    background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 30% 0;
-  }
-  .container .shopinfo .aboutus_shopmovie {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 18%;
-    position: relative;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg h3 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: -50px;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-    width: 44%;
-    padding-top: 1%;
+  100% {
     opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
   }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-    width: 55%;
-    padding-top: 0%;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
-  .container .shopinfo .shopinfo_cnotainer {
-    width: 1200px;
-    margin: 0 auto;
+  12% {
+    -webkit-transform: translateY(10.89px);
+            transform: translateY(10.89px);
   }
-  .container .shopinfo .shopinfo_cnotainer .text {
-    width: 60%;
-    margin-left: 17%;
-    margin-top: 13%;
+  24% {
+    -webkit-transform: translateY(43.56px);
+            transform: translateY(43.56px);
   }
-  .container .shopinfo .shopinfo_cnotainer .text h2 {
-    font-size: 28px;
+  36% {
+    -webkit-transform: translateY(98.01px);
+            transform: translateY(98.01px);
   }
-  .container .shopinfo .shopinfo_cnotainer .text p {
-    padding-top: 20px;
-    font-size: 16px;
-    line-height: 28px;
+  54% {
+    -webkit-transform: translateY(75.02px);
+            transform: translateY(75.02px);
   }
-  .container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-    width: 300px;
-    float: right;
-    margin-top: -230px;
-    margin-right: 110px;
+  74% {
+    -webkit-transform: translateY(98.37px);
+            transform: translateY(98.37px);
   }
+  82% {
+    -webkit-transform: translateY(93.75px);
+            transform: translateY(93.75px);
+  }
+  92% {
+    -webkit-transform: translateY(99.34px);
+            transform: translateY(99.34px);
+  }
+  96% {
+    -webkit-transform: translateY(98.46px);
+            transform: translateY(98.46px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
+.choco_bonus {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  z-index: 11;
+  display: none;
+}
+
+.bonus_house {
+  max-width: 900px;
+  width: 46.875%;
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.CHOCO {
+  max-width: 292px;
+  width: 32.444444%;
+  z-index: -1;
+}
+
+.bear {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: -18.333%;
+  margin: auto;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.bear .bearhand {
+  position: absolute;
+  top: -36%;
+  right: 0%;
+  bottom: 0%;
+  left: -42%;
+  margin: auto;
+  max-width: 140px;
+  width: 47.945%;
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  -webkit-transform: rotate(-26deg);
+          transform: rotate(-26deg);
+  -webkit-animation: bearhand 1s infinite alternate;
+          animation: bearhand 1s infinite alternate;
+}
+
+.bear .eyeleft {
+  position: absolute;
+  top: -12.6712%;
+  right: 0%;
+  bottom: 0%;
+  left: -12.3287%;
+  margin: auto;
+  max-width: 25px;
+  width: 8.5616%;
+}
+
+.bear .blinkleft {
+  position: absolute;
+  top: -31.506%;
+  right: 0%;
+  bottom: 0%;
+  left: -6.8493%;
+  margin: auto;
+  max-width: 50px;
+  width: 17.123%;
+  -webkit-animation: bearblink 5s infinite;
+          animation: bearblink 5s infinite;
+}
+
+.bear .bearne {
+  position: relative;
+}
+
+@-webkit-keyframes bearhand {
+  0% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@keyframes bearhand {
+  0% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@-webkit-keyframes bearblink {
+  0% {
+    top: -31.506%;
+  }
+  45% {
+    top: -31.506%;
+  }
+  50% {
+    top: -15.068%;
+  }
+  55% {
+    top: -31.506%;
+  }
+  100% {
+    top: -31.506%;
+  }
+}
+
+@keyframes bearblink {
+  0% {
+    top: -31.506%;
+  }
+  45% {
+    top: -31.506%;
+  }
+  50% {
+    top: -15.068%;
+  }
+  55% {
+    top: -31.506%;
+  }
+  100% {
+    top: -31.506%;
+  }
+}
+
+.cake {
+  position: absolute;
+  top: auto;
+  right: -24.6575%;
+  bottom: -3%;
+  left: auto;
+  margin: auto;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+.cake .cakehand {
+  position: absolute;
+  top: -43%;
+  right: 0%;
+  bottom: 0%;
+  left: 33%;
+  margin: auto;
+  max-width: 140px;
+  width: 47.945%;
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  -webkit-animation: cakehand 1s infinite alternate;
+          animation: cakehand 1s infinite alternate;
+}
+
+.cake .eye {
+  position: absolute;
+  top: -3.4246%;
+  right: 0%;
+  bottom: 0%;
+  left: -38.5891%;
+  margin: auto;
+  max-width: 53px;
+  width: 18.15%;
+}
+
+.cake .blink {
+  position: absolute;
+  top: -5%;
+  right: 0%;
+  bottom: 0%;
+  left: -38%;
+  margin: auto;
+  max-width: 55px;
+  width: 18.8%;
+  max-height: 55px;
+  height: 18.8%;
+  overflow: hidden;
+}
+
+.cake .blink img {
+  position: absolute;
+  top: -160%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  margin: auto;
+  width: 150%;
+  -webkit-animation: cakeblink 6s infinite;
+          animation: cakeblink 6s infinite;
+}
+
+.cake .cakene {
+  position: relative;
+}
+
+@-webkit-keyframes cakehand {
+  0% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
+@keyframes cakehand {
+  0% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
+@-webkit-keyframes cakeblink {
+  0% {
+    top: -160%;
+  }
+  45% {
+    top: -160%;
+  }
+  50% {
+    top: 7%;
+  }
+  55% {
+    top: -160%;
+  }
+  100% {
+    top: -160%;
+  }
+}
+
+@keyframes cakeblink {
+  0% {
+    top: -160%;
+  }
+  45% {
+    top: -160%;
+  }
+  50% {
+    top: 7%;
+  }
+  55% {
+    top: -160%;
+  }
+  100% {
+    top: -160%;
+  }
+}
+
+.cardlist {
+  width: 100%;
+  max-height: 200px;
+  height: 32%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 1.111%;
+  margin: auto;
+  padding: 0 5.55%;
+}
+
+.cardlist::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.card {
+  max-width: 200px;
+  width: 25%;
+  float: left;
+  margin: 0 4.125%;
+  cursor: pointer;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: relative;
+}
+
+.card figcaption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .outtext {
+  color: #592F13;
+  -webkit-text-stroke: 5px #592F13;
+}
+
+.card .innertext {
+  color: #F6EED4;
+}
+
+.card:hover {
+  -webkit-animation: cardmove 1s infinite linear alternate;
+          animation: cardmove 1s infinite linear alternate;
+}
+
+@-webkit-keyframes cardmove {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+
+@keyframes cardmove {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+
+.front, .back {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.front {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+}
+
+.frontshow {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.backshow {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+
+.nopointer {
+  pointer-events: none;
+}
+
+.final {
+  max-width: 737px;
+  width: 38.385%;
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+  -webkit-animation: bang .3s forwards;
+          animation: bang .3s forwards;
+}
+
+.final p {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  margin: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ED1C24;
+}
+
+.final p span {
+  color: #ED1C24;
+}
+
+@-webkit-keyframes bang {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.1);
+            transform: translate(-50%, -50%) scale(0.1);
+  }
+  80% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes bang {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0.1);
+            transform: translate(-50%, -50%) scale(0.1);
+  }
+  80% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+#board_close {
+  width: 29px;
+  position: absolute;
+  top: 21%;
+  right: 19%;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+  cursor: pointer;
+  display: none;
+}
+
+#again {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 23%;
+  left: -31%;
+  margin: auto;
+}
+
+#gostore {
+  position: absolute;
+  top: auto;
+  right: -33%;
+  bottom: 23%;
+  left: 0;
+  margin: auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
 }
 
 @media all and (min-width: 992px) {
-  .container .aboutus {
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_01.png") no-repeat 50% 0;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .container .aboutus .aboutus_biglogo {
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 120px;
-  }
-  .container .aboutus .aboutus_biglogo .biglogo1 {
-    width: 650px;
-    -webkit-transform: translateX(-590px);
-            transform: translateX(-590px);
-  }
-  .container .aboutus .aboutus_biglogo .biglogo2 {
-    width: 350px;
-    margin-top: -60px;
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
-  }
-  .container .aboutus .aboutus_text {
-    padding-top: 5%;
-  }
-  .container .aboutus .aboutus_text p {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: normal;
-    line-height: 36px;
-    font-weight: 600;
-  }
-}
-
-@media all and (min-width: 992px) and (max-width: 767px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 992px) and (min-width: 768px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 992px) and (min-width: 992px) {
-  .container .aboutus .aboutus_text p {
-    font-size: 20px;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .container .touringcar {
+  #introduce {
+    position: absolute;
+    top: 32.7%;
+    right: 0;
+    bottom: auto;
+    left: 0;
     margin: auto;
-    height: 960px;
-    background: url("../image/aboutus/aboutus_bg_02-1.png") center;
+    z-index: 1;
+    max-width: 671px;
+    width: 34.94%;
   }
-  .container .touringcar .aboutus_container {
-    width: 100%;
-    max-width: 1200px;
+  #introduce img:nth-child(1) {
+    display: none;
+  }
+  #introduce img:nth-child(2) {
+    display: block;
+  }
+  #introduce img:nth-child(3) {
+    display: block;
+    position: absolute;
+    top: 29.65258%;
+    right: auto;
+    bottom: auto;
+    left: 44.45441%;
     margin: auto;
-    padding-top: 30px;
-    position: relative;
-    z-index: 2;
+    max-width: 33px;
+    width: 5%;
+    -webkit-animation: keyshow .6s infinite;
+            animation: keyshow .6s infinite;
+  }
+  #introduce img:nth-child(4) {
+    display: block;
+    position: absolute;
+    top: 29.55259%;
+    right: auto;
+    bottom: auto;
+    left: 54.396%;
+    margin: auto;
+    max-width: 33px;
+    width: 5%;
+    -webkit-animation: keyshow .6s .3s infinite;
+            animation: keyshow .6s .3s infinite;
+  }
+  #score {
+    top: 21.299%;
+  }
+  #score p {
+    font-size: 40px;
+  }
+  #score p:nth-child(1) {
+    -webkit-text-stroke: 8px #592F13;
+  }
+  #scorenum {
+    -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    margin-left: 15px;
+  }
+  .title_decoration {
+    display: block;
+  }
+  #time p {
+    font-size: 48px;
+  }
+  #time #outerword {
+    -webkit-text-stroke: 8px #592F13;
+  }
+  .card figcaption {
+    font-size: 48px;
+  }
+  .card .outtext {
+    -webkit-text-stroke: 8px #592F13;
+  }
+  .final p {
+    font-size: 60px;
+  }
+  #again {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 23%;
+    left: 21%;
+    margin: auto;
+  }
+  #gostore {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    position: absolute;
+    top: auto;
+    right: 19%;
+    bottom: 23%;
+    left: auto;
+    margin: auto;
+  }
+}
+
+@media all and (orientation: portrait) and (max-width: 992px) {
+  html {
+    overflow: auto;
+    position: fixed;
+  }
+  header .m_header .menubox li {
+    padding: 2% 0;
+  }
+  .game_body {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    width: 100vh;
+    height: 100vw;
+    -webkit-transform-origin: 29% 50%;
+            transform-origin: 29% 50%;
+  }
+  .blackscreen {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    display: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 10vw;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    color: #F6EED4;
+    position: fixed;
+    z-index: 20;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
-  .container .touringcar .aboutus_container .aboutus_map {
-    width: 55%;
-    position: relative;
-    left: 0;
+  .game_container {
+    position: unset;
+    padding: 0;
   }
-  .container .touringcar .aboutus_container .aboutus_map .taipei {
-    position: absolute;
-    top: 16%;
-    left: 48%;
+  .bonus_house {
+    top: 25%;
   }
-  .container .touringcar .aboutus_container .aboutus_map .hualian {
-    position: absolute;
-    top: 42%;
-    left: 68%;
+  .final {
+    top: 28%;
   }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan {
-    position: absolute;
-    top: 23%;
-    left: 41%;
+}
+
+@media all and (orientation: portrait) and (max-width: 768px) {
+  .game_body {
+    -webkit-transform-origin: 38% 50%;
+            transform-origin: 38% 50%;
   }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong {
-    position: absolute;
-    top: 34%;
-    left: 32%;
+}
+
+@media all and (orientation: portrait) and (max-width: 375px) {
+  .game_body {
+    -webkit-transform-origin: 34% 50%;
+            transform-origin: 34% 50%;
   }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong {
-    position: absolute;
-    top: 68%;
-    left: 29%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taipei_point {
-    position: absolute;
-    top: 12%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .hualian_point {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taoyuan_point {
-    position: absolute;
-    top: 20%;
-    left: 52%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .taizhong_point {
-    position: absolute;
-    top: 32%;
-    left: 44%;
-  }
-  .container .touringcar .aboutus_container .aboutus_map .gaoxiong_point {
-    position: absolute;
-    top: 66%;
-    left: 40%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort {
-    width: 50%;
-    padding-top: 7%;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort {
-    width: 480px;
-    height: 100%;
-    max-height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 25px 25px 0 0;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taipei_carsort:focus {
-    height: 150px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taoyuan_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .taichungcar_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .hualien_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort {
-    width: 480px;
-    height: 90px;
-    background: #f0ecdd;
-    border: 2px solid #1a99ad;
-    border-radius: 0 0 25px 25px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort img {
-    width: 70px;
-    margin-left: 80px;
-    padding-top: 8px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort span {
-    font-size: 20px;
-    margin-left: 60px;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover {
-    background: #1a99ad;
-  }
-  .container .touringcar .aboutus_container .aboutus_carsort .kaohsiung_carsort:hover span {
-    color: #f0ecdd;
-  }
-  .container .touringcar .aboutus_car {
-    width: 1920px;
-    height: 600px;
-    margin-left: -20px;
-    margin-top: -285px;
-    position: relative;
-    z-index: 0;
-  }
-  .container .touringcar .aboutus_car .aboutus_road1 {
-    margin-left: -10px;
-    padding-top: 130px;
-  }
-  .container .touringcar .aboutus_car .car {
-    position: absolute;
-    right: -178px;
-    bottom: 85px;
-  }
-  .container .touringcar .aboutus_car .car img {
-    width: 178px;
-  }
-  .container .shopinfo {
-    height: 1050px;
-    background: url("../image/aboutus/aboutus_bg_03.png") no-repeat 40% 0;
-  }
-  .container .shopinfo .aboutus_shopmovie {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 100px;
-    position: relative;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg {
-    width: 300px;
-    margin-left: 30px;
-  }
-  .container .shopinfo .aboutus_shopmovie .title_bg h3 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: -50px;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container {
-    width: 100%;
-    max-width: 1065px;
-    margin: 0 auto;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .aboutus_shopmovie_img {
-    width: 44%;
-    max-width: 490px;
-    padding-top: 0%;
-    opacity: 1;
-  }
-  .container .shopinfo .aboutus_shopmovie .shopmovie_container .movie_img1 {
-    width: 55%;
-    max-width: 570px;
-    padding-top: 0%;
-  }
-  .container .shopinfo .shopinfo_cnotainer {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text {
-    width: 500px;
-    margin-left: 18%;
-    margin-top: 10%;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text h2 {
-    font-size: 28px;
-  }
-  .container .shopinfo .shopinfo_cnotainer .text p {
-    padding-top: 20px;
-    font-size: 18px;
-    line-height: 28px;
-  }
-  .container .shopinfo .shopinfo_cnotainer .shopinfo_bear {
-    width: 300px;
-    float: right;
-    margin-top: -230px;
-    margin-right: 110px;
+  #time p {
+    letter-spacing: 5px;
   }
 }
