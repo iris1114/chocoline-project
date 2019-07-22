@@ -144,11 +144,19 @@ footer {
     left: 0;
     z-index: -2; }
 
+* img {
+  user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */ }
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 10; }
+  z-index: 10;
+  pointer-events: none; }
 
 .m_header {
   position: relative; }
@@ -159,9 +167,11 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     background: url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0/100% 100%;
-    height: 120px; }
+    height: 120px;
+    pointer-events: auto; }
   .m_header .burger {
-    width: 33%; }
+    width: 33%;
+    pointer-events: auto; }
     .m_header .burger figure {
       cursor: pointer;
       width: 44px;
@@ -169,7 +179,8 @@ header {
   .m_header .logo {
     width: 170px;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    pointer-events: auto; }
     .m_header .logo h1 {
       display: none; }
     .m_header .logo a {
@@ -177,7 +188,8 @@ header {
   .m_header .status {
     width: 33%;
     display: flex;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    pointer-events: auto; }
     .m_header .status figure {
       width: 44px;
       margin: 0 0 0 5%;
@@ -193,7 +205,8 @@ header {
     top: -100vh;
     transition: .5s;
     display: none;
-    background: url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0/contain; }
+    background: url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0/contain;
+    pointer-events: auto; }
     .m_header .menubox li {
       text-align: center;
       padding: 7% 0;
@@ -254,7 +267,8 @@ header {
     width: 100%;
     align-items: flex-start; }
     .d_header .logo {
-      width: 185px; }
+      width: 185px;
+      pointer-events: auto; }
       .d_header .logo h1 {
         display: none; }
       .d_header .logo a {
@@ -263,11 +277,13 @@ header {
       width: 90%;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      pointer-events: auto; }
     .d_header .menubox {
       width: 90%;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      pointer-events: auto; }
       .d_header .menubox li {
         font-size: 18px;
         margin: 0 12px;
@@ -286,7 +302,8 @@ header {
     .d_header .status {
       display: flex;
       justify-content: flex-end;
-      margin-left: auto; }
+      margin-left: auto;
+      pointer-events: auto; }
       .d_header .status figure {
         width: 44px;
         margin: 0 10px; }
@@ -311,7 +328,8 @@ header #lightBox {
   width: 100%;
   height: 100vh;
   top: 0;
-  background: rgba(66, 66, 66, 0.6); }
+  background: rgba(66, 66, 66, 0.6);
+  pointer-events: auto; }
   header #lightBox #tableLogin {
     position: relative;
     top: 23%;
@@ -386,7 +404,8 @@ header #passwordLightBox {
   width: 100%;
   height: 100vh;
   top: 0;
-  background: rgba(66, 66, 66, 0.6); }
+  background: rgba(66, 66, 66, 0.6);
+  pointer-events: auto; }
   header #passwordLightBox #getPassword {
     position: relative;
     top: 23%;
@@ -461,7 +480,8 @@ header #registerLightBox {
   width: 100%;
   height: 100vh;
   top: 0;
-  background: rgba(66, 66, 66, 0.6); }
+  background: rgba(66, 66, 66, 0.6);
+  pointer-events: auto; }
   header #registerLightBox #registered {
     position: relative;
     top: 23%;
@@ -1213,7 +1233,12 @@ header #registerLightBox {
   transition: all 0.5s;
   margin: 5px;
   border-radius: 15px;
-  box-shadow: 0 5px #ccc; }
+  box-shadow: 0 5px #ccc;
+  user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */ }
   .btn span {
     color: #F6EED4;
     display: inline-block;
@@ -1420,7 +1445,12 @@ header #registerLightBox {
 
 .pagination {
   display: inline-block;
-  margin: auto; }
+  margin: auto;
+  user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */ }
   .pagination a {
     color: #1c99ae;
     float: left;
@@ -1451,7 +1481,12 @@ header #registerLightBox {
   appearance: none;
   background: #F0ECDD url(../image/common/select.png) no-repeat center;
   border-radius: 5px;
-  padding-left: 50px; }
+  padding-left: 50px;
+  user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */ }
   .select_dropdown option {
     color: #187f8f; }
   @media all and (max-width: 767px) {
@@ -1501,6 +1536,11 @@ header #registerLightBox {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal; }
   @media all and (max-width: 767px) {
@@ -1521,6 +1561,11 @@ header #registerLightBox {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal; }
   @media all and (max-width: 767px) {
@@ -1535,7 +1580,7 @@ header #registerLightBox {
   #next_btn:hover {
     background-color: #187f8f; }
 
-#alert_box {
+.alert_box {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -1543,7 +1588,7 @@ header #registerLightBox {
   left: 0;
   background: rgba(66, 66, 66, 0.6);
   z-index: 11; }
-  #alert_box #alert_content {
+  .alert_box .alert_content {
     width: 300px;
     height: 300px;
     background: url(../image/common/lightbox.png) no-repeat center;
@@ -1554,22 +1599,22 @@ header #registerLightBox {
     left: 0;
     right: 0;
     margin: auto; }
-    #alert_box #alert_content p {
+    .alert_box .alert_content p {
       font-size: 20px;
       color: #F6EED4;
       padding-top: 40%;
       font-family: "Noto Sans TC", sans-serif;
       line-height: normal; }
       @media all and (max-width: 767px) {
-        #alert_box #alert_content p {
+        .alert_box .alert_content p {
           font-size: 18px; } }
       @media all and (min-width: 768px) {
-        #alert_box #alert_content p {
+        .alert_box .alert_content p {
           font-size: 24px; } }
       @media all and (min-width: 992px) {
-        #alert_box #alert_content p {
+        .alert_box .alert_content p {
           font-size: 28px; } }
-    #alert_box #alert_content #alert_close {
+    .alert_box .alert_content .alert_close {
       cursor: pointer;
       position: absolute;
       right: 10%;
@@ -1739,9 +1784,11 @@ section {
   outline: none; }
 
 body {
-  background-color: #FFF5E3;
+  background-color: #F6EED4;
   background: url(../image/member/bg.png) no-repeat 100% 100%/cover;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh; }
 
 .cloud {
   position: absolute;
@@ -1904,7 +1951,6 @@ body {
 
 #orderlist {
   background-color: white;
-  height: 730px;
   border: 2px solid #1A99AD;
   border-radius: 10px; }
   #orderlist .my_order {
@@ -1956,8 +2002,14 @@ body {
       justify-content: center; }
   #orderlist .order_detail_title {
     background-color: #eee;
+    color: #444;
     cursor: pointer;
+    padding: 18px;
     width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
     transition: 0.4s; }
   #orderlist .active, #orderlist .order_detail_title:hover {
     background-color: #ccc;
@@ -1979,7 +2031,6 @@ body {
 
 #favorite {
   background-color: white;
-  height: 730px;
   border: 2px solid #1A99AD;
   border-radius: 10px; }
   #favorite .content_favorite {
@@ -2015,7 +2066,8 @@ body {
   #favorite .choco_img {
     width: 40%;
     margin: auto;
-    text-align: center; }
+    text-align: center;
+    margin: 30px auto; }
   #favorite .my_choco_desc {
     display: flex;
     justify-content: center;
@@ -2037,7 +2089,8 @@ body {
     margin: auto; }
     #favorite_product .my_product .my_product_box {
       border: 2px solid #157E8F;
-      border-radius: 20px; }
+      border-radius: 20px;
+      margin: 50px 0px; }
     #favorite_product .my_product button {
       margin-bottom: 30px; }
 
@@ -2104,6 +2157,10 @@ body {
   #info .profile_pic {
     width: 120px;
     height: 120px; }
+  #info .profile_pic img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px; }
   #info table {
     width: 100%;
     margin: auto;
@@ -2126,6 +2183,10 @@ body {
   #info input {
     width: 80%; }
   #info .col_12 {
+    margin-bottom: 30px; }
+  #info .upload {
+    text-align: center;
+    line-height: 1.8;
     margin-bottom: 30px; }
   #orderlist {
     height: 100%;

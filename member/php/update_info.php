@@ -4,7 +4,7 @@ session_start();
 $errMsg = "";
 
 if (isset($_POST['updated_it'])) {
-
+    $mem_no = $_SESSION['mem_no'];
     $mem_id = $_SESSION['mem_id'];
     $mem_name = $_POST['mem_name'];
     $mem_email = $_POST['mem_email'];
@@ -13,6 +13,7 @@ if (isset($_POST['updated_it'])) {
     $mem_credit = $_POST['mem_credit'];
     $mem_address = $_POST['mem_address'];
     $mem_headshot = $_FILES['memUpFile']['name'];
+    $file_name = $_SESSION['mem_no'] . rand() . $mem_headshot;
 
     switch ($_FILES['memUpFile']['error']) {
         case 0:
@@ -22,9 +23,10 @@ if (isset($_POST['updated_it'])) {
             }
             echo $_FILES['memUpFile']['name'];
             $from = $_FILES['memUpFile']['tmp_name'];
-            $to = $dir . $_FILES['memUpFile']['name'];
+            $to =   $dir .  $file_name;   //$mem_no . 'profile' 
             echo $from, "<br>", $to;
             copy($from, $to);
+
             try {
                 @require_once("../../common/php/connect_choco.php");
 
@@ -40,7 +42,7 @@ if (isset($_POST['updated_it'])) {
                 $statement->bindValue(':mem_credit', $mem_credit);
                 $statement->bindValue(':mem_address', $mem_address);
                 $statement->bindValue(':mem_id', $mem_id);
-                $statement->bindValue(':mem_headshot', $mem_headshot);
+                $statement->bindValue(':mem_headshot', $file_name);
 
 
                 $_SESSION["mem_name"] = $mem_name;
