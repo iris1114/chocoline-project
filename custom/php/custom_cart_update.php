@@ -1,11 +1,15 @@
 <?php 
 session_start();
-$imgPath = "../image/custom_img";  //照片路徑
+$imgPath1 = "../../common/image/chocos/";  //照片路徑
 if (!file_exists($imgPath)) { 
   echo"no"; //檢查資料夾存不存在
   mkdir($imgPath);
 }
-
+$imgPath2 = "../../common/image/cardback/";  //照片路徑
+if (!file_exists($imgPath)) { 
+  echo"no"; //檢查資料夾存不存在
+  mkdir($imgPath);
+}
 
 // echo print_r($_SESSION["cart_custom"]);
 
@@ -18,14 +22,20 @@ if (!file_exists($imgPath)) {
 	$choco_url_str =str_replace('data:image/png;base64,', '', $choco_url_str);
 	$choco_url_str =str_replace(' ', '+', $choco_url_str);
 	$choco_url = base64_decode($choco_url_str);
-	
+	$fileName = date("Ymd");  //time()
+// $fileName = session_id();
+$file = $imgPath1 . $fileName . uniqid() . ".png";
+$success = file_put_contents($file, $choco_url);
 
 	
 	$card_url_str = $_REQUEST["custom_card_img"];
 	$card_url_str =str_replace('data:image/png;base64,', '', $card_url_str);
 	$card_url_str =str_replace(' ', '+', $card_url_str);
 	$card_url = base64_decode($card_url_str);
-
+	$fileName = date("Ymd");  //time()
+	// $fileName = session_id();
+	$file = $imgPath2 . $fileName . uniqid() . ".png";
+	$success = file_put_contents($file, $card_url);
 
 
 
