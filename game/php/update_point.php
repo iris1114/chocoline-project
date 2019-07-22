@@ -7,10 +7,10 @@ try {
     
     require_once("../../common/php/connect_choco.php");
     $points = $_REQUEST["points"];
-    $mem_Id = $_REQUEST["memId"];
+    $mem_Id = $_SESSION["mem_id"];
     // $mem_no = $_REQUEST("mem_no");
     
-    $sql = "update test_member set mem_point = mem_point + :points where mem_id = :mem_id  ";
+    $sql = "update member set mem_point = mem_point + :points where mem_id = :mem_id  ";
 
     $mem_points = $pdo->prepare($sql); //編譯好指令
     $mem_points->bindValue(":points", $points);//代入資料

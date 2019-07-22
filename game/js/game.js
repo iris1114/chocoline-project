@@ -287,7 +287,7 @@ function handleComplete(evt,comp) {
     }
 
     clearInterval(timer);
-    var timer = setInterval(countdown,500)
+    var timer = setInterval(countdown,1000)
     function countdown(){
         if(!isstart){
             return;
@@ -456,7 +456,8 @@ function handleComplete(evt,comp) {
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         // var data_info = "memId=" + 1& + "points=" + finalpoint.innerText;
-        var data_info = `memId=${document.querySelector("#mem_id_hide").innerText}&points=${finalpoint.innerText}`;
+        // var data_info = `memId=${document.querySelector("#mem_id_hide").innerText}&points=${finalpoint.innerText}`;
+        var data_info = `points=${finalpoint.innerText}`;
         xhr.send( data_info);
     }
 

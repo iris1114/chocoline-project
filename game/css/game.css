@@ -188,11 +188,21 @@ footer::after {
   z-index: -2;
 }
 
+* img {
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
+}
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
+  pointer-events: none;
 }
 
 .m_header {
@@ -213,10 +223,12 @@ header {
           align-items: flex-start;
   background: url("../image/headerfooter/m_navbar_bg.png") no-repeat 0 0/100% 100%;
   height: 120px;
+  pointer-events: auto;
 }
 
 .m_header .burger {
   width: 33%;
+  pointer-events: auto;
 }
 
 .m_header .burger figure {
@@ -233,6 +245,7 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  pointer-events: auto;
 }
 
 .m_header .logo h1 {
@@ -251,6 +264,7 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  pointer-events: auto;
 }
 
 .m_header .status figure {
@@ -274,6 +288,7 @@ header {
   transition: .5s;
   display: none;
   background: url("../image/headerfooter/m_menu_bg.png") repeat-x 0 0/contain;
+  pointer-events: auto;
 }
 
 .m_header .menubox li {
@@ -367,6 +382,7 @@ header {
   }
   .d_header .logo {
     width: 185px;
+    pointer-events: auto;
   }
   .d_header .logo h1 {
     display: none;
@@ -385,6 +401,7 @@ header {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    pointer-events: auto;
   }
   .d_header .menubox {
     width: 90%;
@@ -394,6 +411,7 @@ header {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    pointer-events: auto;
   }
   .d_header .menubox li {
     font-size: 18px;
@@ -427,6 +445,7 @@ header {
         -ms-flex-pack: end;
             justify-content: flex-end;
     margin-left: auto;
+    pointer-events: auto;
   }
   .d_header .status figure {
     width: 44px;
@@ -457,6 +476,7 @@ header #lightBox {
   height: 100vh;
   top: 0;
   background: rgba(66, 66, 66, 0.6);
+  pointer-events: auto;
 }
 
 header #lightBox #tableLogin {
@@ -495,15 +515,19 @@ header #lightBox #tableLogin .login_password .btnLoginCancel {
   right: 0;
 }
 
+header #lightBox #tableLogin .login_password input {
+  margin-left: 0;
+}
+
 header #lightBox #tableLogin .login_password h3 {
   font-size: 28px;
   color: #f0ecdd;
-  padding: 4% 0;
+  padding: 8% 0;
 }
 
 header #lightBox #tableLogin .login_password #mem_id {
-  width: 45%;
-  margin-bottom: 5%;
+  width: 65%;
+  margin: 0 0 5% 0;
   border-radius: 10px;
   line-height: 24px;
 }
@@ -529,8 +553,8 @@ header #lightBox #tableLogin .login_password #mem_id::placeholder {
 }
 
 header #lightBox #tableLogin .login_password #mem_psw {
-  width: 45%;
-  margin-bottom: 2%;
+  width: 65%;
+  margin: 0 0 2% 0;
   border-radius: 10px;
   line-height: 24px;
 }
@@ -561,7 +585,8 @@ header #lightBox #tableLogin .login_password #forget_password {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   display: block;
-  margin-left: 25%;
+  text-align: right;
+  margin-right: 18%;
   margin-bottom: 1%;
 }
 
@@ -584,6 +609,7 @@ header #passwordLightBox {
   height: 100vh;
   top: 0;
   background: rgba(66, 66, 66, 0.6);
+  pointer-events: auto;
 }
 
 header #passwordLightBox #getPassword {
@@ -634,7 +660,7 @@ header #passwordLightBox #getPassword .login_password p {
 }
 
 header #passwordLightBox #getPassword .login_password #mem_email {
-  width: 55%;
+  width: 65%;
   margin: 3% 0;
   border-radius: 10px;
   line-height: 24px;
@@ -661,7 +687,7 @@ header #passwordLightBox #getPassword .login_password #mem_email::placeholder {
 }
 
 header #passwordLightBox #getPassword .login_password #new_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 3%;
   border-radius: 10px;
   line-height: 24px;
@@ -688,7 +714,7 @@ header #passwordLightBox #getPassword .login_password #new_mem_psw::placeholder 
 }
 
 header #passwordLightBox #getPassword .login_password #re_new_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 3%;
   border-radius: 10px;
   line-height: 24px;
@@ -730,6 +756,7 @@ header #registerLightBox {
   height: 100vh;
   top: 0;
   background: rgba(66, 66, 66, 0.6);
+  pointer-events: auto;
 }
 
 header #registerLightBox #registered {
@@ -766,8 +793,12 @@ header #registerLightBox #registered .login_register h3 {
 
 header #registerLightBox #registered .login_register p {
   color: #f0ecdd;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 8px;
+  line-height: 16px;
+}
+
+header #registerLightBox #registered .login_register #idMsg {
+  padding-top: 8px;
 }
 
 header #registerLightBox #registered .login_register span {
@@ -779,10 +810,10 @@ header #registerLightBox #registered .login_register span {
 }
 
 header #registerLightBox #registered .login_register #f_mem_id {
-  width: 55%;
+  width: 65%;
   margin: 1% 0;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_id ::-webkit-input-placeholder {
@@ -806,10 +837,10 @@ header #registerLightBox #registered .login_register #f_mem_id::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_mem_email {
-  width: 55%;
+  width: 65%;
   margin-bottom: 1%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_email ::-webkit-input-placeholder {
@@ -833,10 +864,10 @@ header #registerLightBox #registered .login_register #f_mem_email::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 1%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_mem_psw ::-webkit-input-placeholder {
@@ -860,10 +891,10 @@ header #registerLightBox #registered .login_register #f_mem_psw::placeholder {
 }
 
 header #registerLightBox #registered .login_register #f_re_mem_psw {
-  width: 55%;
+  width: 65%;
   margin-bottom: 2%;
   border-radius: 10px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 header #registerLightBox #registered .login_register #f_re_mem_psw ::-webkit-input-placeholder {
@@ -947,10 +978,10 @@ header #registerLightBox #registered .login_register #forget_password {
   header #lightBox #tableLogin .login_password h3 {
     font-size: 36px;
     color: #f0ecdd;
-    padding: 4% 0;
+    padding: 6% 0;
   }
   header #lightBox #tableLogin .login_password #mem_id {
-    width: 45%;
+    width: 65%;
     margin-bottom: 5%;
     border-radius: 10px;
     line-height: 24px;
@@ -971,7 +1002,7 @@ header #registerLightBox #registered .login_register #forget_password {
     color: #999;
   }
   header #lightBox #tableLogin .login_password #mem_psw {
-    width: 45%;
+    width: 65%;
     margin-bottom: 2%;
     border-radius: 10px;
     line-height: 24px;
@@ -1059,7 +1090,7 @@ header #registerLightBox #registered .login_register #forget_password {
     padding: 8% 0;
   }
   header #lightBox #tableLogin .login_password #mem_id {
-    width: 45%;
+    width: 65%;
     margin-bottom: 5%;
     border-radius: 10px;
     line-height: 24px;
@@ -1080,7 +1111,7 @@ header #registerLightBox #registered .login_register #forget_password {
     color: #999;
   }
   header #lightBox #tableLogin .login_password #mem_psw {
-    width: 45%;
+    width: 65%;
     margin-bottom: 2%;
     border-radius: 10px;
     line-height: 24px;
@@ -1106,7 +1137,7 @@ header #registerLightBox #registered .login_register #forget_password {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
     display: block;
-    margin-left: 25%;
+    margin-left: 0%;
     margin-bottom: 3%;
   }
   header #lightBox #tableLogin .login_password span {
@@ -1267,15 +1298,14 @@ header #registerLightBox #registered .login_register #forget_password {
     margin: 2% 0;
   }
   header #registerLightBox #registered .login_register span {
-    width: 20%;
-    float: left;
-    margin: 8px 0 8px 30px;
+    width: 25%;
+    margin: 8px 0 8px 40px;
     text-align: left;
     color: #f0ecdd;
   }
   header #registerLightBox #registered .login_register #f_mem_id {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1294,9 +1324,17 @@ header #registerLightBox #registered .login_register #forget_password {
   header #registerLightBox #registered .login_register #f_mem_id::placeholder {
     color: #999;
   }
+  header #registerLightBox #registered .login_register #btnCheckId {
+    font-size: 8px;
+    margin: 0 5% 3% 0;
+  }
+  header #registerLightBox #registered .login_register #idMsg {
+    font-size: 8px;
+    padding-top: 0;
+  }
   header #registerLightBox #registered .login_register #f_mem_email {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1317,7 +1355,7 @@ header #registerLightBox #registered .login_register #forget_password {
   }
   header #registerLightBox #registered .login_register #f_mem_psw {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1338,7 +1376,7 @@ header #registerLightBox #registered .login_register #forget_password {
   }
   header #registerLightBox #registered .login_register #f_re_mem_psw {
     width: 55%;
-    margin-bottom: 3%;
+    margin: 0 5% 3% 0;
     border-radius: 10px;
     line-height: 24px;
   }
@@ -1915,6 +1953,12 @@ header #registerLightBox #registered .login_register #forget_password {
   border-radius: 15px;
   -webkit-box-shadow: 0 5px #ccc;
           box-shadow: 0 5px #ccc;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .btn span {
@@ -2288,6 +2332,12 @@ header #registerLightBox #registered .login_register #forget_password {
 .pagination {
   display: inline-block;
   margin: auto;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .pagination a {
@@ -2332,6 +2382,12 @@ header #registerLightBox #registered .login_register #forget_password {
   background: #F0ECDD url(../image/common/select.png) no-repeat center;
   border-radius: 5px;
   padding-left: 50px;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .select_dropdown option {
@@ -2411,6 +2467,12 @@ header #registerLightBox #registered .login_register #forget_password {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
@@ -2443,6 +2505,12 @@ header #registerLightBox #registered .login_register #forget_password {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
@@ -2469,7 +2537,7 @@ header #registerLightBox #registered .login_register #forget_password {
   background-color: #187f8f;
 }
 
-#alert_box {
+.alert_box {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -2479,7 +2547,7 @@ header #registerLightBox #registered .login_register #forget_password {
   z-index: 11;
 }
 
-#alert_box #alert_content {
+.alert_box .alert_content {
   width: 300px;
   height: 300px;
   background: url(../image/common/lightbox.png) no-repeat center;
@@ -2492,7 +2560,7 @@ header #registerLightBox #registered .login_register #forget_password {
   margin: auto;
 }
 
-#alert_box #alert_content p {
+.alert_box .alert_content p {
   font-size: 20px;
   color: #F6EED4;
   padding-top: 40%;
@@ -2501,24 +2569,24 @@ header #registerLightBox #registered .login_register #forget_password {
 }
 
 @media all and (max-width: 767px) {
-  #alert_box #alert_content p {
+  .alert_box .alert_content p {
     font-size: 18px;
   }
 }
 
 @media all and (min-width: 768px) {
-  #alert_box #alert_content p {
+  .alert_box .alert_content p {
     font-size: 24px;
   }
 }
 
 @media all and (min-width: 992px) {
-  #alert_box #alert_content p {
+  .alert_box .alert_content p {
     font-size: 28px;
   }
 }
 
-#alert_box #alert_content #alert_close {
+.alert_box .alert_content .alert_close {
   cursor: pointer;
   position: absolute;
   right: 10%;
