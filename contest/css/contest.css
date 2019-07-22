@@ -278,6 +278,24 @@ header {
   padding: 8px;
 }
 
+.m_header .status figure:nth-child(1) {
+  width: 44px;
+  height: 44px;
+}
+
+.m_header .status figure:nth-child(1) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.m_header .status figure:nth-child(1) a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 .m_header .menubox {
   width: 100%;
   height: 100vh;
@@ -454,6 +472,23 @@ header {
   .d_header .status figure a {
     display: block;
     padding: 5px;
+  }
+  .d_header .status figure:nth-child(1) {
+    width: 44px;
+    height: 44px;
+    margin: 0 10px;
+  }
+  .d_header .status figure:nth-child(1) a {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .d_header .status figure:nth-child(1) a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
   .d_header::after {
     content: "";
@@ -2985,6 +3020,7 @@ html {
 .stage_container .vote figcaption {
   width: 100%;
   text-align: center;
+  pointer-events: none;
   position: absolute;
   top: 7%;
   right: 0;

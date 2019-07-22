@@ -12,9 +12,7 @@ try {
 
     $fromnum = $show_message_num * ($nowpagetext -1);
     $many = $show_message_num * $nowpagetext;
-
     $wantpage = "limit {$fromnum},{$many}";
-
     $contest_no = $_SESSION["contest_no"];
 
     $sql = "SELECT m.mem_name , m.mem_headshot , c.comment , DATE(comment_date) comment_date , c.comment_no from comment_record c , member m where c.mem_no = m.mem_no  AND c.contest_no = :contest_no order by comment_date desc $wantpage";

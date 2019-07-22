@@ -17,7 +17,7 @@ try {
     $show_message_num = $_REQUEST["show_message_num"];
 
 
-    $sql = "SELECT m.mem_name , m.mem_headshot , c.comment , DATE(comment_date) comment_date , c.comment_no from comment_record c , member m where c.mem_no=m.mem_no  AND c.contest_no  = $contest_no order by comment_date desc limit $show_message_num";
+    $sql = "SELECT m.mem_name , m.mem_headshot , c.comment , DATE(comment_date) comment_date , c.comment_no from comment_record c , member m where c.mem_no=m.mem_no  AND c.contest_no  = $contest_no order by c.comment_date desc limit $show_message_num";
     $messages = $pdo->query($sql);
     
    

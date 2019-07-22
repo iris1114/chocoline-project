@@ -38,7 +38,7 @@ window.addEventListener("load",function(){
                         if( xhr.status == 200 ){
                             console.log(`成功`);
                             console.log(xhr.responseText);
-                            player_sort();
+                            // player_sort();
                             
                         }else{
                             alert( xhr.status );
@@ -62,7 +62,7 @@ window.addEventListener("load",function(){
                     xhr.onload=function (){
                         if( xhr.status == 200 ){
                             console.log(`成功`);
-                            player_sort();
+                            // player_sort();
                         }else{
                             alert( xhr.status );
                         }
@@ -332,7 +332,6 @@ window.addEventListener("load",function(){
                 }
                 isrest_note();
                 
-
                 voted = this;
                 voteno = voted.parentNode.querySelector(".player_contest_no").href.split("no=");
                 // console.log(voteno[1]);
@@ -343,9 +342,9 @@ window.addEventListener("load",function(){
                         // console.log(`成功`);
                         // console.log(`${xhr.responseText.replace(" ","")}`);
                         
-                        change_month();
-                        player_sort();
-                        voted.parentNode.querySelector(".votenum").innerHTML =`${xhr.responseText.replace(" ","")}票`;
+                        // change_month();
+                        // player_sort();
+                        voted.parentNode.querySelector(".votenum").innerText =`${xhr.responseText.replace(" ","")}票`;
                     }else{
                         alert( xhr.status );
                     }

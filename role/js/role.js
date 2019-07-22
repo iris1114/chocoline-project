@@ -148,10 +148,11 @@ window.addEventListener("load",function(){
     document.querySelector("#input_text").addEventListener("keydown",function(e){
         if(e.keyCode==13 || e.keyCode==108){
             e.preventDefault();
-            addmessage
+            addmessage();
         }
     })
-    document.querySelector("#submit_btn").addEventListener("click",addmessage)
+    document.querySelector("#submit_btn").addEventListener("click",addmessage);
+
     function addmessage(){            
         let input_text = document.querySelector("#input_text");
       
@@ -179,9 +180,49 @@ window.addEventListener("load",function(){
         xhr.onload=function (){
             if( xhr.status == 200 ){
                 // console.log(`成功`);
+                console.log(xhr.responseText);
+                
                 document.querySelector("#message_board_wrap").innerHTML = xhr.responseText;
                 input_text.value = "";
                 addpage();
+
+                report = document.querySelector(".report");
+                report_btn = document.querySelectorAll(".report_btn");
+                close_btn = document.querySelector(".close_btn");
+                report_submit_btn = document.querySelector("#report_submit");
+
+                close_btn.addEventListener("click",function(){
+                    report.style.display = "none";
+                    document.documentElement.style.height = "auto";
+                    document.documentElement.style.overflow = "auto";
+                    let j =0;
+                    
+                    while(j<report_btn.length){
+                        report_btn[j].style.pointerEvents = "auto";
+                        j++;
+                    }
+                })            
+            
+                for(let i=0 ; i<report_btn.length ; i++){
+                    report_btn[i].addEventListener("click",function(){
+                        
+                        whosreport = this.parentNode;
+                        console.log(whosreport);
+                        
+                        let j =0;
+                        while(j<report_btn.length){
+                            report_btn[j].style.pointerEvents = "none";
+                            j++;
+                        }
+                        report.style.display = "flex"
+                        document.documentElement.style.height = "100%";
+                        document.documentElement.style.overflow = "hidden";
+            
+                        
+                    })
+                }
+                report_submit_btn.addEventListener("click",report_sub);
+
             }else{
                 alert( xhr.status );
             }
@@ -198,6 +239,7 @@ window.addEventListener("load",function(){
     }
     
 
+    
 //頁碼
 
     let nowpage;
@@ -269,6 +311,44 @@ window.addEventListener("load",function(){
             nowpage = pagenums[i];
             nowpagetext = nowpage.innerText;
             showmessage();
+
+
+             report = document.querySelector(".report");
+                report_btn = document.querySelectorAll(".report_btn");
+                close_btn = document.querySelector(".close_btn");
+                report_submit_btn = document.querySelector("#report_submit");
+
+                close_btn.addEventListener("click",function(){
+                    report.style.display = "none";
+                    document.documentElement.style.height = "auto";
+                    document.documentElement.style.overflow = "auto";
+                    let j =0;
+                    
+                    while(j<report_btn.length){
+                        report_btn[j].style.pointerEvents = "auto";
+                        j++;
+                    }
+                })            
+            
+                for(let i=0 ; i<report_btn.length ; i++){
+                    report_btn[i].addEventListener("click",function(){
+                        
+                        whosreport = this.parentNode;
+                        console.log(whosreport);
+                        
+                        let j =0;
+                        while(j<report_btn.length){
+                            report_btn[j].style.pointerEvents = "none";
+                            j++;
+                        }
+                        report.style.display = "flex"
+                        document.documentElement.style.height = "100%";
+                        document.documentElement.style.overflow = "hidden";
+            
+                        
+                    })
+                }
+                report_submit_btn.addEventListener("click",report_sub);
         })
 
         next_btn.addEventListener("click",function(){
@@ -283,6 +363,44 @@ window.addEventListener("load",function(){
             nowpage = pagenums[i];
             nowpagetext = nowpage.innerText;
             showmessage();
+
+
+             report = document.querySelector(".report");
+                report_btn = document.querySelectorAll(".report_btn");
+                close_btn = document.querySelector(".close_btn");
+                report_submit_btn = document.querySelector("#report_submit");
+
+                close_btn.addEventListener("click",function(){
+                    report.style.display = "none";
+                    document.documentElement.style.height = "auto";
+                    document.documentElement.style.overflow = "auto";
+                    let j =0;
+                    
+                    while(j<report_btn.length){
+                        report_btn[j].style.pointerEvents = "auto";
+                        j++;
+                    }
+                })            
+            
+                for(let i=0 ; i<report_btn.length ; i++){
+                    report_btn[i].addEventListener("click",function(){
+                        
+                        whosreport = this.parentNode;
+                        console.log(whosreport);
+                        
+                        let j =0;
+                        while(j<report_btn.length){
+                            report_btn[j].style.pointerEvents = "none";
+                            j++;
+                        }
+                        report.style.display = "flex"
+                        document.documentElement.style.height = "100%";
+                        document.documentElement.style.overflow = "hidden";
+            
+                        
+                    })
+                }
+                report_submit_btn.addEventListener("click",report_sub);
         })
     }
     
@@ -293,9 +411,45 @@ window.addEventListener("load",function(){
             if( xhr.status == 200 ){
                 console.log(`成功`);
                 document.querySelector("#message_board_wrap").innerHTML = xhr.responseText;
-                select_page();
+                // select_page();
                 // pre_next_page();
-                reportfn();
+                // reportfn();
+                report = document.querySelector(".report");
+                report_btn = document.querySelectorAll(".report_btn");
+                close_btn = document.querySelector(".close_btn");
+                report_submit_btn = document.querySelector("#report_submit");
+
+                close_btn.addEventListener("click",function(){
+                    report.style.display = "none";
+                    document.documentElement.style.height = "auto";
+                    document.documentElement.style.overflow = "auto";
+                    let j =0;
+                    
+                    while(j<report_btn.length){
+                        report_btn[j].style.pointerEvents = "auto";
+                        j++;
+                    }
+                })            
+            
+                for(let i=0 ; i<report_btn.length ; i++){
+                    report_btn[i].addEventListener("click",function(){
+                        
+                        whosreport = this.parentNode;
+                        console.log(whosreport);
+                        
+                        let j =0;
+                        while(j<report_btn.length){
+                            report_btn[j].style.pointerEvents = "none";
+                            j++;
+                        }
+                        report.style.display = "flex"
+                        document.documentElement.style.height = "100%";
+                        document.documentElement.style.overflow = "hidden";
+            
+                        
+                    })
+                }
+                report_submit_btn.addEventListener("click",report_sub);
             }else{
                 alert( xhr.status );
             }
@@ -314,17 +468,15 @@ window.addEventListener("load",function(){
 
     
     //檢舉按鈕
-    let report = document.querySelector(".report");
-    let report_btn = document.querySelectorAll(".report_btn");
-    let close_btn = document.querySelector(".close_btn");
-    let whosreport = ""; //誰被檢舉
+    var report = document.querySelector(".report");
+    var report_btn = document.querySelectorAll(".report_btn");
+    var close_btn = document.querySelector(".close_btn");
+    var report_submit_btn = document.querySelector("#report_submit");
+    var whosreport = ""; //誰被檢舉
     
-    reportfn();
-    function reportfn(){
+    // reportfn();
+    // function reportfn(){
         
-        report = document.querySelector(".report");
-        report_btn = document.querySelectorAll(".report_btn");
-        close_btn = document.querySelector(".close_btn");
         
         close_btn.addEventListener("click",function(){
             report.style.display = "none";
@@ -358,7 +510,8 @@ window.addEventListener("load",function(){
             })
         }
         
-        document.querySelector("#report_submit").addEventListener("click",function(){
+        report_submit_btn.addEventListener("click",report_sub);
+        function report_sub(){
             whocall = "3";
             callBack3 = function(){
                 document.querySelector("#report_submit").click();
@@ -401,8 +554,10 @@ window.addEventListener("load",function(){
             
             var data_info = `comment_no=${whosreport.parentNode.querySelector(".message_comment_no").innerText}&report_reason=${document.querySelector("#report").value}`;
             xhr.send(data_info);
-        })
-    }
+        }
+
+
+    // }
 
     
 })

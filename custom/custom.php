@@ -1,21 +1,17 @@
 <?php
-
 session_start();
-if(!isset($_SESSION["mem_id"])){
+if(isset($_SESSION["mem_id"])!=true){
     $_SESSION["mem_id"] = null;
 }
-
-$errMsg = "";
-try {
-    require_once("../common/php/connect_choco.php");
-
-    $sql = "select * from customized_product ";
-    $products = $pdo->query($sql);
-} catch (PDOException $e) {
-    echo "錯誤 : ", $e->getMessage(), "<br>";
-    echo "行號 : ", $e->getLine(), "<br>";
+if(isset($_SESSION["mem_no"])!=true){
+    $_SESSION["mem_no"] = null;
 }
-
+if(isset($_SESSION["mem_name"])!=true){
+    $_SESSION["mem_name"] = null;
+}
+if (!isset($_SESSION["mem_headshot"])) {
+    $_SESSION["mem_headshot"] = 'icon_member.png';
+}
 ?>
 
 
@@ -44,8 +40,8 @@ try {
 <body>
   
 
-<!-- header start -->
-<header>
+!-- header start -->
+    <header>
         <div class="m_header">
             <div class="navbar">
                 <div class="burger">
@@ -58,13 +54,13 @@ try {
                         CHOCOLINE
                     </h1>
                     <a href="../index/index.php">
-                        <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                        <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                     </a>
                 </div> 
                 <div class="status">
                     <figure>
                         <a class="spanLogin" href="javascript:;">
-                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member"/>
                             <!-- icon點擊後跳出登入註冊燈箱 -->
                             <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
                             <span id="spanLoginText_mobile" style="display:none">登入</span>
@@ -99,21 +95,18 @@ try {
             </div>
             <div class="navbar">
                 <ul class="menubox">
-                    <li><a href="../custom/custom.php">客製 CHOCO</a></li>
+                    <li class="nowpage"><a href="../custom/custom.php">客製 CHOCO</a></li>
                     <li><a href="../contest/contest.php">CHOCO 選美</a></li>
-                    <li class="nowpage"><a href="../game/game.php">CHOCO 遊戲</a></li>
+                    <li><a href="../game/game.php">CHOCO 遊戲</a></li>
                     <li><a href="../store/store.php">CHOCO 商城</a></li>
                     <li><a href="../about/about.php">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
                 <figure>
                     <a class="spanLogin" href="javascript:;">
-                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]; ?>" alt="member" />
+                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
                     </a>
-                    <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                    <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"]?></span>
-                    <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"]?></span>
                     <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"]?></span>
                     <span id="spanLoginText" style="display:none">登入</span>
                 </figure>
@@ -945,8 +938,7 @@ try {
 </section>
     
 
-   <!-- footer start -->
-   <footer>
+<footer>
         <div class="connect">
             <figure>
                 <a href="javascript:;">
@@ -985,60 +977,61 @@ try {
     </footer>
 <!-- footer end -->
 
-
  <!-- robot start -->
-    <input id="robot_close_control" type="checkbox" />
+ <input id="robot_close_control" type="checkbox" />
 
-    <div id="robot" class="robot">
-        <span class="robot_prompt">快來詢問我!!</span>
-        <div class="eye1"></div>
-        <div class="eyelid1"></div>
-        <div class="eye2"></div>
-        <div class="eyelid2"></div>
+<div id="robot" class="robot">
+    <span class="robot_prompt">快來詢問我!!</span>
+    <div class="eye1"></div>
+    <div class="eyelid1"></div>
+    <div class="eye2"></div>
+    <div class="eyelid2"></div>
 
-        <label for="robot_close_control">
-        <div id="robot_close" class="robot_close"></div>
-        <div class="robot_click1"></div>
-        <div class="robot_click2"></div>
-        <div class="robot_click3"></div>
-      </label>
-        <div class="robot_content">
-            <div id="robot_message" class="message_area">
-                <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
-                <p id="message_ask_sample" class="message message_ask" style="display:none">
-                    亂入一下!
-                </p>
-            </div>
-            <div class="keyword_area">
-                <button id="robot_prev_button" class="prev_button"><i class="fas fa-angle-left"></i></button>
-                <div id="keyword_space" class="keyword_space" style="width:200px">
-                    <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;">
-                        <span class="keyword">客製商品</span>
-                        <span class="keyword">玩遊戲拿點數</span>
-                        <span class="keyword">選美比賽</span>
-                        <span class="keyword">推薦商品</span>
-                        <span class="keyword">CHOCOLINE</span>
-                    </div>
-                </div>
-                <button id="robot_next_button" class="next_button">
-            <i class="fas fa-angle-right"></i>
-          </button>
-            </div>
-            <form onsubmit="return returnR(this)" class="query_area">
-                <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
-                <input id="message_submit" type="submit" value="送出" />
-            </form>
+    <label for="robot_close_control">
+    <div id="robot_close" class="robot_close"></div>
+    <div class="robot_click1"></div>
+    <div class="robot_click2"></div>
+    <div class="robot_click3"></div>
+  </label>
+    <div class="robot_content">
+        <div id="robot_message" class="message_area">
+            <p id="message_answer_sample" class="message message_answer">有什麼需要我幫忙的嗎?</p>
+            <p id="message_ask_sample" class="message message_ask" style="display:none">
+                亂入一下!
+            </p>
         </div>
+        <div class="keyword_area">
+            <button id="robot_prev_button" class="prev_button"><i class="fas fa-angle-left"></i></button>
+            <div id="keyword_space" class="keyword_space" style="width:200px">
+                <div id="keyword_wrap" class="keyword_wrap" style="margin-left: 0px;">
+                    <span class="keyword">客製商品</span>
+                    <span class="keyword">玩遊戲拿點數</span>
+                    <span class="keyword">選美比賽</span>
+                    <span class="keyword">推薦商品</span>
+                    <span class="keyword">CHOCOLINE</span>
+                </div>
+            </div>
+            <button id="robot_next_button" class="next_button">
+        <i class="fas fa-angle-right"></i>
+      </button>
+        </div>
+        <form onsubmit="return returnR(this)" class="query_area">
+            <input id="leave_message" type="text" placeholder="請問..." autocomplete="off" />
+            <input id="message_submit" type="submit" value="送出" />
+        </form>
     </div>
-    <!-- robot end -->
+</div>
+<!-- robot end -->
 
-    
+
 <!-- <script src="../common/js/robot.js"></script>     -->
 <!--    robot新增js  -->
-    
+
 <script src="../common/js/header.js"></script>
 <script src="../common/js/login.js"></script>
-<script src="../common/robot.js"></script>
+<script src="../common/js/robot.js"></script>
+
+<!-- 請用這個連結 -->
 
 <!-- 請用這個連結 -->
 

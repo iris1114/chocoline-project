@@ -148,9 +148,6 @@ try {
                         <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
                     </a>
-                    <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                    <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"]?></span>
-                    <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"]?></span>
                     <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"]?></span>
                     <span id="spanLoginText" style="display:none">登入</span>
                 </figure>
@@ -364,10 +361,11 @@ try {
         <div class="wrap page_wrap">
             <div class="pagination">
                 <a href="javascript:;" id="prevpage_btn">❮</a>
+                <a class="pagenums" href="javascript:;">1</a>
                 <?php
-                for($i=1;$i<=$pagenums;$i++){
+                for($i=1;$i<$pagenums;$i++){
                 ?>
-                    <a class="pagenums"  href="javascript:;"><?php echo $i?></a>
+                    <a class="pagenums"  href="javascript:;"><?php echo $i + 1?></a>
                 <?php
                 }
                 ?>
