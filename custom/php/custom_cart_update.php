@@ -1,5 +1,11 @@
 <?php 
 session_start();
+$imgPath = "../image/custom_img";  //照片路徑
+if (!file_exists($imgPath)) { 
+  echo"no"; //檢查資料夾存不存在
+  mkdir($imgPath);
+}
+
 
 // echo print_r($_SESSION["cart_custom"]);
 
@@ -50,6 +56,14 @@ if(isset($_SESSION["cart_custom"])){
     
    
 
+	$fileName = date("Ymd");  //time()
+	// $fileName = session_id();
+	$file = $imgPath . $fileName . uniqid() . ".png";
+	$success = file_put_contents($file, $choco_url);
+	$fileName = date("Ymd");  //time()
+	// $fileName = session_id();
+	$file = $imgPath . $fileName . uniqid() . ".png";
+	$success = file_put_contents($file, $card_url);
 
 
 
