@@ -244,15 +244,21 @@ echo $errMsg;
                             $subTotal = $_SESSION["cart"][$i]["price"] * $_SESSION["cart"][$i]["qty"];  //計算小計
                             $total = $total + $subTotal;  //計算總計
 
-                            $amount = $total + 100;
+                            
                         }
+                        foreach ($_SESSION['cart_custom'] as $i => $value) {
+                            $subTotal = $_SESSION["cart_custom"][$i]["custom_price"] * $_SESSION["cart_custom"][$i]["custom_qty"];  //計算小計
+                            $total = $total + $subTotal;  //計算總計
 
+                           
+                        }
+                        $amount = $total + 100 -$_SESSION["mem_point"];
 
                         ?>
 
 
                         <input type="hidden" name="p_amount" value="<?php echo $amount ?>">
-                        <p>商品金額: <span>NT$ <?php echo $total ?></span></p>
+                        <p>商品金額: <span>NT$ <b class="price_count"><?php echo $total ?></b></span></p>
                         <p>運費小計: <span>NT$ 100</span></p>
                         <p>點數折抵: <span>NT$ <span id="point_output"><?php echo $_SESSION["mem_point"] ?></span></span></p>
                         <p>應付金額: <span class="amout">NT$ <?php echo $amount ?></span></p>

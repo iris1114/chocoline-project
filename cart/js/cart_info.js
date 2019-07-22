@@ -30,13 +30,15 @@ function select_year() {
 function change_point() {
     var point_output = document.getElementById('point_output');
     var mem_point = document.getElementsByName("mem_point");
+    var amount = document.getElementsByClassName("amout");
+    var price_count = document.getElementsByClassName("price_count");
 
     document.getElementById('point_input').oninput = function() {
-
+        var total_amount = parseInt(price_count[0].innerText) + 100 - this.value
         point_output.innerText = this.value;
         mem_point[0].value = this.value;
-
-        console.log(this.value);
+        amount[0].innerText = "NT$ " + total_amount;
+        console.log(total_amount);
 
     }
 }
