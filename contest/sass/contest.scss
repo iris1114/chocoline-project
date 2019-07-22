@@ -120,6 +120,7 @@ html{
         figcaption{
             width: 100%;
             text-align: center;
+            pointer-events: none;
             @include pos(7%,0,auto,0);
             p{
                 // @include font_l();
