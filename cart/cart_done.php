@@ -43,15 +43,29 @@ try {
     }
 
 
-    // $sql = "INSERT INTO `order_list`(`order_no`, `customized_product_no`, `product_qty`, `product_price`) VALUES ($order_no,:customized_product_no,:product_qty,:product_price)";
-    // $products = $pdo->prepare($sql);
-    // // for($i=0;$i<count($_SESSION["cart"]);$i++){
-    // foreach ($_SESSION['cart'] as $i => $value) {
-    //     $products->bindValue(":customized_product_no", $_SESSION["cart"][$i]["psn"]);
-    //     $products->bindValue(":product_qty", $_SESSION["cart"][$i]["qty"]);
-    //     $products->bindValue(":product_price", $_SESSION["cart"][$i]["price"]);
-    //     $products->execute();
-    // }
+    $sql = "INSERT INTO `order_list`(`order_no`, `customized_product_no`, `product_qty`, `product_price`) VALUES ($order_no,:customized_product_no,:custom_qty,:custom_price)";
+    $products = $pdo->prepare($sql);
+    // for($i=0;$i<count($_SESSION["cart"]);$i++){
+    foreach ($_SESSION['cart_custom'] as $i => $value) {
+        $products->bindValue(":customized_product_no", $_SESSION["cart_custom"][$i]["csn"]);
+        $products->bindValue(":custom_qty", $_SESSION["cart_custom"][$i]["custom_qty"]);
+        $products->bindValue(":custom_price", $_SESSION["cart_custom"][$i]["custom_price"]);
+        $products->execute();
+    }
+    $sql = "INSERT INTO `customized_product`(`customized_product_no`, `customized_product_name`, `mem_no`, `choco_img_src`, `product_price`, `card_img_src`, `choco_flavor_no`, `choco_base_no`) VALUES (:customized_product_no,:custom_name,:mem_no,:custom_img,:custom_price,:custom_card_img,:custom_flavor_no,:custom_base_no)";
+    $products = $pdo->prepare($sql);
+    // for($i=0;$i<count($_SESSION["cart"]);$i++){
+    foreach ($_SESSION['cart_custom'] as $i => $value) {
+        $products->bindValue(":customized_product_no", $_SESSION["cart_custom"][$i]["csn"]);
+        $products->bindValue(":custom_name", $_SESSION["cart_custom"][$i]["custom_name"]);
+        $products->bindValue(":mem_no", $_SESSION["mem_no"]);
+        $products->bindValue(":custom_img", $_SESSION["cart_custom"][$i]["custom_img"]);    
+        $products->bindValue(":custom_price", $_SESSION["cart_custom"][$i]["custom_price"]);
+        $products->bindValue(":custom_card_img", $_SESSION["cart_custom"][$i]["custom_card_img"]);
+        $products->bindValue(":custom_flavor_no", $_SESSION["cart_custom"][$i]["custom_flavor_no"]);
+        $products->bindValue(":custom_base_no", $_SESSION["cart_custom"][$i]["custom_base_no"]);
+        $products->execute();
+    }
 
     $sql = "UPDATE member SET mem_point = :mem_point WHERE mem_no = :mem_no";
     $products = $pdo->prepare($sql);
