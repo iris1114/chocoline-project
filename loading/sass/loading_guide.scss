@@ -1,0 +1,579 @@
+@import "../../common/sass/common.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  // outline: 1px solid #f00;
+}
+body {
+  overflow: hidden;
+  background-color: #e8c7a3;
+}
+
+.loading_sect{
+  background: url("../image/loading/loading_bg.png") center;
+  width: 100%;
+  height: 100vh;
+  padding-top: 0px;
+  .warp{
+    .rocket{
+      position: relative;
+      .rocket_img{
+        .loading_rocket{
+          position: absolute;
+          right: 0;
+          left: 0;
+          z-index: 5;
+          margin: 0 auto;
+          padding-top: 3%;
+          width: 10%;
+          max-width: 195px;
+        }
+        .loading_fire{
+          position: absolute;
+          right: 0;
+          left: 0;
+          z-index: 4;
+          margin: 0 auto;
+          padding-top: 17%;
+          width: 4%;
+          max-width: 74px;
+          // @include pos(5%,0%,0%,-5%);
+          animation:fire 1s infinite alternate;
+        }
+        @keyframes fire {
+          0%{
+              transform: scale(0.8);
+          }
+          25%{
+            transform: scale(0.9);
+          }
+          75%{
+              transform: scale(1);
+          }
+          100%{
+              transform: scale(0.9);
+          }
+        } 
+      }
+      .loading_smoke_b{
+        .rocket_c{
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          z-index: 0;
+          width: 18%;
+          max-width: 307px;
+        }
+        .rocket_b{
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 15%;
+          z-index: 0;
+          width: 6%;
+          max-width: 152px;
+        }
+        .smoke_b{
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 20%;
+          z-index: 0;
+          width: 100%;
+          max-width: 1920px;
+          animation: smoke_b 1s infinite alternate;
+        }
+        @keyframes smoke_b {
+          0%{
+              transform: scale(1.05);
+              opacity: .5;
+          }
+          100%{
+              transform: scale(1);
+              opacity: 1;
+          }
+        } 
+      }
+      .loading_smoke_w{
+        .rocket_w{
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 17%;
+          z-index: 1;
+          width: 4%;
+          max-width: 152px;
+          animation: rocket_w 1s infinite alternate;
+        }
+        @keyframes rocket_w {
+          0%{
+              transform: scale(1);
+              opacity: 0;
+          }
+          100%{
+              transform: scale(1.05);
+              opacity: 1;
+          }
+        } 
+        .smoke_w{
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 25%;
+          z-index: 1;
+          width: 100%;
+          max-width: 1920px;
+          animation: smoke_w 1s infinite alternate;
+        }
+        @keyframes smoke_w {
+          0%{
+              transform: scale(1);
+              opacity: .9;
+          }
+          100%{
+              transform: scale(1.02);
+              opacity: 1;
+          }
+        } 
+      }
+      .loading_smoke_c{
+        .smoke_c{
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 33%;
+          z-index: 2;
+          width: 105%;
+          max-width: 1920px;
+          text-align: center;
+          animation: smoke_c 1s infinite alternate;
+        }
+        @keyframes smoke_c {
+          0%{
+              transform: scale(1.05);
+              opacity: 1;
+          }
+          100%{
+              transform: scale(1);
+          }
+        } 
+      }
+    }
+    .stars{
+      position: relative;
+      .star_1{
+        .star_1_img{
+          position: fixed;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 0%;
+          z-index: 1;
+          width: 100%;
+          max-width: 1920px;
+          animation: star1 1s infinite alternate;
+        }
+        @keyframes star1 {
+          0%{
+              opacity: .5;
+          }
+          100%{
+              opacity: 1;
+          }
+        }
+      } 
+      .star_2{
+        .star_2_img{
+          position: fixed;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding-top: 0%;
+          z-index: 1;
+          width: 100%;
+          max-width: 1920px;
+          animation: star2 1s infinite alternate;
+        }       
+        @keyframes star2 {
+          0%{
+              opacity: 1;
+          }
+          100%{
+              opacity: .5;
+          }
+        } 
+      }
+    }
+    .planet{
+      .planet_w{
+        position: absolute;
+        left: 0;
+        z-index: 5;
+        margin: 0 auto;
+        padding-top: 10%;
+        width: 15%;
+        max-width: 210px;
+        animation:planet_w 100s linear ;
+        transform-origin: 50% 70% ;
+      }
+      @keyframes planet_w {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+      }
+      .planet_m{
+        position: absolute;
+        left: 8%;
+        z-index: 5;
+        margin: 0 auto;
+        padding-top: 30%;
+        width: 8%;
+        max-width: 160px;
+        animation:planet_m 300s linear ;
+        transform-origin: 50% 90% ;
+      }
+      @keyframes planet_m {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+      }
+      .planet_b{
+        position: absolute;
+        right: 0;
+        z-index: 5;
+        margin: 0 auto;
+        padding-top: 3%;
+        width: 25%;
+        max-width: 453px; 
+        animation:planet_b 200s linear ;
+        transform-origin: 50% 50% ;
+      }
+      @keyframes planet_b {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+      }
+    }
+    .front_end{
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 6;
+      // transform: translateY(0);
+      #front_end_img{        
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: top 10s;
+        z-index: 5;
+        margin: 0 auto;
+        padding-top: 20%;
+        width: 23%;
+        max-width: 385px;
+        animation: front_end 3s infinite alternate;
+        transform-origin: bottom center;
+        // top: auto;
+        // transition: top 10s linear;
+      }
+      #front_end_img.fly {
+        top: -1000px;
+        z-index: 6;
+      }
+      @keyframes front_end {
+        0%{
+            transform: rotate(3deg);
+        }
+        100%{
+            transform: rotate(-3deg);
+        }
+      } 
+    }
+    .back_end{
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 6;
+      #back_end_img{        
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: top 10s;
+        z-index: 5;
+        margin: 0 auto;
+        padding-top: 20%;
+        width: 22%;
+        max-width: 385px;
+        animation: back_end 3s infinite alternate;
+        transform-origin: bottom center;
+      }
+      #back_end_img.fly2 {
+        top: -1000px;
+        z-index: 6;
+      }
+      @keyframes back_end {
+        0%{
+            transform: rotate(-3deg);
+        }
+        100%{
+            transform: rotate(3deg);
+        }
+      } 
+    }
+    .logo{
+      width: 100%;
+      max-width: 618px;
+      margin: 0 auto;
+      position: relative;
+      .logo_img{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        width: 90%;
+        max-width: 618px;
+      }
+      .logo_c_b{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        animation: move_c_b 1s 0s 1 both;
+        img{
+          width: 115px;
+        }
+      }
+      @keyframes move_c_b {
+        0% {
+          top: -800px;
+          left: 5%;
+        }
+        100% {
+          top: 5px;
+          left: 5%;
+        }
+      }
+      .logo_h{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        animation: move_h 1s .2s 1 both;
+        img{
+          width: 100px;
+        }
+      }
+      @keyframes move_h {
+        0% {
+          top: -800px;
+          left: 18%;
+        }
+        100% {
+          top: 0px;
+          left: 18%;
+        }
+      }
+      .logo_o{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        animation: move_o 1s .4s 1 both;
+        img{
+          width: 95px;
+        }
+      }
+      @keyframes move_o {
+        0% {
+          top: -800px;
+          left: 31%;
+        }
+        100% {
+          top: 30px;
+          left: 31%;
+        }
+      }
+      .logo_c{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        animation: move_c 1s .6s 1 both;
+        img{
+          width: 83px;
+        }
+      }
+      @keyframes move_c {
+        0% {
+          top: -800px;
+          left: 43%;
+        }
+        100% {
+          top: 30px;
+          left: 43%;
+        }
+      }
+      .logo_o_1{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        animation: move_o_1 1s .8s 1 both;
+        img{
+          width: 95px;
+        }
+      }
+      @keyframes move_o_1 {
+        0% {
+          top: -800px;
+          left: 53%;
+        }
+        100% {
+          top: 30px;
+          left: 53%;
+        }
+      }
+      .logo_bear{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 75%;
+        animation: logo_bear 1s .8s 1 both;
+        img{
+          width: 180px;
+        }
+      }
+      @keyframes logo_bear {
+        0% {
+          top: -800px;
+          left: 66%;
+        }
+        100% {
+          top: 0px;
+          left: 66%;
+        }
+      }
+      .logo_l{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 99%;
+        animation: logo_l 1s 1s 1 both;
+        img{
+          width: 105px;
+        }
+      }
+      @keyframes logo_l {
+        0% {
+          top: -900px;
+          left: 32%;
+        }
+        100% {
+          top: 0px;
+          left: 32%;
+        }
+      }
+      .logo_i{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 99%;
+        animation: logo_i 1s 1.2s 1 both;
+        img{
+          width: 58px;
+        }
+      }
+      @keyframes logo_i {
+        0% {
+          top: -900px;
+          left: 45%;
+        }
+        100% {
+          top: 0px;
+          left: 45%;
+        }
+      }
+      .logo_n{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 104%;
+        animation: logo_n 1s 1.4s 1 both;
+        img{
+          width: 108px;
+        }
+      }
+      @keyframes logo_n {
+        0% {
+          top: -900px;
+          left: 51%;
+        }
+        100% {
+          top: 0px;
+          left: 51%;
+        }
+      }
+      .logo_e{        
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        margin: 0 auto;
+        padding-top: 104%;
+        animation: logo_e 1s 1.6s 1 both;
+        img{
+          width: 90px;
+        }
+      }
+      @keyframes logo_e {
+        0% {
+          top: -900px;
+          left: 65%;
+        }
+        100% {
+          top: 0px;
+          left: 65%;
+        }
+      }
+    }
+  }
+}
+
+
