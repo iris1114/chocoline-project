@@ -1,19 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION["mem_id"])!=true){
-    $_SESSION["mem_id"] = null;
-}
-if(isset($_SESSION["mem_no"])!=true){
-    $_SESSION["mem_no"] = null;
-}
-if(isset($_SESSION["mem_name"])!=true){
-    $_SESSION["mem_name"] = null;
-}
-if (!isset($_SESSION["mem_headshot"])) {
-    $_SESSION["mem_headshot"] = 'icon_member.png';
-}
-
-
 $psn = $_REQUEST["classic_product_no"];
 $errMsg = "";
 //連線資料庫
