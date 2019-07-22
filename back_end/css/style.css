@@ -1,0 +1,29 @@
+* {
+    /* outline: 1px solid red; */
+}
+
+.tab_wrap {
+    width: 1200px;
+    margin: auto;
+}
+
+.tab_wrap .add {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.tab_wrap table {
+    width: 100%;
+    margin: auto;
+    table-layout: fixed;
+}
+
+.tab_wrap table,
+th,
+tr,
+td {
+    border: 1px solid gray;
+}

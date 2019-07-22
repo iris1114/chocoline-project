@@ -1,0 +1,112 @@
+
+
+@import"../../common/sass/common.scss";
+  
+
+$color_milk: #F6EED4;
+$color_gray: #9B9B9B;
+$color_ship: #84512F;
+$color_brown: #592F13;
+$color_red: #ED1C24;
+$color_blue:#1A99AD;
+$color_deepblue:#157E8F;
+$color_orange:#EF9021;
+$color_deeporange: #c3771b;
+
+ 
+
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color:$color_ship;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+
+    a{
+        text-align: center;
+        @include font_m();
+        display: block;
+        padding: 16px;
+        color: $color_milk;
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: none;
+        color:  rgb(253, 213, 125);
+    }
+    img{
+        margin: 40px 0px;
+        width: 85%;
+    }
+    a.active {
+        background-color: rgb(253, 213, 125);
+        color: #592F13;
+      }
+   
+ 
+  }
+  
+
+   
+  .content_container {
+    margin-left: 200px;
+    background-color: $color_milk;
+  }
+
+
+  
+.tab_wrap {
+    margin-left: 200px;
+    padding: 50px 16px;
+    height: 1000px; 
+    background-color: $color_milk;
+
+    h2{
+        @include font_l();
+        padding: 0px 0px 30px 10px;
+    }
+    
+}
+
+.tab_wrap .add {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.tab_wrap table {
+    width: 100%;
+    margin: auto;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.tab_wrap table,
+tr,
+td {
+    border: 1px solid #592F13;
+    
+
+}
+th{
+    padding: 15px;
+    border: 1px solid #592F13;
+
+}
+
+
+.btn{
+    background-color:$color_deepblue ;
+    @include font_s();
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.input_revise{
+    width: 85%;
+}
