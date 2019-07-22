@@ -450,6 +450,7 @@ body {
                             width: 100%;
                             display: flex;
                             flex-wrap: wrap;
+                            justify-content: space-around;
                             padding: 50px 0 10px 0;
                             .product_item {
                                 display: flex;
@@ -606,7 +607,7 @@ body {
                                             pointer-events: none;
                                         }
                                         .heart_clicked {
-                                            display: none;
+                                            // display: none;
                                             color: $color_milk;
                                             pointer-events: none;
                                         }
@@ -1160,6 +1161,7 @@ body {
                             width: 100%;
                             display: flex;
                             flex-wrap: wrap;
+                            justify-content: space-around;
                             padding: 50px 0 10px 0;
                             // padding: 700px 0 10px 0;
                             .product_item {
@@ -1311,7 +1313,7 @@ body {
                                         color: $color_milk;
                                     }
                                     .heart_clicked {
-                                        display: none;
+                                        // display: none;
                                         color: $color_milk;
                                     }
                                 }
@@ -1830,6 +1832,7 @@ body {
                             width: 100%;
                             display: flex;
                             flex-wrap: wrap;
+                            justify-content: space-around;
                             padding: 50px 0 10px 0;
                             .product_item {
                                 display: flex;
@@ -1979,7 +1982,7 @@ body {
                                         color: $color_milk;
                                     }
                                     .heart_clicked {
-                                        display: none;
+                                        // display: none;
                                         color: $color_milk;
                                     }
                                 }
@@ -2557,6 +2560,7 @@ body {
                             width: 100%;
                             display: flex;
                             flex-wrap: wrap;
+                            justify-content: space-around;
                             padding: 50px 20px 20px 30px;
                             .product_item {
                                 display: flex;
@@ -2708,7 +2712,7 @@ body {
                                         }
                                         .heart_clicked {
                                             color: $color_milk;
-                                            display: none;
+                                            // display: none;
                                             pointer-events: none;
                                         }
                                     }

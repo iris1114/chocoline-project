@@ -73,7 +73,7 @@ window.addEventListener("load", function() {
         collect_btn[i].addEventListener("click", function() {
             var heart_clicked = this.getElementsByClassName("heart_clicked")[0];
             var heart_unclick = this.getElementsByClassName("heart_unclick")[0];
-
+            console.log(this.parentNode.parentNode);
             if (heart_clicked.style.display != "inline") {
                 heart_clicked.style.display = "inline";
                 heart_unclick.style.display = "none";

@@ -427,6 +427,14 @@ function collect_product() {
 
                 // 將商品加入我的收藏
                 let xhr = new XMLHttpRequest();
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+
+                        console.log("123");
+                    } else {
+                        alert(xhr.status);
+                    }
+                }
 
                 let url = "php/add_favorite.php";
 
@@ -627,7 +635,7 @@ function show_select_result() {
             <input type="hidden" name="p_no" value="${select_result[i]["classic_product_no"]}">
             <input type="hidden" name="p_name" value="${select_result[i]["classic_product_name"]}">
             <input type="hidden" name="p_price" value="${select_result[i]["product_price"]}">
-            <input type="hidden" name="p_img" value="image/store/${select_result[i]["product_img_src"]}">
+            <input type="hidden" name="p_img" value="../store/image/store/${select_result[i]["product_img_src"]}">
             
             <div class="product_item col_lg_5">
                 <div class="product_pic_content">
