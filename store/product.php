@@ -1,4 +1,5 @@
 <?php
+session_start();
 $psn = $_REQUEST["classic_product_no"];
 $errMsg = "";
 //連線資料庫
@@ -8,11 +9,37 @@ try {
     $products = $pdo->prepare($sql);
     $products->bindValue(":psn", $psn);
     $products->execute();
+
+
+
+    $sql2 = "select * from favorites where mem_no=:mem_no ";
+    // $sql = "select * from favorites where mem_no=2 ";
+
+    $favorite = $pdo->prepare($sql2);
+    $favorite->bindValue(":mem_no", $_SESSION["mem_no"]);
+    $favorite->execute();
+    $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
+
+    $favorite_arr = array();
+    for ($i = 0; $i < count($favorite_rows); $i++) {
+        array_push($favorite_arr, $favorite_rows[$i]["classic_product_no"]);
+    }
+
+
+
+
+
+
 } catch (PDOException $e) {
-    $errMsg .= "錯誤原因 : " . $e->getMessage() . "<br>";
-    $errMsg .= "錯誤行號 : " . $e->getLine() . "<br>";
+    echo $errMsg .= "錯誤原因 : " . $e->getMessage() . "<br>";
+    echo $errMsg .= "錯誤行號 : " . $e->getLine() . "<br>";
 }
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -241,7 +268,7 @@ try {
                         <p class="price">價格 NT$<?php echo $prodRow->product_price; ?>元</p>
                         <form>
 
-
+                            <input type="hidden" name="mem_no" value="<?php echo $_SESSION["mem_no"] ?>">
                             <input type="hidden" name="p_no" value="<?php echo $prodRow->classic_product_no ?>">
                             <input type="hidden" name="p_name" value="<?php echo $prodRow->classic_product_name ?>">
                             <input type="hidden" name="p_price" value="<?php echo $prodRow->product_price ?>">
@@ -257,8 +284,15 @@ try {
 
                                 <a href="javascript:;" class="btn cyan_m classic_product_add_cart_btn"><span>加入購物車</span></a>
                                 <a href="../cart/cart.php" class="btn orange_m classic_product_dir_add_cart_btn"><span>直接購買</span></a>
-                                <a href="javascript:;" class="collect_btn btn cyan_m"><span><i class="heart_unclick far fa-heart"></i>
-                                        <i class="heart_clicked fas fa-heart"></i>
+                                <a href="javascript:;" class="collect_btn btn cyan_m"><span> <?php
+
+                                    if (in_array($prodRow->classic_product_no, $favorite_arr)) {
+
+                                        echo '<i class="heart_unclick far fa-heart" style="display:none"></i><i class="heart_clicked fas fa-heart"></i>';
+                                    } else {
+                                        echo '<i class="heart_unclick far fa-heart"></i><i class="heart_clicked fas fa-heart" style="display:none"></i>';
+                                    }
+                                ?>
                                         收藏</span></a>
                             </div>
                         </form>

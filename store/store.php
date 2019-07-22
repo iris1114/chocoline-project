@@ -9,23 +9,31 @@ $errMsg = "";
 try {
     require_once("../common/php/connect_choco.php");
 
-    $sql = "select * from classic_product ORDER BY `classic_product`.`product_sold` DESC";
+    $sql = "select * from classic_product where winner=0 ORDER BY `classic_product`.`product_sold` DESC";
 
     $products = $pdo->query($sql);
 
 
 
+    $sql1 ="select * from classic_product where winner=1 ORDER BY classic_product.classic_product_no DESC"; 
+    $winner = $pdo->prepare($sql1);
+    $winner->execute();
+    $winner_rows = $winner->fetchAll(PDO::FETCH_ASSOC);
 
-    $sql = "select * from favorites where mem_no=:mem_no ";
+    
+    $sql2 = "select * from favorites where mem_no=:mem_no ";
+    // $sql = "select * from favorites where mem_no=2 ";
 
-    $favorite = $pdo->prepare($sql);
-    $favorite->bindValue(":mem_no",$_SESSION["mem_no"]);
-    $products->execute();
+    $favorite = $pdo->prepare($sql2);
+    $favorite->bindValue(":mem_no", $_SESSION["mem_no"]);
+    $favorite->execute();
     $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
+
     $favorite_arr = array();
     for ($i = 0; $i < count($favorite_rows); $i++) {
         array_push($favorite_arr, $favorite_rows[$i]["classic_product_no"]);
     }
+
     // $sql2="SELECT * FROM `classic_product` ORDER BY `classic_product`.`product_sold` DESC";
     // $popular_products = $pdo->query($sql2);
 
@@ -39,9 +47,9 @@ try {
 ?>
 
 <script>
-favorite_arr= new Array();
-favorite_arr = <?php echo json_encode($favorite_arr) ?>;
-
+    favorite_arr = new Array();
+    favorite_arr = <?php echo json_encode($favorite_arr) ?>;
+    console.log(favorite_arr);
 </script>
 
 
@@ -452,17 +460,21 @@ favorite_arr = <?php echo json_encode($favorite_arr) ?>;
                             <button id="select_button" class="btn select_button">篩選器</button>
                             <div class="order_by">
                                 <!-- <span>排列順序:</span> -->
-                                <select name="" class="select_dropdown">
+                                <!-- <select name="" class="select_dropdown">
                                     <option value="最新商品">最新商品</option>
                                     <option value="熱門排行">熱門排行</option>
-                                </select>
+                                </select> -->
                             </div>
-                            <div class="search">
+                            <!-- <div class="search">
                                 <input type="text" placeholder="輸入你想搜尋的商品" />
                                 <button><i class="fas fa-search"></i></button>
-                            </div>
+                            </div> -->
                         </div>
                         <div id="product_list" class="product_list">
+
+               
+
+
                             <!-- product item start -->
                             <div class="product_item col_lg_5">
                                 <div class="special_tag">
@@ -472,12 +484,14 @@ favorite_arr = <?php echo json_encode($favorite_arr) ?>;
 
                                 <div class="product_pic_content">
                                     <div class="product_pic">
-                                        <img src="image/store/bear.png" />
+                                    <a href="product.php?classic_product_no=<?php echo $winner_rows[0]['classic_product_no']; ?>">
+                                                    <img src="image/store/<?php echo $winner_rows[0]['product_img_src']; ?>" />
+                                                </a>
                                     </div>
                                     <div class="product_content">
-                                        <h2>快樂小妖精</h2>
-                                        <p class="sold_qty">已售出 <span>1765</span></p>
-                                        <p class="price">NT$350元</p>
+                                        <h2><?php echo $winner_rows[0]["classic_product_name"] ?></h2>
+                                        <p class="sold_qty">已售出 <span><?php echo $winner_rows[0]["product_sold"] ?></span></p>
+                                        <p class="price">NT$<?php echo $winner_rows[0]["product_price"] ?>元</p>
                                         <div class="qty_buttons">
                                             <input class="minus" type="button" value="-" /><input class="qty" type="text" value="1" min="1" max="10" step="1" name="qty" /><input class="plus" type="button" value="+" />
                                         </div>
@@ -486,15 +500,23 @@ favorite_arr = <?php echo json_encode($favorite_arr) ?>;
                                 </div>
                                 <div class="product_button">
                                     <a href="javascript:;" class="collect_btn btn cyan_m"><span>
-                                            <i class="heart_unclick far fa-heart"></i>
-                                            <i class="heart_clicked fas fa-heart"></i>
+                                            <?php
+                                            if (in_array($winner_rows[0]["classic_product_no"], $favorite_arr)) {
+
+                                                echo '<i class="heart_unclick far fa-heart" style="display:none"></i><i class="heart_clicked fas fa-heart"></i>';
+                                            } else {
+                                                echo '<i class="heart_unclick far fa-heart"></i><i class="heart_clicked fas fa-heart" style="display:none"></i>';
+                                            }
+
+                                            ?>
 
                                             收藏
                                         </span>
                                     </a>
-                                    <a href="javascript:;" class="btn orange_m"><span>加入購物車</span></a>
+                                    <a href="javascript:;" class="btn orange_m classic_product_add_cart_btn"><span>加入購物車</span></a>
                                 </div>
                             </div>
+                
                             <!-- product item end -->
 
 
@@ -516,7 +538,7 @@ favorite_arr = <?php echo json_encode($favorite_arr) ?>;
                                     <input type="hidden" name="p_name" value="<?php echo $product_rows[$i]['classic_product_name']; ?>">
                                     <input type="hidden" name="p_price" value="<?php echo $product_rows[$i]['product_price']; ?>">
                                     <input type="hidden" name="p_img" value="../store/image/store/<?php echo $product_rows[$i]['product_img_src']; ?>">
-                                    <input type="hidden" name="mem_no" value="4">
+                                    <input type="hidden" name="mem_no" value="<?php echo $_SESSION["mem_no"] ?>">
 
                                     <!-- product item start -->
                                     <div class="product_item col_lg_5">
