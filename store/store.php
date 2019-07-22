@@ -1,9 +1,20 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["mem_id"])) {
+if(isset($_SESSION["mem_id"])!=true){
     $_SESSION["mem_id"] = null;
 }
+if(isset($_SESSION["mem_no"])!=true){
+    $_SESSION["mem_no"] = null;
+}
+if(isset($_SESSION["mem_name"])!=true){
+    $_SESSION["mem_name"] = null;
+}
+if (!isset($_SESSION["mem_headshot"])) {
+    $_SESSION["mem_headshot"] = 'icon_member.png';
+}
+
+
 
 $errMsg = "";
 try {
@@ -123,9 +134,9 @@ try {
             <div class="navbar">
                 <ul class="menubox">
                     <li><a href="../custom/custom.php">客製 CHOCO</a></li>
-                    <li class="nowpage"><a href="../contest/contest.php">CHOCO 選美</a></li>
+                    <li><a href="../contest/contest.php">CHOCO 選美</a></li>
                     <li><a href="../game/game.php">CHOCO 遊戲</a></li>
-                    <li><a href="../store/store.php">CHOCO 商城</a></li>
+                    <li class="nowpage"><a href="../store/store.php">CHOCO 商城</a></li>
                     <li><a href="../about/about.php">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
