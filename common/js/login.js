@@ -1,7 +1,7 @@
 function $id(id) {
   return document.getElementById(id);
 }
-
+let whocall = "";
 let islogin = false;
 
 function showLoginForm() {
@@ -20,13 +20,6 @@ function showLoginForm() {
   }
 } 
 
-var mem_id_hide = "";
-var mem_id_hide_mobile = "";
-var split_info = "";
-var split_id = "";
-var split_no = ""; 
-var split_name = "";
-var split_head = "";
 function sendForm() {
   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上
   //..........................................................
@@ -38,16 +31,16 @@ function sendForm() {
       } else {//登入成功
         alert("登入成功！");
         split_info = xhr.responseText.split(" ");
-        split_id = split_info[0].split(":");
-        split_no = split_info[1].split(":");
-        split_name = split_info[2].split(":");
+        // split_id = split_info[0].split(":");
+        // split_no = split_info[1].split(":");
+        // split_name = split_info[2].split(":");
         split_head = split_info[3].split(":");
 
-        $id("mem_id_hide").innerHTML = split_id[1];
-        $id("mem_no_hide").innerHTML = split_no[1];
-        $id("mem_name_hide").innerHTML = split_name[1];
+        // $id("mem_id_hide").innerHTML = split_id[1];
+        // $id("mem_no_hide").innerHTML = split_no[1];
+        // $id("mem_name_hide").innerHTML = split_name[1];
         $id("mem_headshot_hide").innerHTML = split_head[1];
-        $id("mem_id_hide_mobile").innerHTML = split_id[1];
+        // $id("mem_id_hide_mobile").innerHTML = split_id[1];
         // $id("mem_id_hide").innerHTML = xhr.responseText;
         //將登入表單上的資料清空，並隱藏燈箱
         $id('lightBox').style.display = 'none';
@@ -69,7 +62,7 @@ function sendForm() {
           callBack1();
         }else if(whocall == "2"){
           callBack2();
-        }else if(whocall == ""){
+        }else if(whocall == "3"){
           callBack3();
         }
         // if( callBack ){
@@ -242,8 +235,15 @@ xhr.onload = function(){
     document.getElementsByClassName("spanLogin")[1].href = "../member/member.php";
   }
 }
-xhr.open("get", "../common/php/getLoginInfo.php",true);
-xhr.send(null);
+var url = "../common/php/getLoginInfo.php";
+xhr.open("post", url, true);
+xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+//送出資料
+var data_info = `innerwidth=${window.innerWidth}`;
+xhr.send( data_info);
+
+// xhr.open("get", `../common/php/getLoginInfo.php?innerwidth=${window.innerWidth}`,true);
+// xhr.send(null);
 
 //===設定spanLogin.onclick 事件處理程序是 showLoginForm
 spanLogin = document.getElementsByClassName("spanLogin" );

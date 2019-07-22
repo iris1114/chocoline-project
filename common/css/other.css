@@ -93,6 +93,12 @@ a {
   border-radius: 15px;
   -webkit-box-shadow: 0 5px #ccc;
           box-shadow: 0 5px #ccc;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .btn span {
@@ -466,6 +472,12 @@ a {
 .pagination {
   display: inline-block;
   margin: auto;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .pagination a {
@@ -510,6 +522,12 @@ a {
   background: #F0ECDD url(../image/common/select.png) no-repeat center;
   border-radius: 5px;
   padding-left: 50px;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .select_dropdown option {
@@ -589,6 +607,12 @@ a {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
@@ -621,6 +645,12 @@ a {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }

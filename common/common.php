@@ -109,9 +109,6 @@ if (!isset($_SESSION["mem_headshot"])) {
                         <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member" />
                         <!-- icon點擊後跳出登入註冊燈箱 -->
                     </a>
-                    <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
-                    <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"]?></span>
-                    <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"]?></span>
                     <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"]?></span>
                     <span id="spanLoginText" style="display:none">登入</span>
                 </figure>

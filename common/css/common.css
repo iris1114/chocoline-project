@@ -188,6 +188,15 @@ footer::after {
   z-index: -2;
 }
 
+* img {
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -267,6 +276,24 @@ header {
 .m_header .status figure a {
   display: block;
   padding: 8px;
+}
+
+.m_header .status figure:nth-child(1) {
+  width: 44px;
+  height: 44px;
+}
+
+.m_header .status figure:nth-child(1) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.m_header .status figure:nth-child(1) a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .m_header .menubox {
@@ -445,6 +472,23 @@ header {
   .d_header .status figure a {
     display: block;
     padding: 5px;
+  }
+  .d_header .status figure:nth-child(1) {
+    width: 44px;
+    height: 44px;
+    margin: 0 10px;
+  }
+  .d_header .status figure:nth-child(1) a {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .d_header .status figure:nth-child(1) a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
   .d_header::after {
     content: "";
@@ -1944,6 +1988,12 @@ header #registerLightBox #registered .login_register #forget_password {
   border-radius: 15px;
   -webkit-box-shadow: 0 5px #ccc;
           box-shadow: 0 5px #ccc;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .btn span {
@@ -2317,6 +2367,12 @@ header #registerLightBox #registered .login_register #forget_password {
 .pagination {
   display: inline-block;
   margin: auto;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .pagination a {
@@ -2361,6 +2417,12 @@ header #registerLightBox #registered .login_register #forget_password {
   background: #F0ECDD url(../image/common/select.png) no-repeat center;
   border-radius: 5px;
   padding-left: 50px;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
 }
 
 .select_dropdown option {
@@ -2440,6 +2502,12 @@ header #registerLightBox #registered .login_register #forget_password {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
@@ -2472,6 +2540,12 @@ header #registerLightBox #registered .login_register #forget_password {
   color: #F6EED4;
   border-radius: 5px;
   cursor: pointer;
+  -ms-user-select: none;
+      user-select: none;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for Chrome */
   font-family: "Noto Sans TC", sans-serif;
   line-height: normal;
 }
