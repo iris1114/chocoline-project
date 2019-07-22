@@ -3322,6 +3322,7 @@ section {
 
 body {
   overflow-x: hidden;
+  background-color: #fff4e2;
 }
 
 @media (max-width: 767px) {
@@ -7133,16 +7134,6 @@ body {
   }
   .card .card_wrap .card_custom .controls .sliders {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .card .card_wrap .card_custom .controls .sliders p {
     margin: 8px 0;
@@ -7160,6 +7151,9 @@ body {
     border-radius: 50%;
     background-color: #1c99ae;
     cursor: move;
+  }
+  .card .card_wrap .card_custom .controls .sliders #brushShapeForm {
+    width: 100%;
   }
   .card .card_wrap .card_custom .controls .sliders input {
     position: relative;
