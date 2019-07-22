@@ -445,9 +445,9 @@ try {
             <div class="for_name">
 
               <h3 id="thrid">給CHOCO星人名字</h3>
-              <form action="post">
-              <input type="text" name="c_name" id="" class="name_text" placeholder="請給CHOCO星人名字" />
-           </form> 
+             
+              <input type="text" name="" id="choco_name" class="name_text" placeholder="請給CHOCO星人名字" />
+       
           </div>
 
           </div>
@@ -800,12 +800,12 @@ try {
     <img src="image/custom/price.png" alt="price" />
     <h4>TOTAL</h4>
     <p id="sub_price">
-      NT$350
+      NT$<span id= "final_price">350</span> 
     </p>
   </div>
   <div class="final_btn">
   <div class="next_button">
-         <button type="submit" class="btn cyan_s " onclick="aa()">加入購物車</button>
+         <button type="submit" class="btn cyan_s add_cart_btn" onclick="aa()">加入購物車</button>
       </div>
   </div>
  
@@ -888,8 +888,10 @@ try {
         <div class="total_price">
     <img src="image/custom/price.png" alt="price" />
     <h4>TOTAL</h4>
+
     <p id="sub_price">
-      NT$350
+    
+      NT$ <span id= "final_price">350</span> 
     </p>
   </div>
   <div class="next_button">
@@ -897,10 +899,17 @@ try {
       </div>
       </div>
 </div>
+<!-- form1 -->
 
-<form method="post" accept-charset="utf-8" id="form1">
+<form method="post" accept-charset="utf-8" id="my_form">
+
 <input name="final_choco" id='final_choco' type="hidden"/>
+<!-- <input type="text"> -->
+
 </form>
+
+
+
 <script>
  var acc_num = 0;
         $(document).ready(function () {
@@ -1829,17 +1838,80 @@ try {
            
          // --------------------------next_page--------------------------
 
+        // var choco_base_no = 0;
+        // var choco_flavor_no = 0;
 
          document.getElementById("next_page3").onclick = function () {
-          var sub_price = document.getElementById("sub_price");
+          var choco_base_no = 0;
+        var choco_flavor_no = 0;
+        
+          var sub_price = document.getElementById("final_price");
               
-          sub_price.innerHTML = "NT$"+(price+100) ;
+          sub_price.innerHTML = (price+100) ;
+
+         var kkk= $("#cho_pos").attr("src");
+         var  k1 = kkk.split("_");
+         var cho_base = k1[1];
+         console.log("cho_base",cho_base);
+         var cho_flavor = k1[2].replace(".png" , "");
+        //  console.log("cho_flavor",cho_flavor);
+          if (cho_base =="w"){
+            choco_base_no = 0;
+            choco_base_no = 1;
+            // console.log("choco_base_no",choco_base_no);
+          }else if(cho_base == "d"){
+            choco_base_no = 0;
+          // console.log("yes");
+          choco_base_no = 2;
+          // console.log("choco_base_no",choco_base_no);
+         }else if(cho_base == "m"){
+            choco_base_no = 0;
+          // console.log("yes");
+          choco_base_no = 3;
+          // console.log("choco_base_no",choco_base_no);
+         }
+          
+
+
+         if(cho_flavor == "b"){
+          choco_flavor_no = 0;
+          choco_flavor_no = 1;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         }
+         else if(cho_flavor == "g"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 2;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         } else if(cho_flavor == "h"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 3;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         } else if(cho_flavor == "o"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 4;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         } else if(cho_flavor == "s"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 5;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         }
+         console.log("choco_flavor_no",choco_flavor_no);
+         console.log("choco_base_no",choco_base_no)
+         
+
+       
 
 };
 
 // -----------------------next_page--------------------------
 
       });
+
+    
 
     </script>
 
@@ -1895,14 +1967,18 @@ $(".controls").on("click", "li", function() {
   // cache current color
   color = $(this).css("background-color");
 });
+
+
+
 document.getElementById('SaveCnv').addEventListener("click",function(){
             // window.open(cnv[0].toDataURL('image/png'));
-            var gh = (cnv[0].toDataURL('png'));
-
-            var a = document.createElement('a');
-            a.href = gh;
-            a.download = 'image.png';
-            a.click();
+            card_url = (cnv[0].toDataURL('png'));
+          
+            // console.log("card_url",card_url);
+            // var a = document.createElement('a');
+            // a.href = gh;
+            // a.download = 'image.png';
+            // a.click();
         });
 
 // when new color is pressed
@@ -2019,10 +2095,7 @@ colorPicker.on("color:change", function(){
   $("#newColor").css("background-color",  selected);
 
 });	
-  </script>
-
-<script>
-function loadImage1(){
+ function loadImage1(){
 
   var img = new Image();
   img.onload = function(){
@@ -2093,14 +2166,15 @@ function clean(){
   ctx.clearRect(449, 531, ctx.width, ctx.height);
 }
 
-</script>
-  
-    <script>
+
 function uploadImage(){
   var canvas = document.getElementById("thecanvas");
-  var dataURL = canvas.toDataURL("image/png");
-  document.getElementById('final_choco').value = dataURL;
-  var formData = new FormData(document.getElementById("form1"));
+  var choco_url = canvas.toDataURL("image/png");
+  document.getElementById('final_choco').value = choco_url;
+
+  console.log("choco_URL",choco_url);
+
+  var formData = new FormData(document.getElementById("my_form"));
   
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){
@@ -2119,6 +2193,31 @@ function uploadImage(){
   xhr.open('POST', 'canvas_load_save.php', true);
   xhr.send(formData);
 }
+// function uploadImage(){
+//   var canvas = document.getElementById("thecanvas");
+//   var dataURL = canvas.toDataURL("image/png");
+//   document.getElementById('final_choco').value = dataURL;
+
+//   console.log("dataURL",dataURL);
+//   var formData = new FormData(document.getElementById("my_form"));
+  
+//   var xhr = new XMLHttpRequest();
+//   xhr.onload = function(){
+//     if( xhr.status == 200){
+//       if(xhr.responseText == "error"){
+//         alert("Error");
+//       }else{
+//         alert('Succesfully uploaded');  
+//         console.log(xhr.responseText);
+//       }
+//     }else{
+//       alert(xhr.status)
+//     }
+//   }
+  
+//   xhr.open('POST', 'canvas_load_save.php', true);
+//   xhr.send(formData);
+// }
 
 function aa() {
 
