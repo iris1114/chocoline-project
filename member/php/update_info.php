@@ -51,7 +51,7 @@ if (isset($_POST['updated_it'])) {
                 $_SESSION["mem_tel"] = $mem_tel;
                 $_SESSION["mem_credit"] = $mem_credit;
                 $_SESSION["mem_address"] = $mem_address;
-                $_SESSION["mem_headshot"] = $mem_headshot;
+                $_SESSION["mem_headshot"] = $file_name;
 
                 $statement->execute();
                 header("Location:../member.php");

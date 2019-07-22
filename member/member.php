@@ -651,7 +651,7 @@ echo $errMsg;
       $('#updated_it').show();
 
       document.getElementById('mem_name').readOnly = false;
-      document.getElementById('mem_email').readOnly = false;
+      document.getElementByName('mem_email').readOnly = false;
       document.getElementById('mem_tel').readOnly = false;
       document.getElementById('mem_birth').readOnly = false;
       document.getElementById('mem_credit').readOnly = false;
