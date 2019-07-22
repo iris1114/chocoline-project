@@ -4,11 +4,12 @@ $errMsg = "";
 try {
     
     require_once("../../common/php/connect_choco.php");
-    $memId = $_REQUEST["memId"];
+//     $memId = $_REQUEST["memId"];
 
     $sql = "SELECT * FROM customized_product cp, member m WHERE cp.mem_no = m.mem_no AND m.mem_id = :mem_id";
     $mychocos = $pdo->prepare($sql); //編譯好指令
-    $mychocos->bindValue(":mem_id", $memId);//代入資料
+    $mychocos->bindValue(":mem_id", $_SESSION{"mem_id"});//代入資料
+//     $mychocos->bindValue(":mem_id", $memId);//代入資料
     $mychocos->execute();
     
 

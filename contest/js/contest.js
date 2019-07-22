@@ -15,30 +15,30 @@ window.addEventListener("load",function(){
                 whocall = "2";
                 who_collect = this;
                 callBack2 = function(){
-                    player_sort();
                     who_collect.click();
                 }
                 showLoginForm();
                 if(!islogin){
                     return;
                 }
-
+                
                 let wlike = this.querySelector(".wlike"),
-                    plike = this.querySelector(".plike"),
-                    fig   = this.querySelector("figcaption");
+                plike = this.querySelector(".plike"),
+                fig   = this.querySelector("figcaption");
                 let contest_no = this.parentNode.querySelector(".player_contest_no").href.split("no=");
                 
                 if(plike.style.display == "none"){ 
                     wlike.style.display = "none";  //加入收藏
                     plike.style.display = "";
                     fig.style.color = "#F6EED4";
-
+                    
                     // 將商品加入我的收藏
                     let xhr = new XMLHttpRequest();
                     xhr.onload=function (){
                         if( xhr.status == 200 ){
                             console.log(`成功`);
                             console.log(xhr.responseText);
+                            player_sort();
                             
                         }else{
                             alert( xhr.status );
@@ -48,7 +48,8 @@ window.addEventListener("load",function(){
                     let url = "php/add_favorite.php";
                     xhr.open("post", url, false);
                     xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-                    var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}&contest_no=${contest_no[1]}`;
+                    var data_info = `contest_no=${contest_no[1]}`;
+                    // var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}&contest_no=${contest_no[1]}`;
                     xhr.send(data_info);
 
                 }else{
@@ -61,6 +62,7 @@ window.addEventListener("load",function(){
                     xhr.onload=function (){
                         if( xhr.status == 200 ){
                             console.log(`成功`);
+                            player_sort();
                         }else{
                             alert( xhr.status );
                         }
@@ -69,7 +71,8 @@ window.addEventListener("load",function(){
                     let url = "php/delete_favorite.php";
                     xhr.open("post", url, false);
                     xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-                    var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}&contest_no=${contest_no[1]}`;
+                    var data_info = `contest_no=${contest_no[1]}`;
+                    // var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}&contest_no=${contest_no[1]}`;
                     xhr.send(data_info);
 
                 }
@@ -148,7 +151,6 @@ window.addEventListener("load",function(){
     
 
 
-// -----------ajax-----------------------------------------------------
 
 //stage各月分排名    
     let search_month = document.querySelector(".search_month");
@@ -166,7 +168,7 @@ window.addEventListener("load",function(){
             if( xhr.status == 200 ){
                 // console.log(`成功`);
                 stage.innerHTML = xhr.responseText;
-                tovote();
+                // tovote();
             }else{
                 alert( xhr.status );
             }
@@ -186,7 +188,6 @@ window.addEventListener("load",function(){
     joingame.addEventListener("click",function(){
         whocall = "0";
         callBack = function(){
-            player_sort();
             joingame.click();
         }
         showLoginForm();
@@ -201,6 +202,7 @@ window.addEventListener("load",function(){
                 myCHOCO.style.display="block";
                 // console.log(xhr.responseText);
                 
+                player_sort();
                 if(xhr.responseText == " "){
                     document.querySelector(".CHOCO_list").style="width: 100%;display: flex;justify-content: center;align-items: center;"
                     document.querySelector(".CHOCO_list").innerHTML = `<p>尚未擁有CHOCO星人，快去客製吧!<p>`
@@ -219,7 +221,8 @@ window.addEventListener("load",function(){
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         
-        var data_info = `memId=${document.querySelector("#mem_id_hide").innerText}`;
+        var data_info = ``;
+        // var data_info = `memId=${document.querySelector("#mem_id_hide").innerText}`;
         xhr.send(data_info);
     })
 
@@ -248,7 +251,8 @@ window.addEventListener("load",function(){
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         
-        var data_info = `choco_no=${document.querySelector(".CHOCO_no").innerText}&player_sort=${document.querySelector(".player_sort").value}&mem_id=${document.querySelector("#mem_id_hide").innerText}&mem_no=${document.querySelector("#mem_no_hide").innerText}`;
+        var data_info = `choco_no=${document.querySelector(".CHOCO_no").innerText}&player_sort=${document.querySelector(".player_sort").value}`;
+        // var data_info = `choco_no=${document.querySelector(".CHOCO_no").innerText}&player_sort=${document.querySelector(".player_sort").value}&mem_id=${document.querySelector("#mem_id_hide").innerText}&mem_no=${document.querySelector("#mem_no_hide").innerText}`;
         xhr.send(data_info);
     
     })
@@ -274,7 +278,8 @@ window.addEventListener("load",function(){
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         
-        var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}`;
+        var data_info = ``;
+        // var data_info = `mem_no=${document.querySelector("#mem_no_hide").innerText}`;
         xhr.send(data_info);
     }
 
@@ -301,7 +306,8 @@ window.addEventListener("load",function(){
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         //送出資料
         
-        var data_info = `nowpage=${nowpagetext}&player_sort=${document.querySelector(".player_sort").value}&mem_no=${document.querySelector("#mem_no_hide").innerText}`;
+        var data_info = `nowpage=${nowpagetext}&player_sort=${document.querySelector(".player_sort").value}`;
+        // var data_info = `nowpage=${nowpagetext}&player_sort=${document.querySelector(".player_sort").value}&mem_no=${document.querySelector("#mem_no_hide").innerText}`;
         xhr.send(data_info);
     
     }
@@ -319,14 +325,13 @@ window.addEventListener("load",function(){
                 who_voted = this;
                 callBack1 = function(){
                     who_voted.click();
-                    // change_month();
-                    // player_sort();
                 }
                 showLoginForm();
                 if(!islogin){
                     return;
                 }
                 isrest_note();
+                
 
                 voted = this;
                 voteno = voted.parentNode.querySelector(".player_contest_no").href.split("no=");
@@ -338,6 +343,8 @@ window.addEventListener("load",function(){
                         // console.log(`成功`);
                         // console.log(`${xhr.responseText.replace(" ","")}`);
                         
+                        change_month();
+                        player_sort();
                         voted.parentNode.querySelector(".votenum").innerHTML =`${xhr.responseText.replace(" ","")}票`;
                     }else{
                         alert( xhr.status );

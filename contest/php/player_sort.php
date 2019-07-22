@@ -6,11 +6,12 @@ try {
     require_once("../../common/php/connect_choco.php");
     
     
-    $mem_no = $_REQUEST["mem_no"];
+    // $mem_no = $_REQUEST["mem_no"];
     $sql = "select * from favorites where mem_no=:mem_no ";
 
     $favorite = $pdo->prepare($sql);
-    $favorite->bindValue(":mem_no",$mem_no);
+    $favorite->bindValue(":mem_no",$_SESSION{"mem_no"});
+    // $favorite->bindValue(":mem_no",$mem_no);
     $favorite->execute();
     $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
     $favorite_arr = array();

@@ -6,7 +6,7 @@ try {
     require_once("../../common/php/connect_choco.php");
     
     
-    $mem_id = $_REQUEST["mem_id"];
+    // $mem_id = $_REQUEST["mem_id"];
     $choco_no = $_REQUEST["choco_no"];
     $sql = "INSERT INTO contest(customized_product_no , mem_no) 
     SELECT cp.customized_product_no , m.mem_no 
@@ -17,7 +17,8 @@ try {
         where c.mem_no = m.mem_no and m.mem_id = :mem_id and (month(c.contest_time) = month(CURRENT_DATE)) AND (YEAR(c.contest_time) = YEAR(CURRENT_DATE)))";
     $addchoco = $pdo->prepare($sql); //編譯好指令
     $addchoco->bindValue(":choco_no", $choco_no);
-    $addchoco->bindValue(":mem_id", $mem_id);
+    $addchoco->bindValue(":mem_id", $_SESSION{"mem_id"});
+    // $addchoco->bindValue(":mem_id", $mem_id);
     $addchoco->execute();
 
 
@@ -31,11 +32,12 @@ try {
     }
 
 
-    $mem_no = $_REQUEST["mem_no"];
+    // $mem_no = $_REQUEST["mem_no"];
     $sql = "select * from favorites where mem_no=:mem_no ";
 
     $favorite = $pdo->prepare($sql);
-    $favorite->bindValue(":mem_no",$mem_no);
+    $favorite->bindValue(":mem_no",$_SESSION{"mem_no"});
+    // $favorite->bindValue(":mem_no",$mem_no);
     $favorite->execute();
     $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
     $favorite_arr = array();
