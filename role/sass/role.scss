@@ -217,7 +217,6 @@ body{
         text-align: left;
         box-shadow: 11px 11px 0 $color_blue;
         // flex: 0 0 auto;
-        cursor: pointer;
         ul{
             width: 100%;
         }
@@ -272,11 +271,28 @@ body{
     }
     .cardfront{
         width: 290px;
-        cursor: pointer;
+        position: relative;
+        figcaption{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+            color: $color_brown;
+            h3{
+                @include font_l();
+                white-space: nowrap;
+                padding: 5px 0;
+            }
+            p{
+                font-size: 48px;
+                text-align: center;
+                color: $color_red;
+                padding: 5px 0;
+            }
+        }
     }
     .cardback{
         width: 290px;
-        cursor: pointer;
     }
     @media all and (max-width:767px){
         .choco_information{
@@ -347,9 +363,7 @@ body{
         color: $color_milk;
       }
     .heart_clicked {
-        display: none;
         color: $color_milk;
-        
     }
     
     .firstlc{

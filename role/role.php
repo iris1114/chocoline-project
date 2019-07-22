@@ -1,3 +1,74 @@
+
+<?php
+session_start();
+if(isset($_SESSION["mem_id"])!=true){
+    $_SESSION["mem_id"] = null;
+}
+if(isset($_SESSION["mem_no"])!=true){
+    $_SESSION["mem_no"] = null;
+}
+if(isset($_SESSION["mem_name"])!=true){
+    $_SESSION["mem_name"] = null;
+}
+if(isset($_SESSION["innerwidth"])!=true){
+    $_SESSION["innerwidth"] = null;
+}
+if (!isset($_SESSION["mem_headshot"])) {
+    $_SESSION["mem_headshot"] = 'icon_member.png';
+}
+$errMsg = "";
+try {
+	require_once("../common/php/connect_choco.php");
+
+    $contest_no = $_REQUEST["contest_no"];
+    $_SESSION["contest_no"] = $_REQUEST["contest_no"];
+    
+    //角色資訊
+    $sql = "SELECT c.contest_no, cp.customized_product_name, m.mem_name, DATE(c.contest_time) contest_time, cb.choco_base_name, cb.base_desc, cf.choco_flavor_name, cf.choco_flavor_desc, cp.choco_img_src, cp.card_back_src, c.number_votes FROM contest c, customized_product cp, member m, choco_base cb, choco_flavor cf WHERE (c.contest_no = :contest_no) AND (cp.mem_no = m.mem_no) AND (cp.choco_base_no = cb.choco_base_no) AND (cp.choco_flavor_no = cf.choco_flavor_no) AND (c.customized_product_no = cp.customized_product_no)";    
+    $chocos = $pdo->prepare($sql);
+    $chocos->bindValue(":contest_no",$contest_no);
+    $chocos->execute();
+    $choco = $chocos->fetchObject();
+
+    //已收藏
+    $sql = "select * from favorites where mem_no=:mem_no ";
+
+    $favorite = $pdo->prepare($sql);
+    $favorite->bindValue(":mem_no",$_SESSION["mem_no"]);
+    $favorite->execute();
+    $favorite_rows = $favorite->fetchAll(PDO::FETCH_ASSOC);
+    $favorite_arr = array();
+    for ($i = 0; $i < count($favorite_rows); $i++) {
+        array_push($favorite_arr, $favorite_rows[$i]["contest_no"]);
+    }
+
+    //留言
+    if($_SESSION["innerwidth"]<767){
+        $show_message_num = 3;
+    }else{
+        $show_message_num = 5;
+    }
+
+    $sql = "SELECT m.mem_name , m.mem_headshot , c.comment , DATE(comment_date) comment_date , c.comment_no from comment_record c , member m where c.mem_no=m.mem_no  AND c.contest_no  = $contest_no order by comment_date desc limit $show_message_num";    
+    $messages = $pdo->query($sql);
+
+
+    //目前有多少頁碼
+    $sql = "SELECT * FROM comment_record WHERE contest_no  = $contest_no";
+    $pages = $pdo->query($sql);
+    $pagenums = ceil($pages->rowCount()/$show_message_num);
+
+
+
+
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+ 
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +87,7 @@
             <div class="navbar">
                 <div class="burger">
                     <figure>
-                        <img src="image/headerfooter/burger.png" alt="burger">
+                        <img src="../common/image/headerfooter/burger.png" alt="burger">
                     </figure>
                 </div>
                 <div class="logo">
@@ -24,18 +95,21 @@
                         CHOCOLINE
                     </h1>
                     <a href="../index/index.php">
-                        <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                        <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                     </a>
                 </div> 
                 <div class="status">
                     <figure>
-                        <a href="../member/member.php">
-                            <img src="image/headerfooter/icon_member.png" alt="member">
+                        <a class="spanLogin" href="javascript:;">
+                            <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member"/>
+                            <!-- icon點擊後跳出登入註冊燈箱 -->
+                            <span id="mem_id_hide_mobile" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                            <span id="spanLoginText_mobile" style="display:none">登入</span>
                         </a>
                     </figure>
                     <figure>
                         <a href="../cart/cart.php">
-                            <img src="image/headerfooter/icon_cart.png" alt="cart">
+                            <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
                         </a>
                     </figure>
                 </div>
@@ -47,7 +121,7 @@
                 <li><a href="../store/store.php">CHOCO 商城</a></li>
                 <li><a href="../about/about.php">關於 CHOCO</a></li>
                 <figure id="menuclose">
-                    <img src="image/headerfooter/menuclose.png" alt="close">
+                    <img src="../common/image/headerfooter/menuclose.png" alt="close">
                 </figure>
             </ul>
         </div>
@@ -57,7 +131,7 @@
                     CHOCOLINE
                 </h1>
                 <a href="../index/index.php">
-                    <img src="image/headerfooter/logo.png" alt="CHOCOLINE">
+                    <img src="../common/image/headerfooter/logo.png" alt="CHOCOLINE">
                 </a>
             </div>
             <div class="navbar">
@@ -69,16 +143,80 @@
                     <li><a href="../about/about.php">關於 CHOCO</a></li>
                 </ul>
                 <div class="status">
-                    <figure>
-                        <a href="../member/member.php">
-                            <img src="image/headerfooter/icon_member.png" alt="member">
-                        </a>
-                    </figure>
-                    <figure>
-                        <a href="../cart/cart.php">
-                            <img src="image/headerfooter/icon_cart.png" alt="cart">
-                        </a>
-                    </figure>
+                <figure>
+                    <a class="spanLogin" href="javascript:;">
+                        <img src="../common/image/member/<?php echo $_SESSION["mem_headshot"]?>" alt="member" />
+                        <!-- icon點擊後跳出登入註冊燈箱 -->
+                    </a>
+                    <span id="mem_id_hide" style="display:none"><?php echo $_SESSION["mem_id"]?></span>
+                    <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"]?></span>
+                    <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"]?></span>
+                    <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"]?></span>
+                    <span id="spanLoginText" style="display:none">登入</span>
+                </figure>
+                <figure>
+                    <a href="../cart/cart.php">
+                        <img src="../common/image/headerfooter/icon_cart.png" alt="cart" />
+                    </a>
+                </figure>
+                </div>
+            </div>
+        </div>
+        <!-- 燈箱：登入 -->
+        <div id="lightBox" style="display:none">
+            <div id="tableLogin">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
+                    </a>			
+                    <h3>會員登入</h3>
+                    <input type="text" name="mem_id" id="mem_id" value="" placeholder="帳號"><br>
+                    <input type="password" name="mem_psw" id="mem_psw" value="" maxlength="12" placeholder="密碼"><br>
+                    <a href="javascript:;" id="forget_password">忘記密碼</a><br>
+                    <a href="javascript:;" class="btn orange_l" id="btnLogin">登入</a><br>
+                    <span>不是會員嗎?</span>
+                    <a href="javascript:;" id="register">立即註冊</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 重設密碼 -->
+        <div id="passwordLightBox" style="display:none">
+            <div id="getPassword">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_password">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="">
+                    </a>			
+                    <a href="javascript:;" id="rebtnLogin">會員登入</a><br>
+                    <h3>重設密碼</h3>
+                    <p>請輸入帳號註冊時所留的電子<br>
+                        郵件地址，以驗證您的資料</p>
+                    <input type="email" name="mem_email" id="mem_email" value="" placeholder="輸入E-mail"><br>
+                    <input type="password" name="mem_psw" id="new_mem_psw" value="" maxlength="12" placeholder="輸入新密碼  (6-12位字母、數字)"><br>
+                    <input type="password" name="mem_psw" id="re_new_mem_psw" value="" maxlength="12" placeholder="再次確認新密碼"><br>
+                    <a href="javascript:;" class="btn orange_l" id="repassword">送出</a><br>
+                </div>
+            </div>
+        </div>
+        <!-- 會員註冊 -->
+        <div id="registerLightBox" style="display:none">
+            <div id="registered">
+                <img class="login_bg" src="../common/image/login/login_bg.png" alt="login_bg">
+                <div class="login_register">
+                    <a href="javascript:;" class="btnLoginCancel">
+                        <img src="../common/image/login/login_closeicon.png" alt="btnLoginCancel">
+                    </a>			
+                    <h3>會員註冊</h3>
+                    <p>嗨！新朋友～歡迎加入CHOCOLINE會員<br>
+                            請填下您的個人資料！* 為必填。</p>
+                    <span>*帳號</span><input type="text" name="mem_id" id="f_mem_id" value="" placeholder="設定帳號"><br>
+                    <span><input type="button" id="btnCheckId" value="檢查帳號是否可用"></span>
+                    <p id="idMsg">請輸入帳號</p><br>
+                    <span>*E-mail</span><input type="email" name="mem_email" id="f_mem_email" value="" placeholder="輸入E-mail 必須包括 ( @ 和 . )" ><br>
+                    <span>*密碼</span><input type="password" name="mem_psw" id="f_mem_psw" value="" maxlength="12" placeholder="設定密碼 (6-12位字母、數字)"><br>
+                    <span>*密碼確認</span><input type="password" name="mem_psw" id="f_re_mem_psw" value="" maxlength="12" placeholder="再次確認密碼 (再次確認)"><br>
+                    <a href="javascript:;" class="btn orange_l" id="register_btn">送出</a><br>
                 </div>
             </div>
         </div>
@@ -110,15 +248,15 @@
             <div class="wrap">
                 <div class="bread">
                     <img src="image/role/bread.png" alt="bread">
-                    <p>CHOCO選美 > <span class="choconame">WHOWHOWHO</span> 角色詳情</p>
+                    <p>CHOCO選美 > <span class="choconame"><?php echo $choco->customized_product_name?></span> 角色詳情</p>
                 </div>
                 <div class="contain">
                     <div class="player">
                         <figure class="CHOCO">
-                            <img src="image/role/bear.png" alt="bear">
+                            <img src="../common/image/chocos/<?php echo $choco->choco_img_src?>" alt="chocoimg">
                             <figcaption>
-                                <p class="date">參賽日期 : <span class="date_ymd">2019/07/23</span></p>
-                                <p class="memname">黃澄澄</p>
+                                <p class="date">參賽日期 : <span class="date_ymd"><?php echo $choco->contest_time?></span></p>
+                                <p class="memname"><?php echo $choco->mem_name?></p>
                             </figcaption>
                         </figure>
                         <figure class="ring">
@@ -130,45 +268,37 @@
                             <div class="choco_information rotate_l">
                                 <ul>
                                     <li><p>角色名稱 : </p></li>
-                                    <li><p id="choco_name">WHOWHOWHO</p></li>
+                                    <li><p id="choco_name"><?php echo $choco->customized_product_name?></p></li>
                                     <li></li>
-                                    <li><p>內容物 : <span id="choco_content"></span>榛果、黑巧克力</p></li>
-                                    <li><p>效用 : <span id="choco_ability">養顏美容、延緩衰老</span></p></li>
+                                    <li><p>內容物 : <span id="choco_content"></span><?php echo $choco->choco_base_name?> <?php echo $choco->choco_flavor_name?></p></li>
+                                    <li><p>效用 : <span id="choco_ability"><?php echo $choco->base_desc?> <?php echo $choco->choco_flavor_desc?></span></p></li>
                                 </ul>
                             </div>
                             <figure class="cardfront rotate_m">
-                                <img src="image/role/cardfront.png" alt="card">
+                                <img src="../common/image/cardback/card.png" alt="card">
+                                <figcaption>
+                                    <h3>目前票數 : </h3>
+                                    <p><?php echo $choco->number_votes?>票</p>
+                                </figcaption>
                             </figure>
                             <figure class="cardback rotate_r">
-                                <img src="image/role/cardback.png" alt="card">
+                                <img src="../common/image/cardback/<?php echo $choco->card_back_src?>" alt="card">
                             </figure>
                         </div>
-                        <!-- <div class="show_big_pic">
-                            <div class="choco_information">
-                                <ul>
-                                    <li><p>角色名稱 : </p></li>
-                                    <li><p id="big_choco_name">WHOWHOWHO</p></li>
-                                    <li></li>
-                                    <li><p>內容物 : <span id="big_choco_content"></span>榛果、黑巧克力</p></li>
-                                    <li><p>效用 : <span id="big_choco_ability">養顏美容、延緩衰老</span></p></li>
-                                </ul>
-                            </div>
-                            <figure class="cardfront">
-                                <img src="image/role/cardfront.png" alt="card">
-                            </figure>
-                            <figure class="cardback">
-                                <img src="image/role/cardback.png" alt="card">
-                            </figure>
-                        </div> -->
                         <div class="collect_vote">
                             <a href="javascript:;" class="collect_btn btn cyan_l">
                                 <span>
-                                    <i class="heart_unclick far fa-heart"></i>
-                                    <i class="heart_clicked fas fa-heart"></i>
+                                <?php
+                                    if (in_array($choco->contest_no, $favorite_arr)) {
+                                        echo '<i class="heart_unclick far fa-heart" style="display:none"></i><i class="heart_clicked fas fa-heart"></i>';
+                                    } else {
+                                        echo '<i class="heart_unclick far fa-heart"></i><i class="heart_clicked fas fa-heart" style="display:none"></i>';
+                                    }
+                                ?>
                                     收藏
                                 </span>
                             </a>
-                            <a href="javascript:;" class="btn orange_l"><span>投票</span></a>
+                            <a href="javascript:;" class="btn orange_l player_vote_btn"><span>投票</span></a>
                         </div>
                     </div>
                 </div>
@@ -204,239 +334,43 @@
             <p>留言池</p>
         </div>
         <div class="wrap message_board_wrap" id="message_board_wrap">
+            <?php 
+            while($message = $messages->fetchObject()){
+            ?>                      
             <div class="message_block">
                 <div class="message_item">
                     <div class="message">
                         <figure class="cus_photo">
-                            <img src="image/role/amos.png" alt="memphoto">
+                            <img src="../common/image/member/<?php echo $message->mem_headshot?>" alt="memphoto">
                         </figure>
                         <div class="message_contain">
-                            <p class="memName">哎莫斯</p>
-                            <p class="mseeage_text">我來推坑啦!!</p>
+                            <p class="memName"><?php echo $message->mem_name?></p>
+                            <p class="mseeage_text"><?php echo $message->comment?></p>
                         </div>
                         <div class="status">
                             <a href="javascrupt:;" class="btn cyan_s report_btn">
                                 <span>檢舉</span>
                             </a>
-                            <p class="message_date">2019/07/24</p>
+                            <p class="message_date"><?php echo $message->comment_date?></p>
+                            <span style="display:none" class="message_comment_no"><?php echo $message->comment_no?></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/plus0.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">+0</p>
-                            <p class="mseeage_text">大家快來投我可愛的鵝子女鵝!!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/amos.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">哎莫斯</p>
-                            <p class="mseeage_text">我來推坑啦!!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="message_block">
-                <div class="message_item">
-                    <div class="message">
-                        <figure class="cus_photo">
-                            <img src="image/role/dongdong.png" alt="memphoto">
-                        </figure>
-                        <div class="message_contain">
-                            <p class="memName">董董</p>
-                            <p class="mseeage_text">快來投董董的CHOCO星人一票吧~!</p>
-                        </div>
-                        <div class="status">
-                            <a href="javascrupt:;" class="btn cyan_s report_btn">
-                                <span>檢舉</span>
-                            </a>
-                            <p class="message_date">2019/07/24</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
         <div class="wrap page_wrap">
             <div class="pagination">
                 <a href="javascript:;" id="prevpage_btn">❮</a>
-                <!-- <a class="pagenums active"  href="javascript:;">1</a> -->
+                <?php
+                for($i=1;$i<=$pagenums;$i++){
+                ?>
+                    <a class="pagenums"  href="javascript:;"><?php echo $i?></a>
+                <?php
+                }
+                ?>
                 <a href="javascript:;" id="nextpage_btn">❯</a>
             </div>
         </div>
@@ -449,9 +383,7 @@
         <div class="report">
             <div class="contain">
                 <p>檢舉原因 : </p>
-                <form action="role_back.php">
-                    <textarea name="report" id="report" cols="30" rows="3" maxlength="50" placeholder="就你意見最多..."></textarea>
-                </form>
+                    <textarea name="report" id="report" cols="30" rows="3" maxlength="50" placeholder="他壞壞嗎?"></textarea>
                 <a href="javascrupt:;" class="btn cyan_s" id="report_submit">
                     <span>送出</span>
                 </a>
@@ -550,6 +482,7 @@
 <!-- robot end -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src="../common/js/header.js"></script>
+<script src="../common/js/login.js"></script>
 <script src="../common/js/robot.js"></script>
 <script src="js/role.js"></script>
 </body>
