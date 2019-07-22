@@ -13,6 +13,9 @@ if(isset($_SESSION["mem_name"])!=true){
 if (!isset($_SESSION["mem_headshot"])) {
     $_SESSION["mem_headshot"] = 'icon_member.png';
 }
+if (!isset($_SESSION["mem_rest_vote"])) {
+    $_SESSION["mem_rest_vote"] = null;
+}
 $errMsg = "";
 try {
 	require_once("../common/php/connect_choco.php");
@@ -134,6 +137,7 @@ try {
                     <span id="mem_no_hide" style="display:none"><?php echo $_SESSION["mem_no"]?></span>
                     <span id="mem_name_hide" style="display:none"><?php echo $_SESSION["mem_name"]?></span>
                     <span id="mem_headshot_hide" style="display:none"><?php echo $_SESSION["mem_headshot"]?></span>
+                    <span id="mem_rest_vote_hide" style="display:none"><?php echo $_SESSION["mem_rest_vote"]?></span>
                     <span id="spanLoginText" style="display:none">登入</span>
                 </figure>
                 <figure>

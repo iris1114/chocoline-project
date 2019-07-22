@@ -23,25 +23,6 @@
 
 
 
-#colorSelect button {
-  border: none;
-  border-top: 1px solid #6A845F;
-  border-radius: 0 0 5px 5px;
-  clear: both;
-  margin: 10px -10px -7px;
-  padding: 5px 10px;
-  width: 325px;
-}
-
-#brushSelect button {
-  border: none;
-  border-top: 1px solid #6A845F;
-  border-radius: 0 0 5px 5px;
-  clear: both;
-  margin: 10px -10px -7px;
-  padding: 5px 10px;
-  width: 325px;
-}
 
 </style>
 
@@ -649,6 +630,7 @@
     <!-- ----- 第四屏 Start ----- -->
 
 
+   
     <section class= "card">
 
         <div class="fourth_step">
@@ -657,7 +639,7 @@
        
           <div class="fourth_step_info">
               <h3>第四步:</h3>
-              <p>搭配卡片樣式/輸入內容</p>
+              <p id="fourth">搭配卡片樣式/輸入內容</p>
            </div>
         
         </div>
@@ -667,10 +649,10 @@
             
               <div class="card_custom">
 
-                  <div class="controls">
+                  <div class="controls" >
                     
                   
-                  <h4>選擇</h4>
+                  <h4 >選擇畫筆</h4>
                         <ul>
                           <li class="red selected"></li>
                           <li class="blue"></li>
@@ -711,8 +693,56 @@
                         <canvas  id="ccc" width="280" height="365" >
                   
                         </canvas>
+                     
+                        <div class="total_price">
+            <img src="image/custom/price.png" alt="price" />
+            <h4>TOTAL</h4>
+            <p id="sub_price">
+              NT$350
+            </p>
+          </div>
+
                     </div>
 
+              <div class="card_acc"id="fouth">
+                      <div class="acc_block">
+                          <div class="acc_item">
+                              <img src="image/custom/card1.png" alt="" id="srcImg1" onclick="loadImage1()">
+                          </div>
+                          <div class="acc_item">
+                              <img src="image/custom/card2.png" alt="" id="srcImg2" onclick="loadImage2()">
+                          </div>
+                      </div>
+
+                      <div class="acc_block">
+                          <div class="acc_item">
+                                <img src="image/custom/card3.png" alt="" id="srcImg3" onclick="loadImage3()">
+                          </div>
+                          <div class="acc_item">
+                                <img src="image/custom/card5.png" alt="" id="srcImg4" onclick="loadImage4()">
+                          </div>
+                      </div>
+
+                      <div class="acc_block">
+                          <div class="acc_item" >
+                               <img src="image/custom/card4.png" alt="" id="srcImg5" onclick="loadImage5()">
+                          </div>
+                          <div class="acc_item">
+                                <img src="image/custom/card6.png" alt="" id="srcImg6" onclick="loadImage6()">
+                          </div>      
+                      </div>
+
+             </div>
+             
+                 <!-- <img src="image/custom/bar_item.png" alt="reset" class="zzz" onclick="clean()"> -->
+              
+              <div class="card_custom_mobile">
+
+              <div class="card_pos">
+              
+              
+              </div>
+              
               <div class="card_acc">
                       <div class="acc_block">
                           <div class="acc_item">
@@ -742,9 +772,14 @@
                       </div>
 
              </div>
-                    <!-- <img src="image/custom/bar_item.png" alt="reset" class="zzz" onclick="clean()"> -->
+              
+              
+              </div>
+                 
          </div>
-        
+         </div  class="next_button">
+      <input type="button" onclick="aa()" class="btn cyan_s " >
+      </div>
       </div>
 <form method="post" accept-charset="utf-8" id="form1">
   <input name="final_choco" id='final_choco' type="hidden"/>
@@ -753,7 +788,6 @@
 
 
 </section>
-    
 
     <!-- robot start -->
     <input id="robot_close_control" type="checkbox" />

@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
         while(i<like.length){
     
             like[i].addEventListener("click",function(){
-                whocall = "like";
+                whocall = "2";
                 who_collect = this;
                 callBack2 = function(){
                     player_sort();
@@ -155,7 +155,9 @@ window.addEventListener("load",function(){
     search_month.options[0].selected = true;
     let stage = document.querySelector(".stage");
 
-    search_month.addEventListener("input",function(){
+    search_month.addEventListener("input",change_month);
+
+    function change_month(){
         let month_value = document.querySelector(".search_month").value.split("_");
         // console.log(month_value[0]);
         
@@ -178,12 +180,11 @@ window.addEventListener("load",function(){
 
         var data_info = `year=${month_value[0]}&month=${month_value[1]}`;
         xhr.send( data_info);
-    })
-
+    }
 
 //點擊報名參賽
     joingame.addEventListener("click",function(){
-        whocall = "joingame";
+        whocall = "0";
         callBack = function(){
             player_sort();
             joingame.click();
@@ -314,11 +315,12 @@ window.addEventListener("load",function(){
         player_votes = document.querySelectorAll(".player_vote_btn");
         for(let i=0;i<player_votes.length;i++){
             player_votes[i].addEventListener("click",function(){
-                whocall = "player_votes";
+                whocall = "1";
                 who_voted = this;
                 callBack1 = function(){
                     who_voted.click();
-                    player_sort();
+                    // change_month();
+                    // player_sort();
                 }
                 showLoginForm();
                 if(!islogin){
@@ -337,7 +339,6 @@ window.addEventListener("load",function(){
                         // console.log(`${xhr.responseText.replace(" ","")}`);
                         
                         voted.parentNode.querySelector(".votenum").innerHTML =`${xhr.responseText.replace(" ","")}票`;
-
                     }else{
                         alert( xhr.status );
                     }
