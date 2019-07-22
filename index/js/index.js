@@ -2,10 +2,10 @@ console.log("start");
 
 
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     let shapes = document.getElementsByClassName("shape");
     let shapePosArr = ["shapePos0", "shapePos1", "shapePos2", "shapePos3", "shapePos4"]
-    document.getElementById("toRight").onclick = function() {
+    document.getElementById("toRight").onclick = function () {
         for (let i = 0; i < shapePosArr.length; i++) {
             shapes[i].classList.remove(shapePosArr[i])
         }
@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
         }
     };
 
-    document.getElementById("toLeft").onclick = function() {
+    document.getElementById("toLeft").onclick = function () {
         for (let i = 0; i < shapePosArr.length; i++) {
             shapes[i].classList.remove(shapePosArr[i])
         }
@@ -131,7 +131,7 @@ roles_shadow.to('.roles_shadow', 2, {
 // -----------------qa box-------------//
 
 TweenMax.to('.qa_box', 2, {
-    y: -20,
+    y: -15,
     repeat: -1,
     yoyo: true,
 });
@@ -140,7 +140,7 @@ TweenMax.to('.qa_box', 2, {
 // ----------------.game_things-------------//
 
 TweenMax.to('.game_things', 2, {
-    y: 30,
+    y: 20,
 
     repeat: -1,
     yoyo: true,
@@ -156,6 +156,18 @@ TweenMax.to('.ballon', 6, {
     yoyo: true,
 
 });
+
+// ----------------ballon-------------//
+
+TweenMax.to('.point', 2, {
+    y: -2,
+
+
+    repeat: -1,
+    yoyo: true,
+
+});
+
 
 
 // --------------river_move custom-------------//
@@ -254,34 +266,34 @@ var choco_black = new TimelineMax({
 });
 
 choco_black.to('.choco_black', 1, {
-        y: 130,
-        x: -100,
-        scale: 1.2,
+    y: 130,
+    x: -100,
+    scale: 1.2,
 
-    }).to('.choco_black', 1, {
-        y: 300,
-        x: -200,
-        scale: 1,
-        rotation: -60,
-    }).to('.choco_black', 1, {
-        y: 400,
-        x: 0,
-        scale: 1,
-    }).to('.choco_black', 1, {
-        y: 400,
-        x: 100,
-        scale: 1,
-    }).to('.choco_black', 1, {
-        y: 400,
-        x: 200,
-        scale: 1,
-        rotate: 20,
-    }).to('.choco_black', 1, {
-        y: 450,
-        x: 250,
-        scale: 1,
-        rotate: 20,
-    })
+}).to('.choco_black', 1, {
+    y: 300,
+    x: -200,
+    scale: 1,
+    rotation: -60,
+}).to('.choco_black', 1, {
+    y: 400,
+    x: 0,
+    scale: 1,
+}).to('.choco_black', 1, {
+    y: 400,
+    x: 100,
+    scale: 1,
+}).to('.choco_black', 1, {
+    y: 400,
+    x: 200,
+    scale: 1,
+    rotate: 20,
+}).to('.choco_black', 1, {
+    y: 450,
+    x: 250,
+    scale: 1,
+    rotate: 20,
+})
     .to('.choco_black', 1, {
         y: 500,
         x: 500,
@@ -370,15 +382,15 @@ choco_black.to('.choco_black', 1, {
     //     rotation:-20,
     //    opacity:1, 
 
-// })   
-// .to('.choco_black', 1, {
-//     y:1000,
-//     x: 800,
-//     scale:1,
-//     rotation:-20,
-//    opacity:0, 
-// })
-.to('.choco_black', 1, {
+    // })   
+    // .to('.choco_black', 1, {
+    //     y:1000,
+    //     x: 800,
+    //     scale:1,
+    //     rotation:-20,
+    //    opacity:0, 
+    // })
+    .to('.choco_black', 1, {
         y: 900,
         x: 850,
         scale: 0.8,
@@ -442,7 +454,7 @@ choco_black.to('.choco_black', 1, {
         opacity: 1,
     })
 
-.to('.choco_black', 1, {
+    .to('.choco_black', 1, {
         y: 1820,
         x: 660,
         scale: 0.6,
@@ -612,17 +624,17 @@ choco_black.to('.choco_black', 1, {
 
 
 var scene_01 = new ScrollMagic.Scene({
-        triggerElement: '#keypoint',
-        duration: 5780,
-        //    reverse:true, 
-        // offset:600,
-        triggerHook: -5,
+    triggerElement: '#keypoint',
+    duration: 5780,
+    //    reverse:true, 
+    // offset:600,
+    triggerHook: -5,
 
-    })
+})
     .setTween(choco_black)
     //  .addIndicators() 
     .addTo(controller)
-    //  .setPin('html')
+//  .setPin('html')
 
 
 
@@ -647,25 +659,25 @@ var choco_white = new TimelineMax({
 });
 
 choco_white.to('.choco_white', 1, {
-        y: 110,
-        x: -90,
+    y: 110,
+    x: -90,
 
-    }).to('.choco_white', 1, {
-        y: 200,
-        x: -140,
-        scale: 1.2,
+}).to('.choco_white', 1, {
+    y: 200,
+    x: -140,
+    scale: 1.2,
 
-    }).to('.choco_white', 0.5, {
-        y: 250,
-        x: -160,
-        scale: 1,
+}).to('.choco_white', 0.5, {
+    y: 250,
+    x: -160,
+    scale: 1,
 
-    }).to('.choco_white', 0.5, {
-        y: 350,
-        x: -180,
-        scale: 1,
+}).to('.choco_white', 0.5, {
+    y: 350,
+    x: -180,
+    scale: 1,
 
-    })
+})
     .to('.choco_white', 0.5, {
         y: 450,
         x: -200,
@@ -685,13 +697,13 @@ choco_white.to('.choco_white', 1, {
 
 
 var scene_02 = new ScrollMagic.Scene({
-        triggerElement: '#keypoint2', //觸發點
-        duration: 700, //結束點
-        //    reverse:true, 
-        // offset:600,
-        triggerHook: 0,
+    triggerElement: '#keypoint2', //觸發點
+    duration: 700, //結束點
+    //    reverse:true, 
+    // offset:600,
+    triggerHook: 0,
 
-    })
+})
     .setTween(choco_white)
     // .addIndicators() 
     .addTo(controller)
@@ -726,19 +738,19 @@ choco_milk.to('.choco_milk', 60, {
 })
 
 var scene_03 = new ScrollMagic.Scene({
-        triggerElement: '#keypoint3',
-        duration: 800,
-        // offset:600,
-        triggerHook: 0,
+    triggerElement: '#keypoint3',
+    duration: 800,
+    // offset:600,
+    triggerHook: 0,
 
-    })
+})
     .setTween(choco_milk)
     //   .addIndicators() 
     .addTo(controller)
 
 
 
-$(function() {
+$(function () {
     if ($('window').width() < 1200) {
         TweenMax.killTweensOf('.choco_black');
         TweenMax.killTweensOf('.choco_white');
@@ -961,9 +973,10 @@ var select_result = {};
 function send_select(select_data) {
     let xhr = new XMLHttpRequest();
 
-    xhr.onload = function() {
+    xhr.onload = function () {
 
         if (xhr.status == 200) {
+            // console.log(xhr.responseText);
 
             select_result = JSON.parse(xhr.responseText);
 
@@ -1013,12 +1026,12 @@ function show_select_result() {
     var qa_box = document.getElementById("qa_box");
     var product_result = "";
 
-    submit_btn.onclick = function() {
+    submit_btn.onclick = function () {
         product_result += `<img src="image/index/question/question.png" alt="question">
-        <div class="recommand_box">
-        <div class="recommand_title">
-            <h4>巧克力好推薦！<br>你就愛那一味～</h4>
-            <span>${select_result[0]["classic_product_name"]}</span>
+        <div class="question recommand_box">
+        <div class="title recommand_title">
+        <h4>巧克力好推薦！<br>你就愛那一味～<br><p>${select_result[0]["classic_product_name"]}</p></h4>
+
         </div>
         <div class="product_img">
             <img src="../store/image/store/${select_result[0]["product_img_src"]}">
@@ -1036,9 +1049,9 @@ function show_select_result() {
 
 
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     var question_submit = document.querySelector("#submit_question_btn");
-    question_submit.onclick = function() {
+    question_submit.onclick = function () {
         var select_items = document.querySelectorAll(".answer");
         var select_data = []
         for (var j = 0; j < select_items.length; j++) {
@@ -1057,7 +1070,7 @@ function go_to_next_step() {
     var next_button = document.getElementsByClassName("qa_next_button");
 
     for (var i = 0; i < next_button.length; i++) {
-        next_button[i].onclick = function() {
+        next_button[i].onclick = function () {
             this.parentNode.style.display = "none";
             this.parentNode.nextElementSibling.style.display = "flex";
 

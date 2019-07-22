@@ -1,0 +1,558 @@
+@import "../../common/sass/common.scss";
+
+@mixin noselect {
+    user-select: none;
+    -moz-user-select: none;  /* for Firefox */ 
+    -webkit-user-select: none;   /* for Chrome */
+}
+// @media all and (max-width:1200px){
+// }
+.wrap{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+*{
+    font-family:'Noto Sans TC', sans-serif;
+    // outline: 1px solid #f00;
+}
+html{
+    overflow: auto;
+}
+
+.contest_body{
+    background-color: #FFF5E3;
+    overflow-x: hidden;
+}
+
+.stage_container{
+    position: relative;
+    padding-top: 120px;
+    z-index: 2;
+    .wrap{
+        position: relative;
+        z-index: 1;
+    }
+    .title_decoration{
+        margin: auto;
+        h2{
+            font-size: 18px;
+        }
+    }
+    .contain{
+        position: relative;
+        z-index: 1;
+    }
+    .stage{
+        width: 280px;
+        height: 300px;
+        position: relative;
+        background: url("../image/contest/stage.png") no-repeat 0 100% / contain;
+        padding-top:15px;
+        margin: auto;
+    }
+    .select_dropdown{
+        display: block;
+        margin: auto;
+    }
+    .winner{
+        position: absolute;
+        a{
+            display: block;
+            width: 55%;
+            height: 60%;
+            @include pos(10%,0,0,18%);
+            z-index: 1;
+        }
+        &:nth-of-type(1){
+            width: 40%;
+            left: 27%;
+            top: 16%;
+            .CHOCO{
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 55%;
+                    height: 47%;
+                    top: -6%;
+                    right: -4%;
+                    top: 0%;
+                    right: -16%;
+                    background: url("../image/contest/no1.png") 0 0  no-repeat / contain;
+                }
+            }
+        }
+        &:nth-of-type(2){
+            width: 38%;
+            left: 7%;
+            top: 29%;
+        }
+        &:nth-of-type(3){
+            width: 36%;
+            left: 50%;
+            top: 36%;
+        }
+        &:nth-of-type(4){
+            width: 34%;
+            left: -8%;
+            top: 46%;
+            .vote{
+                @include pos(auto,0,-21%,30%);
+            }
+        }
+        &:nth-of-type(5){
+            width: 32%;
+            left: 70%;
+            top: 49%;
+            .vote{
+                @include pos(auto,0,-27%,15%);
+            }
+        }
+    }
+    .CHOCO{
+        animation: dance 4s infinite;
+    }
+    .vote{
+        width: 40px;
+        @include pos(auto,0,-17%,20%);
+        z-index: 1;
+        animation: upanddown 1s infinite linear alternate;
+        cursor: pointer;
+        figcaption{
+            width: 100%;
+            text-align: center;
+            @include pos(7%,0,auto,0);
+            p{
+                // @include font_l();
+                font-size: 12px;
+            }
+            span{
+                font-size: 12px;
+                color: $color_red;
+            }
+        }
+    }
+    @keyframes dance {
+        0%{
+            transform: translateX(0%)
+                        translateY(0%);
+        }
+        25%{
+            transform: translateX(-5%)
+                        translateY(-2%)
+                        rotate(-5deg);
+        }
+        50%{
+            transform: translateX(0%)
+                        translateY(0%);
+        }
+        75%{
+            transform: translateX(5%)
+                        translateY(-2%)
+                        rotate(5deg);
+        }
+        100%{
+            transform: translateX(0%)
+                        translateY(0%);
+        }
+    }
+    @keyframes upanddown {
+        0%{
+            transform: translateY(0%);
+        }
+        100%{
+            transform: translateY(5%);
+        }
+    }
+    .board{
+        width: 100%;
+        // height: 100%;
+        position: relative;
+        z-index: -1;
+        background: url("../image/contest/board.png") 0 0  no-repeat / 100% 100%;
+    }
+    .lastest_mseeage{
+        width: 80.645%;
+        margin: auto;
+        padding: 15% 0;
+        h3{
+            @include font_m();
+            text-align: center;
+        }
+    }
+    .message_block{
+        border-top: 1px solid #7ECECD;
+    }
+    .message{
+        border-bottom: 1px solid #7ECECD;
+        padding: 2%;
+        &::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+    .cus_photo{
+        width: 35px;
+        height: 35px;
+        box-sizing: content-box;
+        border-radius: 9px;
+        border: 2px solid $color_brown;
+        float: left;
+        position: relative;
+        img{
+            border-radius: 9px;
+            @include pos(0,0,0,0);
+        }
+    }
+    .message_contain{
+        float: left;
+        width: 60%;
+        margin-left: 2%;
+        .memName{
+            @include font_m();
+        }
+        .mseeage_text{
+            @include font_s();
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+    .status{
+        float: right;
+        width: 20%;
+        text-align: center;
+    }
+    .message_date{
+        color: $color_gray;
+        text-align: center;
+        font-size: 12px;
+    }
+    .connect{
+        width: 100%;
+        text-align: center;
+        @include pos(110%,0,auto,0);
+    }
+    .orange_l{
+        width: 170px;
+    }
+    .cyan_l{
+        width: 170px;
+    }
+    .firstlc{
+        width: 217px;
+        @include pos(19%,auto,auto,5%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .secondlc{
+        width: 151px;
+        @include pos(22%,auto,auto,56%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .thirdlc{
+        width: 217px;
+        @include pos(39%,auto,auto,74%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .fourthlc{
+        width: 158px;
+        @include pos(17%,auto,auto,82%);
+        animation: cloudmove 20s infinite alternate linear;
+    }
+    .shinel{
+        width: 92px;
+        @include pos(13%,auto,auto,30%);
+        animation: opacity 3s infinite alternate;
+    }
+    .shiner{
+        width: 46px;
+        @include pos(33%,auto,auto,88%);
+        animation: opacity 3s infinite alternate;
+    }
+    .circle1,.circle2,.circle3{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #ffffff;
+        @include pos(17%,auto,auto,5%);
+    }
+    .circle2{
+        width: 47px;
+        height: 47px;
+        @include pos(23%,auto,auto,72%);
+    }
+    .circle3{
+        width: 35px;
+        height: 35px;
+        @include pos(14%,auto,auto,80%);
+    }
+    @keyframes cloudmove {
+        0%{
+            transform: translateX(-30%)
+        }
+        100%{
+            transform: translateX(30%)
+        }
+    }
+    @keyframes opacity {
+        0%{
+            opacity: 1;
+        }
+        20%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0.7;
+        }
+    }
+}
+
+
+@media all and (min-width:413px){ //iphone678+
+
+    .stage_container{
+        .title_decoration{
+            margin: auto;
+            h2{
+                font-size: 18px;
+                top: 9%;
+            }
+        }
+        .stage{
+            // width: 374px;
+            // height: 380px;
+            width: 100%;
+            height: 0;
+            padding-bottom: 101%;
+        }
+        #fourth_place{
+            .vote{
+                @include pos(auto,0,-14%,30%);
+            }
+        }
+        #fifth_place{
+            .vote{
+                @include pos(auto,0,-18%,15%);
+            }
+        }
+        .vote{
+            @include pos(auto,0,-7%,20%);
+        }
+        .cus_photo{
+            width: 40px;
+            height: 40px;
+        }
+        .connect{
+            display: flex;
+            justify-content: center;
+        }
+        .orange_l{
+            flex-grow: 0;
+            flex-shrink: 0;
+            order: 1;
+        }
+        .cyan_l{
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+
+}
+
+@include rwd(tablet){ //min768
+    .stage_container{
+        .title_decoration{
+            h2{
+                @include font_l();
+                top: 11%;
+            }
+        }
+        .vote{
+            width: 100%;
+            max-width: 85px;
+            @include pos(auto,0,-10%,20%);
+            z-index: 1;
+            animation: upanddown 1s infinite linear alternate;
+            cursor: pointer;
+            figcaption{
+                width: 80%;
+                text-align: center;
+                @include pos(7%,0,auto,0);
+                p{
+                    @include font_l();
+                }
+                span{
+                    color: $color_red;
+                    @include font_s();
+                }
+            }
+        }
+        .connect{
+            @include pos(auto,0,auto,0);
+        }
+    }
+  
+} 
+@include rwd(desktop){ //min992
+    
+    .stage_container{
+        padding-top: 150px;
+        .title_decoration{
+            h2{
+                @include pos(10%,0,0,0);
+                @include font_l();
+            }
+        }
+        .stage{
+            width: 728px;
+            height: 700px;
+            padding: 0;
+            margin: unset;
+        }
+        .select_dropdown{
+            margin: unset;
+        }
+        .winner{
+            &:nth-of-type(1){
+                top: 10%;
+            }
+            &:nth-of-type(2){
+                top: 23%;
+            }
+            &:nth-of-type(3){
+                top: 32%;
+            }
+            &:nth-of-type(4){
+                top: 43%;
+                .vote{
+                    @include pos(auto,0,-10%,30%);
+                }
+            }
+            &:nth-of-type(5){
+                top: 48%;
+                .vote{
+                    @include pos(auto,0,-10%,15%);
+                }
+            }
+
+        }
+        .vote{
+            width: 100%;
+            max-width: 85px;
+            @include pos(auto,0,-10%,20%);
+            z-index: 1;
+            animation: upanddown 1s infinite linear alternate;
+            cursor: pointer;
+            figcaption{
+                width: 80%;
+                text-align: center;
+                @include pos(7%,0,auto,0);
+                p{
+                    @include font_l();
+                }
+                span{
+                    color: $color_red;
+                    @include font_s();
+                }
+            }
+        }
+        .board{
+            width: 620px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: url("../image/contest/board.png") 0 0  no-repeat / contain;
+        }
+        .lastest_mseeage{
+            padding-top: 13%;
+        }
+        .cus_photo{
+            max-width: 72px;
+            width: 14.8453%;
+            height: 0;
+            padding-bottom: 14.8453%;
+            border-radius: 15px;
+            img{
+                border-radius: 15px;
+            }
+        }
+        .message_date{
+            @include font_s();
+        }
+        .connect{
+            display: block;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+        }
+        .orange_l{
+            @include pos(80%,0,auto,20%);
+        }
+        .cyan_l{
+            @include pos(83%,0,auto,20%);
+        }
+    }
+
+
+    @media all and (max-width:1200px){
+        .stage_container{
+            .stage{
+                width: 650px;
+                background: url("../image/contest/stage.png") no-repeat 0 97% / contain;
+            }
+            .board{
+                width: 540px;
+            }
+            .winner{
+                &:nth-of-type(1){
+                    top: 18%;  
+                }
+                &:nth-of-type(2){
+                    top: 31%;
+                }
+                &:nth-of-type(3){
+                    top: 37%;
+                }
+                &:nth-of-type(4){
+                    top: 49%;
+                }
+                &:nth-of-type(5){
+                    top: 53%;
+                }
+            }   
+        }
+  
+    }
+   
+    @media all and (max-width:1040px){
+        .stage_container{
+            .stage{
+                width: 600px;
+            }
+            .board{
+                width: 540px;
+            }
+            .winner{
+                &:nth-of-type(1){
+                    top: 24%; 
+                }
+                &:nth-of-type(2){
+                    top: 36%;
+                }
+                &:nth-of-type(3){
+                    top: 42%;
+                }
+                &:nth-of-type(4){
+                    top: 53%;
+                }
+                &:nth-of-type(5){
+                    top: 56%;
+                }
+    
+            } 
+        }
+
+    }
+}
+

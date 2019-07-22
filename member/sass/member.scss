@@ -6,9 +6,11 @@
 }
 
 body{
-    background-color: #FFF5E3;
+    background-color:$color_milk;
     background: url(../image/member/bg.png) no-repeat 100% 100% /cover;
     overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
 
 
@@ -23,6 +25,7 @@ body{
     0% {transform: translateX(-10%)}
     100% {transform: translateX(10%)}
 }    
+
 
 
 // -------------------------------RWD DESKTOP------------------------------//
@@ -187,7 +190,6 @@ body{
 
 #orderlist {
     background-color: white;
-    height: 730px;
     border: 2px solid $color_blue;
     border-radius: 10px;
 
@@ -232,9 +234,21 @@ body{
     }
 
     .order_detail_title {
+        // background-color: #eee;
+        // cursor: pointer;
+        // width: 100%;
+        // transition: 0.4s;
+
+
         background-color: #eee;
+        color: #444;
         cursor: pointer;
+        padding: 18px;
         width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
         transition: 0.4s;
       }
       
@@ -271,7 +285,6 @@ body{
   
 #favorite {
     background-color: white;
-    height: 730px;
     border: 2px solid $color_blue;
     border-radius: 10px;
 
@@ -308,6 +321,7 @@ body{
         width: 40%;
         margin: auto;
         text-align: center;
+        margin:30px auto;
 
     
     }
@@ -344,6 +358,7 @@ body{
     .my_product_box{
         border: 2px solid $color_deepblue;
         border-radius: 20px;
+        margin: 50px 0px;
     }
 
     button{
@@ -442,8 +457,6 @@ body{
 // ------------------------------RWD MOBILE------------------------------//
 
 
-
-
 @include rwd(mobile){
 .cloud{
     width: 200%;
@@ -457,12 +470,23 @@ body{
     padding: 10px 0px;
 
 }
+
+
+
 #info{
     .profile_pic{
         width: 120px;
         height: 120px;
 
     }  
+
+    .profile_pic img{
+        border-radius: 50%;
+        width:100px;
+        height: 100px;
+    }
+
+
     table{
         width: 100%;
         margin: auto;
@@ -480,7 +504,13 @@ body{
     }
     .col_12{
         margin-bottom: 30px;
-    }  
+    } 
+    
+  .upload {
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -526,8 +556,6 @@ body{
         margin-bottom: 50px;
     }
 }
-
-
 
 
 }

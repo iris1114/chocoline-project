@@ -16,9 +16,6 @@ try {
   $member = $pdo->prepare($sql);
   $member->bindValue(":mem_id", $_SESSION["mem_id"]);
   $member->execute();
-
-
-
 } catch (PDOException $e) {
   echo "錯誤 : ", $e->getMessage(), "<br>";
   echo "行號 : ", $e->getLine(), "<br>";
@@ -39,7 +36,7 @@ echo $errMsg;
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="image/common/logo_icon.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/member.css">
+  <link rel="stylesheet" href="css/member2.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 
@@ -300,52 +297,108 @@ echo $errMsg;
       </form>
 
 
-      <!------ orderlist ------->
+
+      <!------ order_list------->
+
+      <?php
+      try {
+        require_once("../common/php/connect_choco.php");
+
+        // $sql = "select * from order_master where mem_no= 1";
+        // $orders1 = $pdo->query($sql);
+        // $order_rows1 = $orders1->fetchAll(PDO::FETCH_ASSOC);
+
+        $sql = "select * from order_master where mem_no= :mem_no";
+        $orders1 = $pdo->prepare($sql);
+        $orders1->bindValue(":mem_no", $_SESSION["mem_no"]);
+        $orders1->execute();
+        $order_rows1 = $orders1->fetchAll(PDO::FETCH_ASSOC);
+        // $sql2 = "select * from order_list Inner join customized_product on customized_product.customized_product_no=order_list.customized_product_no where order_no=$order_rows1[$i]['order_no']";
+        // $orders2 = $pdo->query($sql2);
+        // $order_rows2 = $orders2->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+      } catch (PDOException $e) {
+        echo "錯誤 : ", $e->getMessage(), "<br>";
+        echo "行號 : ", $e->getLine(), "<br>";
+      }
+
+      ?>
+
 
       <section id="orderlist" class="tabcontent">
         <form action="" class="clearfix">
-          <div class="my_order">
-            <div class="col_lg_3">
-              <p>訂單日期：</p>
-              <p>2019-07-07 10:10:10</p>
-            </div>
-            <div class="col_lg_3">
-              <p>訂單編號：</p>
-              <p>12345</p>
-            </div>
-            <div class="col_lg_3">
-              <p>訂單狀態：</p>
-              <p>處理中</p>
-            </div>
-            <div class="col_lg_3">
-              <p>總金額:</p>
-              <p> NT$ 700 </p>
-            </div>
-          </div>
-
-          <div class="my_order">
-            <div class="detail col_md_12 col_lg_12">
-              <div class="order_detail_box">
-                <h2 class="order_detail_title font-20">查看明細</h2>
-                <div class="order_content">
-                  <div class="product_img col_md_6 col_lg_6">
-                    <img src="image/common/logo_icon.png" alt="product">
-                  </div>
-                  <div class="product_detail col_md_6 col_lg_6">
-                    <p>choco小熊哥哥</p>
-                    <p>價格：NT$ 700 </p>
-                    <p>數量：2</p>
-                  </div>
-                </div>
+          <?php
+          for ($i = 0; $i < count($order_rows1); $i++) {
+            ?>
+            <div class="my_order">
+              <div class="col_lg_3">
+                <p>訂單日期：</p>
+                <p><?php echo $order_rows1[$i]['order_time']; ?></p>
+              </div>
+              <div class="col_lg_3">
+                <p>訂單編號：</p>
+                <p><?php echo $order_rows1[$i]['order_no']; ?></p>
+              </div>
+              <div class="col_lg_3">
+                <p>訂單狀態：</p>
+                <p><?php
+                    if ($order_rows1[$i]['shipping_status'] == 1) {
+                      echo "已出貨";
+                    } else {
+                      echo "未出貨";
+                    }
+                    ?></p>
+              </div>
+              <div class="col_lg_3">
+                <p>總金額:</p>
+                <p> NT$ <?php echo $order_rows1[$i]['order_amount']; ?></p>
               </div>
             </div>
-          </div>
+
+          <?php
+          }
+          ?>
         </form>
       </section>
 
 
-      <!------ favorite ------->
 
+      <!------ favorite ------->
+      <?php
+      try {
+        require_once("../common/php/connect_choco.php");
+
+        $sql = "select * from favorites Inner join classic_product on classic_product.classic_product_no=favorites.classic_product_no where mem_no=:mem_no";
+        $favorites_classic = $pdo->prepare($sql);
+        $favorites_classic->bindValue(":mem_no", $_SESSION["mem_no"]);
+        $favorites_classic->execute();
+        $favorites_classic_rows = $favorites_classic->fetchAll(PDO::FETCH_ASSOC);
+      } catch (PDOException $e) {
+        echo "錯誤 : ", $e->getMessage(), "<br>";
+        echo "行號 : ", $e->getLine(), "<br>";
+      }
+
+      ?>
+
+
+      <?php
+      try {
+        require_once("../common/php/connect_choco.php");
+
+        $sql = "select * from favorites f join contest c on f.contest_no =c.contest_no join customized_product cp on c.customized_product_no =cp.customized_product_no where f.mem_no =:mem_no";
+        $favorites_contest = $pdo->prepare($sql);
+        $favorites_contest->bindValue(":mem_no", $_SESSION["mem_no"]);
+        $favorites_contest->execute();
+        $favorites_contest_rows = $favorites_contest->fetchAll(PDO::FETCH_ASSOC);
+      } catch (PDOException $e) {
+        echo "錯誤 : ", $e->getMessage(), "<br>";
+        echo "行號 : ", $e->getLine(), "<br>";
+      }
+
+      ?>
 
       <section id="favorite" class="tabcontent">
         <button class="tab_favorite " onclick="open_favorite('favorite_choco', this,'#367e90','white')" id="default_favorite">我的CHOCO星人</button>
@@ -353,42 +406,37 @@ echo $errMsg;
 
         <div id="favorite_choco" class="content_favorite">
           <div class="my_choco">
-            <div class="my_choco_box col_12 col_md_6 col_lg_6">
-              <div class="choco_img">
-                <img src="image/member/choco_milk.png " alt="">
-                <p>CHOCO甜甜圈小王子</p>
+            <?php
+            for ($j = 0; $j < count($favorites_contest_rows); $j++) {
+              ?>
+
+              <div class=" my_choco_box col_12 col_md_6 col_lg_6">
+                <div class="choco_img">
+                  <img src="../common/image/chocos/<?php echo $favorites_contest_rows[$j]['choco_img_src']; ?> " alt="">
+                  <p><?php echo $favorites_contest_rows[$j]['customized_product_name']; ?></p>
+                </div>
               </div>
-              <div class="my_choco_desc">
-                <button class="btn orange_m"><span>參加選美</span></button>
-                <button class="btn orange_m"><span>加入購物車</span></button>
-                <button class="btn orange_m"><span>取消收藏</span></button>
-              </div>
-            </div>
-            <div class=" my_choco_box col_12 col_md_6 col_lg_6">
-              <div class="choco_img">
-                <img src="image/member/choco_milk.png " alt="">
-                <p>CHOCO甜甜圈小王子</p>
-              </div>
-              <div class="my_choco_desc">
-                <button class="btn orange_m"><span>參加選美</span></button>
-                <button class="btn orange_m"><span>加入購物車</span></button>
-                <button class="btn orange_m"><span>取消收藏</span></button>
-              </div>
-            </div>
+            <?php
+            }
+            ?>
           </div>
         </div>
+
+
         <div id="favorite_product" class="content_favorite">
           <div class="my_product">
-            <div class="my_product_box col_12 col_md_6 col_lg_6">
-              <div class="choco_img">
-                <img src="image/member/choco_milk.png " alt="">
-                <p>CHOCO甜甜圈小王子</p>
+            <?php
+            for ($i = 0; $i < count($favorites_classic_rows); $i++) {
+              ?>
+              <div class="my_product_box col_12 col_md_6 col_lg_6">
+                <div class="choco_img">
+                  <img src="../store/image/store/<?php echo $favorites_classic_rows[$i]['product_img_src']; ?>" alt="">
+                  <p><?php echo $favorites_classic_rows[$i]['classic_product_name']; ?></p>
+                </div>
               </div>
-              <div class="my_choco_desc">
-                <button class="btn orange_m"><span>加入購物車</span></button>
-                <button class="btn orange_m"><span>取消收藏</span></button>
-              </div>
-            </div>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </section>
@@ -426,6 +474,8 @@ echo $errMsg;
           </div>
         </div>
       </section>
+
+
 
 
     </div>
@@ -557,7 +607,7 @@ echo $errMsg;
 
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {
-        this.classList.toggle("active-plus");
+        this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
           panel.style.maxHeight = null;
