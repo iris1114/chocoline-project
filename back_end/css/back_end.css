@@ -1815,13 +1815,13 @@ section {
 .tab_wrap table {
   width: 100%;
   margin: auto;
-  table-layout: fixed;
   text-align: center; }
 
 .tab_wrap table,
 tr,
 td {
-  border: 1px solid #592F13; }
+  border: 1px solid #592F13;
+  vertical-align: middle; }
 
 th {
   padding: 15px;
