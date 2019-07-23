@@ -348,6 +348,7 @@ if (!isset($_SESSION["mem_headshot"])) {
 
           <div class="next_button2">
             <a href="#thrid" class="btn cyan_s " id="next_page2" ><span>第三步</span></a>
+            <!-- <span href="#thrid" class="btn cyan_s " id="next_page2" ><span>第三步</span></span> -->
           </div>
 
      </div>
@@ -1226,6 +1227,17 @@ if (!isset($_SESSION["mem_headshot"])) {
             console.log(bbb);
 
           }
+
+      
+      // $(function() {
+      //   $("#down").click(function() {
+      //     $("html, body").animate(
+      //       { scrollTop: $("#second").offset().top - 100 },
+      //       0
+      //     );
+      //   });
+      // });
+    
           // midimg[0].innerHTML = select_choco[2].innerHTML;
           // // console.log(`IMG${midimg[0].innerHTML}`)
           // let cc = midimg[0].innerHTML;
@@ -1913,6 +1925,7 @@ var prices2 = document.getElementById("price2");
           var choco_name = document.getElementById("choco_name");
         if (choco_name.value ==""){
           alert("請給CHOCO星人名字");
+          location.href="#third";
         }
           var sub_price = document.getElementById("final_price"); 
           sub_price.innerHTML = (price+100) ;

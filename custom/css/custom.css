@@ -3355,6 +3355,10 @@ section {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   background-color: #fff4e2;
@@ -5765,7 +5769,7 @@ body {
     transition: 1.5s;
   }
   .custom .wrap_custom .custom_type .shapePos3 {
-    width: 20%;
+    width: 30%;
     position: absolute;
     top: 34%;
     left: 58%;
@@ -5777,7 +5781,7 @@ body {
             transform: scale(0.75);
   }
   .custom .wrap_custom .custom_type .shapePos4 {
-    width: 20%;
+    width: 30%;
     position: absolute;
     top: 15%;
     left: 50%;
@@ -6478,16 +6482,13 @@ body {
     right: 0;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos .eye_demo {
-    width: 50px;
-    height: 50px;
+    width: 100%;
     -webkit-transform: scale(1);
             transform: scale(1);
     -webkit-transform: roate(0);
             transform: roate(0);
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .pos1 {
-    width: 50px;
-    height: 50px;
     border: 1px solid transparent;
     z-index: 1;
     position: absolute;
@@ -6496,8 +6497,6 @@ body {
     right: 0;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .pos2 {
-    width: 50px;
-    height: 50px;
     border: 1px solid transparent;
     z-index: 1;
     position: absolute;

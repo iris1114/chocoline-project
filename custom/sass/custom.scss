@@ -3,6 +3,10 @@
 
 //--------- BUTTON / PAGINATION/ SELECT_DROPDOWN /TITLE_DECORATION  在html使用classname即可-------------//
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   background-color: #fff4e2;
@@ -2336,7 +2340,7 @@ body {
           transition: 1.5s;
         }
         .shapePos3 {
-          width: 20%;
+          width: 30%;
           position: absolute;
           top: 34%;
 
@@ -2347,7 +2351,7 @@ body {
           transform: scale(0.75);
         }
         .shapePos4 {
-          width: 20%;
+          width: 30%;
           position: absolute;
           top: 15%;
           left: 50%;
@@ -3085,15 +3089,15 @@ body {
 
             right: 0;
             .eye_demo {
-              width: 50px;
-              height: 50px;
+              width: 100%;
+              // height: 50px;
               transform: scale(1);
               transform: roate(0);
             }
           }
           .pos1 {
-            width: 50px;
-            height: 50px;
+            // width: 50px;
+            // height: 50px;
             border: 1px solid transparent;
             z-index: 1;
             position: absolute;
@@ -3102,8 +3106,8 @@ body {
             right: 0;
           }
           .pos2 {
-            width: 50px;
-            height: 50px;
+            // width: 50px;
+            // height: 50px;
             border: 1px solid transparent;
             z-index: 1;
             position: absolute;
