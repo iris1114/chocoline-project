@@ -623,7 +623,9 @@ function show_select_result() {
 
 
     // var html = "";
-    var html = '<div class="product_item col_lg_5">' + product_list.firstElementChild.innerHTML + "</div>";
+    // var html = '<div class="product_item col_lg_5">' + product_list.firstElementChild.innerHTML + "</div>";
+    var html = '<form  id="winner_form">' + product_list.querySelector("#winner_form").innerHTML + "</form>";
+
     // console.log(html);
     // if (isCartEmpty()) {
     //     html = "<center>尚無購物資料</center>";
@@ -673,17 +675,17 @@ function show_select_result() {
             </div>
             </form>`;
     }
-    html += `<div class="pagination_wrap">
-    <div class="pagination">
-        <a href="javascript:;">❮</a>
-        <a class="active" href="javascript:;">1</a>
-        <a href="javascript:;">2</a>
-        <a href="javascript:;">3</a>
-        <a href="javascript:;">4</a>
-        <a href="javascript:;">5</a>
-        <a href="javascript:;">❯</a>
-    </div>
-</div>`
+    //     html += `<div class="pagination_wrap">
+    //     <div class="pagination">
+    //         <a href="javascript:;">❮</a>
+    //         <a class="active" href="javascript:;">1</a>
+    //         <a href="javascript:;">2</a>
+    //         <a href="javascript:;">3</a>
+    //         <a href="javascript:;">4</a>
+    //         <a href="javascript:;">5</a>
+    //         <a href="javascript:;">❯</a>
+    //     </div>
+    // </div>`
     product_list.innerHTML = html;
 
     plus_minus_qty();
