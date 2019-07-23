@@ -246,7 +246,7 @@
                         <figcaption class="outtext"></figcaption>
                         <figcaption class="innertext"></figcaption>
                     </figure>
-               </div>0
+               </div>
            </div>
         </div>
         <div class="final">

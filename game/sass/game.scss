@@ -555,6 +555,10 @@ canvas{
             height: 100vw;
             transform-origin: 29% 50%;
         }
+        .choco_bonus{
+            width: 100vh;
+            height: 100vw;
+        }
         .blackscreen{
             display: flex;
             display: none;
@@ -583,12 +587,22 @@ canvas{
     }
     @media all and (max-width:768px){
         .game_body{
-            transform-origin: 38% 50%;
+            transform-origin: 29% 50%;
+        }
+        @media all and (min-height:1023px) {
+            .game_body{
+                transform-origin: 38% 50%;
+            }   
         }
     }
     @media all and (max-width:375px){
         .game_body{
-            transform-origin: 34% 50%;
+            transform-origin: 29% 50%;
+        }
+        @media all and (min-height:811px){
+            .game_body{
+                transform-origin: 23% 50%;
+            }
         }
         #time{
             p{

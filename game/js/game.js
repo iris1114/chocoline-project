@@ -83,7 +83,9 @@ function handleComplete(evt,comp) {
                 if(window.DeviceOrientationEvent){
                     window.addEventListener("deviceorientation",phonerun);
                 }else{
-                    alert("請改用firefox")
+                    alert("請改用firefox");
+                    window.location.reload();
+                    window.location.href=window.location.href;
                 }
             }
         },1000)

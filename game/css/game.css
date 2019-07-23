@@ -3795,6 +3795,10 @@ canvas {
     -webkit-transform-origin: 29% 50%;
             transform-origin: 29% 50%;
   }
+  .choco_bonus {
+    width: 100vh;
+    height: 100vw;
+  }
   .blackscreen {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3832,6 +3836,13 @@ canvas {
 
 @media all and (orientation: portrait) and (max-width: 768px) {
   .game_body {
+    -webkit-transform-origin: 29% 50%;
+            transform-origin: 29% 50%;
+  }
+}
+
+@media all and (orientation: portrait) and (max-width: 768px) and (min-height: 1023px) {
+  .game_body {
     -webkit-transform-origin: 38% 50%;
             transform-origin: 38% 50%;
   }
@@ -3839,9 +3850,19 @@ canvas {
 
 @media all and (orientation: portrait) and (max-width: 375px) {
   .game_body {
-    -webkit-transform-origin: 34% 50%;
-            transform-origin: 34% 50%;
+    -webkit-transform-origin: 29% 50%;
+            transform-origin: 29% 50%;
   }
+}
+
+@media all and (orientation: portrait) and (max-width: 375px) and (min-height: 811px) {
+  .game_body {
+    -webkit-transform-origin: 23% 50%;
+            transform-origin: 23% 50%;
+  }
+}
+
+@media all and (orientation: portrait) and (max-width: 375px) {
   #time p {
     letter-spacing: 5px;
   }
