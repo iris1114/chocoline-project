@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_start();
 if(isset($_SESSION["mem_id"])!=true){
     $_SESSION["mem_id"] = null;
 }
@@ -290,9 +289,9 @@ echo $errMsg;
                 <div class="box cart_show_box ">
                     <div class=" col_12 col_m_4 col_lg_4 purchaser_box ">
                         <p>訂購人資訊</p>
-                        <p class="name_input"><span class="w-100">姓名:</span><input type="text" name="purchaser_name" class="purchaser_info" value="<?php echo  $_SESSION["mem_name"]; ?> "></p>
-                        <p class="tel_input"><span class="w-100">電話:</span><input type="tel" name="purchaser_phone" class="purchaser_info" value="<?php echo  $_SESSION["mem_tel"]; ?>"></p>
-                        <p class="address_input"><span class="w-100">地址:</span><input type="text" name="purchaser_address" class="purchaser_info" value="<?php echo  $_SESSION["mem_address"]; ?>"></p>
+                        <p class="name_input"><span class="w-100">姓名:</span><input type="text" name="purchaser_name" class="purchaser_info" value="<?php echo  $_SESSION["mem_name"]; ?> " disabled></p>
+                        <p class="tel_input"><span class="w-100">電話:</span><input type="tel" name="purchaser_phone" class="purchaser_info" value="<?php echo  $_SESSION["mem_tel"]; ?>" disabled></p>
+                        <p class="address_input"><span class="w-100">地址:</span><input type="text" name="purchaser_address" class="purchaser_info" value="<?php echo  $_SESSION["mem_address"]; ?>" disabled></p>
                     </div>
 
                     <div class=" col_12 col_m_4 col_lg_4 receiver_box ">

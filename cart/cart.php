@@ -1,13 +1,12 @@
 <?php
 session_start();
-session_start();
-if(isset($_SESSION["mem_id"])!=true){
+if (isset($_SESSION["mem_id"]) != true) {
     $_SESSION["mem_id"] = null;
 }
-if(isset($_SESSION["mem_no"])!=true){
+if (isset($_SESSION["mem_no"]) != true) {
     $_SESSION["mem_no"] = null;
 }
-if(isset($_SESSION["mem_name"])!=true){
+if (isset($_SESSION["mem_name"]) != true) {
     $_SESSION["mem_name"] = null;
 }
 if (!isset($_SESSION["mem_headshot"])) {
@@ -290,11 +289,11 @@ if (!isset($_SESSION["mem_headshot"])) {
                     </div>
 
 
-                    <?php
-                    }
-                    // $total = 0;
+                <?php
+                }
+                // $total = 0;
 
-                    foreach ($_SESSION['cart_custom'] as $i => $value) {
+                foreach ($_SESSION['cart_custom'] as $i => $value) {
 
                     // foreach( $_SESSION["cart"][$psn]["pname"] as $psn => $data){ 
                     $subTotal = $_SESSION["cart_custom"][$i]["custom_price"] * $_SESSION["cart_custom"][$i]["custom_qty"];  //計算小計
@@ -305,8 +304,8 @@ if (!isset($_SESSION["mem_headshot"])) {
                         <span style='display:none'><?php echo $_SESSION["cart_custom"][$i]["csn"]; ?></span>
 
                         <div class="item cart_img col_12 col_lg_3 col_md_2  ">
-                            <a href="chocoline-project/store/product.php?classic_product_no=<?php echo $_SESSION["cart_custom"][$i]["csn"]; ?>">
-                            <img src="../store/image/store/<?php echo $_SESSION["cart_custom"][$i]["custom_img"]; ?>  " alt="choco"> </a>
+                            <a href="<?php echo $_SESSION["cart_custom"][$i]["custom_img"]; ?>">
+                                <img src="<?php echo $_SESSION["cart_custom"][$i]["custom_img"]; ?>  " alt="choco"> </a>
                         </div>
 
 
@@ -341,11 +340,11 @@ if (!isset($_SESSION["mem_headshot"])) {
                         </div>
                     </div>
 
-                    <?php
+                <?php
 
-                    }
+                }
 
-                    ?>
+                ?>
                 <!--－－－－－－－－－ 客制商品－－－－－－－－－－ -->
 
                 <section id="cart_form_container  ">
@@ -361,11 +360,10 @@ if (!isset($_SESSION["mem_headshot"])) {
             <p id='cart_total_area'>商品金額:NT$ <span class='amount' id='cart_total'>", number_format($total), "</span></p>
             </div>
             </div>";
-                   
-                        }
-                        ?>
-                    </div>
-                </section>
+                    }
+                    ?>
+                </div>
+            </section>
 
         </div>
     </section>
@@ -467,11 +465,6 @@ if (!isset($_SESSION["mem_headshot"])) {
         </div>
     </div>
     <!-- robot end -->
-
-
-
-
-
 
 
     <script src="../common/js/header.js"></script>

@@ -16,8 +16,7 @@ if (!isset($_SESSION["mem_headshot"])) {
 
 
 <?php
-// ob_start();
-// session_start();
+
 $errMsg = "";
 
 //連線資料庫
@@ -48,29 +47,43 @@ try {
     }
 
 
-    $sql = "INSERT INTO `order_list`(`order_no`, `customized_product_no`, `product_qty`, `product_price`) VALUES ($order_no,:customized_product_no,:custom_qty,:custom_price)";
+
+    $sql = "INSERT INTO `customized_product`(`customized_product_no`, `customized_product_name`, `mem_no`, `choco_img_src`, `subtotal_price`, `card_back_src`, `choco_flavor_no`, `choco_base_no`) VALUES (:customized_product_no,:custom_name,:mem_no,:custom_img,:custom_price,:custom_card_img,:custom_flavor_no,:custom_base_no)";
     $products = $pdo->prepare($sql);
     // for($i=0;$i<count($_SESSION["cart"]);$i++){
-    foreach ($_SESSION['cart_custom'] as $i => $value) {
-        $products->bindValue(":customized_product_no", $_SESSION["cart_custom"][$i]["csn"]);
-        $products->bindValue(":custom_qty", $_SESSION["cart_custom"][$i]["custom_qty"]);
-        $products->bindValue(":custom_price", $_SESSION["cart_custom"][$i]["custom_price"]);
-        $products->execute();
-    }
-    $sql = "INSERT INTO `customized_product`(`customized_product_no`, `customized_product_name`, `mem_no`, `choco_img_src`, `product_price`, `card_img_src`, `choco_flavor_no`, `choco_base_no`) VALUES (:customized_product_no,:custom_name,:mem_no,:custom_img,:custom_price,:custom_card_img,:custom_flavor_no,:custom_base_no)";
-    $products = $pdo->prepare($sql);
-    // for($i=0;$i<count($_SESSION["cart"]);$i++){
-    foreach ($_SESSION['cart_custom'] as $i => $value) {
-        $products->bindValue(":customized_product_no", $_SESSION["cart_custom"][$i]["csn"]);
-        $products->bindValue(":custom_name", $_SESSION["cart_custom"][$i]["custom_name"]);
+    foreach ($_SESSION['cart_custom'] as $k => $value) {
+        $products->bindValue(":customized_product_no", $_SESSION["cart_custom"][$k]["csn"]);
+        $products->bindValue(":custom_name", $_SESSION["cart_custom"][$k]["custom_name"]);
         $products->bindValue(":mem_no", $_SESSION["mem_no"]);
-        $products->bindValue(":custom_img", $_SESSION["cart_custom"][$i]["custom_img"]);    
-        $products->bindValue(":custom_price", $_SESSION["cart_custom"][$i]["custom_price"]);
-        $products->bindValue(":custom_card_img", $_SESSION["cart_custom"][$i]["custom_card_img"]);
-        $products->bindValue(":custom_flavor_no", $_SESSION["cart_custom"][$i]["custom_flavor_no"]);
-        $products->bindValue(":custom_base_no", $_SESSION["cart_custom"][$i]["custom_base_no"]);
+        $products->bindValue(":custom_img", $_SESSION["cart_custom"][$k]["custom_img"]);
+        $products->bindValue(":custom_price", $_SESSION["cart_custom"][$k]["custom_price"]);
+        $products->bindValue(":custom_card_img", $_SESSION["cart_custom"][$k]["custom_card_img"]);
+        $products->bindValue(":custom_flavor_no", $_SESSION["cart_custom"][$k]["custom_flavor_no"]);
+        $products->bindValue(":custom_base_no", $_SESSION["cart_custom"][$k]["custom_base_no"]);
         $products->execute();
     }
+
+
+
+    $customized_product_no = $pdo->lastInsertId();
+    $sql = "INSERT INTO `order_list`(`order_no`, `customized_product_no`, `product_qty`, `product_price`) VALUES ($order_no,$customized_product_no,:custom_qty,:custom_price)";
+    $products = $pdo->prepare($sql);
+    // for($i=0;$i<count($_SESSION["cart"]);$i++){
+    foreach ($_SESSION['cart_custom'] as $j => $value) {
+        // $products->bindValue(":customized_product_no", $_SESSION["cart_custom"][$j]["csn"]);
+        $products->bindValue(":custom_qty", $_SESSION["cart_custom"][$j]["custom_qty"]);
+        $products->bindValue(":custom_price", $_SESSION["cart_custom"][$j]["custom_price"]);
+        $products->execute();
+    }
+
+    $sql = "UPDATE classic_product SET product_sold = product_sold+:product_sold WHERE classic_product_no = :classic_product_no";
+    $products = $pdo->prepare($sql);
+    foreach ($_SESSION['cart_custom'] as $k => $value) {
+    $products->bindValue(":product_sold", $_SESSION["cart"][$k]["qty"]);
+    $products->bindValue(":classic_product_no", $_SESSION["cart"][$k]["psn"]);
+    $products->execute();
+}
+   
 
     $sql = "UPDATE member SET mem_point = :mem_point WHERE mem_no = :mem_no";
     $products = $pdo->prepare($sql);
@@ -80,6 +93,7 @@ try {
 
     $pdo->commit();
     unset($_SESSION["cart"]);
+    unset($_SESSION["cart_custom"]);
     echo "下單成功，您的訂單編號為$order_no<br>~~";
 } catch (PDOException $e) {
     echo $errMsg .= "錯誤原因 : " . $e->getMessage() . "<br>";
@@ -267,7 +281,7 @@ try {
             <!-- <div class="order_bg"> -->
             <!-- <img src="image/cart/order-bg.png" alt="order_bg"> -->
             <div class="order_text">
-                <p> <?php echo "下單成功，您的訂單編號為$order_no~~";  ?></p>
+                <p> <?php echo "下單成功，您的訂單編號為$order_no~~";?></p>
             </div>
             <?php
             // try {
@@ -310,7 +324,7 @@ try {
 
                 <div class="order_content">
                     <div class="product_img col_md_6 col_lg_6">
-                        <img src="../store/image/store/ <?php echo $order_rows3[$k]['product_img_src']; ?>" alt="product">
+                        <img src="../store/image/store/<?php echo $order_rows3[$k]['product_img_src']; ?>" alt="product">
                     </div>
                     <div class="product_detail col_md_6 col_lg_6">
                         <p><?php echo $order_rows3[$k]['classic_product_name']; ?></p>
@@ -323,8 +337,43 @@ try {
             }
 
             ?>
+               <?php
+
+                    //$sql2 = "select * from order_list join order_master m on order_list.orderno = m.orderno Inner join classic_product on classic_product.classic_product_no=order_list.classic_product_no where order_no=:orderno and mem_no=:mem_no;";
+                    $sql3 = "select * from order_master m 
+                    join order_list detail on detail.order_no = m.order_no
+                    join customized_product c on c.customized_product_no=detail.customized_product_no 
+                    where m.order_no=:orderno and m.mem_no=:mem_no";
+                    $orders4 = $pdo->prepare($sql3);
+                    $orders4->bindValue(":orderno", $order_no);
+                    $orders4->bindValue(":mem_no", $_SESSION["mem_no"]);
+
+                    $orders4->execute();
+
+                    $order_rows4 = $orders4->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+                    for ($k = 0; $k < count($order_rows4); $k++) {
+                    ?>
+
+                    <div class="order_content">
+                    <div class="product_img col_md_6 col_lg_6">
+                        <img src="<?php echo $order_rows4[$k]['choco_img_src']; ?>" alt="product">
+                    </div>
+                    <div class="product_detail col_md_6 col_lg_6">
+                        <p><?php echo $order_rows4[$k]['customized_product_name']; ?></p>
+                        <p>價格：NT$ <?php echo $order_rows4[$k]['product_price']; ?> </p>
+                        <p>數量：<?php echo $order_rows4[$k]['product_qty']; ?></p>
+                    </div>
+                    </div>
+
+                    <?php
+                    }
+
+                    ?>
             <div class="cart_btn_group">
-                <a href="cart.php" class="btn orange_l"><span> 繼續購物</span></a>
+                <a href="../store/store.php" class="btn orange_l"><span> 繼續購物</span></a>
             </div>
 
 
