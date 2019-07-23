@@ -1,0 +1,24 @@
+th,td{
+    vertical-align: middle;
+}
+th:nth-child(1){
+    width: 130px;
+}
+th:nth-child(2){
+    width: 130px;
+}
+th:nth-child(3){
+    width: 130px;
+}
+th:nth-child(6){
+    width: 250px;
+}
+th:nth-child(7){
+    width: 100px;
+}
+th:nth-child(8){
+    width: 100px;
+}
+td{
+    padding: 0 5px;
+}
