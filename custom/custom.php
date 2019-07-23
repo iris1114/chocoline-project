@@ -1916,11 +1916,13 @@ var prices2 = document.getElementById("price2");
         }
           var sub_price = document.getElementById("final_price"); 
           sub_price.innerHTML = (price+100) ;
+          
+          console.log("sub_price",sub_price);
 
          var kkk= $("#cho_pos").attr("src");
          var  k1 = kkk.split("_");
          var cho_base = k1[1];
-         console.log("cho_base",cho_base);
+        //  console.log("cho_base",cho_base);
          var cho_flavor = k1[2].replace(".png" , "");
         //  console.log("cho_flavor",cho_flavor);
           if (cho_base =="w"){

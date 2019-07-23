@@ -6488,6 +6488,7 @@ body {
   .outlook .outlok_wrap .outlook_fix .fix_photo .pos1 {
     width: 50px;
     height: 50px;
+    border: 1px solid transparent;
     z-index: 1;
     position: absolute;
     top: 23%;
@@ -6497,6 +6498,7 @@ body {
   .outlook .outlok_wrap .outlook_fix .fix_photo .pos2 {
     width: 50px;
     height: 50px;
+    border: 1px solid transparent;
     z-index: 1;
     position: absolute;
     top: 23%;
@@ -6505,6 +6507,7 @@ body {
   .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos {
     width: 50px;
     height: 50px;
+    border: 1px solid transparent;
     z-index: 1;
     position: absolute;
     top: 45%;
@@ -6521,6 +6524,7 @@ body {
   .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos1 {
     width: 50px;
     height: 50px;
+    border: 1px solid transparent;
     z-index: 1;
     position: absolute;
     top: 50%;
@@ -6537,6 +6541,7 @@ body {
   .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos2 {
     width: 50px;
     height: 50px;
+    border: 1px solid transparent;
     z-index: 1;
     position: absolute;
     top: 60%;
@@ -6551,7 +6556,7 @@ body {
             transform: roate(0);
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .selector {
-    border: 3px dashed #ef9021;
+    border: 1px dashed #1c99ae;
   }
   .outlook .outlok_wrap .fix_bar {
     width: 90%;
@@ -6596,6 +6601,20 @@ body {
     left: 0;
     right: 0;
   }
+  .outlook .outlok_wrap .next_button3_mobile {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10%;
+    z-index: 1;
+    position: absolute;
+    bottom: -5%;
+  }
+  .outlook .outlok_wrap .next_button3_mobile #next_page3_mobile {
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
+  }
   .outlook .outlok_wrap .step_info {
     width: 30%;
     position: relative;
@@ -6623,6 +6642,20 @@ body {
   }
   .outlook .outlok_wrap .step_info .right_side_background img {
     width: 85%;
+  }
+  .outlook .outlok_wrap .step_info .next_button3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 10%;
+    z-index: 1;
+    position: absolute;
+    bottom: -5%;
+  }
+  .outlook .outlok_wrap .step_info .next_button3 #next_page3 {
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
   }
   .card {
     width: 100%;

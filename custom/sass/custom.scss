@@ -3094,7 +3094,7 @@ body {
           .pos1 {
             width: 50px;
             height: 50px;
-            // border: 1px solid blue;
+            border: 1px solid transparent;
             z-index: 1;
             position: absolute;
             top: 23%;
@@ -3104,7 +3104,7 @@ body {
           .pos2 {
             width: 50px;
             height: 50px;
-            // border: 1px solid rgb(240, 9, 9);
+            border: 1px solid transparent;
             z-index: 1;
             position: absolute;
             top: 23%;
@@ -3115,7 +3115,7 @@ body {
           .mouse_pos {
             width: 50px;
             height: 50px;
-            // border: 1px solid yellow;
+            border: 1px solid transparent;
             z-index: 1;
             position: absolute;
             top: 45%;
@@ -3132,7 +3132,7 @@ body {
           .others_pos1 {
             width: 50px;
             height: 50px;
-            // border: 1px solid green;
+            border: 1px solid transparent;
             z-index: 1;
             position: absolute;
             top: 50%;
@@ -3149,7 +3149,7 @@ body {
           .others_pos2 {
             width: 50px;
             height: 50px;
-            // border: 1px solid orange;
+            border: 1px solid transparent;
             z-index: 1;
             position: absolute;
             top: 60%;
@@ -3164,7 +3164,7 @@ body {
             }
           }
           .selector {
-            border: 3px dashed #ef9021;
+            border: 1px dashed #1c99ae;
 
             // border-radius: 20px;
           }
@@ -3210,6 +3210,21 @@ body {
           right: 0;
         }
       }
+      .next_button3_mobile {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding-top: 10%;
+        z-index: 1;
+        position: absolute;
+        bottom: -5%;
+
+        #next_page3_mobile {
+          width: 50%;
+          display: inline-block;
+          margin: 0 auto;
+        }
+      }
 
       .step_info {
         width: 30%;
@@ -3236,6 +3251,21 @@ body {
           width: 100%;
           img {
             width: 85%;
+          }
+        }
+        .next_button3 {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding-top: 10%;
+          z-index: 1;
+          position: absolute;
+          bottom: -5%;
+
+          #next_page3 {
+            width: 50%;
+            display: inline-block;
+            margin: 0 auto;
           }
         }
       }
