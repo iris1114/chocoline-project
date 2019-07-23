@@ -387,7 +387,8 @@ body {
                     .product_list_area {
                         .order_by_search {
                             display: flex;
-                            justify-content: space-around;
+                            // justify-content: space-around;
+                            justify-content: center;
                             flex-flow: row;
                             flex-wrap: wrap;
                             align-items: center;
@@ -1110,7 +1111,7 @@ body {
                     .product_list_area {
                         .order_by_search {
                             display: flex;
-                            justify-content: space-around;
+                            justify-content: center;
                             .select_button {
                                 background-color: $color_deepblue;
                                 border: none;
@@ -1787,7 +1788,8 @@ body {
                         padding: 0 0 0 20px;
                         .order_by_search {
                             display: flex;
-                            justify-content: space-between;
+                            // justify-content: space-between;
+                            justify-content: center;
                             .select_button {
                                 display: none;
                             }
@@ -2390,6 +2392,7 @@ body {
                     width: 100%;
                     display: flex;
                     .selector_area {
+                        height: 1000px;
                         border: 2px solid $color_brown;
                         border-radius: 20px;
                         box-shadow: 8px 8px 5px $color_brown;
@@ -2561,7 +2564,7 @@ body {
                             display: flex;
                             flex-wrap: wrap;
                             justify-content: space-around;
-                            padding: 50px 20px 20px 30px;
+                            padding: 20px 20px 20px 30px;
                             .product_item {
                                 display: flex;
                                 flex-flow: column;
