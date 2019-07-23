@@ -5,7 +5,8 @@ try {
     
     require_once("../../common/php/connect_choco.php");
     
-    $comment = $_REQUEST["comment"];
+    // $comment = $_REQUEST["comment"];
+    $comment = htmlspecialchars($_REQUEST["comment"]);
     $sql = "INSERT INTO comment_record(mem_no, contest_no, comment) VALUES(:mem_no , :contest_no , :comment)";
     $addmessage = $pdo->prepare($sql); //編譯好指令
     $addmessage->bindValue(":mem_no", $_SESSION["mem_no"]);
