@@ -456,6 +456,7 @@ try {
                                             <input class="select_checkbox selectors" value="lover_class" type="checkbox" id="lover" name="lover" />
                                             <span>情人</span>
                                         </label>
+                                        <br />
                                         <label class="checkbox_text">
                                             <input class="select_checkbox selectors" value="friend_class" type="checkbox" id="friend" name="friend" />
                                             <span>朋友</span>
@@ -487,6 +488,8 @@ try {
 
 
                             <!-- product item start -->
+                            <form id="winner_form">
+
                             <div class="product_item col_lg_5">
                                 <div class="special_tag">
                                     <img src="image/store/crown1.png" alt="" />
@@ -527,7 +530,12 @@ try {
                                     <a href="javascript:;" class="btn orange_m classic_product_add_cart_btn"><span>加入購物車</span></a>
                                 </div>
                             </div>
-                
+                            <input type="hidden" name="p_no" value="<?php echo $winner_rows[0]['classic_product_no']; ?>">
+                            <input type="hidden" name="p_name" value="<?php echo $winner_rows[0]['classic_product_name']; ?>">
+                            <input type="hidden" name="p_price" value="<?php echo $winner_rows[0]['product_price']; ?>">
+                            <input type="hidden" name="p_img" value="../store/image/store/<?php echo $winner_rows[0]['product_img_src']; ?>">
+                            <input type="hidden" name="mem_no" value="<?php echo $_SESSION["mem_no"] ?>">
+                            </form>
                             <!-- product item end -->
 
 
@@ -601,7 +609,7 @@ try {
                             ?>
 
 
-                            <div class="pagination_wrap">
+                            <!-- <div class="pagination_wrap">
                                 <div class="pagination">
                                     <a href="javascript:;">❮</a>
                                     <a class="active" href="javascript:;">1</a>
@@ -611,7 +619,7 @@ try {
                                     <a href="javascript:;">5</a>
                                     <a href="javascript:;">❯</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -619,6 +627,16 @@ try {
         </div>
     </section>
     <!-- prdocut list end -->
+
+<!-- light box start -->
+    <!-- <div class="alert_box" style="display: none">
+    <div class="alert_content">
+        <p>成功加入購物車～</p>
+        <img class="alert_close" src="image/common/login_closeicon2.png" alt="">
+    </div>
+</div> -->
+<!-- light box end -->
+    
     <!-- footer start -->
     <footer>
         <div class="connect">

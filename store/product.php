@@ -286,7 +286,7 @@ try {
                             <input type="hidden" name="p_no" value="<?php echo $prodRow->classic_product_no ?>">
                             <input type="hidden" name="p_name" value="<?php echo $prodRow->classic_product_name ?>">
                             <input type="hidden" name="p_price" value="<?php echo $prodRow->product_price ?>">
-                            <input type="hidden" name="p_img" value="image/store/<?php echo $prodRow->product_img_src ?>">
+                            <input type="hidden" name="p_img" value="../store/image/store/<?php echo $prodRow->product_img_src ?>">
 
 
 
