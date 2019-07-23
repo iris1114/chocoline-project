@@ -65,10 +65,10 @@ try{
                         <form action="php/order_update.php" method="post">
                             <input type="hidden" name="order_no" value="<?php echo $orderRow['order_no'];?>">
                             <td> <?php echo $orderRow['order_no'];?></td>
-                            <td><input class="input_revise" type="text" value="<?php echo $orderRow['mem_no'];?>" style="display:none"><span class="show_value"><?php echo $orderRow['mem_no'];?></span></td>
-                            <td><input class="input_revise" type="text" value="<?php echo $orderRow['mem_name'];?>" style="display:none"><span class="show_value"><?php echo $orderRow['mem_name'];?></span></td>
-                            <td><input class="input_revise" type="text" value="<?php echo $orderRow['order_time'];?>" style="display:none"><span class="show_value"><?php echo $orderRow['order_time'];?></span></td>
-                            <td><input class="input_revise" type="text" value="<?php echo $orderRow['order_amount'];?>" style="display:none"><span class="show_value"><?php echo $orderRow['order_amount'];?></span></td>
+                            <td><?php echo $orderRow['mem_no'];?></td>
+                            <td><?php echo $orderRow['mem_name'];?></td>
+                            <td><?php echo $orderRow['order_time'];?></td>
+                            <td><?php echo $orderRow['order_amount'];?></td>
                             <td> <select name="shipping_status">      
                                     <?php 
                                         if($orderRow['shipping_status']==0){
