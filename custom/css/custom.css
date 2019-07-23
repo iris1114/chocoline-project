@@ -6848,6 +6848,7 @@ body {
     margin: 0 auto;
   }
   .card .card_wrap .card_custom .controls .sliders #SaveCnv {
+    display: none;
     width: 100px;
     text-align: center;
   }
