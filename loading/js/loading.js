@@ -9,7 +9,7 @@ console.log(btn);
 btn.onclick = function() { //設定當頁面載入時執行
     $('#front_end_img').addClass('fly');
     setTimeout(function() {
-        window.location.href = "../index/index.php";
+        window.location.href = "index/index.php";
     }, 4000);    
     $('')
 }
@@ -22,7 +22,7 @@ console.log(btn);
 btn.onclick = function() { //設定當頁面載入時執行
     $('#back_end_img').addClass('fly2');
     setTimeout(function() {
-        window.location.href = "../index/index.php";
+        window.location.href = "back_end/back_end.php";
     }, 4000);    
     $('')
 }
