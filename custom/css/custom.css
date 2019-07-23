@@ -3529,6 +3529,7 @@ body {
             flex-flow: column wrap;
     margin: auto;
     padding-bottom: 50px;
+    position: relative;
   }
   .choose_base .select_base {
     width: 100%;
@@ -3611,6 +3612,7 @@ body {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     padding-top: 3%;
+    position: relative;
   }
   .choose_base .select_type .choco_overview {
     width: 100%;
@@ -3628,20 +3630,20 @@ body {
   .choose_base .select_type .choco_type ul {
     padding: 2% 0;
   }
-  .choose_base .select_type .choco_type li {
+  .choose_base .select_type .choco_type ul li {
     width: 60px;
     height: 60px;
     display: inline-block;
     cursor: pointer;
     position: relative;
   }
-  .choose_base .select_type .choco_type li:hover {
+  .choose_base .select_type .choco_type ul li:hover {
     background-color: #ef9021;
     border-radius: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .choose_base .select_type .choco_type li:hover::before {
+  .choose_base .select_type .choco_type ul li:hover::before {
     content: "";
     display: block;
     width: 80%;
@@ -3656,13 +3658,13 @@ body {
     background-color: #fff5e3;
     border-radius: 50%;
   }
-  .choose_base .select_type .choco_type li.active {
+  .choose_base .select_type .choco_type ul li.active {
     background-color: #eeeeee;
     border-radius: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .choose_base .select_type .choco_type li.active::before {
+  .choose_base .select_type .choco_type ul li.active::before {
     content: "";
     display: block;
     width: 80%;
@@ -3677,7 +3679,7 @@ body {
     background-color: #fff5e3;
     border-radius: 50%;
   }
-  .choose_base .select_type .choco_type li.active {
+  .choose_base .select_type .choco_type ul li.active {
     background-color: #eeeeee;
     background-color: #ef9021;
     border-radius: 50%;
@@ -3688,7 +3690,7 @@ body {
     -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0, 1.89);
     transition: all 0.5s cubic-bezier(0.17, 0.67, 0, 1.89);
   }
-  .choose_base .select_type .choco_type li.active::before {
+  .choose_base .select_type .choco_type ul li.active::before {
     content: "";
     display: block;
     width: 80%;
@@ -3705,7 +3707,7 @@ body {
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
-  .choose_base .select_type .choco_type li figure {
+  .choose_base .select_type .choco_type ul li figure {
     width: 60%;
     height: 60%;
     position: absolute;
@@ -3728,18 +3730,19 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .choose_base .select_type .choco_type li img {
+  .choose_base .select_type .choco_type ul li img {
     width: 30px;
     height: 30px;
     padding-top: 10%;
   }
-  .choose_base .select_type .choco_type li p {
+  .choose_base .select_type .choco_type ul li p {
     font-size: 16px;
   }
-  .choose_base .info_bar {
+  .choose_base .select_type .info_bar {
     width: 95%;
     height: 10%;
     border-radius: 10px;
+    position: relative;
     margin: 0 auto;
     text-align: center;
     background-color: white;
@@ -3747,37 +3750,38 @@ body {
     -webkit-box-shadow: 5px 5px #f9aab0;
             box-shadow: 5px 5px #f9aab0;
   }
-  .choose_base .info_bar .blue_text {
+  .choose_base .select_type .info_bar .blue_text {
     font-size: 16px;
     padding: 3.5% 0;
     display: block;
   }
-  .choose_base .info_bar .grape_text {
+  .choose_base .select_type .info_bar .grape_text {
     font-size: 16px;
     padding: 3.5% 0;
     display: none;
   }
-  .choose_base .info_bar .bo_text {
+  .choose_base .select_type .info_bar .bo_text {
     font-size: 16px;
     padding: 3.5% 0;
     display: none;
   }
-  .choose_base .info_bar .orange_text {
+  .choose_base .select_type .info_bar .orange_text {
     font-size: 16px;
     padding: 3.5% 0;
     display: none;
   }
-  .choose_base .info_bar .strawberry_text {
+  .choose_base .select_type .info_bar .strawberry_text {
     font-size: 16px;
     padding: 3.5% 0;
     display: none;
   }
-  .choose_base .info_bar #next_page2 {
-    width: 50%;
-    display: inline-block;
-    margin: auto;
+  .choose_base .select_type .next_button2 {
+    display: none;
   }
-  .select_info {
+  .choose_base .select_type .next_button2 #next_page2 {
+    display: none;
+  }
+  .choose_base .select_info {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3786,126 +3790,46 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
-  }
-  .select_info .cho_info {
-    width: 100%;
-    text-align: center;
     position: relative;
-    display: none;
-    z-index: 1;
   }
-  .select_info .cho_info .cho_info_photo {
-    width: 100%;
-  }
-  .select_info .cho_info .cho_info_photo img {
-    width: 100%;
-  }
-  .select_info .cho_info .black_text {
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    display: block;
-  }
-  .select_info .cho_info .black_text h3 {
-    width: 100%;
-    font-size: 28px;
-    padding-bottom: 5%;
-  }
-  .select_info .cho_info .black_text p {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-bottom: 5%;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .select_info .cho_info .black_text p:nth-child(3) {
-    border-bottom: 1px solid #9a999a;
-    padding-bottom: 10%;
-  }
-  .select_info .cho_info .black_text p:nth-child(4) {
-    padding: 10% 0 10%;
-  }
-  .select_info .cho_info .milk_text {
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
+  .choose_base .select_info .cho_info {
     display: none;
   }
-  .select_info .cho_info .milk_text h3 {
-    width: 100%;
-    font-size: 28px;
-    padding-bottom: 5%;
-  }
-  .select_info .cho_info .milk_text p {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-bottom: 5%;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .select_info .cho_info .milk_text p:nth-child(3) {
-    border-bottom: 1px solid #9a999a;
-    padding-bottom: 10%;
-  }
-  .select_info .cho_info .milk_text p:nth-child(4) {
-    padding: 10% 0 10%;
-  }
-  .select_info .cho_info .white_text {
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    display: none;
-  }
-  .select_info .cho_info .white_text h3 {
-    width: 100%;
-    font-size: 28px;
-    padding-bottom: 5%;
-  }
-  .select_info .cho_info .white_text p {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-bottom: 5%;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .select_info .cho_info .white_text p:nth-child(3) {
-    border-bottom: 1px solid #9a999a;
-    padding-bottom: 10%;
-  }
-  .select_info .cho_info .white_text p:nth-child(4) {
-    padding: 10% 0 10%;
-  }
-  .select_info .total_price {
+  .choose_base .select_info .total_price {
     width: 100%;
     padding-top: 15%;
     text-align: center;
     position: relative;
   }
-  .select_info .total_price img {
+  .choose_base .select_info .total_price img {
     width: 90%;
   }
-  .select_info .total_price h4 {
+  .choose_base .select_info .total_price h4 {
     font-size: 28px;
     position: absolute;
     top: 29%;
     left: 0;
     right: 0;
   }
-  .select_info .total_price p {
+  .choose_base .select_info .total_price p {
     font-size: 28px;
     position: absolute;
     top: 65%;
     left: 0;
     right: 0;
+  }
+  .choose_base .next_button2_mobile {
+    width: 100%;
+    text-align: center;
+    padding-top: 10%;
+    z-index: 1;
+    position: absolute;
+    bottom: 1%;
+  }
+  .choose_base .next_button2_mobile #next_page2_mobile {
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
   }
 }
 
@@ -4172,6 +4096,7 @@ body {
           flex-flow: column wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .outlook .outlok_wrap .outlook_fix .fix_photo {
@@ -4275,6 +4200,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: white;
+  position: relative;
 }
 
 .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo {
@@ -4313,8 +4239,18 @@ body {
   right: 0;
 }
 
-.outlook .outlok_wrap .outlook_fix .cyan_s {
-  width: 100px;
+.outlook .outlok_wrap .outlook_fix .next_button3_mobile {
+  width: 100%;
+  text-align: center;
+  padding-top: 10%;
+  z-index: 1;
+  position: absolute;
+  bottom: -5%;
+}
+
+.outlook .outlok_wrap .outlook_fix .next_button3_mobile #next_page3_mobile {
+  width: 50%;
+  display: inline-block;
   margin: 0 auto;
 }
 
@@ -4344,7 +4280,15 @@ body {
 }
 
 .outlook .outlok_wrap .step_info .right_side_background img {
-  width: 85%;
+  width: 75%;
+}
+
+.outlook .outlok_wrap .step_info .next_button3 {
+  display: none;
+}
+
+.outlook .outlok_wrap .step_info .next_button3 #next_page3 {
+  display: none;
 }
 
 .card {
@@ -4368,7 +4312,7 @@ body {
 
 .card .fourth_step .fourth_step_info {
   position: absolute;
-  top: 6%;
+  top: 5%;
   left: 2%;
   right: 0;
 }
@@ -4537,38 +4481,50 @@ body {
   right: 0;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+.card .card_wrap .final_btn {
+  width: 100%;
+  text-align: center;
+}
+
+.card .card_wrap .final_btn .btn {
+  width: 50%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
   .custom {
     width: 100%;
     background: url("../image/custom/bg.png") no-repeat;
     margin: 0 auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 150px;
-    padding-bottom: 450px;
+    padding-top: 70px;
     position: relative;
+    padding-bottom: 200px;
   }
   .custom .wrap_custom {
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 200px;
     position: relative;
   }
   .custom .wrap_custom .title_decoration {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
   .custom .wrap_custom h2 {
     width: 100%;
     position: absolute;
-    top: 10%;
-    font-size: 26px;
+    top: 3%;
+    font-size: 28px;
   }
   .custom .wrap_custom .playground {
+    display: none;
     width: 100%;
   }
   .custom .wrap_custom .playground img {
-    width: 100%;
+    width: 95%;
     position: absolute;
-    top: 75%;
+    top: 45%;
+    left: 2%;
     z-index: 1;
   }
   .custom .wrap_custom .frist_step {
@@ -4578,7 +4534,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 17%;
+    top: 15%;
     right: 0%;
     left: 0;
     z-index: 1;
@@ -4596,12 +4552,12 @@ body {
     padding: 36% 29%;
   }
   .custom .wrap_custom .frist_step h3 {
-    font-size: 24px;
+    font-size: 40px;
     text-align: center;
     padding-bottom: 10%;
   }
   .custom .wrap_custom .frist_step p {
-    font-size: 16px;
+    font-size: 28px;
     text-align: center;
   }
   .custom .wrap_custom .custom_type {
@@ -4609,6 +4565,7 @@ body {
     height: 100%;
     padding-top: 300px;
     padding-bottom: 10%;
+    position: relative;
   }
   .custom .wrap_custom .custom_type .shapePos0 {
     position: absolute;
@@ -4628,10 +4585,10 @@ body {
     display: none;
   }
   .custom .wrap_custom .custom_type .shapePos2 {
-    width: 50%;
+    width: 40%;
     position: absolute;
-    top: 123%;
-    left: 25%;
+    top: 95%;
+    left: 27%;
     /*left:175px;*/
     z-index: 3;
     -webkit-transition: 1.5s;
@@ -4660,29 +4617,42 @@ body {
   .custom .wrap_custom .custom_type .right_btn {
     width: 10%;
     position: absolute;
-    top: 155%;
-    left: 80%;
+    top: 145%;
+    left: 70%;
     z-index: 4;
   }
   .custom .wrap_custom .custom_type .left_btn {
     width: 10%;
     position: absolute;
-    top: 155%;
-    left: 10%;
+    top: 145%;
+    left: 20%;
     z-index: 4;
   }
-  .choco_background {
+  .custom .wrap_custom .next_button {
     width: 100%;
-  }
-  .choco_background .choco_img {
-    width: 140%;
+    text-align: center;
+    padding-top: 10%;
+    z-index: 1;
     position: absolute;
-    top: 95%;
-    left: -20%;
+    top: 115%;
+  }
+  .custom .wrap_custom .next_button #next_page {
+    width: 30%;
+    display: inline-block;
+    margin: auto;
+    font-size: 20px;
+  }
+  .custom .choco_background {
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    background: url("../image/custom/circle_bg.png") no-repeat 50% 100%;
   }
   .base {
     width: 100%;
-    padding-top: 150px;
+    padding: 0px 25px;
     background-color: #fff4e2;
     margin: 0 auto;
   }
@@ -4701,6 +4671,7 @@ body {
             flex-flow: column wrap;
     margin: auto;
     padding-bottom: 50px;
+    position: relative;
   }
   .choose_base .select_base {
     width: 100%;
@@ -4734,12 +4705,12 @@ body {
     padding: 49% 0%;
   }
   .choose_base .select_base .second_step h3 {
-    font-size: 28px;
+    font-size: 40px;
     text-align: center;
     padding-bottom: 10%;
   }
   .choose_base .select_base .second_step p {
-    font-size: 16px;
+    font-size: 28px;
     text-align: center;
   }
   .choose_base .select_base .base_choco {
@@ -4753,22 +4724,25 @@ body {
   .choose_base .select_base .base_choco .choco {
     width: 33.333333%;
     text-align: center;
-    padding-top: 30px;
-    position: relative;
+    padding: 30px 0;
     cursor: pointer;
   }
   .choose_base .select_base .base_choco .choco img {
     width: 100%;
   }
   .choose_base .select_base .base_choco .choco figcaption {
-    font-size: 16px;
-    position: absolute;
-    bottom: 37%;
-    right: 0;
-    left: 0;
+    font-size: 14px;
+    padding-top: 10%;
   }
   .choose_base .select_base .base_choco .choco figcaption p {
-    color: white;
+    color: #592F13;
+  }
+  .choose_base .select_base .base_choco .choosed {
+    -webkit-transform: scale();
+            transform: scale();
+    -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0, 1.89);
+    transition: all 0.5s cubic-bezier(0.17, 0.67, 0, 1.89);
+    border: 2px dashed #ef9021;
   }
   .choose_base .select_type {
     width: 100%;
@@ -4780,6 +4754,7 @@ body {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     padding-top: 3%;
+    position: relative;
   }
   .choose_base .select_type .choco_overview {
     width: 100%;
@@ -4797,24 +4772,25 @@ body {
   .choose_base .select_type .choco_type ul {
     padding: 2% 0;
   }
-  .choose_base .select_type .choco_type li {
+  .choose_base .select_type .choco_type ul li {
     width: 90px;
     height: 90px;
     display: inline-block;
+    padding: 2% 2%;
     cursor: pointer;
     position: relative;
   }
-  .choose_base .select_type .choco_type li:hover {
+  .choose_base .select_type .choco_type ul li:hover {
     background-color: #ef9021;
     border-radius: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .choose_base .select_type .choco_type li:hover::before {
+  .choose_base .select_type .choco_type ul li:hover::before {
     content: "";
     display: block;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -4825,17 +4801,22 @@ body {
     background-color: #fff5e3;
     border-radius: 50%;
   }
-  .choose_base .select_type .choco_type li.active {
+  .choose_base .select_type .choco_type ul li.active {
     background-color: #eeeeee;
+    background-color: #ef9021;
     border-radius: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0, 1.89);
+    transition: all 0.5s cubic-bezier(0.17, 0.67, 0, 1.89);
   }
-  .choose_base .select_type .choco_type li.active::before {
+  .choose_base .select_type .choco_type ul li.active::before {
     content: "";
     display: block;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -4845,10 +4826,11 @@ body {
     opacity: 0.75;
     background-color: #fff5e3;
     border-radius: 50%;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
   }
-  .choose_base .select_type .choco_type li figure {
-    width: 80%;
-    height: 80%;
+  .choose_base .select_type .choco_type ul li figure {
+    width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -4856,29 +4838,21 @@ body {
     right: 0;
     margin: auto;
     z-index: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
-  .choose_base .select_type .choco_type li img {
-    width: 75%;
+  .choose_base .select_type .choco_type ul li img {
+    width: 50px;
+    height: 50px;
+    padding-top: 10%;
   }
-  .choose_base .select_type .choco_type li img p {
-    font-size: 16px;
+  .choose_base .select_type .choco_type ul li p {
+    padding-top: 10%;
+    font-size: 18px;
   }
   .choose_base .select_type .info_bar {
-    width: 90%;
+    width: 95%;
     height: 10%;
     border-radius: 10px;
+    position: relative;
     margin: 0 auto;
     text-align: center;
     background-color: white;
@@ -4887,43 +4861,35 @@ body {
             box-shadow: 5px 5px #f9aab0;
   }
   .choose_base .select_type .info_bar .blue_text {
-    font-size: 16px;
-    padding-top: 3.5%;
+    font-size: 18px;
+    padding: 3.5% 0;
     display: block;
   }
   .choose_base .select_type .info_bar .grape_text {
-    font-size: 16px;
-    padding-top: 3.5%;
+    font-size: 18px;
+    padding: 3.5% 0;
     display: none;
   }
   .choose_base .select_type .info_bar .bo_text {
-    font-size: 16px;
-    padding-top: 3.5%;
+    font-size: 18px;
+    padding: 3.5% 0;
     display: none;
   }
   .choose_base .select_type .info_bar .orange_text {
-    font-size: 16px;
-    padding-top: 3.5%;
+    font-size: 18px;
+    padding: 3.5% 0;
     display: none;
   }
   .choose_base .select_type .info_bar .strawberry_text {
-    font-size: 16px;
-    padding-top: 3.5%;
+    font-size: 18px;
+    padding: 3.5% 0;
     display: none;
-    color: transparent;
   }
-  .choose_base .select_type .next_button {
-    width: 100px;
-    text-align: center;
-    padding-top: 10%;
-    z-index: 1;
-    position: absolute;
-    top: 80%;
+  .choose_base .select_type .next_button2 {
+    display: none;
   }
-  .choose_base .select_type .next_button #next_page2 {
-    width: 50%;
-    display: inline-block;
-    margin: auto;
+  .choose_base .select_type .next_button2 #next_page2 {
+    display: none;
   }
   .choose_base .select_info {
     width: 100%;
@@ -4934,6 +4900,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
+    position: relative;
   }
   .choose_base .select_info .cho_info {
     width: 100%;
@@ -4948,90 +4915,6 @@ body {
   .choose_base .select_info .cho_info .cho_info_photo img {
     width: 100%;
   }
-  .choose_base .select_info .cho_info .white_text {
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    display: block;
-  }
-  .choose_base .select_info .cho_info .white_text h3 {
-    width: 100%;
-    font-size: 28px;
-    padding-bottom: 5%;
-  }
-  .choose_base .select_info .cho_info .white_text p {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-bottom: 5%;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .choose_base .select_info .cho_info .white_text p:nth-child(3) {
-    border-bottom: 1px solid #9a999a;
-    padding-bottom: 10%;
-  }
-  .choose_base .select_info .cho_info .white_text p:nth-child(4) {
-    padding: 10% 0 10%;
-  }
-  .choose_base .select_info .cho_info .milk_text {
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    display: none;
-  }
-  .choose_base .select_info .cho_info .milk_text h3 {
-    width: 100%;
-    font-size: 28px;
-    padding-bottom: 5%;
-  }
-  .choose_base .select_info .cho_info .milk_text p {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-bottom: 5%;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .choose_base .select_info .cho_info .milk_text p:nth-child(3) {
-    border-bottom: 1px solid #9a999a;
-    padding-bottom: 10%;
-  }
-  .choose_base .select_info .cho_info .milk_text p:nth-child(4) {
-    padding: 10% 0 10%;
-  }
-  .choose_base .select_info .cho_info .black_text {
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    display: none;
-  }
-  .choose_base .select_info .cho_info .black_text h3 {
-    width: 100%;
-    font-size: 28px;
-    padding-bottom: 5%;
-  }
-  .choose_base .select_info .cho_info .black_text p {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-bottom: 5%;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .choose_base .select_info .cho_info .black_text p:nth-child(3) {
-    border-bottom: 1px solid #9a999a;
-    padding-bottom: 10%;
-  }
-  .choose_base .select_info .cho_info .black_text p:nth-child(4) {
-    padding: 10% 0 10%;
-  }
   .choose_base .select_info .total_price {
     width: 100%;
     padding-top: 15%;
@@ -5039,931 +4922,692 @@ body {
     position: relative;
   }
   .choose_base .select_info .total_price img {
-    width: 80%;
+    width: 90%;
   }
   .choose_base .select_info .total_price h4 {
-    font-size: 28px;
-    position: absolute;
-    top: 32.5%;
-    left: 0;
-    right: 0;
-  }
-  .choose_base .select_info .total_price p {
-    font-size: 28px;
-    position: absolute;
-    top: 65%;
-    left: 0;
-    right: 0;
-  }
-  .outlook {
-    width: 100%;
-    background-color: #fff4e2;
-    margin: 0 auto;
-  }
-  .outlook .thrid_step_moble {
-    width: 100%;
-    position: relative;
-    text-align: center;
-  }
-  .outlook .thrid_step_moble .thrid_stepInfo {
-    position: absolute;
-    top: 17%;
-    left: 10%;
-    right: 0;
-  }
-  .outlook .thrid_step_moble .thrid_stepInfo h3 {
-    font-size: 28px;
-    padding: 2% 0;
-  }
-  .outlook .outlok_wrap {
-    max-width: 1200px;
-    padding-top: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-    padding-bottom: 50px;
-  }
-  .outlook .outlok_wrap .select_outlook {
-    width: 100%;
-  }
-  .outlook .outlok_wrap .select_outlook .outlook_name {
-    width: 95%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding-bottom: 10%;
-  }
-  .outlook .outlok_wrap .select_outlook .outlook_name .outlook_name_photo {
-    width: 40%;
-    text-align: right;
-  }
-  .outlook .outlok_wrap .select_outlook .outlook_name .outlook_name_photo img {
-    width: 80%;
-  }
-  .outlook .outlok_wrap .select_outlook .outlook_name .for_name {
-    width: 60%;
-    text-align: center;
-    padding-top: 12%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .outlook .outlok_wrap .select_outlook .outlook_name .for_name h3 {
-    font-size: 28px;
-    padding-bottom: 10%;
-  }
-  .outlook .outlok_wrap .select_outlook .outlook_name .for_name input {
-    width: 100%;
-    padding: 5% 10%;
-    font-size: 18px;
-    border-radius: 10px;
-    border: 3px solid #1c99ae;
-    -webkit-box-shadow: 5px 5px #1c99ae;
-            box-shadow: 5px 5px #1c99ae;
-  }
-  .outlook .outlok_wrap .select_outlook .fix_photo_mobile {
-    display: none;
-    width: 90%;
-    padding-bottom: 5%;
-    margin: auto;
-  }
-  .outlook .outlok_wrap .select_outlook .fix_bar_mobile {
-    display: none;
-    width: 90%;
-    border: 2px solid #1c99ae;
-    border-radius: 10px;
-    margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background-color: white;
-  }
-  .outlook .outlok_wrap .select_outlook .fix_bar_mobile .bar_photo {
-    width: 20%;
-    padding: 3%;
-  }
-  .outlook .outlok_wrap .select_outlook .fix_bar_mobile .bar_photo img {
-    width: 70%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item {
-    width: 90%;
-    background-color: #7fc3c6;
-    margin: auto;
-    -webkit-box-shadow: 10px 10px #4ea5a5;
-            box-shadow: 10px 10px #4ea5a5;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-top: 5%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .tab_item {
-    width: 100%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .tab_item button {
-    width: 33.333333%;
-    background-color: inherit;
-    float: left;
-    background-color: #9a999a;
-    border: 1px solid #9a999a;
-    border-bottom: none;
-    cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    padding: 3% 0;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .tab_item button:hover {
-    background-color: #1c99ae;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .tab_item button.active {
-    background-color: #1c99ae;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .eye_select {
-    width: 100%;
-    padding: 5%;
-    -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s;
-    /* Fading effect takes 1 second */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: inset 10px 10px #317c84;
-            box-shadow: inset 10px 10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 5% 5%;
-    text-align: center;
-    border-radius: 10px;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items img {
-    width: 100%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse_select {
-    display: none;
-    width: 100%;
-    padding: 5%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s;
-    /* Fading effect takes 1 second */
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: inset 10px 10px #317c84;
-            box-shadow: inset 10px 10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 5% 5%;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items img {
-    width: 100%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .others_types {
-    display: none;
-    width: 100%;
-    padding: 5%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s;
-    /* Fading effect takes 1 second */
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .others_types .others_types {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .others_types .others_types .others_items {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: inset 10px 10px #317c84;
-            box-shadow: inset 10px 10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 5% 5%;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .outlook .outlok_wrap .select_outlook .select_item .others_types .others_types .others_items img {
-    width: 100%;
-  }
-  .outlook .outlok_wrap .outlook_fix {
-    width: 100%;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  .outlook .outlok_wrap .outlook_fix .fix_photo {
-    display: none;
-    width: 100%;
-    padding-bottom: 5%;
-  }
-  .outlook .outlok_wrap .outlook_fix #eye_pos {
-    width: 200px;
-    height: 300px;
-    background-color: blue;
-    border: 1px solid black;
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    right: 0;
-  }
-  .outlook .outlok_wrap .outlook_fix .fix_bar {
-    display: none;
-    width: 0%;
-    border: 2px solid #1c99ae;
-    border-radius: 10px;
-    margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background-color: white;
-  }
-  .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo {
-    display: none;
-    width: 20%;
-    padding: 3%;
-  }
-  .outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo img {
-    width: 70%;
-    display: none;
-  }
-  .outlook .outlok_wrap .outlook_fix .total_price {
-    width: 100%;
-    padding-top: 18%;
-    text-align: center;
-    position: relative;
-  }
-  .outlook .outlok_wrap .outlook_fix .total_price img {
-    width: 90%;
-  }
-  .outlook .outlok_wrap .outlook_fix .total_price h4 {
-    font-size: 28px;
+    font-size: 40px;
     position: absolute;
     top: 29%;
     left: 0;
     right: 0;
   }
-  .outlook .outlok_wrap .outlook_fix .total_price p {
-    font-size: 28px;
+  .choose_base .select_info .total_price p {
+    font-size: 30px;
     position: absolute;
     top: 65%;
     left: 0;
     right: 0;
   }
-  .outlook .outlok_wrap .step_info {
-    width: 30%;
-    position: relative;
-    text-align: center;
-  }
-  .outlook .outlok_wrap .step_info .thrid_stepInfo {
-    position: absolute;
-    top: 7%;
-    left: 11%;
-    right: 0;
-  }
-  .outlook .outlok_wrap .step_info .thrid_stepInfo h3 {
-    font-size: 28px;
-    padding: 2% 0;
-  }
-  .outlook .outlok_wrap .step_info .right_side_background {
-    width: 100%;
-  }
-  .outlook .outlok_wrap .step_info .right_side_background img {
-    width: 85%;
-  }
-  .card {
-    width: 100%;
-    display: none;
-    background-color: #fff4e2;
-    margin: 0 auto;
-    position: relative;
-  }
-  .card .fourth_step {
+  .choose_base .next_button2_mobile {
     width: 100%;
     text-align: center;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  .card .fourth_step img {
-    width: 80%;
-  }
-  .card .fourth_step .fourth_step_info {
-    position: absolute;
-    top: 12%;
-    left: 2%;
-    right: 0;
-  }
-  .card .fourth_step .fourth_step_info h3 {
-    font-size: 28px;
-    padding: 2% 0;
-  }
-  .card .card_wrap {
-    max-width: 1200px;
-    padding-top: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-    padding-bottom: 50px;
-  }
-  .card .card_wrap .card_custom {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-  }
-  .card .card_wrap .card_custom .card_back {
-    width: 50%;
-  }
-  .card .card_wrap .card_custom .card_write {
-    width: 50%;
-  }
-  .card .card_wrap .card_custom .card_write img {
-    width: 85%;
-  }
-  .card .card_wrap .card_custom .card_items {
-    width: 100%;
-    background-color: #7fc3c6;
-    margin: auto;
-    -webkit-box-shadow: 10px 10px #4ea5a5;
-            box-shadow: 10px 10px #4ea5a5;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .card .card_wrap .card_custom .card_items .tab_item {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .tab_item button {
-    width: 33.333333%;
-    background-color: inherit;
-    float: left;
-    border-left: 1px solid #9a999a;
-    border-bottom: none;
-    cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    padding: 3% 0;
-  }
-  .card .card_wrap .card_custom .card_items .tab_item button:hover {
-    background-color: blue;
-  }
-  .card .card_wrap .card_custom .card_items .card_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card .card_wrap .card_custom .card_items .card_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card .card_wrap .card_custom .card_items .card_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_custom .card_items .card_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .text_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card .card_wrap .card_custom .card_items .text_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card .card_wrap .card_custom .card_items .text_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_custom .card_items .text_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_custom .card_items .pic_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card .card_wrap .card_custom .card_items .upload {
-    width: 80%;
-    text-align: right;
-    margin-left: auto;
-  }
-  .card .card_wrap .card_custom .card_items .upload input {
-    font-size: 16px;
-  }
-  .card .card_wrap .card_info {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-  }
-  .card .card_wrap .card_info .paint_text {
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    margin: 0 auto;
-  }
-  .card .card_wrap .card_info .paint_text .paint {
-    width: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    margin: 0 auto;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_pen {
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 15px;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_pen p {
-    padding-top: 15%;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_photo {
-    width: 60%;
-  }
-  .card .card_wrap .card_info .paint_text .paint .paint_photo img {
-    width: 100%;
-  }
-  .card .card_wrap .card_info .paint_text .paint_color {
-    width: 100%;
-    text-align: center;
-  }
-  .card .card_wrap .card_info .paint_text .paint_color img {
-    width: 80%;
-    border-radius: 5px;
-  }
-  .card .card_wrap .card_info .total_price {
-    width: 30%;
-    text-align: center;
-    position: relative;
-  }
-  .card .card_wrap .card_info .total_price img {
-    width: 80%;
-  }
-  .card .card_wrap .card_info .total_price h4 {
-    font-size: 28px;
-    position: absolute;
-    top: 13%;
-    left: 0;
-    right: 0;
-  }
-  .card .card_wrap .card_info .total_price p {
-    font-size: 28px;
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-  }
-  .card .card_wrap .card_info .final_btn {
-    width: 20%;
-    text-align: center;
-    padding-top: 2.5%;
-  }
-  .card_mobile {
-    width: 100%;
-    background-color: #fff4e2;
-    margin: 0 auto;
-    position: relative;
-  }
-  .card_mobile .fourth_step {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  .card_mobile .fourth_step img {
-    width: 80%;
-  }
-  .card_mobile .fourth_step .fourth_step_info {
-    position: absolute;
-    top: 5.5%;
-    left: 2%;
-    right: 0;
-  }
-  .card_mobile .fourth_step .fourth_step_info h3 {
-    font-size: 28px;
-    padding: 2% 0;
-  }
-  .card_mobile .card_wrap {
-    max-width: 1200px;
-    padding-top: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-    padding-bottom: 50px;
-  }
-  .card_mobile .card_wrap .card_custom {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin: auto;
-  }
-  .card_mobile .card_wrap .card_custom .card_back {
-    width: 50%;
-  }
-  .card_mobile .card_wrap .card_custom .card_write {
-    width: 50%;
-  }
-  .card_mobile .card_wrap .card_custom .card_write img {
-    width: 85%;
-  }
-  .card_mobile .card_wrap .card_info_mobile {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    margin: auto;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items {
-    width: 90%;
-    background-color: #7fc3c6;
-    margin: auto;
-    -webkit-box-shadow: 10px 10px #4ea5a5;
-            box-shadow: 10px 10px #4ea5a5;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .tab_item {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .tab_item button {
-    width: 33.333333%;
-    background-color: inherit;
-    float: left;
-    border-left: 1px solid #9a999a;
-    border-bottom: none;
-    cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    padding: 3% 0;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .tab_item button:hover {
-    background-color: blue;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color {
-    width: 100%;
-    padding: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .card_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .text_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color {
-    width: 100%;
-    padding: 5%;
-    display: none;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color .card_background {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding-bottom: 5%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color .card_background .background_color {
-    width: 20%;
-    background-color: #719eaa;
-    -webkit-box-shadow: -10px -10px #317c84;
-            box-shadow: -10px -10px #317c84;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .pic_color .card_background .background_color img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .upload {
-    width: 80%;
-    text-align: right;
-    margin-left: auto;
-  }
-  .card_mobile .card_wrap .card_info_mobile .card_items .upload input {
-    font-size: 16px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    margin: 0 auto;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint {
-    width: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    margin: 0 auto;
     padding-top: 10%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_pen {
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 15px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_pen p {
-    padding-top: 15%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_photo {
-    width: 60%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint .paint_photo img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint_color {
-    width: 100%;
-    text-align: center;
-  }
-  .card_mobile .card_wrap .card_info_mobile .paint_text .paint_color img {
-    width: 80%;
-    border-radius: 5px;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price img {
-    width: 100%;
-  }
-  .card_mobile .card_wrap .card_info_mobile .total_price h4 {
-    font-size: 28px;
+    z-index: 1;
     position: absolute;
-    top: 13%;
-    left: 0;
-    right: 0;
+    bottom: 1%;
   }
-  .card_mobile .card_wrap .card_info_mobile .total_price p {
-    font-size: 28px;
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
+  .choose_base .next_button2_mobile #next_page2_mobile {
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
   }
-  .card_mobile .card_wrap .card_info_mobile .final_btn {
-    width: 100%;
-    text-align: center;
-    padding-top: 2.5%;
-  }
+}
+
+.outlook {
+  width: 100%;
+  background-color: #fff4e2;
+  margin: 0 auto;
+}
+
+.outlook .thrid_step_moble {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.outlook .thrid_step_moble .thrid_stepInfo {
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  right: 0;
+}
+
+.outlook .thrid_step_moble .thrid_stepInfo h3 {
+  font-size: 28px;
+  padding: 2% 0;
+}
+
+.outlook .outlok_wrap {
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.outlook .outlok_wrap .select_outlook {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .select_outlook .outlook_name {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 10%;
+}
+
+.outlook .outlok_wrap .select_outlook .outlook_name .outlook_name_photo {
+  width: 40%;
+  text-align: right;
+}
+
+.outlook .outlok_wrap .select_outlook .outlook_name .outlook_name_photo img {
+  width: 80%;
+}
+
+.outlook .outlok_wrap .select_outlook .outlook_name .for_name {
+  width: 60%;
+  text-align: center;
+  padding-top: 12%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.outlook .outlok_wrap .select_outlook .outlook_name .for_name h3 {
+  font-size: 28px;
+  padding-bottom: 10%;
+}
+
+.outlook .outlok_wrap .select_outlook .outlook_name .for_name input {
+  width: 100%;
+  padding: 5% 10%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 3px solid #1c99ae;
+  -webkit-box-shadow: 5px 5px #1c99ae;
+          box-shadow: 5px 5px #1c99ae;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item {
+  width: 90%;
+  background-color: #7fc3c6;
+  margin: auto;
+  -webkit-box-shadow: 10px 10px #4ea5a5;
+          box-shadow: 10px 10px #4ea5a5;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 5%;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .tab_item {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .tab_item button {
+  width: 33.333333%;
+  background-color: inherit;
+  float: left;
+  background-color: #9a999a;
+  border: 1px solid #9a999a;
+  border-bottom: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 3% 0;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .tab_item button:hover {
+  background-color: #1c99ae;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .tab_item button.active {
+  background-color: #1c99ae;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .eye_select {
+  width: 100%;
+  padding: 5%;
+  -webkit-animation: fadeEffect 1s;
+          animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 5%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items {
+  width: 20%;
+  background-color: #719eaa;
+  -webkit-box-shadow: inset 10px 10px #317c84;
+          box-shadow: inset 10px 10px #317c84;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5% 5%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .eye_select .eye_types .eye_items img {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .mouse_select {
+  display: none;
+  width: 100%;
+  padding: 5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-animation: fadeEffect 1s;
+          animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 5%;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items {
+  width: 20%;
+  background-color: #719eaa;
+  -webkit-box-shadow: inset 10px 10px #317c84;
+          box-shadow: inset 10px 10px #317c84;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5% 5%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .mouse_select .mouse_types .mouse_items img {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .others_select {
+  display: none;
+  width: 100%;
+  padding: 5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-animation: fadeEffect 1s;
+          animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .others_select .others_types {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 5%;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items {
+  width: 20%;
+  background-color: #719eaa;
+  -webkit-box-shadow: inset 10px 10px #317c84;
+          box-shadow: inset 10px 10px #317c84;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5% 5%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items img {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .outlook_fix {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo {
+  width: 100%;
+  padding-bottom: 5%;
+  position: relative;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo img {
+  width: 360px;
+  height: 360px;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .eye_pos .eye_demo {
+  width: 50px;
+  height: 50px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform: roate(0);
+          transform: roate(0);
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .pos1 {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  top: 18%;
+  left: 35%;
+  right: 0;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .pos2 {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  top: 18%;
+  right: 35%;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  top: 27%;
+  left: 35%;
+  right: 0;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos .mouse_demo {
+  width: 60px;
+  height: 60px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform: roate(0);
+          transform: roate(0);
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .others_pos {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  right: 0;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .others_pos .others_demo {
+  width: 100px;
+  height: 100px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform: roate(0);
+          transform: roate(0);
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_photo .selector {
+  border: 1px solid black;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_bar {
+  width: 90%;
+  border: 2px solid #1c99ae;
+  border-radius: 10px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  position: relative;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo {
+  width: 20%;
+  padding: 3%;
+}
+
+.outlook .outlok_wrap .outlook_fix .fix_bar .bar_photo img {
+  width: 70%;
+}
+
+.outlook .outlok_wrap .outlook_fix .total_price {
+  width: 100%;
+  padding-top: 18%;
+  text-align: center;
+  position: relative;
+}
+
+.outlook .outlok_wrap .outlook_fix .total_price img {
+  width: 90%;
+}
+
+.outlook .outlok_wrap .outlook_fix .total_price h4 {
+  font-size: 28px;
+  position: absolute;
+  top: 29%;
+  left: 0;
+  right: 0;
+}
+
+.outlook .outlok_wrap .outlook_fix .total_price p {
+  font-size: 28px;
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+}
+
+.outlook .outlok_wrap .outlook_fix .next_button3_mobile {
+  width: 100%;
+  text-align: center;
+  padding-top: 10%;
+  z-index: 1;
+  position: absolute;
+  bottom: -5%;
+}
+
+.outlook .outlok_wrap .outlook_fix .next_button3_mobile #next_page3_mobile {
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.outlook .outlok_wrap .step_info {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .step_info img {
+  display: none;
+}
+
+.outlook .outlok_wrap .step_info .thrid_stepInfo {
+  display: none;
+  position: absolute;
+  top: 7%;
+  left: 11%;
+  right: 0;
+}
+
+.outlook .outlok_wrap .step_info .thrid_stepInfo h3 {
+  font-size: 28px;
+  padding: 2% 0;
+}
+
+.outlook .outlok_wrap .step_info .right_side_background {
+  width: 100%;
+}
+
+.outlook .outlok_wrap .step_info .right_side_background img {
+  width: 75%;
+}
+
+.outlook .outlok_wrap .step_info .next_button3 {
+  display: none;
+}
+
+.outlook .outlok_wrap .step_info .next_button3 #next_page3 {
+  display: none;
+}
+
+.card {
+  width: 100%;
+  background-color: #fff4e2;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 20%;
+}
+
+.card .fourth_step {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.card .fourth_step img {
+  width: 100%;
+}
+
+.card .fourth_step .fourth_step_info {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  right: 0;
+}
+
+.card .fourth_step .fourth_step_info h3 {
+  font-size: 28px;
+  padding: 2% 0;
+}
+
+.card .card_wrap {
+  max-width: 1200px;
+  padding-top: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.card .card_wrap .card_custom {
+  display: none;
+}
+
+.card .card_wrap .card_custom_mobile {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.card .card_wrap .card_custom_mobile .card_pos {
+  width: 280px;
+  height: 365px;
+  margin: 0 auto;
+  margin-bottom: 20%;
+  position: relative;
+  background-image: url("../image/custom/card1.png");
+}
+
+.card .card_wrap .card_custom_mobile .card_pos .card_photo_pos {
+  width: 80px;
+  height: 80px;
+}
+
+.card .card_wrap .card_custom_mobile .card_pos .card_photo_pos:nth-child(1) {
+  z-index: 10;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+.card .card_wrap .card_custom_mobile .card_pos .card_photo_pos:nth-child(2) {
+  z-index: 10;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.card .card_wrap .card_custom_mobile .card_pos .card_photo_pos:nth-child(3) {
+  z-index: 10;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+}
+
+.card .card_wrap .card_custom_mobile .card_pos .card_photo_pos:nth-child(4) {
+  z-index: 10;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+}
+
+.card .card_wrap .card_custom_mobile .card_pos .card_photo_pos:nth-child(5) {
+  width: 120px;
+  height: 120px;
+  z-index: 10;
+  position: absolute;
+  top: 30%;
+  right: 30%;
+}
+
+.card .card_wrap .card_custom_mobile .card_acc {
+  width: 80%;
+  background-color: #7fc3c6;
+  margin: auto;
+  -webkit-box-shadow: 10px 10px #4ea5a5;
+          box-shadow: 10px 10px #4ea5a5;
+  border-radius: 20px;
+}
+
+.card .card_wrap .card_custom_mobile .card_acc .acc_block {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5% 5%;
+  margin: 0 auto;
+}
+
+.card .card_wrap .card_custom_mobile .card_acc .acc_block .acc_item {
+  width: 50%;
+  background-color: #719eaa;
+  -webkit-box-shadow: inset 10px 10px #317c84;
+          box-shadow: inset 10px 10px #317c84;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5% 0%;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.card .card_wrap .card_custom_mobile .card_acc .acc_block .acc_item img {
+  width: 50%;
+}
+
+.card .card_wrap .total_price {
+  width: 100%;
+  padding-top: 18%;
+  text-align: center;
+  position: relative;
+}
+
+.card .card_wrap .total_price img {
+  width: 90%;
+}
+
+.card .card_wrap .total_price h4 {
+  font-size: 28px;
+  position: absolute;
+  top: 29%;
+  left: 0;
+  right: 0;
+}
+
+.card .card_wrap .total_price p {
+  font-size: 28px;
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+}
+
+.card .card_wrap .final_btn {
+  width: 100%;
+  text-align: center;
+}
+
+.card .card_wrap .final_btn .btn {
+  width: 50%;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -6019,7 +5663,7 @@ body {
   }
   .custom #cloud {
     position: absolute;
-    top: 55%;
+    top: 18%;
     left: 5%;
     z-index: 1;
     -webkit-animation: cloud 40s linear infinite;
@@ -6055,7 +5699,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 29%;
+    top: 23%;
     right: 5%;
     -webkit-transform: rotate(12deg);
             transform: rotate(12deg);
@@ -6173,7 +5817,7 @@ body {
     display: inline-block;
     margin: auto;
   }
-  .choco_background {
+  .custom .choco_background {
     width: 100%;
     height: 150%;
     position: absolute;
@@ -6259,12 +5903,6 @@ body {
     right: 0;
     left: 0;
   }
-  .choose_base .select_base .base_choco .choco figcaption p {
-    color: #F6EED4;
-  }
-  .choose_base .select_base .base_choco .choco:nth-child(1) p {
-    color: #592F13;
-  }
   .choose_base .select_base .base_choco .choosed {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
@@ -6289,8 +5927,8 @@ body {
     z-index: 1;
   }
   .choose_base .select_type .choco_overview img {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
   }
   .choose_base .select_type .choco_type {
     width: 100%;
@@ -6816,8 +6454,7 @@ body {
             align-items: center;
   }
   .outlook .outlok_wrap .select_outlook .select_item .others_select .others_types .others_items img {
-    width: 50px;
-    height: 50px;
+    width: 100%;
   }
   .outlook .outlok_wrap .outlook_fix {
     width: 30%;
@@ -6851,28 +6488,27 @@ body {
   .outlook .outlok_wrap .outlook_fix .fix_photo .pos1 {
     width: 50px;
     height: 50px;
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    top: 18%;
+    top: 23%;
     left: 35%;
     right: 0;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .pos2 {
     width: 50px;
     height: 50px;
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    top: 18%;
-    right: 35%;
+    top: 23%;
+    right: 21%;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos {
     width: 50px;
     height: 50px;
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    top: 27%;
-    left: 35%;
-    right: 0;
+    top: 45%;
+    left: 50%;
   }
   .outlook .outlok_wrap .outlook_fix .fix_photo .mouse_pos .mouse_demo {
     width: 60px;
@@ -6882,16 +6518,31 @@ body {
     -webkit-transform: roate(0);
             transform: roate(0);
   }
-  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos {
+  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos1 {
     width: 50px;
     height: 50px;
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    top: 10%;
-    left: 35%;
-    right: 0;
+    top: 50%;
+    left: 25%;
   }
-  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos .others_demo {
+  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos1 .others_demo {
+    width: 100px;
+    height: 100px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: roate(0);
+            transform: roate(0);
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos2 {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+  }
+  .outlook .outlok_wrap .outlook_fix .fix_photo .others_pos2 .others_demo {
     width: 100px;
     height: 100px;
     -webkit-transform: scale(1);

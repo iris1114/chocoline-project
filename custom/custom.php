@@ -230,7 +230,9 @@ if (!isset($_SESSION["mem_headshot"])) {
       <!-- ----- 形狀輪播 End ----- -->
     </div>
     
-
+    <div class="choco_background">
+    <!-- <img src="image/custom/circle_bg.png" alt="" class="choco_img" /> -->
+  </div>
 </section>
 
      
@@ -242,60 +244,67 @@ if (!isset($_SESSION["mem_headshot"])) {
     <!-- ----- 第二屏 Start ----- -->
 
     <section class="base" id="second">
+
       <div class="choose_base">
+
         <div class="select_base">
+
           <div class="second_step">
+            
             <div class="second_stepInfo">
               <h3>第二步:</h3>
               <p>選擇巧克力基底/配料口味</p>
             </div>
+
           </div>
+
           <div class="base_choco">
-            <figure class="choco choco1">
-              <img src="image/custom/small/M1_SP_001.png" class="cho" alt="white" />
-              <figcaption>
-                <p class="White_CHO">White CHOCO</p>
-              </figcaption>
+            
+            <figure class="choco choco1 cho">
+              <img src="image/custom/small/M1_SP_001.png" class="cho chocos" alt="white" />
+              <!-- <figcaption>
+                <p  class="cho" alt="white" >White CHOCO</p>
+              </figcaption> -->
             </figure>
 
-            <figure class="choco choco2">
-              <img src="image/custom/small/M1_SP_002.png" class="cho" alt="milk" />
-              <figcaption>
-                <p>Milk CHOCO</p>
-              </figcaption>
+            <figure class="choco choco2 cho">
+              <img src="image/custom/small/M1_SP_002.png" class="cho chocos" alt="milk" />
+              <!-- <figcaption>
+                <p class="cho" alt="milk">Milk CHOCO</p>
+              </figcaption> -->
             </figure>
 
-            <figure class="choco choco3">
-              <img src="image/custom/small/M1_SP_003.png" class="cho" alt="black" />
-              <figcaption>
-                <p>Black CHOCO</p>
-              </figcaption>
+            <figure class="choco choco3 cho">
+              <img src="image/custom/small/M1_SP_003.png" class="cho chocos" alt="black" />
+              <!-- <figcaption>
+                <p class="cho" alt="black">Black CHOCO</p>
+              </figcaption> -->
             </figure>
           </div>
         </div>
 
         <div class="select_type ">
+          
           <div class="choco_overview" id="choco_pos">
-
             <img src="image/custom/small/bear_d_x.png" alt="" id="base_model">
-
           </div>
 
 
 
           <div class="choco_type">
+
             <ul>
               <li class="fruit " >
                 <figure >
                   <img src="image/custom/small/fr_b_001.png" alt="blue berry" />
-                  <p>藍莓</p>
+                  <p class="fruit" alt="blue berry" >藍莓</p>
                 </figure>
               </li>
               <li class="fruit">
                 <figure>
                   <img src="image/custom/small/fr_b_002.png" alt="grape" />
                   <figcaption>
-                    <p>葡萄</p>
+                    <p class="fruit " alt="grape">葡萄</p>
                   </figcaption>
                 </figure>
               </li>
@@ -303,7 +312,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 <figure>
                   <img src="image/custom/small/fr_b_003.png" alt="bo ho" />
                   <figcaption>
-                    <p>薄荷</p>
+                    <p class="fruit " alt="bo ho">薄荷</p>
                   </figcaption>
                 </figure>
               </li>
@@ -311,7 +320,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 <figure>
                   <img src="image/custom/small/fr_b_004.png" alt="orange" />
                   <figcaption>
-                    <p>柑橘</p>
+                    <p class="fruit "alt="orange" >柑橘</p>
                   </figcaption>
                 </figure>
               </li>
@@ -319,7 +328,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 <figure>
                   <img src="image/custom/small/fr_b_005.png" alt="strawberry" />
                   <figcaption>
-                    <p>草莓</p>
+                    <p class="fruit "alt="strawberry">草莓</p>
                   </figcaption>
                 </figure>
               </li>
@@ -330,20 +339,18 @@ if (!isset($_SESSION["mem_headshot"])) {
 
           <div class="info_bar">
 
-
             <p class="fruit_text blue_text">藍莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
             <p class="fruit_text grape_text">葡萄：莓果的酸甜與滑順巧克力一次品嚐！</p>
             <p class="fruit_text bo_text">薄荷：莓果的酸甜與滑順巧克力一次品嚐！</p>
-
             <p class="fruit_text orange_text">柑橘：莓果的酸甜與滑順巧克力一次品嚐！</p>
             <p class="fruit_text strawberry_text">草莓：莓果的酸甜與滑順巧克力一次品嚐！</p>
           </div>
 
-          <div class="next_button">
+          <div class="next_button2">
             <a href="#thrid" class="btn cyan_s " id="next_page2" ><span>第三步</span></a>
           </div>
 
-        </div>
+     </div>
 
 
 
@@ -397,11 +404,14 @@ if (!isset($_SESSION["mem_headshot"])) {
             <p id="price">
               NT$0
             </p>
-            
+           
           </div>
+         
           
         </div>
-
+        <div class="next_button2_mobile">
+            <a href="#thrid" class="btn cyan_s " id="next_page2_mobile" ><span>第三步</span></a>
+          </div>
       </div>
 
 
@@ -476,7 +486,7 @@ if (!isset($_SESSION["mem_headshot"])) {
             <div class="clearfix"></div>
 
             <!-- ----- 眼睛 start----- -->
-            <div class="eye_select type " id="eyes">
+            <div class="eye_select type  active" id="eyes">
               <div class="eye_types ">
                 <div class="eye_items ">
                   <img src="image/custom/small/eye1.png" class="eye_type" alt="eye1" />
@@ -645,11 +655,11 @@ if (!isset($_SESSION["mem_headshot"])) {
               <img src="image/custom/img.png" alt="" class="mouse_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
 
-            <div class="others_pos">
+            <div class="others_pos others_pos1">
               <img src="image/custom/img.png" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div> 
 
-            <div class="others_pos">
+            <div class="others_pos others_pos2">
               <img src="image/custom/img.png" alt="" class="others_demo demo" style = "transform: rotate(0deg) scale(1.0)">
             </div>
             
@@ -689,8 +699,11 @@ if (!isset($_SESSION["mem_headshot"])) {
             </p>
           </div>
           
+          <div class="next_button3_mobile">
+            <a href="#fourth" class="btn cyan_s " id="next_page3_mobile" ><span>第三步</span></a>
+          </div>
         </div>
-
+        
         <!-- ----- middle side End ----- -->
 
 
@@ -708,9 +721,9 @@ if (!isset($_SESSION["mem_headshot"])) {
           <div class="right_side_background">
             <img src="image/custom/bg10.png" alt="">
           </div>
-          
-            <a href="#fourth" class="btn cyan_s " id="next_page3"><span>第四步</span></a>
-       
+          <div class="next_button3">
+            <a href="#fourth" class="btn cyan_s " id="next_page3" ><span>第三步</span></a>
+          </div>
         </div>
     
 
@@ -724,13 +737,13 @@ if (!isset($_SESSION["mem_headshot"])) {
 
     <section class= "card">
 
-<div class="fourth_step">
+<div class="fourth_step" id="fourth">
 
       <img src="image/custom/8.png" alt="">
 
   <div class="fourth_step_info">
       <h3>第四步:</h3>
-      <p id="fourth">搭配卡片樣式/輸入內容</p>
+      <p >搭配卡片樣式/輸入內容</p>
    </div>
 
 </div>
@@ -1061,6 +1074,7 @@ if (!isset($_SESSION["mem_headshot"])) {
             if (shapes[i].classList.contains("shapePos2")) {
               var shapeObj = shapes[i].innerHTML;
               var yyy = shapeObj;
+            
 
               
               document.getElementById("next_page").onclick = function () {
@@ -1097,10 +1111,18 @@ if (!isset($_SESSION["mem_headshot"])) {
                 $("#base_model").attr("src" ,"image/custom/small/cicr_d_x.png");
               }
                 console.log("aa",aa);
-                 price+=200;
+                if (price >= 200){
+                price = 0;
+                price+=200;
                  var prices = document.getElementById("price");
                     prices.innerHTML = "NT$"+price ;
               
+              }else{
+                price+=200;
+                 var prices = document.getElementById("price");
+                    prices.innerHTML = "NT$"+price ;
+              }
+                
            
               };
 
@@ -1124,6 +1146,7 @@ if (!isset($_SESSION["mem_headshot"])) {
             if (shapes[i].classList.contains("shapePos2")) {
               var shapeObj = shapes[i].innerHTML;
               var yyy = shapeObj;
+          
 
               
               document.getElementById("next_page").onclick = function () {
@@ -1160,11 +1183,17 @@ if (!isset($_SESSION["mem_headshot"])) {
                 $("#base_model").attr("src" ,"image/custom/small/cicr_d_x.png");
               }
                 console.log("aa",aa);
-                 price+=200;
+                if (price >= 200){
+                price = 0;
+                price+=200;
                  var prices = document.getElementById("price");
                     prices.innerHTML = "NT$"+price ;
               
-           
+              }else{
+                price+=200;
+                 var prices = document.getElementById("price");
+                    prices.innerHTML = "NT$"+price ;
+              }
               };
 
             }
@@ -1180,9 +1209,17 @@ if (!isset($_SESSION["mem_headshot"])) {
           var large = document.getElementsByClassName("big_cho")[2];
           // console.log(large);
           console.log(large.alt);
-          price+=200;
+          if (price >= 200){
+                price = 0;
+                price+=200;
                  var prices = document.getElementById("price");
                     prices.innerHTML = "NT$"+price ;
+              
+              }else{
+                price+=200;
+                 var prices = document.getElementById("price");
+                    prices.innerHTML = "NT$"+price ;
+              }
           if(large.alt =="bear"){
 
             $("#base_model").attr("src" ,"image/custom/small/bear_d_x.png")
@@ -1249,7 +1286,8 @@ if (!isset($_SESSION["mem_headshot"])) {
             }
           })
         }
-     
+        
+
         for(let i=0;i<fruits.length;i++){
         
         fruits[i].addEventListener("click",function(){
@@ -1260,23 +1298,34 @@ if (!isset($_SESSION["mem_headshot"])) {
               
       })
   }
-  
-        // ----------------------口味介紹 end --------------------------
-
-        let tab = document.getElementsByClassName("tab_link");
-        let type = document.getElementsByClassName("type");
+   let   fruit_p    = document.getElementsByClassName("  fruit_p   ");
+  for(let i=0;i<  fruit_p   .length;i++){
         
-        for(let i=0;i<tab.length;i++){
-        
-        fruits[i].addEventListener("click",function(){
-          
-          for(j=0;j<type.length;j++){
-            type[j].classList.remove("active");
+    fruit_p   [i].addEventListener("click",function(){
+          for(j=0;j<  fruit_p   .length;j++){
+            fruits[j].classList.remove("active");
           }
           this.classList.add("active");
               
       })
   }
+  
+        // ----------------------口味介紹 end --------------------------
+
+  //       let tab = document.getElementsByClassName("tab_link");
+  //       let type = document.getElementsByClassName("type");
+        
+  //       for(let i=0;i<tab.length;i++){
+        
+  //       fruits[i].addEventListener("click",function(){
+          
+  //         for(j=0;j<type.length;j++){
+  //           type[j].classList.remove("active");
+  //         }
+  //         this.classList.add("active");
+              
+  //     })
+  // }
 
 
         // --------------------------選擇巧克力口味--------------------------
@@ -1343,12 +1392,13 @@ if (!isset($_SESSION["mem_headshot"])) {
             }
           }, false);
         }
-     
-        for(let i=0;i<chos.length;i++){
         
-          chos[i].addEventListener("click",function(){
-          for(j=0;j<chos.length;j++){
-            chos[j].classList.remove("choosed");
+        let chocos = document.getElementsByClassName("chocos");
+        for(let i=0;i<chocos.length;i++){
+        
+          chocos[i].addEventListener("click",function(){
+          for(j=0;j<chocos.length;j++){
+            chocos[j].classList.remove("choosed");
           }
           this.classList.add("choosed");
               
@@ -1371,14 +1421,15 @@ if (!isset($_SESSION["mem_headshot"])) {
 
           fruits[i].addEventListener("click", function (e) {
             let fruit_type = e.target;
-
+           
             let model = document.getElementById("choco_pos");
             let model_img = model.childNodes[1];
-
+            let fruit_Text = e.target.getAttribute("alt");
+            console.log("fruit_Text", fruit_Text);
             let modelsrc = $("#choco_pos img").attr("src");
 
 
-            if (fruit_type.alt == "blue berry") {
+            if (fruit_type.alt == "blue berry"||fruit_Text == "blue berry" ) {
 
               var N = $("#choco_pos img").attr("src").substr(25, 2);
               // console.log("N", N);
@@ -1401,7 +1452,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 prices.innerHTML = "NT$"+price ;
                 prices2.innerHTML = "NT$"+price ;
               }
-            } else if (fruit_type.alt == "grape") {
+            } else if (fruit_type.alt == "grape"||fruit_Text == "grape") {
               var N = $("#choco_pos img").attr("src").substr(25, 2);
               // console.log("N", N);
               let ann = modelsrc.replace(N, '_g');
@@ -1421,7 +1472,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 prices.innerHTML = "NT$"+price ;
                 prices2.innerHTML = "NT$"+price ;
               }
-            } else if (fruit_type.alt == "bo ho") {
+            } else if (fruit_type.alt == "bo ho"||fruit_Text == "bo ho") {
               var N = $("#choco_pos img").attr("src").substr(25, 2);
               // console.log("N", N);
               let ann = modelsrc.replace(N, '_h');
@@ -1441,7 +1492,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 prices.innerHTML = "NT$"+price ;
                 prices2.innerHTML = "NT$"+price ;
               }
-            } else if (fruit_type.alt == "orange") {
+            } else if (fruit_type.alt == "orange"||fruit_Text == "orange") {
               var N = $("#choco_pos img").attr("src").substr(25, 2);
               // console.log("N", N);
               let ann = modelsrc.replace(N, '_o');
@@ -1461,7 +1512,7 @@ if (!isset($_SESSION["mem_headshot"])) {
                 prices.innerHTML = "NT$"+price ;
                 prices2.innerHTML = "NT$"+price ;
               }
-            } else if (fruit_type.alt == "strawberry") {
+            } else if (fruit_type.alt == "strawberry"||fruit_Text == "strawberry") {
               var N = $("#choco_pos img").attr("src").substr(25, 2);
               // console.log("N", N);
               let ann = modelsrc.replace(N, '_s');
@@ -1514,6 +1565,24 @@ if (!isset($_SESSION["mem_headshot"])) {
           // console.log(prices.innerText);
           // price=prices2.innerHTML ;
         };
+        document.getElementById("next_page2_mobile").onclick = function () {
+
+let modelsrc = $("#choco_pos img").attr("src");
+console.log(modelsrc);
+let cust = $("#cho_pos").attr("src", modelsrc);
+
+let mask = document.getElementsByClassName("fix_photo");
+
+var prices2 = document.getElementById("price2");
+
+      prices2.innerHTML = "NT$"+price ;
+// $(".fix_photo").css("-webkit-mask-image",'url(../'+modelsrc+')');
+// console.log(mmm);
+// var prices = document.getElementById("price");
+// var prices2 = document.getElementById("price2");
+// console.log(prices.innerText);
+// price=prices2.innerHTML ;
+};
 
         // -----------------------next_page--------------------------
 
@@ -1840,8 +1909,12 @@ if (!isset($_SESSION["mem_headshot"])) {
         //   var choco_base_no = 0;
         // var choco_flavor_no = 0;
         
-          var sub_price = document.getElementById("final_price");
-              
+        
+          var choco_name = document.getElementById("choco_name");
+        if (choco_name.value ==""){
+          alert("請給CHOCO星人名字");
+        }
+          var sub_price = document.getElementById("final_price"); 
           sub_price.innerHTML = (price+100) ;
 
          var kkk= $("#cho_pos").attr("src");
@@ -1907,7 +1980,78 @@ if (!isset($_SESSION["mem_headshot"])) {
 
 // -----------------------next_page--------------------------
 
+choco_base_no = 0;
+        choco_flavor_no = 0;
 
+         document.getElementById("next_page3_mobile").onclick = function () {
+        //   var choco_base_no = 0;
+        // var choco_flavor_no = 0;
+        
+        
+          var choco_name = document.getElementById("choco_name");
+        if (choco_name.value ==""){
+          alert("請給CHOCO星人名字");
+        }
+          var sub_price = document.getElementById("final_price_mobile"); 
+          sub_price.innerHTML = (price+100) ;
+
+         var kkk= $("#cho_pos").attr("src");
+         var  k1 = kkk.split("_");
+         var cho_base = k1[1];
+         console.log("cho_base",cho_base);
+         var cho_flavor = k1[2].replace(".png" , "");
+        //  console.log("cho_flavor",cho_flavor);
+          if (cho_base =="w"){
+            choco_base_no = 0;
+            choco_base_no = 1;
+            // console.log("choco_base_no",choco_base_no);
+          }else if(cho_base == "d"){
+            choco_base_no = 0;
+          // console.log("yes");
+          choco_base_no = 2;
+          // console.log("choco_base_no",choco_base_no);
+         }else if(cho_base == "m"){
+            choco_base_no = 0;
+          // console.log("yes");
+          choco_base_no = 3;
+          // console.log("choco_base_no",choco_base_no);
+         }
+          
+
+
+         if(cho_flavor == "b"){
+          choco_flavor_no = 0;
+          choco_flavor_no = 1;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         }
+         else if(cho_flavor == "g"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 2;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         } else if(cho_flavor == "h"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 3;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         } else if(cho_flavor == "o"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 4;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         } else if(cho_flavor == "s"){
+          choco_flavor_no = 0;
+          // console.log("yes");
+          choco_flavor_no = 5;
+          // console.log("choco_flavor_no",choco_flavor_no);
+         }
+         console.log("choco_flavor_no",choco_flavor_no);
+         console.log("choco_base_no",choco_base_no)
+         
+
+       
+
+};
 
 
 // -----------------------next_page--------------------------
